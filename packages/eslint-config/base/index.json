@@ -1,0 +1,121 @@
+{
+  "root": true,
+  "extends": [
+    "eslint:recommended",
+    "prettier",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:security/recommended",
+    "plugin:import/recommended",
+    "plugin:import/typescript",
+    "plugin:promise/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "sourceType": "module"
+  },
+  "plugins": ["prettier", "@typescript-eslint", "security", "filenames"],
+  "rules": {
+    "complexity": ["error", 10],
+    "no-console": "error",
+
+    "prettier/prettier": ["error"],
+
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/semi": ["error", "always"],
+    "@typescript-eslint/no-inferrable-types": "error",
+    "@typescript-eslint/explicit-module-boundary-types": "error",
+    "@typescript-eslint/member-delimiter-style": [
+      "error",
+      {
+        "multiline": {
+          "delimiter": "semi",
+          "requireLast": true
+        },
+        "singleline": {
+          "delimiter": "semi",
+          "requireLast": false
+        }
+      }
+    ],
+    "@typescript-eslint/member-ordering": "error",
+    "@typescript-eslint/naming-convention": [
+      "error",
+      {
+        "selector": ["variable"],
+        "format": ["camelCase", "UPPER_CASE", "PascalCase"],
+        "leadingUnderscore": "forbid",
+        "trailingUnderscore": "forbid"
+      }
+    ],
+    "@typescript-eslint/no-unused-vars": "error",
+    "@typescript-eslint/no-array-constructor": "error",
+    "@typescript-eslint/no-this-alias": "error",
+    "@typescript-eslint/no-non-null-assertion": "error",
+    "@typescript-eslint/no-unnecessary-boolean-literal-compare": "error",
+    "@typescript-eslint/ban-ts-comment": [
+      "error",
+      {
+        "ts-expect-error": "allow-with-description",
+        "ts-ignore": "allow-with-description",
+        "ts-nocheck": "allow-with-description",
+        "ts-check": "allow-with-description",
+        "minimumDescriptionLength": 30
+      }
+    ],
+
+    "filenames/match-regex": 2,
+
+    "import/first": "error",
+    "import/no-duplicates": "error",
+    "import/newline-after-import": "error",
+    "import/order": [
+      "error",
+      {
+        "newlines-between": "always",
+        "pathGroups": [
+          {
+            "pattern": "react",
+            "group": "external",
+            "position": "before"
+          },
+          {
+            "pattern": "@Interval/**",
+            "group": "internal",
+            "position": "after"
+          }
+        ],
+        "pathGroupsExcludedImportTypes": ["react", "@Interval"],
+        "groups": [
+          ["builtin", "external", "type"],
+          ["internal", "parent", "sibling", "index"],
+          ["object"]
+        ]
+      }
+    ],
+    "security/detect-object-injection": "error",
+    "security/detect-non-literal-fs-filename": "error",
+    "security/detect-non-literal-regexp": "error",
+
+    "promise/no-callback-in-promise": "error"
+  },
+  "overrides": [
+    {
+      "files": ["**/models/**/*.ts"],
+      "rules": { "filenames/match-regex": [2, "^([a-z]+|[A-Z][a-z]+)([A-Z][a-z]+)*$"] }
+    },
+    {
+      "files": ["**/*.d.ts"],
+      "rules": { "filenames/match-regex": [2, "^([a-z]+)([A-Z][a-z]+)*.d$"] }
+    }
+  ],
+  "settings": {
+    "import/extensions": [".js", ".jsx", ".ts", ".tsx"],
+    "import/resolver": {
+      "typescript": {},
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx", ".scss"]
+      }
+    }
+  }
+}
+

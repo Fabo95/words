@@ -1,0 +1,18 @@
+{
+  "name": "@words/eslint-config-browser-env",
+  "version": "1.0.0",
+  "description": "Browser environment eslint configuration for interval app",
+  "main": "index.json",
+  "author": "Fabian Hinz",
+  "license": "ISC",
+  "dependencies": {
+  },
+  "peerDependencies": {
+    "@words/eslint-config-base": "workspace:*",
+    "eslint-plugin-compat": "4.0.2",
+    "eslint-plugin-no-unsanitized": "4.0.1",
+    "eslint-plugin-functional": "6.0.0",
+    "typescript": "5.1.3"
+  }
+}
+

@@ -1,0 +1,10 @@
+{
+  "env": {
+    "es6": true,
+    "node": true
+  },
+  "extends": ["@interval/eslint-config-base"],
+  "parserOptions": {
+    "project": "tsconfig.json"
+  }
+}

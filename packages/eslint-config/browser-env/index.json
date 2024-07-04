@@ -1,0 +1,27 @@
+{
+  "env": {
+    "browser": true,
+    "es6": true
+  },
+  "extends": [
+    "@interval/eslint-config-base",
+    "plugin:compat/recommended",
+    "plugin:no-unsanitized/DOM",
+    "plugin:functional/recommended"
+  ],
+  "plugins": ["functional"],
+  "rules": {
+    "functional/prefer-readonly-type": "off",
+    "functional/functional-parameters": "off",
+    "functional/no-expression-statement": "off",
+    "functional/immutable-data": "off",
+    "functional/no-conditional-statement": "off",
+
+    "functional/no-class": "error",
+    "functional/no-this-expression": "error",
+    "functional/no-throw-statement": "error",
+    "functional/no-return-void": "error",
+    "functional/no-try-statement": "error",
+    "functional/no-loop-statement": "error"
+  }
+}

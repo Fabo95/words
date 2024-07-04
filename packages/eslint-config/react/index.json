@@ -1,0 +1,97 @@
+{
+  "extends": [
+    "@interval/eslint-config-browser-env",
+    "plugin:react/recommended",
+    "plugin:react/jsx-runtime",
+    "plugin:react-hooks/recommended",
+    "plugin:react-redux/recommended"
+  ],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 12,
+    "project": "tsconfig.json"
+  },
+  "plugins": ["react", "react-hooks", "interval-app-styleguide"],
+  "rules": {
+    "interval-app-styleguide/keys-order": "error",
+
+    "interval-app-styleguide/no-volatile-import": [
+      "error",
+      {
+        "importFolders": ["utils", "components"],
+        "includedFilePaths": [
+          "/.*src\\/blocks\\.*/"
+        ],
+        "excludedImportPaths": [
+          "/.*src\\/api\\.*",
+          "/.*src\\/i18n\\.*",
+          "/.*src\\/serverAction\\.*",
+          "/.*src\\/styles\\.*",
+          "/.*src\\/utils\\.*",
+          "/.*src\\/components\\.*",
+          "/.*src\\/blocks\\/intervalTimer\\/intervalTimerExecutionMachine.*"
+        ]
+      }
+    ],
+
+    "interval-app-styleguide/react-props-order": "error",
+
+    "complexity": [
+      "error",
+      15
+    ],
+    "import/no-relative-packages": "error",
+    "import/no-absolute-path": "error",
+    "import/no-duplicates": "error",
+    "import/first": "off",
+    "import/no-cycle": "error",
+
+    "@typescript-eslint/ban-ts-comment": [
+      "error",
+      {
+        "ts-expect-error": "allow-with-description",
+        "ts-ignore": "allow-with-description",
+        "ts-nocheck": "allow-with-description",
+        "ts-check": "allow-with-description",
+        "minimumDescriptionLength": 30
+      }
+    ],
+    "@typescript-eslint/ban-types": [
+      "error",
+      {
+        "types": {
+          "Object": false,
+          "object": false
+        }
+      }
+    ],
+    "@typescript-eslint/no-unused-vars": [
+      "error",
+      {
+        "argsIgnorePattern": "^_"
+      }
+    ],
+
+    "react/no-array-index-key": "error",
+    "react/self-closing-comp": "error",
+    "react/no-children-prop": 2,
+    "react/no-unknown-property": ["error", { "ignore": ["css"] }],
+    "react-hooks/exhaustive-deps": "error",
+
+    "filenames/match-regex": [2, "^([a-z]+)([A-Z][a-z]+)*(.[a-z]+)?$"],
+    "no-restricted-globals": "error"
+  },
+  "settings": {
+    "react": {
+      "pragma": "React"
+    },
+    "import/extensions": [".js", ".jsx", ".ts", ".tsx"],
+    "import/resolver": {
+      "node": {
+        "extensions": [".js", ".jsx", ".ts", ".tsx", ".scss"]
+      }
+    }
+  }
+}
