@@ -1,4 +1,5 @@
 packages:
+  - '.'
   # package in service
   - 'service'
   # all packages in subdirs of packages

@@ -1,5 +1,5 @@
 {
-  "name": "@interval/prettier-config",
+  "name": "@words/prettier-config",
   "version": "1.0.0",
   "description": "Global prettier config",
   "main": "index.json",

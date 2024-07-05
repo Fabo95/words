@@ -5,98 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.npmrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-config/base/index.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-config/base/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-config/browser-env/index.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-config/browser-env/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-config/node-env/index.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-config/node-env/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-config/react/index.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-config/react/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/jest.config.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/index.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/index.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/index.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/keysOrder/logicKeysOrder.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/keysOrder/logicKeysOrder.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/keysOrder/logicKeysOrder.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/keysOrder/ruleKeysOrder.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/keysOrder/ruleKeysOrder.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/keysOrder/ruleKeysOrder.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/keysOrder/ruleKeysOrder.test.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/keysOrder/ruleKeysOrder.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/keysOrder/ruleKeysOrder.test.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/keysOrder/utils/keysOrderHelpers.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/keysOrder/utils/keysOrderHelpers.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/keysOrder/utils/keysOrderHelpers.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/noVolatileImport/logicNoVolatileImport.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/noVolatileImport/logicNoVolatileImport.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/noVolatileImport/logicNoVolatileImport.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/noVolatileImport/ruleNoVolatileImport.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/noVolatileImport/ruleNoVolatileImport.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/noVolatileImport/ruleNoVolatileImport.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/noVolatileImport/ruleNoVolatileImport.test.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/noVolatileImport/ruleNoVolatileImport.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/noVolatileImport/ruleNoVolatileImport.test.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/noVolatileImport/utils/noVolatileImportHelpers.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/noVolatileImport/utils/noVolatileImportHelpers.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/noVolatileImport/utils/noVolatileImportHelpers.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/noVolatileImport/utils/noVolatileImportTypes.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/noVolatileImport/utils/noVolatileImportTypes.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/noVolatileImport/utils/noVolatileImportTypes.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/reactPropsOrder/logicReactPropsOrder.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/reactPropsOrder/logicReactPropsOrder.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/reactPropsOrder/logicReactPropsOrder.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/reactPropsOrder/ruleReactPropsOrder.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/reactPropsOrder/ruleReactPropsOrder.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/reactPropsOrder/ruleReactPropsOrder.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/reactPropsOrder/ruleReactPropsOrder.test.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/reactPropsOrder/ruleReactPropsOrder.test.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/reactPropsOrder/ruleReactPropsOrder.test.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/utils/elementOrderHelpers.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/utils/elementOrderHelpers.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/utils/elementOrderHelpers.js.map" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/src/index.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/src/rules/keysOrder/logicKeysOrder.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/src/rules/keysOrder/ruleKeysOrder.test.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/src/rules/keysOrder/ruleKeysOrder.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/src/rules/keysOrder/utils/keysOrderHelpers.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/src/rules/noVolatileImport/logicNoVolatileImport.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/src/rules/noVolatileImport/ruleNoVolatileImport.test.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/src/rules/noVolatileImport/ruleNoVolatileImport.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/src/rules/noVolatileImport/utils/noVolatileImportHelpers.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/src/rules/noVolatileImport/utils/noVolatileImportTypes.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/src/rules/reactPropsOrder/logicReactPropsOrder.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/src/rules/reactPropsOrder/ruleReactPropsOrder.test.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/src/rules/reactPropsOrder/ruleReactPropsOrder.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/src/rules/utils/elementOrderHelpers.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/tsconfig.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/typings/eslintModuleUtils.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/prettier-config/index.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/prettier-config/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/pnpm-workspace.yaml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/app/layout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/styles/globals.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/tailwind.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/service/.eslintrc.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/service/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/next.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/service/next.config.mjs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package-lock.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/service/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/postcss.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/service/postcss.config.mjs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/next.svg" beforeDir="false" afterPath="$PROJECT_DIR$/service/public/next.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/vercel.svg" beforeDir="false" afterPath="$PROJECT_DIR$/service/public/vercel.svg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/app/favicon.ico" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/globals.css" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/layout.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/app/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tailwind.config.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/service/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-config/base/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/eslint-config/base/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-config/browser-env/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/eslint-config/browser-env/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/prettier-config/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/prettier-config/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-workspace.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-workspace.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/service/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/app/layout.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -130,6 +48,7 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "npm.packages:force-node-modules-sync.executor": "Run",
     "prettierjs.PrettierConfiguration.Package": "/Users/fabianhinz/.npm-global/lib/node_modules/prettier",
     "settings.editor.selected.configurable": "settings.javascript.prettier",
     "ts.external.directory.path": "/Users/fabianhinz/Desktop/dev/words/service/node_modules/typescript/lib",
@@ -144,6 +63,23 @@
       <recent name="$PROJECT_DIR$/service" />
       <recent name="$PROJECT_DIR$/src/styles" />
     </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="packages:force-node-modules-sync" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="packages:force-node-modules-sync" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="npm.packages:force-node-modules-sync" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
@@ -163,7 +99,7 @@
       <updated>1720028149083</updated>
       <workItem from="1720028152752" duration="267000" />
       <workItem from="1720028422948" duration="1139000" />
-      <workItem from="1720038575864" duration="6206000" />
+      <workItem from="1720038575864" duration="13109000" />
     </task>
     <servers />
   </component>
