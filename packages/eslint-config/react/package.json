@@ -1,7 +1,7 @@
 {
   "name": "@words/eslint-config-react",
   "version": "1.0.0",
-  "description": "React eslint configuration for interval app",
+  "description": "React eslint configuration for words app",
   "main": "index.json",
   "author": "Fabian Hinz",
   "license": "ISC",
@@ -10,8 +10,8 @@
   "peerDependencies": {
     "eslint-plugin-words-app-styleguide": "workspace:*",
     "@words/eslint-config-browser-env": "workspace:*",
-    "eslint-plugin-react": "7.33.2",
-    "eslint-plugin-react-hooks": "4.6.0",
+    "eslint-plugin-react": "7.34.3",
+    "eslint-plugin-react-hooks": "4.6.2",
     "eslint-plugin-react-redux": "4.1.0"
   }
 }

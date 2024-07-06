@@ -1,3 +1,58 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": ["next", "@words/eslint-config-react"],
+  "plugins": ["no-relative-import-paths"],
+  "rules": {
+    "filenames/match-regex": "off",
+    "compat/compat": "off",
+    // TODO
+    "no-console": "error",
+    "@typescript-eslint/no-unnecessary-type-constraint": "off",
+    "@typescript-eslint/naming-convention": "off",
+    "react/jsx-uses-react": "off",
+    "react/react-in-jsx-scope": "off",
+    "react/prop-types": "off",
+    "promise/catch-or-return": "off",
+    "promise/no-callback-in-promise": "off",
+    "promise/always-return": "off",
+    "promise/no-return-wrap": "off",
+    "functional/no-return-void": "off",
+    // TODO
+    "functional/no-let": "error",
+    "functional/prefer-immutable-types": "off",
+    "functional/no-loop-statement": "off",
+    "functional/no-try-statement": "off",
+    "functional/no-conditional-statements": "off",
+    "functional/no-this-expression": "off",
+    "functional/no-class": "off",
+    "functional/no-throw-statement": "off",
+    "functional/no-mixed-type": "off",
+    "functional/no-mixed-types": "off",
+    "functional/no-expression-statements": "off",
+    "security/detect-object-injection": "off",
+    "security/detect-non-literal-fs-filename": "off",
+    "security/detect-non-literal-regexp": "off",
+    "react-redux/no-unused-prop-types": "off",
+    "react-redux/connect-prefer-named-arguments": "off",
+    "react-redux/useSelector-prefer-selectors": "off",
+    "react/display-name": "off",
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-var-requires": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "@typescript-eslint/no-non-null-asserted-optional-chain": "off"
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  // https://eslint.org/docs/latest/use/configure/ignore#:~:text=You%20can%20configure%20ESLint%20to,(%20.eslintignore%20by%20default).
+  "ignorePatterns": ["**/*.js", "**/*.typegen.ts", "**/*.css"],
+  "settings": {
+    "import/resolver": {
+      "typescript": {
+        "project": ["tsconfig.json", "cypress/tsconfig.json"]
+      }
+    }
+  }
+
 }

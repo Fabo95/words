@@ -4,17 +4,97 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="update">
+      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-words-app-styleguide/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-words-app-styleguide/jest.config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-words-app-styleguide/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-words-app-styleguide/src/index.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-words-app-styleguide/src/rules/keysOrder/logicKeysOrder.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-words-app-styleguide/src/rules/keysOrder/ruleKeysOrder.test.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-words-app-styleguide/src/rules/keysOrder/ruleKeysOrder.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-words-app-styleguide/src/rules/keysOrder/utils/keysOrderHelpers.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-words-app-styleguide/src/rules/noVolatileImport/logicNoVolatileImport.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-words-app-styleguide/src/rules/noVolatileImport/ruleNoVolatileImport.test.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-words-app-styleguide/src/rules/noVolatileImport/ruleNoVolatileImport.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-words-app-styleguide/src/rules/noVolatileImport/utils/noVolatileImportHelpers.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-words-app-styleguide/src/rules/noVolatileImport/utils/noVolatileImportTypes.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-words-app-styleguide/src/rules/reactPropsOrder/logicReactPropsOrder.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-words-app-styleguide/src/rules/reactPropsOrder/ruleReactPropsOrder.test.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-words-app-styleguide/src/rules/reactPropsOrder/ruleReactPropsOrder.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-words-app-styleguide/src/rules/utils/elementOrderHelpers.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-words-app-styleguide/tsconfig.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/eslint-plugin-words-app-styleguide/typings/eslintModuleUtils.d.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/eslint-config/base/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/eslint-config/base/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/eslint-config/browser-env/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/eslint-config/browser-env/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-config/node-env/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/eslint-config/node-env/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-config/react/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/eslint-config/react/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/jest.config.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/index.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/index.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/index.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/keysOrder/logicKeysOrder.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/keysOrder/logicKeysOrder.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/keysOrder/logicKeysOrder.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/keysOrder/ruleKeysOrder.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/keysOrder/ruleKeysOrder.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/keysOrder/ruleKeysOrder.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/keysOrder/ruleKeysOrder.test.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/keysOrder/ruleKeysOrder.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/keysOrder/ruleKeysOrder.test.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/keysOrder/utils/keysOrderHelpers.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/keysOrder/utils/keysOrderHelpers.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/keysOrder/utils/keysOrderHelpers.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/noVolatileImport/logicNoVolatileImport.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/noVolatileImport/logicNoVolatileImport.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/noVolatileImport/logicNoVolatileImport.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/noVolatileImport/ruleNoVolatileImport.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/noVolatileImport/ruleNoVolatileImport.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/noVolatileImport/ruleNoVolatileImport.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/noVolatileImport/ruleNoVolatileImport.test.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/noVolatileImport/ruleNoVolatileImport.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/noVolatileImport/ruleNoVolatileImport.test.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/noVolatileImport/utils/noVolatileImportHelpers.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/noVolatileImport/utils/noVolatileImportHelpers.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/noVolatileImport/utils/noVolatileImportHelpers.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/noVolatileImport/utils/noVolatileImportTypes.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/noVolatileImport/utils/noVolatileImportTypes.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/noVolatileImport/utils/noVolatileImportTypes.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/reactPropsOrder/logicReactPropsOrder.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/reactPropsOrder/logicReactPropsOrder.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/reactPropsOrder/logicReactPropsOrder.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/reactPropsOrder/ruleReactPropsOrder.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/reactPropsOrder/ruleReactPropsOrder.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/reactPropsOrder/ruleReactPropsOrder.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/reactPropsOrder/ruleReactPropsOrder.test.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/reactPropsOrder/ruleReactPropsOrder.test.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/reactPropsOrder/ruleReactPropsOrder.test.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/utils/elementOrderHelpers.d.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/utils/elementOrderHelpers.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/lib/rules/utils/elementOrderHelpers.js.map" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/src/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/src/rules/keysOrder/logicKeysOrder.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/src/rules/keysOrder/ruleKeysOrder.test.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/src/rules/keysOrder/ruleKeysOrder.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/src/rules/keysOrder/utils/keysOrderHelpers.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/src/rules/noVolatileImport/logicNoVolatileImport.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/src/rules/noVolatileImport/ruleNoVolatileImport.test.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/src/rules/noVolatileImport/ruleNoVolatileImport.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/src/rules/noVolatileImport/utils/noVolatileImportHelpers.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/src/rules/noVolatileImport/utils/noVolatileImportTypes.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/src/rules/reactPropsOrder/logicReactPropsOrder.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/src/rules/reactPropsOrder/ruleReactPropsOrder.test.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/src/rules/reactPropsOrder/ruleReactPropsOrder.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/src/rules/utils/elementOrderHelpers.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-interval-app-styleguide/typings/eslintModuleUtils.d.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/prettier-config/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/prettier-config/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-workspace.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-workspace.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/.eslintrc.json" beforeDir="false" afterPath="$PROJECT_DIR$/service/.eslintrc.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/service/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/service/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +107,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/service/package.json" />
+  </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
   &quot;associatedIndex&quot;: 1
@@ -38,25 +121,28 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/fabianhinz/Desktop/dev/words",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.packages:force-node-modules-sync.executor": "Run",
-    "prettierjs.PrettierConfiguration.Package": "/Users/fabianhinz/.npm-global/lib/node_modules/prettier",
-    "settings.editor.selected.configurable": "settings.javascript.prettier",
-    "ts.external.directory.path": "/Users/fabianhinz/Desktop/dev/words/service/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/fabianhinz/Desktop/dev/words/service&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.packages:force-node-modules-sync.executor&quot;: &quot;Run&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/fabianhinz/.npm-global/lib/node_modules/prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.javascript.linters.eslint&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/fabianhinz/Desktop/dev/words/service/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/service" />
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -99,12 +185,27 @@
       <updated>1720028149083</updated>
       <workItem from="1720028152752" duration="267000" />
       <workItem from="1720028422948" duration="1139000" />
-      <workItem from="1720038575864" duration="13109000" />
+      <workItem from="1720038575864" duration="17276000" />
+      <workItem from="1720216220869" duration="2059000" />
+      <workItem from="1720253075162" duration="3408000" />
     </task>
+    <task id="LOCAL-00001" summary="update">
+      <option name="closed" value="true" />
+      <created>1720190911319</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1720190911319</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="update" />
+    <option name="LAST_COMMIT_MESSAGE" value="update" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

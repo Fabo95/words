@@ -1,7 +1,7 @@
 {
   "name": "@words/eslint-config-node-env",
   "version": "1.0.0",
-  "description": "Node environment eslint configuration for interval app",
+  "description": "Node environment eslint configuration for words app",
   "main": "index.json",
   "author": "Fabian Hinz",
   "license": "ISC",
