@@ -4,8 +4,6 @@
   "rules": {
     "filenames/match-regex": "off",
     "compat/compat": "off",
-    // TODO
-    "no-console": "error",
     "@typescript-eslint/no-unnecessary-type-constraint": "off",
     "@typescript-eslint/naming-convention": "off",
     "react/jsx-uses-react": "off",
@@ -16,7 +14,6 @@
     "promise/always-return": "off",
     "promise/no-return-wrap": "off",
     "functional/no-return-void": "off",
-    // TODO
     "functional/no-let": "error",
     "functional/prefer-immutable-types": "off",
     "functional/no-loop-statement": "off",

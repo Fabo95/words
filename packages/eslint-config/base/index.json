@@ -4,7 +4,7 @@
     "eslint:recommended",
     "prettier",
     "plugin:@typescript-eslint/recommended",
-    "plugin:security/recommended",
+    "plugin:security/recommended-legacy",
     "plugin:import/recommended",
     "plugin:import/typescript",
     "plugin:promise/recommended"
@@ -79,12 +79,12 @@
             "position": "before"
           },
           {
-            "pattern": "@Interval/**",
+            "pattern": "@app/**",
             "group": "internal",
             "position": "after"
           }
         ],
-        "pathGroupsExcludedImportTypes": ["react", "@Interval"],
+        "pathGroupsExcludedImportTypes": ["react", "@app"],
         "groups": [
           ["builtin", "external", "type"],
           ["internal", "parent", "sibling", "index"],

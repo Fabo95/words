@@ -4,7 +4,7 @@
     "es6": true
   },
   "extends": [
-    "@interval/eslint-config-base",
+    "@words/eslint-config-base",
     "plugin:compat/recommended",
     "plugin:no-unsanitized/DOM",
     "plugin:functional/recommended"

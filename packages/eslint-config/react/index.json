@@ -1,6 +1,6 @@
 {
   "extends": [
-    "@interval/eslint-config-browser-env",
+    "@words/eslint-config-browser-env",
     "plugin:react/recommended",
     "plugin:react/jsx-runtime",
     "plugin:react-hooks/recommended",
@@ -13,11 +13,11 @@
     "ecmaVersion": 12,
     "project": "tsconfig.json"
   },
-  "plugins": ["react", "react-hooks", "interval-app-styleguide"],
+  "plugins": ["react", "react-hooks", "words-app-styleguide"],
   "rules": {
-    "interval-app-styleguide/keys-order": "error",
+    "words-app-styleguide/keys-order": "error",
 
-    "interval-app-styleguide/no-volatile-import": [
+    "words-app-styleguide/no-volatile-import": [
       "error",
       {
         "importFolders": ["utils", "components"],
@@ -30,13 +30,12 @@
           "/.*src\\/serverAction\\.*",
           "/.*src\\/styles\\.*",
           "/.*src\\/utils\\.*",
-          "/.*src\\/components\\.*",
-          "/.*src\\/blocks\\/intervalTimer\\/intervalTimerExecutionMachine.*"
+          "/.*src\\/components\\.*"
         ]
       }
     ],
 
-    "interval-app-styleguide/react-props-order": "error",
+    "words-app-styleguide/react-props-order": "error",
 
     "complexity": [
       "error",
