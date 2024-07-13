@@ -6,6 +6,8 @@ import { Inter } from "next/font/google";
 import "@app/styles/globals.css";
 import { cn } from "@app/lib/shadcn/shadcnHelpers";
 import { Toaster } from "@app/components/ui/toaster";
+import { ThemeProvider } from "@app/components/themeProvider";
+import { ModeToggle } from "@app/components/modeToggle";
 
 const interFont = Inter({
     subsets: ["latin"],
@@ -23,9 +25,13 @@ export default function RootLayout({ children }: RootLayoutProps) {
     return (
         <html lang="en">
             <body className={cn("min-h-screen bg-background font-sans antialiased", interFont.variable)}>
-                {children}
+                <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+                    <ModeToggle />
 
-                <Toaster />
+                    {children}
+
+                    <Toaster />
+                </ThemeProvider>
             </body>
         </html>
     );
