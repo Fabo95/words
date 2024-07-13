@@ -5,7 +5,9 @@ export default function Home() {
 
     return (
         <main className="bg-white flex min-h-screen flex-col items-center justify-between p-24">
-            <Button>Hi</Button>
+            <Button variant="destructive" size="sm">
+                Hi
+            </Button>
         </main>
     );
 }
