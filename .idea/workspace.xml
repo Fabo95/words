@@ -4,9 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="added middleware.ts + ui components">
+    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="added theme provider">
+      <change afterPath="$PROJECT_DIR$/service/src/components/modeToggle.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/components/themeProvider.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/components/ui/tabs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/components/ui/tabs.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/tailwind-config/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/tailwind-config/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/components.json" beforeDir="false" afterPath="$PROJECT_DIR$/service/components.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/service/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/styles/globals.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,7 +121,7 @@
       <workItem from="1720360460489" duration="44000" />
       <workItem from="1720360515461" duration="9941000" />
       <workItem from="1720726878713" duration="7837000" />
-      <workItem from="1720870081217" duration="6225000" />
+      <workItem from="1720870081217" duration="20431000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <option name="closed" value="true" />
@@ -173,7 +179,23 @@
       <option name="project" value="LOCAL" />
       <updated>1720876461912</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="added middleware.ts + ui components">
+      <option name="closed" value="true" />
+      <created>1720876492019</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1720876492019</updated>
+    </task>
+    <task id="LOCAL-00009" summary="added theme provider">
+      <option name="closed" value="true" />
+      <created>1720877950888</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1720877950888</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -195,7 +217,8 @@
     <MESSAGE value="wip" />
     <MESSAGE value="added button + tailwind config package" />
     <MESSAGE value="added middleware.ts + ui components" />
-    <option name="LAST_COMMIT_MESSAGE" value="added middleware.ts + ui components" />
+    <MESSAGE value="added theme provider" />
+    <option name="LAST_COMMIT_MESSAGE" value="added theme provider" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
