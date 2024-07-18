@@ -1,9 +1,9 @@
 import { ReactNode } from "react";
+import "@app/styles/globals.css";
 
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
-import "@app/styles/globals.css";
 import { cn } from "@app/lib/shadcn/shadcnHelpers";
 import { Toaster } from "@app/components/ui/toaster";
 import { ThemeProvider } from "@app/components/themeProvider";

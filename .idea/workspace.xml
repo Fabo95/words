@@ -4,14 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="added theme provider">
-      <change afterPath="$PROJECT_DIR$/service/src/components/modeToggle.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/components/themeProvider.tsx" afterDir="false" />
+    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="added dropdown-menu.tsx">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/tailwind-config/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/tailwind-config/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/components.json" beforeDir="false" afterPath="$PROJECT_DIR$/service/components.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/service/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/components/ui/dropdown-menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/components/ui/dropdown-menu.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/src/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/styles/globals.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -121,7 +118,7 @@
       <workItem from="1720360460489" duration="44000" />
       <workItem from="1720360515461" duration="9941000" />
       <workItem from="1720726878713" duration="7837000" />
-      <workItem from="1720870081217" duration="20431000" />
+      <workItem from="1720870081217" duration="22255000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <option name="closed" value="true" />
@@ -195,7 +192,23 @@
       <option name="project" value="LOCAL" />
       <updated>1720877950888</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="added theme provider">
+      <option name="closed" value="true" />
+      <created>1721253558961</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1721253558961</updated>
+    </task>
+    <task id="LOCAL-00011" summary="added dropdown-menu.tsx">
+      <option name="closed" value="true" />
+      <created>1721253575117</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1721253575117</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -218,7 +231,8 @@
     <MESSAGE value="added button + tailwind config package" />
     <MESSAGE value="added middleware.ts + ui components" />
     <MESSAGE value="added theme provider" />
-    <option name="LAST_COMMIT_MESSAGE" value="added theme provider" />
+    <MESSAGE value="added dropdown-menu.tsx" />
+    <option name="LAST_COMMIT_MESSAGE" value="added dropdown-menu.tsx" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
