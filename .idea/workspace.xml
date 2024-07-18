@@ -6,10 +6,11 @@
   <component name="ChangeListManager">
     <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="added dropdown-menu.tsx">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/tailwind-config/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/tailwind-config/index.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/components.json" beforeDir="false" afterPath="$PROJECT_DIR$/service/components.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/components/ui/dropdown-menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/components/ui/dropdown-menu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/app/[lang]/(loggedOut)/authentication/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/app/[lang]/(loggedOut)/authentication/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/src/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/styles/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/tailwind.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/service/tailwind.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -118,7 +119,7 @@
       <workItem from="1720360460489" duration="44000" />
       <workItem from="1720360515461" duration="9941000" />
       <workItem from="1720726878713" duration="7837000" />
-      <workItem from="1720870081217" duration="22255000" />
+      <workItem from="1720870081217" duration="24550000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <option name="closed" value="true" />
@@ -208,7 +209,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721253575117</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="added dropdown-menu.tsx">
+      <option name="closed" value="true" />
+      <created>1721335843786</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1721335843786</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
