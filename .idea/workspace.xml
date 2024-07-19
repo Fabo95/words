@@ -6,11 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="added dropdown-menu.tsx">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/tailwind-config/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/tailwind-config/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/components.json" beforeDir="false" afterPath="$PROJECT_DIR$/service/components.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/app/[lang]/(loggedOut)/authentication/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/app/[lang]/(loggedOut)/authentication/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/components/ui/button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/components/ui/button.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/components/ui/card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/components/ui/card.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/components/ui/dropdown-menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/components/ui/dropdown-menu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/components/ui/input.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/components/ui/input.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/components/ui/tabs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/components/ui/tabs.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/components/ui/toast.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/components/ui/toast.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/components/ui/toaster.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/components/ui/toaster.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/components/ui/use-toast.ts" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/components/ui/use-toast.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/src/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/styles/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/tailwind.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/service/tailwind.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,9 +73,11 @@
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/service/src/lib/shadcn" />
-      <recent name="$PROJECT_DIR$/service" />
-      <recent name="$PROJECT_DIR$/src/styles" />
+      <recent name="$PROJECT_DIR$/service/src/styles" />
+      <recent name="$PROJECT_DIR$/service/src/components" />
+      <recent name="$PROJECT_DIR$/service/src/app" />
+      <recent name="$PROJECT_DIR$/service/src" />
+      <recent name="$PROJECT_DIR$/service/src/app/styles" />
     </key>
   </component>
   <component name="RunManager">
