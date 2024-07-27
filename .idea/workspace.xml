@@ -4,17 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="added dropdown-menu.tsx">
+    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="added theming + recreated UI">
+      <change afterPath="$PROJECT_DIR$/service/src/block/authentication/loginCardContent/loginCardContent.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/block/authentication/loginCardContent/utils/loginCardContentSchema.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/block/authentication/loginCardContent/utils/loginCardContentTypes.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/block/authentication/registrationCardContent.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/components/ui/box.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/components/ui/inputWrapper.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/components/ui/row.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/service/src/components/ui/text.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/components/ui/button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/components/ui/button.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/components/ui/card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/components/ui/card.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/components/ui/dropdown-menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/components/ui/dropdown-menu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/service/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/app/[lang]/(loggedOut)/authentication/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/app/[lang]/(loggedOut)/authentication/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/app/layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/src/components/ui/input.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/components/ui/input.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/components/ui/tabs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/components/ui/tabs.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/components/ui/toast.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/components/ui/toast.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/components/ui/toaster.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/components/ui/toaster.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/components/ui/use-toast.ts" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/components/ui/use-toast.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/styles/globals.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,7 +55,7 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/fabianhinz/Desktop/dev/words/service/src/app&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/fabianhinz/Desktop/dev/words/service/src/components/ui&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -68,16 +72,18 @@
 }</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/service/src/components/ui" />
+      <recent name="$PROJECT_DIR$/service/src/lib" />
       <recent name="$PROJECT_DIR$/service/src/app" />
       <recent name="$PROJECT_DIR$/service" />
       <recent name="$PROJECT_DIR$" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/service/src/block/authentication/loginCardContent" />
       <recent name="$PROJECT_DIR$/service/src/styles" />
       <recent name="$PROJECT_DIR$/service/src/components" />
       <recent name="$PROJECT_DIR$/service/src/app" />
       <recent name="$PROJECT_DIR$/service/src" />
-      <recent name="$PROJECT_DIR$/service/src/app/styles" />
     </key>
   </component>
   <component name="RunManager">
@@ -126,6 +132,7 @@
       <workItem from="1720360515461" duration="9941000" />
       <workItem from="1720726878713" duration="7837000" />
       <workItem from="1720870081217" duration="24550000" />
+      <workItem from="1721430465703" duration="31048000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <option name="closed" value="true" />
@@ -223,7 +230,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721335843786</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="added theming + recreated UI">
+      <option name="closed" value="true" />
+      <created>1721429866582</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1721429866582</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -247,7 +262,8 @@
     <MESSAGE value="added middleware.ts + ui components" />
     <MESSAGE value="added theme provider" />
     <MESSAGE value="added dropdown-menu.tsx" />
-    <option name="LAST_COMMIT_MESSAGE" value="added dropdown-menu.tsx" />
+    <MESSAGE value="added theming + recreated UI" />
+    <option name="LAST_COMMIT_MESSAGE" value="added theming + recreated UI" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

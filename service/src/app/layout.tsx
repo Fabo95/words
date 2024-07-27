@@ -8,6 +8,8 @@ import { cn } from "@app/lib/shadcn/shadcnHelpers";
 import { Toaster } from "@app/components/ui/toaster";
 import { ThemeProvider } from "@app/components/themeProvider";
 import { ModeToggle } from "@app/components/modeToggle";
+import { Row } from "@app/components/ui/row";
+import { Box } from "@app/components/ui/box";
 
 const interFont = Inter({
     subsets: ["latin"],
@@ -26,9 +28,13 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <html lang="en">
             <body className={cn("min-h-screen bg-background font-sans antialiased", interFont.variable)}>
                 <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
-                    <ModeToggle />
+                    <Box className="p-5 h-screen">
+                        <Row className="w-full ">
+                            <ModeToggle />
+                        </Row>
 
-                    {children}
+                        {children}
+                    </Box>
 
                     <Toaster />
                 </ThemeProvider>
