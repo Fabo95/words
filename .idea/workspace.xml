@@ -6,14 +6,24 @@
   <component name="ChangeListManager">
     <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="updated deps">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/eslint-config/base/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/eslint-config/base/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/eslint-config/browser-env/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/eslint-config/browser-env/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-config/react/index.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/eslint-config/react/index.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/eslint-config/react/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/eslint-config/react/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-words-app-styleguide/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/eslint-plugin-words-app-styleguide/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/prettier-config/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/prettier-config/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-words-app-styleguide/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-words-app-styleguide/jest.config.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-words-app-styleguide/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-words-app-styleguide/src/index.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-words-app-styleguide/src/rules/keysOrder/logicKeysOrder.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-words-app-styleguide/src/rules/keysOrder/ruleKeysOrder.test.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-words-app-styleguide/src/rules/keysOrder/ruleKeysOrder.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-words-app-styleguide/src/rules/keysOrder/utils/keysOrderHelpers.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-words-app-styleguide/src/rules/reactPropsOrder/logicReactPropsOrder.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-words-app-styleguide/src/rules/reactPropsOrder/ruleReactPropsOrder.test.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-words-app-styleguide/src/rules/reactPropsOrder/ruleReactPropsOrder.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-words-app-styleguide/src/rules/utils/elementOrderHelpers.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-words-app-styleguide/tsconfig.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-words-app-styleguide/typings/eslintModuleUtils.d.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/service/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/service/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +94,7 @@
       <recent name="$PROJECT_DIR$/service/src" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.service &gt; dev">
+  <component name="RunManager" selected="npm.eslint-plugin-words-app-styleguide &gt; build:clean">
     <configuration name="eslint-plugin-words-app-styleguide &gt; build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/packages/eslint-plugin-words-app-styleguide/package.json" />
       <command value="run" />
@@ -127,8 +137,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.service &gt; dev" />
         <item itemvalue="npm.eslint-plugin-words-app-styleguide &gt; build:clean" />
+        <item itemvalue="npm.service &gt; dev" />
         <item itemvalue="npm.eslint-plugin-words-app-styleguide &gt; build" />
         <item itemvalue="npm.packages:force-node-modules-sync" />
       </list>
@@ -166,7 +176,7 @@
       <workItem from="1721430465703" duration="47587000" />
       <workItem from="1723723865366" duration="139000" />
       <workItem from="1725715535003" duration="57000" />
-      <workItem from="1735408988993" duration="3463000" />
+      <workItem from="1735408988993" duration="3854000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <option name="closed" value="true" />
@@ -288,7 +298,15 @@
       <option name="project" value="LOCAL" />
       <updated>1735410972857</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="updated deps">
+      <option name="closed" value="true" />
+      <created>1735412637590</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1735412637590</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

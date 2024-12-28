@@ -13,11 +13,8 @@
     "ecmaVersion": 12,
     "project": "tsconfig.json"
   },
-  "plugins": ["react", "react-hooks", "words-app-styleguide"],
+  "plugins": ["react", "react-hooks"],
   "rules": {
-    "words-app-styleguide/keys-order": "error",
-    "words-app-styleguide/react-props-order": "error",
-
     "complexity": [
       "error",
       15
