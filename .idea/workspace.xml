@@ -4,21 +4,21 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="added theming + recreated UI">
-      <change afterPath="$PROJECT_DIR$/service/src/block/authentication/loginCardContent/loginCardContent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/block/authentication/loginCardContent/utils/loginCardContentSchema.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/block/authentication/loginCardContent/utils/loginCardContentTypes.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/block/authentication/registrationCardContent.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/components/ui/box.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/components/ui/inputWrapper.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/components/ui/row.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/components/ui/text.tsx" afterDir="false" />
+    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="added row + added box + added inputWra">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-config/react/index.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/eslint-config/react/index.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-config/react/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/eslint-config/react/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-words-app-styleguide/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/eslint-plugin-words-app-styleguide/src/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-words-app-styleguide/src/rules/noVolatileImport/logicNoVolatileImport.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-words-app-styleguide/src/rules/noVolatileImport/ruleNoVolatileImport.test.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-words-app-styleguide/src/rules/noVolatileImport/ruleNoVolatileImport.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-words-app-styleguide/src/rules/noVolatileImport/utils/noVolatileImportHelpers.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-words-app-styleguide/src/rules/noVolatileImport/utils/noVolatileImportTypes.ts" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/service/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/service/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/src/app/[lang]/(loggedOut)/authentication/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/app/[lang]/(loggedOut)/authentication/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/components/ui/input.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/components/ui/input.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/block/authentication/loginCardContent/loginCardContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/block/authentication/loginCardContent/loginCardContent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/block/authentication/registrationCardContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/block/authentication/registrationCardContent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/components/ui/inputWrapper.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/components/ui/inputWrapper.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -51,25 +51,27 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/fabianhinz/Desktop/dev/words/service/src/components/ui&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.packages:force-node-modules-sync.executor&quot;: &quot;Run&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/fabianhinz/.npm-global/lib/node_modules/prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;reference.settings.ide.settings.new.ui&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/fabianhinz/Desktop/dev/words/packages/tailwind-config/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/fabianhinz/Desktop/dev/words/service/src/components/ui",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.eslint-plugin-words-app-styleguide > build.executor": "Run",
+    "npm.eslint-plugin-words-app-styleguide > build:clean.executor": "Run",
+    "npm.packages:force-node-modules-sync.executor": "Run",
+    "prettierjs.PrettierConfiguration.Package": "/Users/fabianhinz/.npm-global/lib/node_modules/prettier",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "/Users/fabianhinz/Desktop/dev/words/service/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/service/src/components/ui" />
@@ -86,7 +88,27 @@
       <recent name="$PROJECT_DIR$/service/src" />
     </key>
   </component>
-  <component name="RunManager">
+  <component name="RunManager" selected="npm.eslint-plugin-words-app-styleguide &gt; build:clean">
+    <configuration name="eslint-plugin-words-app-styleguide &gt; build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/packages/eslint-plugin-words-app-styleguide/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="eslint-plugin-words-app-styleguide &gt; build:clean" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/packages/eslint-plugin-words-app-styleguide/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build:clean" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="packages:force-node-modules-sync" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -99,6 +121,8 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.eslint-plugin-words-app-styleguide &gt; build:clean" />
+        <item itemvalue="npm.eslint-plugin-words-app-styleguide &gt; build" />
         <item itemvalue="npm.packages:force-node-modules-sync" />
       </list>
     </recent_temporary>
@@ -106,8 +130,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-1d06a55b98c1-0b3e54e931b4-JavaScript-PS-241.18034.69" />
-        <option value="bundled-php-predefined-ba97393d7c68-48a1a656d44e-com.jetbrains.php.sharedIndexes-PS-241.18034.69" />
+        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-PS-242.21829.154" />
+        <option value="bundled-php-predefined-a98d8de5180a-4d9f4c849d09-com.jetbrains.php.sharedIndexes-PS-242.21829.154" />
       </set>
     </attachedChunks>
   </component>
@@ -132,7 +156,10 @@
       <workItem from="1720360515461" duration="9941000" />
       <workItem from="1720726878713" duration="7837000" />
       <workItem from="1720870081217" duration="24550000" />
-      <workItem from="1721430465703" duration="31048000" />
+      <workItem from="1721430465703" duration="47587000" />
+      <workItem from="1723723865366" duration="139000" />
+      <workItem from="1725715535003" duration="57000" />
+      <workItem from="1735408988993" duration="1772000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <option name="closed" value="true" />
@@ -238,7 +265,15 @@
       <option name="project" value="LOCAL" />
       <updated>1721429866582</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="added row + added box + added inputWra">
+      <option name="closed" value="true" />
+      <created>1722115481589</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1722115481589</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -263,7 +298,8 @@
     <MESSAGE value="added theme provider" />
     <MESSAGE value="added dropdown-menu.tsx" />
     <MESSAGE value="added theming + recreated UI" />
-    <option name="LAST_COMMIT_MESSAGE" value="added theming + recreated UI" />
+    <MESSAGE value="added row + added box + added inputWra" />
+    <option name="LAST_COMMIT_MESSAGE" value="added row + added box + added inputWra" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

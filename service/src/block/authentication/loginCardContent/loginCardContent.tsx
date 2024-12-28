@@ -1,14 +1,15 @@
 "use client";
 
+import { useParams } from "next/navigation";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
+
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@app/components/ui/card";
 import { Input } from "@app/components/ui/input";
 import { Button } from "@app/components/ui/button";
 import { getTFunction } from "@app/lib/i18n/tFunction";
-import { useParams } from "next/navigation";
 import { Locale } from "@app/lib/locale/localeTypes";
-import { useForm } from "react-hook-form";
 import { LoginFormState } from "@app/block/authentication/loginCardContent/utils/loginCardContentTypes";
-import { zodResolver } from "@hookform/resolvers/zod";
 import { getLoginFormSchema } from "@app/block/authentication/loginCardContent/utils/loginCardContentSchema";
 import { InputWrapper } from "@app/components/ui/inputWrapper";
 
@@ -20,15 +21,15 @@ export const LoginCardContent = () => {
     const t = getTFunction(lang);
 
     const {
-        register,
         formState: { errors },
+        register,
     } = useForm<LoginFormState>({
         defaultValues: {
             email: "",
             password: "",
         },
-        resolver: zodResolver(getLoginFormSchema(t)),
         mode: "onBlur",
+        resolver: zodResolver(getLoginFormSchema(t)),
     });
 
     // --- RENDER ---
@@ -43,24 +44,24 @@ export const LoginCardContent = () => {
             <CardContent className="space-y-2">
                 <InputWrapper
                     className="mb-5"
-                    name="email"
-                    label={t("pages.authentication.login.labelOne")}
                     errorMessage={errors.email?.message}
+                    label={t("pages.authentication.login.labelOne")}
+                    name="email"
                 >
                     <Input
                         id="email"
-                        type="email"
                         placeholder={t("pages.authentication.login.placeholderOne")}
+                        type="email"
                         {...register("email")}
                     />
                 </InputWrapper>
 
                 <InputWrapper
-                    name="password"
-                    label={t("pages.authentication.login.labelTwo")}
                     errorMessage={errors.password?.message}
+                    label={t("pages.authentication.login.labelTwo")}
+                    name="password"
                 >
-                    <Input type="password" id="password" {...register("password")} />
+                    <Input id="password" type="password" {...register("password")} />
                 </InputWrapper>
             </CardContent>
 

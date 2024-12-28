@@ -16,25 +16,6 @@
   "plugins": ["react", "react-hooks", "words-app-styleguide"],
   "rules": {
     "words-app-styleguide/keys-order": "error",
-
-    "words-app-styleguide/no-volatile-import": [
-      "error",
-      {
-        "importFolders": ["utils", "components"],
-        "includedFilePaths": [
-          "/.*src\\/blocks\\.*/"
-        ],
-        "excludedImportPaths": [
-          "/.*src\\/api\\.*",
-          "/.*src\\/i18n\\.*",
-          "/.*src\\/serverAction\\.*",
-          "/.*src\\/styles\\.*",
-          "/.*src\\/utils\\.*",
-          "/.*src\\/components\\.*"
-        ]
-      }
-    ],
-
     "words-app-styleguide/react-props-order": "error",
 
     "complexity": [
