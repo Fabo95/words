@@ -4,21 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="added row + added box + added inputWra">
+    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="updated deps">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/eslint-config/react/index.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/eslint-config/react/index.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-config/base/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/eslint-config/base/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-config/browser-env/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/eslint-config/browser-env/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/packages/eslint-config/react/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/eslint-config/react/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-words-app-styleguide/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/packages/eslint-plugin-words-app-styleguide/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-words-app-styleguide/src/rules/noVolatileImport/logicNoVolatileImport.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-words-app-styleguide/src/rules/noVolatileImport/ruleNoVolatileImport.test.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-words-app-styleguide/src/rules/noVolatileImport/ruleNoVolatileImport.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-words-app-styleguide/src/rules/noVolatileImport/utils/noVolatileImportHelpers.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-words-app-styleguide/src/rules/noVolatileImport/utils/noVolatileImportTypes.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-plugin-words-app-styleguide/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/eslint-plugin-words-app-styleguide/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/prettier-config/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/prettier-config/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/service/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/app/[lang]/(loggedOut)/authentication/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/app/[lang]/(loggedOut)/authentication/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/block/authentication/loginCardContent/loginCardContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/block/authentication/loginCardContent/loginCardContent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/block/authentication/registrationCardContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/block/authentication/registrationCardContent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/components/ui/inputWrapper.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/components/ui/inputWrapper.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/service/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -66,6 +61,7 @@
     "npm.eslint-plugin-words-app-styleguide > build.executor": "Run",
     "npm.eslint-plugin-words-app-styleguide > build:clean.executor": "Run",
     "npm.packages:force-node-modules-sync.executor": "Run",
+    "npm.service > dev.executor": "Run",
     "prettierjs.PrettierConfiguration.Package": "/Users/fabianhinz/.npm-global/lib/node_modules/prettier",
     "settings.editor.selected.configurable": "preferences.pluginManager",
     "ts.external.directory.path": "/Users/fabianhinz/Desktop/dev/words/service/node_modules/typescript/lib",
@@ -88,7 +84,7 @@
       <recent name="$PROJECT_DIR$/service/src" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.eslint-plugin-words-app-styleguide &gt; build:clean">
+  <component name="RunManager" selected="npm.service &gt; dev">
     <configuration name="eslint-plugin-words-app-styleguide &gt; build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/packages/eslint-plugin-words-app-styleguide/package.json" />
       <command value="run" />
@@ -119,8 +115,19 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="service &gt; dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/service/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.service &gt; dev" />
         <item itemvalue="npm.eslint-plugin-words-app-styleguide &gt; build:clean" />
         <item itemvalue="npm.eslint-plugin-words-app-styleguide &gt; build" />
         <item itemvalue="npm.packages:force-node-modules-sync" />
@@ -159,7 +166,7 @@
       <workItem from="1721430465703" duration="47587000" />
       <workItem from="1723723865366" duration="139000" />
       <workItem from="1725715535003" duration="57000" />
-      <workItem from="1735408988993" duration="1772000" />
+      <workItem from="1735408988993" duration="3463000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <option name="closed" value="true" />
@@ -273,7 +280,15 @@
       <option name="project" value="LOCAL" />
       <updated>1722115481589</updated>
     </task>
-    <option name="localTasksCounter" value="15" />
+    <task id="LOCAL-00015" summary="updated deps">
+      <option name="closed" value="true" />
+      <created>1735410972857</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1735410972857</updated>
+    </task>
+    <option name="localTasksCounter" value="16" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -299,7 +314,8 @@
     <MESSAGE value="added dropdown-menu.tsx" />
     <MESSAGE value="added theming + recreated UI" />
     <MESSAGE value="added row + added box + added inputWra" />
-    <option name="LAST_COMMIT_MESSAGE" value="added row + added box + added inputWra" />
+    <MESSAGE value="updated deps" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated deps" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -10,7 +10,7 @@
   "peerDependencies": {
     "eslint-plugin-words-app-styleguide": "workspace:*",
     "@words/eslint-config-browser-env": "workspace:*",
-    "eslint-plugin-react": "7.34.3",
+    "eslint-plugin-react": "7.37.3",
     "eslint-plugin-react-hooks": "5.1.0"
   }
 }
