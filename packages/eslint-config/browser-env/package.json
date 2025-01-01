@@ -2,7 +2,8 @@
   "name": "@words/eslint-config-browser-env",
   "version": "1.0.0",
   "description": "Browser environment eslint configuration for words app",
-  "main": "index.json",
+  "type": "module",
+  "main": "eslint.config.js",
   "author": "Fabian Hinz",
   "license": "ISC",
   "dependencies": {

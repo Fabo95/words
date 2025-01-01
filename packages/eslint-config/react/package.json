@@ -1,11 +1,13 @@
 {
   "name": "@words/eslint-config-react",
   "version": "1.0.0",
+  "type": "module",
   "description": "React eslint configuration for words app",
-  "main": "index.json",
+  "main": "eslint.config.js",
   "author": "Fabian Hinz",
   "license": "ISC",
   "dependencies": {
+    "globals": "^15.14.0"
   },
   "peerDependencies": {
     "@words/eslint-config-browser-env": "workspace:*",

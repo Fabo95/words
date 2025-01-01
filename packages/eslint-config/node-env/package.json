@@ -1,8 +1,9 @@
 {
   "name": "@words/eslint-config-node-env",
   "version": "1.0.0",
+  "type": "module",
   "description": "Node environment eslint configuration for words app",
-  "main": "index.json",
+  "main": "eslint.config.js",
   "author": "Fabian Hinz",
   "license": "ISC",
   "dependencies": {
