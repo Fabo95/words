@@ -1,6 +1,8 @@
 import eslintPluginReact from "eslint-plugin-react";
 import eslintPluginReactHooks from "eslint-plugin-react-hooks";
 import eslintConfigBrowserEnv from "@words/eslint-config-browser-env";
+import eslintPluginStylisticJsx from "@stylistic/eslint-plugin-jsx";
+
 import globals from "globals";
 
 export default [
@@ -21,11 +23,12 @@ export default [
       },
     },
     plugins: {
-      "react-hooks": eslintPluginReactHooks,
-      react: eslintPluginReact,
+      "@stylistic-jsx": eslintPluginStylisticJsx,
+      "@react": eslintPluginReact,
     },
     rules: {
       complexity: ["error", 15],
+      "@stylistic-jsx/jsx-indent": ["error", 2],
       "import/no-relative-packages": "error",
       "import/no-absolute-path": "error",
       "import/no-duplicates": "error",
@@ -50,11 +53,10 @@ export default [
           argsIgnorePattern: "^_",
         },
       ],
-      "react/no-array-index-key": "error",
-      "react/self-closing-comp": "error",
-      "react/no-children-prop": 2,
-      "react/no-unknown-property": ["error", { ignore: ["css"] }],
-      "react-hooks/exhaustive-deps": "error",
+      "@react/no-array-index-key": "error",
+      "@react/self-closing-comp": "error",
+      "@react/no-children-prop": 2,
+      "@react/no-unknown-property": ["error", { ignore: ["css"] }],
       "no-restricted-globals": "error",
       ...eslintPluginReactHooks.configs.recommended.rules,
     },

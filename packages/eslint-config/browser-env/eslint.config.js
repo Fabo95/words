@@ -22,15 +22,15 @@ export default [
       },
     },
     plugins: {
-      functional: eslintPluginFunctional,
+      "@functional": eslintPluginFunctional,
     },
     rules: {
-      "functional/prefer-readonly-type": "off",
-      "functional/functional-parameters": "off",
-      "functional/no-expression-statement": "off",
-      "functional/immutable-data": "off",
-      "functional/no-conditional-statement": "off",
-      "functional/no-return-void": "error",
+      "@functional/prefer-readonly-type": "off",
+      "@functional/functional-parameters": "off",
+      "@functional/no-expression-statement": "off",
+      "@functional/immutable-data": "off",
+      "@functional/no-conditional-statement": "off",
+      "@functional/no-return-void": "error",
     },
   },
 ];

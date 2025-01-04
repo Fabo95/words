@@ -6,6 +6,7 @@ import eslintPluginSecurity from "eslint-plugin-security";
 import eslintPluginImport from "eslint-plugin-import";
 import eslintPluginPromise from "eslint-plugin-promise";
 import eslintPluginFilenames from "eslint-plugin-filenames";
+import eslintPluginStylisticTs from "@stylistic/eslint-plugin-ts";
 
 // Migrate to ts? https://github.com/eslint-functional/eslint-plugin-functional/blob/main/GETTING_STARTED.md#with-typescript
 export default [
@@ -23,12 +24,10 @@ export default [
       sourceType: "module",
     },
     plugins: {
-      "@typescript-eslint": eslintPluginTypescript,
-      prettier: eslintPluginPrettier,
-      security: eslintPluginSecurity,
-      filenames: eslintPluginFilenames,
-      import: eslintPluginImport,
-      promise: eslintPluginPromise,
+      "@security": eslintPluginSecurity,
+      "@filenames": eslintPluginFilenames,
+      "@promise": eslintPluginPromise,
+      "@stylisticTs": eslintPluginStylisticTs,
     },
     rules: {
       complexity: ["error", 10],
@@ -37,10 +36,10 @@ export default [
       "arrow-body-style": ["off"],
       "prefer-arrow-callback": ["off"],
       "@typescript-eslint/no-explicit-any": "off",
-      "@typescript-eslint/semi": ["error", "always"],
       "@typescript-eslint/no-inferrable-types": "error",
       "@typescript-eslint/explicit-module-boundary-types": "error",
-      "@typescript-eslint/member-delimiter-style": [
+      "@stylisticTs/semi": ["error", "always"],
+      "@stylisticTs/member-delimiter-style": [
         "error",
         {
           multiline: {
@@ -79,7 +78,7 @@ export default [
         },
       ],
 
-      "filenames/match-regex": 2,
+      "@filenames/match-regex": 2,
 
       "import/first": "error",
       "import/no-duplicates": "error",
@@ -108,23 +107,23 @@ export default [
           ],
         },
       ],
-      "security/detect-object-injection": "error",
-      "security/detect-non-literal-fs-filename": "error",
-      "security/detect-non-literal-regexp": "error",
+      "@security/detect-object-injection": "error",
+      "@security/detect-non-literal-fs-filename": "error",
+      "@security/detect-non-literal-regexp": "error",
 
-      "promise/no-callback-in-promise": "error",
+      "@promise/no-callback-in-promise": "error",
     },
   },
   {
     files: ["**/models/**/*.ts"],
     rules: {
-      "filenames/match-regex": [2, "^([a-z]+|[A-Z][a-z]+)([A-Z][a-z]+)*$"],
+      "@filenames/match-regex": [2, "^([a-z]+|[A-Z][a-z]+)([A-Z][a-z]+)*$"],
     },
   },
   {
     files: ["**/*.d.ts"],
     rules: {
-      "filenames/match-regex": [2, "^([a-z]+)([A-Z][a-z]+)*.d$"],
+      "@filenames/match-regex": [2, "^([a-z]+)([A-Z][a-z]+)*.d$"],
     },
   },
   {

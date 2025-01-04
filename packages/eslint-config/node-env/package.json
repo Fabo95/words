@@ -6,8 +6,6 @@
   "main": "eslint.config.js",
   "author": "Fabian Hinz",
   "license": "ISC",
-  "dependencies": {
-  },
   "peerDependencies": {
     "@words/eslint-config-base": "workspace:*"
   }
