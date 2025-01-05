@@ -1,10 +1,10 @@
 import { ReactNode } from "react";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@app/components/ui/tabs";
-import { getTFunction } from "@app/lib/i18n/tFunction";
-import { Locale } from "@app/lib/locale/localeTypes";
-import { LoginCardContent } from "@app/block/authentication/loginCardContent/loginCardContent";
-import { RegistrationCardContent } from "@app/block/authentication/registrationCardContent";
+import { getTFunction } from "@app/utils/i18n/tFunction";
+import { Locale } from "@app/utils/locale/localeTypes";
+import { LoginCardContent } from "@app/app/[lang]/(loggedOut)/authentication/_content/loginCardContent/loginCardContent";
+import { RegistrationCardContent } from "@app/app/[lang]/(loggedOut)/authentication/_content/registrationCardContent";
 import { Box } from "@app/components/ui/box";
 
 export default async function Authentication({

@@ -7,10 +7,10 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@app/components/ui/card";
 import { Input } from "@app/components/ui/input";
 import { Button } from "@app/components/ui/button";
-import { getTFunction } from "@app/lib/i18n/tFunction";
-import { Locale } from "@app/lib/locale/localeTypes";
-import { LoginFormState } from "@app/block/authentication/loginCardContent/utils/loginCardContentTypes";
-import { getLoginFormSchema } from "@app/block/authentication/loginCardContent/utils/loginCardContentSchema";
+import { getTFunction } from "@app/utils/i18n/tFunction";
+import { Locale } from "@app/utils/locale/localeTypes";
+import { LoginFormState } from "@app/app/[lang]/(loggedOut)/authentication/_content/loginCardContent/utils/loginCardContentTypes";
+import { getLoginFormSchema } from "@app/app/[lang]/(loggedOut)/authentication/_content/loginCardContent/utils/loginCardContentSchema";
 import { InputWrapper } from "@app/components/ui/inputWrapper";
 
 export const LoginCardContent = () => {

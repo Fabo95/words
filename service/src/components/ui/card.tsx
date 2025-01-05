@@ -1,6 +1,6 @@
 import * as React from "react";
 
-import { cn } from "src/lib/shadcn/shadcnHelpers";
+import { cn } from "@app/utils/shadcn/shadcnHelpers";
 
 const Card = React.forwardRef<HTMLDivElement, React.HTMLAttributes<HTMLDivElement>>(({ className, ...props }, ref) => (
     <div className={cn("rounded-xl border bg-card text-card-foreground shadow", className)} ref={ref} {...props} />

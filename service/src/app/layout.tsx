@@ -4,7 +4,7 @@ import "@app/styles/globals.css";
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 
-import { cn } from "@app/lib/shadcn/shadcnHelpers";
+import { cn } from "@app/utils/shadcn/shadcnHelpers";
 import { Toaster } from "@app/components/ui/toaster";
 import { ThemeProvider } from "@app/components/theme/themeProvider";
 import { ModeToggle } from "@app/components/theme/modeToggle";
