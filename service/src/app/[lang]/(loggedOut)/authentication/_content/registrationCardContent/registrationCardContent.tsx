@@ -2,7 +2,7 @@
 import { useCallback } from "react";
 import { useParams } from "next/navigation";
 
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@app/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@app/components/ui/card";
 import { Input } from "@app/components/ui/input";
 import { Button } from "@app/components/ui/button";
 import { getTFunction } from "@app/utils/i18n/tFunction";
