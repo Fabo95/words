@@ -11,13 +11,13 @@ export default async function Authentication({
     params,
 }: {
     children: ReactNode;
-    params: Record<string, Promise<Locale>>;
+    params: Promise<Record<string, Locale>>;
 }) {
     // --- STATE ---
 
-    const t = getTFunction(await params.lang);
+    const { language } = await params;
 
-    console.log("lang", await params.lang);
+    const t = getTFunction(language);
 
     // --- RENDER ---
 
