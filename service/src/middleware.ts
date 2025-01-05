@@ -8,6 +8,8 @@ export const middleware = async (request: NextRequest) => {
 
     const locale = getLocaleFromPathname(request.nextUrl.pathname) || getLocale(request);
 
+    console.log("locale", locale);
+
     const page = getPage(request.nextUrl.pathname);
 
     const validPathname = `/${locale}/${page}`;

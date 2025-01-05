@@ -7,10 +7,17 @@ import { LoginCardContent } from "@app/block/authentication/loginCardContent/log
 import { RegistrationCardContent } from "@app/block/authentication/registrationCardContent";
 import { Box } from "@app/components/ui/box";
 
-export default function Authentication({ params: { lang } }: { children: ReactNode; params: Record<string, Locale> }) {
+export default async function Authentication({
+    params,
+}: {
+    children: ReactNode;
+    params: Record<string, Promise<Locale>>;
+}) {
     // --- STATE ---
 
-    const t = getTFunction(lang);
+    const t = getTFunction(await params.lang);
+
+    console.log("lang", await params.lang);
 
     // --- RENDER ---
 

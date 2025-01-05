@@ -6,8 +6,8 @@ import { Inter } from "next/font/google";
 
 import { cn } from "@app/lib/shadcn/shadcnHelpers";
 import { Toaster } from "@app/components/ui/toaster";
-import { ThemeProvider } from "@app/components/themeProvider";
-import { ModeToggle } from "@app/components/modeToggle";
+import { ThemeProvider } from "@app/components/theme/themeProvider";
+import { ModeToggle } from "@app/components/theme/modeToggle";
 import { Row } from "@app/components/ui/row";
 import { Box } from "@app/components/ui/box";
 
@@ -27,18 +27,18 @@ export default function RootLayout({ children }: RootLayoutProps) {
     return (
         <html lang="en">
             <body className={cn("min-h-screen bg-background font-sans antialiased", interFont.variable)}>
-                <ThemeProvider disableTransitionOnChange enableSystem attribute="class" defaultTheme="system">
+                <ThemeProvider disableTransitionOnChange enableSystem attribute="class" defaultTheme="dark">
                     <Box className="p-5 h-screen">
                         <Row className="w-full ">
-                        <ModeToggle />
-                      </Row>
+                            <ModeToggle />
+                        </Row>
 
                         {children}
-              </Box>
+                    </Box>
 
-                <Toaster />
+                    <Toaster />
                 </ThemeProvider>
-          </body>
-      </html>
+            </body>
+        </html>
     );
 }

@@ -12,6 +12,7 @@ lib
 # next.js
 .next
 .idea
+workspace.xml
 
 # misc
 /.vscode/settings.json

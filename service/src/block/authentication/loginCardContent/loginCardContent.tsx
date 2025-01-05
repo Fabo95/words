@@ -40,8 +40,9 @@ export const LoginCardContent = () => {
                 <CardTitle>{t("pages.authentication.login.title")}</CardTitle>
 
                 <CardDescription>{t("pages.authentication.login.description")}</CardDescription>
-          </CardHeader>
-        <CardContent className="space-y-2">
+            </CardHeader>
+
+            <CardContent className="space-y-2">
                 <InputWrapper
                     className="mb-5"
                     errorMessage={errors.email?.message}
@@ -54,9 +55,9 @@ export const LoginCardContent = () => {
                         type="email"
                         {...register("email")}
                     />
-          </InputWrapper>
+                </InputWrapper>
 
-              <InputWrapper
+                <InputWrapper
                     errorMessage={errors.password?.message}
                     label={t("pages.authentication.login.labelTwo")}
                     name="password"
@@ -65,9 +66,9 @@ export const LoginCardContent = () => {
                 </InputWrapper>
             </CardContent>
 
-        <CardFooter>
+            <CardFooter>
                 <Button>{t("pages.authentication.login.submit")}</Button>
             </CardFooter>
-      </Card>
+        </Card>
     );
 };

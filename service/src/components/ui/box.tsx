@@ -1,4 +1,4 @@
-import { DetailedHTMLProps, HTMLAttributes, ReactNode } from "react";
+import { DetailedHTMLProps, HTMLAttributes, ReactNode, useEffect, useState } from "react";
 
 type BoxProps = {
     className?: string;
@@ -12,6 +12,6 @@ export const Box = ({ className, children, ...props }: BoxProps) => {
         // @ts-ignore
         <div className={`flex flex-col ${className ? className : ""}`} {...props}>
             {children}
-      </div>
+        </div>
     );
 };
