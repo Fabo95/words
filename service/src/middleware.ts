@@ -2,13 +2,16 @@ import type { NextRequest } from "next/server";
 import { NextResponse } from "next/server";
 
 import { getLocale, getLocaleFromPathname, getPage } from "@app/lib/routing/routingHelpers";
+import { apiPostAuthenticate } from "@app/lib/api/apiRequests";
 
 export const middleware = async (request: NextRequest) => {
     const { pathname } = request.nextUrl;
 
     const locale = getLocaleFromPathname(request.nextUrl.pathname) || getLocale(request);
 
-    const page = getPage(request.nextUrl.pathname);
+    const { isAuthenticated } = await apiPostAuthenticate();
+
+    const page = getPage(request.nextUrl.pathname, isAuthenticated);
 
     const validPathname = `/${locale}/${page}`;
 

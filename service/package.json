@@ -5,9 +5,9 @@
   "type": "module",
   "prettier": "@words/prettier-config",
   "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+    "dev": "next dev && NODE_ENV=development",
+    "build": "next build && NODE_ENV=production",
+    "start": "next start && NODE_ENV=production",
     "lint": "next lint"
   },
   "dependencies": {
