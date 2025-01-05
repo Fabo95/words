@@ -16,21 +16,21 @@ export default function Authentication({ params: { lang } }: { children: ReactNo
 
     return (
         <Box className="justify-center pt-16 items-center">
-            <Tabs className="max-w-[400px] w-full" defaultValue="login">
+            <Tabs defaultValue="login" className="max-w-[400px] w-full">
                 <TabsList className="grid w-full grid-cols-2">
                     <TabsTrigger value="login">{t("pages.authentication.login.title")}</TabsTrigger>
 
                     <TabsTrigger value="register">{t("pages.authentication.registration.title")}</TabsTrigger>
-              </TabsList>
+                </TabsList>
 
-            <TabsContent value="login">
-                  <LoginCardContent />
+                <TabsContent value="login">
+                    <LoginCardContent />
                 </TabsContent>
 
                 <TabsContent value="register">
-                <RegistrationCardContent />
+                    <RegistrationCardContent />
                 </TabsContent>
-          </Tabs>
-      </Box>
+            </Tabs>
+        </Box>
     );
 }
