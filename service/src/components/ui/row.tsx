@@ -12,6 +12,6 @@ export const Row = ({ className, children, ...props }: RowProps) => {
         // @ts-ignore
         <div className={`flex flex-row ${className ? className : ""}`} {...props}>
             {children}
-        </div>
+      </div>
     );
 };

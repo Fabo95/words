@@ -24,13 +24,13 @@ export const RegistrationCardContent = () => {
                 <CardTitle>{t("pages.authentication.registration.title")}</CardTitle>
 
                 <CardDescription>{t("pages.authentication.registration.description")}</CardDescription>
-            </CardHeader>
+          </CardHeader>
 
-            <CardContent className="space-y-2">
-                <div className="space-y-1">
+        <CardContent className="space-y-2">
+              <div className="space-y-1">
                     <Label htmlFor="email">{t("pages.authentication.login.labelOne")}</Label>
 
-                    <Input
+                  <Input
                         id="email"
                         placeholder={t("pages.authentication.registration.placeholderOne")}
                         type="email"
@@ -38,21 +38,21 @@ export const RegistrationCardContent = () => {
                 </div>
 
                 <div className="space-y-1">
-                    <Label htmlFor="password">{t("pages.authentication.registration.labelTwo")}</Label>
+            <Label htmlFor="password">{t("pages.authentication.registration.labelTwo")}</Label>
 
-                    <Input id="password" type="password" />
-                </div>
+            <Input id="password" type="password" />
+          </div>
 
-                <div className="space-y-1">
+              <div className="space-y-1">
                     <Label htmlFor="repeat-password">{t("pages.authentication.registration.labelThree")}</Label>
 
-                    <Input id="repeat-password" type="password" />
+                  <Input id="repeat-password" type="password" />
                 </div>
             </CardContent>
 
-            <CardFooter>
+        <CardFooter>
                 <Button>{t("pages.authentication.registration.submit")}</Button>
-            </CardFooter>
-        </Card>
+          </CardFooter>
+      </Card>
     );
 };

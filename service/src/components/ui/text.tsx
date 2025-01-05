@@ -12,6 +12,6 @@ export const Text = ({ className, children, ...props }: TextProps) => {
         // @ts-ignore
         <p className={`leading-relaxed ${className ? className : ""}`} {...props}>
             {children}
-        </p>
+      </p>
     );
 };

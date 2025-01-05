@@ -30,6 +30,6 @@
     },
     "target": "ES2017"
   },
-  "include": ["src/**/*"],
+  "include": ["src/**/*", "tailwind.config.ts", "eslint.config.js"],
   "exclude": ["node_modules", ".next", "build"]
 }

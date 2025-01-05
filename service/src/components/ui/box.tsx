@@ -12,6 +12,6 @@ export const Box = ({ className, children, ...props }: BoxProps) => {
         // @ts-ignore
         <div className={`flex flex-col ${className ? className : ""}`} {...props}>
             {children}
-        </div>
+      </div>
     );
 };

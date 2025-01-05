@@ -27,18 +27,18 @@ export default function RootLayout({ children }: RootLayoutProps) {
     return (
         <html lang="en">
             <body className={cn("min-h-screen bg-background font-sans antialiased", interFont.variable)}>
-                <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
+                <ThemeProvider disableTransitionOnChange enableSystem attribute="class" defaultTheme="system">
                     <Box className="p-5 h-screen">
                         <Row className="w-full ">
-                            <ModeToggle />
-                        </Row>
+                        <ModeToggle />
+                      </Row>
 
                         {children}
-                    </Box>
+              </Box>
 
-                    <Toaster />
+                <Toaster />
                 </ThemeProvider>
-            </body>
-        </html>
+          </body>
+      </html>
     );
 }

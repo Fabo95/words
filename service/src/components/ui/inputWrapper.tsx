@@ -18,11 +18,11 @@ export const InputWrapper = ({ children, className, errorMessage, label, name }:
 
     return (
         <Box className={`w-full space-y-1 ${className ? className : ""}`}>
-            <Label htmlFor={name}>{label}</Label>
+        <Label htmlFor={name}>{label}</Label>
 
-            {children}
+        {children}
 
             {errorMessage && <Text className="text-neutral-100 text-sm">{errorMessage}</Text>}
-        </Box>
+      </Box>
     );
 };
