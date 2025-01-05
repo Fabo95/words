@@ -8,7 +8,7 @@ export default [
         plugins: {
             "@no-relative-import-paths": eslintPluginNoRelativeImportPaths,
         },
-        files: ["**/*.{ts,tsx}"],
+        files: ["**/*.{ts, js, tsx}"],
         ignores: [".next/**", "node_modules", "**/*.js", "**/*.typegen.ts", "**/*.css"],
         languageOptions: {
             parser: typescriptEslintParser,
@@ -20,7 +20,6 @@ export default [
         },
         rules: {
             "@no-relative-import-paths/no-relative-import-paths": "error",
-            "@filenames/match-regex": "off",
             "compat/compat": "off",
             "@typescript-eslint/no-unnecessary-type-constraint": "off",
             "@typescript-eslint/naming-convention": "off",

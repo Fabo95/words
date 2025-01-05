@@ -10,9 +10,9 @@ export default [
   eslintPluginReact.configs.flat.recommended,
   eslintPluginReact.configs.flat["jsx-runtime"],
   {
-    files: ["**/*.{js,jsx,ts,tsx}"],
     languageOptions: {
       parserOptions: {
+        projectService: true,
         ecmaFeatures: {
           jsx: true,
         },
