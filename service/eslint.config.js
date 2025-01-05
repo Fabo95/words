@@ -9,6 +9,7 @@ export default [
             "@no-relative-import-paths": eslintPluginNoRelativeImportPaths,
         },
         files: ["**/*.{ts,tsx}"],
+        ignores: [".next/**", "node_modules", "**/*.js", "**/*.typegen.ts", "**/*.css"],
         rules: {
             "@no-relative-import-paths/no-relative-import-paths": "error",
             "@filenames/match-regex": "off",
@@ -52,7 +53,6 @@ export default [
                 project: "./tsconfig.json",
             },
         },
-        ignores: ["**/*.js", "**/*.typegen.ts", "**/*.css"],
         settings: {
             "import/resolver": {
                 typescript: {

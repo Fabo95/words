@@ -1,5 +1,4 @@
 import eslint from "@eslint/js";
-import * as eslintTypescriptParser from "@typescript-eslint/parser";
 import eslintPluginPrettier from "eslint-plugin-prettier/recommended";
 import eslintPluginTypescript from "typescript-eslint";
 import eslintPluginSecurity from "eslint-plugin-security";
@@ -7,10 +6,16 @@ import eslintPluginImport from "eslint-plugin-import";
 import eslintPluginPromise from "eslint-plugin-promise";
 import eslintPluginFilenames from "eslint-plugin-filenames";
 import eslintPluginStylisticTs from "@stylistic/eslint-plugin-ts";
+import { dirname } from "node:path";
+import { fileURLToPath } from "node:url";
+
+// See: https://stackoverflow.com/questions/46745014/alternative-for-dirname-in-node-js-when-using-es6-modules
+const __dirname = dirname(fileURLToPath(import.meta.url));
 
 // Migrate to ts? https://github.com/eslint-functional/eslint-plugin-functional/blob/main/GETTING_STARTED.md#with-typescript
 export default [
   ...eslintPluginTypescript.configs.recommended,
+  ...eslintPluginTypescript.configs.recommendedTypeChecked,
   eslint.configs.recommended,
   eslintPluginSecurity.configs.recommended,
   eslintPluginImport.flatConfigs.recommended,
@@ -18,10 +23,11 @@ export default [
   // Any other config imports go at the top
   eslintPluginPrettier,
   {
-    files: ["**/*.{ts,tsx}"],
     languageOptions: {
-      parser: eslintTypescriptParser,
-      sourceType: "module",
+      parserOptions: {
+        projectService: true,
+        tsconfigRootDir: __dirname,
+      },
     },
     plugins: {
       "@security": eslintPluginSecurity,
@@ -79,7 +85,6 @@ export default [
       ],
 
       "@filenames/match-regex": 2,
-
       "import/first": "error",
       "import/no-duplicates": "error",
       "import/newline-after-import": "error",
@@ -110,20 +115,7 @@ export default [
       "@security/detect-object-injection": "error",
       "@security/detect-non-literal-fs-filename": "error",
       "@security/detect-non-literal-regexp": "error",
-
       "@promise/no-callback-in-promise": "error",
-    },
-  },
-  {
-    files: ["**/models/**/*.ts"],
-    rules: {
-      "@filenames/match-regex": [2, "^([a-z]+|[A-Z][a-z]+)([A-Z][a-z]+)*$"],
-    },
-  },
-  {
-    files: ["**/*.d.ts"],
-    rules: {
-      "@filenames/match-regex": [2, "^([a-z]+)([A-Z][a-z]+)*.d$"],
     },
   },
   {
