@@ -1,0 +1,29 @@
+{
+    "pages": {
+        "authentication": {
+            "login": {
+                "title": "Login",
+                "description": "Logge dich in deinen Account ein.",
+                "labelOne": "E-Mail",
+                "labelTwo": "Passwort",
+                "placeholderOne": "Gib deine E-Mail an.",
+                "placeholderTwo": "Gib dein Password an.",
+                "submit": "Login",
+                "errorMessage": {
+                    "email": "Bitte gib eine E-Mail an.",
+                    "password": "Bitte gib mindestens 8 Zeichen an."
+                }
+            },
+            "registration": {
+                "title": "Registrierung",
+                "description": "Registriere dich jetzt.",
+                "labelOne": "E-Mail",
+                "labelTwo": "Passwort",
+                "labelThree": "Password wiederholen",
+                "placeholderOne": "Gibe deine E-Mail an.",
+                "placeholderTwo": "Gib dein Password an.",
+                "submit": "Weiter"
+            }
+        }
+    }
+}

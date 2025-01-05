@@ -1,0 +1,29 @@
+{
+    "pages": {
+        "authentication": {
+            "login": {
+                "title": "Login",
+                "description": "Log in to your account.",
+                "labelOne": "Email",
+                "labelTwo": "Password",
+                "placeholderOne": "Enter your email.",
+                "placeholderTwo": "Enter your password.",
+                "submit": "Login",
+                "errorMessage": {
+                    "email": "Please enter a email.",
+                    "password": "Please enter at least 8 characters."
+                }
+            },
+            "registration": {
+                "title": "Registration",
+                "description": "Register now.",
+                "labelOne": "Email",
+                "labelTwo": "Password",
+                "labelThree": "Repeat password",
+                "placeholderOne": "Enter your email.",
+                "placeholderTwo": "Enter your password.",
+                "submit": "Continue"
+            }
+        }
+    }
+}
