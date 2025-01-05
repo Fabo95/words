@@ -2,7 +2,7 @@ import eslintPluginReact from "eslint-plugin-react";
 import eslintPluginReactHooks from "eslint-plugin-react-hooks";
 import eslintConfigBrowserEnv from "@words/eslint-config-browser-env";
 import eslintPluginStylisticJsx from "@stylistic/eslint-plugin-jsx";
-
+import { fixupPluginRules } from "@eslint/compat";
 import globals from "globals";
 
 export default [
@@ -25,6 +25,7 @@ export default [
     plugins: {
       "@stylistic-jsx": eslintPluginStylisticJsx,
       "@react": eslintPluginReact,
+      "react-hooks": fixupPluginRules(eslintPluginReactHooks),
     },
     rules: {
       complexity: ["error", 15],
@@ -57,6 +58,15 @@ export default [
       "@react/self-closing-comp": "error",
       "@react/no-children-prop": 2,
       "@react/no-unknown-property": ["error", { ignore: ["css"] }],
+      "react/jsx-sort-props": [
+        "error",
+        {
+          callbacksLast: true,
+          shorthandFirst: true,
+          multiline: "last",
+          ignoreCase: true,
+        },
+      ],
       "no-restricted-globals": "error",
       ...eslintPluginReactHooks.configs.recommended.rules,
     },

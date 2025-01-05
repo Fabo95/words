@@ -34,13 +34,14 @@
     "zod": "3.24.1"
   },
   "devDependencies": {
+    "@eslint/compat": "^1.2.4",
     "@eslint/js": "^9.17.0",
     "@stylistic/eslint-plugin-jsx": "^2.12.1",
     "@stylistic/eslint-plugin-ts": "^2.12.1",
     "@types/negotiator": "^0.6.3",
     "@types/node": "^22.10.2",
-    "@types/react": "19.0.2",
-    "@types/react-dom": "19.0.2",
+    "@types/react": "18.2.23",
+    "@types/react-dom": "18.3.5",
     "@typescript-eslint/eslint-plugin": "8.18.2",
     "@typescript-eslint/parser": "8.18.2",
     "@words/eslint-config-base": "file:../packages/eslint-config/base",

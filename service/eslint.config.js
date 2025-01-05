@@ -8,6 +8,7 @@ export default [
         plugins: {
             "@no-relative-import-paths": eslintPluginNoRelativeImportPaths,
         },
+        files: ["**/*.{ts,tsx}"],
         rules: {
             "@no-relative-import-paths/no-relative-import-paths": "error",
             "@filenames/match-regex": "off",
@@ -46,6 +47,8 @@ export default [
         languageOptions: {
             parser: typescriptEslintParser,
             parserOptions: {
+                ecmaVersion: 2020,
+                sourceType: "module",
                 project: "./tsconfig.json",
             },
         },
