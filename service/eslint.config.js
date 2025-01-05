@@ -10,6 +10,14 @@ export default [
         },
         files: ["**/*.{ts,tsx}"],
         ignores: [".next/**", "node_modules", "**/*.js", "**/*.typegen.ts", "**/*.css"],
+        languageOptions: {
+            parser: typescriptEslintParser,
+            parserOptions: {
+                ecmaVersion: 2020,
+                sourceType: "module",
+                project: "./tsconfig.json",
+            },
+        },
         rules: {
             "@no-relative-import-paths/no-relative-import-paths": "error",
             "@filenames/match-regex": "off",
@@ -45,14 +53,7 @@ export default [
             "@typescript-eslint/no-non-null-assertion": "off",
             "@typescript-eslint/no-non-null-asserted-optional-chain": "off",
         },
-        languageOptions: {
-            parser: typescriptEslintParser,
-            parserOptions: {
-                ecmaVersion: 2020,
-                sourceType: "module",
-                project: "./tsconfig.json",
-            },
-        },
+
         settings: {
             "import/resolver": {
                 typescript: {
