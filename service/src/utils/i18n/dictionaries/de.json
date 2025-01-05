@@ -19,10 +19,15 @@
                 "description": "Registriere dich jetzt.",
                 "labelOne": "E-Mail",
                 "labelTwo": "Passwort",
-                "labelThree": "Password wiederholen",
+                "labelThree": "Password bestätigen",
                 "placeholderOne": "Gibe deine E-Mail an.",
                 "placeholderTwo": "Gib dein Password an.",
-                "submit": "Weiter"
+                "placeholderThree": "Bestätige dein Password.",
+                "submit": "Weiter",
+                "errorMessage": {
+                    "email": "Bitte gib eine E-Mail an.",
+                    "password": "Bitte gib mindestens 8 Zeichen an."
+                }
             }
         }
     }

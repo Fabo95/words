@@ -19,10 +19,15 @@
                 "description": "Register now.",
                 "labelOne": "Email",
                 "labelTwo": "Password",
-                "labelThree": "Repeat password",
+                "labelThree": "Confirm password",
                 "placeholderOne": "Enter your email.",
                 "placeholderTwo": "Enter your password.",
-                "submit": "Continue"
+                "placeholderThree": "Confirm your password.",
+                "submit": "Continue",
+                "errorMessage": {
+                    "email": "Please enter a email.",
+                    "password": "Please enter at least 8 characters."
+                }
             }
         }
     }
