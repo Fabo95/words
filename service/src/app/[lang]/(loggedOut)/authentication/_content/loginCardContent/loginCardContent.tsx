@@ -3,15 +3,17 @@
 import { useParams } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { useCallback } from "react";
 
-import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@app/components/ui/card";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@app/components/ui/card";
 import { Input } from "@app/components/ui/input";
 import { Button } from "@app/components/ui/button";
 import { getTFunction } from "@app/utils/i18n/tFunction";
 import { Locale } from "@app/utils/locale/localeTypes";
 import { LoginFormState } from "@app/app/[lang]/(loggedOut)/authentication/_content/loginCardContent/utils/loginCardContentTypes";
 import { getLoginFormSchema } from "@app/app/[lang]/(loggedOut)/authentication/_content/loginCardContent/utils/loginCardContentSchema";
-import { InputWrapper } from "@app/components/ui/inputWrapper";
+import { Form, FormProvider } from "@app/components/ui/form";
+import { FormField } from "@app/components/ui/formField";
 
 export const LoginCardContent = () => {
     // --- STATE ---
@@ -20,10 +22,7 @@ export const LoginCardContent = () => {
 
     const t = getTFunction(lang);
 
-    const {
-        formState: { errors },
-        register,
-    } = useForm<LoginFormState>({
+    const form = useForm<LoginFormState>({
         defaultValues: {
             email: "",
             password: "",
@@ -31,6 +30,12 @@ export const LoginCardContent = () => {
         mode: "onBlur",
         resolver: zodResolver(getLoginFormSchema(t)),
     });
+
+    // --- CALLBACKS ---
+
+    const onSubmit = useCallback((values: LoginFormState) => {
+        console.log(values);
+    }, []);
 
     // --- RENDER ---
 
@@ -43,32 +48,29 @@ export const LoginCardContent = () => {
             </CardHeader>
 
             <CardContent className="space-y-2">
-                <InputWrapper
-                    className="mb-5"
-                    errorMessage={errors.email?.message}
-                    label={t("pages.authentication.login.labelOne")}
-                    name="email"
-                >
-                    <Input
-                        id="email"
-                        placeholder={t("pages.authentication.login.placeholderOne")}
-                        type="email"
-                        {...register("email")}
-                    />
-                </InputWrapper>
+                <FormProvider {...form}>
+                    <Form onSubmit={form.handleSubmit(onSubmit)}>
+                        <FormField
+                            className="mb-5"
+                            control={form.control}
+                            label={t("pages.authentication.login.labelOne")}
+                            name="email"
+                            input={Input}
+                            placeholder={t("pages.authentication.login.placeholderOne")}
+                        />
 
-                <InputWrapper
-                    errorMessage={errors.password?.message}
-                    label={t("pages.authentication.login.labelTwo")}
-                    name="password"
-                >
-                    <Input id="password" type="password" {...register("password")} />
-                </InputWrapper>
+                        <FormField
+                            control={form.control}
+                            label={t("pages.authentication.login.labelTwo")}
+                            placeholder={t("pages.authentication.login.placeholderTwo")}
+                            name="password"
+                            input={Input}
+                        />
+
+                        <Button className="mt-5">{t("pages.authentication.login.submit")}</Button>
+                    </Form>
+                </FormProvider>
             </CardContent>
-
-            <CardFooter>
-                <Button>{t("pages.authentication.login.submit")}</Button>
-            </CardFooter>
         </Card>
     );
 };
