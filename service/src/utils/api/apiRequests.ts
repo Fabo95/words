@@ -8,3 +8,19 @@ export const apiPostAuthenticate = async (): Promise<any> =>
             method: HttpMethod.POST,
         })
     ).then((data) => data.json());
+
+export const apiPostUserLogin = async (body: { email: string; password: string }): Promise<any> =>
+    fetch(
+        `${API_BASE_URL}/user/login`,
+        getFetchOptions({
+            body,
+            method: HttpMethod.POST,
+        })
+    ).then(responseHandler);
+
+export const responseHandler = (response: Response) => {
+    if (response.ok) {
+        return response.json();
+    }
+    return Promise.reject(response);
+};

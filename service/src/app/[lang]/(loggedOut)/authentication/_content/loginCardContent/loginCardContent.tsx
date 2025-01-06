@@ -14,9 +14,13 @@ import { LoginFormState } from "@app/app/[lang]/(loggedOut)/authentication/_cont
 import { getLoginFormSchema } from "@app/app/[lang]/(loggedOut)/authentication/_content/loginCardContent/utils/loginCardContentSchema";
 import { Form, FormProvider } from "@app/components/ui/form";
 import { FormField } from "@app/components/ui/formField";
+import { apiPostUserLogin } from "@app/utils/api/apiRequests";
+import { useToast } from "@app/components/ui/use-toast";
 
 export const LoginCardContent = () => {
     // --- STATE ---
+
+    const { toast } = useToast();
 
     const { lang } = useParams<Record<"lang", Locale>>();
 
@@ -33,11 +37,20 @@ export const LoginCardContent = () => {
 
     // --- CALLBACKS ---
 
-    const onSubmit = useCallback((values: LoginFormState) => {
-        console.log(values);
+    const onSubmit = useCallback(async (values: LoginFormState) => {
+        try {
+            await apiPostUserLogin(values);
+        } catch (e) {
+            toast({
+                title: "Scheduled: Catch up",
+                description: "Friday, February 10, 2023 at 5:57 PM",
+            });
+        }
     }, []);
 
     // --- RENDER ---
+
+    console.log("is", form.formState.isValid);
 
     return (
         <Card>
@@ -67,7 +80,9 @@ export const LoginCardContent = () => {
                             input={Input}
                         />
 
-                        <Button className="mt-5">{t("pages.authentication.login.submit")}</Button>
+                        <Button disabled={!form.formState.isValid} className="mt-5">
+                            {t("pages.authentication.login.submit")}
+                        </Button>
                     </Form>
                 </FormProvider>
             </CardContent>

@@ -1,14 +1,15 @@
 "use client";
 import { useCallback } from "react";
+
 import { useParams } from "next/navigation";
+import { useForm } from "react-hook-form";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@app/components/ui/card";
 import { Input } from "@app/components/ui/input";
 import { Button } from "@app/components/ui/button";
 import { getTFunction } from "@app/utils/i18n/tFunction";
 import { Locale } from "@app/utils/locale/localeTypes";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
 import { getRegistrationFormSchema } from "@app/app/[lang]/(loggedOut)/authentication/_content/registrationCardContent/utils/registrationCardContentSchema";
 import { RegistrationFormState } from "@app/app/[lang]/(loggedOut)/authentication/_content/registrationCardContent/utils/registrationCardContentTypes";
 import { Form, FormProvider } from "@app/components/ui/form";
@@ -54,26 +55,26 @@ export const RegistrationCardContent = () => {
                         <FormField
                             className="mb-5"
                             control={form.control}
+                            input={Input}
                             label={t("pages.authentication.registration.labelOne")}
                             name="email"
-                            input={Input}
                             placeholder={t("pages.authentication.registration.placeholderOne")}
                         />
 
                         <FormField
                             className="mb-5"
                             control={form.control}
+                            input={Input}
                             label={t("pages.authentication.registration.labelTwo")}
                             name="password"
-                            input={Input}
                             placeholder={t("pages.authentication.registration.placeholderTwo")}
                         />
 
                         <FormField
                             control={form.control}
+                            input={Input}
                             label={t("pages.authentication.registration.labelThree")}
                             name="confirmPassword"
-                            input={Input}
                             placeholder={t("pages.authentication.registration.placeholderThree")}
                         />
 
