@@ -1,7 +1,7 @@
 "use client";
 
 import { useCallback } from "react";
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
@@ -16,6 +16,7 @@ import { Form, FormProvider } from "@app/components/ui/form";
 import { FormField } from "@app/components/ui/formField";
 import { apiPostUserLogin } from "@app/utils/api/apiRequests";
 import { useToast } from "@app/components/ui/use-toast";
+import { Page } from "@app/utils/routing/routingTypes";
 
 export const LoginCardContent = () => {
     // --- STATE ---
@@ -25,6 +26,7 @@ export const LoginCardContent = () => {
     const { lang } = useParams<Record<"lang", Locale>>();
 
     const t = getTFunction(lang);
+    const router = useRouter();
 
     const form = useForm<LoginFormState>({
         defaultValues: {
@@ -40,17 +42,19 @@ export const LoginCardContent = () => {
     const onSubmit = useCallback(async (values: LoginFormState) => {
         try {
             await apiPostUserLogin(values);
+
+            router.push(`/${Page.HOME}`);
         } catch (e) {
             toast({
-                title: "Scheduled: Catch up",
-                description: "Friday, February 10, 2023 at 5:57 PM",
+                title: t("pages.authentication.login.error.toastTitle"),
+                description: t("pages.authentication.login.error.toastDescription"),
             });
+
+            return e;
         }
     }, []);
 
     // --- RENDER ---
-
-    console.log("is", form.formState.isValid);
 
     return (
         <Card>
@@ -81,7 +85,7 @@ export const LoginCardContent = () => {
                         />
 
                         <Button disabled={!form.formState.isValid} className="mt-5">
-                            {t("pages.authentication.login.submit")}
+                            {t("pages.authentication.login.button")}
                         </Button>
                     </Form>
                 </FormProvider>

@@ -9,7 +9,9 @@ export const middleware = async (request: NextRequest) => {
 
     const locale = getLocaleFromPathname(request.nextUrl.pathname) || getLocale(request);
 
-    const { isAuthenticated } = await apiPostAuthenticate();
+    const authCookie = request.cookies.get("auth-cookie");
+
+    const { isAuthenticated } = await apiPostAuthenticate(authCookie?.value);
 
     const page = getPage(request.nextUrl.pathname, isAuthenticated);
 

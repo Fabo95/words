@@ -8,10 +8,13 @@
                 "labelTwo": "Passwort",
                 "placeholderOne": "Gib deine E-Mail an.",
                 "placeholderTwo": "Gib dein Password an.",
-                "submit": "Login",
-                "errorMessage": {
+                "button": "Login",
+                "error": {
+                    "emailDoesNotExist": "Diese E-Mail existiert nicht.",
                     "email": "Bitte gib eine E-Mail an.",
-                    "password": "Bitte gib mindestens 8 Zeichen an."
+                    "password": "Bitte gib mindestens 8 Zeichen an.",
+                    "toastTitle": "Login fehlgeschlagen",
+                    "toastDescription": "Bitte überprüfe deine E-Mail und dein eingegebenes Passwort."
                 }
             },
             "registration": {
@@ -20,13 +23,16 @@
                 "labelOne": "E-Mail",
                 "labelTwo": "Passwort",
                 "labelThree": "Password bestätigen",
-                "placeholderOne": "Gibe deine E-Mail an.",
+                "placeholderOne": "Gib deine E-Mail an.",
                 "placeholderTwo": "Gib dein Password an.",
                 "placeholderThree": "Bestätige dein Password.",
-                "submit": "Weiter",
-                "errorMessage": {
+                "button": "Weiter",
+                "error": {
+                    "emailDoesExist": "Diese E-Mail existiert bereits.",
                     "email": "Bitte gib eine E-Mail an.",
-                    "password": "Bitte gib mindestens 8 Zeichen an."
+                    "password": "Bitte gib mindestens 8 Zeichen an.",
+                    "toastTitle": "Registrierung fehlgeschlagen",
+                    "toastDescription": "Bitte überprüfe deine E-Mail und dein eingegebenes Passwort."
                 }
             }
         }

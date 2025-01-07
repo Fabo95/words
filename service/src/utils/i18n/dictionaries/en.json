@@ -8,10 +8,13 @@
                 "labelTwo": "Password",
                 "placeholderOne": "Enter your email.",
                 "placeholderTwo": "Enter your password.",
-                "submit": "Login",
-                "errorMessage": {
+                "button": "Login",
+                "error": {
+                    "emailDoesNotExist": "This email does not exist.",
                     "email": "Please enter a email.",
-                    "password": "Please enter at least 8 characters."
+                    "password": "Please enter at least 8 characters.",
+                    "toastTitle": "Login failed",
+                    "toastDescription": "Please check you e-mail and your password."
                 }
             },
             "registration": {
@@ -23,10 +26,13 @@
                 "placeholderOne": "Enter your email.",
                 "placeholderTwo": "Enter your password.",
                 "placeholderThree": "Confirm your password.",
-                "submit": "Continue",
-                "errorMessage": {
+                "button": "Continue",
+                "error": {
+                    "emailDoesNotExist": "This email does exist.",
                     "email": "Please enter a email.",
-                    "password": "Please enter at least 8 characters."
+                    "password": "Please enter at least 8 characters.",
+                    "toastTitle": "Registration failed",
+                    "toastDescription": "Please check you e-mail and your password."
                 }
             }
         }

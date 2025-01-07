@@ -18,6 +18,7 @@ export const getFetchOptions = ({
     method,
     body: JSON.stringify(body),
     cache: cache || "no-cache",
+    credentials: "include",
     headers: {
         "Content-Type": "application/json",
         ...headers,
