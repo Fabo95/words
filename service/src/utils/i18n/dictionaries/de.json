@@ -11,10 +11,11 @@
                 "button": "Login",
                 "error": {
                     "emailDoesNotExist": "Diese E-Mail existiert nicht.",
+                    "passwordDoesNotMatch": "Das Password ist nicht korrekt.",
                     "email": "Bitte gib eine E-Mail an.",
                     "password": "Bitte gib mindestens 8 Zeichen an.",
                     "toastTitle": "Login fehlgeschlagen",
-                    "toastDescription": "Bitte überprüfe deine E-Mail und dein eingegebenes Passwort."
+                    "toastDescription": "Bitte versuche es erneut."
                 }
             },
             "registration": {
@@ -29,10 +30,11 @@
                 "button": "Weiter",
                 "error": {
                     "emailDoesExist": "Diese E-Mail existiert bereits.",
+                    "passwordDoesNotMatch": "Das Password ist nicht korrekt.",
                     "email": "Bitte gib eine E-Mail an.",
                     "password": "Bitte gib mindestens 8 Zeichen an.",
                     "toastTitle": "Registrierung fehlgeschlagen",
-                    "toastDescription": "Bitte überprüfe deine E-Mail und dein eingegebenes Passwort."
+                    "toastDescription": "Bitte versuche es erneut."
                 }
             }
         }

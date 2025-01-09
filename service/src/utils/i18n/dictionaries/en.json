@@ -11,10 +11,11 @@
                 "button": "Login",
                 "error": {
                     "emailDoesNotExist": "This email does not exist.",
+                    "passwordDoesNotMatch": "Password is not correct.",
                     "email": "Please enter a email.",
                     "password": "Please enter at least 8 characters.",
                     "toastTitle": "Login failed",
-                    "toastDescription": "Please check you e-mail and your password."
+                    "toastDescription": "Please try again."
                 }
             },
             "registration": {
@@ -29,10 +30,11 @@
                 "button": "Continue",
                 "error": {
                     "emailDoesNotExist": "This email does exist.",
+                    "passwordDoesNotMatch": "Password is not correct.",
                     "email": "Please enter a email.",
                     "password": "Please enter at least 8 characters.",
                     "toastTitle": "Registration failed",
-                    "toastDescription": "Please check you e-mail and your password."
+                    "toastDescription": "Please try again."
                 }
             }
         }

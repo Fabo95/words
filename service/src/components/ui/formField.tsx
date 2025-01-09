@@ -1,5 +1,6 @@
 import * as React from "react";
 import { Control, FieldValues, Path } from "react-hook-form";
+import { HTMLInputTypeAttribute } from "react";
 
 import {
     FormControl,
@@ -19,6 +20,7 @@ type FormFieldProps<TFieldValues extends FieldValues = FieldValues, TContext = a
     placeholder?: string;
     // Make a proper type for this.
     input: typeof Input;
+    inputType?: HTMLInputTypeAttribute | undefined;
     description?: string;
 };
 
@@ -29,6 +31,7 @@ export const FormField = <TFieldValues extends FieldValues = FieldValues, TConte
     label,
     placeholder,
     input: Input,
+    inputType,
     description,
 }: FormFieldProps<TFieldValues, TContext>) => {
     return (
@@ -39,7 +42,7 @@ export const FormField = <TFieldValues extends FieldValues = FieldValues, TConte
                 <FormItem className={className}>
                     <FormLabel>{label}</FormLabel>
                     <FormControl>
-                        <Input placeholder={placeholder} {...field} />
+                        <Input type={inputType} placeholder={placeholder} {...field} />
                     </FormControl>
 
                     {description && <FormDescription>{description}</FormDescription>}

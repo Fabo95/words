@@ -44,13 +44,17 @@ export const LoginCardContent = () => {
             await apiPostUserLogin(values);
 
             router.push(`/${Page.HOME}`);
-        } catch (e) {
+        } catch (errorResponse) {
+            if (errorResponse.status === 401) {
+                form.setError("password", { message: t("pages.authentication.login.error.passwordDoesNotMatch") });
+
+                return;
+            }
+
             toast({
                 title: t("pages.authentication.login.error.toastTitle"),
                 description: t("pages.authentication.login.error.toastDescription"),
             });
-
-            return e;
         }
     }, []);
 
@@ -81,6 +85,7 @@ export const LoginCardContent = () => {
                             label={t("pages.authentication.login.labelTwo")}
                             placeholder={t("pages.authentication.login.placeholderTwo")}
                             name="password"
+                            inputType="password"
                             input={Input}
                         />
 
