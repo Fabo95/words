@@ -6,7 +6,7 @@ import { VariantProps, cva } from "class-variance-authority";
 import { Button } from "src/components/ui/button";
 import { Input } from "src/components/ui/input";
 import { Separator } from "src/components/ui/separator";
-import { Sheet, SheetContent, SheetTitle } from "src/components/ui/sheet";
+import { Sheet, SheetContent } from "src/components/ui/sheet";
 import { Skeleton } from "src/components/ui/skeleton";
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "src/components/ui/tooltip";
 import { ViewVerticalIcon } from "@radix-ui/react-icons";
@@ -154,15 +154,12 @@ const Sidebar = React.forwardRef<
         );
     }
 
-    // https://github.com/shadcn-ui/ui/issues/5746#issuecomment-2461248985
     if (isMobile) {
         return (
             <Sheet open={openMobile} onOpenChange={setOpenMobile} {...props}>
-                <SheetTitle className="hidden"></SheetTitle>
                 <SheetContent
                     data-sidebar="sidebar"
                     data-mobile="true"
-                    aria-describedby=""
                     className="w-[--sidebar-width] bg-sidebar p-0 text-sidebar-foreground [&>button]:hidden"
                     style={
                         {
