@@ -17,10 +17,8 @@ export default async function Layout({ children }: { children: ReactNode }) {
             <AppSidebar />
 
             <SidebarInset>
-                <main>
-                    <SidebarTrigger />
-                    {children}
-                </main>
+                <SidebarTrigger />
+                {children}
             </SidebarInset>
         </SidebarProvider>
     );
