@@ -1,7 +1,7 @@
 "use client";
 import { useCallback } from "react";
 
-import { useParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
@@ -13,15 +13,20 @@ import { Locale } from "@app/utils/locale/localeTypes";
 import { getRegistrationFormSchema } from "@app/app/[lang]/(loggedOut)/authentication/_content/registrationCardContent/utils/registrationCardContentSchema";
 import { RegistrationFormState } from "@app/app/[lang]/(loggedOut)/authentication/_content/registrationCardContent/utils/registrationCardContentTypes";
 import { Form, FormProvider } from "@app/components/ui/form";
-import { LoginFormState } from "@app/app/[lang]/(loggedOut)/authentication/_content/loginCardContent/utils/loginCardContentTypes";
 import { FormField } from "@app/components/ui/formField";
+import { apiPostUserCreate } from "@app/utils/api/apiRequests";
+import { Page } from "@app/utils/routing/routingTypes";
+import { useToast } from "@app/components/ui/use-toast";
 
 export const RegistrationCardContent = () => {
     // --- STATE ---
 
+    const { toast } = useToast();
+
     const { lang } = useParams<Record<"lang", Locale>>();
 
     const t = getTFunction(lang);
+    const router = useRouter();
 
     const form = useForm<RegistrationFormState>({
         defaultValues: {
@@ -35,9 +40,29 @@ export const RegistrationCardContent = () => {
 
     // --- CALLBACKS ---
 
-    const onSubmit = useCallback((values: LoginFormState) => {
-        console.log(values);
-    }, []);
+    const onSubmit = useCallback(
+        async (values: RegistrationFormState) => {
+            try {
+                await apiPostUserCreate(values);
+
+                router.push(`/${Page.HOME}`);
+            } catch (errorResponse) {
+                if (errorResponse.status === 401) {
+                    form.setError("confirmPassword", {
+                        message: t("pages.authentication.registration.error.passwordDoesNotMatch"),
+                    });
+
+                    return;
+                }
+
+                toast({
+                    title: t("pages.authentication.registration.error.toastTitle"),
+                    description: t("pages.authentication.registration.error.toastDescription"),
+                });
+            }
+        },
+        [form]
+    );
 
     // --- RENDER ---
 
@@ -67,6 +92,7 @@ export const RegistrationCardContent = () => {
                             input={Input}
                             label={t("pages.authentication.registration.labelTwo")}
                             name="password"
+                            inputType="password"
                             placeholder={t("pages.authentication.registration.placeholderTwo")}
                         />
 
@@ -75,10 +101,13 @@ export const RegistrationCardContent = () => {
                             input={Input}
                             label={t("pages.authentication.registration.labelThree")}
                             name="confirmPassword"
+                            inputType="password"
                             placeholder={t("pages.authentication.registration.placeholderThree")}
                         />
 
-                        <Button className="mt-5">{t("pages.authentication.registration.submit")}</Button>
+                        <Button disabled={!form.formState.isValid} className="mt-5">
+                            {t("pages.authentication.registration.button")}
+                        </Button>
                     </Form>
                 </FormProvider>
             </CardContent>

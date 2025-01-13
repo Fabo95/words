@@ -30,7 +30,7 @@
                 "button": "Weiter",
                 "error": {
                     "emailDoesExist": "Diese E-Mail existiert bereits.",
-                    "passwordDoesNotMatch": "Das Password ist nicht korrekt.",
+                    "passwordDoesNotMatch": "Passwörter stimmen nicht überein.",
                     "email": "Bitte gib eine E-Mail an.",
                     "password": "Bitte gib mindestens 8 Zeichen an.",
                     "toastTitle": "Registrierung fehlgeschlagen",

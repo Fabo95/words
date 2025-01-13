@@ -30,7 +30,7 @@
                 "button": "Continue",
                 "error": {
                     "emailDoesNotExist": "This email does exist.",
-                    "passwordDoesNotMatch": "Password is not correct.",
+                    "passwordDoesNotMatch": "Passwords do not match.",
                     "email": "Please enter a email.",
                     "password": "Please enter at least 8 characters.",
                     "toastTitle": "Registration failed",

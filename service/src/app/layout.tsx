@@ -29,7 +29,7 @@ export default function RootLayout({ children }: RootLayoutProps) {
             <body className={cn("min-h-screen bg-background font-sans antialiased", interFont.variable)}>
                 <ThemeProvider disableTransitionOnChange enableSystem attribute="class" defaultTheme="dark">
                     <Box className="p-5 h-screen">
-                        <Row className="w-full ">
+                        <Row className="absolute top-5 right-5">
                             <ModeToggle />
                         </Row>
 

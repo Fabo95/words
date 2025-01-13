@@ -20,6 +20,19 @@ export const apiPostUserLogin = async (body: { email: string; password: string }
         })
     ).then(responseHandler);
 
+export const apiPostUserCreate = async (body: {
+    email: string;
+    password: string;
+    confirmPassword: string;
+}): Promise<any> =>
+    fetch(
+        `${API_BASE_URL}/user/create`,
+        getFetchOptions({
+            body,
+            method: HttpMethod.POST,
+        })
+    ).then(responseHandler);
+
 export const apiPostUserCheck = async (body: { email: string }): Promise<any> =>
     fetch(
         `${API_BASE_URL}/user/check`,

@@ -39,24 +39,27 @@ export const LoginCardContent = () => {
 
     // --- CALLBACKS ---
 
-    const onSubmit = useCallback(async (values: LoginFormState) => {
-        try {
-            await apiPostUserLogin(values);
+    const onSubmit = useCallback(
+        async (values: LoginFormState) => {
+            try {
+                await apiPostUserLogin(values);
 
-            router.push(`/${Page.HOME}`);
-        } catch (errorResponse) {
-            if (errorResponse.status === 401) {
-                form.setError("password", { message: t("pages.authentication.login.error.passwordDoesNotMatch") });
+                router.push(`/${Page.HOME}`);
+            } catch (errorResponse) {
+                if (errorResponse.status === 401) {
+                    form.setError("password", { message: t("pages.authentication.login.error.passwordDoesNotMatch") });
 
-                return;
+                    return;
+                }
+
+                toast({
+                    title: t("pages.authentication.login.error.toastTitle"),
+                    description: t("pages.authentication.login.error.toastDescription"),
+                });
             }
-
-            toast({
-                title: t("pages.authentication.login.error.toastTitle"),
-                description: t("pages.authentication.login.error.toastDescription"),
-            });
-        }
-    }, []);
+        },
+        [form]
+    );
 
     // --- RENDER ---
 

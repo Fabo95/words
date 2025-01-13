@@ -2,8 +2,7 @@ import { z } from "zod";
 
 import { TFunction } from "@app/utils/i18n/utils/i18nTypes";
 import { apiPostUserCheck } from "@app/utils/api/apiRequests";
-
-const emailSchema = z.string().email();
+import { emailSchema } from "@app/utils/schemas/schemas";
 
 export const getLoginFormSchema = (t: TFunction) =>
     z.object({
