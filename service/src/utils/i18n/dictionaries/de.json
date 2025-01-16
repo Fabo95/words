@@ -1,4 +1,13 @@
 {
+    "components": {
+        "languageSwitcher": {
+            "dropdownLabel": "Sprachen",
+            "dropdownOptionLabel": "Englisch",
+            "dropdownOptionDescription": "Deutsch / Englisch",
+            "dropdownAddButton": "Sprache hinzufügen",
+            "dropdownTooltipFeature": "Dieses Feature wird bald freigeschaltet."
+        }
+    },
     "pages": {
         "authentication": {
             "login": {

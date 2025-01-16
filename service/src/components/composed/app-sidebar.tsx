@@ -1,24 +1,17 @@
 "use client";
 
 import * as React from "react";
-import {
-    AudioWaveform,
-    BookOpen,
-    Bot,
-    Command,
-    Frame,
-    GalleryVerticalEnd,
-    Map,
-    PieChart,
-    Settings2,
-    SquareTerminal,
-} from "lucide-react";
+import { BookOpen, Bot, Frame, Languages, Map, PieChart, Settings2, SquareTerminal } from "lucide-react";
 
 import { NavMain } from "@app/components/composed/nav-main";
 import { NavProjects } from "@app/components/composed/nav-projects";
 import { NavUser } from "@app/components/composed/nav-user";
-import { TeamSwitcher } from "@app/components/composed/team-switcher";
+import { LanguageSwitcher } from "@app/components/composed/language-switcher";
 import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarRail } from "@app/components/ui/sidebar";
+import { useMemo } from "react";
+import { useParams } from "next/navigation";
+import { Locale } from "@app/utils/locale/localeTypes";
+import { getTFunction } from "@app/utils/i18n/tFunction";
 
 // This is sample data.
 const data = {
@@ -27,23 +20,7 @@ const data = {
         email: "m@example.com",
         avatar: "/avatars/shadcn.jpg",
     },
-    teams: [
-        {
-            name: "Acme Inc",
-            logo: GalleryVerticalEnd,
-            plan: "Enterprise",
-        },
-        {
-            name: "Acme Corp.",
-            logo: AudioWaveform,
-            plan: "Startup",
-        },
-        {
-            name: "Evil Corp.",
-            logo: Command,
-            plan: "Free",
-        },
-    ],
+
     navMain: [
         {
             title: "Playground",
@@ -151,10 +128,31 @@ const data = {
 };
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
+    // --- STATE ---
+
+    const { lang } = useParams<Record<"lang", Locale>>();
+
+    const t = getTFunction(lang);
+
+    // --- MEMOIZED DATA ---
+
+    const LANGUAGES = useMemo(
+        () => [
+            {
+                name: t("components.languageSwitcher.dropdownOptionLabel"),
+                logo: Languages,
+                description: t("components.languageSwitcher.dropdownOptionDescription"),
+            },
+        ],
+        [t]
+    );
+
+    // --- RENDER ---
+
     return (
         <Sidebar collapsible="icon" {...props}>
             <SidebarHeader>
-                <TeamSwitcher teams={data.teams} />
+                <LanguageSwitcher languages={LANGUAGES} />
             </SidebarHeader>
             <SidebarContent>
                 <NavMain items={data.navMain} />
