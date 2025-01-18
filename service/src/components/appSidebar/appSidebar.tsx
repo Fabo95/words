@@ -3,10 +3,10 @@
 import * as React from "react";
 import { BookOpen, Bot, Frame, Languages, Map, PieChart, Settings2, SquareTerminal } from "lucide-react";
 
-import { NavMain } from "@app/components/composed/nav-main";
-import { NavProjects } from "@app/components/composed/nav-projects";
-import { NavUser } from "@app/components/composed/nav-user";
-import { LanguageSwitcher } from "@app/components/composed/language-switcher";
+import { NavMain } from "@app/components/appSidebar/nav-main";
+import { NavProjects } from "@app/components/appSidebar/nav-projects";
+import { UserActions } from "@app/components/appSidebar/userActions";
+import { LanguageSwitcher } from "@app/components/appSidebar/languageSwitcher";
 import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarRail } from "@app/components/ui/sidebar";
 import { useMemo } from "react";
 import { useParams } from "next/navigation";
@@ -136,6 +136,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 
     // --- MEMOIZED DATA ---
 
+    // Fetch it later from db.
     const LANGUAGES = useMemo(
         () => [
             {
@@ -159,7 +160,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                 <NavProjects projects={data.projects} />
             </SidebarContent>
             <SidebarFooter>
-                <NavUser user={data.user} />
+                <UserActions />
             </SidebarFooter>
             <SidebarRail />
         </Sidebar>

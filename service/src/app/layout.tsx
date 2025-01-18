@@ -10,6 +10,7 @@ import { ThemeProvider } from "@app/components/theme/themeProvider";
 import { ModeToggle } from "@app/components/theme/modeToggle";
 import { Row } from "@app/components/ui/row";
 import { Box } from "@app/components/ui/box";
+import { QueryClientProvider } from "@app/components/reactQuery/QueryClientProvider";
 
 const interFont = Inter({
     subsets: ["latin"],
@@ -28,15 +29,17 @@ export default function RootLayout({ children }: RootLayoutProps) {
         <html lang="en">
             <body className={cn("min-h-screen bg-background font-sans antialiased", interFont.variable)}>
                 <ThemeProvider disableTransitionOnChange enableSystem attribute="class" defaultTheme="dark">
-                    <Box className="p-5 h-screen">
-                        <Row className="absolute top-5 right-5">
-                            <ModeToggle />
-                        </Row>
+                    <QueryClientProvider>
+                        <Box className="p-5 h-screen">
+                            <Row className="absolute top-5 right-5">
+                                <ModeToggle />
+                            </Row>
 
-                        {children}
-                    </Box>
+                            {children}
+                        </Box>
 
-                    <Toaster />
+                        <Toaster />
+                    </QueryClientProvider>
                 </ThemeProvider>
             </body>
         </html>

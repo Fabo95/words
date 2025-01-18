@@ -11,11 +11,27 @@ export const apiPostAuthenticate = async (authCookieValue: string | undefined): 
         })
     ).then((data) => data.json());
 
+export const apiGetUser = async (): Promise<any> =>
+    fetch(
+        `${API_BASE_URL}/user`,
+        getFetchOptions({
+            method: HttpMethod.GET,
+        })
+    ).then(responseHandler);
+
 export const apiPostUserLogin = async (body: { email: string; password: string }): Promise<any> =>
     fetch(
         `${API_BASE_URL}/user/login`,
         getFetchOptions({
             body,
+            method: HttpMethod.POST,
+        })
+    ).then(responseHandler);
+
+export const apiPostUserLogout = async (): Promise<any> =>
+    fetch(
+        `${API_BASE_URL}/user/logout`,
+        getFetchOptions({
             method: HttpMethod.POST,
         })
     ).then(responseHandler);
