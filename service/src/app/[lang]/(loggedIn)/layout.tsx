@@ -2,7 +2,7 @@ import { ReactNode } from "react";
 import { cookies } from "next/headers";
 
 import { SidebarInset, SidebarProvider, SidebarTrigger } from "@app/components/ui/sidebar";
-import { AppSidebar } from "@app/components/composed/app-sidebar";
+import { AppSidebar } from "@app/components/appSidebar/appSidebar";
 
 export default async function Layout({ children }: { children: ReactNode }) {
     // --- STATE ---
@@ -18,6 +18,7 @@ export default async function Layout({ children }: { children: ReactNode }) {
 
             <SidebarInset>
                 <SidebarTrigger />
+
                 {children}
             </SidebarInset>
         </SidebarProvider>
