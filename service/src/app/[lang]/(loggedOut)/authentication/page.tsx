@@ -1,11 +1,11 @@
 import { ReactNode } from "react";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@app/components/ui/tabs";
-import { getTFunction } from "@app/utils/i18n/tFunction";
 import { Locale } from "@app/utils/locale/localeTypes";
-import { LoginCardContent } from "@app/app/[lang]/(loggedOut)/authentication/_content/loginCardContent/loginCardContent";
-import { RegistrationCardContent } from "@app/app/[lang]/(loggedOut)/authentication/_content/registrationCardContent/registrationCardContent";
+import { LoginCardForm } from "@app/app/[lang]/(loggedOut)/authentication/_content/loginCardContent/loginCardForm";
+import { RegistrationCardForm } from "@app/app/[lang]/(loggedOut)/authentication/_content/registrationCardForm/registrationCardForm";
 import { Box } from "@app/components/ui/box";
+import { getTFunction } from "@app/utils/i18n/utils/i18nHelpers";
 
 export default async function Authentication({
     params,
@@ -31,11 +31,11 @@ export default async function Authentication({
                 </TabsList>
 
                 <TabsContent value="login">
-                    <LoginCardContent />
+                    <LoginCardForm />
                 </TabsContent>
 
                 <TabsContent value="register">
-                    <RegistrationCardContent />
+                    <RegistrationCardForm />
                 </TabsContent>
             </Tabs>
         </Box>

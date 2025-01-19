@@ -1,31 +1,29 @@
 "use client";
 import { useCallback } from "react";
 
-import { useParams, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@app/components/ui/card";
 import { Input } from "@app/components/ui/input";
 import { Button } from "@app/components/ui/button";
-import { getTFunction } from "@app/utils/i18n/tFunction";
-import { Locale } from "@app/utils/locale/localeTypes";
-import { getRegistrationFormSchema } from "@app/app/[lang]/(loggedOut)/authentication/_content/registrationCardContent/utils/registrationCardContentSchema";
-import { RegistrationFormState } from "@app/app/[lang]/(loggedOut)/authentication/_content/registrationCardContent/utils/registrationCardContentTypes";
+import { useClientTFunction } from "@app/utils/i18n/utils/i18nHooks";
+import { getRegistrationFormSchema } from "@app/app/[lang]/(loggedOut)/authentication/_content/registrationCardForm/utils/registrationCardFormSchema";
+import { RegistrationFormState } from "@app/app/[lang]/(loggedOut)/authentication/_content/registrationCardForm/utils/registrationCardFormTypes";
 import { Form, FormProvider } from "@app/components/ui/form";
 import { FormField } from "@app/components/ui/formField";
 import { apiPostUserCreate } from "@app/utils/api/apiRequests";
 import { Page } from "@app/utils/routing/routingTypes";
 import { useToast } from "@app/components/ui/use-toast";
 
-export const RegistrationCardContent = () => {
+export const RegistrationCardForm = () => {
     // --- STATE ---
 
     const { toast } = useToast();
 
-    const { lang } = useParams<Record<"lang", Locale>>();
+    const t = useClientTFunction();
 
-    const t = getTFunction(lang);
     const router = useRouter();
 
     const form = useForm<RegistrationFormState>({

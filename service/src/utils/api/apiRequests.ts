@@ -11,11 +11,13 @@ export const apiPostAuthenticate = async (authCookieValue: string | undefined): 
         })
     ).then((data) => data.json());
 
-export const apiGetUser = async (): Promise<any> =>
+export const apiGetUser = async (authCookieValue?: string | undefined): Promise<any> =>
     fetch(
         `${API_BASE_URL}/user`,
         getFetchOptions({
             method: HttpMethod.GET,
+            // See: https://stackoverflow.com/questions/76274546/next-js-does-not-send-cookies-with-fetch-request-even-though-credentials-are-inc
+            headers: authCookieValue ? { Cookie: `auth-cookie=${authCookieValue}` } : {},
         })
     ).then(responseHandler);
 

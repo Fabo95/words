@@ -9,9 +9,7 @@ import { UserActions } from "@app/components/appSidebar/userActions";
 import { LanguageSwitcher } from "@app/components/appSidebar/languageSwitcher";
 import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarRail } from "@app/components/ui/sidebar";
 import { useMemo } from "react";
-import { useParams } from "next/navigation";
-import { Locale } from "@app/utils/locale/localeTypes";
-import { getTFunction } from "@app/utils/i18n/tFunction";
+import { useClientTFunction } from "@app/utils/i18n/utils/i18nHooks";
 
 // This is sample data.
 const data = {
@@ -130,9 +128,7 @@ const data = {
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
     // --- STATE ---
 
-    const { lang } = useParams<Record<"lang", Locale>>();
-
-    const t = getTFunction(lang);
+    const t = useClientTFunction();
 
     // --- MEMOIZED DATA ---
 

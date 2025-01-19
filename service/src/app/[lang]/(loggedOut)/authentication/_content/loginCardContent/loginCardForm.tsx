@@ -1,31 +1,29 @@
 "use client";
 
 import { useCallback } from "react";
-import { useParams, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@app/components/ui/card";
 import { Input } from "@app/components/ui/input";
 import { Button } from "@app/components/ui/button";
-import { getTFunction } from "@app/utils/i18n/tFunction";
-import { Locale } from "@app/utils/locale/localeTypes";
-import { LoginFormState } from "@app/app/[lang]/(loggedOut)/authentication/_content/loginCardContent/utils/loginCardContentTypes";
-import { getLoginFormSchema } from "@app/app/[lang]/(loggedOut)/authentication/_content/loginCardContent/utils/loginCardContentSchema";
+import { useClientTFunction } from "@app/utils/i18n/utils/i18nHooks";
+import { LoginFormState } from "@app/app/[lang]/(loggedOut)/authentication/_content/loginCardContent/utils/loginCardFormTypes";
+import { getLoginFormSchema } from "@app/app/[lang]/(loggedOut)/authentication/_content/loginCardContent/utils/loginCardFormSchema";
 import { Form, FormProvider } from "@app/components/ui/form";
 import { FormField } from "@app/components/ui/formField";
 import { apiPostUserLogin } from "@app/utils/api/apiRequests";
 import { useToast } from "@app/components/ui/use-toast";
 import { Page } from "@app/utils/routing/routingTypes";
 
-export const LoginCardContent = () => {
+export const LoginCardForm = () => {
     // --- STATE ---
 
     const { toast } = useToast();
 
-    const { lang } = useParams<Record<"lang", Locale>>();
+    const t = useClientTFunction();
 
-    const t = getTFunction(lang);
     const router = useRouter();
 
     const form = useForm<LoginFormState>({

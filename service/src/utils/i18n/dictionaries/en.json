@@ -6,6 +6,10 @@
             "dropdownOptionDescription": "German / English",
             "dropdownAddButton": "Add language",
             "dropdownTooltipFeature": "This feature is enabled soon."
+        },
+        "userActions": {
+            "account": "Account",
+            "logout": "Logout"
         }
     },
     "pages": {

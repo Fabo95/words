@@ -6,6 +6,10 @@
             "dropdownOptionDescription": "Deutsch / Englisch",
             "dropdownAddButton": "Sprache hinzufügen",
             "dropdownTooltipFeature": "Dieses Feature wird bald freigeschaltet."
+        },
+        "userActions": {
+            "account": "Account",
+            "logout": "Ausloggen"
         }
     },
     "pages": {

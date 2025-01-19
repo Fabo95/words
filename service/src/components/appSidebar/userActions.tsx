@@ -1,6 +1,6 @@
 "use client";
 
-import { BadgeCheck, Bell, LogOut, Sparkles } from "lucide-react";
+import { BadgeCheck, LogOut, Sparkles } from "lucide-react";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@app/components/ui/avatar";
 import {
@@ -13,16 +13,20 @@ import {
     DropdownMenuTrigger,
 } from "@app/components/ui/dropdown-menu";
 import { SidebarMenu, SidebarMenuButton, SidebarMenuItem, useSidebar } from "@app/components/ui/sidebar";
-import { CaretSortIcon, ComponentPlaceholderIcon } from "@radix-ui/react-icons";
+import { CaretSortIcon } from "@radix-ui/react-icons";
 import { apiGetUser, apiPostUserLogout } from "@app/utils/api/apiRequests";
 import { useMutation, useQuery } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
 import { Page } from "@app/utils/routing/routingTypes";
+import { useClientTFunction } from "@app/utils/i18n/utils/i18nHooks";
+import { useCallback } from "react";
 
 export function UserActions() {
     // --- STATE ---
 
     const { isMobile } = useSidebar();
+
+    const t = useClientTFunction();
 
     const router = useRouter();
 
@@ -34,6 +38,12 @@ export function UserActions() {
             router.push(`/${Page.AUTHENTICATION}`);
         },
     });
+
+    // --- CALLBACKS ---
+
+    const handleToAccountClick = useCallback(() => {
+        router.push(`/${Page.ACCOUNT}`);
+    }, []);
 
     // --- RENDER ---
 
@@ -84,23 +94,15 @@ export function UserActions() {
                         </DropdownMenuGroup>
                         <DropdownMenuSeparator />
                         <DropdownMenuGroup>
-                            <DropdownMenuItem>
+                            <DropdownMenuItem onClick={handleToAccountClick}>
                                 <BadgeCheck />
-                                Account
-                            </DropdownMenuItem>
-                            <DropdownMenuItem>
-                                <ComponentPlaceholderIcon />
-                                Billing
-                            </DropdownMenuItem>
-                            <DropdownMenuItem>
-                                <Bell />
-                                Notifications
+                                {t("components.userActions.account")}
                             </DropdownMenuItem>
                         </DropdownMenuGroup>
                         <DropdownMenuSeparator />
                         <DropdownMenuItem onClick={() => mutateUserLogout()}>
                             <LogOut />
-                            Log out
+                            {t("components.userActions.logout")}
                         </DropdownMenuItem>
                     </DropdownMenuContent>
                 </DropdownMenu>

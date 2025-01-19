@@ -1,7 +1,6 @@
 "use client";
 
 import * as React from "react";
-import { useParams } from "next/navigation";
 
 import {
     DropdownMenu,
@@ -13,8 +12,7 @@ import {
 } from "@app/components/ui/dropdown-menu";
 import { SidebarMenu, SidebarMenuButton, SidebarMenuItem } from "@app/components/ui/sidebar";
 import { CaretSortIcon, PlusIcon } from "@radix-ui/react-icons";
-import { getTFunction } from "@app/utils/i18n/tFunction";
-import { Locale } from "@app/utils/locale/localeTypes";
+import { useClientTFunction } from "@app/utils/i18n/utils/i18nHooks";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@app/components/ui/tooltip";
 
 export type LanguageSwitchProps = {
@@ -27,11 +25,9 @@ export type LanguageSwitchProps = {
 export function LanguageSwitcher({ languages }: LanguageSwitchProps) {
     // --- STATE ---
 
-    const { lang } = useParams<Record<"lang", Locale>>();
-
     const [activeLanguage, setActiveLanguage] = React.useState(languages[0]);
 
-    const t = getTFunction(lang);
+    const t = useClientTFunction();
 
     // --- RENDER ---
 
