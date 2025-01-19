@@ -2,8 +2,8 @@ import { ReactNode } from "react";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@app/components/ui/tabs";
 import { Locale } from "@app/utils/locale/localeTypes";
-import { LoginCardForm } from "@app/app/[lang]/(loggedOut)/authentication/_content/loginCardContent/loginCardForm";
-import { RegistrationCardForm } from "@app/app/[lang]/(loggedOut)/authentication/_content/registrationCardForm/registrationCardForm";
+import { LoginForm } from "@app/app/[lang]/(loggedOut)/authentication/_content/loginForm/loginForm";
+import { RegistrationForm } from "@app/app/[lang]/(loggedOut)/authentication/_content/registrationForm/registrationForm";
 import { Box } from "@app/components/ui/box";
 import { getTFunction } from "@app/utils/i18n/utils/i18nHelpers";
 
@@ -31,11 +31,11 @@ export default async function Authentication({
                 </TabsList>
 
                 <TabsContent value="login">
-                    <LoginCardForm />
+                    <LoginForm />
                 </TabsContent>
 
                 <TabsContent value="register">
-                    <RegistrationCardForm />
+                    <RegistrationForm />
                 </TabsContent>
             </Tabs>
         </Box>

@@ -9,15 +9,15 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@app/
 import { Input } from "@app/components/ui/input";
 import { Button } from "@app/components/ui/button";
 import { useClientTFunction } from "@app/utils/i18n/utils/i18nHooks";
-import { getRegistrationFormSchema } from "@app/app/[lang]/(loggedOut)/authentication/_content/registrationCardForm/utils/registrationCardFormSchema";
-import { RegistrationFormState } from "@app/app/[lang]/(loggedOut)/authentication/_content/registrationCardForm/utils/registrationCardFormTypes";
+import { getRegistrationFormSchema } from "@app/app/[lang]/(loggedOut)/authentication/_content/registrationForm/utils/registrationFormSchema";
+import { RegistrationFormState } from "@app/app/[lang]/(loggedOut)/authentication/_content/registrationForm/utils/registrationFormTypes";
 import { Form, FormProvider } from "@app/components/ui/form";
 import { FormField } from "@app/components/ui/formField";
 import { apiPostUserCreate } from "@app/utils/api/apiRequests";
 import { Page } from "@app/utils/routing/routingTypes";
 import { useToast } from "@app/components/ui/use-toast";
 
-export const RegistrationCardForm = () => {
+export const RegistrationForm = () => {
     // --- STATE ---
 
     const { toast } = useToast();
