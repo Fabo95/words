@@ -7,19 +7,18 @@ import { useClientTFunction } from "@app/utils/i18n/utils/i18nHooks";
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { getAccountFormSchema } from "@app/app/[lang]/(loggedIn)/account/_content/utils/accountFormSchema";
+import { getAccountNameFormSchema } from "@app/app/[lang]/(loggedIn)/account/_content/accountNameForm/utils/accountNameFormSchema";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@app/components/ui/card";
 import { Form, FormProvider } from "@app/components/ui/form";
 import { FormField } from "@app/components/ui/formField";
 import { Input } from "@app/components/ui/input";
 import { Button } from "@app/components/ui/button";
-import { AccountFormState } from "@app/app/[lang]/(loggedIn)/account/_content/utils/accountFormTypes";
+import { AccountNameFormState } from "@app/app/[lang]/(loggedIn)/account/_content/accountNameForm/utils/accountNameFormTypes";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@app/components/ui/tooltip";
-import { DropdownMenuSeparator } from "@app/components/ui/dropdown-menu";
 
 type AccountFormProps = { user: { email: string; name: string } };
 
-export const AccountForm = ({ user }: AccountFormProps) => {
+export const AccountNameForm = ({ user }: AccountFormProps) => {
     // --- STATE ---
 
     const { toast } = useToast();
@@ -28,13 +27,13 @@ export const AccountForm = ({ user }: AccountFormProps) => {
 
     const router = useRouter();
 
-    const form = useForm<AccountFormState>({
+    const form = useForm<AccountNameFormState>({
         defaultValues: {
             email: user.email,
             name: user.name,
         },
         mode: "onBlur",
-        resolver: zodResolver(getAccountFormSchema(t)),
+        resolver: zodResolver(getAccountNameFormSchema(t)),
     });
 
     // --- RENDER ---
@@ -42,22 +41,22 @@ export const AccountForm = ({ user }: AccountFormProps) => {
     return (
         <Card className="max-w-[400px] w-full">
             <CardHeader>
-                <CardTitle>{t("pages.account.title")}</CardTitle>
+                <CardTitle>{t("pages.account.name.title")}</CardTitle>
 
-                <CardDescription>{t("pages.account.description")}</CardDescription>
+                <CardDescription>{t("pages.account.name.description")}</CardDescription>
             </CardHeader>
 
             <CardContent className="space-y-2">
                 <FormProvider {...form}>
                     <Form>
                         <Tooltip>
-                            <TooltipContent>{t("pages.account.emailTooltip")}</TooltipContent>
+                            <TooltipContent>{t("pages.account.name.emailTooltip")}</TooltipContent>
 
                             <TooltipTrigger className="w-full text-left">
                                 <FormField
                                     className="mb-5"
                                     control={form.control}
-                                    label={t("pages.account.emailLabel")}
+                                    label={t("pages.account.name.emailLabel")}
                                     name="email"
                                     disabled={true}
                                     input={Input}
@@ -66,35 +65,15 @@ export const AccountForm = ({ user }: AccountFormProps) => {
                         </Tooltip>
 
                         <FormField
-                            className="mb-10"
                             control={form.control}
-                            label={t("pages.account.nameLabel")}
-                            placeholder={t("pages.account.namePlaceholder")}
+                            label={t("pages.account.name.nameLabel")}
+                            placeholder={t("pages.account.name.namePlaceholder")}
                             name="name"
                             input={Input}
                         />
 
-                        <DropdownMenuSeparator />
-
-                        <FormField
-                            className="mt-10 mb-5"
-                            control={form.control}
-                            label={t("pages.account.passwordLabel")}
-                            placeholder={t("pages.account.passwordPlaceholder")}
-                            name="password"
-                            input={Input}
-                        />
-
-                        <FormField
-                            control={form.control}
-                            label={t("pages.account.passwordConfirmLabel")}
-                            placeholder={t("pages.account.passwordConfirmPlaceholder")}
-                            name="confirmPassword"
-                            input={Input}
-                        />
-
                         <Button disabled={!form.formState.isValid} className="mt-5">
-                            {t("pages.account.button")}
+                            {t("pages.account.name.button")}
                         </Button>
                     </Form>
                 </FormProvider>

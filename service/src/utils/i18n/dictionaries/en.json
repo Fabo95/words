@@ -14,17 +14,32 @@
     },
     "pages": {
         "account": {
-            "title": "Account",
-            "description": "Change your personal information.",
-            "emailLabel": "E-Mail",
-            "nameLabel": "Name",
-            "passwordLabel": "Change password",
-            "passwordConfirmLabel": "Confirm password",
-            "namePlaceholder": "Enter your name.",
-            "passwordPlaceholder": "Enter a new password.",
-            "passwordConfirmPlaceholder": "Confirm the new password.",
-            "button": "Save",
-            "emailTooltip": "The email can't be changed."
+            "name": {
+                "title": "Name",
+                "description": "Change your name.",
+                "emailLabel": "Email",
+                "nameLabel": "Name",
+                "namePlaceholder": "Enter your name.",
+                "button": "Save",
+                "emailTooltip": "The email can't be changed.",
+                "error": {
+                    "email": "The email is not changeable.",
+                    "name": "Please enter a name."
+                }
+            },
+            "password": {
+                "title": "Password",
+                "description": "Change your password.",
+                "passwordLabel": "Change password",
+                "passwordConfirmLabel": "Confirm password",
+                "passwordPlaceholder": "Enter a new password.",
+                "button": "Save",
+                "passwordConfirmPlaceholder": "Confirm the new password.",
+                "error": {
+                    "passwordsDoNotMatch": "The passwords are not matching.",
+                    "password": "Please enter at least 8 characters."
+                }
+            }
         },
         "authentication": {
             "login": {

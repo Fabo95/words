@@ -14,17 +14,32 @@
     },
     "pages": {
         "account": {
-            "title": "Account",
-            "description": "Pass deine persönlichen Daten an.",
-            "emailLabel": "E-Mail",
-            "nameLabel": "Name",
-            "passwordLabel": "Passwort ändern",
-            "passwordConfirmLabel": "Password bestätigen",
-            "namePlaceholder": "Gib deinen Namen an.",
-            "passwordPlaceholder": "Gib ein neues Password an.",
-            "passwordConfirmPlaceholder": "Bestätige das neue Password.",
-            "button": "Speichern",
-            "emailTooltip": "Die E-Mailadresse kann nicht geändert werden."
+            "name": {
+                "title": "Name",
+                "description": "Pass deinen Namen an.",
+                "emailLabel": "E-Mail",
+                "nameLabel": "Name",
+                "namePlaceholder": "Gib deinen Namen an.",
+                "button": "Speichern",
+                "emailTooltip": "Die E-Mailadresse kann nicht geändert werden.",
+                "error": {
+                    "email": "Die E-Mail ist nicht veränderbar.",
+                    "name": "Bitte gib einen Namen an."
+                }
+            },
+            "password": {
+                "title": "Password",
+                "description": "Pass dein Password an.",
+                "passwordLabel": "Passwort ändern",
+                "passwordConfirmLabel": "Password bestätigen",
+                "passwordPlaceholder": "Gib ein neues Password an.",
+                "button": "Speichern",
+                "passwordConfirmPlaceholder": "Bestätige das neue Password.",
+                "error": {
+                    "passwordsDoNotMatch": "Die Passwörter stimmen nicht überein.",
+                    "password": "Bitte gib mindestens 8 Zeichen an."
+                }
+            }
         },
         "authentication": {
             "login": {

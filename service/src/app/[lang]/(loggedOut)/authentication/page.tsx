@@ -7,12 +7,7 @@ import { RegistrationForm } from "@app/app/[lang]/(loggedOut)/authentication/_co
 import { Box } from "@app/components/ui/box";
 import { getTFunction } from "@app/utils/i18n/utils/i18nHelpers";
 
-export default async function Authentication({
-    params,
-}: {
-    children: ReactNode;
-    params: Promise<Record<"lang", Locale>>;
-}) {
+export default async function Authentication({ params }: { params: Promise<Record<"lang", Locale>> }) {
     // --- STATE ---
 
     const { lang } = await params;
