@@ -75,16 +75,16 @@ export const LoginForm = () => {
                         <FormField
                             className="mb-5"
                             control={form.control}
-                            label={t("pages.authentication.login.labelOne")}
+                            label={t("pages.authentication.login.emailLabel")}
                             name="email"
                             input={Input}
-                            placeholder={t("pages.authentication.login.placeholderOne")}
+                            placeholder={t("pages.authentication.login.emailPlaceholder")}
                         />
 
                         <FormField
                             control={form.control}
-                            label={t("pages.authentication.login.labelTwo")}
-                            placeholder={t("pages.authentication.login.placeholderTwo")}
+                            label={t("pages.authentication.login.passwordLabel")}
+                            placeholder={t("pages.authentication.login.passwordPlaceholder")}
                             name="password"
                             inputType="password"
                             input={Input}

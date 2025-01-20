@@ -13,14 +13,27 @@
         }
     },
     "pages": {
+        "account": {
+            "title": "Account",
+            "description": "Pass deine persönlichen Daten an.",
+            "emailLabel": "E-Mail",
+            "nameLabel": "Name",
+            "passwordLabel": "Passwort ändern",
+            "passwordConfirmLabel": "Password bestätigen",
+            "namePlaceholder": "Gib deinen Namen an.",
+            "passwordPlaceholder": "Gib ein neues Password an.",
+            "passwordConfirmPlaceholder": "Bestätige das neue Password.",
+            "button": "Speichern",
+            "emailTooltip": "Die E-Mailadresse kann nicht geändert werden."
+        },
         "authentication": {
             "login": {
                 "title": "Login",
                 "description": "Logge dich in deinen Account ein.",
-                "labelOne": "E-Mail",
-                "labelTwo": "Passwort",
-                "placeholderOne": "Gib deine E-Mail an.",
-                "placeholderTwo": "Gib dein Password an.",
+                "emailLabel": "E-Mail",
+                "passwordLabel": "Passwort",
+                "emailPlaceholder": "Gib deine E-Mail an.",
+                "passwordPlaceholder": "Gib dein Password an.",
                 "button": "Login",
                 "error": {
                     "emailDoesNotExist": "Diese E-Mail existiert nicht.",
@@ -34,12 +47,12 @@
             "registration": {
                 "title": "Registrierung",
                 "description": "Registriere dich jetzt.",
-                "labelOne": "E-Mail",
-                "labelTwo": "Passwort",
-                "labelThree": "Password bestätigen",
-                "placeholderOne": "Gib deine E-Mail an.",
-                "placeholderTwo": "Gib dein Password an.",
-                "placeholderThree": "Bestätige dein Password.",
+                "emailLabel": "E-Mail",
+                "passwordLabel": "Passwort",
+                "passwordConfirmLabel": "Password bestätigen",
+                "emailPlaceholder": "Gib deine E-Mail an.",
+                "passwordPlaceholder": "Gib dein Password an.",
+                "passwordConfirmPlaceholder": "Bestätige dein Password.",
                 "button": "Weiter",
                 "error": {
                     "emailDoesExist": "Diese E-Mail existiert bereits.",

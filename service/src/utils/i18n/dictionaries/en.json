@@ -13,14 +13,27 @@
         }
     },
     "pages": {
+        "account": {
+            "title": "Account",
+            "description": "Change your personal information.",
+            "emailLabel": "E-Mail",
+            "nameLabel": "Name",
+            "passwordLabel": "Change password",
+            "passwordConfirmLabel": "Confirm password",
+            "namePlaceholder": "Enter your name.",
+            "passwordPlaceholder": "Enter a new password.",
+            "passwordConfirmPlaceholder": "Confirm the new password.",
+            "button": "Save",
+            "emailTooltip": "The email can't be changed."
+        },
         "authentication": {
             "login": {
                 "title": "Login",
                 "description": "Log in to your account.",
-                "labelOne": "Email",
-                "labelTwo": "Password",
-                "placeholderOne": "Enter your email.",
-                "placeholderTwo": "Enter your password.",
+                "emailLabel": "Email",
+                "passwordLabel": "Password",
+                "emailPlaceholder": "Enter your email.",
+                "passwordPlaceholder": "Enter your password.",
                 "button": "Login",
                 "error": {
                     "emailDoesNotExist": "This email does not exist.",
@@ -34,12 +47,12 @@
             "registration": {
                 "title": "Registration",
                 "description": "Register now.",
-                "labelOne": "Email",
-                "labelTwo": "Password",
-                "labelThree": "Confirm password",
-                "placeholderOne": "Enter your email.",
-                "placeholderTwo": "Enter your password.",
-                "placeholderThree": "Confirm your password.",
+                "emailLabel": "Email",
+                "passwordLabel": "Password",
+                "passwordConfirmLabel": "Confirm password",
+                "emailPlaceholder": "Enter your email.",
+                "passwordPlaceholder": "Enter your password.",
+                "passwordConfirmPlaceholder": "Confirm your password.",
                 "button": "Continue",
                 "error": {
                     "emailDoesNotExist": "This email does exist.",

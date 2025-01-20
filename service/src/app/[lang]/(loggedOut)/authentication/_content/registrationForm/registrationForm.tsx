@@ -79,28 +79,28 @@ export const RegistrationForm = () => {
                             className="mb-5"
                             control={form.control}
                             input={Input}
-                            label={t("pages.authentication.registration.labelOne")}
+                            label={t("pages.authentication.registration.emailLabel")}
                             name="email"
-                            placeholder={t("pages.authentication.registration.placeholderOne")}
+                            placeholder={t("pages.authentication.registration.emailPlaceholder")}
                         />
 
                         <FormField
                             className="mb-5"
                             control={form.control}
                             input={Input}
-                            label={t("pages.authentication.registration.labelTwo")}
+                            label={t("pages.authentication.registration.passwordLabel")}
                             name="password"
                             inputType="password"
-                            placeholder={t("pages.authentication.registration.placeholderTwo")}
+                            placeholder={t("pages.authentication.registration.passwordPlaceholder")}
                         />
 
                         <FormField
                             control={form.control}
                             input={Input}
-                            label={t("pages.authentication.registration.labelThree")}
+                            label={t("pages.authentication.registration.passwordConfirmLabel")}
                             name="confirmPassword"
                             inputType="password"
-                            placeholder={t("pages.authentication.registration.placeholderThree")}
+                            placeholder={t("pages.authentication.registration.passwordConfirmPlaceholder")}
                         />
 
                         <Button disabled={!form.formState.isValid} className="mt-5">

@@ -15,6 +15,7 @@ import { Input } from "@app/components/ui/input";
 type FormFieldProps<TFieldValues extends FieldValues = FieldValues, TContext = any> = {
     control: Control<TFieldValues, TContext>;
     className?: string;
+    disabled?: boolean;
     name: Path<TFieldValues>;
     label: string;
     placeholder?: string;
@@ -27,6 +28,7 @@ type FormFieldProps<TFieldValues extends FieldValues = FieldValues, TContext = a
 export const FormField = <TFieldValues extends FieldValues = FieldValues, TContext = any>({
     control,
     className,
+    disabled,
     name,
     label,
     placeholder,
@@ -42,7 +44,7 @@ export const FormField = <TFieldValues extends FieldValues = FieldValues, TConte
                 <FormItem className={className}>
                     <FormLabel>{label}</FormLabel>
                     <FormControl>
-                        <Input type={inputType} placeholder={placeholder} {...field} />
+                        <Input disabled={disabled} type={inputType} placeholder={placeholder} {...field} />
                     </FormControl>
 
                     {description && <FormDescription>{description}</FormDescription>}
