@@ -30,7 +30,7 @@ export function UserActions() {
 
     const router = useRouter();
 
-    const { data: userData } = useQuery({ queryKey: ["apiGetUser"], queryFn: apiGetUser });
+    const { data: userData } = useQuery({ queryKey: ["apiGetUser"], queryFn: () => apiGetUser() });
 
     const { mutate: mutateUserLogout } = useMutation({
         mutationFn: apiPostUserLogout,
@@ -38,6 +38,8 @@ export function UserActions() {
             router.push(`/${Page.AUTHENTICATION}`);
         },
     });
+
+    console.log("userdata", userData);
 
     // --- CALLBACKS ---
 

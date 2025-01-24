@@ -1,28 +1,16 @@
-import { cookies } from "next/headers";
-
-import { apiGetUser } from "@app/utils/api/apiRequests";
 import { AccountNameForm } from "@app/app/[lang]/(loggedIn)/account/_content/accountNameForm/accountNameForm";
 import { Box } from "@app/components/ui/box";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@app/components/ui/tabs";
 import { getTFunction } from "@app/utils/i18n/utils/i18nHelpers";
-import { ReactNode } from "react";
 import { Locale } from "@app/utils/locale/localeTypes";
 import { AccountPasswordForm } from "@app/app/[lang]/(loggedIn)/account/_content/accountPasswordForm/accountPasswordForm";
 
 export default async function ({ params }: { params: Promise<Record<"lang", Locale>> }) {
     // --- STATE ---
 
-    const cookieStore = await cookies();
-
-    const authCookieValue = cookieStore.get("auth-cookie")?.value;
-
-    const user = await apiGetUser(authCookieValue);
-
     const { lang } = await params;
 
     const t = getTFunction(lang);
-
-    console.log("user", user);
 
     // --- RENDER ---
 
@@ -36,7 +24,7 @@ export default async function ({ params }: { params: Promise<Record<"lang", Loca
                 </TabsList>
 
                 <TabsContent value="name">
-                    <AccountNameForm user={user} />
+                    <AccountNameForm />
                 </TabsContent>
 
                 <TabsContent value="password">

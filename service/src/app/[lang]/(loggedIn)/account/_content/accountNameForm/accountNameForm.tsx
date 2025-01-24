@@ -15,11 +15,15 @@ import { Input } from "@app/components/ui/input";
 import { Button } from "@app/components/ui/button";
 import { AccountNameFormState } from "@app/app/[lang]/(loggedIn)/account/_content/accountNameForm/utils/accountNameFormTypes";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@app/components/ui/tooltip";
+import { useQuery } from "@tanstack/react-query";
+import { apiGetUser } from "@app/utils/api/apiRequests";
 
-type AccountFormProps = { user: { email: string; name: string } };
-
-export const AccountNameForm = ({ user }: AccountFormProps) => {
+export const AccountNameForm = () => {
     // --- STATE ---
+
+    const { data: userData } = useQuery({ queryKey: ["apiGetUser"], queryFn: () => apiGetUser() });
+
+    console.log("123userData", userData);
 
     const { toast } = useToast();
 
@@ -29,8 +33,8 @@ export const AccountNameForm = ({ user }: AccountFormProps) => {
 
     const form = useForm<AccountNameFormState>({
         defaultValues: {
-            email: user.email,
-            name: user.name,
+            email: userData.email,
+            name: userData.name,
         },
         mode: "onBlur",
         resolver: zodResolver(getAccountNameFormSchema(t)),
