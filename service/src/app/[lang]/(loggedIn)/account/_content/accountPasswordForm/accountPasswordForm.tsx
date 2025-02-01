@@ -4,7 +4,6 @@ import * as React from "react";
 
 import { useToast } from "@app/components/ui/use-toast";
 import { useClientTFunction } from "@app/utils/i18n/utils/i18nHooks";
-import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@app/components/ui/card";
@@ -14,6 +13,9 @@ import { Input } from "@app/components/ui/input";
 import { Button } from "@app/components/ui/button";
 import { getAccountPasswordFormSchema } from "@app/app/[lang]/(loggedIn)/account/_content/accountPasswordForm/utils/accountPasswordFormSchema";
 import { AccountPasswordFormState } from "@app/app/[lang]/(loggedIn)/account/_content/accountPasswordForm/utils/accountPasswordFormTypes";
+import { useCallback } from "react";
+import { useMutation } from "@tanstack/react-query";
+import { apiPatchUserUpdate } from "@app/utils/api/apiRequests";
 
 export const AccountPasswordForm = () => {
     // --- STATE ---
@@ -22,7 +24,21 @@ export const AccountPasswordForm = () => {
 
     const t = useClientTFunction();
 
-    const router = useRouter();
+    const { mutateAsync: mutateUserUpdate } = useMutation({
+        mutationFn: (value: AccountPasswordFormState) => apiPatchUserUpdate(value),
+        onSuccess: () => {
+            toast({
+                title: t("pages.account.name.toast.success.title"),
+                description: t("pages.account.name.toast.success.description"),
+            });
+        },
+        onError: () => {
+            toast({
+                title: t("pages.account.name.toast.error.title"),
+                description: t("pages.account.name.toast.error.description"),
+            });
+        },
+    });
 
     const form = useForm<AccountPasswordFormState>({
         defaultValues: {
@@ -32,6 +48,15 @@ export const AccountPasswordForm = () => {
         mode: "onBlur",
         resolver: zodResolver(getAccountPasswordFormSchema(t)),
     });
+
+    // --- CALLBACKS ---
+
+    const onSubmit = useCallback(
+        async (value: AccountPasswordFormState) => {
+            await mutateUserUpdate(value);
+        },
+        [form]
+    );
 
     // --- RENDER ---
 
@@ -45,7 +70,7 @@ export const AccountPasswordForm = () => {
 
             <CardContent className="space-y-2">
                 <FormProvider {...form}>
-                    <Form>
+                    <Form onSubmit={form.handleSubmit(onSubmit)}>
                         <FormField
                             className="mb-5"
                             control={form.control}

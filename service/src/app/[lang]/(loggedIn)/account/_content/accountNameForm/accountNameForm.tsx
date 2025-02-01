@@ -23,6 +23,8 @@ export const AccountNameForm = () => {
 
     const t = useClientTFunction();
 
+    const { toast } = useToast();
+
     const queryClient = useQueryClient();
 
     const { data: userData } = useSuspenseQuery({ queryKey: ["apiGetUser"], queryFn: () => apiGetUser() });
@@ -45,10 +47,6 @@ export const AccountNameForm = () => {
             });
         },
     });
-
-    console.log("123userData", userData);
-
-    const { toast } = useToast();
 
     const form = useForm<AccountNameFormState>({
         defaultValues: {
