@@ -4,7 +4,6 @@ import * as React from "react";
 
 import { useToast } from "@app/components/ui/use-toast";
 import { useClientTFunction } from "@app/utils/i18n/utils/i18nHooks";
-import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { getAccountNameFormSchema } from "@app/app/[lang]/(loggedIn)/account/_content/accountNameForm/utils/accountNameFormSchema";
@@ -15,30 +14,59 @@ import { Input } from "@app/components/ui/input";
 import { Button } from "@app/components/ui/button";
 import { AccountNameFormState } from "@app/app/[lang]/(loggedIn)/account/_content/accountNameForm/utils/accountNameFormTypes";
 import { Tooltip, TooltipContent, TooltipTrigger } from "@app/components/ui/tooltip";
-import { useQuery } from "@tanstack/react-query";
-import { apiGetUser } from "@app/utils/api/apiRequests";
+import { useMutation, useSuspenseQuery, useQueryClient } from "@tanstack/react-query";
+import { apiGetUser, apiPatchUserUpdate } from "@app/utils/api/apiRequests";
+import { useCallback } from "react";
 
 export const AccountNameForm = () => {
     // --- STATE ---
 
-    const { data: userData } = useQuery({ queryKey: ["apiGetUser"], queryFn: () => apiGetUser() });
+    const t = useClientTFunction();
+
+    const queryClient = useQueryClient();
+
+    const { data: userData } = useSuspenseQuery({ queryKey: ["apiGetUser"], queryFn: () => apiGetUser() });
+
+    const { mutateAsync: mutateUserUpdate } = useMutation({
+        mutationFn: (value: AccountNameFormState) => apiPatchUserUpdate({ name: value.name }),
+        onSuccess: (data) => {
+            // See: https://tanstack.com/query/v5/docs/framework/react/guides/updates-from-mutation-responses
+            queryClient.setQueryData(["apiGetUser"], data);
+
+            toast({
+                title: t("pages.account.name.toast.success.title"),
+                description: t("pages.account.name.toast.success.description"),
+            });
+        },
+        onError: () => {
+            toast({
+                title: t("pages.account.name.toast.error.title"),
+                description: t("pages.account.name.toast.error.description"),
+            });
+        },
+    });
 
     console.log("123userData", userData);
 
     const { toast } = useToast();
 
-    const t = useClientTFunction();
-
-    const router = useRouter();
-
     const form = useForm<AccountNameFormState>({
         defaultValues: {
             email: userData.email,
-            name: userData.name,
+            name: userData.name || "",
         },
         mode: "onBlur",
         resolver: zodResolver(getAccountNameFormSchema(t)),
     });
+
+    // --- CALLBACKS ---
+
+    const onSubmit = useCallback(
+        async (value: AccountNameFormState) => {
+            await mutateUserUpdate(value);
+        },
+        [form]
+    );
 
     // --- RENDER ---
 
@@ -52,7 +80,7 @@ export const AccountNameForm = () => {
 
             <CardContent className="space-y-2">
                 <FormProvider {...form}>
-                    <Form>
+                    <Form onSubmit={form.handleSubmit(onSubmit)}>
                         <Tooltip>
                             <TooltipContent>{t("pages.account.name.emailTooltip")}</TooltipContent>
 
@@ -76,7 +104,7 @@ export const AccountNameForm = () => {
                             input={Input}
                         />
 
-                        <Button disabled={!form.formState.isValid} className="mt-5">
+                        <Button disabled={!form.formState.isValid || !form.formState.isDirty} className="mt-5">
                             {t("pages.account.name.button")}
                         </Button>
                     </Form>

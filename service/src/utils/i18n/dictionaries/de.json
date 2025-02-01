@@ -25,6 +25,16 @@
                 "error": {
                     "email": "Die E-Mail ist nicht veränderbar.",
                     "name": "Bitte gib einen Namen an."
+                },
+                "toast": {
+                    "success": {
+                        "title": "Aktualisierung erfolreich",
+                        "description": "Dein Name ist auf dem neusten Stand."
+                    },
+                    "error": {
+                        "title": "Aktualisierung fehlgeschlagen",
+                        "description": "Bitte versuche es erneut."
+                    }
                 }
             },
             "password": {

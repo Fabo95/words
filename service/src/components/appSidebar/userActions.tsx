@@ -15,7 +15,7 @@ import {
 import { SidebarMenu, SidebarMenuButton, SidebarMenuItem, useSidebar } from "@app/components/ui/sidebar";
 import { CaretSortIcon } from "@radix-ui/react-icons";
 import { apiGetUser, apiPostUserLogout } from "@app/utils/api/apiRequests";
-import { useMutation, useQuery } from "@tanstack/react-query";
+import { useMutation, useQueryClient, useSuspenseQuery } from "@tanstack/react-query";
 import { useRouter } from "next/navigation";
 import { Page } from "@app/utils/routing/routingTypes";
 import { useClientTFunction } from "@app/utils/i18n/utils/i18nHooks";
@@ -28,14 +28,17 @@ export function UserActions() {
 
     const t = useClientTFunction();
 
+    const queryClient = useQueryClient();
+
     const router = useRouter();
 
-    const { data: userData } = useQuery({ queryKey: ["apiGetUser"], queryFn: () => apiGetUser() });
+    const { data: userData } = useSuspenseQuery({ queryKey: ["apiGetUser"], queryFn: () => apiGetUser() });
 
     const { mutate: mutateUserLogout } = useMutation({
         mutationFn: apiPostUserLogout,
         onSuccess: () => {
             router.push(`/${Page.AUTHENTICATION}`);
+            queryClient.invalidateQueries();
         },
     });
 

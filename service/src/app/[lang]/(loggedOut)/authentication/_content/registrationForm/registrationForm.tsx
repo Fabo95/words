@@ -16,6 +16,7 @@ import { FormField } from "@app/components/ui/formField";
 import { apiPostUserCreate } from "@app/utils/api/apiRequests";
 import { Page } from "@app/utils/routing/routingTypes";
 import { useToast } from "@app/components/ui/use-toast";
+import { useMutation } from "@tanstack/react-query";
 
 export const RegistrationForm = () => {
     // --- STATE ---
@@ -36,28 +37,33 @@ export const RegistrationForm = () => {
         resolver: zodResolver(getRegistrationFormSchema(t)),
     });
 
+    const { mutateAsync: mutateUserCreate } = useMutation({
+        mutationFn: (value: RegistrationFormState) => apiPostUserCreate(value),
+        onSuccess: () => {
+            router.push(`/${Page.HOME}`);
+        },
+        onError: (error) => {
+            // Fix this.
+            if (error.cause === 401) {
+                form.setError("confirmPassword", {
+                    message: t("pages.authentication.registration.error.passwordDoesNotMatch"),
+                });
+
+                return;
+            }
+
+            toast({
+                title: t("pages.authentication.registration.error.toastTitle"),
+                description: t("pages.authentication.registration.error.toastDescription"),
+            });
+        },
+    });
+
     // --- CALLBACKS ---
 
     const onSubmit = useCallback(
-        async (values: RegistrationFormState) => {
-            try {
-                await apiPostUserCreate(values);
-
-                router.push(`/${Page.HOME}`);
-            } catch (errorResponse) {
-                if (errorResponse.status === 401) {
-                    form.setError("confirmPassword", {
-                        message: t("pages.authentication.registration.error.passwordDoesNotMatch"),
-                    });
-
-                    return;
-                }
-
-                toast({
-                    title: t("pages.authentication.registration.error.toastTitle"),
-                    description: t("pages.authentication.registration.error.toastDescription"),
-                });
-            }
+        async (value: RegistrationFormState) => {
+            await mutateUserCreate(value);
         },
         [form]
     );

@@ -16,6 +16,7 @@ import { FormField } from "@app/components/ui/formField";
 import { apiPostUserLogin } from "@app/utils/api/apiRequests";
 import { useToast } from "@app/components/ui/use-toast";
 import { Page } from "@app/utils/routing/routingTypes";
+import { useMutation } from "@tanstack/react-query";
 
 export const LoginForm = () => {
     // --- STATE ---
@@ -35,26 +36,31 @@ export const LoginForm = () => {
         resolver: zodResolver(getLoginFormSchema(t)),
     });
 
+    const { mutateAsync: mutateUserLogin } = useMutation({
+        mutationFn: (value: LoginFormState) => apiPostUserLogin(value),
+        onSuccess: () => {
+            router.push(`/${Page.HOME}`);
+        },
+        onError: (error) => {
+            // Fix this.
+            if (error.cause === 401) {
+                form.setError("password", { message: t("pages.authentication.login.error.passwordDoesNotMatch") });
+
+                return;
+            }
+
+            toast({
+                title: t("pages.authentication.login.error.toastTitle"),
+                description: t("pages.authentication.login.error.toastDescription"),
+            });
+        },
+    });
+
     // --- CALLBACKS ---
 
     const onSubmit = useCallback(
-        async (values: LoginFormState) => {
-            try {
-                await apiPostUserLogin(values);
-
-                router.push(`/${Page.HOME}`);
-            } catch (errorResponse) {
-                if (errorResponse.status === 401) {
-                    form.setError("password", { message: t("pages.authentication.login.error.passwordDoesNotMatch") });
-
-                    return;
-                }
-
-                toast({
-                    title: t("pages.authentication.login.error.toastTitle"),
-                    description: t("pages.authentication.login.error.toastDescription"),
-                });
-            }
+        async (value: LoginFormState) => {
+            await mutateUserLogin(value);
         },
         [form]
     );

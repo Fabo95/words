@@ -25,6 +25,16 @@
                 "error": {
                     "email": "The email is not changeable.",
                     "name": "Please enter a name."
+                },
+                "toast": {
+                    "success": {
+                        "title": "Update successful",
+                        "description": "Your name has been updated."
+                    },
+                    "error": {
+                        "title": "Update failed",
+                        "description": "Please try again."
+                    }
                 }
             },
             "password": {

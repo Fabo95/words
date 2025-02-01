@@ -30,6 +30,19 @@ export const apiPostUserLogin = async (body: { email: string; password: string }
         })
     ).then(responseHandler);
 
+export const apiPatchUserUpdate = async (body: {
+    name?: string;
+    password?: string;
+    confirmPassword?: string;
+}): Promise<any> =>
+    fetch(
+        `${API_BASE_URL}/user/update`,
+        getFetchOptions({
+            body,
+            method: HttpMethod.PATCH,
+        })
+    ).then(responseHandler);
+
 export const apiPostUserLogout = async (): Promise<any> =>
     fetch(
         `${API_BASE_URL}/user/logout`,
