@@ -1,5 +1,8 @@
 {
     "components": {
+        "pageNavigation":{
+            "title": "Seiten"
+        },
         "languageSwitcher": {
             "dropdownLabel": "Sprachen",
             "dropdownOptionLabel": "Englisch",
@@ -13,7 +16,14 @@
         }
     },
     "pages": {
+        "home": {
+            "title": "Home"
+        },
+        "learning": {
+            "title": "Lernen"
+        },
         "account": {
+            "title": "Account",
             "name": {
                 "title": "Name",
                 "description": "Pass deinen Namen an.",

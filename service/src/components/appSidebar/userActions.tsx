@@ -1,6 +1,6 @@
 "use client";
 
-import { BadgeCheck, LogOut, Sparkles } from "lucide-react";
+import { User, LogOut, Sparkles } from "lucide-react";
 
 import { Avatar, AvatarFallback, AvatarImage } from "@app/components/ui/avatar";
 import {
@@ -100,7 +100,7 @@ export function UserActions() {
                         <DropdownMenuSeparator />
                         <DropdownMenuGroup>
                             <DropdownMenuItem onClick={handleToAccountClick}>
-                                <BadgeCheck />
+                                <User />
                                 {t("components.userActions.account")}
                             </DropdownMenuItem>
                         </DropdownMenuGroup>

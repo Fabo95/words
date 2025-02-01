@@ -1,9 +1,9 @@
 "use client";
 
 import * as React from "react";
-import { BookOpen, Bot, Frame, Languages, Map, PieChart, Settings2, SquareTerminal } from "lucide-react";
+import { Frame, Languages, Map, PieChart, User, HomeIcon, Book } from "lucide-react";
 
-import { NavMain } from "@app/components/appSidebar/nav-main";
+import { PageNavigation } from "@app/components/appSidebar/pageNavigation";
 import { NavProjects } from "@app/components/appSidebar/nav-projects";
 import { UserActions } from "@app/components/appSidebar/userActions";
 import { LanguageSwitcher } from "@app/components/appSidebar/languageSwitcher";
@@ -13,99 +13,6 @@ import { useClientTFunction } from "@app/utils/i18n/utils/i18nHooks";
 
 // This is sample data.
 const data = {
-    user: {
-        name: "shadcn",
-        email: "m@example.com",
-        avatar: "/avatars/shadcn.jpg",
-    },
-
-    navMain: [
-        {
-            title: "Playground",
-            url: "#",
-            icon: SquareTerminal,
-            isActive: true,
-            items: [
-                {
-                    title: "History",
-                    url: "#",
-                },
-                {
-                    title: "Starred",
-                    url: "#",
-                },
-                {
-                    title: "Settings",
-                    url: "#",
-                },
-            ],
-        },
-        {
-            title: "Models",
-            url: "#",
-            icon: Bot,
-            items: [
-                {
-                    title: "Genesis",
-                    url: "#",
-                },
-                {
-                    title: "Explorer",
-                    url: "#",
-                },
-                {
-                    title: "Quantum",
-                    url: "#",
-                },
-            ],
-        },
-        {
-            title: "Documentation",
-            url: "#",
-            icon: BookOpen,
-            items: [
-                {
-                    title: "Introduction",
-                    url: "#",
-                },
-                {
-                    title: "Get Started",
-                    url: "#",
-                },
-                {
-                    title: "Tutorials",
-                    url: "#",
-                },
-                {
-                    title: "Changelog",
-                    url: "#",
-                },
-            ],
-        },
-        {
-            title: "Settings",
-            url: "#",
-            icon: Settings2,
-            items: [
-                {
-                    title: "General",
-                    url: "#",
-                },
-                {
-                    title: "Team",
-                    url: "#",
-                },
-                {
-                    title: "Billing",
-                    url: "#",
-                },
-                {
-                    title: "Limits",
-                    url: "#",
-                },
-            ],
-        },
-    ],
     projects: [
         {
             name: "Design Engineering",
@@ -132,6 +39,26 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 
     // --- MEMOIZED DATA ---
 
+    const pageItems = useMemo(() => {
+        return [
+            {
+                title: t("pages.home.title"),
+                url: "/home",
+                icon: HomeIcon,
+            },
+            {
+                title: t("pages.learning.title"),
+                url: "/learning",
+                icon: Book,
+            },
+            {
+                title: t("pages.account.title"),
+                url: "/account",
+                icon: User,
+            },
+        ];
+    }, []);
+
     // Fetch it later from db.
     const LANGUAGES = useMemo(
         () => [
@@ -152,7 +79,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
                 <LanguageSwitcher languages={LANGUAGES} />
             </SidebarHeader>
             <SidebarContent>
-                <NavMain items={data.navMain} />
+                <PageNavigation title={t("components.pageNavigation.title")} items={pageItems} />
                 <NavProjects projects={data.projects} />
             </SidebarContent>
             <SidebarFooter>

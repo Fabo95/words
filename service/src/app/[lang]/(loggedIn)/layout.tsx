@@ -39,7 +39,7 @@ export default async function Layout({ children }: { children: ReactNode }) {
     //       However, NextJs won't suspend in that case and the component will render in the pending status, which also opts out of server rendering the content.
     // See: https://tanstack.com/query/v5/docs/framework/react/guides/advanced-ssr#streaming-with-server-components
     queryClient.prefetchQuery({
-        queryKey: ["apiGetUser", authCookieValue],
+        queryKey: ["apiGetUser"],
         queryFn: () => apiGetUser(authCookieValue),
         retry: 3,
     });

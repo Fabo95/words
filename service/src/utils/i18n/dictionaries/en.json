@@ -1,5 +1,8 @@
 {
     "components": {
+        "pageNavigation":{
+            "title": "Pages"
+        },
         "languageSwitcher": {
             "dropdownLabel": "Languages",
             "dropdownOptionLabel": "English",
@@ -13,7 +16,14 @@
         }
     },
     "pages": {
+        "home": {
+            "title": "Home"
+        },
+        "learning": {
+            "title": "Learn"
+        },
         "account": {
+            "title": "Account",
             "name": {
                 "title": "Name",
                 "description": "Change your name.",
