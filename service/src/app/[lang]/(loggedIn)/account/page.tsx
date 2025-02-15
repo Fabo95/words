@@ -20,6 +20,7 @@ export default async function ({ params }: { params: Promise<Record<"lang", Loca
                 <TabsList className="grid w-full grid-cols-2">
                     <TabsTrigger value="name">{t("pages.account.name.title")}</TabsTrigger>
 
+
                     <TabsTrigger value="password">{t("pages.account.password.title")}</TabsTrigger>
                 </TabsList>
 

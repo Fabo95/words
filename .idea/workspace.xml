@@ -4,20 +4,28 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="removed styleguide">
-      <change afterPath="$PROJECT_DIR$/packages/eslint-config/base/eslint.config.js" afterDir="false" />
+    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="adjusted page navigation in sidebar">
+      <change afterPath="$PROJECT_DIR$/packages/biome-config/biome.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/packages/biome-config/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/eslint-config/base/index.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/eslint-config/base/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/eslint-config/base/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/eslint-config/browser-env/index.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/eslint-config/browser-env/eslint.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/eslint-config/browser-env/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/eslint-config/browser-env/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/eslint-config/node-env/index.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/eslint-config/node-env/eslint.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/eslint-config/node-env/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/eslint-config/node-env/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/eslint-config/react/index.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/eslint-config/react/eslint.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/eslint-config/react/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/packages/eslint-config/react/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-config/base/eslint.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-config/base/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-config/browser-env/eslint.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-config/browser-env/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-config/node-env/eslint.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-config/node-env/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-config/react/eslint.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/eslint-config/react/package.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/prettier-config/index.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/packages/prettier-config/package.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/.eslintrc.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/eslint.config.js" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/next.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/service/next.config.mjs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/service/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/app/[lang]/(loggedIn)/account/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/app/[lang]/(loggedIn)/account/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/components/appSidebar/userActions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/components/appSidebar/userActions.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/components/ui/box.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/components/ui/box.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/service/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -50,45 +58,45 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/fabianhinz/Desktop/dev/words/service/src/components/ui&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.eslint-plugin-words-app-styleguide &gt; build.executor&quot;: &quot;Run&quot;,
-    &quot;npm.eslint-plugin-words-app-styleguide &gt; build:clean.executor&quot;: &quot;Run&quot;,
-    &quot;npm.packages:force-node-modules-sync.executor&quot;: &quot;Run&quot;,
-    &quot;npm.service &gt; dev.executor&quot;: &quot;Run&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/fabianhinz/.npm-global/lib/node_modules/prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/fabianhinz/Desktop/dev/words/service/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/fabianhinz/Desktop/dev/words/packages/biome-config",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.eslint-plugin-words-app-styleguide > build.executor": "Run",
+    "npm.eslint-plugin-words-app-styleguide > build:clean.executor": "Run",
+    "npm.packages:force-node-modules-sync.executor": "Run",
+    "npm.service > dev.executor": "Run",
+    "prettierjs.PrettierConfiguration.Package": "/Users/fabianhinz/.npm-global/lib/node_modules/prettier",
+    "settings.editor.selected.configurable": "Settings.Biome",
+    "ts.external.directory.path": "/Users/fabianhinz/Desktop/dev/words/service/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/service/src/components/ui" />
-      <recent name="$PROJECT_DIR$/service/src/lib" />
-      <recent name="$PROJECT_DIR$/service/src/app" />
-      <recent name="$PROJECT_DIR$/service" />
-      <recent name="$PROJECT_DIR$" />
+      <recent name="$PROJECT_DIR$/packages/biome-config" />
+      <recent name="$PROJECT_DIR$/packages/binome-config" />
+      <recent name="$PROJECT_DIR$/service/src/app/[lang]/(loggedIn)/account/_content/accountPasswordForm" />
+      <recent name="$PROJECT_DIR$/service/src/app/[lang]/(loggedIn)/account" />
+      <recent name="$PROJECT_DIR$/service/src/app/[lang]/(loggedIn)/home" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/service/src/block/authentication/loginCardContent" />
-      <recent name="$PROJECT_DIR$/service/src/styles" />
-      <recent name="$PROJECT_DIR$/service/src/components" />
-      <recent name="$PROJECT_DIR$/service/src/app" />
-      <recent name="$PROJECT_DIR$/service/src" />
+      <recent name="$PROJECT_DIR$/service/src/app/[lang]/(loggedIn)/account/_content/accountNameForm" />
+      <recent name="$PROJECT_DIR$/service/src/app/[lang]/(loggedIn)" />
+      <recent name="$PROJECT_DIR$/service/src/components/composed" />
+      <recent name="$PROJECT_DIR$/service/src/utils/api" />
+      <recent name="$PROJECT_DIR$/service/src/app/[lang]/(loggedOut)/authentication/_content/registrationCardContent" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.eslint-plugin-words-app-styleguide &gt; build:clean">
+  <component name="RunManager" selected="npm.service &gt; dev">
     <configuration name="eslint-plugin-words-app-styleguide &gt; build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/packages/eslint-plugin-words-app-styleguide/package.json" />
       <command value="run" />
@@ -131,8 +139,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.eslint-plugin-words-app-styleguide &gt; build:clean" />
         <item itemvalue="npm.service &gt; dev" />
+        <item itemvalue="npm.eslint-plugin-words-app-styleguide &gt; build:clean" />
         <item itemvalue="npm.eslint-plugin-words-app-styleguide &gt; build" />
         <item itemvalue="npm.packages:force-node-modules-sync" />
       </list>
@@ -175,6 +183,11 @@
       <workItem from="1735414805552" duration="1824000" />
       <workItem from="1735416635731" duration="2669000" />
       <workItem from="1735761516505" duration="7630000" />
+      <workItem from="1739045672811" duration="752000" />
+      <workItem from="1739096790248" duration="405000" />
+      <workItem from="1739217982966" duration="67000" />
+      <workItem from="1739223836157" duration="547000" />
+      <workItem from="1739652583043" duration="1142000" />
     </task>
     <task id="LOCAL-00001" summary="update">
       <option name="closed" value="true" />
@@ -312,7 +325,239 @@
       <option name="project" value="LOCAL" />
       <updated>1735412864538</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="adjusted middleware to make proper redirects">
+      <option name="closed" value="true" />
+      <created>1736101767961</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1736101767961</updated>
+    </task>
+    <task id="LOCAL-00019" summary="restructured folder naming">
+      <option name="closed" value="true" />
+      <created>1736106225948</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1736106225949</updated>
+    </task>
+    <task id="LOCAL-00020" summary="added error.tsx">
+      <option name="closed" value="true" />
+      <created>1736111947033</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1736111947033</updated>
+    </task>
+    <task id="LOCAL-00021" summary="added formField to replace inputWrapper.tsx">
+      <option name="closed" value="true" />
+      <created>1736111986035</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1736111986035</updated>
+    </task>
+    <task id="LOCAL-00022" summary="downgrade types since they lead to errors">
+      <option name="closed" value="true" />
+      <created>1736112003613</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1736112003613</updated>
+    </task>
+    <task id="LOCAL-00023" summary="downgrade types since they lead to errors">
+      <option name="closed" value="true" />
+      <created>1736112029317</created>
+      <option name="number" value="00023" />
+      <option name="presentableId" value="LOCAL-00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1736112029317</updated>
+    </task>
+    <task id="LOCAL-00024" summary="migrated registrationCardContent.tsx">
+      <option name="closed" value="true" />
+      <created>1736113225077</created>
+      <option name="number" value="00024" />
+      <option name="presentableId" value="LOCAL-00024" />
+      <option name="project" value="LOCAL" />
+      <updated>1736113225077</updated>
+    </task>
+    <task id="LOCAL-00025" summary="migrated registrationCardContent.tsx">
+      <option name="closed" value="true" />
+      <created>1736113333513</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1736113333513</updated>
+    </task>
+    <task id="LOCAL-00026" summary="migrated registrationCardContent.tsx">
+      <option name="closed" value="true" />
+      <created>1736197739066</created>
+      <option name="number" value="00026" />
+      <option name="presentableId" value="LOCAL-00026" />
+      <option name="project" value="LOCAL" />
+      <updated>1736197739067</updated>
+    </task>
+    <task id="LOCAL-00027" summary="migrated registrationCardContent.tsx">
+      <option name="closed" value="true" />
+      <created>1736201371257</created>
+      <option name="number" value="00027" />
+      <option name="presentableId" value="LOCAL-00027" />
+      <option name="project" value="LOCAL" />
+      <updated>1736201371257</updated>
+    </task>
+    <task id="LOCAL-00028" summary="send cookie to server">
+      <option name="closed" value="true" />
+      <created>1736287438293</created>
+      <option name="number" value="00028" />
+      <option name="presentableId" value="LOCAL-00028" />
+      <option name="project" value="LOCAL" />
+      <updated>1736287438293</updated>
+    </task>
+    <task id="LOCAL-00029" summary="added validation for current email">
+      <option name="closed" value="true" />
+      <created>1736373571019</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1736373571019</updated>
+    </task>
+    <task id="LOCAL-00030" summary="added login">
+      <option name="closed" value="true" />
+      <created>1736459536486</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1736459536487</updated>
+    </task>
+    <task id="LOCAL-00031" summary="added sidebar">
+      <option name="closed" value="true" />
+      <created>1736793218762</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1736793218762</updated>
+    </task>
+    <task id="LOCAL-00032" summary="added sidebar">
+      <option name="closed" value="true" />
+      <created>1736799692288</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1736799692288</updated>
+    </task>
+    <task id="LOCAL-00033" summary="added sidebar">
+      <option name="closed" value="true" />
+      <created>1736801650762</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1736801650762</updated>
+    </task>
+    <task id="LOCAL-00034" summary="added sidebar">
+      <option name="closed" value="true" />
+      <created>1736801654473</created>
+      <option name="number" value="00034" />
+      <option name="presentableId" value="LOCAL-00034" />
+      <option name="project" value="LOCAL" />
+      <updated>1736801654473</updated>
+    </task>
+    <task id="LOCAL-00035" summary="added sidebar">
+      <option name="closed" value="true" />
+      <created>1736806371345</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1736806371345</updated>
+    </task>
+    <task id="LOCAL-00036" summary="added LanguageSwitcher">
+      <option name="closed" value="true" />
+      <created>1737063463811</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1737063463811</updated>
+    </task>
+    <task id="LOCAL-00037" summary="added react query">
+      <option name="closed" value="true" />
+      <created>1737241383601</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1737241383601</updated>
+    </task>
+    <task id="LOCAL-00038" summary="added logout functionality">
+      <option name="closed" value="true" />
+      <created>1737241404376</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1737241404376</updated>
+    </task>
+    <task id="LOCAL-00039" summary="renaming">
+      <option name="closed" value="true" />
+      <created>1737305404368</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1737305404368</updated>
+    </task>
+    <task id="LOCAL-00040" summary="renaming">
+      <option name="closed" value="true" />
+      <created>1737305588420</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1737305588421</updated>
+    </task>
+    <task id="LOCAL-00041" summary="added change password functionality">
+      <option name="closed" value="true" />
+      <created>1737400332700</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1737400332700</updated>
+    </task>
+    <task id="LOCAL-00042" summary="added ability to change name and password">
+      <option name="closed" value="true" />
+      <created>1737409927849</created>
+      <option name="number" value="00042" />
+      <option name="presentableId" value="LOCAL-00042" />
+      <option name="project" value="LOCAL" />
+      <updated>1737409927850</updated>
+    </task>
+    <task id="LOCAL-00043" summary="added prefetching">
+      <option name="closed" value="true" />
+      <created>1737740523151</created>
+      <option name="number" value="00043" />
+      <option name="presentableId" value="LOCAL-00043" />
+      <option name="project" value="LOCAL" />
+      <updated>1737740523151</updated>
+    </task>
+    <task id="LOCAL-00044" summary="added much react query">
+      <option name="closed" value="true" />
+      <created>1738368142561</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1738368142562</updated>
+    </task>
+    <task id="LOCAL-00045" summary="added password change api">
+      <option name="closed" value="true" />
+      <created>1738450550955</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1738450550955</updated>
+    </task>
+    <task id="LOCAL-00046" summary="adjusted page navigation in sidebar">
+      <option name="closed" value="true" />
+      <created>1738450564250</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1738450564250</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -330,17 +575,32 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="update" />
-    <MESSAGE value="wip" />
-    <MESSAGE value="added button + tailwind config package" />
-    <MESSAGE value="added middleware.ts + ui components" />
-    <MESSAGE value="added theme provider" />
     <MESSAGE value="added dropdown-menu.tsx" />
     <MESSAGE value="added theming + recreated UI" />
     <MESSAGE value="added row + added box + added inputWra" />
     <MESSAGE value="updated deps" />
     <MESSAGE value="removed styleguide" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed styleguide" />
+    <MESSAGE value="adjusted middleware to make proper redirects" />
+    <MESSAGE value="restructured folder naming" />
+    <MESSAGE value="added error.tsx" />
+    <MESSAGE value="added formField to replace inputWrapper.tsx" />
+    <MESSAGE value="downgrade types since they lead to errors" />
+    <MESSAGE value="migrated registrationCardContent.tsx" />
+    <MESSAGE value="send cookie to server" />
+    <MESSAGE value="added validation for current email" />
+    <MESSAGE value="added login" />
+    <MESSAGE value="added sidebar" />
+    <MESSAGE value="added LanguageSwitcher" />
+    <MESSAGE value="added react query" />
+    <MESSAGE value="added logout functionality" />
+    <MESSAGE value="renaming" />
+    <MESSAGE value="added change password functionality" />
+    <MESSAGE value="added ability to change name and password" />
+    <MESSAGE value="added prefetching" />
+    <MESSAGE value="added much react query" />
+    <MESSAGE value="added password change api" />
+    <MESSAGE value="adjusted page navigation in sidebar" />
+    <option name="LAST_COMMIT_MESSAGE" value="adjusted page navigation in sidebar" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

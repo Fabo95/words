@@ -42,8 +42,6 @@ export function UserActions() {
         },
     });
 
-    console.log("userdata", userData);
-
     // --- CALLBACKS ---
 
     const handleToAccountClick = useCallback(() => {
