@@ -55,7 +55,7 @@ export const AccountPasswordForm = () => {
         async (value: AccountPasswordFormState) => {
             await mutateUserUpdate(value);
         },
-        [form]
+        [mutateUserUpdate]
     );
 
     // --- RENDER ---

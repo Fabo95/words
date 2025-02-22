@@ -11,6 +11,7 @@ import { ModeToggle } from "@app/components/theme/modeToggle";
 import { Row } from "@app/components/ui/row";
 import { Box } from "@app/components/ui/box";
 import { QueryClientProvider } from "@app/components/reactQuery/QueryClientProvider";
+import {ENV} from "@app/utils/env/env";
 
 const interFont = Inter({
     subsets: ["latin"],
@@ -25,6 +26,12 @@ export const metadata: Metadata = {
 type RootLayoutProps = { children: ReactNode };
 
 export default function RootLayout({ children }: RootLayoutProps) {
+
+    console.log("ennnd", ENV)
+
+    console.log("process.env", process.env)
+
+
     return (
         <html lang="en">
             <body className={cn("min-h-screen bg-background font-sans antialiased", interFont.variable)}>
