@@ -1,120 +1,111 @@
-"use client";
-import { useCallback } from "react";
+"use client"
+import { useCallback } from "react"
 
-import { useRouter } from "next/navigation";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
+import { zodResolver } from "@hookform/resolvers/zod"
+import { useRouter } from "next/navigation"
+import { useForm } from "react-hook-form"
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@app/components/ui/card";
-import { Input } from "@app/components/ui/input";
-import { Button } from "@app/components/ui/button";
-import { useClientTFunction } from "@app/utils/i18n/utils/i18nHooks";
-import { getRegistrationFormSchema } from "@app/app/[lang]/(loggedOut)/authentication/_content/registrationForm/utils/registrationFormSchema";
-import { RegistrationFormState } from "@app/app/[lang]/(loggedOut)/authentication/_content/registrationForm/utils/registrationFormTypes";
-import { Form, FormProvider } from "@app/components/ui/form";
-import { FormField } from "@app/components/ui/formField";
-import { apiPostUserCreate } from "@app/utils/api/apiRequests";
-import { Page } from "@app/utils/routing/routingTypes";
-import { useToast } from "@app/components/ui/use-toast";
-import { useMutation } from "@tanstack/react-query";
+import { getRegistrationFormSchema } from "@app/app/[lang]/(loggedOut)/authentication/_content/registrationForm/utils/registrationFormSchema"
+import { RegistrationFormState } from "@app/app/[lang]/(loggedOut)/authentication/_content/registrationForm/utils/registrationFormTypes"
+import { Button } from "@app/components/ui/button"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@app/components/ui/card"
+import { Form, FormProvider } from "@app/components/ui/form"
+import { FormField } from "@app/components/ui/formField"
+import { Input } from "@app/components/ui/input"
+import { useToast } from "@app/components/ui/use-toast"
+import { $api } from "@app/utils/api/apiRequests"
+import { useClientTFunction } from "@app/utils/i18n/utils/i18nHooks"
+import { Page } from "@app/utils/routing/routingTypes"
 
 export const RegistrationForm = () => {
-    // --- STATE ---
+	// --- STATE ---
 
-    const { toast } = useToast();
+	const { toast } = useToast()
 
-    const t = useClientTFunction();
+	const t = useClientTFunction()
 
-    const router = useRouter();
+	const router = useRouter()
 
-    const form = useForm<RegistrationFormState>({
-        defaultValues: {
-            email: "",
-            password: "",
-            confirmPassword: "",
-        },
-        mode: "onBlur",
-        resolver: zodResolver(getRegistrationFormSchema(t)),
-    });
+	const form = useForm<RegistrationFormState>({
+		defaultValues: {
+			email: "",
+			password: "",
+			confirmPassword: "",
+		},
+		mode: "onBlur",
+		resolver: zodResolver(getRegistrationFormSchema(t)),
+	})
 
-    const { mutateAsync: mutateUserCreate } = useMutation({
-        mutationFn: (value: RegistrationFormState) => apiPostUserCreate(value),
-        onSuccess: () => {
-            router.push(`/${Page.HOME}`);
-        },
-        onError: (error) => {
-            // Fix this.
-            if (error.cause === 401) {
-                form.setError("confirmPassword", {
-                    message: t("pages.authentication.registration.error.passwordDoesNotMatch"),
-                });
+	const { mutateAsync: mutateUserCreate } = $api.useMutation("post", "/user", {
+		onSuccess: () => {
+			router.push(`/${Page.HOME}`)
+		},
+		onError: () => {
+			toast({
+				title: t("pages.authentication.registration.error.toastTitle"),
+				description: t("pages.authentication.registration.error.toastDescription"),
+			})
+		},
+	})
 
-                return;
-            }
+	// --- CALLBACKS ---
 
-            toast({
-                title: t("pages.authentication.registration.error.toastTitle"),
-                description: t("pages.authentication.registration.error.toastDescription"),
-            });
-        },
-    });
+	const onSubmit = useCallback(
+		async (value: RegistrationFormState) => {
+			await mutateUserCreate({
+				body: { email: value.email, password: value.password, confirmPassword: value.confirmPassword },
+			})
+		},
+		[mutateUserCreate],
+	)
 
-    // --- CALLBACKS ---
+	// --- RENDER ---
 
-    const onSubmit = useCallback(
-        async (value: RegistrationFormState) => {
-            await mutateUserCreate(value);
-        },
-        [form]
-    );
+	return (
+		<Card>
+			<CardHeader>
+				<CardTitle>{t("pages.authentication.registration.title")}</CardTitle>
 
-    // --- RENDER ---
+				<CardDescription>{t("pages.authentication.registration.description")}</CardDescription>
+			</CardHeader>
 
-    return (
-        <Card>
-            <CardHeader>
-                <CardTitle>{t("pages.authentication.registration.title")}</CardTitle>
+			<CardContent className="space-y-2">
+				<FormProvider {...form}>
+					<Form onSubmit={form.handleSubmit(onSubmit)}>
+						<FormField
+							className="mb-5"
+							control={form.control}
+							input={Input}
+							label={t("pages.authentication.registration.emailLabel")}
+							name="email"
+							placeholder={t("pages.authentication.registration.emailPlaceholder")}
+						/>
 
-                <CardDescription>{t("pages.authentication.registration.description")}</CardDescription>
-            </CardHeader>
+						<FormField
+							className="mb-5"
+							control={form.control}
+							input={Input}
+							label={t("pages.authentication.registration.passwordLabel")}
+							name="password"
+							inputType="password"
+							placeholder={t("pages.authentication.registration.passwordPlaceholder")}
+						/>
 
-            <CardContent className="space-y-2">
-                <FormProvider {...form}>
-                    <Form onSubmit={form.handleSubmit(onSubmit)}>
-                        <FormField
-                            className="mb-5"
-                            control={form.control}
-                            input={Input}
-                            label={t("pages.authentication.registration.emailLabel")}
-                            name="email"
-                            placeholder={t("pages.authentication.registration.emailPlaceholder")}
-                        />
+						<FormField
+							control={form.control}
+							input={Input}
+							label={t("pages.authentication.registration.passwordConfirmLabel")}
+							name="confirmPassword"
+							inputType="password"
+							placeholder={t("pages.authentication.registration.passwordConfirmPlaceholder")}
+						/>
 
-                        <FormField
-                            className="mb-5"
-                            control={form.control}
-                            input={Input}
-                            label={t("pages.authentication.registration.passwordLabel")}
-                            name="password"
-                            inputType="password"
-                            placeholder={t("pages.authentication.registration.passwordPlaceholder")}
-                        />
-
-                        <FormField
-                            control={form.control}
-                            input={Input}
-                            label={t("pages.authentication.registration.passwordConfirmLabel")}
-                            name="confirmPassword"
-                            inputType="password"
-                            placeholder={t("pages.authentication.registration.passwordConfirmPlaceholder")}
-                        />
-
-                        <Button disabled={!form.formState.isValid} className="mt-5">
-                            {t("pages.authentication.registration.button")}
-                        </Button>
-                    </Form>
-                </FormProvider>
-            </CardContent>
-        </Card>
-    );
-};
+						<Button disabled={!form.formState.isValid} className="mt-5">
+							{t("pages.authentication.registration.button")}
+						</Button>
+					</Form>
+				</FormProvider>
+			</CardContent>
+		</Card>
+	)
+}

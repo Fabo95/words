@@ -1,40 +1,47 @@
-import type { NextRequest } from "next/server";
-import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server"
+import { NextResponse } from "next/server"
 
-import { getLocale, getLocaleFromPathname, getPage } from "@app/utils/routing/routingHelpers";
-import { apiPostAuthenticate } from "@app/utils/api/apiRequests";
+import { $api } from "@app/utils/api/apiRequests"
+import { getQueryClient } from "@app/utils/reactQuery/reactQueryHelpers"
+import { getLocale, getLocaleFromPathname, getPage } from "@app/utils/routing/routingHelpers"
 
 export const middleware = async (request: NextRequest) => {
-    const { pathname } = request.nextUrl;
+	const { pathname } = request.nextUrl
 
-    const locale = getLocaleFromPathname(request.nextUrl.pathname) || getLocale(request);
+	const locale = getLocaleFromPathname(request.nextUrl.pathname) || getLocale(request)
 
-    const authCookie = request.cookies.get("auth-cookie");
+	const authCookie = request.cookies.get("auth-cookie")
 
-    const { isAuthenticated } = await apiPostAuthenticate(authCookie?.value);
+	const queryClient = getQueryClient()
 
-    const page = getPage(request.nextUrl.pathname, isAuthenticated);
+	const { response_object } = await queryClient.fetchQuery(
+		$api.queryOptions("post", "/authenticate", {
+			headers: authCookie?.value ? { Cookie: `auth-cookie=${authCookie?.value}` } : undefined,
+		}),
+	)
 
-    const validPathname = `/${locale}/${page}`;
+	const page = getPage(request.nextUrl.pathname, Boolean(response_object?.isAuthenticated))
 
-    const isPathnameValid = pathname === validPathname;
+	const validPathname = `/${locale}/${page}`
 
-    if (!isPathnameValid) {
-        return NextResponse.redirect(new URL(validPathname, request.nextUrl));
-    }
+	const isPathnameValid = pathname === validPathname
 
-    return NextResponse.next();
-};
+	if (!isPathnameValid) {
+		return NextResponse.redirect(new URL(validPathname, request.nextUrl))
+	}
+
+	return NextResponse.next()
+}
 
 export const config = {
-    matcher: [
-        /*
-         * Match all request paths except for the ones starting with:
-         * - api (API routes)
-         * - _next/static (static files)
-         * - _next/image (image optimization files)
-         * - favicon.ico, sitemap.xml, robots.txt (metadata files)
-         */
-        `/((?!api|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt).*)`,
-    ],
-};
+	matcher: [
+		/*
+		 * Match all request paths except for the ones starting with:
+		 * - api (API routes)
+		 * - _next/static (static files)
+		 * - _next/image (image optimization files)
+		 * - favicon.ico, sitemap.xml, robots.txt (metadata files)
+		 */
+		"/((?!api|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt).*)",
+	],
+}

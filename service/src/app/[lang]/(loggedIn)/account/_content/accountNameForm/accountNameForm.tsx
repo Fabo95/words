@@ -1,113 +1,115 @@
-"use client";
+"use client"
 
-import * as React from "react";
+import * as React from "react"
 
-import { useToast } from "@app/components/ui/use-toast";
-import { useClientTFunction } from "@app/utils/i18n/utils/i18nHooks";
-import { useForm } from "react-hook-form";
-import { zodResolver } from "@hookform/resolvers/zod";
-import { getAccountNameFormSchema } from "@app/app/[lang]/(loggedIn)/account/_content/accountNameForm/utils/accountNameFormSchema";
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@app/components/ui/card";
-import { Form, FormProvider } from "@app/components/ui/form";
-import { FormField } from "@app/components/ui/formField";
-import { Input } from "@app/components/ui/input";
-import { Button } from "@app/components/ui/button";
-import { AccountNameFormState } from "@app/app/[lang]/(loggedIn)/account/_content/accountNameForm/utils/accountNameFormTypes";
-import { Tooltip, TooltipContent, TooltipTrigger } from "@app/components/ui/tooltip";
-import { useMutation, useSuspenseQuery, useQueryClient } from "@tanstack/react-query";
-import { apiGetUser, apiPatchUserUpdate } from "@app/utils/api/apiRequests";
-import { useCallback } from "react";
+import { getAccountNameFormSchema } from "@app/app/[lang]/(loggedIn)/account/_content/accountNameForm/utils/accountNameFormSchema"
+import { AccountNameFormState } from "@app/app/[lang]/(loggedIn)/account/_content/accountNameForm/utils/accountNameFormTypes"
+import { Button } from "@app/components/ui/button"
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@app/components/ui/card"
+import { Form, FormProvider } from "@app/components/ui/form"
+import { FormField } from "@app/components/ui/formField"
+import { Input } from "@app/components/ui/input"
+import { Tooltip, TooltipContent, TooltipTrigger } from "@app/components/ui/tooltip"
+import { useToast } from "@app/components/ui/use-toast"
+import { $api } from "@app/utils/api/apiRequests"
+import { useClientTFunction } from "@app/utils/i18n/utils/i18nHooks"
+import { zodResolver } from "@hookform/resolvers/zod"
+import { useQueryClient } from "@tanstack/react-query"
+import { useCallback } from "react"
+import { useForm } from "react-hook-form"
 
 export const AccountNameForm = () => {
-    // --- STATE ---
+	// --- STATE ---
 
-    const t = useClientTFunction();
+	const t = useClientTFunction()
 
-    const { toast } = useToast();
+	const { toast } = useToast()
 
-    const queryClient = useQueryClient();
+	const queryClient = useQueryClient()
 
-    const { data: userData } = useSuspenseQuery({ queryKey: ["apiGetUser"], queryFn: () => apiGetUser() });
+	const {
+		data: { response_object },
+	} = $api.useSuspenseQuery("get", "/user")
 
-    const { mutateAsync: mutateUserUpdate } = useMutation({
-        mutationFn: (value: AccountNameFormState) => apiPatchUserUpdate({ name: value.name }),
-        onSuccess: (data) => {
-            // See: https://tanstack.com/query/v5/docs/framework/react/guides/updates-from-mutation-responses
-            queryClient.setQueryData(["apiGetUser"], data);
+	const { mutateAsync: mutateUserUpdate } = $api.useMutation("patch", "/user", {
+		onSuccess: (data) => {
+			// See: https://tanstack.com/query/v5/docs/framework/react/guides/updates-from-mutation-responses
+			// TODO FIX
+			queryClient.setQueryData(["get", "/user"], data)
 
-            toast({
-                title: t("pages.account.name.toast.success.title"),
-                description: t("pages.account.name.toast.success.description"),
-            });
-        },
-        onError: () => {
-            toast({
-                title: t("pages.account.name.toast.error.title"),
-                description: t("pages.account.name.toast.error.description"),
-            });
-        },
-    });
+			toast({
+				title: t("pages.account.name.toast.success.title"),
+				description: t("pages.account.name.toast.success.description"),
+			})
+		},
+		onError: () => {
+			toast({
+				title: t("pages.account.name.toast.error.title"),
+				description: t("pages.account.name.toast.error.description"),
+			})
+		},
+	})
 
-    const form = useForm<AccountNameFormState>({
-        defaultValues: {
-            email: userData.email,
-            name: userData.name || "",
-        },
-        mode: "onBlur",
-        resolver: zodResolver(getAccountNameFormSchema(t)),
-    });
+	const form = useForm<AccountNameFormState>({
+		defaultValues: {
+			email: response_object?.email ?? "",
+			name: response_object?.name || "",
+		},
+		mode: "onBlur",
+		resolver: zodResolver(getAccountNameFormSchema(t)),
+	})
 
-    // --- CALLBACKS ---
+	// --- CALLBACKS ---
 
-    const onSubmit = useCallback(
-        async (value: AccountNameFormState) => {
-            await mutateUserUpdate(value);
-        },
-        [form]
-    );
+	const onSubmit = useCallback(
+		async (value: AccountNameFormState) => {
+			await mutateUserUpdate({ body: { name: value.name } })
+		},
+		[mutateUserUpdate],
+	)
 
-    // --- RENDER ---
+	// --- RENDER ---
 
-    return (
-        <Card className="max-w-[400px] w-full">
-            <CardHeader>
-                <CardTitle>{t("pages.account.name.title")}</CardTitle>
+	return (
+		<Card className="max-w-[400px] w-full">
+			<CardHeader>
+				<CardTitle>{t("pages.account.name.title")}</CardTitle>
 
-                <CardDescription>{t("pages.account.name.description")}</CardDescription>
-            </CardHeader>
+				<CardDescription>{t("pages.account.name.description")}</CardDescription>
+			</CardHeader>
 
-            <CardContent className="space-y-2">
-                <FormProvider {...form}>
-                    <Form onSubmit={form.handleSubmit(onSubmit)}>
-                        <Tooltip>
-                            <TooltipContent>{t("pages.account.name.emailTooltip")}</TooltipContent>
+			<CardContent className="space-y-2">
+				<FormProvider {...form}>
+					<Form onSubmit={form.handleSubmit(onSubmit)}>
+						<Tooltip>
+							<TooltipContent>{t("pages.account.name.emailTooltip")}</TooltipContent>
 
-                            <TooltipTrigger className="w-full text-left">
-                                <FormField
-                                    className="mb-5"
-                                    control={form.control}
-                                    label={t("pages.account.name.emailLabel")}
-                                    name="email"
-                                    disabled={true}
-                                    input={Input}
-                                />
-                            </TooltipTrigger>
-                        </Tooltip>
+							<TooltipTrigger className="w-full text-left">
+								<FormField
+									className="mb-5"
+									control={form.control}
+									label={t("pages.account.name.emailLabel")}
+									name="email"
+									disabled={true}
+									input={Input}
+								/>
+							</TooltipTrigger>
+						</Tooltip>
 
-                        <FormField
-                            control={form.control}
-                            label={t("pages.account.name.nameLabel")}
-                            placeholder={t("pages.account.name.namePlaceholder")}
-                            name="name"
-                            input={Input}
-                        />
+						<FormField
+							control={form.control}
+							label={t("pages.account.name.nameLabel")}
+							placeholder={t("pages.account.name.namePlaceholder")}
+							name="name"
+							input={Input}
+						/>
 
-                        <Button disabled={!form.formState.isValid || !form.formState.isDirty} className="mt-5">
-                            {t("pages.account.name.button")}
-                        </Button>
-                    </Form>
-                </FormProvider>
-            </CardContent>
-        </Card>
-    );
-};
+						<Button disabled={!form.formState.isValid || !form.formState.isDirty} className="mt-5">
+							{t("pages.account.name.button")}
+						</Button>
+					</Form>
+				</FormProvider>
+			</CardContent>
+		</Card>
+	)
+}
