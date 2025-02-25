@@ -1,103 +1,110 @@
 {
-    "components": {
-        "pageNavigation":{
-            "title": "Pages"
-        },
-        "languageSwitcher": {
-            "dropdownLabel": "Languages",
-            "dropdownOptionLabel": "English",
-            "dropdownOptionDescription": "German / English",
-            "dropdownAddButton": "Add language",
-            "dropdownTooltipFeature": "This feature is enabled soon."
-        },
-        "userActions": {
-            "account": "Account",
-            "logout": "Logout"
-        }
-    },
-    "pages": {
-        "home": {
-            "title": "Home"
-        },
-        "learning": {
-            "title": "Learn"
-        },
-        "account": {
-            "title": "Account",
-            "name": {
-                "title": "Name",
-                "description": "Change your name.",
-                "emailLabel": "Email",
-                "nameLabel": "Name",
-                "namePlaceholder": "Enter your name.",
-                "button": "Save",
-                "emailTooltip": "The email can't be changed.",
-                "error": {
-                    "email": "The email is not changeable.",
-                    "name": "Please enter a name."
-                },
-                "toast": {
-                    "success": {
-                        "title": "Update successful",
-                        "description": "Your name has been updated."
-                    },
-                    "error": {
-                        "title": "Update failed",
-                        "description": "Please try again."
-                    }
-                }
-            },
-            "password": {
-                "title": "Password",
-                "description": "Change your password.",
-                "passwordLabel": "Change password",
-                "passwordConfirmLabel": "Confirm password",
-                "passwordPlaceholder": "Enter a new password.",
-                "button": "Save",
-                "passwordConfirmPlaceholder": "Confirm the new password.",
-                "error": {
-                    "passwordsDoNotMatch": "The passwords are not matching.",
-                    "password": "Please enter at least 8 characters."
-                }
-            }
-        },
-        "authentication": {
-            "login": {
-                "title": "Login",
-                "description": "Log in to your account.",
-                "emailLabel": "Email",
-                "passwordLabel": "Password",
-                "emailPlaceholder": "Enter your email.",
-                "passwordPlaceholder": "Enter your password.",
-                "button": "Login",
-                "error": {
-                    "emailDoesNotExist": "This email does not exist.",
-                    "passwordDoesNotMatch": "Password is not correct.",
-                    "email": "Please enter a email.",
-                    "password": "Please enter at least 8 characters.",
-                    "toastTitle": "Login failed",
-                    "toastDescription": "Please try again."
-                }
-            },
-            "registration": {
-                "title": "Registration",
-                "description": "Register now.",
-                "emailLabel": "Email",
-                "passwordLabel": "Password",
-                "passwordConfirmLabel": "Confirm password",
-                "emailPlaceholder": "Enter your email.",
-                "passwordPlaceholder": "Enter your password.",
-                "passwordConfirmPlaceholder": "Confirm your password.",
-                "button": "Continue",
-                "error": {
-                    "emailDoesNotExist": "This email does exist.",
-                    "passwordDoesNotMatch": "Passwords do not match.",
-                    "email": "Please enter a email.",
-                    "password": "Please enter at least 8 characters.",
-                    "toastTitle": "Registration failed",
-                    "toastDescription": "Please try again."
-                }
-            }
-        }
-    }
+	"components": {
+		"pageNavigation": {
+			"title": "Pages"
+		},
+		"navCollections": {
+			"title": "Collections",
+			"dropdownTrigger": "More",
+			"dropdownOpenButton": "View collection",
+			"dropdownDeleteButton": "Delete collection",
+			"addCollectionButton": "Add collection"
+		},
+		"languageSwitcher": {
+			"dropdownLabel": "Languages",
+			"dropdownOptionLabel": "English",
+			"dropdownOptionDescription": "German / English",
+			"dropdownAddButton": "Add language",
+			"dropdownTooltipFeature": "This feature is enabled soon."
+		},
+		"userActions": {
+			"account": "Account",
+			"logout": "Logout"
+		}
+	},
+	"pages": {
+		"home": {
+			"title": "Home"
+		},
+		"learning": {
+			"title": "Learn"
+		},
+		"account": {
+			"title": "Account",
+			"name": {
+				"title": "Name",
+				"description": "Change your name.",
+				"emailLabel": "Email",
+				"nameLabel": "Name",
+				"namePlaceholder": "Enter your name.",
+				"button": "Save",
+				"emailTooltip": "The email can't be changed.",
+				"error": {
+					"email": "The email is not changeable.",
+					"name": "Please enter a name."
+				},
+				"toast": {
+					"success": {
+						"title": "Update successful",
+						"description": "Your name has been updated."
+					},
+					"error": {
+						"title": "Update failed",
+						"description": "Please try again."
+					}
+				}
+			},
+			"password": {
+				"title": "Password",
+				"description": "Change your password.",
+				"passwordLabel": "Change password",
+				"passwordConfirmLabel": "Confirm password",
+				"passwordPlaceholder": "Enter a new password.",
+				"button": "Save",
+				"passwordConfirmPlaceholder": "Confirm the new password.",
+				"error": {
+					"passwordsDoNotMatch": "The passwords are not matching.",
+					"password": "Please enter at least 8 characters."
+				}
+			}
+		},
+		"authentication": {
+			"login": {
+				"title": "Login",
+				"description": "Log in to your account.",
+				"emailLabel": "Email",
+				"passwordLabel": "Password",
+				"emailPlaceholder": "Enter your email.",
+				"passwordPlaceholder": "Enter your password.",
+				"button": "Login",
+				"error": {
+					"emailDoesNotExist": "This email does not exist.",
+					"passwordDoesNotMatch": "Password is not correct.",
+					"email": "Please enter a email.",
+					"password": "Please enter at least 8 characters.",
+					"toastTitle": "Login failed",
+					"toastDescription": "Please try again."
+				}
+			},
+			"registration": {
+				"title": "Registration",
+				"description": "Register now.",
+				"emailLabel": "Email",
+				"passwordLabel": "Password",
+				"passwordConfirmLabel": "Confirm password",
+				"emailPlaceholder": "Enter your email.",
+				"passwordPlaceholder": "Enter your password.",
+				"passwordConfirmPlaceholder": "Confirm your password.",
+				"button": "Continue",
+				"error": {
+					"emailDoesNotExist": "This email does exist.",
+					"passwordDoesNotMatch": "Passwords do not match.",
+					"email": "Please enter a email.",
+					"password": "Please enter at least 8 characters.",
+					"toastTitle": "Registration failed",
+					"toastDescription": "Please try again."
+				}
+			}
+		}
+	}
 }

@@ -1,103 +1,110 @@
 {
-    "components": {
-        "pageNavigation":{
-            "title": "Seiten"
-        },
-        "languageSwitcher": {
-            "dropdownLabel": "Sprachen",
-            "dropdownOptionLabel": "Englisch",
-            "dropdownOptionDescription": "Deutsch / Englisch",
-            "dropdownAddButton": "Sprache hinzufügen",
-            "dropdownTooltipFeature": "Dieses Feature wird bald freigeschaltet."
-        },
-        "userActions": {
-            "account": "Account",
-            "logout": "Ausloggen"
-        }
-    },
-    "pages": {
-        "home": {
-            "title": "Home"
-        },
-        "learning": {
-            "title": "Lernen"
-        },
-        "account": {
-            "title": "Account",
-            "name": {
-                "title": "Name",
-                "description": "Pass deinen Namen an.",
-                "emailLabel": "E-Mail",
-                "nameLabel": "Name",
-                "namePlaceholder": "Gib deinen Namen an.",
-                "button": "Speichern",
-                "emailTooltip": "Die E-Mailadresse kann nicht geändert werden.",
-                "error": {
-                    "email": "Die E-Mail ist nicht veränderbar.",
-                    "name": "Bitte gib einen Namen an."
-                },
-                "toast": {
-                    "success": {
-                        "title": "Aktualisierung erfolreich",
-                        "description": "Dein Name ist auf dem neusten Stand."
-                    },
-                    "error": {
-                        "title": "Aktualisierung fehlgeschlagen",
-                        "description": "Bitte versuche es erneut."
-                    }
-                }
-            },
-            "password": {
-                "title": "Password",
-                "description": "Pass dein Password an.",
-                "passwordLabel": "Passwort ändern",
-                "passwordConfirmLabel": "Password bestätigen",
-                "passwordPlaceholder": "Gib ein neues Password an.",
-                "button": "Speichern",
-                "passwordConfirmPlaceholder": "Bestätige das neue Password.",
-                "error": {
-                    "passwordsDoNotMatch": "Die Passwörter stimmen nicht überein.",
-                    "password": "Bitte gib mindestens 8 Zeichen an."
-                }
-            }
-        },
-        "authentication": {
-            "login": {
-                "title": "Login",
-                "description": "Logge dich in deinen Account ein.",
-                "emailLabel": "E-Mail",
-                "passwordLabel": "Passwort",
-                "emailPlaceholder": "Gib deine E-Mail an.",
-                "passwordPlaceholder": "Gib dein Password an.",
-                "button": "Login",
-                "error": {
-                    "emailDoesNotExist": "Diese E-Mail existiert nicht.",
-                    "passwordDoesNotMatch": "Das Password ist nicht korrekt.",
-                    "email": "Bitte gib eine E-Mail an.",
-                    "password": "Bitte gib mindestens 8 Zeichen an.",
-                    "toastTitle": "Login fehlgeschlagen",
-                    "toastDescription": "Bitte versuche es erneut."
-                }
-            },
-            "registration": {
-                "title": "Registrierung",
-                "description": "Registriere dich jetzt.",
-                "emailLabel": "E-Mail",
-                "passwordLabel": "Passwort",
-                "passwordConfirmLabel": "Password bestätigen",
-                "emailPlaceholder": "Gib deine E-Mail an.",
-                "passwordPlaceholder": "Gib dein Password an.",
-                "passwordConfirmPlaceholder": "Bestätige dein Password.",
-                "button": "Weiter",
-                "error": {
-                    "emailDoesExist": "Diese E-Mail existiert bereits.",
-                    "passwordDoesNotMatch": "Passwörter stimmen nicht überein.",
-                    "email": "Bitte gib eine E-Mail an.",
-                    "password": "Bitte gib mindestens 8 Zeichen an.",
-                    "toastTitle": "Registrierung fehlgeschlagen",
-                    "toastDescription": "Bitte versuche es erneut."
-                }
-            }
-        }
-    }
+	"components": {
+		"pageNavigation": {
+			"title": "Seiten"
+		},
+		"navCollections": {
+			"title": "Sammlungen",
+			"dropdownTrigger": "Mehr",
+			"dropdownOpenButton": "Sammlung öffnen",
+			"dropdownDeleteButton": "Sammlung löschen",
+			"addCollectionButton": "Sammlung hinzufügen"
+		},
+		"languageSwitcher": {
+			"dropdownLabel": "Sprachen",
+			"dropdownOptionLabel": "Englisch",
+			"dropdownOptionDescription": "Deutsch / Englisch",
+			"dropdownAddButton": "Sprache hinzufügen",
+			"dropdownTooltipFeature": "Dieses Feature wird bald freigeschaltet."
+		},
+		"userActions": {
+			"account": "Account",
+			"logout": "Ausloggen"
+		}
+	},
+	"pages": {
+		"home": {
+			"title": "Home"
+		},
+		"learning": {
+			"title": "Lernen"
+		},
+		"account": {
+			"title": "Account",
+			"name": {
+				"title": "Name",
+				"description": "Pass deinen Namen an.",
+				"emailLabel": "E-Mail",
+				"nameLabel": "Name",
+				"namePlaceholder": "Gib deinen Namen an.",
+				"button": "Speichern",
+				"emailTooltip": "Die E-Mailadresse kann nicht geändert werden.",
+				"error": {
+					"email": "Die E-Mail ist nicht veränderbar.",
+					"name": "Bitte gib einen Namen an."
+				},
+				"toast": {
+					"success": {
+						"title": "Aktualisierung erfolreich",
+						"description": "Dein Name ist auf dem neusten Stand."
+					},
+					"error": {
+						"title": "Aktualisierung fehlgeschlagen",
+						"description": "Bitte versuche es erneut."
+					}
+				}
+			},
+			"password": {
+				"title": "Password",
+				"description": "Pass dein Password an.",
+				"passwordLabel": "Passwort ändern",
+				"passwordConfirmLabel": "Password bestätigen",
+				"passwordPlaceholder": "Gib ein neues Password an.",
+				"button": "Speichern",
+				"passwordConfirmPlaceholder": "Bestätige das neue Password.",
+				"error": {
+					"passwordsDoNotMatch": "Die Passwörter stimmen nicht überein.",
+					"password": "Bitte gib mindestens 8 Zeichen an."
+				}
+			}
+		},
+		"authentication": {
+			"login": {
+				"title": "Login",
+				"description": "Logge dich in deinen Account ein.",
+				"emailLabel": "E-Mail",
+				"passwordLabel": "Passwort",
+				"emailPlaceholder": "Gib deine E-Mail an.",
+				"passwordPlaceholder": "Gib dein Password an.",
+				"button": "Login",
+				"error": {
+					"emailDoesNotExist": "Diese E-Mail existiert nicht.",
+					"passwordDoesNotMatch": "Das Password ist nicht korrekt.",
+					"email": "Bitte gib eine E-Mail an.",
+					"password": "Bitte gib mindestens 8 Zeichen an.",
+					"toastTitle": "Login fehlgeschlagen",
+					"toastDescription": "Bitte versuche es erneut."
+				}
+			},
+			"registration": {
+				"title": "Registrierung",
+				"description": "Registriere dich jetzt.",
+				"emailLabel": "E-Mail",
+				"passwordLabel": "Passwort",
+				"passwordConfirmLabel": "Password bestätigen",
+				"emailPlaceholder": "Gib deine E-Mail an.",
+				"passwordPlaceholder": "Gib dein Password an.",
+				"passwordConfirmPlaceholder": "Bestätige dein Password.",
+				"button": "Weiter",
+				"error": {
+					"emailDoesExist": "Diese E-Mail existiert bereits.",
+					"passwordDoesNotMatch": "Passwörter stimmen nicht überein.",
+					"email": "Bitte gib eine E-Mail an.",
+					"password": "Bitte gib mindestens 8 Zeichen an.",
+					"toastTitle": "Registrierung fehlgeschlagen",
+					"toastDescription": "Bitte versuche es erneut."
+				}
+			}
+		}
+	}
 }

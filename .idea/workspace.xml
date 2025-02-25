@@ -4,28 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="adjusted page navigation in sidebar">
-      <change afterPath="$PROJECT_DIR$/packages/biome-config/biome.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/packages/biome-config/package.json" afterDir="false" />
+    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="added openapi-react-query to ensure typesafe fetching.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/eslint-config/base/eslint.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/eslint-config/base/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/eslint-config/browser-env/eslint.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/eslint-config/browser-env/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/eslint-config/node-env/eslint.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/eslint-config/node-env/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/eslint-config/react/eslint.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/eslint-config/react/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/prettier-config/index.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/prettier-config/package.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/eslint.config.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/next.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/service/next.config.mjs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/service/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/app/[lang]/(loggedIn)/account/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/app/[lang]/(loggedIn)/account/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/components/appSidebar/userActions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/components/appSidebar/userActions.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/components/ui/box.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/components/ui/box.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/service/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/app/[lang]/(loggedIn)/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/app/[lang]/(loggedIn)/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/components/appSidebar/appSidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/components/appSidebar/appSidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/components/appSidebar/nav-projects.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/components/appSidebar/navCollections.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/utils/i18n/dictionaries/de.json" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/utils/i18n/dictionaries/de.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/utils/i18n/dictionaries/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/utils/i18n/dictionaries/en.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,45 +43,51 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/fabianhinz/Desktop/dev/words/packages/biome-config",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.eslint-plugin-words-app-styleguide > build.executor": "Run",
-    "npm.eslint-plugin-words-app-styleguide > build:clean.executor": "Run",
-    "npm.packages:force-node-modules-sync.executor": "Run",
-    "npm.service > dev.executor": "Run",
-    "prettierjs.PrettierConfiguration.Package": "/Users/fabianhinz/.npm-global/lib/node_modules/prettier",
-    "settings.editor.selected.configurable": "Settings.Biome",
-    "ts.external.directory.path": "/Users/fabianhinz/Desktop/dev/words/service/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/fabianhinz/repositories/words/service&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.eslint-plugin-words-app-styleguide &gt; build.executor&quot;: &quot;Run&quot;,
+    &quot;npm.eslint-plugin-words-app-styleguide &gt; build:clean.executor&quot;: &quot;Run&quot;,
+    &quot;npm.packages:force-node-modules-sync.executor&quot;: &quot;Run&quot;,
+    &quot;npm.service &gt; dev.executor&quot;: &quot;Run&quot;,
+    &quot;npm.service &gt; generate_open_api_types.executor&quot;: &quot;Run&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/fabianhinz/.npm-global/lib/node_modules/prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Settings.Biome&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/fabianhinz/repositories/words/packages/tailwind-config/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
+    ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/service" />
       <recent name="$PROJECT_DIR$/packages/biome-config" />
       <recent name="$PROJECT_DIR$/packages/binome-config" />
       <recent name="$PROJECT_DIR$/service/src/app/[lang]/(loggedIn)/account/_content/accountPasswordForm" />
       <recent name="$PROJECT_DIR$/service/src/app/[lang]/(loggedIn)/account" />
-      <recent name="$PROJECT_DIR$/service/src/app/[lang]/(loggedIn)/home" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/service" />
       <recent name="$PROJECT_DIR$/service/src/app/[lang]/(loggedIn)/account/_content/accountNameForm" />
       <recent name="$PROJECT_DIR$/service/src/app/[lang]/(loggedIn)" />
       <recent name="$PROJECT_DIR$/service/src/components/composed" />
       <recent name="$PROJECT_DIR$/service/src/utils/api" />
-      <recent name="$PROJECT_DIR$/service/src/app/[lang]/(loggedOut)/authentication/_content/registrationCardContent" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.service &gt; dev">
+  <component name="RunManager" selected="npm.service &gt; generate_open_api_types">
     <configuration name="eslint-plugin-words-app-styleguide &gt; build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/packages/eslint-plugin-words-app-styleguide/package.json" />
       <command value="run" />
@@ -137,8 +128,19 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="service &gt; generate_open_api_types" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/service/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="generate_open_api_types" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.service &gt; generate_open_api_types" />
         <item itemvalue="npm.service &gt; dev" />
         <item itemvalue="npm.eslint-plugin-words-app-styleguide &gt; build:clean" />
         <item itemvalue="npm.eslint-plugin-words-app-styleguide &gt; build" />
@@ -188,14 +190,10 @@
       <workItem from="1739217982966" duration="67000" />
       <workItem from="1739223836157" duration="547000" />
       <workItem from="1739652583043" duration="1142000" />
-    </task>
-    <task id="LOCAL-00001" summary="update">
-      <option name="closed" value="true" />
-      <created>1720190911319</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1720190911319</updated>
+      <workItem from="1740226932522" duration="282000" />
+      <workItem from="1740227334398" duration="13000" />
+      <workItem from="1740227414171" duration="29524000" />
+      <workItem from="1740331505474" duration="104000" />
     </task>
     <task id="LOCAL-00002" summary="update">
       <option name="closed" value="true" />
@@ -557,11 +555,46 @@
       <option name="project" value="LOCAL" />
       <updated>1738450564250</updated>
     </task>
-    <option name="localTasksCounter" value="47" />
+    <task id="LOCAL-00047" summary="&quot;e&quot;">
+      <option name="closed" value="true" />
+      <created>1740234791172</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1740234791172</updated>
+    </task>
+    <task id="LOCAL-00048" summary="added envs, added openApi generation">
+      <option name="closed" value="true" />
+      <created>1740236421193</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1740236421193</updated>
+    </task>
+    <task id="LOCAL-00049" summary="added openapi-react-query to ensure typesafe fetching.">
+      <option name="closed" value="true" />
+      <created>1740247640693</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1740247640693</updated>
+    </task>
+    <task id="LOCAL-00050" summary="added openapi-react-query to ensure typesafe fetching.">
+      <option name="closed" value="true" />
+      <created>1740247645783</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1740247645784</updated>
+    </task>
+    <option name="localTasksCounter" value="51" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="UnknownFeatures">
+    <option featureType="com.intellij.fileTypeFactory" implementationName=".env" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -575,10 +608,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added dropdown-menu.tsx" />
-    <MESSAGE value="added theming + recreated UI" />
-    <MESSAGE value="added row + added box + added inputWra" />
-    <MESSAGE value="updated deps" />
     <MESSAGE value="removed styleguide" />
     <MESSAGE value="adjusted middleware to make proper redirects" />
     <MESSAGE value="restructured folder naming" />
@@ -600,7 +629,11 @@
     <MESSAGE value="added much react query" />
     <MESSAGE value="added password change api" />
     <MESSAGE value="adjusted page navigation in sidebar" />
-    <option name="LAST_COMMIT_MESSAGE" value="adjusted page navigation in sidebar" />
+    <MESSAGE value="added README.md" />
+    <MESSAGE value="&quot;e&quot;" />
+    <MESSAGE value="added envs, added openApi generation" />
+    <MESSAGE value="added openapi-react-query to ensure typesafe fetching." />
+    <option name="LAST_COMMIT_MESSAGE" value="added openapi-react-query to ensure typesafe fetching." />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
