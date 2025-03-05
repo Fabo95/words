@@ -1,0 +1,242 @@
+version: '3'
+
+services:
+  # Multi-Node Kafka Setup with KRaft Mode.
+  #
+  # Structure:
+  # - 3 Controllers: Manage metadata and cluster coordination using the Raft protocol.
+  # - 3 Brokers: Store and serve messages, with each broker acting as a leader/follower for partitions.
+  #
+  # Responsibilities:
+  # - Controllers:
+  #   1. Manage cluster metadata.
+  #   2. Elects partition leaders.
+  #   3. Updates metadata when leaders change/fail.
+  #   4. Ensure metadata consistency using the Raft protocol.
+  #
+  # - Brokers:
+  #   1. Store messages in partitions (ordered logs) and ensure durability.
+  #   2. Serve read/write requests from producers and consumers.
+  #   3. Replicate partitions (leader/follower model) for fault tolerance.
+  #   4. Handle inter-broker communication for replication and synchronization.
+  #
+  # Listeners:
+  # - Controllers: Use port 9093 for Raft communication.
+  # - Brokers: Use port 19092 for internal Docker communication and port 9092 for external host communication.
+  #
+  # External Access:
+  # Brokers are accessible from the host machine via:
+  #   - `localhost:29092` (kafka-broker-1)
+  #   - `localhost:39092` (kafka-broker-2)
+  #   - `localhost:49092` (kafka-broker-3)
+  #
+  controller-1:
+    image: apache/kafka:latest
+    container_name: controller-1
+    environment:
+      KAFKA_NODE_ID: 1  # Unique ID for this controller node
+      KAFKA_PROCESS_ROLES: controller  # This node acts as a controller (manages metadata)
+      KAFKA_LISTENERS: CONTROLLER://:9093  # Listener for Raft metadata communication
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT  # Listener for broker-to-broker communication
+      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER  # Use the CONTROLLER listener for Raft communication
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@controller-1:9093,2@controller-2:9093,3@controller-3:9093  # Raft quorum voters (node ID@host:port)
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0  # Disable delay for consumer group rebalancing
+    networks:
+      - app-network
+  controller-2:
+    image: apache/kafka:latest
+    container_name: controller-2
+    environment:
+      KAFKA_NODE_ID: 2  # Unique ID for this controller node
+      KAFKA_PROCESS_ROLES: controller  # This node acts as a controller (manages metadata)
+      KAFKA_LISTENERS: CONTROLLER://:9093  # Listener for Raft metadata communication
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT  # Listener for broker-to-broker communication
+      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER  # Use the CONTROLLER listener for Raft communication
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@controller-1:9093,2@controller-2:9093,3@controller-3:9093  # Raft quorum voters (node ID@host:port)
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0  # Disable delay for consumer group rebalancing
+    networks:
+      - app-network
+
+  controller-3:
+    image: apache/kafka:latest
+    container_name: controller-3
+    environment:
+      KAFKA_NODE_ID: 3  # Unique ID for this controller node
+      KAFKA_PROCESS_ROLES: controller  # This node acts as a controller (manages metadata)
+      KAFKA_LISTENERS: CONTROLLER://:9093  # Listener for Raft metadata communication
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT  # Listener for broker-to-broker communication
+      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER  # Use the CONTROLLER listener for Raft communication
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@controller-1:9093,2@controller-2:9093,3@controller-3:9093  # Raft quorum voters (node ID@host:port)
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0  # Disable delay for consumer group rebalancing
+    networks:
+      - app-network
+
+  kafka-broker-1:
+    image: apache/kafka:latest
+    container_name: kafka-broker-1
+    ports:
+      - 29092:9092  # Expose Kafka's external port to the host machine (for external clients)
+    environment:
+      KAFKA_NODE_ID: 4  # Unique ID for this broker node
+      KAFKA_PROCESS_ROLES: broker  # This node acts as a broker (stores and serves messages)
+      KAFKA_LISTENERS: 'PLAINTEXT://:19092,PLAINTEXT_HOST://:9092'  # Listeners for internal and external communication
+        # PLAINTEXT://:19092: Internal communication within the Docker network
+        # PLAINTEXT_HOST://:9092: External communication from the host machine
+      KAFKA_ADVERTISED_LISTENERS: 'PLAINTEXT://kafka-broker-1:19092,PLAINTEXT_HOST://localhost:29092'  # Advertised addresses for clients
+        # PLAINTEXT://kafka-broker-1:19092: Internal Docker clients use kafka-broker-1:19092
+        # PLAINTEXT_HOST://localhost:29092: External clients use localhost:29092
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT  # Listener for broker-to-broker communication
+      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER  # Use the CONTROLLER listener for Raft communication
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT  # Map listeners to security protocols
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@controller-1:9093,2@controller-2:9093,3@controller-3:9093  # Raft quorum voters (node ID@host:port)
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0  # Disable delay for consumer group rebalancing
+    healthcheck:
+      test: ["CMD", "/opt/kafka/bin/kafka-cluster.sh", "cluster-id", "--bootstrap-server", "kafka-broker-1:19092"]
+      interval: 5s
+      timeout: 10s
+      retries: 10
+    depends_on:
+      - controller-1
+      - controller-2
+      - controller-3
+    networks:
+      - app-network
+
+  kafka-broker-2:
+    image: apache/kafka:latest
+    container_name: kafka-broker-2
+    ports:
+      - 39092:9092  # Expose Kafka's external port to the host machine (for external clients)
+    environment:
+      KAFKA_NODE_ID: 5  # Unique ID for this broker node
+      KAFKA_PROCESS_ROLES: broker  # This node acts as a broker (stores and serves messages)
+      KAFKA_LISTENERS: 'PLAINTEXT://:19092,PLAINTEXT_HOST://:9092'  # Listeners for internal and external communication
+        # PLAINTEXT://:19092: Internal communication within the Docker network
+        # PLAINTEXT_HOST://:9092: External communication from the host machine
+      KAFKA_ADVERTISED_LISTENERS: 'PLAINTEXT://kafka-broker-2:19092,PLAINTEXT_HOST://localhost:39092'  # Advertised addresses for clients
+        # PLAINTEXT://kafka-broker-2:19092: Internal Docker clients use kafka-broker-2:19092
+        # PLAINTEXT_HOST://localhost:39092: External clients use localhost:39092
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT  # Listener for broker-to-broker communication
+      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER  # Use the CONTROLLER listener for Raft communication
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT  # Map listeners to security protocols
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@controller-1:9093,2@controller-2:9093,3@controller-3:9093  # Raft quorum voters (node ID@host:port)
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0  # Disable delay for consumer group rebalancing
+    healthcheck:
+      test: ["CMD", "/opt/kafka/bin/kafka-cluster.sh", "cluster-id", "--bootstrap-server", "kafka-broker-2:19092"]
+      interval: 5s
+      timeout: 10s
+      retries: 10
+    depends_on:
+      - controller-1
+      - controller-2
+      - controller-3
+    networks:
+      - app-network
+
+  kafka-broker-3:
+    image: apache/kafka:latest
+    container_name: kafka-broker-3
+    ports:
+      - 49092:9092  # Expose Kafka's external port to the host machine (for external clients)
+    environment:
+      KAFKA_NODE_ID: 6  # Unique ID for this broker node
+      KAFKA_PROCESS_ROLES: broker  # This node acts as a broker (stores and serves messages)
+      KAFKA_LISTENERS: 'PLAINTEXT://:19092,PLAINTEXT_HOST://:9092'  # Listeners for internal and external communication
+        # PLAINTEXT://:19092: Internal communication within the Docker network
+        # PLAINTEXT_HOST://:9092: External communication from the host machine
+      KAFKA_ADVERTISED_LISTENERS: 'PLAINTEXT://kafka-broker-3:19092,PLAINTEXT_HOST://localhost:49092'  # Advertised addresses for clients
+        # PLAINTEXT://kafka-broker-3:19092: Internal Docker clients use kafka-broker-3:19092
+        # PLAINTEXT_HOST://localhost:49092: External clients use localhost:49092
+      KAFKA_INTER_BROKER_LISTENER_NAME: PLAINTEXT  # Listener for broker-to-broker communication
+      KAFKA_CONTROLLER_LISTENER_NAMES: CONTROLLER  # Use the CONTROLLER listener for Raft communication
+      KAFKA_LISTENER_SECURITY_PROTOCOL_MAP: CONTROLLER:PLAINTEXT,PLAINTEXT:PLAINTEXT,PLAINTEXT_HOST:PLAINTEXT  # Map listeners to security protocols
+      KAFKA_CONTROLLER_QUORUM_VOTERS: 1@controller-1:9093,2@controller-2:9093,3@controller-3:9093  # Raft quorum voters (node ID@host:port)
+      KAFKA_GROUP_INITIAL_REBALANCE_DELAY_MS: 0  # Disable delay for consumer group rebalancing
+    healthcheck:
+      test: ["CMD", "/opt/kafka/bin/kafka-cluster.sh", "cluster-id", "--bootstrap-server", "kafka-broker-3:19092"]
+      interval: 5s
+      timeout: 10s
+      retries: 10
+    depends_on:
+      - controller-1
+      - controller-2
+      - controller-3
+    networks:
+      - app-network
+
+  kafka-ui:
+    container_name: kafka-ui
+    image: ghcr.io/kafbat/kafka-ui:latest
+    ports:
+      - 8081:8080
+    environment:
+      DYNAMIC_CONFIG_ENABLED: 'true'
+      KAFKA_CLUSTERS_0_NAME: local
+      KAFKA_CLUSTERS_0_BOOTSTRAPSERVERS: kafka-broker-1:19092,kafka-broker-2:19092,kafka-broker-3:19092
+    depends_on:
+      - kafka-broker-1
+      - kafka-broker-2
+      - kafka-broker-3
+    networks:
+      - app-network
+
+  postgres:
+    # Needed to be set to run arm64v8 architecture containers.
+    # https://github.com/distribution/distribution/issues/3008#issuecomment-567932645
+    # privileged: true
+    # platform: linux/arm64/v8
+    image: postgres:latest
+    ports:
+      - "5432:5432"
+    container_name: postgres-db
+    environment:
+      POSTGRES_PASSWORD: "password"
+      POSTGRES_USER: "root"
+      POSTGRES_DB: "app_db"
+    # No need to expose the port to the host.
+    # ports:
+    #  - "5432:5432"
+    healthcheck:
+      # https://github.com/peter-evans/docker-compose-healthcheck/issues/16#issuecomment-1073039761
+      test: [ "CMD-SHELL", "pg_isready -d $${POSTGRES_DB} -U $${POSTGRES_USER}"]
+      interval: 3s
+      timeout: 60s
+      retries: 5
+    networks:
+      - app-network
+    volumes:
+      - type: volume
+        source: postgres-data
+        target: /var/lib/postgresql/data
+  words-backend:
+    depends_on:
+      postgres:
+        condition: service_healthy
+      kafka-broker-1:
+        condition: service_healthy
+      kafka-broker-2:
+        condition: service_healthy
+      kafka-broker-3:
+        condition: service_healthy
+    image: fabo95/words-backend:master
+    container_name: words-backend
+    environment:
+      SERVICE_ALLOW_ORIGIN: "http://localhost:3000"
+      SERVICE_DB_URL: "postgres://root:password@postgres:5432"
+      SERVICE_DB_NAME: "app_db"
+      SERVICE_DB_POSTGRES: "postgres"
+      SERVICE_TOKEN_SECRET_KEY: "9FoHBmkyxbgu_xFoQK7e0jz3RMNVJWgfvbVn712FBNH9LLaAWS3CS6Zpcg6RveiObvCUb6a2z-uAiLjhLh2igw"
+      SERVICE_TOKEN_DURATION_SEC: "1800"
+      SERVICE_KAFKA_BROKER_ADDRESSES: "kafka-broker-1:19092,kafka-broker-2:19092,kafka-broker-3:19092"
+      SERVICE_WEB_FOLDER: "web-folder/"
+    ports:
+      - "8080:8080"
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  postgres-data:

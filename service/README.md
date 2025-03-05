@@ -33,6 +33,10 @@ pnpm install
 To start the development server:
 
 ```sh
+docker compose up -d
+```
+
+```sh
 pnpm dev
 ```
 
