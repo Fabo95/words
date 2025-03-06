@@ -8,7 +8,25 @@
 			"dropdownTrigger": "Mehr",
 			"dropdownOpenButton": "Sammlung öffnen",
 			"dropdownDeleteButton": "Sammlung löschen",
-			"addCollectionButton": "Sammlung hinzufügen"
+			"addCollectionButton": "Sammlung hinzufügen",
+			"form": {
+				"title": "Füge eine Sammlung hinzu",
+				"description": "Gib dazu den Namen deiner Sammlung an.",
+				"button": "Hinzufügen",
+				"label": "Name",
+				"placeholder": "Name der Sammlung",
+				"nameError": "Bitte gib mindestens 1 Zeichen an.",
+				"toast": {
+					"success": {
+						"title": "Speichern erfolgreich",
+						"description": "Die Sammlung wurde angelegt."
+					},
+					"error": {
+						"title": "Speichern fehlgeschlagen",
+						"description": "Bitte versuche es erneut."
+					}
+				}
+			}
 		},
 		"languageSwitcher": {
 			"dropdownLabel": "Sprachen",

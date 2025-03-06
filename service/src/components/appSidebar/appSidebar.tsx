@@ -1,6 +1,6 @@
 "use client"
 
-import { Book, Frame, HomeIcon, Languages, PieChart, User } from "lucide-react"
+import { Book, HomeIcon, Languages, User } from "lucide-react"
 import * as React from "react"
 
 import { SidebarCollections } from "@app/components/appSidebar/components/sidebarCollections/sidebarCollections"
@@ -10,27 +10,6 @@ import { SidebarUserActions } from "@app/components/appSidebar/components/sideba
 import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarRail } from "@app/components/ui/sidebar"
 import { useClientTFunction } from "@app/utils/i18n/utils/i18nHooks"
 import { useMemo } from "react"
-
-// This is sample data.
-const data = {
-	projects: [
-		{
-			name: "Design Engineering",
-			url: "#",
-			icon: Frame,
-		},
-		{
-			name: "Sales & Marketing",
-			url: "#",
-			icon: PieChart,
-		},
-		{
-			name: "Travel",
-			url: "#",
-			icon: Map,
-		},
-	],
-}
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 	// --- STATE ---
@@ -80,7 +59,7 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 			</SidebarHeader>
 			<SidebarContent>
 				<SidebarNavigation title={t("components.pageNavigation.title")} items={pageItems} />
-				<SidebarCollections collections={data.projects} />
+				<SidebarCollections />
 			</SidebarContent>
 			<SidebarFooter>
 				<SidebarUserActions />

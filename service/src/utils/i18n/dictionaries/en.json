@@ -8,7 +8,25 @@
 			"dropdownTrigger": "More",
 			"dropdownOpenButton": "View collection",
 			"dropdownDeleteButton": "Delete collection",
-			"addCollectionButton": "Add collection"
+			"addCollectionButton": "Add collection",
+			"form": {
+				"title": "Add a collection",
+				"description": "Specify the name of the collection.",
+				"button": "Add",
+				"label": "Name",
+				"placeholder": "Name of the collection",
+				"nameError": "Please enter at least one character.",
+				"toast": {
+					"success": {
+						"title": "Saving successful",
+						"description": "The collection has been added."
+					},
+					"error": {
+						"title": "Saving failed",
+						"description": "Please try again."
+					}
+				}
+			}
 		},
 		"languageSwitcher": {
 			"dropdownLabel": "Languages",
