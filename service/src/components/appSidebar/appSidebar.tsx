@@ -1,12 +1,12 @@
 "use client"
 
-import { Book, Frame, HomeIcon, Languages, Map, PieChart, User } from "lucide-react"
+import { Book, Frame, HomeIcon, Languages, PieChart, User } from "lucide-react"
 import * as React from "react"
 
-import { LanguageSwitcher } from "@app/components/appSidebar/languageSwitcher"
-import { NavCollections } from "@app/components/appSidebar/navCollections"
-import { PageNavigation } from "@app/components/appSidebar/pageNavigation"
-import { UserActions } from "@app/components/appSidebar/userActions"
+import { SidebarCollections } from "@app/components/appSidebar/components/sidebarCollections/sidebarCollections"
+import { SidebarLanguageSwitch } from "@app/components/appSidebar/components/sidebarLanguageSwitch"
+import { SidebarNavigation } from "@app/components/appSidebar/components/sidebarNavigation"
+import { SidebarUserActions } from "@app/components/appSidebar/components/sidebarUserActions"
 import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarRail } from "@app/components/ui/sidebar"
 import { useClientTFunction } from "@app/utils/i18n/utils/i18nHooks"
 import { useMemo } from "react"
@@ -76,14 +76,14 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 	return (
 		<Sidebar collapsible="icon" {...props}>
 			<SidebarHeader>
-				<LanguageSwitcher languages={LANGUAGES} />
+				<SidebarLanguageSwitch languages={LANGUAGES} />
 			</SidebarHeader>
 			<SidebarContent>
-				<PageNavigation title={t("components.pageNavigation.title")} items={pageItems} />
-				<NavCollections collections={data.projects} />
+				<SidebarNavigation title={t("components.pageNavigation.title")} items={pageItems} />
+				<SidebarCollections collections={data.projects} />
 			</SidebarContent>
 			<SidebarFooter>
-				<UserActions />
+				<SidebarUserActions />
 			</SidebarFooter>
 			<SidebarRail />
 		</Sidebar>

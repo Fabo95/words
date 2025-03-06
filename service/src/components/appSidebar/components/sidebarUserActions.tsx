@@ -21,7 +21,7 @@ import { useQueryClient } from "@tanstack/react-query"
 import { useRouter } from "next/navigation"
 import { useCallback } from "react"
 
-export function UserActions() {
+export function SidebarUserActions() {
 	// --- STATE ---
 
 	const { isMobile } = useSidebar()
