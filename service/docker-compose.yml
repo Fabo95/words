@@ -178,30 +178,40 @@ services:
       CONNECT_BOOTSTRAP_SERVERS: kafka-broker-1:19092,kafka-broker-2:19092,kafka-broker-3:19092
 
       # Kafka Connect Cluster configuration
-      # The group ID for the Kafka Connect cluster.
-      CONNECT_GROUP_ID: kafka-connect-cluster
+      # The unique group ID for the Kafka Connect cluster. All workers in the same cluster share this ID.
+      CONNECT_GROUP_ID: words-kafka-connect-cluster
 
-      # Connect config: naming needs to be checked.
-      CONNECT_CONFIG_STORAGE_TOPIC: debezium.config
-      CONNECT_OFFSET_STORAGE_TOPIC: debezium.offset
-      CONNECT_STATUS_STORAGE_TOPIC: debezium.status
-      CONNECT_REST_ADVERTISED_HOST_NAME: http://kafka-connect:8083
-      CONNECT_PLUGIN_PATH_ISOLATION: true
-
-      # Replication factors for configuration, offsets, and status storage
-      # Defines the number of replicas for storing configuration, offsets, and status.
+      # Kafka Connect storage topics
+      # Topic where connector configurations are stored.
+      CONNECT_CONFIG_STORAGE_TOPIC: connect.config
+      # Replication factor for the configuration storage topic (number of replicas).
       CONNECT_CONFIG_STORAGE_REPLICATION_FACTOR: 3
+
+      # Topic where connector offsets (progress) are stored.
+      CONNECT_OFFSET_STORAGE_TOPIC: connect.offset
+      # Replication factor for the offset storage topic (number of replicas).
       CONNECT_OFFSET_STORAGE_REPLICATION_FACTOR: 3
+
+      # Topic where connector statuses are stored.
+      CONNECT_STATUS_STORAGE_TOPIC: connect.status
+      # Replication factor for the status storage topic (number of replicas).
       CONNECT_STATUS_STORAGE_REPLICATION_FACTOR: 3
 
+      # Kafka Connect REST API configuration
+      # The hostname and port where the Kafka Connect REST API is advertised.
+      CONNECT_REST_ADVERTISED_HOST_NAME: http://kafka-connect:8083
+      # Enables plugin isolation to avoid conflicts between different connectors.
+      CONNECT_PLUGIN_PATH_ISOLATION: true
+
       # Schema Registry URLs
-      # URLs for the Schema Registry used for message serialization and deserialization.
-      CONNECT_KEY_CONVERTER_SCHEMA_REGISTRY_URL: http://schema-registry:8081
-      CONNECT_VALUE_CONVERTER_SCHEMA_REGISTRY_URL: http://schema-registry:8081
+      # URL for the Schema Registry used for serializing/deserializing message keys.
+      CONNECT_KEY_CONVERTER_SCHEMA_REGISTRY_URL: http://kafka-schema-registry:8081
+      # URL for the Schema Registry used for serializing/deserializing message values.
+      CONNECT_VALUE_CONVERTER_SCHEMA_REGISTRY_URL: http://kafka-schema-registry:8081
     healthcheck:
       test: [ "CMD", "curl", "-f", "http://localhost:8083/connectors" ]
       interval: 10s
-      timeout: 5s
+      timeout: 30s
       retries: 30
 
     depends_on:
@@ -220,7 +230,7 @@ services:
     ports:
       - 8081:8081
     environment:
-      SCHEMA_REGISTRY_HOST_NAME: schema-registry
+      SCHEMA_REGISTRY_HOST_NAME: kafka-schema-registry
       SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS: kafka-broker-1:19092,kafka-broker-2:19092,kafka-broker-3:19092
     depends_on:
       kafka-broker-1:
@@ -275,9 +285,10 @@ services:
       POSTGRES_PASSWORD: "password"
       POSTGRES_USER: "root"
       POSTGRES_DB: "app_db"
-    # No need to expose the port to the host.
-    # ports:
-    #  - "5432:5432"
+    command:
+      - "postgres"
+      - "-c"
+      - "wal_level=logical"
     healthcheck:
       # https://github.com/peter-evans/docker-compose-healthcheck/issues/16#issuecomment-1073039761
       test: [ "CMD-SHELL", "pg_isready -d $${POSTGRES_DB} -U $${POSTGRES_USER}"]
