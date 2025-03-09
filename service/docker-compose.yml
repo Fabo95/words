@@ -164,11 +164,93 @@ services:
     networks:
       - app-network
 
+  kafka-connect:
+    build:
+      context: .  # Directory where the Dockerfile is located
+      dockerfile: Dockerfile  # Name of the Dockerfile
+    image: kafka-connect:latest  # Name and tag of the Docker image
+    container_name: kafka-connect
+    ports:
+      - 8083:8083  # Kafka Connect REST API port mapping
+    environment:
+      # Kafka Broker connection
+      # Defines the Kafka brokers that Kafka Connect will connect to.
+      CONNECT_BOOTSTRAP_SERVERS: kafka-broker-1:19092,kafka-broker-2:19092,kafka-broker-3:19092
+
+      # Kafka Connect Cluster configuration
+      # The group ID for the Kafka Connect cluster.
+      CONNECT_GROUP_ID: kafka-connect-cluster
+
+      # Connect config: naming needs to be checked.
+      CONNECT_CONFIG_STORAGE_TOPIC: debezium.config
+      CONNECT_OFFSET_STORAGE_TOPIC: debezium.offset
+      CONNECT_STATUS_STORAGE_TOPIC: debezium.status
+      CONNECT_REST_ADVERTISED_HOST_NAME: http://kafka-connect:8083
+      CONNECT_PLUGIN_PATH_ISOLATION: true
+
+      # Replication factors for configuration, offsets, and status storage
+      # Defines the number of replicas for storing configuration, offsets, and status.
+      CONNECT_CONFIG_STORAGE_REPLICATION_FACTOR: 3
+      CONNECT_OFFSET_STORAGE_REPLICATION_FACTOR: 3
+      CONNECT_STATUS_STORAGE_REPLICATION_FACTOR: 3
+
+      # Schema Registry URLs
+      # URLs for the Schema Registry used for message serialization and deserialization.
+      CONNECT_KEY_CONVERTER_SCHEMA_REGISTRY_URL: http://schema-registry:8081
+      CONNECT_VALUE_CONVERTER_SCHEMA_REGISTRY_URL: http://schema-registry:8081
+    healthcheck:
+      test: [ "CMD", "curl", "-f", "http://localhost:8083/connectors" ]
+      interval: 10s
+      timeout: 5s
+      retries: 30
+
+    depends_on:
+      kafka-broker-1:
+        condition: service_healthy
+      kafka-broker-2:
+        condition: service_healthy
+      kafka-broker-3:
+        condition: service_healthy
+    networks:
+      - app-network
+
+  kafka-schema-registry:
+    image: confluentinc/cp-schema-registry:latest
+    container_name: kafka-schema-registry
+    ports:
+      - 8081:8081
+    environment:
+      SCHEMA_REGISTRY_HOST_NAME: schema-registry
+      SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS: kafka-broker-1:19092,kafka-broker-2:19092,kafka-broker-3:19092
+    depends_on:
+      kafka-broker-1:
+        condition: service_healthy
+      kafka-broker-2:
+        condition: service_healthy
+      kafka-broker-3:
+        condition: service_healthy
+    networks:
+      - app-network
+
+  kafka-connector-init:
+    image: curlimages/curl:latest
+    container_name: kafka-connector-init
+    depends_on:
+      kafka-connect:
+        condition: service_healthy
+    # Configures Debezium PostgreSQL through the Kafka Connect REST API.
+    command: >
+      sh -c "curl -X POST -H 'Content-Type: application/json' --data @/config/debeziumPostgresConnector.json http://kafka-connect:8083/connectors"
+    volumes:
+      - ./connector-config:/config
+    networks:
+      - app-network
+
   kafka-ui:
     container_name: kafka-ui
     image: ghcr.io/kafbat/kafka-ui:latest
     ports:
-      - 8081:8080
+      - 8082:8080
     environment:
       DYNAMIC_CONFIG_ENABLED: 'true'
       KAFKA_CLUSTERS_0_NAME: local
