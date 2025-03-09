@@ -215,6 +215,8 @@ services:
       retries: 30
 
     depends_on:
+      postgres:
+        condition: service_healthy
       kafka-broker-1:
         condition: service_healthy
       kafka-broker-2:
