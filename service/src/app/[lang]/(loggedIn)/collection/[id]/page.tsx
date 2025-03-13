@@ -1,3 +1,4 @@
+import { CollectionTable } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/collectionTable"
 import { getTFunction } from "@app/utils/i18n/utils/i18nHelpers"
 import { Locale } from "@app/utils/locale/localeTypes"
 
@@ -10,5 +11,5 @@ export default async function Page({ params }: { params: Promise<{ lang: Locale;
 
 	// --- RENDER ---
 
-	return "my page"
+	return <CollectionTable />
 }
