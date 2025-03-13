@@ -1,9 +1,10 @@
 "use client"
 
-import { Folder, Plus, Trash2 } from "lucide-react"
+import { Edit, Folder, Plus, Trash2 } from "lucide-react"
 
 import { SidebarCollectionCreateForm } from "@app/components/appSidebar/components/sidebarCollections/components/sidebarCollectionCreateForm/sidebarCollectionCreateForm"
 import { SidebarCollectionDeleteDialog } from "@app/components/appSidebar/components/sidebarCollections/components/sidebarCollectionDeleteDialog/sidebarCollectionDeleteDialog"
+import { SidebarCollectionEditForm } from "@app/components/appSidebar/components/sidebarCollections/components/sidebarCollectionEditForm/sidebarCollectionEditForm"
 import { Button } from "@app/components/ui/button"
 import { Dialog, DialogTrigger } from "@app/components/ui/dialog"
 import {
@@ -31,8 +32,9 @@ export function SidebarCollections() {
 
 	const { isMobile } = useSidebar()
 
-	const [isCollectionFormOpen, setIsCollectionFormOpen] = useState(false)
+	const [isCreateFormOpen, setIsCreateFormOpen] = useState(false)
 	const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false)
+	const [isEditFormOpen, setIsEditFormOpen] = useState(false)
 
 	const t = useClientTFunction()
 
@@ -47,8 +49,8 @@ export function SidebarCollections() {
 			<SidebarGroupLabel>{t("components.navCollections.title")}</SidebarGroupLabel>
 
 			<SidebarMenu>
-				{response_object?.map((collection) => (
-					<SidebarMenuItem key={collection.name}>
+				{response_object?.map((collection, index) => (
+					<SidebarMenuItem key={collection.id}>
 						<SidebarMenuButton asChild>
 							<a href={collection.name}>
 								<span>{collection.name}</span>
@@ -73,9 +75,9 @@ export function SidebarCollections() {
 									<span>{t("components.navCollections.dropdownOpenButton")}</span>
 								</DropdownMenuItem>
 
-								<DropdownMenuItem>
-									<Trash2 className="text-muted-foreground" />
-									<span>{t("components.navCollections.dropdownDeleteButton")}</span>
+								<DropdownMenuItem onClick={() => setIsEditFormOpen(true)}>
+									<Edit className="text-muted-foreground" />
+									<span>{t("components.navCollections.dropdownEditButton")}</span>
 								</DropdownMenuItem>
 
 								<DropdownMenuItem onClick={() => setIsDeleteDialogOpen(true)}>
@@ -85,13 +87,23 @@ export function SidebarCollections() {
 							</DropdownMenuContent>
 						</DropdownMenu>
 
+						<Dialog open={isEditFormOpen} onOpenChange={setIsEditFormOpen}>
+							{isEditFormOpen && (
+								<SidebarCollectionEditForm
+									name={collection.name}
+									id={collection.id}
+									handleIsDialogOpen={setIsEditFormOpen}
+								/>
+							)}
+						</Dialog>
+
 						<Dialog open={isDeleteDialogOpen} onOpenChange={setIsDeleteDialogOpen}>
 							<SidebarCollectionDeleteDialog id={collection.id} handleIsDialogOpen={setIsDeleteDialogOpen} />
 						</Dialog>
 					</SidebarMenuItem>
 				))}
 
-				<Dialog open={isCollectionFormOpen} onOpenChange={setIsCollectionFormOpen}>
+				<Dialog open={isCreateFormOpen} onOpenChange={setIsCreateFormOpen}>
 					<SidebarMenuItem className="mt-3">
 						<DialogTrigger asChild>
 							<Button size="sm" variant="outline" className="w-full">
@@ -101,7 +113,7 @@ export function SidebarCollections() {
 						</DialogTrigger>
 					</SidebarMenuItem>
 
-					<SidebarCollectionCreateForm handleIsDialogOpen={setIsCollectionFormOpen} />
+					<SidebarCollectionCreateForm handleIsDialogOpen={setIsCreateFormOpen} />
 				</Dialog>
 			</SidebarMenu>
 		</SidebarGroup>

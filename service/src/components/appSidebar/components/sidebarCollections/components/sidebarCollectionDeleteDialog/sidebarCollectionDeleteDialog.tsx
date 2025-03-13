@@ -1,10 +1,11 @@
+import { useCallback } from "react"
+
 import { Button } from "@app/components/ui/button"
 import { DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@app/components/ui/dialog"
 import { useToast } from "@app/components/ui/use-toast"
 import { $api } from "@app/utils/api/apiRequests"
 import { useClientTFunction } from "@app/utils/i18n/utils/i18nHooks"
 import { useQueryClient } from "@tanstack/react-query"
-import { useCallback } from "react"
 
 type SidebarCollectionDeleteDialogProps = { id: number; handleIsDialogOpen: (isOpen: boolean) => void }
 
@@ -21,15 +22,24 @@ export const SidebarCollectionDeleteDialog = ({ id, handleIsDialogOpen }: Sideba
 		onSuccess: (data) => {
 			console.log({ data })
 
+			queryClient.setQueryData(["get", "/collection/all"], (oldData) =>
+				oldData
+					? {
+							...oldData,
+							response_object: oldData.response_object.filter((collection) => collection.id !== id),
+						}
+					: oldData,
+			)
+
 			toast({
-				title: t("components.navCollections.form.toast.success.title"),
-				description: t("components.navCollections.form.toast.success.description"),
+				title: t("components.navCollections.deleteDialog.toast.success.title"),
+				description: t("components.navCollections.deleteDialog.toast.success.description"),
 			})
 		},
 		onError: () => {
 			toast({
-				title: t("components.navCollections.form.toast.error.title"),
-				description: t("components.navCollections.form.toast.error.description"),
+				title: t("components.navCollections.deleteDialog.toast.error.title"),
+				description: t("components.navCollections.deleteDialog.toast.error.description"),
 			})
 		},
 	})
@@ -47,15 +57,20 @@ export const SidebarCollectionDeleteDialog = ({ id, handleIsDialogOpen }: Sideba
 	return (
 		<DialogContent>
 			<DialogHeader className="mb-5">
-				<DialogTitle>{t("components.navCollections.form.title")}</DialogTitle>
+				<DialogTitle>{t("components.navCollections.deleteDialog.title")}</DialogTitle>
 
-				<DialogDescription className="mb-5">{t("components.navCollections.form.description")} </DialogDescription>
+				<DialogDescription className="mb-5">
+					{t("components.navCollections.deleteDialog.description")}
+				</DialogDescription>
 			</DialogHeader>
 
 			<DialogFooter>
-				<Button onClick={() => handleIsDialogOpen(false)}>Cancel</Button>
+				<Button onClick={() => handleIsDialogOpen(false)}>
+					{t("components.navCollections.deleteDialog.cancelButton")}
+				</Button>
+
 				<Button variant="destructive" onClick={handleDeleteCollection}>
-					Delete
+					{t("components.navCollections.deleteDialog.deleteButton")}
 				</Button>
 			</DialogFooter>
 		</DialogContent>

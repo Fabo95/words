@@ -7,9 +7,44 @@
 			"title": "Sammlungen",
 			"dropdownTrigger": "Mehr",
 			"dropdownOpenButton": "Sammlung öffnen",
+			"dropdownEditButton": "Sammlung anpassen",
 			"dropdownDeleteButton": "Sammlung löschen",
 			"addCollectionButton": "Sammlung hinzufügen",
-			"form": {
+			"deleteDialog": {
+				"title": "Sammlung löschen",
+				"description": "Möchtest du die Sammlung wirklich löschen?",
+				"cancelButton": "Abbrechen",
+				"deleteButton": "Löschen",
+				"toast": {
+					"success": {
+						"title": "Löschen erfolgreich",
+						"description": "Die Sammlung wurde gelöscht."
+					},
+					"error": {
+						"title": "Löschen fehlgeschlagen",
+						"description": "Bitte versuche es erneut."
+					}
+				}
+			},
+			"editForm": {
+				"title": "Sammlung anpassen",
+				"description": "Gib einen neuen Namen für die Sammlung an.",
+				"button": "Speichern",
+				"label": "Name",
+				"placeholder": "Name der Sammlung",
+				"nameError": "Bitte gib mindestens 1 Zeichen an.",
+				"toast": {
+					"success": {
+						"title": "Speichern erfolgreich",
+						"description": "Die Sammlung wurde angepasst."
+					},
+					"error": {
+						"title": "Speichern fehlgeschlagen",
+						"description": "Bitte versuche es erneut."
+					}
+				}
+			},
+			"createForm": {
 				"title": "Füge eine Sammlung hinzu",
 				"description": "Gib dazu den Namen deiner Sammlung an.",
 				"button": "Hinzufügen",

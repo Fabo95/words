@@ -1,5 +1,5 @@
-import { CollectionFormState } from "@app/components/appSidebar/components/sidebarCollections/components/sidebarCollectionCreateForm/utils/collectionFormTypes"
-import { getCollectionFormSchema } from "@app/components/appSidebar/components/sidebarCollections/components/sidebarCollectionCreateForm/utils/collectionFromSchema"
+import { CollectionCreateFormState } from "@app/components/appSidebar/components/sidebarCollections/components/sidebarCollectionCreateForm/utils/collectionCreateFormTypes"
+import { getCollectionCreateFormSchema } from "@app/components/appSidebar/components/sidebarCollections/components/sidebarCollectionCreateForm/utils/collectionCreateFromSchema"
 import { Button } from "@app/components/ui/button"
 import { DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@app/components/ui/dialog"
 import { Form, FormProvider } from "@app/components/ui/form"
@@ -24,12 +24,12 @@ export const SidebarCollectionCreateForm = ({ handleIsDialogOpen }: SidebarColle
 
 	const queryClient = useQueryClient()
 
-	const form = useForm<CollectionFormState>({
+	const form = useForm<CollectionCreateFormState>({
 		defaultValues: {
 			name: "",
 		},
 		mode: "onBlur",
-		resolver: zodResolver(getCollectionFormSchema(t)),
+		resolver: zodResolver(getCollectionCreateFormSchema(t)),
 	})
 
 	const { mutateAsync: mutateCollectionCreate } = $api.useMutation("post", "/collection", {
@@ -45,16 +45,18 @@ export const SidebarCollectionCreateForm = ({ handleIsDialogOpen }: SidebarColle
 			)
 
 			toast({
-				title: t("components.navCollections.form.toast.success.title"),
-				description: t("components.navCollections.form.toast.success.description"),
+				title: t("components.navCollections.createForm.toast.success.title"),
+				description: t("components.navCollections.createForm.toast.success.description"),
 			})
+
+			form.reset()
 
 			handleIsDialogOpen(false)
 		},
 		onError: () => {
 			toast({
-				title: t("components.navCollections.form.toast.error.title"),
-				description: t("components.navCollections.form.toast.error.description"),
+				title: t("components.navCollections.createForm.toast.error.title"),
+				description: t("components.navCollections.createForm.toast.error.description"),
 			})
 		},
 	})
@@ -62,7 +64,7 @@ export const SidebarCollectionCreateForm = ({ handleIsDialogOpen }: SidebarColle
 	// --- CALLBACKS ---
 
 	const onSubmit = useCallback(
-		async (value: CollectionFormState) => {
+		async (value: CollectionCreateFormState) => {
 			await mutateCollectionCreate({
 				body: { name: value.name },
 			})
@@ -77,21 +79,23 @@ export const SidebarCollectionCreateForm = ({ handleIsDialogOpen }: SidebarColle
 			<FormProvider {...form}>
 				<Form onSubmit={form.handleSubmit(onSubmit)}>
 					<DialogHeader className="mb-5">
-						<DialogTitle>{t("components.navCollections.form.title")}</DialogTitle>
+						<DialogTitle>{t("components.navCollections.createForm.title")}</DialogTitle>
 
-						<DialogDescription className="mb-5">{t("components.navCollections.form.description")} </DialogDescription>
+						<DialogDescription className="mb-5">
+							{t("components.navCollections.createForm.description")}
+						</DialogDescription>
 
 						<FormField
 							control={form.control}
 							input={Input}
-							label={t("components.navCollections.form.label")}
+							label={t("components.navCollections.createForm.label")}
 							name="name"
-							placeholder={t("components.navCollections.form.placeholder")}
+							placeholder={t("components.navCollections.createForm.placeholder")}
 						/>
 					</DialogHeader>
 
 					<DialogFooter>
-						<Button disabled={!form.formState.isValid}>{t("components.navCollections.form.button")}</Button>
+						<Button disabled={!form.formState.isValid}>{t("components.navCollections.createForm.button")}</Button>
 					</DialogFooter>
 				</Form>
 			</FormProvider>

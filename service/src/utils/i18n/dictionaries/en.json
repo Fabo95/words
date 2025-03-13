@@ -7,9 +7,44 @@
 			"title": "Collections",
 			"dropdownTrigger": "More",
 			"dropdownOpenButton": "View collection",
+			"dropdownEditButton": "Adjust collection",
 			"dropdownDeleteButton": "Delete collection",
 			"addCollectionButton": "Add collection",
-			"form": {
+			"deleteDialog": {
+				"title": "Delete collection",
+				"description": "You really want to delete the collection?",
+				"cancelButton": "Cancel",
+				"deleteButton": "Delete",
+				"toast": {
+					"success": {
+						"title": "Deletion successful",
+						"description": "The collection was deleted."
+					},
+					"error": {
+						"title": "Deletion failed",
+						"description": "Please try again."
+					}
+				}
+			},
+			"editForm": {
+				"title": "Adjust the collection",
+				"description": "Specify the new name of the collection.",
+				"button": "Save",
+				"label": "Name",
+				"placeholder": "Name of the collection",
+				"nameError": "Please enter at least one character.",
+				"toast": {
+					"success": {
+						"title": "Saving successful",
+						"description": "The collection has been changed."
+					},
+					"error": {
+						"title": "Saving failed",
+						"description": "Please try again."
+					}
+				}
+			},
+			"createForm": {
 				"title": "Add a collection",
 				"description": "Specify the name of the collection.",
 				"button": "Add",
