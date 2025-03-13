@@ -2,7 +2,8 @@
 
 import { Folder, Plus, Trash2 } from "lucide-react"
 
-import { SidebarCollectionForm } from "@app/components/appSidebar/components/sidebarCollections/sidebarCollectionForm/sidebarCollectionForm"
+import { SidebarCollectionCreateForm } from "@app/components/appSidebar/components/sidebarCollections/components/sidebarCollectionCreateForm/sidebarCollectionCreateForm"
+import { SidebarCollectionDeleteDialog } from "@app/components/appSidebar/components/sidebarCollections/components/sidebarCollectionDeleteDialog/sidebarCollectionDeleteDialog"
 import { Button } from "@app/components/ui/button"
 import { Dialog, DialogTrigger } from "@app/components/ui/dialog"
 import {
@@ -31,6 +32,7 @@ export function SidebarCollections() {
 	const { isMobile } = useSidebar()
 
 	const [isCollectionFormOpen, setIsCollectionFormOpen] = useState(false)
+	const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false)
 
 	const t = useClientTFunction()
 
@@ -44,39 +46,52 @@ export function SidebarCollections() {
 		<SidebarGroup className="group-data-[collapsible=icon]:hidden">
 			<SidebarGroupLabel>{t("components.navCollections.title")}</SidebarGroupLabel>
 
-			<Dialog open={isCollectionFormOpen} onOpenChange={setIsCollectionFormOpen}>
-				<SidebarMenu>
-					{response_object?.map((collection) => (
-						<SidebarMenuItem key={collection.name}>
-							<SidebarMenuButton asChild>
-								<a href={collection.name}>
-									<span>{collection.name}</span>
-								</a>
-							</SidebarMenuButton>
-							<DropdownMenu>
-								<DropdownMenuTrigger asChild>
-									<SidebarMenuAction showOnHover>
-										<DotsHorizontalIcon />
-										<span className="sr-only">{t("components.navCollections.dropdownTrigger")}</span>
-									</SidebarMenuAction>
-								</DropdownMenuTrigger>
-								<DropdownMenuContent
-									className="w-48 rounded-lg"
-									side={isMobile ? "bottom" : "right"}
-									align={isMobile ? "end" : "start"}
-								>
-									<DropdownMenuItem>
-										<Folder className="text-muted-foreground" />
-										<span>{t("components.navCollections.dropdownOpenButton")}</span>
-									</DropdownMenuItem>
-									<DropdownMenuItem>
-										<Trash2 className="text-muted-foreground" />
-										<span>{t("components.navCollections.dropdownDeleteButton")}</span>
-									</DropdownMenuItem>
-								</DropdownMenuContent>
-							</DropdownMenu>
-						</SidebarMenuItem>
-					))}
+			<SidebarMenu>
+				{response_object?.map((collection) => (
+					<SidebarMenuItem key={collection.name}>
+						<SidebarMenuButton asChild>
+							<a href={collection.name}>
+								<span>{collection.name}</span>
+							</a>
+						</SidebarMenuButton>
+
+						<DropdownMenu>
+							<DropdownMenuTrigger asChild>
+								<SidebarMenuAction showOnHover>
+									<DotsHorizontalIcon />
+									<span className="sr-only">{t("components.navCollections.dropdownTrigger")}</span>
+								</SidebarMenuAction>
+							</DropdownMenuTrigger>
+
+							<DropdownMenuContent
+								className="w-48 rounded-lg"
+								side={isMobile ? "bottom" : "right"}
+								align={isMobile ? "end" : "start"}
+							>
+								<DropdownMenuItem>
+									<Folder className="text-muted-foreground" />
+									<span>{t("components.navCollections.dropdownOpenButton")}</span>
+								</DropdownMenuItem>
+
+								<DropdownMenuItem>
+									<Trash2 className="text-muted-foreground" />
+									<span>{t("components.navCollections.dropdownDeleteButton")}</span>
+								</DropdownMenuItem>
+
+								<DropdownMenuItem onClick={() => setIsDeleteDialogOpen(true)}>
+									<Trash2 className="text-muted-foreground" />
+									<span>{t("components.navCollections.dropdownDeleteButton")}</span>
+								</DropdownMenuItem>
+							</DropdownMenuContent>
+						</DropdownMenu>
+
+						<Dialog open={isDeleteDialogOpen} onOpenChange={setIsDeleteDialogOpen}>
+							<SidebarCollectionDeleteDialog id={collection.id} handleIsDialogOpen={setIsDeleteDialogOpen} />
+						</Dialog>
+					</SidebarMenuItem>
+				))}
+
+				<Dialog open={isCollectionFormOpen} onOpenChange={setIsCollectionFormOpen}>
 					<SidebarMenuItem className="mt-3">
 						<DialogTrigger asChild>
 							<Button size="sm" variant="outline" className="w-full">
@@ -85,10 +100,10 @@ export function SidebarCollections() {
 							</Button>
 						</DialogTrigger>
 					</SidebarMenuItem>
-				</SidebarMenu>
 
-				<SidebarCollectionForm handleOpenChange={setIsCollectionFormOpen} />
-			</Dialog>
+					<SidebarCollectionCreateForm handleIsDialogOpen={setIsCollectionFormOpen} />
+				</Dialog>
+			</SidebarMenu>
 		</SidebarGroup>
 	)
 }

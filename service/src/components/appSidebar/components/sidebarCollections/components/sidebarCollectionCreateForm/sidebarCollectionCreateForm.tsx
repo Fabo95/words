@@ -1,5 +1,5 @@
-import { CollectionFormState } from "@app/components/appSidebar/components/sidebarCollections/sidebarCollectionForm/utils/collectionFormTypes"
-import { getCollectionFormSchema } from "@app/components/appSidebar/components/sidebarCollections/sidebarCollectionForm/utils/collectionFromSchema"
+import { CollectionFormState } from "@app/components/appSidebar/components/sidebarCollections/components/sidebarCollectionCreateForm/utils/collectionFormTypes"
+import { getCollectionFormSchema } from "@app/components/appSidebar/components/sidebarCollections/components/sidebarCollectionCreateForm/utils/collectionFromSchema"
 import { Button } from "@app/components/ui/button"
 import { DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@app/components/ui/dialog"
 import { Form, FormProvider } from "@app/components/ui/form"
@@ -13,9 +13,9 @@ import { useQueryClient } from "@tanstack/react-query"
 import { useCallback } from "react"
 import { useForm } from "react-hook-form"
 
-type SidebarCollectionFormProps = { handleOpenChange: (isOpen: boolean) => void }
+type SidebarCollectionCreateFormProps = { handleIsDialogOpen: (isOpen: boolean) => void }
 
-export const SidebarCollectionForm = ({ handleOpenChange }: SidebarCollectionFormProps) => {
+export const SidebarCollectionCreateForm = ({ handleIsDialogOpen }: SidebarCollectionCreateFormProps) => {
 	// --- STATE ---
 
 	const { toast } = useToast()
@@ -49,7 +49,7 @@ export const SidebarCollectionForm = ({ handleOpenChange }: SidebarCollectionFor
 				description: t("components.navCollections.form.toast.success.description"),
 			})
 
-			handleOpenChange(false)
+			handleIsDialogOpen(false)
 		},
 		onError: () => {
 			toast({

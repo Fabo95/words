@@ -52,6 +52,22 @@ export type paths = {
         patch?: never;
         trace?: never;
     };
+    "/collection/{id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post?: never;
+        delete: operations["delete_collection_handler"];
+        options?: never;
+        head?: never;
+        patch: operations["update_collection_handler"];
+        trace?: never;
+    };
     "/translation": {
         parameters: {
             query?: never;
@@ -172,6 +188,9 @@ export type components = {
             isAuthenticated: boolean;
         };
         CollectionForCreate: {
+            name: string;
+        };
+        CollectionForUpdate: {
             name: string;
         };
         EmailForCheck: {
@@ -375,6 +394,52 @@ export interface operations {
                 };
                 content: {
                     "application/json": components["schemas"]["HttpResponseBody_Vec_entity.collectionsModel"];
+                };
+            };
+        };
+    };
+    delete_collection_handler: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                id: number;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HttpResponseBody_u64"];
+                };
+            };
+        };
+    };
+    update_collection_handler: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                id: number;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["CollectionForUpdate"];
+            };
+        };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HttpResponseBody_entity.collectionsModel"];
                 };
             };
         };

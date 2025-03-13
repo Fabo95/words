@@ -252,7 +252,7 @@ services:
         condition: service_healthy
     # Configures Debezium PostgreSQL through the Kafka Connect REST API.
     command: >
-      sh -c "curl -X POST -H 'Content-Type: application/json' --data @/config/debeziumPostgresConnector.json http://kafka-connect:8083/connectors"
+      sh -c "curl -X POST -H 'Content-Type: application/json' --data @/config/debeziumWordsDbUsersCreatedConfig.json http://kafka-connect:8083/connectors"
     volumes:
       - ./connector-config:/config
     networks:

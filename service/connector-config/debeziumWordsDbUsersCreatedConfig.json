@@ -1,5 +1,5 @@
 {
-  "name": "debezium-connector-postgresql",
+  "name": "debezium-words-db-users-created",
   "config": {
     "connector.class": "io.debezium.connector.postgresql.PostgresConnector",
     "database.hostname": "postgres-db",
