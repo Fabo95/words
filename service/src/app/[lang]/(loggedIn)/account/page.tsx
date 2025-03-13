@@ -5,7 +5,7 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@app/components/ui/tab
 import { getTFunction } from "@app/utils/i18n/utils/i18nHelpers"
 import { Locale } from "@app/utils/locale/localeTypes"
 
-export default async function ({ params }: { params: Promise<Record<"lang", Locale>> }) {
+export default async function Page({ params }: { params: Promise<Record<"lang", Locale>> }) {
 	// --- STATE ---
 
 	const { lang } = await params

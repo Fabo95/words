@@ -1,3 +1,8 @@
-import { Page } from "@app/utils/routing/routingTypes";
+import { URLPattern } from "next/server"
 
-export const LOGGED_IN_PAGES = Object.values(Page).filter((currentPage) => currentPage !== Page.AUTHENTICATION);
+export const VALID_PATHNAMES = [
+	new URLPattern({ pathname: "/:lang/authentication" }),
+	new URLPattern({ pathname: "/:lang/home" }),
+	new URLPattern({ pathname: "/:lang/account" }),
+	new URLPattern({ pathname: "/:lang/collection/:id" }),
+]

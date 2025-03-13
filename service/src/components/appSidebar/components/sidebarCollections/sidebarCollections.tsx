@@ -24,11 +24,16 @@ import {
 } from "@app/components/ui/sidebar"
 import { $api } from "@app/utils/api/apiRequests"
 import { useClientTFunction } from "@app/utils/i18n/utils/i18nHooks"
+import { getCollectionPage } from "@app/utils/urls/urls"
 import { DotsHorizontalIcon } from "@radix-ui/react-icons"
+import Link from "next/link"
+import { useRouter } from "next/navigation"
 import { useState } from "react"
 
 export function SidebarCollections() {
 	// --- STATE ---
+
+	const router = useRouter()
 
 	const { isMobile } = useSidebar()
 
@@ -49,12 +54,12 @@ export function SidebarCollections() {
 			<SidebarGroupLabel>{t("components.navCollections.title")}</SidebarGroupLabel>
 
 			<SidebarMenu>
-				{response_object?.map((collection, index) => (
+				{response_object?.map((collection) => (
 					<SidebarMenuItem key={collection.id}>
 						<SidebarMenuButton asChild>
-							<a href={collection.name}>
+							<Link href={getCollectionPage(collection.id)}>
 								<span>{collection.name}</span>
-							</a>
+							</Link>
 						</SidebarMenuButton>
 
 						<DropdownMenu>
@@ -70,7 +75,7 @@ export function SidebarCollections() {
 								side={isMobile ? "bottom" : "right"}
 								align={isMobile ? "end" : "start"}
 							>
-								<DropdownMenuItem>
+								<DropdownMenuItem onClick={() => router.push(getCollectionPage(collection.id))}>
 									<Folder className="text-muted-foreground" />
 									<span>{t("components.navCollections.dropdownOpenButton")}</span>
 								</DropdownMenuItem>

@@ -1,36 +1,46 @@
 import type { NextRequest } from "next/server"
 import { NextResponse } from "next/server"
 
-import { $api } from "@app/utils/api/apiRequests"
-import { getQueryClient } from "@app/utils/reactQuery/reactQueryHelpers"
-import { getLocale, getLocaleFromPathname, getPage } from "@app/utils/routing/routingHelpers"
+import { getLocale, getLocaleFromPathname, isValidPathname } from "@app/utils/routing/routingHelpers"
+import { Page } from "@app/utils/routing/routingTypes"
+
+// Used to make the locale persistent between navigation.
+// TODO We need a way to set the localState, when the user changes the languages through the UI.
+let localeState: string
 
 export const middleware = async (request: NextRequest) => {
 	const { pathname } = request.nextUrl
 
-	const locale = getLocaleFromPathname(request.nextUrl.pathname) || getLocale(request)
+	// Extract locale from the pathname, take it from the state or fallback to a default locale
+	const locale = getLocaleFromPathname(pathname) ?? localeState ?? getLocale(request)
 
+	// Check for the auth cookie
 	const authCookie = request.cookies.get("auth-cookie")
 
-	const queryClient = getQueryClient()
-
-	const { response_object } = await queryClient.fetchQuery(
-		$api.queryOptions("post", "/authenticate", {
-			headers: authCookie?.value ? { Cookie: `auth-cookie=${authCookie?.value}` } : undefined,
-		}),
-	)
-
-	const page = getPage(request.nextUrl.pathname, Boolean(response_object?.isAuthenticated))
-
-	const validPathname = `/${locale}/${page}`
-
-	const isPathnameValid = pathname === validPathname
-
-	if (!isPathnameValid) {
-		return NextResponse.redirect(new URL(validPathname, request.nextUrl))
+	// If the user tries to access the authentication page with an auth cookie, redirect to home
+	if (authCookie && pathname.includes(Page.AUTHENTICATION)) {
+		return NextResponse.redirect(new URL(`/${locale}/${Page.HOME}`, request.nextUrl))
 	}
 
-	return NextResponse.next()
+	// If no auth cookie, redirect to the authentication page
+	if (!authCookie && !pathname.includes(Page.AUTHENTICATION)) {
+		return NextResponse.redirect(new URL(`/${locale}/${Page.AUTHENTICATION}`, request.nextUrl))
+	}
+
+	// If the pathname is valid, allow the request to proceed
+	if (isValidPathname(pathname)) {
+		localeState = pathname.split("/")[1] as string
+
+		return NextResponse.next()
+	}
+
+	// If the pathname does not have a locale but is valid when the local is added, redirect to pathname with locale.
+	if (pathname.split("/")[1] !== locale && isValidPathname(`/${locale}${pathname}`)) {
+		return NextResponse.redirect(new URL(`/${locale}/${pathname}`, request.nextUrl))
+	}
+
+	// If the pathname is not valid, redirect to the home page
+	return NextResponse.redirect(new URL(`/${locale}/home`, request.nextUrl))
 }
 
 export const config = {
