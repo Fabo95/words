@@ -11,6 +11,7 @@ import {
 	DropdownMenu,
 	DropdownMenuContent,
 	DropdownMenuItem,
+	DropdownMenuSeparator,
 	DropdownMenuTrigger,
 } from "@app/components/ui/dropdown-menu"
 import {
@@ -84,6 +85,8 @@ export function SidebarCollections() {
 									<Edit className="text-muted-foreground" />
 									<span>{t("components.navCollections.dropdownEditButton")}</span>
 								</DropdownMenuItem>
+
+								<DropdownMenuSeparator />
 
 								<DropdownMenuItem onClick={() => setIsDeleteDialogOpen(true)}>
 									<Trash2 className="text-muted-foreground" />

@@ -82,6 +82,16 @@
 		"learning": {
 			"title": "Learn"
 		},
+		"collection": {
+			"table": {
+				"actions": {
+					"dropdownTrigger": "Open",
+					"dropdownEditButton": "Edit translation",
+					"dropdownDeleteTranslationButton": "Delete translation",
+					"dropdownDeleteFromCollectionButton": "Delete translation from collection"
+				}
+			}
+		},
 		"account": {
 			"title": "Account",
 			"name": {
