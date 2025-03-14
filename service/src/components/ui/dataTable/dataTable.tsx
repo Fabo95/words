@@ -11,18 +11,17 @@ import {
 	getSortedRowModel,
 	useReactTable,
 } from "@tanstack/react-table"
+import { useState } from "react"
 
-import { Button } from "@app/components/ui/button"
 import { DataTableFilter } from "@app/components/ui/dataTable/dataTableFilter"
 import { DataTablePagination } from "@app/components/ui/dataTable/dataTablePagination"
-import { Input } from "@app/components/ui/input"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@app/components/ui/table"
-import { useState } from "react"
+import { Option } from "@app/utils/types/types"
 
 interface DataTableProps<TData, TValue> {
 	columns: ColumnDef<TData, TValue>[]
 	data: TData[]
-	filters: (string & keyof TData)[]
+	filters: Option<string & keyof TData>[]
 }
 
 export function DataTable<TData, TValue>({ columns, data, filters }: DataTableProps<TData, TValue>) {
@@ -30,8 +29,6 @@ export function DataTable<TData, TValue>({ columns, data, filters }: DataTablePr
 
 	const [sorting, setSorting] = useState<SortingState>([])
 	const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([])
-
-	console.log("sorting", sorting)
 
 	const table = useReactTable({
 		data,

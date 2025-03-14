@@ -9,7 +9,10 @@ export const CollectionTable = () => {
 	return (
 		<div className="container mx-auto py-10">
 			<DataTable
-				filters={["sourceText", "targetText"]}
+				filters={[
+					{ value: "sourceText", label: "Wort" },
+					{ value: "targetText", label: "Übersetzung" },
+				]}
 				columns={COLLECTION_TABLE_COLUMNS}
 				data={[
 					{ sourceLanguage: "deutsch", sourceText: "he", targetLanguage: "englisch", targetText: "hu" },
