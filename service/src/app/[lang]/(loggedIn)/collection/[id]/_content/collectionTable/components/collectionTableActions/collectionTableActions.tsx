@@ -1,7 +1,8 @@
 import { Row } from "@tanstack/react-table"
 import { Delete, Edit, MoreHorizontal, Trash2 } from "lucide-react"
 
-import { SidebarCollectionDeleteTranslationDialog } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableDeleteTranslationDialog"
+import { CollectionTableDeleteFromCollectionDialog } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableDeleteFromCollectionDialog"
+import { CollectionTableDeleteTranslationDialog } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableDeleteTranslationDialog"
 import { CollectionTranslation } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/utils/collectionTableTypes"
 import { Button } from "@app/components/ui/button"
 import { Dialog } from "@app/components/ui/dialog"
@@ -55,7 +56,7 @@ export const CollectionTableActions = ({ row }: CollectionTableActionsProps) => 
 
 					<DropdownMenuSeparator />
 
-					<DropdownMenuItem>
+					<DropdownMenuItem onClick={() => setIsDeleteFromCollectionDialogOpen(true)}>
 						<Delete className="text-muted-foreground" />
 						<span>{t("pages.collection.table.actions.dropdownDeleteFromCollectionButton")}</span>
 					</DropdownMenuItem>
@@ -67,8 +68,17 @@ export const CollectionTableActions = ({ row }: CollectionTableActionsProps) => 
 				</DropdownMenuContent>
 			</DropdownMenu>
 
+			<Dialog open={isDeleteFromCollectionDialogOpen} onOpenChange={setIsDeleteFromCollectionDialogOpen}>
+				<CollectionTableDeleteFromCollectionDialog
+					id={row.original.id}
+					translationId={row.original.translationId}
+					handleIsDialogOpen={setIsDeleteFromCollectionDialogOpen}
+				/>
+			</Dialog>
+
 			<Dialog open={isDeleteTranslationDialogOpen} onOpenChange={setIsDeleteTranslationDialogOpen}>
-				<SidebarCollectionDeleteTranslationDialog
+				<CollectionTableDeleteTranslationDialog
+					id={row.original.id}
 					translationId={row.original.translationId}
 					handleIsDialogOpen={setIsDeleteTranslationDialogOpen}
 				/>

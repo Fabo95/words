@@ -7,17 +7,16 @@ import { $api } from "@app/utils/api/apiRequests"
 import { useClientTFunction } from "@app/utils/i18n/utils/i18nHooks"
 import { useQueryClient } from "@tanstack/react-query"
 
-type CollectionTableDeleteTranslationDialogProps = {
+type CollectionTableDeleteFromCollectionDialogProps = {
 	id: number
 	translationId: number
 	handleIsDialogOpen: (isOpen: boolean) => void
 }
 
-export const CollectionTableDeleteTranslationDialog = ({
-	id,
+export const CollectionTableDeleteFromCollectionDialog = ({
 	translationId,
 	handleIsDialogOpen,
-}: CollectionTableDeleteTranslationDialogProps) => {
+}: CollectionTableDeleteFromCollectionDialogProps) => {
 	// --- STATE ---
 
 	const { toast } = useToast()
@@ -27,18 +26,8 @@ export const CollectionTableDeleteTranslationDialog = ({
 	const queryClient = useQueryClient()
 
 	const { mutateAsync: mutateTranslationDelete } = $api.useMutation("delete", "/translation/{id}", {
-		onSuccess: () => {
-			console.log("queryCache", queryClient.getQueryCache())
-
-			queryClient.setQueryData(["get", "/collection/{id}/translations", { params: { path: { id } } }], (oldData) => {
-				console.log("oldData", oldData)
-				return oldData
-					? {
-							...oldData,
-							response_object: oldData.response_object.filter((translation) => translation.id !== translationId),
-						}
-					: oldData
-			})
+		onSuccess: (data) => {
+			console.log({ data })
 
 			toast({
 				title: t("pages.collection.table.deleteTranslationDialog.toast.success.title"),
