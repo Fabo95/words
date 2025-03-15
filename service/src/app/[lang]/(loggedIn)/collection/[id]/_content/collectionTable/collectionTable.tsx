@@ -38,7 +38,7 @@ export const CollectionTable = () => {
 	// --- RENDER ---
 
 	return (
-		<div className="w-4/5">
+		<div className="w-4/5 overflow-hidden">
 			<DataTable
 				filters={[
 					{ value: "sourceText", label: "Wort" },

@@ -4,6 +4,10 @@ import { CollectionTableActions } from "@app/app/[lang]/(loggedIn)/collection/[i
 import { CollectionTranslation } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/utils/collectionTableTypes"
 import { Checkbox } from "@app/components/ui/checkbox"
 import { DataTableColumnHeader } from "@app/components/ui/dataTable/dataTableColumnHeader"
+import { FormField } from "@app/components/ui/formField"
+import { Input } from "@app/components/ui/input"
+import { Tooltip, TooltipContent, TooltipTrigger } from "@app/components/ui/tooltip"
+import * as React from "react"
 
 export const COLLECTION_TABLE_COLUMNS: ColumnDef<CollectionTranslation>[] = [
 	// https://ui.shadcn.com/docs/components/data-table#row-selection
@@ -30,34 +34,39 @@ export const COLLECTION_TABLE_COLUMNS: ColumnDef<CollectionTranslation>[] = [
 		accessorKey: "sourceLanguage",
 		header: ({ column }) => <DataTableColumnHeader column={column} title="Übersetzt von" />,
 		cell: ({ row }) => {
-			return <div className="pl-3 pr-3">{row.getValue("sourceLanguage")}</div>
+			return <p className="pl-3 pr-3 truncate">{row.getValue("sourceLanguage")}</p>
 		},
 	},
 	{
 		accessorKey: "sourceText",
 		header: ({ column }) => <DataTableColumnHeader column={column} title="Wort" />,
 		cell: ({ row }) => {
-			return <div className="pl-3 pr-3">{row.getValue("sourceText")}</div>
+			return <p className="pl-3 pr-3 truncate">{row.getValue("sourceText")}</p>
 		},
 	},
 	{
 		accessorKey: "targetLanguage",
 		header: ({ column }) => <DataTableColumnHeader column={column} title="Übersetzt in" />,
 		cell: ({ row }) => {
-			return <div className="pl-3 pr-3">{row.getValue("targetLanguage")}</div>
+			return <p className="pl-3 pr-3 truncate">{row.getValue("targetLanguage")}</p>
 		},
 	},
 	{
 		accessorKey: "targetText",
 		header: ({ column }) => <DataTableColumnHeader column={column} title="Übersetzung" />,
 		cell: ({ row }) => {
-			return <div className="pl-3 pr-3">{row.getValue("targetText")}</div>
+			return <p className="pl-3 pr-3 truncate">{row.getValue("targetText")}</p>
 		},
 	},
 
 	// https://ui.shadcn.com/docs/components/data-table#row-actions
 	{
 		id: "actions",
-		cell: ({ row }) => <CollectionTableActions row={row} />,
+		header: () => <div className="w-11" />,
+		cell: ({ row }) => (
+			<div className="pl-3 pr-3">
+				<CollectionTableActions row={row} />
+			</div>
+		),
 	},
 ]
