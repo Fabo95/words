@@ -29,22 +29,22 @@ export const SidebarCollectionDeleteTranslationDialog = ({
 			console.log({ data })
 
 			toast({
-				title: t("components.navCollections.deleteDialog.toast.success.title"),
-				description: t("components.navCollections.deleteDialog.toast.success.description"),
+				title: t("pages.collection.table.deleteTranslationDialog.toast.success.title"),
+				description: t("pages.collection.table.deleteTranslationDialog.toast.success.description"),
 			})
 		},
 		onError: () => {
 			toast({
-				title: t("components.navCollections.deleteDialog.toast.error.title"),
-				description: t("components.navCollections.deleteDialog.toast.error.description"),
+				title: t("pages.collection.table.deleteTranslationDialog.toast.error.title"),
+				description: t("pages.collection.table.deleteTranslationDialog.toast.success.description"),
 			})
 		},
 	})
 
 	// --- CALLBACKS ---
 
-	const handleDeleteCollection = useCallback(() => {
-		mutateTranslationDelete({ params: { path: { id: translationId } } })
+	const handleDeleteCollection = useCallback(async () => {
+		await mutateTranslationDelete({ params: { path: { id: translationId } } })
 
 		handleIsDialogOpen(false)
 	}, [translationId, mutateTranslationDelete, handleIsDialogOpen])
@@ -54,20 +54,20 @@ export const SidebarCollectionDeleteTranslationDialog = ({
 	return (
 		<DialogContent>
 			<DialogHeader className="mb-5">
-				<DialogTitle>{t("components.navCollections.deleteDialog.title")}</DialogTitle>
+				<DialogTitle>{t("pages.collection.table.deleteTranslationDialog.title")}</DialogTitle>
 
 				<DialogDescription className="mb-5">
-					{t("components.navCollections.deleteDialog.description")}
+					{t("pages.collection.table.deleteTranslationDialog.description")}
 				</DialogDescription>
 			</DialogHeader>
 
 			<DialogFooter>
-				<Button onClick={() => handleIsDialogOpen(false)}>
-					{t("components.navCollections.deleteDialog.cancelButton")}
+				<Button variant="secondary" onClick={() => handleIsDialogOpen(false)}>
+					{t("pages.collection.table.deleteTranslationDialog.cancelButton")}
 				</Button>
 
-				<Button variant="destructive" onClick={handleDeleteCollection}>
-					{t("components.navCollections.deleteDialog.deleteButton")}
+				<Button onClick={handleDeleteCollection}>
+					{t("pages.collection.table.deleteTranslationDialog.deleteButton")}
 				</Button>
 			</DialogFooter>
 		</DialogContent>
