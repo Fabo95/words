@@ -36,22 +36,6 @@ export type paths = {
         patch?: never;
         trace?: never;
     };
-    "/collection/all": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["find_all_collections_handler"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
     "/collection/{id}": {
         parameters: {
             query?: never;
@@ -66,6 +50,22 @@ export type paths = {
         options?: never;
         head?: never;
         patch: operations["update_collection_handler"];
+        trace?: never;
+    };
+    "/collection/{id}/translations": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["find_collection_translations"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
         trace?: never;
     };
     "/translation": {
@@ -84,22 +84,6 @@ export type paths = {
         patch?: never;
         trace?: never;
     };
-    "/translation/all": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["find_all_translations_handler"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
     "/translation/{id}": {
         parameters: {
             query?: never;
@@ -107,7 +91,7 @@ export type paths = {
             path?: never;
             cookie?: never;
         };
-        get: operations["find_one_translation_handler"];
+        get?: never;
         put?: never;
         post?: never;
         delete: operations["delete_translation_handler"];
@@ -123,7 +107,7 @@ export type paths = {
             path?: never;
             cookie?: never;
         };
-        get: operations["find_one_user_by_id_handler"];
+        get: operations["find_user_by_id_handler"];
         put?: never;
         post: operations["create_user_handler"];
         delete?: never;
@@ -142,6 +126,22 @@ export type paths = {
         get?: never;
         put?: never;
         post: operations["check_email_handler"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/user/collections": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["find_user_collections"];
+        put?: never;
+        post?: never;
         delete?: never;
         options?: never;
         head?: never;
@@ -174,6 +174,22 @@ export type paths = {
         get?: never;
         put?: never;
         post: operations["logout_handler"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/user/translations": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["find_user_translations"];
+        put?: never;
+        post?: never;
         delete?: never;
         options?: never;
         head?: never;
@@ -238,6 +254,8 @@ export type components = {
             message: string;
             response_object?: {
                 /** Format: int32 */
+                collection_id?: number | null;
+                /** Format: int32 */
                 id: number;
                 source_language: string;
                 source_text: string;
@@ -262,6 +280,8 @@ export type components = {
         "HttpResponseBody_entity.translationsModel": {
             message: string;
             response_object?: {
+                /** Format: int32 */
+                collection_id?: number | null;
                 /** Format: int32 */
                 id: number;
                 source_language: string;
@@ -319,6 +339,8 @@ export type components = {
             user_id: number;
         };
         "entity.translationsModel": {
+            /** Format: int32 */
+            collection_id?: number | null;
             /** Format: int32 */
             id: number;
             source_language: string;
@@ -379,25 +401,6 @@ export interface operations {
             };
         };
     };
-    find_all_collections_handler: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HttpResponseBody_Vec_entity.collectionsModel"];
-                };
-            };
-        };
-    };
     delete_collection_handler: {
         parameters: {
             query?: never;
@@ -444,34 +447,13 @@ export interface operations {
             };
         };
     };
-    create_translation_handler: {
+    find_collection_translations: {
         parameters: {
             query?: never;
             header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["TranslationForCreate"];
+            path: {
+                id: number;
             };
-        };
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HttpResponseBody_entity.translationsModel"];
-                };
-            };
-        };
-    };
-    find_all_translations_handler: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
             cookie?: never;
         };
         requestBody?: never;
@@ -486,16 +468,18 @@ export interface operations {
             };
         };
     };
-    find_one_translation_handler: {
+    create_translation_handler: {
         parameters: {
             query?: never;
             header?: never;
-            path: {
-                id: number;
-            };
+            path?: never;
             cookie?: never;
         };
-        requestBody?: never;
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["TranslationForCreate"];
+            };
+        };
         responses: {
             200: {
                 headers: {
@@ -553,7 +537,7 @@ export interface operations {
             };
         };
     };
-    find_one_user_by_id_handler: {
+    find_user_by_id_handler: {
         parameters: {
             query?: never;
             header?: never;
@@ -641,6 +625,25 @@ export interface operations {
             };
         };
     };
+    find_user_collections: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HttpResponseBody_Vec_entity.collectionsModel"];
+                };
+            };
+        };
+    };
     login_handler: {
         parameters: {
             query?: never;
@@ -678,6 +681,25 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content?: never;
+            };
+        };
+    };
+    find_user_translations: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HttpResponseBody_Vec_entity.translationsModel"];
+                };
             };
         };
     };

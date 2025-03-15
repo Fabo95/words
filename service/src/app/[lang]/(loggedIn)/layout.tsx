@@ -43,7 +43,7 @@ export default async function Layout({ children }: { children: ReactNode }) {
 	)
 
 	queryClient.prefetchQuery(
-		$api.queryOptions("get", "/collection/all", { headers: { Cookie: `auth-cookie=${authCookieValue}` } }),
+		$api.queryOptions("get", "/user/collections", { headers: { Cookie: `auth-cookie=${authCookieValue}` } }),
 	)
 
 	// --- RENDER ---
