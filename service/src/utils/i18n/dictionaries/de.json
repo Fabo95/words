@@ -90,6 +90,28 @@
 					"dropdownDeleteTranslationButton": "Übersetzung löschen",
 					"dropdownDeleteFromCollectionButton": "Übersetzung aus Sammlung löschen"
 				},
+				"editTranslationForm": {
+					"title": "Übersetzung anpassen",
+					"description": "Ändere das Wort und / oder die Übersetzung.",
+					"cancelButton": "Abbrechen",
+					"saveButton": "Speichern",
+					"wordLabel": "Wort",
+					"translationLabel": "Übersetzung",
+					"wordPlaceholder": "Wort angeben",
+					"translationPlaceholder": "Übersetzung angeben",
+					"wordError": "Bitte gib mindestens 2 Zeichen an.",
+					"translationError": "Bitte gib mindestens 2 Zeichen an.",
+					"toast": {
+						"success": {
+							"title": "Speichern erfolgreich",
+							"description": "Die Übersetzung wurde angepasst."
+						},
+						"error": {
+							"title": "Speichern fehlgeschlagen",
+							"description": "Bitte versuche es erneut."
+						}
+					}
+				},
 				"deleteTranslationDialog": {
 					"title": "Übersetzung löschen",
 					"description": "Möchtest du die Übersetzung wirklich löschen?",

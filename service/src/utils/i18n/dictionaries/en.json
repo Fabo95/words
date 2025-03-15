@@ -90,7 +90,29 @@
 					"dropdownDeleteTranslationButton": "Delete translation",
 					"dropdownDeleteFromCollectionButton": "Delete translation from collection"
 				},
-				"deleteDialog": {
+				"editTranslationForm": {
+					"title": "Adjust translation",
+					"description": "Change the word and / or the translation.",
+					"cancelButton": "Cancel",
+					"saveButton": "Save",
+					"wordLabel": "Word",
+					"translationLabel": "Translation",
+					"wordPlaceholder": "Enter the word",
+					"translationPlaceholder": "Enter the translation",
+					"wordError": "Please enter at least 2 characters.",
+					"translationError": "Please enter at least 2 characters.",
+					"toast": {
+						"success": {
+							"title": "Saving successful",
+							"description": "Your translation has been updated."
+						},
+						"error": {
+							"title": "Saving failed",
+							"description": "Please try again."
+						}
+					}
+				},
+				"deleteTranslationDialog": {
 					"title": "Delete translation",
 					"description": "You really want to delete the translation?",
 					"cancelButton": "Cancel",

@@ -54,12 +54,10 @@ export const CollectionTableDeleteFromCollectionDialog = ({
 
 	return (
 		<DialogContent>
-			<DialogHeader className="mb-5">
+			<DialogHeader>
 				<DialogTitle>{t("pages.collection.table.deleteTranslationDialog.title")}</DialogTitle>
 
-				<DialogDescription className="mb-5">
-					{t("pages.collection.table.deleteTranslationDialog.description")}
-				</DialogDescription>
+				<DialogDescription>{t("pages.collection.table.deleteTranslationDialog.description")}</DialogDescription>
 			</DialogHeader>
 
 			<DialogFooter>

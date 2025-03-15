@@ -78,12 +78,10 @@ export const SidebarCollectionCreateForm = ({ handleIsDialogOpen }: SidebarColle
 		<DialogContent>
 			<FormProvider {...form}>
 				<Form onSubmit={form.handleSubmit(onSubmit)}>
-					<DialogHeader className="mb-5">
+					<DialogHeader>
 						<DialogTitle>{t("components.navCollections.createForm.title")}</DialogTitle>
 
-						<DialogDescription className="mb-5">
-							{t("components.navCollections.createForm.description")}
-						</DialogDescription>
+						<DialogDescription>{t("components.navCollections.createForm.description")}</DialogDescription>
 
 						<FormField
 							control={form.control}

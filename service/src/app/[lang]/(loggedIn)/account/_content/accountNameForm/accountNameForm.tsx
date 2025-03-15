@@ -33,8 +33,6 @@ export const AccountNameForm = () => {
 
 	const { mutateAsync: mutateUserUpdate } = $api.useMutation("patch", "/user", {
 		onSuccess: (data) => {
-			// See: https://tanstack.com/query/v5/docs/framework/react/guides/updates-from-mutation-responses
-			// TODO FIX
 			queryClient.setQueryData(["get", "/user"], data)
 
 			toast({

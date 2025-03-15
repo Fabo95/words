@@ -56,12 +56,10 @@ export const SidebarCollectionDeleteDialog = ({ id, handleIsDialogOpen }: Sideba
 
 	return (
 		<DialogContent>
-			<DialogHeader className="mb-5">
+			<DialogHeader>
 				<DialogTitle>{t("components.navCollections.deleteDialog.title")}</DialogTitle>
 
-				<DialogDescription className="mb-5">
-					{t("components.navCollections.deleteDialog.description")}
-				</DialogDescription>
+				<DialogDescription>{t("components.navCollections.deleteDialog.description")}</DialogDescription>
 			</DialogHeader>
 
 			<DialogFooter>

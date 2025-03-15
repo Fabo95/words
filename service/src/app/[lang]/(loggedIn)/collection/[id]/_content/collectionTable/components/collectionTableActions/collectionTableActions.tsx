@@ -3,6 +3,7 @@ import { Delete, Edit, MoreHorizontal, Trash2 } from "lucide-react"
 
 import { CollectionTableDeleteFromCollectionDialog } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableDeleteFromCollectionDialog"
 import { CollectionTableDeleteTranslationDialog } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableDeleteTranslationDialog"
+import { CollectionTableEditTranslationForm } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableEditTranslationForm/collectionTableEditTranslationForm"
 import { CollectionTranslation } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/utils/collectionTableTypes"
 import { Button } from "@app/components/ui/button"
 import { Dialog } from "@app/components/ui/dialog"
@@ -49,7 +50,7 @@ export const CollectionTableActions = ({ row }: CollectionTableActionsProps) => 
 					side={isMobile ? "bottom" : "right"}
 					align={isMobile ? "end" : "start"}
 				>
-					<DropdownMenuItem>
+					<DropdownMenuItem onClick={() => setIsEditFormOpen(true)}>
 						<Edit className="text-muted-foreground" />
 						<span>{t("pages.collection.table.actions.dropdownEditButton")}</span>
 					</DropdownMenuItem>
@@ -67,6 +68,18 @@ export const CollectionTableActions = ({ row }: CollectionTableActionsProps) => 
 					</DropdownMenuItem>
 				</DropdownMenuContent>
 			</DropdownMenu>
+
+			<Dialog open={isEditFormOpen} onOpenChange={setIsEditFormOpen}>
+				{isEditFormOpen && (
+					<CollectionTableEditTranslationForm
+						id={row.original.id}
+						translationId={row.original.translationId}
+						sourceText={row.original.sourceText}
+						targetText={row.original.targetText}
+						handleIsDialogOpen={setIsEditFormOpen}
+					/>
+				)}
+			</Dialog>
 
 			<Dialog open={isDeleteFromCollectionDialogOpen} onOpenChange={setIsDeleteFromCollectionDialogOpen}>
 				<CollectionTableDeleteFromCollectionDialog
