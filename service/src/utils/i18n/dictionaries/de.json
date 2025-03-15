@@ -89,6 +89,22 @@
 					"dropdownEditButton": "Übersetzung anpassen",
 					"dropdownDeleteTranslationButton": "Übersetzung löschen",
 					"dropdownDeleteFromCollectionButton": "Übersetzung aus Sammlung löschen"
+				},
+				"deleteTranslationDialog": {
+					"title": "Übersetzung löschen",
+					"description": "Möchtest du die Übersetzung wirklich löschen?",
+					"cancelButton": "Abbrechen",
+					"deleteButton": "Löschen",
+					"toast": {
+						"success": {
+							"title": "Löschen erfolgreich",
+							"description": "Die Übersetzung wurde gelöscht."
+						},
+						"error": {
+							"title": "Löschen fehlgeschlagen",
+							"description": "Bitte versuche es erneut."
+						}
+					}
 				}
 			}
 		},

@@ -89,6 +89,22 @@
 					"dropdownEditButton": "Edit translation",
 					"dropdownDeleteTranslationButton": "Delete translation",
 					"dropdownDeleteFromCollectionButton": "Delete translation from collection"
+				},
+				"deleteDialog": {
+					"title": "Delete translation",
+					"description": "You really want to delete the translation?",
+					"cancelButton": "Cancel",
+					"deleteButton": "Delete",
+					"toast": {
+						"success": {
+							"title": "Deletion successful",
+							"description": "The translation was deleted."
+						},
+						"error": {
+							"title": "Deletion failed",
+							"description": "Please try again."
+						}
+					}
 				}
 			}
 		},
