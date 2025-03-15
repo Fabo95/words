@@ -35,7 +35,7 @@ export const SidebarCollectionCreateForm = ({ handleIsDialogOpen }: SidebarColle
 	const { mutateAsync: mutateCollectionCreate } = $api.useMutation("post", "/collection", {
 		onSuccess: (data) => {
 			console.log({ data })
-			queryClient.setQueryData(["get", "/collection/all"], (oldData) =>
+			queryClient.setQueryData(["get", "/user/collections"], (oldData) =>
 				oldData
 					? {
 							...oldData,

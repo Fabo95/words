@@ -22,7 +22,7 @@ export const SidebarCollectionDeleteDialog = ({ id, handleIsDialogOpen }: Sideba
 		onSuccess: (data) => {
 			console.log({ data })
 
-			queryClient.setQueryData(["get", "/collection/all"], (oldData) =>
+			queryClient.setQueryData(["get", "/user/collections"], (oldData) =>
 				oldData
 					? {
 							...oldData,

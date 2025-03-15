@@ -46,7 +46,7 @@ export function SidebarCollections() {
 
 	const {
 		data: { response_object },
-	} = $api.useSuspenseQuery("get", "/collection/all")
+	} = $api.useSuspenseQuery("get", "/user/collections")
 
 	// --- RENDER ---
 

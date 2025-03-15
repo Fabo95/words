@@ -35,7 +35,7 @@ export const SidebarCollectionEditForm = ({ id, name, handleIsDialogOpen }: Side
 	const { mutateAsync: mutateCollectionEdit } = $api.useMutation("patch", "/collection/{id}", {
 		onSuccess: (data) => {
 			console.log({ data })
-			queryClient.setQueryData(["get", "/collection/all"], (oldData) =>
+			queryClient.setQueryData(["get", "/user/collections"], (oldData) =>
 				oldData
 					? {
 							...oldData,
