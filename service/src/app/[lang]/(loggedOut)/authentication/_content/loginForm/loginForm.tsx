@@ -74,17 +74,26 @@ export const LoginForm = () => {
 							control={form.control}
 							label={t("pages.authentication.login.emailLabel")}
 							name="email"
-							input={Input}
-							placeholder={t("pages.authentication.login.emailPlaceholder")}
+							render={(fieldProps) => (
+								<Input
+									type="email"
+									placeholder={t("pages.authentication.login.emailPlaceholder")}
+									{...fieldProps.field}
+								/>
+							)}
 						/>
 
 						<FormField
 							control={form.control}
 							label={t("pages.authentication.login.passwordLabel")}
-							placeholder={t("pages.authentication.login.passwordPlaceholder")}
 							name="password"
-							inputType="password"
-							input={Input}
+							render={(fieldProps) => (
+								<Input
+									type="password"
+									placeholder={t("pages.authentication.login.passwordPlaceholder")}
+									{...fieldProps.field}
+								/>
+							)}
 						/>
 
 						<Button disabled={!form.formState.isValid} className="mt-5">

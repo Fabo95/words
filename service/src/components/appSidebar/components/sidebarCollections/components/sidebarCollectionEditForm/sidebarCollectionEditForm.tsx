@@ -12,6 +12,7 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { useQueryClient } from "@tanstack/react-query"
 import { useCallback } from "react"
 import { useForm } from "react-hook-form"
+import * as React from "react"
 
 type SidebarCollectionEditFormProps = { id: number; name: string; handleIsDialogOpen: (isOpen: boolean) => void }
 
@@ -91,10 +92,15 @@ export const SidebarCollectionEditForm = ({ id, name, handleIsDialogOpen }: Side
 
 						<FormField
 							control={form.control}
-							input={Input}
 							label={t("components.navCollections.editForm.label")}
 							name="name"
-							placeholder={t("components.navCollections.editForm.placeholder")}
+							render={(fieldProps) => (
+								<Input
+									placeholder={t("components.navCollections.editForm.placeholder")}
+									type="text"
+									{...fieldProps.field}
+								/>
+							)}
 						/>
 					</DialogHeader>
 

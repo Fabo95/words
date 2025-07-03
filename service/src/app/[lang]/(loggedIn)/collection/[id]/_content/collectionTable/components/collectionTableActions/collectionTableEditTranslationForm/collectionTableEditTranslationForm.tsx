@@ -113,18 +113,28 @@ export const CollectionTableEditTranslationForm = ({
 					<FormField
 						className="mb-5"
 						control={form.control}
-						placeholder={t("pages.collection.table.editTranslationForm.wordPlaceholder")}
 						label={t("pages.collection.table.editTranslationForm.wordLabel")}
 						name="sourceText"
-						input={Input}
+						render={(fieldProps) => (
+							<Input
+								placeholder={t("pages.collection.table.editTranslationForm.wordPlaceholder")}
+								type="text"
+								{...fieldProps.field}
+							/>
+						)}
 					/>
 
 					<FormField
 						control={form.control}
 						label={t("pages.collection.table.editTranslationForm.translationLabel")}
-						placeholder={t("pages.collection.table.editTranslationForm.translationPlaceholder")}
 						name="targetText"
-						input={Input}
+						render={(fieldProps) => (
+							<Input
+								placeholder={t("pages.collection.table.editTranslationForm.translationPlaceholder")}
+								type="text"
+								{...fieldProps.field}
+							/>
+						)}
 					/>
 
 					<DialogFooter>

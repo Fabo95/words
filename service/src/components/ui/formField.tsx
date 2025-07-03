@@ -1,57 +1,55 @@
-import * as React from "react";
-import { Control, FieldValues, Path } from "react-hook-form";
-import { HTMLInputTypeAttribute } from "react";
+import { Control, ControllerProps, FieldPath, FieldValues } from "react-hook-form"
 
 import {
-    FormControl,
-    FormDescription,
-    FormField as FormFieldReactHookForm,
-    FormItem,
-    FormLabel,
-    FormMessage,
-} from "@app/components/ui/form";
-import { Input } from "@app/components/ui/input";
+	FormControl,
+	FormDescription,
+	FormField as FormFieldReactHookForm,
+	FormItem,
+	FormLabel,
+	FormMessage,
+} from "@app/components/ui/form"
 
-type FormFieldProps<TFieldValues extends FieldValues = FieldValues, TContext = any> = {
-    control: Control<TFieldValues, TContext>;
-    className?: string;
-    disabled?: boolean;
-    name: Path<TFieldValues>;
-    label: string;
-    placeholder?: string;
-    // Make a proper type for this.
-    input: typeof Input;
-    inputType?: HTMLInputTypeAttribute | undefined;
-    description?: string;
-};
+type FormFieldProps<
+	TFieldValues extends FieldValues = FieldValues,
+	TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
+	// biome-ignore lint/suspicious/noExplicitAny: biome migration
+	TContext = any,
+> = {
+	control: Control<TFieldValues, TContext>
+	className?: string
+	name: TName
+	label: string
+	description?: string
+} & ControllerProps<TFieldValues, TName>
 
-export const FormField = <TFieldValues extends FieldValues = FieldValues, TContext = any>({
-    control,
-    className,
-    disabled,
-    name,
-    label,
-    placeholder,
-    input: Input,
-    inputType,
-    description,
-}: FormFieldProps<TFieldValues, TContext>) => {
-    return (
-        <FormFieldReactHookForm
-            control={control}
-            name={name}
-            render={({ field }) => (
-                <FormItem className={className}>
-                    <FormLabel>{label}</FormLabel>
-                    <FormControl>
-                        <Input disabled={disabled} type={inputType} placeholder={placeholder} {...field} />
-                    </FormControl>
+export const FormField = <
+	TFieldValues extends FieldValues = FieldValues,
+	TName extends FieldPath<TFieldValues> = FieldPath<TFieldValues>,
+	// biome-ignore lint/suspicious/noExplicitAny: biome migration
+	TContext = any,
+>({
+	control,
+	className,
+	name,
+	label,
+	render,
+	description,
+}: FormFieldProps<TFieldValues, TName, TContext>) => {
+	return (
+		<FormFieldReactHookForm
+			control={control}
+			name={name}
+			render={(fieldProps) => (
+				<FormItem className={className}>
+					<FormLabel>{label}</FormLabel>
 
-                    {description && <FormDescription>{description}</FormDescription>}
+					<FormControl>{render(fieldProps)}</FormControl>
 
-                    <FormMessage />
-                </FormItem>
-            )}
-        />
-    );
-};
+					{description && <FormDescription>{description}</FormDescription>}
+
+					<FormMessage />
+				</FormItem>
+			)}
+		/>
+	)
+}

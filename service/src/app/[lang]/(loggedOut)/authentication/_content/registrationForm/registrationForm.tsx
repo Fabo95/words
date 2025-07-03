@@ -16,6 +16,7 @@ import { useToast } from "@app/components/ui/use-toast"
 import { $api } from "@app/utils/api/apiRequests"
 import { useClientTFunction } from "@app/utils/i18n/utils/i18nHooks"
 import { Page } from "@app/utils/routing/routingTypes"
+import * as React from "react"
 
 export const RegistrationForm = () => {
 	// --- STATE ---
@@ -75,29 +76,42 @@ export const RegistrationForm = () => {
 						<FormField
 							className="mb-5"
 							control={form.control}
-							input={Input}
 							label={t("pages.authentication.registration.emailLabel")}
 							name="email"
-							placeholder={t("pages.authentication.registration.emailPlaceholder")}
+							render={(fieldProps) => (
+								<Input
+									placeholder={t("pages.authentication.registration.emailPlaceholder")}
+									type="email"
+									{...fieldProps.field}
+								/>
+							)}
 						/>
 
 						<FormField
 							className="mb-5"
 							control={form.control}
-							input={Input}
 							label={t("pages.authentication.registration.passwordLabel")}
 							name="password"
-							inputType="password"
-							placeholder={t("pages.authentication.registration.passwordPlaceholder")}
+							render={(fieldProps) => (
+								<Input
+									placeholder={t("pages.authentication.registration.passwordPlaceholder")}
+									type="password"
+									{...fieldProps.field}
+								/>
+							)}
 						/>
 
 						<FormField
 							control={form.control}
-							input={Input}
 							label={t("pages.authentication.registration.passwordConfirmLabel")}
 							name="confirmPassword"
-							inputType="password"
-							placeholder={t("pages.authentication.registration.passwordConfirmPlaceholder")}
+							render={(fieldProps) => (
+								<Input
+									placeholder={t("pages.authentication.registration.passwordConfirmPlaceholder")}
+									type="password"
+									{...fieldProps.field}
+								/>
+							)}
 						/>
 
 						<Button disabled={!form.formState.isValid} className="mt-5">

@@ -88,8 +88,7 @@ export const AccountNameForm = () => {
 									control={form.control}
 									label={t("pages.account.name.emailLabel")}
 									name="email"
-									disabled={true}
-									input={Input}
+									render={(fieldProps) => <Input disabled={true} type="email" {...fieldProps.field} />}
 								/>
 							</TooltipTrigger>
 						</Tooltip>
@@ -97,9 +96,10 @@ export const AccountNameForm = () => {
 						<FormField
 							control={form.control}
 							label={t("pages.account.name.nameLabel")}
-							placeholder={t("pages.account.name.namePlaceholder")}
 							name="name"
-							input={Input}
+							render={(fieldProps) => (
+								<Input placeholder={t("pages.account.name.namePlaceholder")} type="text" {...fieldProps.field} />
+							)}
 						/>
 
 						<Button disabled={!form.formState.isValid || !form.formState.isDirty} className="mt-5">

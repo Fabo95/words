@@ -6,11 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="added openapi-react-query to ensure typesafe fetching.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/app/[lang]/(loggedIn)/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/app/[lang]/(loggedIn)/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/components/appSidebar/appSidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/components/appSidebar/appSidebar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/components/appSidebar/nav-projects.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/components/appSidebar/navCollections.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/utils/i18n/dictionaries/de.json" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/utils/i18n/dictionaries/de.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/utils/i18n/dictionaries/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/utils/i18n/dictionaries/en.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/service/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/app/[lang]/(loggedIn)/account/_content/accountNameForm/accountNameForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/app/[lang]/(loggedIn)/account/_content/accountNameForm/accountNameForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/app/[lang]/(loggedIn)/account/_content/accountPasswordForm/accountPasswordForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/app/[lang]/(loggedIn)/account/_content/accountPasswordForm/accountPasswordForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableEditTranslationForm/collectionTableEditTranslationForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableEditTranslationForm/collectionTableEditTranslationForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/app/[lang]/(loggedOut)/authentication/_content/loginForm/loginForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/app/[lang]/(loggedOut)/authentication/_content/loginForm/loginForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/app/[lang]/(loggedOut)/authentication/_content/registrationForm/registrationForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/app/[lang]/(loggedOut)/authentication/_content/registrationForm/registrationForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionEditForm/sidebarCollectionEditForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionEditForm/sidebarCollectionEditForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/components/ui/formField.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/components/ui/formField.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,6 +27,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Fabo95&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Fabo95/words.git&quot;,
+    &quot;accountId&quot;: &quot;cc43b4ed-6007-43be-8079-ec03c15664b4&quot;
+  }
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/service/src/app/page.tsx" root0="SKIP_INSPECTION" />
   </component>
@@ -30,7 +46,7 @@
     <dismissed value="$PROJECT_DIR$/service/package.json" />
   </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="QODANA_PROBLEMS_VIEW_TAB" />
+    <option name="selectedTabId" value="ProjectErrors" />
   </component>
   <component name="ProjectColorInfo">{
   &quot;customColor&quot;: &quot;&quot;,
@@ -45,9 +61,11 @@
   </component>
   <component name="PropertiesComponent">{
   &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
     &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/fabianhinz/repositories/words/service&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/fabianhinz/repositories/words&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
@@ -61,8 +79,8 @@
     &quot;npm.service &gt; dev.executor&quot;: &quot;Run&quot;,
     &quot;npm.service &gt; generate_open_api_types.executor&quot;: &quot;Run&quot;,
     &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/fabianhinz/.npm-global/lib/node_modules/prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;Settings.Biome&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/fabianhinz/repositories/words/packages/tailwind-config/node_modules/typescript/lib&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.typescriptcompiler&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/fabianhinz/repositories/words/service/node_modules/typescript/lib&quot;,
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
   &quot;keyToStringList&quot;: {
@@ -151,8 +169,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-7c0b70fcd90d-JavaScript-PS-242.21829.154" />
-        <option value="bundled-php-predefined-a98d8de5180a-4d9f4c849d09-com.jetbrains.php.sharedIndexes-PS-242.21829.154" />
+        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-WS-251.23774.424" />
       </set>
     </attachedChunks>
   </component>
@@ -194,6 +211,9 @@
       <workItem from="1740227334398" duration="13000" />
       <workItem from="1740227414171" duration="29524000" />
       <workItem from="1740331505474" duration="104000" />
+      <workItem from="1751575777367" duration="981000" />
+      <workItem from="1751576767961" duration="434000" />
+      <workItem from="1751577208791" duration="454000" />
     </task>
     <task id="LOCAL-00002" summary="update">
       <option name="closed" value="true" />

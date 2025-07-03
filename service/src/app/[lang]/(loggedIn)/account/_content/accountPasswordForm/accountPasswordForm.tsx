@@ -73,19 +73,27 @@ export const AccountPasswordForm = () => {
 							className="mb-5"
 							control={form.control}
 							label={t("pages.account.password.passwordLabel")}
-							placeholder={t("pages.account.password.passwordPlaceholder")}
 							name="password"
-							inputType="password"
-							input={Input}
+							render={(fieldProps) => (
+								<Input
+									placeholder={t("pages.account.password.passwordPlaceholder")}
+									type="password"
+									{...fieldProps.field}
+								/>
+							)}
 						/>
 
 						<FormField
 							control={form.control}
 							label={t("pages.account.password.passwordConfirmLabel")}
-							placeholder={t("pages.account.password.passwordConfirmPlaceholder")}
 							name="confirmPassword"
-							inputType="password"
-							input={Input}
+							render={(fieldProps) => (
+								<Input
+									placeholder={t("pages.account.password.passwordConfirmPlaceholder")}
+									type="password"
+									{...fieldProps.field}
+								/>
+							)}
 						/>
 
 						<Button disabled={!form.formState.isValid} className="mt-5">
