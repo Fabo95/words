@@ -1,6 +1,6 @@
 import { Input } from "@app/components/ui/input"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@app/components/ui/select"
-import { Option } from "@app/utils/types/types"
+import { Option } from "@app/utils/types/objectTypes"
 import { Table } from "@tanstack/react-table"
 import { useState } from "react"
 

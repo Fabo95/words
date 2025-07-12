@@ -1,57 +1,63 @@
-import type { NextRequest } from "next/server"
-import { NextResponse } from "next/server"
+import createMiddleware from "next-intl/middleware"
+import { routing } from "./i18n/routing"
+import { NextRequest, NextResponse } from "next/server"
+import { Cookies } from "@app/utils/cookies/cookies"
+import { getIsLoggedInRoute, getIsLoggedOutRoute } from "@app/utils/middleware/middlewareHelpers"
+import { ENV } from "@app/utils/env/env"
 
-import { getLocale, getLocaleFromPathname, isValidPathname } from "@app/utils/routing/routingHelpers"
-import { Page } from "@app/utils/routing/routingTypes"
+const i18nMiddleware = createMiddleware(routing)
 
-// Used to make the locale persistent between navigation.
-// TODO We need a way to set the localState, when the user changes the languages through the UI.
-let localeState: string
+// See: https://next-intl.dev/docs/routing/middleware#composing-other-middlewares
+export default async function middleware(request: NextRequest) {
+	const response = i18nMiddleware(request)
 
-export const middleware = async (request: NextRequest) => {
-	const { pathname } = request.nextUrl
+	if (response && !response.ok) {
+		// response not in the range 200-299 (usually a redirect)
+		// no need to execute the auth middleware
+		return response
+	}
+	return await authMiddleware(request, response)
+}
 
-	// Extract locale from the pathname, take it from the state or fallback to a default locale
-	const locale = getLocaleFromPathname(pathname) ?? localeState ?? getLocale(request)
+async function authMiddleware(request: NextRequest, response: NextResponse) {
+	const { pathname, origin } = request.nextUrl
 
-	// Check for the auth cookie
-	const authCookie = request.cookies.get("auth-cookie")
+	const accessToken = request.cookies.get(Cookies.ACCESS_TOKEN)
 
-	// If the user tries to access the authentication page with an auth cookie, redirect to home
-	if (authCookie && pathname.includes(Page.AUTHENTICATION)) {
-		return NextResponse.redirect(new URL(`/${locale}/${Page.HOME}`, request.nextUrl))
+	const routeUrl = `${origin}${pathname}`
+
+	// Public routes that don't require authentication
+	const isLoggedOutRoute = getIsLoggedOutRoute(routeUrl)
+
+	if (!accessToken) {
+		if (isLoggedOutRoute) {
+			return response
+		}
+
+		return NextResponse.redirect(`${ENV.NEXT_PUBLIC_DEPLOYMENT_URL}/authentication`)
 	}
 
-	// If no auth cookie, redirect to the authentication page
-	if (!authCookie && !pathname.includes(Page.AUTHENTICATION)) {
-		return NextResponse.redirect(new URL(`/${locale}/${Page.AUTHENTICATION}`, request.nextUrl))
+	try {
+		// PARSE ACCESS TOKEN
+		const isLoggedInRoute = getIsLoggedInRoute(routeUrl)
+
+		if (isLoggedInRoute) {
+			return response
+		}
+
+		return NextResponse.redirect(`${ENV.NEXT_PUBLIC_DEPLOYMENT_URL}/home`)
+	} catch (_error) {
+		const response = NextResponse.redirect(`${ENV.NEXT_PUBLIC_DEPLOYMENT_URL}/authentication`)
+
+		response.cookies.delete(Cookies.ACCESS_TOKEN)
+
+		return response
 	}
-
-	// If the pathname is valid, allow the request to proceed
-	if (isValidPathname(pathname)) {
-		localeState = pathname.split("/")[1] as string
-
-		return NextResponse.next()
-	}
-
-	// If the pathname does not have a locale but is valid when the local is added, redirect to pathname with locale.
-	if (pathname.split("/")[1] !== locale && isValidPathname(`/${locale}${pathname}`)) {
-		return NextResponse.redirect(new URL(`/${locale}/${pathname}`, request.nextUrl))
-	}
-
-	// If the pathname is not valid, redirect to the home page
-	return NextResponse.redirect(new URL(`/${locale}/home`, request.nextUrl))
 }
 
 export const config = {
-	matcher: [
-		/*
-		 * Match all request paths except for the ones starting with:
-		 * - api (API routes)
-		 * - _next/static (static files)
-		 * - _next/image (image optimization files)
-		 * - favicon.ico, sitemap.xml, robots.txt (metadata files)
-		 */
-		"/((?!api|_next/static|_next/image|favicon.ico|sitemap.xml|robots.txt).*)",
-	],
+	// Match all pathnames except for
+	// - … if they start with `/api`, `/trpc`, `/_next` or `/_vercel`
+	// - … the ones containing a dot (e.g. `favicon.ico`)
+	matcher: "/((?!api|trpc|_next|_vercel|.*\\..*).*)",
 }

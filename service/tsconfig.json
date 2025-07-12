@@ -32,6 +32,8 @@
     "target": "ES2017"
   },
   "include": [
+    "messages/de-DE.json",
+    "messages/en-GB.json",
     "src/**/*",
     "tailwind.config.ts",
     ".next/types/**/*.ts"

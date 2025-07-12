@@ -12,6 +12,7 @@ import { Row } from "@app/components/ui/row"
 import { Toaster } from "@app/components/ui/toaster"
 import { ENV } from "@app/utils/env/env"
 import { cn } from "@app/utils/shadcn/shadcnHelpers"
+import { getLocale } from "next-intl/server"
 
 const interFont = Inter({
 	subsets: ["latin"],
@@ -25,9 +26,13 @@ export const metadata: Metadata = {
 
 type RootLayoutProps = { children: ReactNode }
 
-export default function RootLayout({ children }: RootLayoutProps) {
+export default async function RootLayout({ children }: RootLayoutProps) {
+	const locale = await getLocale()
+
+	console.log(locale)
+
 	return (
-		<html lang="en">
+		<html lang={locale}>
 			<body className={cn("min-h-screen bg-background font-sans antialiased", interFont.variable)}>
 				<ThemeProvider disableTransitionOnChange enableSystem attribute="class" defaultTheme="dark">
 					<QueryClientProvider>

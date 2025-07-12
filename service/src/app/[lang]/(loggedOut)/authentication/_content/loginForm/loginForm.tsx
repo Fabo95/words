@@ -15,7 +15,7 @@ import { Input } from "@app/components/ui/input"
 import { useToast } from "@app/components/ui/use-toast"
 import { $api } from "@app/utils/api/apiRequests"
 import { useClientTFunction } from "@app/utils/i18n/utils/i18nHooks"
-import { Page } from "@app/utils/routing/routingTypes"
+import { Page } from "@app/utils/types/pageTypes"
 
 export const LoginForm = () => {
 	// --- STATE ---

@@ -17,7 +17,7 @@ import { DataTableFilter } from "@app/components/ui/dataTable/dataTableFilter"
 import { DataTablePagination } from "@app/components/ui/dataTable/dataTablePagination"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@app/components/ui/table"
 import { Tooltip, TooltipContent, TooltipTrigger } from "@app/components/ui/tooltip"
-import { Option } from "@app/utils/types/types"
+import { Option } from "@app/utils/types/objectTypes"
 import * as React from "react"
 
 interface DataTableProps<TData, TValue> {
