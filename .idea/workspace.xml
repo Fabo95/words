@@ -5,38 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="update form field">
-      <change afterPath="$PROJECT_DIR$/service/src/i18n/navigation.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/i18n/request.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/i18n/routing.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/utils/cookies/cookies.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/utils/middleware/middlewareHelpers.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/service/src/utils/searchParams/searchParams.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/next.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/service/next.config.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/service/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/app/[lang]/(loggedOut)/authentication/_content/loginForm/loginForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/app/[lang]/(loggedOut)/authentication/_content/loginForm/loginForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/app/[lang]/(loggedOut)/authentication/_content/registrationForm/registrationForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/app/[lang]/(loggedOut)/authentication/_content/registrationForm/registrationForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/postcss.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/service/postcss.config.mjs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/components/appSidebar/components/sidebarUserActions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/components/appSidebar/components/sidebarUserActions.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/components/ui/dataTable/dataTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/components/ui/dataTable/dataTable.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/components/ui/dataTable/dataTableFilter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/components/ui/dataTable/dataTableFilter.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/middleware.ts" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/middleware.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/utils/env/env.ts" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/utils/env/env.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/utils/i18n/dictionaries/de.json" beforeDir="false" afterPath="$PROJECT_DIR$/service/messages/de-DE.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/utils/i18n/dictionaries/en.json" beforeDir="false" afterPath="$PROJECT_DIR$/service/messages/en-GB.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/utils/i18n/i18nConfig.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/utils/i18n/utils/i18nConstants.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/utils/i18n/utils/i18nHelpers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/utils/i18n/utils/i18nHelpers.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/utils/i18n/utils/i18nHooks.ts" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/utils/i18n/utils/i18nHooks.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/utils/i18n/utils/i18nTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/utils/types/objectTypes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/utils/locale/localeTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/utils/locale/localeTypes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/utils/routing/routingConstants.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/utils/routing/routingHelpers.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/utils/routing/routingTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/utils/types/pageTypes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/utils/types/types.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/utils/urls/urls.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/utils/urls/urls.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/service/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,36 +54,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/fabianhinz/repositories/words/service&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.eslint-plugin-words-app-styleguide &gt; build.executor&quot;: &quot;Run&quot;,
-    &quot;npm.eslint-plugin-words-app-styleguide &gt; build:clean.executor&quot;: &quot;Run&quot;,
-    &quot;npm.packages:force-node-modules-sync.executor&quot;: &quot;Run&quot;,
-    &quot;npm.service &gt; dev.executor&quot;: &quot;Run&quot;,
-    &quot;npm.service &gt; generate_open_api_types.executor&quot;: &quot;Run&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/fabianhinz/.npm-global/lib/node_modules/prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;settings.typescriptcompiler&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/fabianhinz/repositories/words/service/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/Users/fabianhinz/repositories/words/service",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.eslint-plugin-words-app-styleguide > build.executor": "Run",
+    "npm.eslint-plugin-words-app-styleguide > build:clean.executor": "Run",
+    "npm.packages:force-node-modules-sync.executor": "Run",
+    "npm.service > dev.executor": "Run",
+    "npm.service > generate_open_api_types.executor": "Run",
+    "prettierjs.PrettierConfiguration.Package": "/Users/fabianhinz/.npm-global/lib/node_modules/prettier",
+    "settings.editor.selected.configurable": "settings.typescriptcompiler",
+    "ts.external.directory.path": "/Users/fabianhinz/repositories/words/service/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/service" />
@@ -241,6 +214,7 @@
       <workItem from="1751894606662" duration="5206000" />
       <workItem from="1752075235984" duration="7972000" />
       <workItem from="1752358023399" duration="2965000" />
+      <workItem from="1752421192078" duration="473000" />
     </task>
     <task id="LOCAL-00003" summary="update">
       <option name="closed" value="true" />

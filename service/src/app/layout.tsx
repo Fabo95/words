@@ -10,7 +10,6 @@ import { ThemeProvider } from "@app/components/theme/themeProvider"
 import { Box } from "@app/components/ui/box"
 import { Row } from "@app/components/ui/row"
 import { Toaster } from "@app/components/ui/toaster"
-import { ENV } from "@app/utils/env/env"
 import { cn } from "@app/utils/shadcn/shadcnHelpers"
 import { getLocale } from "next-intl/server"
 
