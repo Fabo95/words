@@ -14,7 +14,7 @@ import {
 } from "@app/components/ui/dropdown-menu"
 import { SidebarMenu, SidebarMenuButton, SidebarMenuItem, useSidebar } from "@app/components/ui/sidebar"
 import { $api } from "@app/utils/api/apiRequests"
-import { useClientTFunction } from "@app/utils/i18n/utils/i18nHooks"
+import { useTranslations } from "next-intl"
 import { Page } from "@app/utils/types/pageTypes"
 import { CaretSortIcon } from "@radix-ui/react-icons"
 import { useQueryClient } from "@tanstack/react-query"
@@ -26,7 +26,7 @@ export function SidebarUserActions() {
 
 	const { isMobile } = useSidebar()
 
-	const t = useClientTFunction()
+	const t = useTranslations()
 
 	const queryClient = useQueryClient()
 

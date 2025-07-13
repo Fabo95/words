@@ -4,17 +4,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="update tailwind">
+    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="remove tailwind config">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/tailwind-config/index.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages/tailwind-config/package.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/components.json" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/service/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/service/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/app/[lang]/(loggedIn)/account/_content/accountNameForm/accountNameForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/app/[lang]/(loggedIn)/account/_content/accountNameForm/accountNameForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/app/[lang]/(loggedIn)/account/_content/accountPasswordForm/accountPasswordForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/app/[lang]/(loggedIn)/account/_content/accountPasswordForm/accountPasswordForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/app/[lang]/(loggedIn)/account/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/app/[lang]/(loggedIn)/account/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableActions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableActions.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableDeleteFromCollectionDialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableDeleteFromCollectionDialog.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableDeleteTranslationDialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableDeleteTranslationDialog.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableEditTranslationForm/collectionTableEditTranslationForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableEditTranslationForm/collectionTableEditTranslationForm.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/src/app/[lang]/(loggedOut)/authentication/_content/loginForm/loginForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/app/[lang]/(loggedOut)/authentication/_content/loginForm/loginForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/app/[lang]/(loggedOut)/authentication/_content/registrationForm/registrationForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/app/[lang]/(loggedOut)/authentication/_content/registrationForm/registrationForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/app/[lang]/(loggedOut)/authentication/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/app/[lang]/(loggedOut)/authentication/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/components/appSidebar/appSidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/components/appSidebar/appSidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionCreateForm/sidebarCollectionCreateForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionCreateForm/sidebarCollectionCreateForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionDeleteDialog/sidebarCollectionDeleteDialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionDeleteDialog/sidebarCollectionDeleteDialog.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionEditForm/sidebarCollectionEditForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionEditForm/sidebarCollectionEditForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/components/appSidebar/components/sidebarCollections/sidebarCollections.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/components/appSidebar/components/sidebarCollections/sidebarCollections.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/components/appSidebar/components/sidebarLanguageSwitch.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/components/appSidebar/components/sidebarLanguageSwitch.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/components/appSidebar/components/sidebarUserActions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/components/appSidebar/components/sidebarUserActions.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/components/ui/button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/components/ui/button.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/components/ui/toaster.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/components/ui/toaster.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/src/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/styles/globals.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/tailwind.config.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/utils/i18n/utils/i18nHelpers.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/utils/i18n/utils/i18nHooks.ts" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -59,36 +75,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/fabianhinz/repositories/words/service",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.eslint-plugin-words-app-styleguide > build.executor": "Run",
-    "npm.eslint-plugin-words-app-styleguide > build:clean.executor": "Run",
-    "npm.packages:force-node-modules-sync.executor": "Run",
-    "npm.service > dev.executor": "Run",
-    "npm.service > generate_open_api_types.executor": "Run",
-    "prettierjs.PrettierConfiguration.Package": "/Users/fabianhinz/.npm-global/lib/node_modules/prettier",
-    "settings.editor.selected.configurable": "settings.typescriptcompiler",
-    "ts.external.directory.path": "/Users/fabianhinz/repositories/words/service/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/fabianhinz/repositories/words/service&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.eslint-plugin-words-app-styleguide &gt; build.executor&quot;: &quot;Run&quot;,
+    &quot;npm.eslint-plugin-words-app-styleguide &gt; build:clean.executor&quot;: &quot;Run&quot;,
+    &quot;npm.packages:force-node-modules-sync.executor&quot;: &quot;Run&quot;,
+    &quot;npm.service &gt; dev.executor&quot;: &quot;Run&quot;,
+    &quot;npm.service &gt; generate_open_api_types.executor&quot;: &quot;Run&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/fabianhinz/.npm-global/lib/node_modules/prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;settings.typescriptcompiler&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/fabianhinz/repositories/words/service/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/service" />
@@ -220,14 +236,6 @@
       <workItem from="1752075235984" duration="7972000" />
       <workItem from="1752358023399" duration="2965000" />
       <workItem from="1752421192078" duration="3294000" />
-    </task>
-    <task id="LOCAL-00009" summary="added theme provider">
-      <option name="closed" value="true" />
-      <created>1720877950888</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1720877950888</updated>
     </task>
     <task id="LOCAL-00010" summary="added theme provider">
       <option name="closed" value="true" />
@@ -613,7 +621,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752422904550</updated>
     </task>
-    <option name="localTasksCounter" value="58" />
+    <task id="LOCAL-00058" summary="remove tailwind config">
+      <option name="closed" value="true" />
+      <created>1752425106743</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1752425106743</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -634,7 +650,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="restructured folder naming" />
     <MESSAGE value="added error.tsx" />
     <MESSAGE value="added formField to replace inputWrapper.tsx" />
     <MESSAGE value="downgrade types since they lead to errors" />
@@ -659,7 +674,8 @@
     <MESSAGE value="added openapi-react-query to ensure typesafe fetching." />
     <MESSAGE value="update form field" />
     <MESSAGE value="update tailwind" />
-    <option name="LAST_COMMIT_MESSAGE" value="update tailwind" />
+    <MESSAGE value="remove tailwind config" />
+    <option name="LAST_COMMIT_MESSAGE" value="remove tailwind config" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

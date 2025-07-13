@@ -14,7 +14,7 @@ import { FormField } from "@app/components/ui/formField"
 import { Input } from "@app/components/ui/input"
 import { useToast } from "@app/components/ui/use-toast"
 import { $api } from "@app/utils/api/apiRequests"
-import { useClientTFunction } from "@app/utils/i18n/utils/i18nHooks"
+import { useTranslations } from "next-intl"
 import { Page } from "@app/utils/types/pageTypes"
 import * as React from "react"
 
@@ -23,7 +23,7 @@ export const RegistrationForm = () => {
 
 	const { toast } = useToast()
 
-	const t = useClientTFunction()
+	const t = useTranslations()
 
 	const router = useRouter()
 

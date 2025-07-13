@@ -8,13 +8,13 @@ import { SidebarLanguageSwitch } from "@app/components/appSidebar/components/sid
 import { SidebarNavigation } from "@app/components/appSidebar/components/sidebarNavigation"
 import { SidebarUserActions } from "@app/components/appSidebar/components/sidebarUserActions"
 import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarRail } from "@app/components/ui/sidebar"
-import { useClientTFunction } from "@app/utils/i18n/utils/i18nHooks"
+import { useTranslations } from "next-intl"
 import { useMemo } from "react"
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 	// --- STATE ---
 
-	const t = useClientTFunction()
+	const t = useTranslations()
 
 	// --- MEMOIZED DATA ---
 

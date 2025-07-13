@@ -4,8 +4,8 @@ import { Button } from "@app/components/ui/button"
 import { DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@app/components/ui/dialog"
 import { useToast } from "@app/components/ui/use-toast"
 import { $api } from "@app/utils/api/apiRequests"
-import { useClientTFunction } from "@app/utils/i18n/utils/i18nHooks"
 import { useQueryClient } from "@tanstack/react-query"
+import { useTranslations } from "next-intl"
 
 type CollectionTableDeleteTranslationDialogProps = {
 	id: number
@@ -22,7 +22,7 @@ export const CollectionTableDeleteTranslationDialog = ({
 
 	const { toast } = useToast()
 
-	const t = useClientTFunction()
+	const t = useTranslations()
 
 	const queryClient = useQueryClient()
 

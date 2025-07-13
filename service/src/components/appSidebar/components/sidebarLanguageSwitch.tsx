@@ -12,7 +12,7 @@ import {
 } from "@app/components/ui/dropdown-menu"
 import { SidebarMenu, SidebarMenuButton, SidebarMenuItem } from "@app/components/ui/sidebar"
 import { Tooltip, TooltipContent, TooltipTrigger } from "@app/components/ui/tooltip"
-import { useClientTFunction } from "@app/utils/i18n/utils/i18nHooks"
+import { useTranslations } from "next-intl"
 import { CaretSortIcon, PlusIcon } from "@radix-ui/react-icons"
 
 export type SidebarLanguageSwitchProps = {
@@ -27,7 +27,7 @@ export function SidebarLanguageSwitch({ languages }: SidebarLanguageSwitchProps)
 
 	const [activeLanguage, setActiveLanguage] = React.useState(languages[0])
 
-	const t = useClientTFunction()
+	const t = useTranslations()
 
 	// --- RENDER ---
 

@@ -24,7 +24,7 @@ import {
 	useSidebar,
 } from "@app/components/ui/sidebar"
 import { $api } from "@app/utils/api/apiRequests"
-import { useClientTFunction } from "@app/utils/i18n/utils/i18nHooks"
+import { useTranslations } from "next-intl"
 import { getCollectionPage } from "@app/utils/urls/urls"
 import { DotsHorizontalIcon } from "@radix-ui/react-icons"
 import Link from "next/link"
@@ -42,7 +42,7 @@ export function SidebarCollections() {
 	const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false)
 	const [isEditFormOpen, setIsEditFormOpen] = useState(false)
 
-	const t = useClientTFunction()
+	const t = useTranslations()
 
 	const {
 		data: { response_object },

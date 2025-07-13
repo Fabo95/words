@@ -2,7 +2,7 @@ import { LoginForm } from "@app/app/[lang]/(loggedOut)/authentication/_content/l
 import { RegistrationForm } from "@app/app/[lang]/(loggedOut)/authentication/_content/registrationForm/registrationForm"
 import { PageContent } from "@app/components/ui/pageContent"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@app/components/ui/tabs"
-import { getTFunction } from "@app/utils/i18n/utils/i18nHelpers"
+import { getTranslations } from "next-intl/server"
 import { Locale } from "@app/utils/locale/localeTypes"
 
 export default async function Authentication({ params }: { params: Promise<Record<"lang", Locale>> }) {
@@ -10,7 +10,7 @@ export default async function Authentication({ params }: { params: Promise<Recor
 
 	const { lang } = await params
 
-	const t = getTFunction(lang)
+	const t = await getTranslations()
 
 	// --- RENDER ---
 

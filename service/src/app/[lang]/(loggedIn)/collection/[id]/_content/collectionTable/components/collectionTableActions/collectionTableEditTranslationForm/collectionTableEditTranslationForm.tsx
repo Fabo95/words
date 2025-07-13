@@ -11,7 +11,7 @@ import { FormField } from "@app/components/ui/formField"
 import { Input } from "@app/components/ui/input"
 import { useToast } from "@app/components/ui/use-toast"
 import { $api } from "@app/utils/api/apiRequests"
-import { useClientTFunction } from "@app/utils/i18n/utils/i18nHooks"
+import { useTranslations } from "next-intl"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useQueryClient } from "@tanstack/react-query"
 import { useCallback } from "react"
@@ -34,7 +34,7 @@ export const CollectionTableEditTranslationForm = ({
 }: CollectionTableEditTranslationFormProps) => {
 	// --- STATE ---
 
-	const t = useClientTFunction()
+	const t = useTranslations()
 
 	const { toast } = useToast()
 

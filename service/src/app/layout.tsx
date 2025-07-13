@@ -2,7 +2,7 @@ import { ReactNode } from "react"
 import "@app/styles/globals.css"
 
 import type { Metadata } from "next"
-import { Inter } from "next/font/google"
+import { Geist_Mono } from "next/font/google"
 
 import { QueryClientProvider } from "@app/components/reactQuery/QueryClientProvider"
 import { ModeToggle } from "@app/components/theme/modeToggle"
@@ -14,7 +14,7 @@ import { cn } from "@app/utils/shadcn/shadcnHelpers"
 import { getLocale } from "next-intl/server"
 import { NextIntlClientProvider } from "next-intl"
 
-const interFont = Inter({
+const font = Geist_Mono({
 	subsets: ["latin"],
 	variable: "--font-sans",
 })
@@ -33,7 +33,7 @@ export default async function RootLayout({ children }: RootLayoutProps) {
 
 	return (
 		<html lang={locale}>
-			<body className={cn("min-h-screen bg-background font-sans antialiased", interFont.variable)}>
+			<body className={cn("min-h-screen bg-background font-sans antialiased", font.variable)}>
 				<NextIntlClientProvider>
 					<ThemeProvider disableTransitionOnChange enableSystem attribute="class" defaultTheme="dark">
 						<QueryClientProvider>

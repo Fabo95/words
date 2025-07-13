@@ -15,14 +15,14 @@ import {
 	DropdownMenuTrigger,
 } from "@app/components/ui/dropdown-menu"
 import { useSidebar } from "@app/components/ui/sidebar"
-import { useClientTFunction } from "@app/utils/i18n/utils/i18nHooks"
 import { useState } from "react"
+import { useTranslations } from "next-intl"
 
 type CollectionTableActionsProps = { row: Row<CollectionTranslation> }
 export const CollectionTableActions = ({ row }: CollectionTableActionsProps) => {
 	// --- STATE ---
 
-	const t = useClientTFunction()
+	const t = useTranslations()
 
 	const { isMobile } = useSidebar()
 

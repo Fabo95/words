@@ -4,7 +4,7 @@ import { Button } from "@app/components/ui/button"
 import { DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@app/components/ui/dialog"
 import { useToast } from "@app/components/ui/use-toast"
 import { $api } from "@app/utils/api/apiRequests"
-import { useClientTFunction } from "@app/utils/i18n/utils/i18nHooks"
+import { useTranslations } from "next-intl"
 import { useQueryClient } from "@tanstack/react-query"
 
 type SidebarCollectionDeleteDialogProps = { id: number; handleIsDialogOpen: (isOpen: boolean) => void }
@@ -14,7 +14,7 @@ export const SidebarCollectionDeleteDialog = ({ id, handleIsDialogOpen }: Sideba
 
 	const { toast } = useToast()
 
-	const t = useClientTFunction()
+	const t = useTranslations()
 
 	const queryClient = useQueryClient()
 
