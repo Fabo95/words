@@ -12,6 +12,7 @@ import { Row } from "@app/components/ui/row"
 import { Toaster } from "@app/components/ui/toaster"
 import { cn } from "@app/utils/shadcn/shadcnHelpers"
 import { getLocale } from "next-intl/server"
+import { NextIntlClientProvider } from "next-intl"
 
 const interFont = Inter({
 	subsets: ["latin"],
@@ -33,19 +34,21 @@ export default async function RootLayout({ children }: RootLayoutProps) {
 	return (
 		<html lang={locale}>
 			<body className={cn("min-h-screen bg-background font-sans antialiased", interFont.variable)}>
-				<ThemeProvider disableTransitionOnChange enableSystem attribute="class" defaultTheme="dark">
-					<QueryClientProvider>
-						<Box className="p-5 h-screen">
-							<Row className="absolute top-5 right-5">
-								<ModeToggle />
-							</Row>
+				<NextIntlClientProvider>
+					<ThemeProvider disableTransitionOnChange enableSystem attribute="class" defaultTheme="dark">
+						<QueryClientProvider>
+							<Box className="p-5 h-screen">
+								<Row className="absolute top-5 right-5">
+									<ModeToggle />
+								</Row>
 
-							{children}
-						</Box>
+								{children}
+							</Box>
 
-						<Toaster />
-					</QueryClientProvider>
-				</ThemeProvider>
+							<Toaster />
+						</QueryClientProvider>
+					</ThemeProvider>
+				</NextIntlClientProvider>
 			</body>
 		</html>
 	)

@@ -14,15 +14,15 @@ import { FormField } from "@app/components/ui/formField"
 import { Input } from "@app/components/ui/input"
 import { useToast } from "@app/components/ui/use-toast"
 import { $api } from "@app/utils/api/apiRequests"
-import { useClientTFunction } from "@app/utils/i18n/utils/i18nHooks"
 import { Page } from "@app/utils/types/pageTypes"
+import { useTranslations } from "next-intl"
 
 export const LoginForm = () => {
 	// --- STATE ---
 
 	const { toast } = useToast()
 
-	const t = useClientTFunction()
+	const t = useTranslations()
 
 	const router = useRouter()
 
