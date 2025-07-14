@@ -1,7 +1,6 @@
 import { CollectionEditFormState } from "@app/components/appSidebar/components/sidebarCollections/components/sidebarCollectionEditForm/utils/collectionEditFormTypes"
 import { getCollectionEditFormSchema } from "@app/components/appSidebar/components/sidebarCollections/components/sidebarCollectionEditForm/utils/collectionEditFromSchema"
 import { Button } from "@app/components/ui/button"
-import { DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@app/components/ui/dialog"
 import { Form, FormProvider } from "@app/components/ui/form"
 import { FormField } from "@app/components/ui/formField"
 import { Input } from "@app/components/ui/input"
@@ -14,9 +13,19 @@ import { useCallback } from "react"
 import { useForm } from "react-hook-form"
 import * as React from "react"
 
-type SidebarCollectionEditFormProps = { id: number; name: string; handleIsDialogOpen: (isOpen: boolean) => void }
+type ISidebarCollectionEditFormProps = {
+	id: number
+	defaultValues: CollectionEditFormState
+	onSubmit: () => void
+	onCancel: () => void
+}
 
-export const SidebarCollectionEditForm = ({ id, name, handleIsDialogOpen }: SidebarCollectionEditFormProps) => {
+export const SidebarCollectionEditForm = ({
+	id,
+	defaultValues,
+	onCancel,
+	onSubmit,
+}: ISidebarCollectionEditFormProps) => {
 	// --- STATE ---
 
 	const { toast } = useToast()
@@ -26,10 +35,8 @@ export const SidebarCollectionEditForm = ({ id, name, handleIsDialogOpen }: Side
 	const queryClient = useQueryClient()
 
 	const form = useForm<CollectionEditFormState>({
-		defaultValues: {
-			name,
-		},
-		mode: "onBlur",
+		defaultValues,
+		mode: "onChange",
 		resolver: zodResolver(getCollectionEditFormSchema(t)),
 	})
 
@@ -57,7 +64,7 @@ export const SidebarCollectionEditForm = ({ id, name, handleIsDialogOpen }: Side
 
 			form.reset()
 
-			handleIsDialogOpen(false)
+			onSubmit()
 		},
 		onError: () => {
 			toast({
@@ -67,9 +74,11 @@ export const SidebarCollectionEditForm = ({ id, name, handleIsDialogOpen }: Side
 		},
 	})
 
+	const isFormStateValid = form.formState.isValid
+
 	// --- CALLBACKS ---
 
-	const onSubmit = useCallback(
+	const handleSubmit = useCallback(
 		async (value: CollectionEditFormState) => {
 			await mutateCollectionEdit({
 				params: { path: { id } },
@@ -79,36 +88,59 @@ export const SidebarCollectionEditForm = ({ id, name, handleIsDialogOpen }: Side
 		[id, mutateCollectionEdit],
 	)
 
+	const handleCancel = useCallback(() => {
+		onCancel()
+
+		form.reset()
+	}, [form, onCancel])
+
+	const handleKeyDownSubmit = useCallback(
+		async (event: KeyboardEvent) => {
+			event.stopPropagation()
+
+			if (event.key === "Enter" && !isFormStateValid) {
+				console.log("1")
+
+				await form.trigger()
+			}
+
+			if (event.key === "Enter" && isFormStateValid) {
+				console.log("2")
+
+				await handleSubmit(form.getValues())
+			}
+		},
+		[form, isFormStateValid, handleSubmit],
+	)
+
 	// --- RENDER ---
 
 	return (
-		<DialogContent>
-			<FormProvider {...form}>
-				<Form onSubmit={form.handleSubmit(onSubmit)}>
-					<DialogHeader>
-						<DialogTitle>{t("components.navCollections.editForm.title")}</DialogTitle>
-
-						<DialogDescription>{t("components.navCollections.editForm.description")}</DialogDescription>
-
-						<FormField
-							control={form.control}
-							label={t("components.navCollections.editForm.label")}
-							name="name"
-							render={(fieldProps) => (
-								<Input
-									placeholder={t("components.navCollections.editForm.placeholder")}
-									type="text"
-									{...fieldProps.field}
-								/>
-							)}
+		<FormProvider {...form}>
+			<Form onKeyDown={handleKeyDownSubmit} onSubmit={form.handleSubmit(handleSubmit)}>
+				<FormField
+					control={form.control}
+					label={t("components.navCollections.editForm.label")}
+					name="name"
+					render={(fieldProps) => (
+						<Input
+							placeholder={t("components.navCollections.editForm.placeholder")}
+							type="text"
+							{...fieldProps.field}
 						/>
-					</DialogHeader>
+					)}
+				/>
 
-					<DialogFooter>
-						<Button disabled={!form.formState.isValid}>{t("components.navCollections.editForm.button")}</Button>
-					</DialogFooter>
-				</Form>
-			</FormProvider>
-		</DialogContent>
+				<div className="flex justify-end mt-4 gap-4">
+					<Button type="button" variant="destructive" onClick={handleCancel}>
+						{t("components.navCollection")}
+					</Button>
+
+					<Button type="submit" disabled={!isFormStateValid}>
+						{t("components.navCollections.editForm.button")}
+					</Button>
+				</div>
+			</Form>
+		</FormProvider>
 	)
 }

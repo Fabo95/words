@@ -12,10 +12,11 @@ import { zodResolver } from "@hookform/resolvers/zod"
 import { useQueryClient } from "@tanstack/react-query"
 import { useCallback } from "react"
 import { useForm } from "react-hook-form"
+import * as React from "react"
 
-type SidebarCollectionCreateFormProps = { handleIsDialogOpen: (isOpen: boolean) => void }
+type ISidebarCollectionCreateFormProps = { handleIsDialogOpen: (isOpen: boolean) => void }
 
-export const SidebarCollectionCreateForm = ({ handleIsDialogOpen }: SidebarCollectionCreateFormProps) => {
+export const SidebarCollectionCreateForm = ({ handleIsDialogOpen }: ISidebarCollectionCreateFormProps) => {
 	// --- STATE ---
 
 	const { toast } = useToast()
@@ -85,10 +86,15 @@ export const SidebarCollectionCreateForm = ({ handleIsDialogOpen }: SidebarColle
 
 						<FormField
 							control={form.control}
-							input={Input}
 							label={t("components.navCollections.createForm.label")}
 							name="name"
-							placeholder={t("components.navCollections.createForm.placeholder")}
+							render={(fieldProps) => (
+								<Input
+									placeholder={t("components.navCollections.createForm.placeholder")}
+									type="text"
+									{...fieldProps.field}
+								/>
+							)}
 						/>
 					</DialogHeader>
 

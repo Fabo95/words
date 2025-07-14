@@ -4,7 +4,7 @@ import { Edit, Folder, Plus, Trash2 } from "lucide-react"
 
 import { SidebarCollectionCreateForm } from "@app/components/appSidebar/components/sidebarCollections/components/sidebarCollectionCreateForm/sidebarCollectionCreateForm"
 import { SidebarCollectionDeleteDialog } from "@app/components/appSidebar/components/sidebarCollections/components/sidebarCollectionDeleteDialog/sidebarCollectionDeleteDialog"
-import { SidebarCollectionEditForm } from "@app/components/appSidebar/components/sidebarCollections/components/sidebarCollectionEditForm/sidebarCollectionEditForm"
+import { SidebarCollectionEditDialog } from "@app/components/appSidebar/components/sidebarCollections/components/sidebarCollectionEditForm/sidebarCollectionEditDialog"
 import { Button } from "@app/components/ui/button"
 import { Dialog, DialogTrigger } from "@app/components/ui/dialog"
 import {
@@ -40,7 +40,7 @@ export function SidebarCollections() {
 
 	const [isCreateFormOpen, setIsCreateFormOpen] = useState(false)
 	const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false)
-	const [isEditFormOpen, setIsEditFormOpen] = useState(false)
+	const [isEditDialogOpen, setIsEditDialogOpen] = useState(false)
 
 	const t = useTranslations()
 
@@ -81,7 +81,7 @@ export function SidebarCollections() {
 									<span>{t("components.navCollections.dropdownOpenButton")}</span>
 								</DropdownMenuItem>
 
-								<DropdownMenuItem onClick={() => setIsEditFormOpen(true)}>
+								<DropdownMenuItem onClick={() => setIsEditDialogOpen(true)}>
 									<Edit className="text-muted-foreground" />
 									<span>{t("components.navCollections.dropdownEditButton")}</span>
 								</DropdownMenuItem>
@@ -95,19 +95,18 @@ export function SidebarCollections() {
 							</DropdownMenuContent>
 						</DropdownMenu>
 
-						<Dialog open={isEditFormOpen} onOpenChange={setIsEditFormOpen}>
-							{isEditFormOpen && (
-								<SidebarCollectionEditForm
-									name={collection.name}
-									id={collection.id}
-									handleIsDialogOpen={setIsEditFormOpen}
-								/>
-							)}
-						</Dialog>
+						<SidebarCollectionEditDialog
+							name={collection.name}
+							id={collection.id}
+							isDialogOpen={isEditDialogOpen}
+							setIsDialogOpen={setIsEditDialogOpen}
+						/>
 
-						<Dialog open={isDeleteDialogOpen} onOpenChange={setIsDeleteDialogOpen}>
-							<SidebarCollectionDeleteDialog id={collection.id} handleIsDialogOpen={setIsDeleteDialogOpen} />
-						</Dialog>
+						<SidebarCollectionDeleteDialog
+							isDialogOpen={isDeleteDialogOpen}
+							id={collection.id}
+							setIsDialogOpen={setIsDeleteDialogOpen}
+						/>
 					</SidebarMenuItem>
 				))}
 

@@ -22,7 +22,7 @@ export default async function middleware(request: NextRequest) {
 async function authMiddleware(request: NextRequest, response: NextResponse) {
 	const { pathname, origin } = request.nextUrl
 
-	const accessToken = request.cookies.get(Cookies.ACCESS_TOKEN)
+	const accessToken = request.cookies.get(Cookies.AUTH_COOKIE)
 
 	const routeUrl = `${origin}${pathname}`
 
@@ -45,11 +45,11 @@ async function authMiddleware(request: NextRequest, response: NextResponse) {
 			return response
 		}
 
-		return NextResponse.redirect(`${ENV.NEXT_PUBLIC_DEPLOYMENT_URL}/home`)
+		return response
 	} catch (_error) {
 		const response = NextResponse.redirect(`${ENV.NEXT_PUBLIC_DEPLOYMENT_URL}/authentication`)
 
-		response.cookies.delete(Cookies.ACCESS_TOKEN)
+		response.cookies.delete(Cookies.AUTH_COOKIE)
 
 		return response
 	}

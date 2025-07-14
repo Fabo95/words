@@ -1,15 +1,30 @@
 import { useCallback } from "react"
 
 import { Button } from "@app/components/ui/button"
-import { DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@app/components/ui/dialog"
+import {
+	Dialog,
+	DialogContent,
+	DialogDescription,
+	DialogFooter,
+	DialogHeader,
+	DialogTitle,
+} from "@app/components/ui/dialog"
 import { useToast } from "@app/components/ui/use-toast"
 import { $api } from "@app/utils/api/apiRequests"
 import { useTranslations } from "next-intl"
 import { useQueryClient } from "@tanstack/react-query"
 
-type SidebarCollectionDeleteDialogProps = { id: number; handleIsDialogOpen: (isOpen: boolean) => void }
+type ISidebarCollectionDeleteDialogProps = {
+	isDialogOpen: boolean
+	id: number
+	setIsDialogOpen: (isOpen: boolean) => void
+}
 
-export const SidebarCollectionDeleteDialog = ({ id, handleIsDialogOpen }: SidebarCollectionDeleteDialogProps) => {
+export const SidebarCollectionDeleteDialog = ({
+	id,
+	isDialogOpen,
+	setIsDialogOpen,
+}: ISidebarCollectionDeleteDialogProps) => {
 	// --- STATE ---
 
 	const { toast } = useToast()
@@ -49,28 +64,30 @@ export const SidebarCollectionDeleteDialog = ({ id, handleIsDialogOpen }: Sideba
 	const handleDeleteCollection = useCallback(() => {
 		mutateCollectionDelete({ params: { path: { id } } })
 
-		handleIsDialogOpen(false)
-	}, [id, mutateCollectionDelete, handleIsDialogOpen])
+		setIsDialogOpen(false)
+	}, [id, mutateCollectionDelete, setIsDialogOpen])
 
 	// --- RENDER ---
 
 	return (
-		<DialogContent>
-			<DialogHeader>
-				<DialogTitle>{t("components.navCollections.deleteDialog.title")}</DialogTitle>
+		<Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+			<DialogContent>
+				<DialogHeader>
+					<DialogTitle>{t("components.navCollections.deleteDialog.title")}</DialogTitle>
 
-				<DialogDescription>{t("components.navCollections.deleteDialog.description")}</DialogDescription>
-			</DialogHeader>
+					<DialogDescription>{t("components.navCollections.deleteDialog.description")}</DialogDescription>
+				</DialogHeader>
 
-			<DialogFooter>
-				<Button onClick={() => handleIsDialogOpen(false)}>
-					{t("components.navCollections.deleteDialog.cancelButton")}
-				</Button>
+				<DialogFooter>
+					<Button onClick={() => setIsDialogOpen(false)}>
+						{t("components.navCollections.deleteDialog.cancelButton")}
+					</Button>
 
-				<Button variant="destructive" onClick={handleDeleteCollection}>
-					{t("components.navCollections.deleteDialog.deleteButton")}
-				</Button>
-			</DialogFooter>
-		</DialogContent>
+					<Button variant="destructive" onClick={handleDeleteCollection}>
+						{t("components.navCollections.deleteDialog.deleteButton")}
+					</Button>
+				</DialogFooter>
+			</DialogContent>
+		</Dialog>
 	)
 }
