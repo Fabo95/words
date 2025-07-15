@@ -36,7 +36,7 @@ export const SidebarCollectionEditForm = ({
 
 	const form = useForm<CollectionEditFormState>({
 		defaultValues,
-		mode: "onChange",
+		mode: "onBlur",
 		resolver: zodResolver(getCollectionEditFormSchema(t)),
 	})
 

@@ -11,7 +11,7 @@ import { useCallback } from "react"
 import * as React from "react"
 import { SidebarCollectionEditForm } from "@app/components/appSidebar/components/sidebarCollections/components/sidebarCollectionEditForm/sidebarCollectionEditForm"
 
-type SidebarCollectionEditFormProps = {
+type ISidebarCollectionEditDialogProps = {
 	id: number
 	name: string
 	isDialogOpen: boolean
@@ -23,7 +23,7 @@ export const SidebarCollectionEditDialog = ({
 	name,
 	isDialogOpen,
 	setIsDialogOpen,
-}: SidebarCollectionEditFormProps) => {
+}: ISidebarCollectionEditDialogProps) => {
 	// --- STATE ---
 
 	const t = useTranslations()
@@ -45,9 +45,7 @@ export const SidebarCollectionEditDialog = ({
 					<DialogDescription>{t("components.navCollections.editForm.description")}</DialogDescription>
 				</DialogHeader>
 
-				<DialogDescription>
-					<SidebarCollectionEditForm id={id} defaultValues={{ name }} onSubmit={closeDialog} onCancel={closeDialog} />
-				</DialogDescription>
+				<SidebarCollectionEditForm id={id} defaultValues={{ name }} onSubmit={closeDialog} onCancel={closeDialog} />
 			</DialogContent>
 		</Dialog>
 	)

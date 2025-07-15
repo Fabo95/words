@@ -18,6 +18,12 @@ export const CollectionTable = () => {
 		params: { path: { id: Number(params.id) } },
 	})
 
+	const { data } = $api.useSuspenseQuery("get", "/collection/test/{id}", {
+		params: { path: { id: Number(params.id) } },
+	})
+
+	console.log("data", data)
+
 	// --- MEMOIZED DATA ---
 
 	const tableData: CollectionTranslation[] = useMemo(() => {
@@ -39,6 +45,8 @@ export const CollectionTable = () => {
 
 	return (
 		<div className="w-4/5 overflow-hidden">
+			<h1>{data.response_object?.name}</h1>
+
 			<DataTable
 				filters={[
 					{ value: "sourceText", label: "Wort" },

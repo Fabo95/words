@@ -36,6 +36,22 @@ export type paths = {
         patch?: never;
         trace?: never;
     };
+    "/collection/test/{id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["get_collection_handler"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/collection/{id}": {
         parameters: {
             query?: never;
@@ -390,6 +406,27 @@ export interface operations {
                 "application/json": components["schemas"]["CollectionForCreate"];
             };
         };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HttpResponseBody_entity.collectionsModel"];
+                };
+            };
+        };
+    };
+    get_collection_handler: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                id: number;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
         responses: {
             200: {
                 headers: {

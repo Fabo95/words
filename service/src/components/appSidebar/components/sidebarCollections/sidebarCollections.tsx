@@ -2,7 +2,7 @@
 
 import { Edit, Folder, Plus, Trash2 } from "lucide-react"
 
-import { SidebarCollectionCreateForm } from "@app/components/appSidebar/components/sidebarCollections/components/sidebarCollectionCreateForm/sidebarCollectionCreateForm"
+import { SidebarCollectionCreateDialog } from "@app/components/appSidebar/components/sidebarCollections/components/sidebarCollectionCreateForm/sidebarCollectionCreateDialog"
 import { SidebarCollectionDeleteDialog } from "@app/components/appSidebar/components/sidebarCollections/components/sidebarCollectionDeleteDialog/sidebarCollectionDeleteDialog"
 import { SidebarCollectionEditDialog } from "@app/components/appSidebar/components/sidebarCollections/components/sidebarCollectionEditForm/sidebarCollectionEditDialog"
 import { Button } from "@app/components/ui/button"
@@ -38,7 +38,7 @@ export function SidebarCollections() {
 
 	const { isMobile } = useSidebar()
 
-	const [isCreateFormOpen, setIsCreateFormOpen] = useState(false)
+	const [isCreateDialogOpen, setIsCreateDialogOpen] = useState(false)
 	const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false)
 	const [isEditDialogOpen, setIsEditDialogOpen] = useState(false)
 
@@ -110,18 +110,14 @@ export function SidebarCollections() {
 					</SidebarMenuItem>
 				))}
 
-				<Dialog open={isCreateFormOpen} onOpenChange={setIsCreateFormOpen}>
-					<SidebarMenuItem className="mt-3">
-						<DialogTrigger asChild>
-							<Button size="sm" variant="outline" className="w-full">
-								<Plus className="w-5 mr-1" />
-								<span>{t("components.navCollections.addCollectionButton")}</span>
-							</Button>
-						</DialogTrigger>
-					</SidebarMenuItem>
+				<SidebarMenuItem className="mt-3">
+					<Button onClick={() => setIsCreateDialogOpen(true)} size="sm" variant="outline" className="w-full">
+						<Plus className="w-5 mr-1" />
+						<span>{t("components.navCollections.addCollectionButton")}</span>
+					</Button>
+				</SidebarMenuItem>
 
-					<SidebarCollectionCreateForm handleIsDialogOpen={setIsCreateFormOpen} />
-				</Dialog>
+				<SidebarCollectionCreateDialog setIsDialogOpen={setIsCreateDialogOpen} isDialogOpen={isCreateDialogOpen} />
 			</SidebarMenu>
 		</SidebarGroup>
 	)

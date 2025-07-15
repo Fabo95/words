@@ -4,16 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="add translations">
-      <change afterPath="$PROJECT_DIR$/service/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionEditForm/sidebarCollectionEditDialog.tsx" afterDir="false" />
+    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="moved to dialog">
+      <change afterPath="$PROJECT_DIR$/service/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionCreateForm/sidebarCollectionCreateDialog.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/collectionTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/collectionTable.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/app/[lang]/(loggedIn)/collection/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/app/[lang]/(loggedIn)/collection/[id]/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionCreateForm/sidebarCollectionCreateForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionCreateForm/sidebarCollectionCreateForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionDeleteDialog/sidebarCollectionDeleteDialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionDeleteDialog/sidebarCollectionDeleteDialog.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionEditForm/sidebarCollectionEditDialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionEditForm/sidebarCollectionEditDialog.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionEditForm/sidebarCollectionEditForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionEditForm/sidebarCollectionEditForm.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/src/components/appSidebar/components/sidebarCollections/sidebarCollections.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/components/appSidebar/components/sidebarCollections/sidebarCollections.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/components/ui/form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/components/ui/form.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/middleware.ts" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/middleware.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/utils/cookies/cookies.ts" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/utils/cookies/cookies.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/generated/openApiTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/generated/openApiTypes.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -64,7 +64,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/fabianhinz/repositories/words/service/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionEditForm",
+    "last_opened_file_path": "/Users/fabianhinz/repositories/words/service/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionCreateForm",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
@@ -90,11 +90,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/service/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionCreateForm" />
       <recent name="$PROJECT_DIR$/service/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionEditForm" />
       <recent name="$PROJECT_DIR$/service" />
       <recent name="$PROJECT_DIR$/packages/biome-config" />
       <recent name="$PROJECT_DIR$/packages/binome-config" />
-      <recent name="$PROJECT_DIR$/service/src/app/[lang]/(loggedIn)/account/_content/accountPasswordForm" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/service/src/utils/types" />
@@ -219,15 +219,7 @@
       <workItem from="1752075235984" duration="7972000" />
       <workItem from="1752358023399" duration="2965000" />
       <workItem from="1752421192078" duration="3294000" />
-      <workItem from="1752524567788" duration="2406000" />
-    </task>
-    <task id="LOCAL-00011" summary="added dropdown-menu.tsx">
-      <option name="closed" value="true" />
-      <created>1721253575117</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1721253575117</updated>
+      <workItem from="1752524567788" duration="5137000" />
     </task>
     <task id="LOCAL-00012" summary="added dropdown-menu.tsx">
       <option name="closed" value="true" />
@@ -613,7 +605,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752427402475</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="moved to dialog">
+      <option name="closed" value="true" />
+      <created>1752527016463</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1752527016463</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -634,7 +634,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added formField to replace inputWrapper.tsx" />
     <MESSAGE value="downgrade types since they lead to errors" />
     <MESSAGE value="migrated registrationCardContent.tsx" />
     <MESSAGE value="send cookie to server" />
@@ -659,7 +658,8 @@
     <MESSAGE value="update tailwind" />
     <MESSAGE value="remove tailwind config" />
     <MESSAGE value="add translations" />
-    <option name="LAST_COMMIT_MESSAGE" value="add translations" />
+    <MESSAGE value="moved to dialog" />
+    <option name="LAST_COMMIT_MESSAGE" value="moved to dialog" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -1,7 +1,6 @@
 import { CollectionCreateFormState } from "@app/components/appSidebar/components/sidebarCollections/components/sidebarCollectionCreateForm/utils/collectionCreateFormTypes"
 import { getCollectionCreateFormSchema } from "@app/components/appSidebar/components/sidebarCollections/components/sidebarCollectionCreateForm/utils/collectionCreateFromSchema"
 import { Button } from "@app/components/ui/button"
-import { DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@app/components/ui/dialog"
 import { Form, FormProvider } from "@app/components/ui/form"
 import { FormField } from "@app/components/ui/formField"
 import { Input } from "@app/components/ui/input"
@@ -14,9 +13,9 @@ import { useCallback } from "react"
 import { useForm } from "react-hook-form"
 import * as React from "react"
 
-type ISidebarCollectionCreateFormProps = { handleIsDialogOpen: (isOpen: boolean) => void }
+type ISidebarCollectionCreateFormProps = { onSubmit: () => void; onCancel: () => void }
 
-export const SidebarCollectionCreateForm = ({ handleIsDialogOpen }: ISidebarCollectionCreateFormProps) => {
+export const SidebarCollectionCreateForm = ({ onSubmit, onCancel }: ISidebarCollectionCreateFormProps) => {
 	// --- STATE ---
 
 	const { toast } = useToast()
@@ -52,7 +51,7 @@ export const SidebarCollectionCreateForm = ({ handleIsDialogOpen }: ISidebarColl
 
 			form.reset()
 
-			handleIsDialogOpen(false)
+			onSubmit()
 		},
 		onError: () => {
 			toast({
@@ -62,9 +61,11 @@ export const SidebarCollectionCreateForm = ({ handleIsDialogOpen }: ISidebarColl
 		},
 	})
 
+	const isFormStateValid = form.formState.isValid
+
 	// --- CALLBACKS ---
 
-	const onSubmit = useCallback(
+	const handleSubmit = useCallback(
 		async (value: CollectionCreateFormState) => {
 			await mutateCollectionCreate({
 				body: { name: value.name },
@@ -73,36 +74,59 @@ export const SidebarCollectionCreateForm = ({ handleIsDialogOpen }: ISidebarColl
 		[mutateCollectionCreate],
 	)
 
+	const handleCancel = useCallback(() => {
+		onCancel()
+
+		form.reset()
+	}, [form, onCancel])
+
+	const handleKeyDownSubmit = useCallback(
+		async (event: KeyboardEvent) => {
+			event.stopPropagation()
+
+			if (event.key === "Enter" && !isFormStateValid) {
+				console.log("1")
+
+				await form.trigger()
+			}
+
+			if (event.key === "Enter" && isFormStateValid) {
+				console.log("2")
+
+				await handleSubmit(form.getValues())
+			}
+		},
+		[form, isFormStateValid, handleSubmit],
+	)
+
 	// --- RENDER ---
 
 	return (
-		<DialogContent>
-			<FormProvider {...form}>
-				<Form onSubmit={form.handleSubmit(onSubmit)}>
-					<DialogHeader>
-						<DialogTitle>{t("components.navCollections.createForm.title")}</DialogTitle>
-
-						<DialogDescription>{t("components.navCollections.createForm.description")}</DialogDescription>
-
-						<FormField
-							control={form.control}
-							label={t("components.navCollections.createForm.label")}
-							name="name"
-							render={(fieldProps) => (
-								<Input
-									placeholder={t("components.navCollections.createForm.placeholder")}
-									type="text"
-									{...fieldProps.field}
-								/>
-							)}
+		<FormProvider {...form}>
+			<Form onKeyDown={handleKeyDownSubmit} onSubmit={form.handleSubmit(handleSubmit)}>
+				<FormField
+					control={form.control}
+					label={t("components.navCollections.createForm.label")}
+					name="name"
+					render={(fieldProps) => (
+						<Input
+							placeholder={t("components.navCollections.createForm.placeholder")}
+							type="text"
+							{...fieldProps.field}
 						/>
-					</DialogHeader>
+					)}
+				/>
 
-					<DialogFooter>
-						<Button disabled={!form.formState.isValid}>{t("components.navCollections.createForm.button")}</Button>
-					</DialogFooter>
-				</Form>
-			</FormProvider>
-		</DialogContent>
+				<div className="flex justify-end mt-4 gap-4">
+					<Button type="button" variant="destructive" onClick={handleCancel}>
+						{t("components.navCollection")}
+					</Button>
+
+					<Button type="submit" disabled={!isFormStateValid}>
+						{t("components.navCollections.createForm.button")}
+					</Button>
+				</div>
+			</Form>
+		</FormProvider>
 	)
 }
