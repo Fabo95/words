@@ -1,4 +1,10 @@
 {
+    "common": {
+      "language":{
+        "german": "German",
+        "english": "English"
+      }
+    },
 	"components": {
 		"pageNavigation": {
 			"title": "Pages"
@@ -77,8 +83,34 @@
 	},
 	"pages": {
 		"home": {
-			"title": "Home"
-		},
+			"title": "Home",
+            "createTranslationForm": {
+              "title": "Create Translation",
+              "description": "Create a new translation.",
+              "cancelButton": "Cancel",
+              "saveButton": "Save",
+              "wordLabel": "Word",
+              "translationLabel": "Translation",
+              "collectionIdLabel": "Collection",
+              "wordPlaceholder": "Enter a word",
+              "translationPlaceholder": "Enter a translation",
+              "collectionPlaceholder": "Select a collection",
+              "collectionDescription": "The translation will be assigned to this collection.",
+              "wordError": "Please enter at least 2 characters.",
+              "translationError": "Please enter at least 2 characters.",
+              "collectionError": "Please select a collection.",
+              "toast": {
+                "success": {
+                  "title": "Saved successfully",
+                  "description": "The translation has been created."
+                },
+                "error": {
+                  "title": "Save failed",
+                  "description": "Please try again."
+                }
+              }
+            }
+        },
 		"learning": {
 			"title": "Learn"
 		},

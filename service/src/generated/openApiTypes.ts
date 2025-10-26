@@ -212,6 +212,22 @@ export type paths = {
         patch?: never;
         trace?: never;
     };
+    "/webhooks": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["create_translation_handler"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
 };
 export type webhooks = Record<string, never>;
 export type components = {
@@ -316,12 +332,22 @@ export type components = {
             success: boolean;
         };
         TranslationForCreate: {
+            /**
+             * Format: int32
+             * @description Optional ID of the collection (must be > 0 if provided)
+             */
+            collection_id?: number | null;
             source_language: string;
             source_text: string;
             target_language: string;
             target_text: string;
         };
         TranslationForUpdate: {
+            /**
+             * Format: int32
+             * @description Optional ID of the collection (must be > 0 if provided)
+             */
+            collection_id?: number | null;
             source_language?: string | null;
             source_text?: string | null;
             target_language?: string | null;
@@ -346,6 +372,19 @@ export type components = {
             confirmPassword?: string | null;
             name?: string | null;
             password?: string | null;
+        };
+        WebhooksTranslationForCreate: {
+            /**
+             * Format: int32
+             * @description Optional ID of the collection (must be > 0 if provided)
+             */
+            collection_id?: number | null;
+            /** Format: int32 */
+            id: number;
+            source_language: string;
+            source_text: string;
+            target_language: string;
+            target_text: string;
         };
         "entity.collectionsModel": {
             /** Format: int32 */
@@ -736,6 +775,29 @@ export interface operations {
                 };
                 content: {
                     "application/json": components["schemas"]["HttpResponseBody_Vec_entity.translationsModel"];
+                };
+            };
+        };
+    };
+    create_translation_handler: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["WebhooksTranslationForCreate"];
+            };
+        };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HttpResponseBody_entity.translationsModel"];
                 };
             };
         };

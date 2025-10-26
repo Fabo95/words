@@ -29,8 +29,6 @@ type RootLayoutProps = { children: ReactNode }
 export default async function RootLayout({ children }: RootLayoutProps) {
 	const locale = await getLocale()
 
-	console.log(locale)
-
 	return (
 		<html lang={locale}>
 			<body className={cn("min-h-screen bg-background font-sans antialiased", font.variable)}>

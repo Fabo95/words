@@ -4,16 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="moved to dialog">
-      <change afterPath="$PROJECT_DIR$/service/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionCreateForm/sidebarCollectionCreateDialog.tsx" afterDir="false" />
+    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="separated dialog and form">
+      <change afterPath="$PROJECT_DIR$/service/src/app/[lang]/(loggedIn)/home/_content/TranslationForm.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/collectionTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/collectionTable.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/app/[lang]/(loggedIn)/collection/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/app/[lang]/(loggedIn)/collection/[id]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionCreateForm/sidebarCollectionCreateForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionCreateForm/sidebarCollectionCreateForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionEditForm/sidebarCollectionEditDialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionEditForm/sidebarCollectionEditDialog.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionEditForm/sidebarCollectionEditForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionEditForm/sidebarCollectionEditForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/service/src/components/appSidebar/components/sidebarCollections/sidebarCollections.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/components/appSidebar/components/sidebarCollections/sidebarCollections.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/service/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/messages/de-DE.json" beforeDir="false" afterPath="$PROJECT_DIR$/service/messages/de-DE.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/messages/en-GB.json" beforeDir="false" afterPath="$PROJECT_DIR$/service/messages/en-GB.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/app/[lang]/(loggedIn)/account/_content/accountPasswordForm/utils/accountPasswordFormSchema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/app/[lang]/(loggedIn)/account/_content/accountPasswordForm/utils/accountPasswordFormSchema.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/app/[lang]/(loggedIn)/home/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/app/[lang]/(loggedIn)/home/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/app/layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/service/src/generated/openApiTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/generated/openApiTypes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/service/src/utils/locale/localeTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/service/src/utils/locale/localeTypes.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -62,9 +64,10 @@
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/fabianhinz/repositories/words/service/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionCreateForm",
+    "last_opened_file_path": "/Users/fabianhinz/repositories/words/service/src/app/[lang]/(loggedIn)/home/_content",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
@@ -90,11 +93,11 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/service/src/app/[lang]/(loggedIn)/home/_content" />
       <recent name="$PROJECT_DIR$/service/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionCreateForm" />
       <recent name="$PROJECT_DIR$/service/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionEditForm" />
       <recent name="$PROJECT_DIR$/service" />
       <recent name="$PROJECT_DIR$/packages/biome-config" />
-      <recent name="$PROJECT_DIR$/packages/binome-config" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/service/src/utils/types" />
@@ -168,7 +171,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-f27c65a3e318-JavaScript-WS-251.23774.424" />
+        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-WS-252.26830.93" />
       </set>
     </attachedChunks>
   </component>
@@ -220,14 +223,11 @@
       <workItem from="1752358023399" duration="2965000" />
       <workItem from="1752421192078" duration="3294000" />
       <workItem from="1752524567788" duration="5137000" />
-    </task>
-    <task id="LOCAL-00012" summary="added dropdown-menu.tsx">
-      <option name="closed" value="true" />
-      <created>1721335843786</created>
-      <option name="number" value="00012" />
-      <option name="presentableId" value="LOCAL-00012" />
-      <option name="project" value="LOCAL" />
-      <updated>1721335843786</updated>
+      <workItem from="1752608792099" duration="952000" />
+      <workItem from="1753363566923" duration="10863000" />
+      <workItem from="1753968462230" duration="40000" />
+      <workItem from="1761251443047" duration="2293000" />
+      <workItem from="1761474770180" duration="10581000" />
     </task>
     <task id="LOCAL-00013" summary="added theming + recreated UI">
       <option name="closed" value="true" />
@@ -613,7 +613,15 @@
       <option name="project" value="LOCAL" />
       <updated>1752527016463</updated>
     </task>
-    <option name="localTasksCounter" value="61" />
+    <task id="LOCAL-00061" summary="separated dialog and form">
+      <option name="closed" value="true" />
+      <created>1752608921521</created>
+      <option name="number" value="00061" />
+      <option name="presentableId" value="LOCAL-00061" />
+      <option name="project" value="LOCAL" />
+      <updated>1752608921521</updated>
+    </task>
+    <option name="localTasksCounter" value="62" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -634,7 +642,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="downgrade types since they lead to errors" />
     <MESSAGE value="migrated registrationCardContent.tsx" />
     <MESSAGE value="send cookie to server" />
     <MESSAGE value="added validation for current email" />
@@ -659,7 +666,8 @@
     <MESSAGE value="remove tailwind config" />
     <MESSAGE value="add translations" />
     <MESSAGE value="moved to dialog" />
-    <option name="LAST_COMMIT_MESSAGE" value="moved to dialog" />
+    <MESSAGE value="separated dialog and form" />
+    <option name="LAST_COMMIT_MESSAGE" value="separated dialog and form" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
