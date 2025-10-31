@@ -48,23 +48,11 @@ export const AnyNull = runtime.objectEnumValues.instances.AnyNull
 
 
 export const ModelName = {
-  EFMigrationsHistory: 'EFMigrationsHistory',
-  payments: 'payments',
-  referralCodes: 'referralCodes',
-  referrals: 'referrals',
-  roleClaims: 'roleClaims',
-  roles: 'roles',
-  subscriptionEvents: 'subscriptionEvents',
-  subscriptionVouchers: 'subscriptionVouchers',
-  subscriptions: 'subscriptions',
-  userClaims: 'userClaims',
-  userLogins: 'userLogins',
-  userRoles: 'userRoles',
-  userTokens: 'userTokens',
   users: 'users',
-  voucherGroups: 'voucherGroups',
-  vouchers: 'vouchers',
-  referralCampaigns: 'referralCampaigns'
+  collections: 'collections',
+  example_sentences: 'example_sentences',
+  seaql_migrations: 'seaql_migrations',
+  translations: 'translations'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -83,304 +71,55 @@ export const TransactionIsolationLevel = runtime.makeStrictEnum({
 export type TransactionIsolationLevel = (typeof TransactionIsolationLevel)[keyof typeof TransactionIsolationLevel]
 
 
-export const EFMigrationsHistoryScalarFieldEnum = {
-  migrationId: 'migrationId',
-  productVersion: 'productVersion'
-} as const
-
-export type EFMigrationsHistoryScalarFieldEnum = (typeof EFMigrationsHistoryScalarFieldEnum)[keyof typeof EFMigrationsHistoryScalarFieldEnum]
-
-
-export const PaymentsScalarFieldEnum = {
-  id: 'id',
-  subscriptionId: 'subscriptionId',
-  paymentProvider: 'paymentProvider',
-  paymentMethod: 'paymentMethod',
-  netValue: 'netValue',
-  taxValue: 'taxValue',
-  currency: 'currency',
-  paymentStatus: 'paymentStatus',
-  refundedDate: 'refundedDate',
-  providerRecordExternalId: 'providerRecordExternalId',
-  providerInvoiceExternalId: 'providerInvoiceExternalId',
-  paymentProviderData: 'paymentProviderData',
-  isSetupPayment: 'isSetupPayment',
-  created: 'created',
-  updated: 'updated',
-  isDeleted: 'isDeleted'
-} as const
-
-export type PaymentsScalarFieldEnum = (typeof PaymentsScalarFieldEnum)[keyof typeof PaymentsScalarFieldEnum]
-
-
-export const ReferralCodesScalarFieldEnum = {
-  id: 'id',
-  name: 'name',
-  number: 'number',
-  fullCode: 'fullCode',
-  userId: 'userId',
-  created: 'created',
-  updated: 'updated',
-  isDeleted: 'isDeleted',
-  celloReferralCode: 'celloReferralCode'
-} as const
-
-export type ReferralCodesScalarFieldEnum = (typeof ReferralCodesScalarFieldEnum)[keyof typeof ReferralCodesScalarFieldEnum]
-
-
-export const ReferralsScalarFieldEnum = {
-  id: 'id',
-  reward: 'reward',
-  referralCodeId: 'referralCodeId',
-  referredSubscriptionId: 'referredSubscriptionId',
-  claimedForSubscriptionId: 'claimedForSubscriptionId',
-  created: 'created',
-  updated: 'updated',
-  isDeleted: 'isDeleted',
-  isCelloReferral: 'isCelloReferral'
-} as const
-
-export type ReferralsScalarFieldEnum = (typeof ReferralsScalarFieldEnum)[keyof typeof ReferralsScalarFieldEnum]
-
-
-export const RoleClaimsScalarFieldEnum = {
-  id: 'id',
-  roleId: 'roleId',
-  claimType: 'claimType',
-  claimValue: 'claimValue'
-} as const
-
-export type RoleClaimsScalarFieldEnum = (typeof RoleClaimsScalarFieldEnum)[keyof typeof RoleClaimsScalarFieldEnum]
-
-
-export const RolesScalarFieldEnum = {
-  id: 'id',
-  name: 'name',
-  normalizedName: 'normalizedName',
-  concurrencyStamp: 'concurrencyStamp'
-} as const
-
-export type RolesScalarFieldEnum = (typeof RolesScalarFieldEnum)[keyof typeof RolesScalarFieldEnum]
-
-
-export const SubscriptionEventsScalarFieldEnum = {
-  id: 'id',
-  subscriptionId: 'subscriptionId',
-  type: 'type',
-  voucherId: 'voucherId',
-  referralId: 'referralId',
-  referralRewardId: 'referralRewardId',
-  value: 'value',
-  referralUserCodeId: 'referralUserCodeId',
-  discountCodeUsed: 'discountCodeUsed',
-  suspendedTo: 'suspendedTo',
-  trialTo: 'trialTo',
-  subscriptionTypeAfterTrial: 'subscriptionTypeAfterTrial',
-  trialActiveTo: 'trialActiveTo',
-  paymentId: 'paymentId',
-  activeFrom: 'activeFrom',
-  activeTo: 'activeTo',
-  priceId: 'priceId',
-  productId: 'productId',
-  approximatedActivityRestaurantId: 'approximatedActivityRestaurantId',
-  created: 'created',
-  updated: 'updated',
-  isDeleted: 'isDeleted',
-  oldSubscriptionId: 'oldSubscriptionId'
-} as const
-
-export type SubscriptionEventsScalarFieldEnum = (typeof SubscriptionEventsScalarFieldEnum)[keyof typeof SubscriptionEventsScalarFieldEnum]
-
-
-export const SubscriptionVouchersScalarFieldEnum = {
-  id: 'id',
-  subscriptionId: 'subscriptionId',
-  voucherId: 'voucherId',
-  created: 'created',
-  updated: 'updated',
-  isDeleted: 'isDeleted'
-} as const
-
-export type SubscriptionVouchersScalarFieldEnum = (typeof SubscriptionVouchersScalarFieldEnum)[keyof typeof SubscriptionVouchersScalarFieldEnum]
-
-
-export const SubscriptionsScalarFieldEnum = {
-  id: 'id',
-  baseCost: 'baseCost',
-  userId: 'userId',
-  activeFrom: 'activeFrom',
-  activeTo: 'activeTo',
-  confirmedAt: 'confirmedAt',
-  trialActiveTo: 'trialActiveTo',
-  canceledAt: 'canceledAt',
-  paymentsSuspendedTo: 'paymentsSuspendedTo',
-  churnDate: 'churnDate',
-  specialOfferCost: 'specialOfferCost',
-  specialOfferActiveTo: 'specialOfferActiveTo',
-  subscriptionType: 'subscriptionType',
-  isCancellationConfirmed: 'isCancellationConfirmed',
-  paymentProvider: 'paymentProvider',
-  subscriptionPlanExternalId: 'subscriptionPlanExternalId',
-  subscriptionRecordExternalId: 'subscriptionRecordExternalId',
-  conversionDate: 'conversionDate',
-  paymentProviderData: 'paymentProviderData',
-  subscriptionState: 'subscriptionState',
-  created: 'created',
-  updated: 'updated',
-  isDeleted: 'isDeleted',
-  paymentMethod: 'paymentMethod'
-} as const
-
-export type SubscriptionsScalarFieldEnum = (typeof SubscriptionsScalarFieldEnum)[keyof typeof SubscriptionsScalarFieldEnum]
-
-
-export const UserClaimsScalarFieldEnum = {
-  id: 'id',
-  userId: 'userId',
-  claimType: 'claimType',
-  claimValue: 'claimValue'
-} as const
-
-export type UserClaimsScalarFieldEnum = (typeof UserClaimsScalarFieldEnum)[keyof typeof UserClaimsScalarFieldEnum]
-
-
-export const UserLoginsScalarFieldEnum = {
-  loginProvider: 'loginProvider',
-  providerKey: 'providerKey',
-  providerDisplayName: 'providerDisplayName',
-  userId: 'userId'
-} as const
-
-export type UserLoginsScalarFieldEnum = (typeof UserLoginsScalarFieldEnum)[keyof typeof UserLoginsScalarFieldEnum]
-
-
-export const UserRolesScalarFieldEnum = {
-  userId: 'userId',
-  roleId: 'roleId'
-} as const
-
-export type UserRolesScalarFieldEnum = (typeof UserRolesScalarFieldEnum)[keyof typeof UserRolesScalarFieldEnum]
-
-
-export const UserTokensScalarFieldEnum = {
-  userId: 'userId',
-  loginProvider: 'loginProvider',
-  name: 'name',
-  value: 'value'
-} as const
-
-export type UserTokensScalarFieldEnum = (typeof UserTokensScalarFieldEnum)[keyof typeof UserTokensScalarFieldEnum]
-
-
 export const UsersScalarFieldEnum = {
   id: 'id',
-  firstName: 'firstName',
-  lastName: 'lastName',
-  streetAndNumber: 'streetAndNumber',
-  postalCode: 'postalCode',
-  city: 'city',
-  country: 'country',
-  refreshToken: 'refreshToken',
-  smsVerificationId: 'smsVerificationId',
-  imageUrl: 'imageUrl',
-  currentBalance: 'currentBalance',
-  created: 'created',
-  updated: 'updated',
-  isDeleted: 'isDeleted',
-  dealsRedeemed: 'dealsRedeemed',
-  mollieCustomerId: 'mollieCustomerId',
-  paypalPayerId: 'paypalPayerId',
-  advertisingType: 'advertisingType',
-  deviceIdentifier: 'deviceIdentifier',
-  stripeCustomerId: 'stripeCustomerId',
-  userLanguageCode: 'userLanguageCode',
-  cultureName: 'cultureName',
-  currencyCode: 'currencyCode',
-  countryCode: 'countryCode',
-  firebaseAppInstanceId: 'firebaseAppInstanceId',
-  mobilePlatform: 'mobilePlatform',
-  specialOfferTriggeredAt: 'specialOfferTriggeredAt',
-  blockImportForEventTrackingServices: 'blockImportForEventTrackingServices',
-  imageId: 'imageId',
-  referralId: 'referralId',
-  personalReferralCodeId: 'personalReferralCodeId',
-  approximatedCityId: 'approximatedCityId',
-  userName: 'userName',
-  normalizedUserName: 'normalizedUserName',
   email: 'email',
-  normalizedEmail: 'normalizedEmail',
-  emailConfirmed: 'emailConfirmed',
-  passwordHash: 'passwordHash',
-  securityStamp: 'securityStamp',
-  concurrencyStamp: 'concurrencyStamp',
-  phoneNumber: 'phoneNumber',
-  phoneNumberConfirmed: 'phoneNumberConfirmed',
-  twoFactorEnabled: 'twoFactorEnabled',
-  lockoutEnd: 'lockoutEnd',
-  lockoutEnabled: 'lockoutEnabled',
-  accessFailedCount: 'accessFailedCount',
-  canImpersonate: 'canImpersonate',
-  disabled: 'disabled',
-  celloReferrerCode: 'celloReferrerCode'
+  password: 'password',
+  name: 'name',
+  password_salt: 'password_salt',
+  token_salt: 'token_salt'
 } as const
 
 export type UsersScalarFieldEnum = (typeof UsersScalarFieldEnum)[keyof typeof UsersScalarFieldEnum]
 
 
-export const VoucherGroupsScalarFieldEnum = {
+export const CollectionsScalarFieldEnum = {
   id: 'id',
   name: 'name',
-  groupCode: 'groupCode',
-  totalUsesPerCode: 'totalUsesPerCode',
-  quantity: 'quantity',
-  active: 'active',
-  subscriptionMandatory: 'subscriptionMandatory',
-  restriction: 'restriction',
-  value: 'value',
-  activeUntil: 'activeUntil',
-  periodType: 'periodType',
-  created: 'created',
-  updated: 'updated',
-  isDeleted: 'isDeleted'
+  user_id: 'user_id'
 } as const
 
-export type VoucherGroupsScalarFieldEnum = (typeof VoucherGroupsScalarFieldEnum)[keyof typeof VoucherGroupsScalarFieldEnum]
+export type CollectionsScalarFieldEnum = (typeof CollectionsScalarFieldEnum)[keyof typeof CollectionsScalarFieldEnum]
 
 
-export const VouchersScalarFieldEnum = {
+export const Example_sentencesScalarFieldEnum = {
   id: 'id',
-  code: 'code',
-  uses: 'uses',
-  totalUses: 'totalUses',
-  active: 'active',
-  type: 'type',
-  subscriptionMandatory: 'subscriptionMandatory',
-  restriction: 'restriction',
-  value: 'value',
-  monthlyValue: 'monthlyValue',
-  activeUntil: 'activeUntil',
-  periodType: 'periodType',
-  dailyValue: 'dailyValue',
-  voucherGroupId: 'voucherGroupId',
-  created: 'created',
-  updated: 'updated',
-  isDeleted: 'isDeleted'
+  translation_id: 'translation_id',
+  sentence: 'sentence'
 } as const
 
-export type VouchersScalarFieldEnum = (typeof VouchersScalarFieldEnum)[keyof typeof VouchersScalarFieldEnum]
+export type Example_sentencesScalarFieldEnum = (typeof Example_sentencesScalarFieldEnum)[keyof typeof Example_sentencesScalarFieldEnum]
 
 
-export const ReferralCampaignsScalarFieldEnum = {
+export const Seaql_migrationsScalarFieldEnum = {
+  version: 'version',
+  applied_at: 'applied_at'
+} as const
+
+export type Seaql_migrationsScalarFieldEnum = (typeof Seaql_migrationsScalarFieldEnum)[keyof typeof Seaql_migrationsScalarFieldEnum]
+
+
+export const TranslationsScalarFieldEnum = {
   id: 'id',
-  created: 'created',
-  updated: 'updated',
-  isDeleted: 'isDeleted',
-  startDate: 'startDate',
-  endDate: 'endDate',
-  rewardAmount: 'rewardAmount'
+  source_language: 'source_language',
+  source_text: 'source_text',
+  target_language: 'target_language',
+  target_text: 'target_text',
+  user_id: 'user_id',
+  collection_id: 'collection_id'
 } as const
 
-export type ReferralCampaignsScalarFieldEnum = (typeof ReferralCampaignsScalarFieldEnum)[keyof typeof ReferralCampaignsScalarFieldEnum]
+export type TranslationsScalarFieldEnum = (typeof TranslationsScalarFieldEnum)[keyof typeof TranslationsScalarFieldEnum]
 
 
 export const SortOrder = {

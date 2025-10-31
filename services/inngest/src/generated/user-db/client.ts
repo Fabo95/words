@@ -28,8 +28,8 @@ export * from "./enums.js"
  * @example
  * ```
  * const prisma = new PrismaClient()
- * // Fetch zero or more EFMigrationsHistories
- * const eFMigrationsHistories = await prisma.eFMigrationsHistory.findMany()
+ * // Fetch zero or more Users
+ * const users = await prisma.users.findMany()
  * ```
  * 
  * Read more in our [docs](https://www.prisma.io/docs/reference/tools-and-interfaces/prisma-client).
@@ -44,87 +44,27 @@ path.join(__dirname, "libquery_engine-darwin-arm64.dylib.node")
 path.join(process.cwd(), "src/generated/user-db/libquery_engine-darwin-arm64.dylib.node")
 
 /**
- * Model EFMigrationsHistory
- * 
- */
-export type EFMigrationsHistory = Prisma.EFMigrationsHistoryModel
-/**
- * Model payments
- * 
- */
-export type payments = Prisma.paymentsModel
-/**
- * Model referralCodes
- * This model contains an expression index which requires additional setup for migrations. Visit https://pris.ly/d/expression-indexes for more info.
- */
-export type referralCodes = Prisma.referralCodesModel
-/**
- * Model referrals
- * 
- */
-export type referrals = Prisma.referralsModel
-/**
- * Model roleClaims
- * 
- */
-export type roleClaims = Prisma.roleClaimsModel
-/**
- * Model roles
- * 
- */
-export type roles = Prisma.rolesModel
-/**
- * Model subscriptionEvents
- * 
- */
-export type subscriptionEvents = Prisma.subscriptionEventsModel
-/**
- * Model subscriptionVouchers
- * 
- */
-export type subscriptionVouchers = Prisma.subscriptionVouchersModel
-/**
- * Model subscriptions
- * 
- */
-export type subscriptions = Prisma.subscriptionsModel
-/**
- * Model userClaims
- * 
- */
-export type userClaims = Prisma.userClaimsModel
-/**
- * Model userLogins
- * 
- */
-export type userLogins = Prisma.userLoginsModel
-/**
- * Model userRoles
- * 
- */
-export type userRoles = Prisma.userRolesModel
-/**
- * Model userTokens
- * 
- */
-export type userTokens = Prisma.userTokensModel
-/**
  * Model users
  * This model contains an expression index which requires additional setup for migrations. Visit https://pris.ly/d/expression-indexes for more info.
  */
 export type users = Prisma.usersModel
 /**
- * Model voucherGroups
+ * Model collections
  * 
  */
-export type voucherGroups = Prisma.voucherGroupsModel
+export type collections = Prisma.collectionsModel
 /**
- * Model vouchers
- * This model contains an expression index which requires additional setup for migrations. Visit https://pris.ly/d/expression-indexes for more info.
- */
-export type vouchers = Prisma.vouchersModel
-/**
- * Model referralCampaigns
+ * Model example_sentences
  * 
  */
-export type referralCampaigns = Prisma.referralCampaignsModel
+export type example_sentences = Prisma.example_sentencesModel
+/**
+ * Model seaql_migrations
+ * 
+ */
+export type seaql_migrations = Prisma.seaql_migrationsModel
+/**
+ * Model translations
+ * 
+ */
+export type translations = Prisma.translationsModel

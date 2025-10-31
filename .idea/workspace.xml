@@ -4,16 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="add inngest">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
+    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="add schema.prisma">
       <change beforePath="$PROJECT_DIR$/services/inngest/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/env.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/env.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/server.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/server.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/setup/docsPlugin.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/setup/logger.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/setup/logger.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/setup/openapi-gen.ts" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,6 +67,7 @@
     "nodejs_package_manager_path": "npm",
     "npm.eslint-plugin-words-app-styleguide > build.executor": "Run",
     "npm.eslint-plugin-words-app-styleguide > build:clean.executor": "Run",
+    "npm.inngest > generate-prisma-schema.executor": "Run",
     "npm.packages:force-node-modules-sync.executor": "Run",
     "npm.service > dev.executor": "Run",
     "npm.service > generate_open_api_types.executor": "Run",
@@ -106,22 +99,22 @@
       <recent name="$PROJECT_DIR$/service/src/app/[lang]/(loggedIn)/account/_content/accountNameForm" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.inngest &gt; generate-prisma-schema">
-    <configuration name="eslint-plugin-words-app-styleguide &gt; build:clean" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/packages/eslint-plugin-words-app-styleguide/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="build:clean" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="npm.inngest &gt; prisma:generate">
     <configuration name="inngest &gt; generate-prisma-schema" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/services/inngest/package.json" />
       <command value="run" />
       <scripts>
         <script value="generate-prisma-schema" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <configuration name="inngest &gt; prisma:generate" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/services/inngest/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="prisma:generate" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -159,11 +152,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.inngest &gt; prisma:generate" />
         <item itemvalue="npm.inngest &gt; generate-prisma-schema" />
         <item itemvalue="npm.user-api &gt; db-generate" />
         <item itemvalue="npm.service &gt; generate_open_api_types" />
         <item itemvalue="npm.service &gt; dev" />
-        <item itemvalue="npm.eslint-plugin-words-app-styleguide &gt; build:clean" />
       </list>
     </recent_temporary>
   </component>
@@ -230,15 +223,7 @@
       <workItem from="1761588214363" duration="97000" />
       <workItem from="1761597589319" duration="777000" />
       <workItem from="1761747939193" duration="99000" />
-      <workItem from="1761829140775" duration="15954000" />
-    </task>
-    <task id="LOCAL-00018" summary="adjusted middleware to make proper redirects">
-      <option name="closed" value="true" />
-      <created>1736101767961</created>
-      <option name="number" value="00018" />
-      <option name="presentableId" value="LOCAL-00018" />
-      <option name="project" value="LOCAL" />
-      <updated>1736101767961</updated>
+      <workItem from="1761829140775" duration="16041000" />
     </task>
     <task id="LOCAL-00019" summary="restructured folder naming">
       <option name="closed" value="true" />
@@ -624,7 +609,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761918161791</updated>
     </task>
-    <option name="localTasksCounter" value="67" />
+    <task id="LOCAL-00067" summary="add schema.prisma">
+      <option name="closed" value="true" />
+      <created>1761918770814</created>
+      <option name="number" value="00067" />
+      <option name="presentableId" value="LOCAL-00067" />
+      <option name="project" value="LOCAL" />
+      <updated>1761918770814</updated>
+    </task>
+    <option name="localTasksCounter" value="68" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -645,7 +638,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added login" />
     <MESSAGE value="added sidebar" />
     <MESSAGE value="added LanguageSwitcher" />
     <MESSAGE value="added react query" />
@@ -670,7 +662,8 @@
     <MESSAGE value="add TranslationForm.tsx" />
     <MESSAGE value="move to services" />
     <MESSAGE value="add inngest" />
-    <option name="LAST_COMMIT_MESSAGE" value="add inngest" />
+    <MESSAGE value="add schema.prisma" />
+    <option name="LAST_COMMIT_MESSAGE" value="add schema.prisma" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

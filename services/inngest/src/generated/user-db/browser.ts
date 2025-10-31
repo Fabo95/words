@@ -17,87 +17,27 @@ export { Prisma }
 export * as $Enums from './enums.js'
 export * from './enums.js';
 /**
- * Model EFMigrationsHistory
- * 
- */
-export type EFMigrationsHistory = Prisma.EFMigrationsHistoryModel
-/**
- * Model payments
- * 
- */
-export type payments = Prisma.paymentsModel
-/**
- * Model referralCodes
- * This model contains an expression index which requires additional setup for migrations. Visit https://pris.ly/d/expression-indexes for more info.
- */
-export type referralCodes = Prisma.referralCodesModel
-/**
- * Model referrals
- * 
- */
-export type referrals = Prisma.referralsModel
-/**
- * Model roleClaims
- * 
- */
-export type roleClaims = Prisma.roleClaimsModel
-/**
- * Model roles
- * 
- */
-export type roles = Prisma.rolesModel
-/**
- * Model subscriptionEvents
- * 
- */
-export type subscriptionEvents = Prisma.subscriptionEventsModel
-/**
- * Model subscriptionVouchers
- * 
- */
-export type subscriptionVouchers = Prisma.subscriptionVouchersModel
-/**
- * Model subscriptions
- * 
- */
-export type subscriptions = Prisma.subscriptionsModel
-/**
- * Model userClaims
- * 
- */
-export type userClaims = Prisma.userClaimsModel
-/**
- * Model userLogins
- * 
- */
-export type userLogins = Prisma.userLoginsModel
-/**
- * Model userRoles
- * 
- */
-export type userRoles = Prisma.userRolesModel
-/**
- * Model userTokens
- * 
- */
-export type userTokens = Prisma.userTokensModel
-/**
  * Model users
  * This model contains an expression index which requires additional setup for migrations. Visit https://pris.ly/d/expression-indexes for more info.
  */
 export type users = Prisma.usersModel
 /**
- * Model voucherGroups
+ * Model collections
  * 
  */
-export type voucherGroups = Prisma.voucherGroupsModel
+export type collections = Prisma.collectionsModel
 /**
- * Model vouchers
- * This model contains an expression index which requires additional setup for migrations. Visit https://pris.ly/d/expression-indexes for more info.
- */
-export type vouchers = Prisma.vouchersModel
-/**
- * Model referralCampaigns
+ * Model example_sentences
  * 
  */
-export type referralCampaigns = Prisma.referralCampaignsModel
+export type example_sentences = Prisma.example_sentencesModel
+/**
+ * Model seaql_migrations
+ * 
+ */
+export type seaql_migrations = Prisma.seaql_migrationsModel
+/**
+ * Model translations
+ * 
+ */
+export type translations = Prisma.translationsModel

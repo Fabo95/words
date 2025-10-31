@@ -11,9 +11,9 @@
         "build": "rm -rf ./dist/* && yarn db-generate && yarn lint && tsc -p tsconfig.json && tsc-alias -p tsconfig.json",
         "lint": "biome lint",
         "ts": "tsc --noEmit",
-        "db-generate": "npx prisma generate",
         "dev": "tsx watch src/index.ts",
-        "generate-prisma-schema": "npx prisma db pull"
+        "prisma:generate": "npx prisma generate",
+        "prisma:pull": "npx prisma db pull"
     },
     "author": "Fabian Hinz",
     "dependencies": {

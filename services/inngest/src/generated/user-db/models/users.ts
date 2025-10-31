@@ -26,345 +26,75 @@ export type AggregateUsers = {
 }
 
 export type UsersAvgAggregateOutputType = {
-  currentBalance: runtime.Decimal | null
-  dealsRedeemed: number | null
-  advertisingType: number | null
-  accessFailedCount: number | null
+  id: number | null
 }
 
 export type UsersSumAggregateOutputType = {
-  currentBalance: runtime.Decimal | null
-  dealsRedeemed: number | null
-  advertisingType: number | null
-  accessFailedCount: number | null
+  id: number | null
 }
 
 export type UsersMinAggregateOutputType = {
-  id: string | null
-  firstName: string | null
-  lastName: string | null
-  streetAndNumber: string | null
-  postalCode: string | null
-  city: string | null
-  country: string | null
-  refreshToken: string | null
-  smsVerificationId: string | null
-  imageUrl: string | null
-  currentBalance: runtime.Decimal | null
-  created: Date | null
-  updated: Date | null
-  isDeleted: boolean | null
-  dealsRedeemed: number | null
-  mollieCustomerId: string | null
-  paypalPayerId: string | null
-  advertisingType: number | null
-  deviceIdentifier: string | null
-  stripeCustomerId: string | null
-  userLanguageCode: string | null
-  cultureName: string | null
-  currencyCode: string | null
-  countryCode: string | null
-  firebaseAppInstanceId: string | null
-  mobilePlatform: string | null
-  specialOfferTriggeredAt: Date | null
-  blockImportForEventTrackingServices: boolean | null
-  imageId: string | null
-  referralId: string | null
-  personalReferralCodeId: string | null
-  approximatedCityId: string | null
-  userName: string | null
-  normalizedUserName: string | null
+  id: number | null
   email: string | null
-  normalizedEmail: string | null
-  emailConfirmed: boolean | null
-  passwordHash: string | null
-  securityStamp: string | null
-  concurrencyStamp: string | null
-  phoneNumber: string | null
-  phoneNumberConfirmed: boolean | null
-  twoFactorEnabled: boolean | null
-  lockoutEnd: Date | null
-  lockoutEnabled: boolean | null
-  accessFailedCount: number | null
-  canImpersonate: boolean | null
-  disabled: boolean | null
-  celloReferrerCode: string | null
+  password: string | null
+  name: string | null
+  password_salt: string | null
+  token_salt: string | null
 }
 
 export type UsersMaxAggregateOutputType = {
-  id: string | null
-  firstName: string | null
-  lastName: string | null
-  streetAndNumber: string | null
-  postalCode: string | null
-  city: string | null
-  country: string | null
-  refreshToken: string | null
-  smsVerificationId: string | null
-  imageUrl: string | null
-  currentBalance: runtime.Decimal | null
-  created: Date | null
-  updated: Date | null
-  isDeleted: boolean | null
-  dealsRedeemed: number | null
-  mollieCustomerId: string | null
-  paypalPayerId: string | null
-  advertisingType: number | null
-  deviceIdentifier: string | null
-  stripeCustomerId: string | null
-  userLanguageCode: string | null
-  cultureName: string | null
-  currencyCode: string | null
-  countryCode: string | null
-  firebaseAppInstanceId: string | null
-  mobilePlatform: string | null
-  specialOfferTriggeredAt: Date | null
-  blockImportForEventTrackingServices: boolean | null
-  imageId: string | null
-  referralId: string | null
-  personalReferralCodeId: string | null
-  approximatedCityId: string | null
-  userName: string | null
-  normalizedUserName: string | null
+  id: number | null
   email: string | null
-  normalizedEmail: string | null
-  emailConfirmed: boolean | null
-  passwordHash: string | null
-  securityStamp: string | null
-  concurrencyStamp: string | null
-  phoneNumber: string | null
-  phoneNumberConfirmed: boolean | null
-  twoFactorEnabled: boolean | null
-  lockoutEnd: Date | null
-  lockoutEnabled: boolean | null
-  accessFailedCount: number | null
-  canImpersonate: boolean | null
-  disabled: boolean | null
-  celloReferrerCode: string | null
+  password: string | null
+  name: string | null
+  password_salt: string | null
+  token_salt: string | null
 }
 
 export type UsersCountAggregateOutputType = {
   id: number
-  firstName: number
-  lastName: number
-  streetAndNumber: number
-  postalCode: number
-  city: number
-  country: number
-  refreshToken: number
-  smsVerificationId: number
-  imageUrl: number
-  currentBalance: number
-  created: number
-  updated: number
-  isDeleted: number
-  dealsRedeemed: number
-  mollieCustomerId: number
-  paypalPayerId: number
-  advertisingType: number
-  deviceIdentifier: number
-  stripeCustomerId: number
-  userLanguageCode: number
-  cultureName: number
-  currencyCode: number
-  countryCode: number
-  firebaseAppInstanceId: number
-  mobilePlatform: number
-  specialOfferTriggeredAt: number
-  blockImportForEventTrackingServices: number
-  imageId: number
-  referralId: number
-  personalReferralCodeId: number
-  approximatedCityId: number
-  userName: number
-  normalizedUserName: number
   email: number
-  normalizedEmail: number
-  emailConfirmed: number
-  passwordHash: number
-  securityStamp: number
-  concurrencyStamp: number
-  phoneNumber: number
-  phoneNumberConfirmed: number
-  twoFactorEnabled: number
-  lockoutEnd: number
-  lockoutEnabled: number
-  accessFailedCount: number
-  canImpersonate: number
-  disabled: number
-  celloReferrerCode: number
+  password: number
+  name: number
+  password_salt: number
+  token_salt: number
   _all: number
 }
 
 
 export type UsersAvgAggregateInputType = {
-  currentBalance?: true
-  dealsRedeemed?: true
-  advertisingType?: true
-  accessFailedCount?: true
+  id?: true
 }
 
 export type UsersSumAggregateInputType = {
-  currentBalance?: true
-  dealsRedeemed?: true
-  advertisingType?: true
-  accessFailedCount?: true
+  id?: true
 }
 
 export type UsersMinAggregateInputType = {
   id?: true
-  firstName?: true
-  lastName?: true
-  streetAndNumber?: true
-  postalCode?: true
-  city?: true
-  country?: true
-  refreshToken?: true
-  smsVerificationId?: true
-  imageUrl?: true
-  currentBalance?: true
-  created?: true
-  updated?: true
-  isDeleted?: true
-  dealsRedeemed?: true
-  mollieCustomerId?: true
-  paypalPayerId?: true
-  advertisingType?: true
-  deviceIdentifier?: true
-  stripeCustomerId?: true
-  userLanguageCode?: true
-  cultureName?: true
-  currencyCode?: true
-  countryCode?: true
-  firebaseAppInstanceId?: true
-  mobilePlatform?: true
-  specialOfferTriggeredAt?: true
-  blockImportForEventTrackingServices?: true
-  imageId?: true
-  referralId?: true
-  personalReferralCodeId?: true
-  approximatedCityId?: true
-  userName?: true
-  normalizedUserName?: true
   email?: true
-  normalizedEmail?: true
-  emailConfirmed?: true
-  passwordHash?: true
-  securityStamp?: true
-  concurrencyStamp?: true
-  phoneNumber?: true
-  phoneNumberConfirmed?: true
-  twoFactorEnabled?: true
-  lockoutEnd?: true
-  lockoutEnabled?: true
-  accessFailedCount?: true
-  canImpersonate?: true
-  disabled?: true
-  celloReferrerCode?: true
+  password?: true
+  name?: true
+  password_salt?: true
+  token_salt?: true
 }
 
 export type UsersMaxAggregateInputType = {
   id?: true
-  firstName?: true
-  lastName?: true
-  streetAndNumber?: true
-  postalCode?: true
-  city?: true
-  country?: true
-  refreshToken?: true
-  smsVerificationId?: true
-  imageUrl?: true
-  currentBalance?: true
-  created?: true
-  updated?: true
-  isDeleted?: true
-  dealsRedeemed?: true
-  mollieCustomerId?: true
-  paypalPayerId?: true
-  advertisingType?: true
-  deviceIdentifier?: true
-  stripeCustomerId?: true
-  userLanguageCode?: true
-  cultureName?: true
-  currencyCode?: true
-  countryCode?: true
-  firebaseAppInstanceId?: true
-  mobilePlatform?: true
-  specialOfferTriggeredAt?: true
-  blockImportForEventTrackingServices?: true
-  imageId?: true
-  referralId?: true
-  personalReferralCodeId?: true
-  approximatedCityId?: true
-  userName?: true
-  normalizedUserName?: true
   email?: true
-  normalizedEmail?: true
-  emailConfirmed?: true
-  passwordHash?: true
-  securityStamp?: true
-  concurrencyStamp?: true
-  phoneNumber?: true
-  phoneNumberConfirmed?: true
-  twoFactorEnabled?: true
-  lockoutEnd?: true
-  lockoutEnabled?: true
-  accessFailedCount?: true
-  canImpersonate?: true
-  disabled?: true
-  celloReferrerCode?: true
+  password?: true
+  name?: true
+  password_salt?: true
+  token_salt?: true
 }
 
 export type UsersCountAggregateInputType = {
   id?: true
-  firstName?: true
-  lastName?: true
-  streetAndNumber?: true
-  postalCode?: true
-  city?: true
-  country?: true
-  refreshToken?: true
-  smsVerificationId?: true
-  imageUrl?: true
-  currentBalance?: true
-  created?: true
-  updated?: true
-  isDeleted?: true
-  dealsRedeemed?: true
-  mollieCustomerId?: true
-  paypalPayerId?: true
-  advertisingType?: true
-  deviceIdentifier?: true
-  stripeCustomerId?: true
-  userLanguageCode?: true
-  cultureName?: true
-  currencyCode?: true
-  countryCode?: true
-  firebaseAppInstanceId?: true
-  mobilePlatform?: true
-  specialOfferTriggeredAt?: true
-  blockImportForEventTrackingServices?: true
-  imageId?: true
-  referralId?: true
-  personalReferralCodeId?: true
-  approximatedCityId?: true
-  userName?: true
-  normalizedUserName?: true
   email?: true
-  normalizedEmail?: true
-  emailConfirmed?: true
-  passwordHash?: true
-  securityStamp?: true
-  concurrencyStamp?: true
-  phoneNumber?: true
-  phoneNumberConfirmed?: true
-  twoFactorEnabled?: true
-  lockoutEnd?: true
-  lockoutEnabled?: true
-  accessFailedCount?: true
-  canImpersonate?: true
-  disabled?: true
-  celloReferrerCode?: true
+  password?: true
+  name?: true
+  password_salt?: true
+  token_salt?: true
   _all?: true
 }
 
@@ -455,55 +185,12 @@ export type usersGroupByArgs<ExtArgs extends runtime.Types.Extensions.InternalAr
 }
 
 export type UsersGroupByOutputType = {
-  id: string
-  firstName: string | null
-  lastName: string | null
-  streetAndNumber: string | null
-  postalCode: string | null
-  city: string | null
-  country: string | null
-  refreshToken: string | null
-  smsVerificationId: string | null
-  imageUrl: string | null
-  currentBalance: runtime.Decimal
-  created: Date
-  updated: Date | null
-  isDeleted: boolean
-  dealsRedeemed: number
-  mollieCustomerId: string | null
-  paypalPayerId: string | null
-  advertisingType: number | null
-  deviceIdentifier: string | null
-  stripeCustomerId: string | null
-  userLanguageCode: string | null
-  cultureName: string | null
-  currencyCode: string | null
-  countryCode: string | null
-  firebaseAppInstanceId: string | null
-  mobilePlatform: string | null
-  specialOfferTriggeredAt: Date | null
-  blockImportForEventTrackingServices: boolean
-  imageId: string | null
-  referralId: string | null
-  personalReferralCodeId: string | null
-  approximatedCityId: string | null
-  userName: string | null
-  normalizedUserName: string | null
-  email: string | null
-  normalizedEmail: string | null
-  emailConfirmed: boolean
-  passwordHash: string | null
-  securityStamp: string | null
-  concurrencyStamp: string | null
-  phoneNumber: string | null
-  phoneNumberConfirmed: boolean
-  twoFactorEnabled: boolean
-  lockoutEnd: Date | null
-  lockoutEnabled: boolean
-  accessFailedCount: number
-  canImpersonate: boolean
-  disabled: boolean
-  celloReferrerCode: string | null
+  id: number
+  email: string
+  password: string
+  name: string | null
+  password_salt: string
+  token_salt: string
   _count: UsersCountAggregateOutputType | null
   _avg: UsersAvgAggregateOutputType | null
   _sum: UsersSumAggregateOutputType | null
@@ -530,235 +217,48 @@ export type usersWhereInput = {
   AND?: Prisma.usersWhereInput | Prisma.usersWhereInput[]
   OR?: Prisma.usersWhereInput[]
   NOT?: Prisma.usersWhereInput | Prisma.usersWhereInput[]
-  id?: Prisma.UuidFilter<"users"> | string
-  firstName?: Prisma.StringNullableFilter<"users"> | string | null
-  lastName?: Prisma.StringNullableFilter<"users"> | string | null
-  streetAndNumber?: Prisma.StringNullableFilter<"users"> | string | null
-  postalCode?: Prisma.StringNullableFilter<"users"> | string | null
-  city?: Prisma.StringNullableFilter<"users"> | string | null
-  country?: Prisma.StringNullableFilter<"users"> | string | null
-  refreshToken?: Prisma.StringNullableFilter<"users"> | string | null
-  smsVerificationId?: Prisma.StringNullableFilter<"users"> | string | null
-  imageUrl?: Prisma.StringNullableFilter<"users"> | string | null
-  currentBalance?: Prisma.DecimalFilter<"users"> | runtime.Decimal | runtime.DecimalJsLike | number | string
-  created?: Prisma.DateTimeFilter<"users"> | Date | string
-  updated?: Prisma.DateTimeNullableFilter<"users"> | Date | string | null
-  isDeleted?: Prisma.BoolFilter<"users"> | boolean
-  dealsRedeemed?: Prisma.IntFilter<"users"> | number
-  mollieCustomerId?: Prisma.StringNullableFilter<"users"> | string | null
-  paypalPayerId?: Prisma.StringNullableFilter<"users"> | string | null
-  advertisingType?: Prisma.IntNullableFilter<"users"> | number | null
-  deviceIdentifier?: Prisma.StringNullableFilter<"users"> | string | null
-  stripeCustomerId?: Prisma.StringNullableFilter<"users"> | string | null
-  userLanguageCode?: Prisma.StringNullableFilter<"users"> | string | null
-  cultureName?: Prisma.StringNullableFilter<"users"> | string | null
-  currencyCode?: Prisma.StringNullableFilter<"users"> | string | null
-  countryCode?: Prisma.StringNullableFilter<"users"> | string | null
-  firebaseAppInstanceId?: Prisma.StringNullableFilter<"users"> | string | null
-  mobilePlatform?: Prisma.StringNullableFilter<"users"> | string | null
-  specialOfferTriggeredAt?: Prisma.DateTimeNullableFilter<"users"> | Date | string | null
-  blockImportForEventTrackingServices?: Prisma.BoolFilter<"users"> | boolean
-  imageId?: Prisma.UuidNullableFilter<"users"> | string | null
-  referralId?: Prisma.UuidNullableFilter<"users"> | string | null
-  personalReferralCodeId?: Prisma.UuidNullableFilter<"users"> | string | null
-  approximatedCityId?: Prisma.UuidNullableFilter<"users"> | string | null
-  userName?: Prisma.StringNullableFilter<"users"> | string | null
-  normalizedUserName?: Prisma.StringNullableFilter<"users"> | string | null
-  email?: Prisma.StringNullableFilter<"users"> | string | null
-  normalizedEmail?: Prisma.StringNullableFilter<"users"> | string | null
-  emailConfirmed?: Prisma.BoolFilter<"users"> | boolean
-  passwordHash?: Prisma.StringNullableFilter<"users"> | string | null
-  securityStamp?: Prisma.StringNullableFilter<"users"> | string | null
-  concurrencyStamp?: Prisma.StringNullableFilter<"users"> | string | null
-  phoneNumber?: Prisma.StringNullableFilter<"users"> | string | null
-  phoneNumberConfirmed?: Prisma.BoolFilter<"users"> | boolean
-  twoFactorEnabled?: Prisma.BoolFilter<"users"> | boolean
-  lockoutEnd?: Prisma.DateTimeNullableFilter<"users"> | Date | string | null
-  lockoutEnabled?: Prisma.BoolFilter<"users"> | boolean
-  accessFailedCount?: Prisma.IntFilter<"users"> | number
-  canImpersonate?: Prisma.BoolFilter<"users"> | boolean
-  disabled?: Prisma.BoolFilter<"users"> | boolean
-  celloReferrerCode?: Prisma.StringNullableFilter<"users"> | string | null
-  referralCodes?: Prisma.XOR<Prisma.ReferralCodesNullableScalarRelationFilter, Prisma.referralCodesWhereInput> | null
-  subscriptions?: Prisma.SubscriptionsListRelationFilter
-  userClaims?: Prisma.UserClaimsListRelationFilter
-  userLogins?: Prisma.UserLoginsListRelationFilter
-  userRoles?: Prisma.UserRolesListRelationFilter
-  userTokens?: Prisma.UserTokensListRelationFilter
-  referrals?: Prisma.XOR<Prisma.ReferralsNullableScalarRelationFilter, Prisma.referralsWhereInput> | null
+  id?: Prisma.IntFilter<"users"> | number
+  email?: Prisma.StringFilter<"users"> | string
+  password?: Prisma.StringFilter<"users"> | string
+  name?: Prisma.StringNullableFilter<"users"> | string | null
+  password_salt?: Prisma.StringFilter<"users"> | string
+  token_salt?: Prisma.StringFilter<"users"> | string
+  collections?: Prisma.CollectionsListRelationFilter
+  translations?: Prisma.TranslationsListRelationFilter
 }
 
 export type usersOrderByWithRelationInput = {
   id?: Prisma.SortOrder
-  firstName?: Prisma.SortOrderInput | Prisma.SortOrder
-  lastName?: Prisma.SortOrderInput | Prisma.SortOrder
-  streetAndNumber?: Prisma.SortOrderInput | Prisma.SortOrder
-  postalCode?: Prisma.SortOrderInput | Prisma.SortOrder
-  city?: Prisma.SortOrderInput | Prisma.SortOrder
-  country?: Prisma.SortOrderInput | Prisma.SortOrder
-  refreshToken?: Prisma.SortOrderInput | Prisma.SortOrder
-  smsVerificationId?: Prisma.SortOrderInput | Prisma.SortOrder
-  imageUrl?: Prisma.SortOrderInput | Prisma.SortOrder
-  currentBalance?: Prisma.SortOrder
-  created?: Prisma.SortOrder
-  updated?: Prisma.SortOrderInput | Prisma.SortOrder
-  isDeleted?: Prisma.SortOrder
-  dealsRedeemed?: Prisma.SortOrder
-  mollieCustomerId?: Prisma.SortOrderInput | Prisma.SortOrder
-  paypalPayerId?: Prisma.SortOrderInput | Prisma.SortOrder
-  advertisingType?: Prisma.SortOrderInput | Prisma.SortOrder
-  deviceIdentifier?: Prisma.SortOrderInput | Prisma.SortOrder
-  stripeCustomerId?: Prisma.SortOrderInput | Prisma.SortOrder
-  userLanguageCode?: Prisma.SortOrderInput | Prisma.SortOrder
-  cultureName?: Prisma.SortOrderInput | Prisma.SortOrder
-  currencyCode?: Prisma.SortOrderInput | Prisma.SortOrder
-  countryCode?: Prisma.SortOrderInput | Prisma.SortOrder
-  firebaseAppInstanceId?: Prisma.SortOrderInput | Prisma.SortOrder
-  mobilePlatform?: Prisma.SortOrderInput | Prisma.SortOrder
-  specialOfferTriggeredAt?: Prisma.SortOrderInput | Prisma.SortOrder
-  blockImportForEventTrackingServices?: Prisma.SortOrder
-  imageId?: Prisma.SortOrderInput | Prisma.SortOrder
-  referralId?: Prisma.SortOrderInput | Prisma.SortOrder
-  personalReferralCodeId?: Prisma.SortOrderInput | Prisma.SortOrder
-  approximatedCityId?: Prisma.SortOrderInput | Prisma.SortOrder
-  userName?: Prisma.SortOrderInput | Prisma.SortOrder
-  normalizedUserName?: Prisma.SortOrderInput | Prisma.SortOrder
-  email?: Prisma.SortOrderInput | Prisma.SortOrder
-  normalizedEmail?: Prisma.SortOrderInput | Prisma.SortOrder
-  emailConfirmed?: Prisma.SortOrder
-  passwordHash?: Prisma.SortOrderInput | Prisma.SortOrder
-  securityStamp?: Prisma.SortOrderInput | Prisma.SortOrder
-  concurrencyStamp?: Prisma.SortOrderInput | Prisma.SortOrder
-  phoneNumber?: Prisma.SortOrderInput | Prisma.SortOrder
-  phoneNumberConfirmed?: Prisma.SortOrder
-  twoFactorEnabled?: Prisma.SortOrder
-  lockoutEnd?: Prisma.SortOrderInput | Prisma.SortOrder
-  lockoutEnabled?: Prisma.SortOrder
-  accessFailedCount?: Prisma.SortOrder
-  canImpersonate?: Prisma.SortOrder
-  disabled?: Prisma.SortOrder
-  celloReferrerCode?: Prisma.SortOrderInput | Prisma.SortOrder
-  referralCodes?: Prisma.referralCodesOrderByWithRelationInput
-  subscriptions?: Prisma.subscriptionsOrderByRelationAggregateInput
-  userClaims?: Prisma.userClaimsOrderByRelationAggregateInput
-  userLogins?: Prisma.userLoginsOrderByRelationAggregateInput
-  userRoles?: Prisma.userRolesOrderByRelationAggregateInput
-  userTokens?: Prisma.userTokensOrderByRelationAggregateInput
-  referrals?: Prisma.referralsOrderByWithRelationInput
+  email?: Prisma.SortOrder
+  password?: Prisma.SortOrder
+  name?: Prisma.SortOrderInput | Prisma.SortOrder
+  password_salt?: Prisma.SortOrder
+  token_salt?: Prisma.SortOrder
+  collections?: Prisma.collectionsOrderByRelationAggregateInput
+  translations?: Prisma.translationsOrderByRelationAggregateInput
 }
 
 export type usersWhereUniqueInput = Prisma.AtLeast<{
-  id?: string
-  normalizedUserName?: string
+  id?: number
   AND?: Prisma.usersWhereInput | Prisma.usersWhereInput[]
   OR?: Prisma.usersWhereInput[]
   NOT?: Prisma.usersWhereInput | Prisma.usersWhereInput[]
-  firstName?: Prisma.StringNullableFilter<"users"> | string | null
-  lastName?: Prisma.StringNullableFilter<"users"> | string | null
-  streetAndNumber?: Prisma.StringNullableFilter<"users"> | string | null
-  postalCode?: Prisma.StringNullableFilter<"users"> | string | null
-  city?: Prisma.StringNullableFilter<"users"> | string | null
-  country?: Prisma.StringNullableFilter<"users"> | string | null
-  refreshToken?: Prisma.StringNullableFilter<"users"> | string | null
-  smsVerificationId?: Prisma.StringNullableFilter<"users"> | string | null
-  imageUrl?: Prisma.StringNullableFilter<"users"> | string | null
-  currentBalance?: Prisma.DecimalFilter<"users"> | runtime.Decimal | runtime.DecimalJsLike | number | string
-  created?: Prisma.DateTimeFilter<"users"> | Date | string
-  updated?: Prisma.DateTimeNullableFilter<"users"> | Date | string | null
-  isDeleted?: Prisma.BoolFilter<"users"> | boolean
-  dealsRedeemed?: Prisma.IntFilter<"users"> | number
-  mollieCustomerId?: Prisma.StringNullableFilter<"users"> | string | null
-  paypalPayerId?: Prisma.StringNullableFilter<"users"> | string | null
-  advertisingType?: Prisma.IntNullableFilter<"users"> | number | null
-  deviceIdentifier?: Prisma.StringNullableFilter<"users"> | string | null
-  stripeCustomerId?: Prisma.StringNullableFilter<"users"> | string | null
-  userLanguageCode?: Prisma.StringNullableFilter<"users"> | string | null
-  cultureName?: Prisma.StringNullableFilter<"users"> | string | null
-  currencyCode?: Prisma.StringNullableFilter<"users"> | string | null
-  countryCode?: Prisma.StringNullableFilter<"users"> | string | null
-  firebaseAppInstanceId?: Prisma.StringNullableFilter<"users"> | string | null
-  mobilePlatform?: Prisma.StringNullableFilter<"users"> | string | null
-  specialOfferTriggeredAt?: Prisma.DateTimeNullableFilter<"users"> | Date | string | null
-  blockImportForEventTrackingServices?: Prisma.BoolFilter<"users"> | boolean
-  imageId?: Prisma.UuidNullableFilter<"users"> | string | null
-  referralId?: Prisma.UuidNullableFilter<"users"> | string | null
-  personalReferralCodeId?: Prisma.UuidNullableFilter<"users"> | string | null
-  approximatedCityId?: Prisma.UuidNullableFilter<"users"> | string | null
-  userName?: Prisma.StringNullableFilter<"users"> | string | null
-  email?: Prisma.StringNullableFilter<"users"> | string | null
-  normalizedEmail?: Prisma.StringNullableFilter<"users"> | string | null
-  emailConfirmed?: Prisma.BoolFilter<"users"> | boolean
-  passwordHash?: Prisma.StringNullableFilter<"users"> | string | null
-  securityStamp?: Prisma.StringNullableFilter<"users"> | string | null
-  concurrencyStamp?: Prisma.StringNullableFilter<"users"> | string | null
-  phoneNumber?: Prisma.StringNullableFilter<"users"> | string | null
-  phoneNumberConfirmed?: Prisma.BoolFilter<"users"> | boolean
-  twoFactorEnabled?: Prisma.BoolFilter<"users"> | boolean
-  lockoutEnd?: Prisma.DateTimeNullableFilter<"users"> | Date | string | null
-  lockoutEnabled?: Prisma.BoolFilter<"users"> | boolean
-  accessFailedCount?: Prisma.IntFilter<"users"> | number
-  canImpersonate?: Prisma.BoolFilter<"users"> | boolean
-  disabled?: Prisma.BoolFilter<"users"> | boolean
-  celloReferrerCode?: Prisma.StringNullableFilter<"users"> | string | null
-  referralCodes?: Prisma.XOR<Prisma.ReferralCodesNullableScalarRelationFilter, Prisma.referralCodesWhereInput> | null
-  subscriptions?: Prisma.SubscriptionsListRelationFilter
-  userClaims?: Prisma.UserClaimsListRelationFilter
-  userLogins?: Prisma.UserLoginsListRelationFilter
-  userRoles?: Prisma.UserRolesListRelationFilter
-  userTokens?: Prisma.UserTokensListRelationFilter
-  referrals?: Prisma.XOR<Prisma.ReferralsNullableScalarRelationFilter, Prisma.referralsWhereInput> | null
-}, "id" | "normalizedUserName">
+  email?: Prisma.StringFilter<"users"> | string
+  password?: Prisma.StringFilter<"users"> | string
+  name?: Prisma.StringNullableFilter<"users"> | string | null
+  password_salt?: Prisma.StringFilter<"users"> | string
+  token_salt?: Prisma.StringFilter<"users"> | string
+  collections?: Prisma.CollectionsListRelationFilter
+  translations?: Prisma.TranslationsListRelationFilter
+}, "id">
 
 export type usersOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
-  firstName?: Prisma.SortOrderInput | Prisma.SortOrder
-  lastName?: Prisma.SortOrderInput | Prisma.SortOrder
-  streetAndNumber?: Prisma.SortOrderInput | Prisma.SortOrder
-  postalCode?: Prisma.SortOrderInput | Prisma.SortOrder
-  city?: Prisma.SortOrderInput | Prisma.SortOrder
-  country?: Prisma.SortOrderInput | Prisma.SortOrder
-  refreshToken?: Prisma.SortOrderInput | Prisma.SortOrder
-  smsVerificationId?: Prisma.SortOrderInput | Prisma.SortOrder
-  imageUrl?: Prisma.SortOrderInput | Prisma.SortOrder
-  currentBalance?: Prisma.SortOrder
-  created?: Prisma.SortOrder
-  updated?: Prisma.SortOrderInput | Prisma.SortOrder
-  isDeleted?: Prisma.SortOrder
-  dealsRedeemed?: Prisma.SortOrder
-  mollieCustomerId?: Prisma.SortOrderInput | Prisma.SortOrder
-  paypalPayerId?: Prisma.SortOrderInput | Prisma.SortOrder
-  advertisingType?: Prisma.SortOrderInput | Prisma.SortOrder
-  deviceIdentifier?: Prisma.SortOrderInput | Prisma.SortOrder
-  stripeCustomerId?: Prisma.SortOrderInput | Prisma.SortOrder
-  userLanguageCode?: Prisma.SortOrderInput | Prisma.SortOrder
-  cultureName?: Prisma.SortOrderInput | Prisma.SortOrder
-  currencyCode?: Prisma.SortOrderInput | Prisma.SortOrder
-  countryCode?: Prisma.SortOrderInput | Prisma.SortOrder
-  firebaseAppInstanceId?: Prisma.SortOrderInput | Prisma.SortOrder
-  mobilePlatform?: Prisma.SortOrderInput | Prisma.SortOrder
-  specialOfferTriggeredAt?: Prisma.SortOrderInput | Prisma.SortOrder
-  blockImportForEventTrackingServices?: Prisma.SortOrder
-  imageId?: Prisma.SortOrderInput | Prisma.SortOrder
-  referralId?: Prisma.SortOrderInput | Prisma.SortOrder
-  personalReferralCodeId?: Prisma.SortOrderInput | Prisma.SortOrder
-  approximatedCityId?: Prisma.SortOrderInput | Prisma.SortOrder
-  userName?: Prisma.SortOrderInput | Prisma.SortOrder
-  normalizedUserName?: Prisma.SortOrderInput | Prisma.SortOrder
-  email?: Prisma.SortOrderInput | Prisma.SortOrder
-  normalizedEmail?: Prisma.SortOrderInput | Prisma.SortOrder
-  emailConfirmed?: Prisma.SortOrder
-  passwordHash?: Prisma.SortOrderInput | Prisma.SortOrder
-  securityStamp?: Prisma.SortOrderInput | Prisma.SortOrder
-  concurrencyStamp?: Prisma.SortOrderInput | Prisma.SortOrder
-  phoneNumber?: Prisma.SortOrderInput | Prisma.SortOrder
-  phoneNumberConfirmed?: Prisma.SortOrder
-  twoFactorEnabled?: Prisma.SortOrder
-  lockoutEnd?: Prisma.SortOrderInput | Prisma.SortOrder
-  lockoutEnabled?: Prisma.SortOrder
-  accessFailedCount?: Prisma.SortOrder
-  canImpersonate?: Prisma.SortOrder
-  disabled?: Prisma.SortOrder
-  celloReferrerCode?: Prisma.SortOrderInput | Prisma.SortOrder
+  email?: Prisma.SortOrder
+  password?: Prisma.SortOrder
+  name?: Prisma.SortOrderInput | Prisma.SortOrder
+  password_salt?: Prisma.SortOrder
+  token_salt?: Prisma.SortOrder
   _count?: Prisma.usersCountOrderByAggregateInput
   _avg?: Prisma.usersAvgOrderByAggregateInput
   _max?: Prisma.usersMaxOrderByAggregateInput
@@ -770,442 +270,115 @@ export type usersScalarWhereWithAggregatesInput = {
   AND?: Prisma.usersScalarWhereWithAggregatesInput | Prisma.usersScalarWhereWithAggregatesInput[]
   OR?: Prisma.usersScalarWhereWithAggregatesInput[]
   NOT?: Prisma.usersScalarWhereWithAggregatesInput | Prisma.usersScalarWhereWithAggregatesInput[]
-  id?: Prisma.UuidWithAggregatesFilter<"users"> | string
-  firstName?: Prisma.StringNullableWithAggregatesFilter<"users"> | string | null
-  lastName?: Prisma.StringNullableWithAggregatesFilter<"users"> | string | null
-  streetAndNumber?: Prisma.StringNullableWithAggregatesFilter<"users"> | string | null
-  postalCode?: Prisma.StringNullableWithAggregatesFilter<"users"> | string | null
-  city?: Prisma.StringNullableWithAggregatesFilter<"users"> | string | null
-  country?: Prisma.StringNullableWithAggregatesFilter<"users"> | string | null
-  refreshToken?: Prisma.StringNullableWithAggregatesFilter<"users"> | string | null
-  smsVerificationId?: Prisma.StringNullableWithAggregatesFilter<"users"> | string | null
-  imageUrl?: Prisma.StringNullableWithAggregatesFilter<"users"> | string | null
-  currentBalance?: Prisma.DecimalWithAggregatesFilter<"users"> | runtime.Decimal | runtime.DecimalJsLike | number | string
-  created?: Prisma.DateTimeWithAggregatesFilter<"users"> | Date | string
-  updated?: Prisma.DateTimeNullableWithAggregatesFilter<"users"> | Date | string | null
-  isDeleted?: Prisma.BoolWithAggregatesFilter<"users"> | boolean
-  dealsRedeemed?: Prisma.IntWithAggregatesFilter<"users"> | number
-  mollieCustomerId?: Prisma.StringNullableWithAggregatesFilter<"users"> | string | null
-  paypalPayerId?: Prisma.StringNullableWithAggregatesFilter<"users"> | string | null
-  advertisingType?: Prisma.IntNullableWithAggregatesFilter<"users"> | number | null
-  deviceIdentifier?: Prisma.StringNullableWithAggregatesFilter<"users"> | string | null
-  stripeCustomerId?: Prisma.StringNullableWithAggregatesFilter<"users"> | string | null
-  userLanguageCode?: Prisma.StringNullableWithAggregatesFilter<"users"> | string | null
-  cultureName?: Prisma.StringNullableWithAggregatesFilter<"users"> | string | null
-  currencyCode?: Prisma.StringNullableWithAggregatesFilter<"users"> | string | null
-  countryCode?: Prisma.StringNullableWithAggregatesFilter<"users"> | string | null
-  firebaseAppInstanceId?: Prisma.StringNullableWithAggregatesFilter<"users"> | string | null
-  mobilePlatform?: Prisma.StringNullableWithAggregatesFilter<"users"> | string | null
-  specialOfferTriggeredAt?: Prisma.DateTimeNullableWithAggregatesFilter<"users"> | Date | string | null
-  blockImportForEventTrackingServices?: Prisma.BoolWithAggregatesFilter<"users"> | boolean
-  imageId?: Prisma.UuidNullableWithAggregatesFilter<"users"> | string | null
-  referralId?: Prisma.UuidNullableWithAggregatesFilter<"users"> | string | null
-  personalReferralCodeId?: Prisma.UuidNullableWithAggregatesFilter<"users"> | string | null
-  approximatedCityId?: Prisma.UuidNullableWithAggregatesFilter<"users"> | string | null
-  userName?: Prisma.StringNullableWithAggregatesFilter<"users"> | string | null
-  normalizedUserName?: Prisma.StringNullableWithAggregatesFilter<"users"> | string | null
-  email?: Prisma.StringNullableWithAggregatesFilter<"users"> | string | null
-  normalizedEmail?: Prisma.StringNullableWithAggregatesFilter<"users"> | string | null
-  emailConfirmed?: Prisma.BoolWithAggregatesFilter<"users"> | boolean
-  passwordHash?: Prisma.StringNullableWithAggregatesFilter<"users"> | string | null
-  securityStamp?: Prisma.StringNullableWithAggregatesFilter<"users"> | string | null
-  concurrencyStamp?: Prisma.StringNullableWithAggregatesFilter<"users"> | string | null
-  phoneNumber?: Prisma.StringNullableWithAggregatesFilter<"users"> | string | null
-  phoneNumberConfirmed?: Prisma.BoolWithAggregatesFilter<"users"> | boolean
-  twoFactorEnabled?: Prisma.BoolWithAggregatesFilter<"users"> | boolean
-  lockoutEnd?: Prisma.DateTimeNullableWithAggregatesFilter<"users"> | Date | string | null
-  lockoutEnabled?: Prisma.BoolWithAggregatesFilter<"users"> | boolean
-  accessFailedCount?: Prisma.IntWithAggregatesFilter<"users"> | number
-  canImpersonate?: Prisma.BoolWithAggregatesFilter<"users"> | boolean
-  disabled?: Prisma.BoolWithAggregatesFilter<"users"> | boolean
-  celloReferrerCode?: Prisma.StringNullableWithAggregatesFilter<"users"> | string | null
+  id?: Prisma.IntWithAggregatesFilter<"users"> | number
+  email?: Prisma.StringWithAggregatesFilter<"users"> | string
+  password?: Prisma.StringWithAggregatesFilter<"users"> | string
+  name?: Prisma.StringNullableWithAggregatesFilter<"users"> | string | null
+  password_salt?: Prisma.StringWithAggregatesFilter<"users"> | string
+  token_salt?: Prisma.StringWithAggregatesFilter<"users"> | string
 }
 
 export type usersCreateInput = {
-  id: string
-  firstName?: string | null
-  lastName?: string | null
-  streetAndNumber?: string | null
-  postalCode?: string | null
-  city?: string | null
-  country?: string | null
-  refreshToken?: string | null
-  smsVerificationId?: string | null
-  imageUrl?: string | null
-  currentBalance: runtime.Decimal | runtime.DecimalJsLike | number | string
-  created?: Date | string
-  updated?: Date | string | null
-  isDeleted: boolean
-  dealsRedeemed: number
-  mollieCustomerId?: string | null
-  paypalPayerId?: string | null
-  advertisingType?: number | null
-  deviceIdentifier?: string | null
-  stripeCustomerId?: string | null
-  userLanguageCode?: string | null
-  cultureName?: string | null
-  currencyCode?: string | null
-  countryCode?: string | null
-  firebaseAppInstanceId?: string | null
-  mobilePlatform?: string | null
-  specialOfferTriggeredAt?: Date | string | null
-  blockImportForEventTrackingServices: boolean
-  imageId?: string | null
-  personalReferralCodeId?: string | null
-  approximatedCityId?: string | null
-  userName?: string | null
-  normalizedUserName?: string | null
-  email?: string | null
-  normalizedEmail?: string | null
-  emailConfirmed: boolean
-  passwordHash?: string | null
-  securityStamp?: string | null
-  concurrencyStamp?: string | null
-  phoneNumber?: string | null
-  phoneNumberConfirmed: boolean
-  twoFactorEnabled: boolean
-  lockoutEnd?: Date | string | null
-  lockoutEnabled: boolean
-  accessFailedCount: number
-  canImpersonate?: boolean
-  disabled?: boolean
-  celloReferrerCode?: string | null
-  referralCodes?: Prisma.referralCodesCreateNestedOneWithoutUsersInput
-  subscriptions?: Prisma.subscriptionsCreateNestedManyWithoutUsersInput
-  userClaims?: Prisma.userClaimsCreateNestedManyWithoutUsersInput
-  userLogins?: Prisma.userLoginsCreateNestedManyWithoutUsersInput
-  userRoles?: Prisma.userRolesCreateNestedManyWithoutUsersInput
-  userTokens?: Prisma.userTokensCreateNestedManyWithoutUsersInput
-  referrals?: Prisma.referralsCreateNestedOneWithoutUsersInput
+  email: string
+  password: string
+  name?: string | null
+  password_salt: string
+  token_salt: string
+  collections?: Prisma.collectionsCreateNestedManyWithoutUsersInput
+  translations?: Prisma.translationsCreateNestedManyWithoutUsersInput
 }
 
 export type usersUncheckedCreateInput = {
-  id: string
-  firstName?: string | null
-  lastName?: string | null
-  streetAndNumber?: string | null
-  postalCode?: string | null
-  city?: string | null
-  country?: string | null
-  refreshToken?: string | null
-  smsVerificationId?: string | null
-  imageUrl?: string | null
-  currentBalance: runtime.Decimal | runtime.DecimalJsLike | number | string
-  created?: Date | string
-  updated?: Date | string | null
-  isDeleted: boolean
-  dealsRedeemed: number
-  mollieCustomerId?: string | null
-  paypalPayerId?: string | null
-  advertisingType?: number | null
-  deviceIdentifier?: string | null
-  stripeCustomerId?: string | null
-  userLanguageCode?: string | null
-  cultureName?: string | null
-  currencyCode?: string | null
-  countryCode?: string | null
-  firebaseAppInstanceId?: string | null
-  mobilePlatform?: string | null
-  specialOfferTriggeredAt?: Date | string | null
-  blockImportForEventTrackingServices: boolean
-  imageId?: string | null
-  referralId?: string | null
-  personalReferralCodeId?: string | null
-  approximatedCityId?: string | null
-  userName?: string | null
-  normalizedUserName?: string | null
-  email?: string | null
-  normalizedEmail?: string | null
-  emailConfirmed: boolean
-  passwordHash?: string | null
-  securityStamp?: string | null
-  concurrencyStamp?: string | null
-  phoneNumber?: string | null
-  phoneNumberConfirmed: boolean
-  twoFactorEnabled: boolean
-  lockoutEnd?: Date | string | null
-  lockoutEnabled: boolean
-  accessFailedCount: number
-  canImpersonate?: boolean
-  disabled?: boolean
-  celloReferrerCode?: string | null
-  referralCodes?: Prisma.referralCodesUncheckedCreateNestedOneWithoutUsersInput
-  subscriptions?: Prisma.subscriptionsUncheckedCreateNestedManyWithoutUsersInput
-  userClaims?: Prisma.userClaimsUncheckedCreateNestedManyWithoutUsersInput
-  userLogins?: Prisma.userLoginsUncheckedCreateNestedManyWithoutUsersInput
-  userRoles?: Prisma.userRolesUncheckedCreateNestedManyWithoutUsersInput
-  userTokens?: Prisma.userTokensUncheckedCreateNestedManyWithoutUsersInput
+  id?: number
+  email: string
+  password: string
+  name?: string | null
+  password_salt: string
+  token_salt: string
+  collections?: Prisma.collectionsUncheckedCreateNestedManyWithoutUsersInput
+  translations?: Prisma.translationsUncheckedCreateNestedManyWithoutUsersInput
 }
 
 export type usersUpdateInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  firstName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  lastName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  streetAndNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  postalCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  refreshToken?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  smsVerificationId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  currentBalance?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
-  created?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  isDeleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  dealsRedeemed?: Prisma.IntFieldUpdateOperationsInput | number
-  mollieCustomerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  paypalPayerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  advertisingType?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  deviceIdentifier?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  stripeCustomerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  userLanguageCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  cultureName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  currencyCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  countryCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  firebaseAppInstanceId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  mobilePlatform?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  specialOfferTriggeredAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  blockImportForEventTrackingServices?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  imageId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  personalReferralCodeId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  approximatedCityId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  userName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  normalizedUserName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  normalizedEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  emailConfirmed?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  passwordHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  securityStamp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  concurrencyStamp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phoneNumberConfirmed?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  twoFactorEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  lockoutEnd?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  lockoutEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  accessFailedCount?: Prisma.IntFieldUpdateOperationsInput | number
-  canImpersonate?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  disabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  celloReferrerCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  referralCodes?: Prisma.referralCodesUpdateOneWithoutUsersNestedInput
-  subscriptions?: Prisma.subscriptionsUpdateManyWithoutUsersNestedInput
-  userClaims?: Prisma.userClaimsUpdateManyWithoutUsersNestedInput
-  userLogins?: Prisma.userLoginsUpdateManyWithoutUsersNestedInput
-  userRoles?: Prisma.userRolesUpdateManyWithoutUsersNestedInput
-  userTokens?: Prisma.userTokensUpdateManyWithoutUsersNestedInput
-  referrals?: Prisma.referralsUpdateOneWithoutUsersNestedInput
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  password_salt?: Prisma.StringFieldUpdateOperationsInput | string
+  token_salt?: Prisma.StringFieldUpdateOperationsInput | string
+  collections?: Prisma.collectionsUpdateManyWithoutUsersNestedInput
+  translations?: Prisma.translationsUpdateManyWithoutUsersNestedInput
 }
 
 export type usersUncheckedUpdateInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  firstName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  lastName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  streetAndNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  postalCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  refreshToken?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  smsVerificationId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  currentBalance?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
-  created?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  isDeleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  dealsRedeemed?: Prisma.IntFieldUpdateOperationsInput | number
-  mollieCustomerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  paypalPayerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  advertisingType?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  deviceIdentifier?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  stripeCustomerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  userLanguageCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  cultureName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  currencyCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  countryCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  firebaseAppInstanceId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  mobilePlatform?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  specialOfferTriggeredAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  blockImportForEventTrackingServices?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  imageId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  referralId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  personalReferralCodeId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  approximatedCityId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  userName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  normalizedUserName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  normalizedEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  emailConfirmed?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  passwordHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  securityStamp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  concurrencyStamp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phoneNumberConfirmed?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  twoFactorEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  lockoutEnd?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  lockoutEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  accessFailedCount?: Prisma.IntFieldUpdateOperationsInput | number
-  canImpersonate?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  disabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  celloReferrerCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  referralCodes?: Prisma.referralCodesUncheckedUpdateOneWithoutUsersNestedInput
-  subscriptions?: Prisma.subscriptionsUncheckedUpdateManyWithoutUsersNestedInput
-  userClaims?: Prisma.userClaimsUncheckedUpdateManyWithoutUsersNestedInput
-  userLogins?: Prisma.userLoginsUncheckedUpdateManyWithoutUsersNestedInput
-  userRoles?: Prisma.userRolesUncheckedUpdateManyWithoutUsersNestedInput
-  userTokens?: Prisma.userTokensUncheckedUpdateManyWithoutUsersNestedInput
+  id?: Prisma.IntFieldUpdateOperationsInput | number
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  password_salt?: Prisma.StringFieldUpdateOperationsInput | string
+  token_salt?: Prisma.StringFieldUpdateOperationsInput | string
+  collections?: Prisma.collectionsUncheckedUpdateManyWithoutUsersNestedInput
+  translations?: Prisma.translationsUncheckedUpdateManyWithoutUsersNestedInput
 }
 
 export type usersCreateManyInput = {
-  id: string
-  firstName?: string | null
-  lastName?: string | null
-  streetAndNumber?: string | null
-  postalCode?: string | null
-  city?: string | null
-  country?: string | null
-  refreshToken?: string | null
-  smsVerificationId?: string | null
-  imageUrl?: string | null
-  currentBalance: runtime.Decimal | runtime.DecimalJsLike | number | string
-  created?: Date | string
-  updated?: Date | string | null
-  isDeleted: boolean
-  dealsRedeemed: number
-  mollieCustomerId?: string | null
-  paypalPayerId?: string | null
-  advertisingType?: number | null
-  deviceIdentifier?: string | null
-  stripeCustomerId?: string | null
-  userLanguageCode?: string | null
-  cultureName?: string | null
-  currencyCode?: string | null
-  countryCode?: string | null
-  firebaseAppInstanceId?: string | null
-  mobilePlatform?: string | null
-  specialOfferTriggeredAt?: Date | string | null
-  blockImportForEventTrackingServices: boolean
-  imageId?: string | null
-  referralId?: string | null
-  personalReferralCodeId?: string | null
-  approximatedCityId?: string | null
-  userName?: string | null
-  normalizedUserName?: string | null
-  email?: string | null
-  normalizedEmail?: string | null
-  emailConfirmed: boolean
-  passwordHash?: string | null
-  securityStamp?: string | null
-  concurrencyStamp?: string | null
-  phoneNumber?: string | null
-  phoneNumberConfirmed: boolean
-  twoFactorEnabled: boolean
-  lockoutEnd?: Date | string | null
-  lockoutEnabled: boolean
-  accessFailedCount: number
-  canImpersonate?: boolean
-  disabled?: boolean
-  celloReferrerCode?: string | null
+  id?: number
+  email: string
+  password: string
+  name?: string | null
+  password_salt: string
+  token_salt: string
 }
 
 export type usersUpdateManyMutationInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  firstName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  lastName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  streetAndNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  postalCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  refreshToken?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  smsVerificationId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  currentBalance?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
-  created?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  isDeleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  dealsRedeemed?: Prisma.IntFieldUpdateOperationsInput | number
-  mollieCustomerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  paypalPayerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  advertisingType?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  deviceIdentifier?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  stripeCustomerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  userLanguageCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  cultureName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  currencyCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  countryCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  firebaseAppInstanceId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  mobilePlatform?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  specialOfferTriggeredAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  blockImportForEventTrackingServices?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  imageId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  personalReferralCodeId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  approximatedCityId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  userName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  normalizedUserName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  normalizedEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  emailConfirmed?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  passwordHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  securityStamp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  concurrencyStamp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phoneNumberConfirmed?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  twoFactorEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  lockoutEnd?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  lockoutEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  accessFailedCount?: Prisma.IntFieldUpdateOperationsInput | number
-  canImpersonate?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  disabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  celloReferrerCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  password_salt?: Prisma.StringFieldUpdateOperationsInput | string
+  token_salt?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 export type usersUncheckedUpdateManyInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  firstName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  lastName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  streetAndNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  postalCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  refreshToken?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  smsVerificationId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  currentBalance?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
-  created?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  isDeleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  dealsRedeemed?: Prisma.IntFieldUpdateOperationsInput | number
-  mollieCustomerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  paypalPayerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  advertisingType?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  deviceIdentifier?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  stripeCustomerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  userLanguageCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  cultureName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  currencyCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  countryCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  firebaseAppInstanceId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  mobilePlatform?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  specialOfferTriggeredAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  blockImportForEventTrackingServices?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  imageId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  referralId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  personalReferralCodeId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  approximatedCityId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  userName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  normalizedUserName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  normalizedEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  emailConfirmed?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  passwordHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  securityStamp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  concurrencyStamp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phoneNumberConfirmed?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  twoFactorEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  lockoutEnd?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  lockoutEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  accessFailedCount?: Prisma.IntFieldUpdateOperationsInput | number
-  canImpersonate?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  disabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  celloReferrerCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  id?: Prisma.IntFieldUpdateOperationsInput | number
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  password_salt?: Prisma.StringFieldUpdateOperationsInput | string
+  token_salt?: Prisma.StringFieldUpdateOperationsInput | string
+}
+
+export type usersCountOrderByAggregateInput = {
+  id?: Prisma.SortOrder
+  email?: Prisma.SortOrder
+  password?: Prisma.SortOrder
+  name?: Prisma.SortOrder
+  password_salt?: Prisma.SortOrder
+  token_salt?: Prisma.SortOrder
+}
+
+export type usersAvgOrderByAggregateInput = {
+  id?: Prisma.SortOrder
+}
+
+export type usersMaxOrderByAggregateInput = {
+  id?: Prisma.SortOrder
+  email?: Prisma.SortOrder
+  password?: Prisma.SortOrder
+  name?: Prisma.SortOrder
+  password_salt?: Prisma.SortOrder
+  token_salt?: Prisma.SortOrder
+}
+
+export type usersMinOrderByAggregateInput = {
+  id?: Prisma.SortOrder
+  email?: Prisma.SortOrder
+  password?: Prisma.SortOrder
+  name?: Prisma.SortOrder
+  password_salt?: Prisma.SortOrder
+  token_salt?: Prisma.SortOrder
+}
+
+export type usersSumOrderByAggregateInput = {
+  id?: Prisma.SortOrder
 }
 
 export type UsersScalarRelationFilter = {
@@ -1213,2193 +386,156 @@ export type UsersScalarRelationFilter = {
   isNot?: Prisma.usersWhereInput
 }
 
-export type UsersListRelationFilter = {
-  every?: Prisma.usersWhereInput
-  some?: Prisma.usersWhereInput
-  none?: Prisma.usersWhereInput
+export type StringFieldUpdateOperationsInput = {
+  set?: string
 }
 
-export type usersOrderByRelationAggregateInput = {
-  _count?: Prisma.SortOrder
+export type NullableStringFieldUpdateOperationsInput = {
+  set?: string | null
 }
 
-export type usersCountOrderByAggregateInput = {
-  id?: Prisma.SortOrder
-  firstName?: Prisma.SortOrder
-  lastName?: Prisma.SortOrder
-  streetAndNumber?: Prisma.SortOrder
-  postalCode?: Prisma.SortOrder
-  city?: Prisma.SortOrder
-  country?: Prisma.SortOrder
-  refreshToken?: Prisma.SortOrder
-  smsVerificationId?: Prisma.SortOrder
-  imageUrl?: Prisma.SortOrder
-  currentBalance?: Prisma.SortOrder
-  created?: Prisma.SortOrder
-  updated?: Prisma.SortOrder
-  isDeleted?: Prisma.SortOrder
-  dealsRedeemed?: Prisma.SortOrder
-  mollieCustomerId?: Prisma.SortOrder
-  paypalPayerId?: Prisma.SortOrder
-  advertisingType?: Prisma.SortOrder
-  deviceIdentifier?: Prisma.SortOrder
-  stripeCustomerId?: Prisma.SortOrder
-  userLanguageCode?: Prisma.SortOrder
-  cultureName?: Prisma.SortOrder
-  currencyCode?: Prisma.SortOrder
-  countryCode?: Prisma.SortOrder
-  firebaseAppInstanceId?: Prisma.SortOrder
-  mobilePlatform?: Prisma.SortOrder
-  specialOfferTriggeredAt?: Prisma.SortOrder
-  blockImportForEventTrackingServices?: Prisma.SortOrder
-  imageId?: Prisma.SortOrder
-  referralId?: Prisma.SortOrder
-  personalReferralCodeId?: Prisma.SortOrder
-  approximatedCityId?: Prisma.SortOrder
-  userName?: Prisma.SortOrder
-  normalizedUserName?: Prisma.SortOrder
-  email?: Prisma.SortOrder
-  normalizedEmail?: Prisma.SortOrder
-  emailConfirmed?: Prisma.SortOrder
-  passwordHash?: Prisma.SortOrder
-  securityStamp?: Prisma.SortOrder
-  concurrencyStamp?: Prisma.SortOrder
-  phoneNumber?: Prisma.SortOrder
-  phoneNumberConfirmed?: Prisma.SortOrder
-  twoFactorEnabled?: Prisma.SortOrder
-  lockoutEnd?: Prisma.SortOrder
-  lockoutEnabled?: Prisma.SortOrder
-  accessFailedCount?: Prisma.SortOrder
-  canImpersonate?: Prisma.SortOrder
-  disabled?: Prisma.SortOrder
-  celloReferrerCode?: Prisma.SortOrder
-}
-
-export type usersAvgOrderByAggregateInput = {
-  currentBalance?: Prisma.SortOrder
-  dealsRedeemed?: Prisma.SortOrder
-  advertisingType?: Prisma.SortOrder
-  accessFailedCount?: Prisma.SortOrder
-}
-
-export type usersMaxOrderByAggregateInput = {
-  id?: Prisma.SortOrder
-  firstName?: Prisma.SortOrder
-  lastName?: Prisma.SortOrder
-  streetAndNumber?: Prisma.SortOrder
-  postalCode?: Prisma.SortOrder
-  city?: Prisma.SortOrder
-  country?: Prisma.SortOrder
-  refreshToken?: Prisma.SortOrder
-  smsVerificationId?: Prisma.SortOrder
-  imageUrl?: Prisma.SortOrder
-  currentBalance?: Prisma.SortOrder
-  created?: Prisma.SortOrder
-  updated?: Prisma.SortOrder
-  isDeleted?: Prisma.SortOrder
-  dealsRedeemed?: Prisma.SortOrder
-  mollieCustomerId?: Prisma.SortOrder
-  paypalPayerId?: Prisma.SortOrder
-  advertisingType?: Prisma.SortOrder
-  deviceIdentifier?: Prisma.SortOrder
-  stripeCustomerId?: Prisma.SortOrder
-  userLanguageCode?: Prisma.SortOrder
-  cultureName?: Prisma.SortOrder
-  currencyCode?: Prisma.SortOrder
-  countryCode?: Prisma.SortOrder
-  firebaseAppInstanceId?: Prisma.SortOrder
-  mobilePlatform?: Prisma.SortOrder
-  specialOfferTriggeredAt?: Prisma.SortOrder
-  blockImportForEventTrackingServices?: Prisma.SortOrder
-  imageId?: Prisma.SortOrder
-  referralId?: Prisma.SortOrder
-  personalReferralCodeId?: Prisma.SortOrder
-  approximatedCityId?: Prisma.SortOrder
-  userName?: Prisma.SortOrder
-  normalizedUserName?: Prisma.SortOrder
-  email?: Prisma.SortOrder
-  normalizedEmail?: Prisma.SortOrder
-  emailConfirmed?: Prisma.SortOrder
-  passwordHash?: Prisma.SortOrder
-  securityStamp?: Prisma.SortOrder
-  concurrencyStamp?: Prisma.SortOrder
-  phoneNumber?: Prisma.SortOrder
-  phoneNumberConfirmed?: Prisma.SortOrder
-  twoFactorEnabled?: Prisma.SortOrder
-  lockoutEnd?: Prisma.SortOrder
-  lockoutEnabled?: Prisma.SortOrder
-  accessFailedCount?: Prisma.SortOrder
-  canImpersonate?: Prisma.SortOrder
-  disabled?: Prisma.SortOrder
-  celloReferrerCode?: Prisma.SortOrder
-}
-
-export type usersMinOrderByAggregateInput = {
-  id?: Prisma.SortOrder
-  firstName?: Prisma.SortOrder
-  lastName?: Prisma.SortOrder
-  streetAndNumber?: Prisma.SortOrder
-  postalCode?: Prisma.SortOrder
-  city?: Prisma.SortOrder
-  country?: Prisma.SortOrder
-  refreshToken?: Prisma.SortOrder
-  smsVerificationId?: Prisma.SortOrder
-  imageUrl?: Prisma.SortOrder
-  currentBalance?: Prisma.SortOrder
-  created?: Prisma.SortOrder
-  updated?: Prisma.SortOrder
-  isDeleted?: Prisma.SortOrder
-  dealsRedeemed?: Prisma.SortOrder
-  mollieCustomerId?: Prisma.SortOrder
-  paypalPayerId?: Prisma.SortOrder
-  advertisingType?: Prisma.SortOrder
-  deviceIdentifier?: Prisma.SortOrder
-  stripeCustomerId?: Prisma.SortOrder
-  userLanguageCode?: Prisma.SortOrder
-  cultureName?: Prisma.SortOrder
-  currencyCode?: Prisma.SortOrder
-  countryCode?: Prisma.SortOrder
-  firebaseAppInstanceId?: Prisma.SortOrder
-  mobilePlatform?: Prisma.SortOrder
-  specialOfferTriggeredAt?: Prisma.SortOrder
-  blockImportForEventTrackingServices?: Prisma.SortOrder
-  imageId?: Prisma.SortOrder
-  referralId?: Prisma.SortOrder
-  personalReferralCodeId?: Prisma.SortOrder
-  approximatedCityId?: Prisma.SortOrder
-  userName?: Prisma.SortOrder
-  normalizedUserName?: Prisma.SortOrder
-  email?: Prisma.SortOrder
-  normalizedEmail?: Prisma.SortOrder
-  emailConfirmed?: Prisma.SortOrder
-  passwordHash?: Prisma.SortOrder
-  securityStamp?: Prisma.SortOrder
-  concurrencyStamp?: Prisma.SortOrder
-  phoneNumber?: Prisma.SortOrder
-  phoneNumberConfirmed?: Prisma.SortOrder
-  twoFactorEnabled?: Prisma.SortOrder
-  lockoutEnd?: Prisma.SortOrder
-  lockoutEnabled?: Prisma.SortOrder
-  accessFailedCount?: Prisma.SortOrder
-  canImpersonate?: Prisma.SortOrder
-  disabled?: Prisma.SortOrder
-  celloReferrerCode?: Prisma.SortOrder
-}
-
-export type usersSumOrderByAggregateInput = {
-  currentBalance?: Prisma.SortOrder
-  dealsRedeemed?: Prisma.SortOrder
-  advertisingType?: Prisma.SortOrder
-  accessFailedCount?: Prisma.SortOrder
-}
-
-export type usersCreateNestedOneWithoutReferralCodesInput = {
-  create?: Prisma.XOR<Prisma.usersCreateWithoutReferralCodesInput, Prisma.usersUncheckedCreateWithoutReferralCodesInput>
-  connectOrCreate?: Prisma.usersCreateOrConnectWithoutReferralCodesInput
-  connect?: Prisma.usersWhereUniqueInput
-}
-
-export type usersUpdateOneRequiredWithoutReferralCodesNestedInput = {
-  create?: Prisma.XOR<Prisma.usersCreateWithoutReferralCodesInput, Prisma.usersUncheckedCreateWithoutReferralCodesInput>
-  connectOrCreate?: Prisma.usersCreateOrConnectWithoutReferralCodesInput
-  upsert?: Prisma.usersUpsertWithoutReferralCodesInput
-  connect?: Prisma.usersWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.usersUpdateToOneWithWhereWithoutReferralCodesInput, Prisma.usersUpdateWithoutReferralCodesInput>, Prisma.usersUncheckedUpdateWithoutReferralCodesInput>
-}
-
-export type usersCreateNestedManyWithoutReferralsInput = {
-  create?: Prisma.XOR<Prisma.usersCreateWithoutReferralsInput, Prisma.usersUncheckedCreateWithoutReferralsInput> | Prisma.usersCreateWithoutReferralsInput[] | Prisma.usersUncheckedCreateWithoutReferralsInput[]
-  connectOrCreate?: Prisma.usersCreateOrConnectWithoutReferralsInput | Prisma.usersCreateOrConnectWithoutReferralsInput[]
-  createMany?: Prisma.usersCreateManyReferralsInputEnvelope
-  connect?: Prisma.usersWhereUniqueInput | Prisma.usersWhereUniqueInput[]
-}
-
-export type usersUncheckedCreateNestedManyWithoutReferralsInput = {
-  create?: Prisma.XOR<Prisma.usersCreateWithoutReferralsInput, Prisma.usersUncheckedCreateWithoutReferralsInput> | Prisma.usersCreateWithoutReferralsInput[] | Prisma.usersUncheckedCreateWithoutReferralsInput[]
-  connectOrCreate?: Prisma.usersCreateOrConnectWithoutReferralsInput | Prisma.usersCreateOrConnectWithoutReferralsInput[]
-  createMany?: Prisma.usersCreateManyReferralsInputEnvelope
-  connect?: Prisma.usersWhereUniqueInput | Prisma.usersWhereUniqueInput[]
-}
-
-export type usersUpdateManyWithoutReferralsNestedInput = {
-  create?: Prisma.XOR<Prisma.usersCreateWithoutReferralsInput, Prisma.usersUncheckedCreateWithoutReferralsInput> | Prisma.usersCreateWithoutReferralsInput[] | Prisma.usersUncheckedCreateWithoutReferralsInput[]
-  connectOrCreate?: Prisma.usersCreateOrConnectWithoutReferralsInput | Prisma.usersCreateOrConnectWithoutReferralsInput[]
-  upsert?: Prisma.usersUpsertWithWhereUniqueWithoutReferralsInput | Prisma.usersUpsertWithWhereUniqueWithoutReferralsInput[]
-  createMany?: Prisma.usersCreateManyReferralsInputEnvelope
-  set?: Prisma.usersWhereUniqueInput | Prisma.usersWhereUniqueInput[]
-  disconnect?: Prisma.usersWhereUniqueInput | Prisma.usersWhereUniqueInput[]
-  delete?: Prisma.usersWhereUniqueInput | Prisma.usersWhereUniqueInput[]
-  connect?: Prisma.usersWhereUniqueInput | Prisma.usersWhereUniqueInput[]
-  update?: Prisma.usersUpdateWithWhereUniqueWithoutReferralsInput | Prisma.usersUpdateWithWhereUniqueWithoutReferralsInput[]
-  updateMany?: Prisma.usersUpdateManyWithWhereWithoutReferralsInput | Prisma.usersUpdateManyWithWhereWithoutReferralsInput[]
-  deleteMany?: Prisma.usersScalarWhereInput | Prisma.usersScalarWhereInput[]
-}
-
-export type usersUncheckedUpdateManyWithoutReferralsNestedInput = {
-  create?: Prisma.XOR<Prisma.usersCreateWithoutReferralsInput, Prisma.usersUncheckedCreateWithoutReferralsInput> | Prisma.usersCreateWithoutReferralsInput[] | Prisma.usersUncheckedCreateWithoutReferralsInput[]
-  connectOrCreate?: Prisma.usersCreateOrConnectWithoutReferralsInput | Prisma.usersCreateOrConnectWithoutReferralsInput[]
-  upsert?: Prisma.usersUpsertWithWhereUniqueWithoutReferralsInput | Prisma.usersUpsertWithWhereUniqueWithoutReferralsInput[]
-  createMany?: Prisma.usersCreateManyReferralsInputEnvelope
-  set?: Prisma.usersWhereUniqueInput | Prisma.usersWhereUniqueInput[]
-  disconnect?: Prisma.usersWhereUniqueInput | Prisma.usersWhereUniqueInput[]
-  delete?: Prisma.usersWhereUniqueInput | Prisma.usersWhereUniqueInput[]
-  connect?: Prisma.usersWhereUniqueInput | Prisma.usersWhereUniqueInput[]
-  update?: Prisma.usersUpdateWithWhereUniqueWithoutReferralsInput | Prisma.usersUpdateWithWhereUniqueWithoutReferralsInput[]
-  updateMany?: Prisma.usersUpdateManyWithWhereWithoutReferralsInput | Prisma.usersUpdateManyWithWhereWithoutReferralsInput[]
-  deleteMany?: Prisma.usersScalarWhereInput | Prisma.usersScalarWhereInput[]
-}
-
-export type usersCreateNestedOneWithoutSubscriptionsInput = {
-  create?: Prisma.XOR<Prisma.usersCreateWithoutSubscriptionsInput, Prisma.usersUncheckedCreateWithoutSubscriptionsInput>
-  connectOrCreate?: Prisma.usersCreateOrConnectWithoutSubscriptionsInput
-  connect?: Prisma.usersWhereUniqueInput
-}
-
-export type usersUpdateOneRequiredWithoutSubscriptionsNestedInput = {
-  create?: Prisma.XOR<Prisma.usersCreateWithoutSubscriptionsInput, Prisma.usersUncheckedCreateWithoutSubscriptionsInput>
-  connectOrCreate?: Prisma.usersCreateOrConnectWithoutSubscriptionsInput
-  upsert?: Prisma.usersUpsertWithoutSubscriptionsInput
-  connect?: Prisma.usersWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.usersUpdateToOneWithWhereWithoutSubscriptionsInput, Prisma.usersUpdateWithoutSubscriptionsInput>, Prisma.usersUncheckedUpdateWithoutSubscriptionsInput>
-}
-
-export type usersCreateNestedOneWithoutUserClaimsInput = {
-  create?: Prisma.XOR<Prisma.usersCreateWithoutUserClaimsInput, Prisma.usersUncheckedCreateWithoutUserClaimsInput>
-  connectOrCreate?: Prisma.usersCreateOrConnectWithoutUserClaimsInput
-  connect?: Prisma.usersWhereUniqueInput
-}
-
-export type usersUpdateOneRequiredWithoutUserClaimsNestedInput = {
-  create?: Prisma.XOR<Prisma.usersCreateWithoutUserClaimsInput, Prisma.usersUncheckedCreateWithoutUserClaimsInput>
-  connectOrCreate?: Prisma.usersCreateOrConnectWithoutUserClaimsInput
-  upsert?: Prisma.usersUpsertWithoutUserClaimsInput
-  connect?: Prisma.usersWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.usersUpdateToOneWithWhereWithoutUserClaimsInput, Prisma.usersUpdateWithoutUserClaimsInput>, Prisma.usersUncheckedUpdateWithoutUserClaimsInput>
-}
-
-export type usersCreateNestedOneWithoutUserLoginsInput = {
-  create?: Prisma.XOR<Prisma.usersCreateWithoutUserLoginsInput, Prisma.usersUncheckedCreateWithoutUserLoginsInput>
-  connectOrCreate?: Prisma.usersCreateOrConnectWithoutUserLoginsInput
-  connect?: Prisma.usersWhereUniqueInput
-}
-
-export type usersUpdateOneRequiredWithoutUserLoginsNestedInput = {
-  create?: Prisma.XOR<Prisma.usersCreateWithoutUserLoginsInput, Prisma.usersUncheckedCreateWithoutUserLoginsInput>
-  connectOrCreate?: Prisma.usersCreateOrConnectWithoutUserLoginsInput
-  upsert?: Prisma.usersUpsertWithoutUserLoginsInput
-  connect?: Prisma.usersWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.usersUpdateToOneWithWhereWithoutUserLoginsInput, Prisma.usersUpdateWithoutUserLoginsInput>, Prisma.usersUncheckedUpdateWithoutUserLoginsInput>
-}
-
-export type usersCreateNestedOneWithoutUserRolesInput = {
-  create?: Prisma.XOR<Prisma.usersCreateWithoutUserRolesInput, Prisma.usersUncheckedCreateWithoutUserRolesInput>
-  connectOrCreate?: Prisma.usersCreateOrConnectWithoutUserRolesInput
-  connect?: Prisma.usersWhereUniqueInput
-}
-
-export type usersUpdateOneRequiredWithoutUserRolesNestedInput = {
-  create?: Prisma.XOR<Prisma.usersCreateWithoutUserRolesInput, Prisma.usersUncheckedCreateWithoutUserRolesInput>
-  connectOrCreate?: Prisma.usersCreateOrConnectWithoutUserRolesInput
-  upsert?: Prisma.usersUpsertWithoutUserRolesInput
-  connect?: Prisma.usersWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.usersUpdateToOneWithWhereWithoutUserRolesInput, Prisma.usersUpdateWithoutUserRolesInput>, Prisma.usersUncheckedUpdateWithoutUserRolesInput>
-}
-
-export type usersCreateNestedOneWithoutUserTokensInput = {
-  create?: Prisma.XOR<Prisma.usersCreateWithoutUserTokensInput, Prisma.usersUncheckedCreateWithoutUserTokensInput>
-  connectOrCreate?: Prisma.usersCreateOrConnectWithoutUserTokensInput
-  connect?: Prisma.usersWhereUniqueInput
-}
-
-export type usersUpdateOneRequiredWithoutUserTokensNestedInput = {
-  create?: Prisma.XOR<Prisma.usersCreateWithoutUserTokensInput, Prisma.usersUncheckedCreateWithoutUserTokensInput>
-  connectOrCreate?: Prisma.usersCreateOrConnectWithoutUserTokensInput
-  upsert?: Prisma.usersUpsertWithoutUserTokensInput
-  connect?: Prisma.usersWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.usersUpdateToOneWithWhereWithoutUserTokensInput, Prisma.usersUpdateWithoutUserTokensInput>, Prisma.usersUncheckedUpdateWithoutUserTokensInput>
-}
-
-export type NullableIntFieldUpdateOperationsInput = {
-  set?: number | null
+export type IntFieldUpdateOperationsInput = {
+  set?: number
   increment?: number
   decrement?: number
   multiply?: number
   divide?: number
 }
 
-export type usersCreateWithoutReferralCodesInput = {
-  id: string
-  firstName?: string | null
-  lastName?: string | null
-  streetAndNumber?: string | null
-  postalCode?: string | null
-  city?: string | null
-  country?: string | null
-  refreshToken?: string | null
-  smsVerificationId?: string | null
-  imageUrl?: string | null
-  currentBalance: runtime.Decimal | runtime.DecimalJsLike | number | string
-  created?: Date | string
-  updated?: Date | string | null
-  isDeleted: boolean
-  dealsRedeemed: number
-  mollieCustomerId?: string | null
-  paypalPayerId?: string | null
-  advertisingType?: number | null
-  deviceIdentifier?: string | null
-  stripeCustomerId?: string | null
-  userLanguageCode?: string | null
-  cultureName?: string | null
-  currencyCode?: string | null
-  countryCode?: string | null
-  firebaseAppInstanceId?: string | null
-  mobilePlatform?: string | null
-  specialOfferTriggeredAt?: Date | string | null
-  blockImportForEventTrackingServices: boolean
-  imageId?: string | null
-  personalReferralCodeId?: string | null
-  approximatedCityId?: string | null
-  userName?: string | null
-  normalizedUserName?: string | null
-  email?: string | null
-  normalizedEmail?: string | null
-  emailConfirmed: boolean
-  passwordHash?: string | null
-  securityStamp?: string | null
-  concurrencyStamp?: string | null
-  phoneNumber?: string | null
-  phoneNumberConfirmed: boolean
-  twoFactorEnabled: boolean
-  lockoutEnd?: Date | string | null
-  lockoutEnabled: boolean
-  accessFailedCount: number
-  canImpersonate?: boolean
-  disabled?: boolean
-  celloReferrerCode?: string | null
-  subscriptions?: Prisma.subscriptionsCreateNestedManyWithoutUsersInput
-  userClaims?: Prisma.userClaimsCreateNestedManyWithoutUsersInput
-  userLogins?: Prisma.userLoginsCreateNestedManyWithoutUsersInput
-  userRoles?: Prisma.userRolesCreateNestedManyWithoutUsersInput
-  userTokens?: Prisma.userTokensCreateNestedManyWithoutUsersInput
-  referrals?: Prisma.referralsCreateNestedOneWithoutUsersInput
+export type usersCreateNestedOneWithoutCollectionsInput = {
+  create?: Prisma.XOR<Prisma.usersCreateWithoutCollectionsInput, Prisma.usersUncheckedCreateWithoutCollectionsInput>
+  connectOrCreate?: Prisma.usersCreateOrConnectWithoutCollectionsInput
+  connect?: Prisma.usersWhereUniqueInput
 }
 
-export type usersUncheckedCreateWithoutReferralCodesInput = {
-  id: string
-  firstName?: string | null
-  lastName?: string | null
-  streetAndNumber?: string | null
-  postalCode?: string | null
-  city?: string | null
-  country?: string | null
-  refreshToken?: string | null
-  smsVerificationId?: string | null
-  imageUrl?: string | null
-  currentBalance: runtime.Decimal | runtime.DecimalJsLike | number | string
-  created?: Date | string
-  updated?: Date | string | null
-  isDeleted: boolean
-  dealsRedeemed: number
-  mollieCustomerId?: string | null
-  paypalPayerId?: string | null
-  advertisingType?: number | null
-  deviceIdentifier?: string | null
-  stripeCustomerId?: string | null
-  userLanguageCode?: string | null
-  cultureName?: string | null
-  currencyCode?: string | null
-  countryCode?: string | null
-  firebaseAppInstanceId?: string | null
-  mobilePlatform?: string | null
-  specialOfferTriggeredAt?: Date | string | null
-  blockImportForEventTrackingServices: boolean
-  imageId?: string | null
-  referralId?: string | null
-  personalReferralCodeId?: string | null
-  approximatedCityId?: string | null
-  userName?: string | null
-  normalizedUserName?: string | null
-  email?: string | null
-  normalizedEmail?: string | null
-  emailConfirmed: boolean
-  passwordHash?: string | null
-  securityStamp?: string | null
-  concurrencyStamp?: string | null
-  phoneNumber?: string | null
-  phoneNumberConfirmed: boolean
-  twoFactorEnabled: boolean
-  lockoutEnd?: Date | string | null
-  lockoutEnabled: boolean
-  accessFailedCount: number
-  canImpersonate?: boolean
-  disabled?: boolean
-  celloReferrerCode?: string | null
-  subscriptions?: Prisma.subscriptionsUncheckedCreateNestedManyWithoutUsersInput
-  userClaims?: Prisma.userClaimsUncheckedCreateNestedManyWithoutUsersInput
-  userLogins?: Prisma.userLoginsUncheckedCreateNestedManyWithoutUsersInput
-  userRoles?: Prisma.userRolesUncheckedCreateNestedManyWithoutUsersInput
-  userTokens?: Prisma.userTokensUncheckedCreateNestedManyWithoutUsersInput
+export type usersUpdateOneRequiredWithoutCollectionsNestedInput = {
+  create?: Prisma.XOR<Prisma.usersCreateWithoutCollectionsInput, Prisma.usersUncheckedCreateWithoutCollectionsInput>
+  connectOrCreate?: Prisma.usersCreateOrConnectWithoutCollectionsInput
+  upsert?: Prisma.usersUpsertWithoutCollectionsInput
+  connect?: Prisma.usersWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.usersUpdateToOneWithWhereWithoutCollectionsInput, Prisma.usersUpdateWithoutCollectionsInput>, Prisma.usersUncheckedUpdateWithoutCollectionsInput>
 }
 
-export type usersCreateOrConnectWithoutReferralCodesInput = {
+export type usersCreateNestedOneWithoutTranslationsInput = {
+  create?: Prisma.XOR<Prisma.usersCreateWithoutTranslationsInput, Prisma.usersUncheckedCreateWithoutTranslationsInput>
+  connectOrCreate?: Prisma.usersCreateOrConnectWithoutTranslationsInput
+  connect?: Prisma.usersWhereUniqueInput
+}
+
+export type usersUpdateOneRequiredWithoutTranslationsNestedInput = {
+  create?: Prisma.XOR<Prisma.usersCreateWithoutTranslationsInput, Prisma.usersUncheckedCreateWithoutTranslationsInput>
+  connectOrCreate?: Prisma.usersCreateOrConnectWithoutTranslationsInput
+  upsert?: Prisma.usersUpsertWithoutTranslationsInput
+  connect?: Prisma.usersWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.usersUpdateToOneWithWhereWithoutTranslationsInput, Prisma.usersUpdateWithoutTranslationsInput>, Prisma.usersUncheckedUpdateWithoutTranslationsInput>
+}
+
+export type usersCreateWithoutCollectionsInput = {
+  email: string
+  password: string
+  name?: string | null
+  password_salt: string
+  token_salt: string
+  translations?: Prisma.translationsCreateNestedManyWithoutUsersInput
+}
+
+export type usersUncheckedCreateWithoutCollectionsInput = {
+  id?: number
+  email: string
+  password: string
+  name?: string | null
+  password_salt: string
+  token_salt: string
+  translations?: Prisma.translationsUncheckedCreateNestedManyWithoutUsersInput
+}
+
+export type usersCreateOrConnectWithoutCollectionsInput = {
   where: Prisma.usersWhereUniqueInput
-  create: Prisma.XOR<Prisma.usersCreateWithoutReferralCodesInput, Prisma.usersUncheckedCreateWithoutReferralCodesInput>
+  create: Prisma.XOR<Prisma.usersCreateWithoutCollectionsInput, Prisma.usersUncheckedCreateWithoutCollectionsInput>
 }
 
-export type usersUpsertWithoutReferralCodesInput = {
-  update: Prisma.XOR<Prisma.usersUpdateWithoutReferralCodesInput, Prisma.usersUncheckedUpdateWithoutReferralCodesInput>
-  create: Prisma.XOR<Prisma.usersCreateWithoutReferralCodesInput, Prisma.usersUncheckedCreateWithoutReferralCodesInput>
+export type usersUpsertWithoutCollectionsInput = {
+  update: Prisma.XOR<Prisma.usersUpdateWithoutCollectionsInput, Prisma.usersUncheckedUpdateWithoutCollectionsInput>
+  create: Prisma.XOR<Prisma.usersCreateWithoutCollectionsInput, Prisma.usersUncheckedCreateWithoutCollectionsInput>
   where?: Prisma.usersWhereInput
 }
 
-export type usersUpdateToOneWithWhereWithoutReferralCodesInput = {
+export type usersUpdateToOneWithWhereWithoutCollectionsInput = {
   where?: Prisma.usersWhereInput
-  data: Prisma.XOR<Prisma.usersUpdateWithoutReferralCodesInput, Prisma.usersUncheckedUpdateWithoutReferralCodesInput>
+  data: Prisma.XOR<Prisma.usersUpdateWithoutCollectionsInput, Prisma.usersUncheckedUpdateWithoutCollectionsInput>
 }
 
-export type usersUpdateWithoutReferralCodesInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  firstName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  lastName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  streetAndNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  postalCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  refreshToken?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  smsVerificationId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  currentBalance?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
-  created?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  isDeleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  dealsRedeemed?: Prisma.IntFieldUpdateOperationsInput | number
-  mollieCustomerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  paypalPayerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  advertisingType?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  deviceIdentifier?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  stripeCustomerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  userLanguageCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  cultureName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  currencyCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  countryCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  firebaseAppInstanceId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  mobilePlatform?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  specialOfferTriggeredAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  blockImportForEventTrackingServices?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  imageId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  personalReferralCodeId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  approximatedCityId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  userName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  normalizedUserName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  normalizedEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  emailConfirmed?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  passwordHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  securityStamp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  concurrencyStamp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phoneNumberConfirmed?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  twoFactorEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  lockoutEnd?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  lockoutEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  accessFailedCount?: Prisma.IntFieldUpdateOperationsInput | number
-  canImpersonate?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  disabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  celloReferrerCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  subscriptions?: Prisma.subscriptionsUpdateManyWithoutUsersNestedInput
-  userClaims?: Prisma.userClaimsUpdateManyWithoutUsersNestedInput
-  userLogins?: Prisma.userLoginsUpdateManyWithoutUsersNestedInput
-  userRoles?: Prisma.userRolesUpdateManyWithoutUsersNestedInput
-  userTokens?: Prisma.userTokensUpdateManyWithoutUsersNestedInput
-  referrals?: Prisma.referralsUpdateOneWithoutUsersNestedInput
+export type usersUpdateWithoutCollectionsInput = {
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  password_salt?: Prisma.StringFieldUpdateOperationsInput | string
+  token_salt?: Prisma.StringFieldUpdateOperationsInput | string
+  translations?: Prisma.translationsUpdateManyWithoutUsersNestedInput
 }
 
-export type usersUncheckedUpdateWithoutReferralCodesInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  firstName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  lastName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  streetAndNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  postalCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  refreshToken?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  smsVerificationId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  currentBalance?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
-  created?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  isDeleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  dealsRedeemed?: Prisma.IntFieldUpdateOperationsInput | number
-  mollieCustomerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  paypalPayerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  advertisingType?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  deviceIdentifier?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  stripeCustomerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  userLanguageCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  cultureName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  currencyCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  countryCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  firebaseAppInstanceId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  mobilePlatform?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  specialOfferTriggeredAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  blockImportForEventTrackingServices?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  imageId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  referralId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  personalReferralCodeId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  approximatedCityId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  userName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  normalizedUserName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  normalizedEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  emailConfirmed?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  passwordHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  securityStamp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  concurrencyStamp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phoneNumberConfirmed?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  twoFactorEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  lockoutEnd?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  lockoutEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  accessFailedCount?: Prisma.IntFieldUpdateOperationsInput | number
-  canImpersonate?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  disabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  celloReferrerCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  subscriptions?: Prisma.subscriptionsUncheckedUpdateManyWithoutUsersNestedInput
-  userClaims?: Prisma.userClaimsUncheckedUpdateManyWithoutUsersNestedInput
-  userLogins?: Prisma.userLoginsUncheckedUpdateManyWithoutUsersNestedInput
-  userRoles?: Prisma.userRolesUncheckedUpdateManyWithoutUsersNestedInput
-  userTokens?: Prisma.userTokensUncheckedUpdateManyWithoutUsersNestedInput
+export type usersUncheckedUpdateWithoutCollectionsInput = {
+  id?: Prisma.IntFieldUpdateOperationsInput | number
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  password_salt?: Prisma.StringFieldUpdateOperationsInput | string
+  token_salt?: Prisma.StringFieldUpdateOperationsInput | string
+  translations?: Prisma.translationsUncheckedUpdateManyWithoutUsersNestedInput
 }
 
-export type usersCreateWithoutReferralsInput = {
-  id: string
-  firstName?: string | null
-  lastName?: string | null
-  streetAndNumber?: string | null
-  postalCode?: string | null
-  city?: string | null
-  country?: string | null
-  refreshToken?: string | null
-  smsVerificationId?: string | null
-  imageUrl?: string | null
-  currentBalance: runtime.Decimal | runtime.DecimalJsLike | number | string
-  created?: Date | string
-  updated?: Date | string | null
-  isDeleted: boolean
-  dealsRedeemed: number
-  mollieCustomerId?: string | null
-  paypalPayerId?: string | null
-  advertisingType?: number | null
-  deviceIdentifier?: string | null
-  stripeCustomerId?: string | null
-  userLanguageCode?: string | null
-  cultureName?: string | null
-  currencyCode?: string | null
-  countryCode?: string | null
-  firebaseAppInstanceId?: string | null
-  mobilePlatform?: string | null
-  specialOfferTriggeredAt?: Date | string | null
-  blockImportForEventTrackingServices: boolean
-  imageId?: string | null
-  personalReferralCodeId?: string | null
-  approximatedCityId?: string | null
-  userName?: string | null
-  normalizedUserName?: string | null
-  email?: string | null
-  normalizedEmail?: string | null
-  emailConfirmed: boolean
-  passwordHash?: string | null
-  securityStamp?: string | null
-  concurrencyStamp?: string | null
-  phoneNumber?: string | null
-  phoneNumberConfirmed: boolean
-  twoFactorEnabled: boolean
-  lockoutEnd?: Date | string | null
-  lockoutEnabled: boolean
-  accessFailedCount: number
-  canImpersonate?: boolean
-  disabled?: boolean
-  celloReferrerCode?: string | null
-  referralCodes?: Prisma.referralCodesCreateNestedOneWithoutUsersInput
-  subscriptions?: Prisma.subscriptionsCreateNestedManyWithoutUsersInput
-  userClaims?: Prisma.userClaimsCreateNestedManyWithoutUsersInput
-  userLogins?: Prisma.userLoginsCreateNestedManyWithoutUsersInput
-  userRoles?: Prisma.userRolesCreateNestedManyWithoutUsersInput
-  userTokens?: Prisma.userTokensCreateNestedManyWithoutUsersInput
+export type usersCreateWithoutTranslationsInput = {
+  email: string
+  password: string
+  name?: string | null
+  password_salt: string
+  token_salt: string
+  collections?: Prisma.collectionsCreateNestedManyWithoutUsersInput
 }
 
-export type usersUncheckedCreateWithoutReferralsInput = {
-  id: string
-  firstName?: string | null
-  lastName?: string | null
-  streetAndNumber?: string | null
-  postalCode?: string | null
-  city?: string | null
-  country?: string | null
-  refreshToken?: string | null
-  smsVerificationId?: string | null
-  imageUrl?: string | null
-  currentBalance: runtime.Decimal | runtime.DecimalJsLike | number | string
-  created?: Date | string
-  updated?: Date | string | null
-  isDeleted: boolean
-  dealsRedeemed: number
-  mollieCustomerId?: string | null
-  paypalPayerId?: string | null
-  advertisingType?: number | null
-  deviceIdentifier?: string | null
-  stripeCustomerId?: string | null
-  userLanguageCode?: string | null
-  cultureName?: string | null
-  currencyCode?: string | null
-  countryCode?: string | null
-  firebaseAppInstanceId?: string | null
-  mobilePlatform?: string | null
-  specialOfferTriggeredAt?: Date | string | null
-  blockImportForEventTrackingServices: boolean
-  imageId?: string | null
-  personalReferralCodeId?: string | null
-  approximatedCityId?: string | null
-  userName?: string | null
-  normalizedUserName?: string | null
-  email?: string | null
-  normalizedEmail?: string | null
-  emailConfirmed: boolean
-  passwordHash?: string | null
-  securityStamp?: string | null
-  concurrencyStamp?: string | null
-  phoneNumber?: string | null
-  phoneNumberConfirmed: boolean
-  twoFactorEnabled: boolean
-  lockoutEnd?: Date | string | null
-  lockoutEnabled: boolean
-  accessFailedCount: number
-  canImpersonate?: boolean
-  disabled?: boolean
-  celloReferrerCode?: string | null
-  referralCodes?: Prisma.referralCodesUncheckedCreateNestedOneWithoutUsersInput
-  subscriptions?: Prisma.subscriptionsUncheckedCreateNestedManyWithoutUsersInput
-  userClaims?: Prisma.userClaimsUncheckedCreateNestedManyWithoutUsersInput
-  userLogins?: Prisma.userLoginsUncheckedCreateNestedManyWithoutUsersInput
-  userRoles?: Prisma.userRolesUncheckedCreateNestedManyWithoutUsersInput
-  userTokens?: Prisma.userTokensUncheckedCreateNestedManyWithoutUsersInput
+export type usersUncheckedCreateWithoutTranslationsInput = {
+  id?: number
+  email: string
+  password: string
+  name?: string | null
+  password_salt: string
+  token_salt: string
+  collections?: Prisma.collectionsUncheckedCreateNestedManyWithoutUsersInput
 }
 
-export type usersCreateOrConnectWithoutReferralsInput = {
+export type usersCreateOrConnectWithoutTranslationsInput = {
   where: Prisma.usersWhereUniqueInput
-  create: Prisma.XOR<Prisma.usersCreateWithoutReferralsInput, Prisma.usersUncheckedCreateWithoutReferralsInput>
+  create: Prisma.XOR<Prisma.usersCreateWithoutTranslationsInput, Prisma.usersUncheckedCreateWithoutTranslationsInput>
 }
 
-export type usersCreateManyReferralsInputEnvelope = {
-  data: Prisma.usersCreateManyReferralsInput | Prisma.usersCreateManyReferralsInput[]
-  skipDuplicates?: boolean
-}
-
-export type usersUpsertWithWhereUniqueWithoutReferralsInput = {
-  where: Prisma.usersWhereUniqueInput
-  update: Prisma.XOR<Prisma.usersUpdateWithoutReferralsInput, Prisma.usersUncheckedUpdateWithoutReferralsInput>
-  create: Prisma.XOR<Prisma.usersCreateWithoutReferralsInput, Prisma.usersUncheckedCreateWithoutReferralsInput>
-}
-
-export type usersUpdateWithWhereUniqueWithoutReferralsInput = {
-  where: Prisma.usersWhereUniqueInput
-  data: Prisma.XOR<Prisma.usersUpdateWithoutReferralsInput, Prisma.usersUncheckedUpdateWithoutReferralsInput>
-}
-
-export type usersUpdateManyWithWhereWithoutReferralsInput = {
-  where: Prisma.usersScalarWhereInput
-  data: Prisma.XOR<Prisma.usersUpdateManyMutationInput, Prisma.usersUncheckedUpdateManyWithoutReferralsInput>
-}
-
-export type usersScalarWhereInput = {
-  AND?: Prisma.usersScalarWhereInput | Prisma.usersScalarWhereInput[]
-  OR?: Prisma.usersScalarWhereInput[]
-  NOT?: Prisma.usersScalarWhereInput | Prisma.usersScalarWhereInput[]
-  id?: Prisma.UuidFilter<"users"> | string
-  firstName?: Prisma.StringNullableFilter<"users"> | string | null
-  lastName?: Prisma.StringNullableFilter<"users"> | string | null
-  streetAndNumber?: Prisma.StringNullableFilter<"users"> | string | null
-  postalCode?: Prisma.StringNullableFilter<"users"> | string | null
-  city?: Prisma.StringNullableFilter<"users"> | string | null
-  country?: Prisma.StringNullableFilter<"users"> | string | null
-  refreshToken?: Prisma.StringNullableFilter<"users"> | string | null
-  smsVerificationId?: Prisma.StringNullableFilter<"users"> | string | null
-  imageUrl?: Prisma.StringNullableFilter<"users"> | string | null
-  currentBalance?: Prisma.DecimalFilter<"users"> | runtime.Decimal | runtime.DecimalJsLike | number | string
-  created?: Prisma.DateTimeFilter<"users"> | Date | string
-  updated?: Prisma.DateTimeNullableFilter<"users"> | Date | string | null
-  isDeleted?: Prisma.BoolFilter<"users"> | boolean
-  dealsRedeemed?: Prisma.IntFilter<"users"> | number
-  mollieCustomerId?: Prisma.StringNullableFilter<"users"> | string | null
-  paypalPayerId?: Prisma.StringNullableFilter<"users"> | string | null
-  advertisingType?: Prisma.IntNullableFilter<"users"> | number | null
-  deviceIdentifier?: Prisma.StringNullableFilter<"users"> | string | null
-  stripeCustomerId?: Prisma.StringNullableFilter<"users"> | string | null
-  userLanguageCode?: Prisma.StringNullableFilter<"users"> | string | null
-  cultureName?: Prisma.StringNullableFilter<"users"> | string | null
-  currencyCode?: Prisma.StringNullableFilter<"users"> | string | null
-  countryCode?: Prisma.StringNullableFilter<"users"> | string | null
-  firebaseAppInstanceId?: Prisma.StringNullableFilter<"users"> | string | null
-  mobilePlatform?: Prisma.StringNullableFilter<"users"> | string | null
-  specialOfferTriggeredAt?: Prisma.DateTimeNullableFilter<"users"> | Date | string | null
-  blockImportForEventTrackingServices?: Prisma.BoolFilter<"users"> | boolean
-  imageId?: Prisma.UuidNullableFilter<"users"> | string | null
-  referralId?: Prisma.UuidNullableFilter<"users"> | string | null
-  personalReferralCodeId?: Prisma.UuidNullableFilter<"users"> | string | null
-  approximatedCityId?: Prisma.UuidNullableFilter<"users"> | string | null
-  userName?: Prisma.StringNullableFilter<"users"> | string | null
-  normalizedUserName?: Prisma.StringNullableFilter<"users"> | string | null
-  email?: Prisma.StringNullableFilter<"users"> | string | null
-  normalizedEmail?: Prisma.StringNullableFilter<"users"> | string | null
-  emailConfirmed?: Prisma.BoolFilter<"users"> | boolean
-  passwordHash?: Prisma.StringNullableFilter<"users"> | string | null
-  securityStamp?: Prisma.StringNullableFilter<"users"> | string | null
-  concurrencyStamp?: Prisma.StringNullableFilter<"users"> | string | null
-  phoneNumber?: Prisma.StringNullableFilter<"users"> | string | null
-  phoneNumberConfirmed?: Prisma.BoolFilter<"users"> | boolean
-  twoFactorEnabled?: Prisma.BoolFilter<"users"> | boolean
-  lockoutEnd?: Prisma.DateTimeNullableFilter<"users"> | Date | string | null
-  lockoutEnabled?: Prisma.BoolFilter<"users"> | boolean
-  accessFailedCount?: Prisma.IntFilter<"users"> | number
-  canImpersonate?: Prisma.BoolFilter<"users"> | boolean
-  disabled?: Prisma.BoolFilter<"users"> | boolean
-  celloReferrerCode?: Prisma.StringNullableFilter<"users"> | string | null
-}
-
-export type usersCreateWithoutSubscriptionsInput = {
-  id: string
-  firstName?: string | null
-  lastName?: string | null
-  streetAndNumber?: string | null
-  postalCode?: string | null
-  city?: string | null
-  country?: string | null
-  refreshToken?: string | null
-  smsVerificationId?: string | null
-  imageUrl?: string | null
-  currentBalance: runtime.Decimal | runtime.DecimalJsLike | number | string
-  created?: Date | string
-  updated?: Date | string | null
-  isDeleted: boolean
-  dealsRedeemed: number
-  mollieCustomerId?: string | null
-  paypalPayerId?: string | null
-  advertisingType?: number | null
-  deviceIdentifier?: string | null
-  stripeCustomerId?: string | null
-  userLanguageCode?: string | null
-  cultureName?: string | null
-  currencyCode?: string | null
-  countryCode?: string | null
-  firebaseAppInstanceId?: string | null
-  mobilePlatform?: string | null
-  specialOfferTriggeredAt?: Date | string | null
-  blockImportForEventTrackingServices: boolean
-  imageId?: string | null
-  personalReferralCodeId?: string | null
-  approximatedCityId?: string | null
-  userName?: string | null
-  normalizedUserName?: string | null
-  email?: string | null
-  normalizedEmail?: string | null
-  emailConfirmed: boolean
-  passwordHash?: string | null
-  securityStamp?: string | null
-  concurrencyStamp?: string | null
-  phoneNumber?: string | null
-  phoneNumberConfirmed: boolean
-  twoFactorEnabled: boolean
-  lockoutEnd?: Date | string | null
-  lockoutEnabled: boolean
-  accessFailedCount: number
-  canImpersonate?: boolean
-  disabled?: boolean
-  celloReferrerCode?: string | null
-  referralCodes?: Prisma.referralCodesCreateNestedOneWithoutUsersInput
-  userClaims?: Prisma.userClaimsCreateNestedManyWithoutUsersInput
-  userLogins?: Prisma.userLoginsCreateNestedManyWithoutUsersInput
-  userRoles?: Prisma.userRolesCreateNestedManyWithoutUsersInput
-  userTokens?: Prisma.userTokensCreateNestedManyWithoutUsersInput
-  referrals?: Prisma.referralsCreateNestedOneWithoutUsersInput
-}
-
-export type usersUncheckedCreateWithoutSubscriptionsInput = {
-  id: string
-  firstName?: string | null
-  lastName?: string | null
-  streetAndNumber?: string | null
-  postalCode?: string | null
-  city?: string | null
-  country?: string | null
-  refreshToken?: string | null
-  smsVerificationId?: string | null
-  imageUrl?: string | null
-  currentBalance: runtime.Decimal | runtime.DecimalJsLike | number | string
-  created?: Date | string
-  updated?: Date | string | null
-  isDeleted: boolean
-  dealsRedeemed: number
-  mollieCustomerId?: string | null
-  paypalPayerId?: string | null
-  advertisingType?: number | null
-  deviceIdentifier?: string | null
-  stripeCustomerId?: string | null
-  userLanguageCode?: string | null
-  cultureName?: string | null
-  currencyCode?: string | null
-  countryCode?: string | null
-  firebaseAppInstanceId?: string | null
-  mobilePlatform?: string | null
-  specialOfferTriggeredAt?: Date | string | null
-  blockImportForEventTrackingServices: boolean
-  imageId?: string | null
-  referralId?: string | null
-  personalReferralCodeId?: string | null
-  approximatedCityId?: string | null
-  userName?: string | null
-  normalizedUserName?: string | null
-  email?: string | null
-  normalizedEmail?: string | null
-  emailConfirmed: boolean
-  passwordHash?: string | null
-  securityStamp?: string | null
-  concurrencyStamp?: string | null
-  phoneNumber?: string | null
-  phoneNumberConfirmed: boolean
-  twoFactorEnabled: boolean
-  lockoutEnd?: Date | string | null
-  lockoutEnabled: boolean
-  accessFailedCount: number
-  canImpersonate?: boolean
-  disabled?: boolean
-  celloReferrerCode?: string | null
-  referralCodes?: Prisma.referralCodesUncheckedCreateNestedOneWithoutUsersInput
-  userClaims?: Prisma.userClaimsUncheckedCreateNestedManyWithoutUsersInput
-  userLogins?: Prisma.userLoginsUncheckedCreateNestedManyWithoutUsersInput
-  userRoles?: Prisma.userRolesUncheckedCreateNestedManyWithoutUsersInput
-  userTokens?: Prisma.userTokensUncheckedCreateNestedManyWithoutUsersInput
-}
-
-export type usersCreateOrConnectWithoutSubscriptionsInput = {
-  where: Prisma.usersWhereUniqueInput
-  create: Prisma.XOR<Prisma.usersCreateWithoutSubscriptionsInput, Prisma.usersUncheckedCreateWithoutSubscriptionsInput>
-}
-
-export type usersUpsertWithoutSubscriptionsInput = {
-  update: Prisma.XOR<Prisma.usersUpdateWithoutSubscriptionsInput, Prisma.usersUncheckedUpdateWithoutSubscriptionsInput>
-  create: Prisma.XOR<Prisma.usersCreateWithoutSubscriptionsInput, Prisma.usersUncheckedCreateWithoutSubscriptionsInput>
+export type usersUpsertWithoutTranslationsInput = {
+  update: Prisma.XOR<Prisma.usersUpdateWithoutTranslationsInput, Prisma.usersUncheckedUpdateWithoutTranslationsInput>
+  create: Prisma.XOR<Prisma.usersCreateWithoutTranslationsInput, Prisma.usersUncheckedCreateWithoutTranslationsInput>
   where?: Prisma.usersWhereInput
 }
 
-export type usersUpdateToOneWithWhereWithoutSubscriptionsInput = {
+export type usersUpdateToOneWithWhereWithoutTranslationsInput = {
   where?: Prisma.usersWhereInput
-  data: Prisma.XOR<Prisma.usersUpdateWithoutSubscriptionsInput, Prisma.usersUncheckedUpdateWithoutSubscriptionsInput>
+  data: Prisma.XOR<Prisma.usersUpdateWithoutTranslationsInput, Prisma.usersUncheckedUpdateWithoutTranslationsInput>
 }
 
-export type usersUpdateWithoutSubscriptionsInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  firstName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  lastName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  streetAndNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  postalCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  refreshToken?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  smsVerificationId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  currentBalance?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
-  created?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  isDeleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  dealsRedeemed?: Prisma.IntFieldUpdateOperationsInput | number
-  mollieCustomerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  paypalPayerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  advertisingType?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  deviceIdentifier?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  stripeCustomerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  userLanguageCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  cultureName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  currencyCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  countryCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  firebaseAppInstanceId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  mobilePlatform?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  specialOfferTriggeredAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  blockImportForEventTrackingServices?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  imageId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  personalReferralCodeId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  approximatedCityId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  userName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  normalizedUserName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  normalizedEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  emailConfirmed?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  passwordHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  securityStamp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  concurrencyStamp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phoneNumberConfirmed?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  twoFactorEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  lockoutEnd?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  lockoutEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  accessFailedCount?: Prisma.IntFieldUpdateOperationsInput | number
-  canImpersonate?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  disabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  celloReferrerCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  referralCodes?: Prisma.referralCodesUpdateOneWithoutUsersNestedInput
-  userClaims?: Prisma.userClaimsUpdateManyWithoutUsersNestedInput
-  userLogins?: Prisma.userLoginsUpdateManyWithoutUsersNestedInput
-  userRoles?: Prisma.userRolesUpdateManyWithoutUsersNestedInput
-  userTokens?: Prisma.userTokensUpdateManyWithoutUsersNestedInput
-  referrals?: Prisma.referralsUpdateOneWithoutUsersNestedInput
+export type usersUpdateWithoutTranslationsInput = {
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  password_salt?: Prisma.StringFieldUpdateOperationsInput | string
+  token_salt?: Prisma.StringFieldUpdateOperationsInput | string
+  collections?: Prisma.collectionsUpdateManyWithoutUsersNestedInput
 }
 
-export type usersUncheckedUpdateWithoutSubscriptionsInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  firstName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  lastName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  streetAndNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  postalCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  refreshToken?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  smsVerificationId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  currentBalance?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
-  created?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  isDeleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  dealsRedeemed?: Prisma.IntFieldUpdateOperationsInput | number
-  mollieCustomerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  paypalPayerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  advertisingType?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  deviceIdentifier?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  stripeCustomerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  userLanguageCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  cultureName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  currencyCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  countryCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  firebaseAppInstanceId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  mobilePlatform?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  specialOfferTriggeredAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  blockImportForEventTrackingServices?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  imageId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  referralId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  personalReferralCodeId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  approximatedCityId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  userName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  normalizedUserName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  normalizedEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  emailConfirmed?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  passwordHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  securityStamp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  concurrencyStamp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phoneNumberConfirmed?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  twoFactorEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  lockoutEnd?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  lockoutEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  accessFailedCount?: Prisma.IntFieldUpdateOperationsInput | number
-  canImpersonate?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  disabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  celloReferrerCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  referralCodes?: Prisma.referralCodesUncheckedUpdateOneWithoutUsersNestedInput
-  userClaims?: Prisma.userClaimsUncheckedUpdateManyWithoutUsersNestedInput
-  userLogins?: Prisma.userLoginsUncheckedUpdateManyWithoutUsersNestedInput
-  userRoles?: Prisma.userRolesUncheckedUpdateManyWithoutUsersNestedInput
-  userTokens?: Prisma.userTokensUncheckedUpdateManyWithoutUsersNestedInput
-}
-
-export type usersCreateWithoutUserClaimsInput = {
-  id: string
-  firstName?: string | null
-  lastName?: string | null
-  streetAndNumber?: string | null
-  postalCode?: string | null
-  city?: string | null
-  country?: string | null
-  refreshToken?: string | null
-  smsVerificationId?: string | null
-  imageUrl?: string | null
-  currentBalance: runtime.Decimal | runtime.DecimalJsLike | number | string
-  created?: Date | string
-  updated?: Date | string | null
-  isDeleted: boolean
-  dealsRedeemed: number
-  mollieCustomerId?: string | null
-  paypalPayerId?: string | null
-  advertisingType?: number | null
-  deviceIdentifier?: string | null
-  stripeCustomerId?: string | null
-  userLanguageCode?: string | null
-  cultureName?: string | null
-  currencyCode?: string | null
-  countryCode?: string | null
-  firebaseAppInstanceId?: string | null
-  mobilePlatform?: string | null
-  specialOfferTriggeredAt?: Date | string | null
-  blockImportForEventTrackingServices: boolean
-  imageId?: string | null
-  personalReferralCodeId?: string | null
-  approximatedCityId?: string | null
-  userName?: string | null
-  normalizedUserName?: string | null
-  email?: string | null
-  normalizedEmail?: string | null
-  emailConfirmed: boolean
-  passwordHash?: string | null
-  securityStamp?: string | null
-  concurrencyStamp?: string | null
-  phoneNumber?: string | null
-  phoneNumberConfirmed: boolean
-  twoFactorEnabled: boolean
-  lockoutEnd?: Date | string | null
-  lockoutEnabled: boolean
-  accessFailedCount: number
-  canImpersonate?: boolean
-  disabled?: boolean
-  celloReferrerCode?: string | null
-  referralCodes?: Prisma.referralCodesCreateNestedOneWithoutUsersInput
-  subscriptions?: Prisma.subscriptionsCreateNestedManyWithoutUsersInput
-  userLogins?: Prisma.userLoginsCreateNestedManyWithoutUsersInput
-  userRoles?: Prisma.userRolesCreateNestedManyWithoutUsersInput
-  userTokens?: Prisma.userTokensCreateNestedManyWithoutUsersInput
-  referrals?: Prisma.referralsCreateNestedOneWithoutUsersInput
-}
-
-export type usersUncheckedCreateWithoutUserClaimsInput = {
-  id: string
-  firstName?: string | null
-  lastName?: string | null
-  streetAndNumber?: string | null
-  postalCode?: string | null
-  city?: string | null
-  country?: string | null
-  refreshToken?: string | null
-  smsVerificationId?: string | null
-  imageUrl?: string | null
-  currentBalance: runtime.Decimal | runtime.DecimalJsLike | number | string
-  created?: Date | string
-  updated?: Date | string | null
-  isDeleted: boolean
-  dealsRedeemed: number
-  mollieCustomerId?: string | null
-  paypalPayerId?: string | null
-  advertisingType?: number | null
-  deviceIdentifier?: string | null
-  stripeCustomerId?: string | null
-  userLanguageCode?: string | null
-  cultureName?: string | null
-  currencyCode?: string | null
-  countryCode?: string | null
-  firebaseAppInstanceId?: string | null
-  mobilePlatform?: string | null
-  specialOfferTriggeredAt?: Date | string | null
-  blockImportForEventTrackingServices: boolean
-  imageId?: string | null
-  referralId?: string | null
-  personalReferralCodeId?: string | null
-  approximatedCityId?: string | null
-  userName?: string | null
-  normalizedUserName?: string | null
-  email?: string | null
-  normalizedEmail?: string | null
-  emailConfirmed: boolean
-  passwordHash?: string | null
-  securityStamp?: string | null
-  concurrencyStamp?: string | null
-  phoneNumber?: string | null
-  phoneNumberConfirmed: boolean
-  twoFactorEnabled: boolean
-  lockoutEnd?: Date | string | null
-  lockoutEnabled: boolean
-  accessFailedCount: number
-  canImpersonate?: boolean
-  disabled?: boolean
-  celloReferrerCode?: string | null
-  referralCodes?: Prisma.referralCodesUncheckedCreateNestedOneWithoutUsersInput
-  subscriptions?: Prisma.subscriptionsUncheckedCreateNestedManyWithoutUsersInput
-  userLogins?: Prisma.userLoginsUncheckedCreateNestedManyWithoutUsersInput
-  userRoles?: Prisma.userRolesUncheckedCreateNestedManyWithoutUsersInput
-  userTokens?: Prisma.userTokensUncheckedCreateNestedManyWithoutUsersInput
-}
-
-export type usersCreateOrConnectWithoutUserClaimsInput = {
-  where: Prisma.usersWhereUniqueInput
-  create: Prisma.XOR<Prisma.usersCreateWithoutUserClaimsInput, Prisma.usersUncheckedCreateWithoutUserClaimsInput>
-}
-
-export type usersUpsertWithoutUserClaimsInput = {
-  update: Prisma.XOR<Prisma.usersUpdateWithoutUserClaimsInput, Prisma.usersUncheckedUpdateWithoutUserClaimsInput>
-  create: Prisma.XOR<Prisma.usersCreateWithoutUserClaimsInput, Prisma.usersUncheckedCreateWithoutUserClaimsInput>
-  where?: Prisma.usersWhereInput
-}
-
-export type usersUpdateToOneWithWhereWithoutUserClaimsInput = {
-  where?: Prisma.usersWhereInput
-  data: Prisma.XOR<Prisma.usersUpdateWithoutUserClaimsInput, Prisma.usersUncheckedUpdateWithoutUserClaimsInput>
-}
-
-export type usersUpdateWithoutUserClaimsInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  firstName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  lastName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  streetAndNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  postalCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  refreshToken?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  smsVerificationId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  currentBalance?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
-  created?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  isDeleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  dealsRedeemed?: Prisma.IntFieldUpdateOperationsInput | number
-  mollieCustomerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  paypalPayerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  advertisingType?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  deviceIdentifier?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  stripeCustomerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  userLanguageCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  cultureName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  currencyCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  countryCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  firebaseAppInstanceId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  mobilePlatform?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  specialOfferTriggeredAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  blockImportForEventTrackingServices?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  imageId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  personalReferralCodeId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  approximatedCityId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  userName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  normalizedUserName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  normalizedEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  emailConfirmed?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  passwordHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  securityStamp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  concurrencyStamp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phoneNumberConfirmed?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  twoFactorEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  lockoutEnd?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  lockoutEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  accessFailedCount?: Prisma.IntFieldUpdateOperationsInput | number
-  canImpersonate?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  disabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  celloReferrerCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  referralCodes?: Prisma.referralCodesUpdateOneWithoutUsersNestedInput
-  subscriptions?: Prisma.subscriptionsUpdateManyWithoutUsersNestedInput
-  userLogins?: Prisma.userLoginsUpdateManyWithoutUsersNestedInput
-  userRoles?: Prisma.userRolesUpdateManyWithoutUsersNestedInput
-  userTokens?: Prisma.userTokensUpdateManyWithoutUsersNestedInput
-  referrals?: Prisma.referralsUpdateOneWithoutUsersNestedInput
-}
-
-export type usersUncheckedUpdateWithoutUserClaimsInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  firstName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  lastName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  streetAndNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  postalCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  refreshToken?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  smsVerificationId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  currentBalance?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
-  created?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  isDeleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  dealsRedeemed?: Prisma.IntFieldUpdateOperationsInput | number
-  mollieCustomerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  paypalPayerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  advertisingType?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  deviceIdentifier?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  stripeCustomerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  userLanguageCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  cultureName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  currencyCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  countryCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  firebaseAppInstanceId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  mobilePlatform?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  specialOfferTriggeredAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  blockImportForEventTrackingServices?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  imageId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  referralId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  personalReferralCodeId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  approximatedCityId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  userName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  normalizedUserName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  normalizedEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  emailConfirmed?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  passwordHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  securityStamp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  concurrencyStamp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phoneNumberConfirmed?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  twoFactorEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  lockoutEnd?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  lockoutEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  accessFailedCount?: Prisma.IntFieldUpdateOperationsInput | number
-  canImpersonate?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  disabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  celloReferrerCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  referralCodes?: Prisma.referralCodesUncheckedUpdateOneWithoutUsersNestedInput
-  subscriptions?: Prisma.subscriptionsUncheckedUpdateManyWithoutUsersNestedInput
-  userLogins?: Prisma.userLoginsUncheckedUpdateManyWithoutUsersNestedInput
-  userRoles?: Prisma.userRolesUncheckedUpdateManyWithoutUsersNestedInput
-  userTokens?: Prisma.userTokensUncheckedUpdateManyWithoutUsersNestedInput
-}
-
-export type usersCreateWithoutUserLoginsInput = {
-  id: string
-  firstName?: string | null
-  lastName?: string | null
-  streetAndNumber?: string | null
-  postalCode?: string | null
-  city?: string | null
-  country?: string | null
-  refreshToken?: string | null
-  smsVerificationId?: string | null
-  imageUrl?: string | null
-  currentBalance: runtime.Decimal | runtime.DecimalJsLike | number | string
-  created?: Date | string
-  updated?: Date | string | null
-  isDeleted: boolean
-  dealsRedeemed: number
-  mollieCustomerId?: string | null
-  paypalPayerId?: string | null
-  advertisingType?: number | null
-  deviceIdentifier?: string | null
-  stripeCustomerId?: string | null
-  userLanguageCode?: string | null
-  cultureName?: string | null
-  currencyCode?: string | null
-  countryCode?: string | null
-  firebaseAppInstanceId?: string | null
-  mobilePlatform?: string | null
-  specialOfferTriggeredAt?: Date | string | null
-  blockImportForEventTrackingServices: boolean
-  imageId?: string | null
-  personalReferralCodeId?: string | null
-  approximatedCityId?: string | null
-  userName?: string | null
-  normalizedUserName?: string | null
-  email?: string | null
-  normalizedEmail?: string | null
-  emailConfirmed: boolean
-  passwordHash?: string | null
-  securityStamp?: string | null
-  concurrencyStamp?: string | null
-  phoneNumber?: string | null
-  phoneNumberConfirmed: boolean
-  twoFactorEnabled: boolean
-  lockoutEnd?: Date | string | null
-  lockoutEnabled: boolean
-  accessFailedCount: number
-  canImpersonate?: boolean
-  disabled?: boolean
-  celloReferrerCode?: string | null
-  referralCodes?: Prisma.referralCodesCreateNestedOneWithoutUsersInput
-  subscriptions?: Prisma.subscriptionsCreateNestedManyWithoutUsersInput
-  userClaims?: Prisma.userClaimsCreateNestedManyWithoutUsersInput
-  userRoles?: Prisma.userRolesCreateNestedManyWithoutUsersInput
-  userTokens?: Prisma.userTokensCreateNestedManyWithoutUsersInput
-  referrals?: Prisma.referralsCreateNestedOneWithoutUsersInput
-}
-
-export type usersUncheckedCreateWithoutUserLoginsInput = {
-  id: string
-  firstName?: string | null
-  lastName?: string | null
-  streetAndNumber?: string | null
-  postalCode?: string | null
-  city?: string | null
-  country?: string | null
-  refreshToken?: string | null
-  smsVerificationId?: string | null
-  imageUrl?: string | null
-  currentBalance: runtime.Decimal | runtime.DecimalJsLike | number | string
-  created?: Date | string
-  updated?: Date | string | null
-  isDeleted: boolean
-  dealsRedeemed: number
-  mollieCustomerId?: string | null
-  paypalPayerId?: string | null
-  advertisingType?: number | null
-  deviceIdentifier?: string | null
-  stripeCustomerId?: string | null
-  userLanguageCode?: string | null
-  cultureName?: string | null
-  currencyCode?: string | null
-  countryCode?: string | null
-  firebaseAppInstanceId?: string | null
-  mobilePlatform?: string | null
-  specialOfferTriggeredAt?: Date | string | null
-  blockImportForEventTrackingServices: boolean
-  imageId?: string | null
-  referralId?: string | null
-  personalReferralCodeId?: string | null
-  approximatedCityId?: string | null
-  userName?: string | null
-  normalizedUserName?: string | null
-  email?: string | null
-  normalizedEmail?: string | null
-  emailConfirmed: boolean
-  passwordHash?: string | null
-  securityStamp?: string | null
-  concurrencyStamp?: string | null
-  phoneNumber?: string | null
-  phoneNumberConfirmed: boolean
-  twoFactorEnabled: boolean
-  lockoutEnd?: Date | string | null
-  lockoutEnabled: boolean
-  accessFailedCount: number
-  canImpersonate?: boolean
-  disabled?: boolean
-  celloReferrerCode?: string | null
-  referralCodes?: Prisma.referralCodesUncheckedCreateNestedOneWithoutUsersInput
-  subscriptions?: Prisma.subscriptionsUncheckedCreateNestedManyWithoutUsersInput
-  userClaims?: Prisma.userClaimsUncheckedCreateNestedManyWithoutUsersInput
-  userRoles?: Prisma.userRolesUncheckedCreateNestedManyWithoutUsersInput
-  userTokens?: Prisma.userTokensUncheckedCreateNestedManyWithoutUsersInput
-}
-
-export type usersCreateOrConnectWithoutUserLoginsInput = {
-  where: Prisma.usersWhereUniqueInput
-  create: Prisma.XOR<Prisma.usersCreateWithoutUserLoginsInput, Prisma.usersUncheckedCreateWithoutUserLoginsInput>
-}
-
-export type usersUpsertWithoutUserLoginsInput = {
-  update: Prisma.XOR<Prisma.usersUpdateWithoutUserLoginsInput, Prisma.usersUncheckedUpdateWithoutUserLoginsInput>
-  create: Prisma.XOR<Prisma.usersCreateWithoutUserLoginsInput, Prisma.usersUncheckedCreateWithoutUserLoginsInput>
-  where?: Prisma.usersWhereInput
-}
-
-export type usersUpdateToOneWithWhereWithoutUserLoginsInput = {
-  where?: Prisma.usersWhereInput
-  data: Prisma.XOR<Prisma.usersUpdateWithoutUserLoginsInput, Prisma.usersUncheckedUpdateWithoutUserLoginsInput>
-}
-
-export type usersUpdateWithoutUserLoginsInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  firstName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  lastName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  streetAndNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  postalCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  refreshToken?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  smsVerificationId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  currentBalance?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
-  created?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  isDeleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  dealsRedeemed?: Prisma.IntFieldUpdateOperationsInput | number
-  mollieCustomerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  paypalPayerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  advertisingType?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  deviceIdentifier?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  stripeCustomerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  userLanguageCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  cultureName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  currencyCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  countryCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  firebaseAppInstanceId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  mobilePlatform?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  specialOfferTriggeredAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  blockImportForEventTrackingServices?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  imageId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  personalReferralCodeId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  approximatedCityId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  userName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  normalizedUserName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  normalizedEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  emailConfirmed?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  passwordHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  securityStamp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  concurrencyStamp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phoneNumberConfirmed?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  twoFactorEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  lockoutEnd?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  lockoutEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  accessFailedCount?: Prisma.IntFieldUpdateOperationsInput | number
-  canImpersonate?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  disabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  celloReferrerCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  referralCodes?: Prisma.referralCodesUpdateOneWithoutUsersNestedInput
-  subscriptions?: Prisma.subscriptionsUpdateManyWithoutUsersNestedInput
-  userClaims?: Prisma.userClaimsUpdateManyWithoutUsersNestedInput
-  userRoles?: Prisma.userRolesUpdateManyWithoutUsersNestedInput
-  userTokens?: Prisma.userTokensUpdateManyWithoutUsersNestedInput
-  referrals?: Prisma.referralsUpdateOneWithoutUsersNestedInput
-}
-
-export type usersUncheckedUpdateWithoutUserLoginsInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  firstName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  lastName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  streetAndNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  postalCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  refreshToken?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  smsVerificationId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  currentBalance?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
-  created?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  isDeleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  dealsRedeemed?: Prisma.IntFieldUpdateOperationsInput | number
-  mollieCustomerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  paypalPayerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  advertisingType?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  deviceIdentifier?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  stripeCustomerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  userLanguageCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  cultureName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  currencyCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  countryCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  firebaseAppInstanceId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  mobilePlatform?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  specialOfferTriggeredAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  blockImportForEventTrackingServices?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  imageId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  referralId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  personalReferralCodeId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  approximatedCityId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  userName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  normalizedUserName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  normalizedEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  emailConfirmed?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  passwordHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  securityStamp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  concurrencyStamp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phoneNumberConfirmed?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  twoFactorEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  lockoutEnd?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  lockoutEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  accessFailedCount?: Prisma.IntFieldUpdateOperationsInput | number
-  canImpersonate?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  disabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  celloReferrerCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  referralCodes?: Prisma.referralCodesUncheckedUpdateOneWithoutUsersNestedInput
-  subscriptions?: Prisma.subscriptionsUncheckedUpdateManyWithoutUsersNestedInput
-  userClaims?: Prisma.userClaimsUncheckedUpdateManyWithoutUsersNestedInput
-  userRoles?: Prisma.userRolesUncheckedUpdateManyWithoutUsersNestedInput
-  userTokens?: Prisma.userTokensUncheckedUpdateManyWithoutUsersNestedInput
-}
-
-export type usersCreateWithoutUserRolesInput = {
-  id: string
-  firstName?: string | null
-  lastName?: string | null
-  streetAndNumber?: string | null
-  postalCode?: string | null
-  city?: string | null
-  country?: string | null
-  refreshToken?: string | null
-  smsVerificationId?: string | null
-  imageUrl?: string | null
-  currentBalance: runtime.Decimal | runtime.DecimalJsLike | number | string
-  created?: Date | string
-  updated?: Date | string | null
-  isDeleted: boolean
-  dealsRedeemed: number
-  mollieCustomerId?: string | null
-  paypalPayerId?: string | null
-  advertisingType?: number | null
-  deviceIdentifier?: string | null
-  stripeCustomerId?: string | null
-  userLanguageCode?: string | null
-  cultureName?: string | null
-  currencyCode?: string | null
-  countryCode?: string | null
-  firebaseAppInstanceId?: string | null
-  mobilePlatform?: string | null
-  specialOfferTriggeredAt?: Date | string | null
-  blockImportForEventTrackingServices: boolean
-  imageId?: string | null
-  personalReferralCodeId?: string | null
-  approximatedCityId?: string | null
-  userName?: string | null
-  normalizedUserName?: string | null
-  email?: string | null
-  normalizedEmail?: string | null
-  emailConfirmed: boolean
-  passwordHash?: string | null
-  securityStamp?: string | null
-  concurrencyStamp?: string | null
-  phoneNumber?: string | null
-  phoneNumberConfirmed: boolean
-  twoFactorEnabled: boolean
-  lockoutEnd?: Date | string | null
-  lockoutEnabled: boolean
-  accessFailedCount: number
-  canImpersonate?: boolean
-  disabled?: boolean
-  celloReferrerCode?: string | null
-  referralCodes?: Prisma.referralCodesCreateNestedOneWithoutUsersInput
-  subscriptions?: Prisma.subscriptionsCreateNestedManyWithoutUsersInput
-  userClaims?: Prisma.userClaimsCreateNestedManyWithoutUsersInput
-  userLogins?: Prisma.userLoginsCreateNestedManyWithoutUsersInput
-  userTokens?: Prisma.userTokensCreateNestedManyWithoutUsersInput
-  referrals?: Prisma.referralsCreateNestedOneWithoutUsersInput
-}
-
-export type usersUncheckedCreateWithoutUserRolesInput = {
-  id: string
-  firstName?: string | null
-  lastName?: string | null
-  streetAndNumber?: string | null
-  postalCode?: string | null
-  city?: string | null
-  country?: string | null
-  refreshToken?: string | null
-  smsVerificationId?: string | null
-  imageUrl?: string | null
-  currentBalance: runtime.Decimal | runtime.DecimalJsLike | number | string
-  created?: Date | string
-  updated?: Date | string | null
-  isDeleted: boolean
-  dealsRedeemed: number
-  mollieCustomerId?: string | null
-  paypalPayerId?: string | null
-  advertisingType?: number | null
-  deviceIdentifier?: string | null
-  stripeCustomerId?: string | null
-  userLanguageCode?: string | null
-  cultureName?: string | null
-  currencyCode?: string | null
-  countryCode?: string | null
-  firebaseAppInstanceId?: string | null
-  mobilePlatform?: string | null
-  specialOfferTriggeredAt?: Date | string | null
-  blockImportForEventTrackingServices: boolean
-  imageId?: string | null
-  referralId?: string | null
-  personalReferralCodeId?: string | null
-  approximatedCityId?: string | null
-  userName?: string | null
-  normalizedUserName?: string | null
-  email?: string | null
-  normalizedEmail?: string | null
-  emailConfirmed: boolean
-  passwordHash?: string | null
-  securityStamp?: string | null
-  concurrencyStamp?: string | null
-  phoneNumber?: string | null
-  phoneNumberConfirmed: boolean
-  twoFactorEnabled: boolean
-  lockoutEnd?: Date | string | null
-  lockoutEnabled: boolean
-  accessFailedCount: number
-  canImpersonate?: boolean
-  disabled?: boolean
-  celloReferrerCode?: string | null
-  referralCodes?: Prisma.referralCodesUncheckedCreateNestedOneWithoutUsersInput
-  subscriptions?: Prisma.subscriptionsUncheckedCreateNestedManyWithoutUsersInput
-  userClaims?: Prisma.userClaimsUncheckedCreateNestedManyWithoutUsersInput
-  userLogins?: Prisma.userLoginsUncheckedCreateNestedManyWithoutUsersInput
-  userTokens?: Prisma.userTokensUncheckedCreateNestedManyWithoutUsersInput
-}
-
-export type usersCreateOrConnectWithoutUserRolesInput = {
-  where: Prisma.usersWhereUniqueInput
-  create: Prisma.XOR<Prisma.usersCreateWithoutUserRolesInput, Prisma.usersUncheckedCreateWithoutUserRolesInput>
-}
-
-export type usersUpsertWithoutUserRolesInput = {
-  update: Prisma.XOR<Prisma.usersUpdateWithoutUserRolesInput, Prisma.usersUncheckedUpdateWithoutUserRolesInput>
-  create: Prisma.XOR<Prisma.usersCreateWithoutUserRolesInput, Prisma.usersUncheckedCreateWithoutUserRolesInput>
-  where?: Prisma.usersWhereInput
-}
-
-export type usersUpdateToOneWithWhereWithoutUserRolesInput = {
-  where?: Prisma.usersWhereInput
-  data: Prisma.XOR<Prisma.usersUpdateWithoutUserRolesInput, Prisma.usersUncheckedUpdateWithoutUserRolesInput>
-}
-
-export type usersUpdateWithoutUserRolesInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  firstName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  lastName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  streetAndNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  postalCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  refreshToken?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  smsVerificationId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  currentBalance?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
-  created?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  isDeleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  dealsRedeemed?: Prisma.IntFieldUpdateOperationsInput | number
-  mollieCustomerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  paypalPayerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  advertisingType?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  deviceIdentifier?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  stripeCustomerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  userLanguageCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  cultureName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  currencyCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  countryCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  firebaseAppInstanceId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  mobilePlatform?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  specialOfferTriggeredAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  blockImportForEventTrackingServices?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  imageId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  personalReferralCodeId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  approximatedCityId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  userName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  normalizedUserName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  normalizedEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  emailConfirmed?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  passwordHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  securityStamp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  concurrencyStamp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phoneNumberConfirmed?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  twoFactorEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  lockoutEnd?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  lockoutEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  accessFailedCount?: Prisma.IntFieldUpdateOperationsInput | number
-  canImpersonate?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  disabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  celloReferrerCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  referralCodes?: Prisma.referralCodesUpdateOneWithoutUsersNestedInput
-  subscriptions?: Prisma.subscriptionsUpdateManyWithoutUsersNestedInput
-  userClaims?: Prisma.userClaimsUpdateManyWithoutUsersNestedInput
-  userLogins?: Prisma.userLoginsUpdateManyWithoutUsersNestedInput
-  userTokens?: Prisma.userTokensUpdateManyWithoutUsersNestedInput
-  referrals?: Prisma.referralsUpdateOneWithoutUsersNestedInput
-}
-
-export type usersUncheckedUpdateWithoutUserRolesInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  firstName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  lastName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  streetAndNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  postalCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  refreshToken?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  smsVerificationId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  currentBalance?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
-  created?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  isDeleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  dealsRedeemed?: Prisma.IntFieldUpdateOperationsInput | number
-  mollieCustomerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  paypalPayerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  advertisingType?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  deviceIdentifier?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  stripeCustomerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  userLanguageCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  cultureName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  currencyCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  countryCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  firebaseAppInstanceId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  mobilePlatform?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  specialOfferTriggeredAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  blockImportForEventTrackingServices?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  imageId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  referralId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  personalReferralCodeId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  approximatedCityId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  userName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  normalizedUserName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  normalizedEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  emailConfirmed?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  passwordHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  securityStamp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  concurrencyStamp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phoneNumberConfirmed?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  twoFactorEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  lockoutEnd?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  lockoutEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  accessFailedCount?: Prisma.IntFieldUpdateOperationsInput | number
-  canImpersonate?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  disabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  celloReferrerCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  referralCodes?: Prisma.referralCodesUncheckedUpdateOneWithoutUsersNestedInput
-  subscriptions?: Prisma.subscriptionsUncheckedUpdateManyWithoutUsersNestedInput
-  userClaims?: Prisma.userClaimsUncheckedUpdateManyWithoutUsersNestedInput
-  userLogins?: Prisma.userLoginsUncheckedUpdateManyWithoutUsersNestedInput
-  userTokens?: Prisma.userTokensUncheckedUpdateManyWithoutUsersNestedInput
-}
-
-export type usersCreateWithoutUserTokensInput = {
-  id: string
-  firstName?: string | null
-  lastName?: string | null
-  streetAndNumber?: string | null
-  postalCode?: string | null
-  city?: string | null
-  country?: string | null
-  refreshToken?: string | null
-  smsVerificationId?: string | null
-  imageUrl?: string | null
-  currentBalance: runtime.Decimal | runtime.DecimalJsLike | number | string
-  created?: Date | string
-  updated?: Date | string | null
-  isDeleted: boolean
-  dealsRedeemed: number
-  mollieCustomerId?: string | null
-  paypalPayerId?: string | null
-  advertisingType?: number | null
-  deviceIdentifier?: string | null
-  stripeCustomerId?: string | null
-  userLanguageCode?: string | null
-  cultureName?: string | null
-  currencyCode?: string | null
-  countryCode?: string | null
-  firebaseAppInstanceId?: string | null
-  mobilePlatform?: string | null
-  specialOfferTriggeredAt?: Date | string | null
-  blockImportForEventTrackingServices: boolean
-  imageId?: string | null
-  personalReferralCodeId?: string | null
-  approximatedCityId?: string | null
-  userName?: string | null
-  normalizedUserName?: string | null
-  email?: string | null
-  normalizedEmail?: string | null
-  emailConfirmed: boolean
-  passwordHash?: string | null
-  securityStamp?: string | null
-  concurrencyStamp?: string | null
-  phoneNumber?: string | null
-  phoneNumberConfirmed: boolean
-  twoFactorEnabled: boolean
-  lockoutEnd?: Date | string | null
-  lockoutEnabled: boolean
-  accessFailedCount: number
-  canImpersonate?: boolean
-  disabled?: boolean
-  celloReferrerCode?: string | null
-  referralCodes?: Prisma.referralCodesCreateNestedOneWithoutUsersInput
-  subscriptions?: Prisma.subscriptionsCreateNestedManyWithoutUsersInput
-  userClaims?: Prisma.userClaimsCreateNestedManyWithoutUsersInput
-  userLogins?: Prisma.userLoginsCreateNestedManyWithoutUsersInput
-  userRoles?: Prisma.userRolesCreateNestedManyWithoutUsersInput
-  referrals?: Prisma.referralsCreateNestedOneWithoutUsersInput
-}
-
-export type usersUncheckedCreateWithoutUserTokensInput = {
-  id: string
-  firstName?: string | null
-  lastName?: string | null
-  streetAndNumber?: string | null
-  postalCode?: string | null
-  city?: string | null
-  country?: string | null
-  refreshToken?: string | null
-  smsVerificationId?: string | null
-  imageUrl?: string | null
-  currentBalance: runtime.Decimal | runtime.DecimalJsLike | number | string
-  created?: Date | string
-  updated?: Date | string | null
-  isDeleted: boolean
-  dealsRedeemed: number
-  mollieCustomerId?: string | null
-  paypalPayerId?: string | null
-  advertisingType?: number | null
-  deviceIdentifier?: string | null
-  stripeCustomerId?: string | null
-  userLanguageCode?: string | null
-  cultureName?: string | null
-  currencyCode?: string | null
-  countryCode?: string | null
-  firebaseAppInstanceId?: string | null
-  mobilePlatform?: string | null
-  specialOfferTriggeredAt?: Date | string | null
-  blockImportForEventTrackingServices: boolean
-  imageId?: string | null
-  referralId?: string | null
-  personalReferralCodeId?: string | null
-  approximatedCityId?: string | null
-  userName?: string | null
-  normalizedUserName?: string | null
-  email?: string | null
-  normalizedEmail?: string | null
-  emailConfirmed: boolean
-  passwordHash?: string | null
-  securityStamp?: string | null
-  concurrencyStamp?: string | null
-  phoneNumber?: string | null
-  phoneNumberConfirmed: boolean
-  twoFactorEnabled: boolean
-  lockoutEnd?: Date | string | null
-  lockoutEnabled: boolean
-  accessFailedCount: number
-  canImpersonate?: boolean
-  disabled?: boolean
-  celloReferrerCode?: string | null
-  referralCodes?: Prisma.referralCodesUncheckedCreateNestedOneWithoutUsersInput
-  subscriptions?: Prisma.subscriptionsUncheckedCreateNestedManyWithoutUsersInput
-  userClaims?: Prisma.userClaimsUncheckedCreateNestedManyWithoutUsersInput
-  userLogins?: Prisma.userLoginsUncheckedCreateNestedManyWithoutUsersInput
-  userRoles?: Prisma.userRolesUncheckedCreateNestedManyWithoutUsersInput
-}
-
-export type usersCreateOrConnectWithoutUserTokensInput = {
-  where: Prisma.usersWhereUniqueInput
-  create: Prisma.XOR<Prisma.usersCreateWithoutUserTokensInput, Prisma.usersUncheckedCreateWithoutUserTokensInput>
-}
-
-export type usersUpsertWithoutUserTokensInput = {
-  update: Prisma.XOR<Prisma.usersUpdateWithoutUserTokensInput, Prisma.usersUncheckedUpdateWithoutUserTokensInput>
-  create: Prisma.XOR<Prisma.usersCreateWithoutUserTokensInput, Prisma.usersUncheckedCreateWithoutUserTokensInput>
-  where?: Prisma.usersWhereInput
-}
-
-export type usersUpdateToOneWithWhereWithoutUserTokensInput = {
-  where?: Prisma.usersWhereInput
-  data: Prisma.XOR<Prisma.usersUpdateWithoutUserTokensInput, Prisma.usersUncheckedUpdateWithoutUserTokensInput>
-}
-
-export type usersUpdateWithoutUserTokensInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  firstName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  lastName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  streetAndNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  postalCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  refreshToken?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  smsVerificationId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  currentBalance?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
-  created?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  isDeleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  dealsRedeemed?: Prisma.IntFieldUpdateOperationsInput | number
-  mollieCustomerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  paypalPayerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  advertisingType?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  deviceIdentifier?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  stripeCustomerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  userLanguageCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  cultureName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  currencyCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  countryCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  firebaseAppInstanceId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  mobilePlatform?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  specialOfferTriggeredAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  blockImportForEventTrackingServices?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  imageId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  personalReferralCodeId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  approximatedCityId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  userName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  normalizedUserName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  normalizedEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  emailConfirmed?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  passwordHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  securityStamp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  concurrencyStamp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phoneNumberConfirmed?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  twoFactorEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  lockoutEnd?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  lockoutEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  accessFailedCount?: Prisma.IntFieldUpdateOperationsInput | number
-  canImpersonate?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  disabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  celloReferrerCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  referralCodes?: Prisma.referralCodesUpdateOneWithoutUsersNestedInput
-  subscriptions?: Prisma.subscriptionsUpdateManyWithoutUsersNestedInput
-  userClaims?: Prisma.userClaimsUpdateManyWithoutUsersNestedInput
-  userLogins?: Prisma.userLoginsUpdateManyWithoutUsersNestedInput
-  userRoles?: Prisma.userRolesUpdateManyWithoutUsersNestedInput
-  referrals?: Prisma.referralsUpdateOneWithoutUsersNestedInput
-}
-
-export type usersUncheckedUpdateWithoutUserTokensInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  firstName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  lastName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  streetAndNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  postalCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  refreshToken?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  smsVerificationId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  currentBalance?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
-  created?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  isDeleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  dealsRedeemed?: Prisma.IntFieldUpdateOperationsInput | number
-  mollieCustomerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  paypalPayerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  advertisingType?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  deviceIdentifier?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  stripeCustomerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  userLanguageCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  cultureName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  currencyCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  countryCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  firebaseAppInstanceId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  mobilePlatform?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  specialOfferTriggeredAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  blockImportForEventTrackingServices?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  imageId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  referralId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  personalReferralCodeId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  approximatedCityId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  userName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  normalizedUserName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  normalizedEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  emailConfirmed?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  passwordHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  securityStamp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  concurrencyStamp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phoneNumberConfirmed?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  twoFactorEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  lockoutEnd?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  lockoutEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  accessFailedCount?: Prisma.IntFieldUpdateOperationsInput | number
-  canImpersonate?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  disabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  celloReferrerCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  referralCodes?: Prisma.referralCodesUncheckedUpdateOneWithoutUsersNestedInput
-  subscriptions?: Prisma.subscriptionsUncheckedUpdateManyWithoutUsersNestedInput
-  userClaims?: Prisma.userClaimsUncheckedUpdateManyWithoutUsersNestedInput
-  userLogins?: Prisma.userLoginsUncheckedUpdateManyWithoutUsersNestedInput
-  userRoles?: Prisma.userRolesUncheckedUpdateManyWithoutUsersNestedInput
-}
-
-export type usersCreateManyReferralsInput = {
-  id: string
-  firstName?: string | null
-  lastName?: string | null
-  streetAndNumber?: string | null
-  postalCode?: string | null
-  city?: string | null
-  country?: string | null
-  refreshToken?: string | null
-  smsVerificationId?: string | null
-  imageUrl?: string | null
-  currentBalance: runtime.Decimal | runtime.DecimalJsLike | number | string
-  created?: Date | string
-  updated?: Date | string | null
-  isDeleted: boolean
-  dealsRedeemed: number
-  mollieCustomerId?: string | null
-  paypalPayerId?: string | null
-  advertisingType?: number | null
-  deviceIdentifier?: string | null
-  stripeCustomerId?: string | null
-  userLanguageCode?: string | null
-  cultureName?: string | null
-  currencyCode?: string | null
-  countryCode?: string | null
-  firebaseAppInstanceId?: string | null
-  mobilePlatform?: string | null
-  specialOfferTriggeredAt?: Date | string | null
-  blockImportForEventTrackingServices: boolean
-  imageId?: string | null
-  personalReferralCodeId?: string | null
-  approximatedCityId?: string | null
-  userName?: string | null
-  normalizedUserName?: string | null
-  email?: string | null
-  normalizedEmail?: string | null
-  emailConfirmed: boolean
-  passwordHash?: string | null
-  securityStamp?: string | null
-  concurrencyStamp?: string | null
-  phoneNumber?: string | null
-  phoneNumberConfirmed: boolean
-  twoFactorEnabled: boolean
-  lockoutEnd?: Date | string | null
-  lockoutEnabled: boolean
-  accessFailedCount: number
-  canImpersonate?: boolean
-  disabled?: boolean
-  celloReferrerCode?: string | null
-}
-
-export type usersUpdateWithoutReferralsInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  firstName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  lastName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  streetAndNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  postalCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  refreshToken?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  smsVerificationId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  currentBalance?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
-  created?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  isDeleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  dealsRedeemed?: Prisma.IntFieldUpdateOperationsInput | number
-  mollieCustomerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  paypalPayerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  advertisingType?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  deviceIdentifier?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  stripeCustomerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  userLanguageCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  cultureName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  currencyCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  countryCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  firebaseAppInstanceId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  mobilePlatform?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  specialOfferTriggeredAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  blockImportForEventTrackingServices?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  imageId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  personalReferralCodeId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  approximatedCityId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  userName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  normalizedUserName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  normalizedEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  emailConfirmed?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  passwordHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  securityStamp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  concurrencyStamp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phoneNumberConfirmed?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  twoFactorEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  lockoutEnd?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  lockoutEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  accessFailedCount?: Prisma.IntFieldUpdateOperationsInput | number
-  canImpersonate?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  disabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  celloReferrerCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  referralCodes?: Prisma.referralCodesUpdateOneWithoutUsersNestedInput
-  subscriptions?: Prisma.subscriptionsUpdateManyWithoutUsersNestedInput
-  userClaims?: Prisma.userClaimsUpdateManyWithoutUsersNestedInput
-  userLogins?: Prisma.userLoginsUpdateManyWithoutUsersNestedInput
-  userRoles?: Prisma.userRolesUpdateManyWithoutUsersNestedInput
-  userTokens?: Prisma.userTokensUpdateManyWithoutUsersNestedInput
-}
-
-export type usersUncheckedUpdateWithoutReferralsInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  firstName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  lastName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  streetAndNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  postalCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  refreshToken?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  smsVerificationId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  currentBalance?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
-  created?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  isDeleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  dealsRedeemed?: Prisma.IntFieldUpdateOperationsInput | number
-  mollieCustomerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  paypalPayerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  advertisingType?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  deviceIdentifier?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  stripeCustomerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  userLanguageCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  cultureName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  currencyCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  countryCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  firebaseAppInstanceId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  mobilePlatform?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  specialOfferTriggeredAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  blockImportForEventTrackingServices?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  imageId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  personalReferralCodeId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  approximatedCityId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  userName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  normalizedUserName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  normalizedEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  emailConfirmed?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  passwordHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  securityStamp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  concurrencyStamp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phoneNumberConfirmed?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  twoFactorEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  lockoutEnd?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  lockoutEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  accessFailedCount?: Prisma.IntFieldUpdateOperationsInput | number
-  canImpersonate?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  disabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  celloReferrerCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  referralCodes?: Prisma.referralCodesUncheckedUpdateOneWithoutUsersNestedInput
-  subscriptions?: Prisma.subscriptionsUncheckedUpdateManyWithoutUsersNestedInput
-  userClaims?: Prisma.userClaimsUncheckedUpdateManyWithoutUsersNestedInput
-  userLogins?: Prisma.userLoginsUncheckedUpdateManyWithoutUsersNestedInput
-  userRoles?: Prisma.userRolesUncheckedUpdateManyWithoutUsersNestedInput
-  userTokens?: Prisma.userTokensUncheckedUpdateManyWithoutUsersNestedInput
-}
-
-export type usersUncheckedUpdateManyWithoutReferralsInput = {
-  id?: Prisma.StringFieldUpdateOperationsInput | string
-  firstName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  lastName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  streetAndNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  postalCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  city?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  country?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  refreshToken?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  smsVerificationId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  imageUrl?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  currentBalance?: Prisma.DecimalFieldUpdateOperationsInput | runtime.Decimal | runtime.DecimalJsLike | number | string
-  created?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
-  updated?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  isDeleted?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  dealsRedeemed?: Prisma.IntFieldUpdateOperationsInput | number
-  mollieCustomerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  paypalPayerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  advertisingType?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
-  deviceIdentifier?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  stripeCustomerId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  userLanguageCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  cultureName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  currencyCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  countryCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  firebaseAppInstanceId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  mobilePlatform?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  specialOfferTriggeredAt?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  blockImportForEventTrackingServices?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  imageId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  personalReferralCodeId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  approximatedCityId?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  userName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  normalizedUserName?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  email?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  normalizedEmail?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  emailConfirmed?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  passwordHash?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  securityStamp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  concurrencyStamp?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phoneNumber?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  phoneNumberConfirmed?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  twoFactorEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  lockoutEnd?: Prisma.NullableDateTimeFieldUpdateOperationsInput | Date | string | null
-  lockoutEnabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  accessFailedCount?: Prisma.IntFieldUpdateOperationsInput | number
-  canImpersonate?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  disabled?: Prisma.BoolFieldUpdateOperationsInput | boolean
-  celloReferrerCode?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+export type usersUncheckedUpdateWithoutTranslationsInput = {
+  id?: Prisma.IntFieldUpdateOperationsInput | number
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  password_salt?: Prisma.StringFieldUpdateOperationsInput | string
+  token_salt?: Prisma.StringFieldUpdateOperationsInput | string
+  collections?: Prisma.collectionsUncheckedUpdateManyWithoutUsersNestedInput
 }
 
 
@@ -3408,19 +544,13 @@ export type usersUncheckedUpdateManyWithoutReferralsInput = {
  */
 
 export type UsersCountOutputType = {
-  subscriptions: number
-  userClaims: number
-  userLogins: number
-  userRoles: number
-  userTokens: number
+  collections: number
+  translations: number
 }
 
 export type UsersCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  subscriptions?: boolean | UsersCountOutputTypeCountSubscriptionsArgs
-  userClaims?: boolean | UsersCountOutputTypeCountUserClaimsArgs
-  userLogins?: boolean | UsersCountOutputTypeCountUserLoginsArgs
-  userRoles?: boolean | UsersCountOutputTypeCountUserRolesArgs
-  userTokens?: boolean | UsersCountOutputTypeCountUserTokensArgs
+  collections?: boolean | UsersCountOutputTypeCountCollectionsArgs
+  translations?: boolean | UsersCountOutputTypeCountTranslationsArgs
 }
 
 /**
@@ -3436,336 +566,79 @@ export type UsersCountOutputTypeDefaultArgs<ExtArgs extends runtime.Types.Extens
 /**
  * UsersCountOutputType without action
  */
-export type UsersCountOutputTypeCountSubscriptionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.subscriptionsWhereInput
+export type UsersCountOutputTypeCountCollectionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.collectionsWhereInput
 }
 
 /**
  * UsersCountOutputType without action
  */
-export type UsersCountOutputTypeCountUserClaimsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.userClaimsWhereInput
-}
-
-/**
- * UsersCountOutputType without action
- */
-export type UsersCountOutputTypeCountUserLoginsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.userLoginsWhereInput
-}
-
-/**
- * UsersCountOutputType without action
- */
-export type UsersCountOutputTypeCountUserRolesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.userRolesWhereInput
-}
-
-/**
- * UsersCountOutputType without action
- */
-export type UsersCountOutputTypeCountUserTokensArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.userTokensWhereInput
+export type UsersCountOutputTypeCountTranslationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.translationsWhereInput
 }
 
 
 export type usersSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  firstName?: boolean
-  lastName?: boolean
-  streetAndNumber?: boolean
-  postalCode?: boolean
-  city?: boolean
-  country?: boolean
-  refreshToken?: boolean
-  smsVerificationId?: boolean
-  imageUrl?: boolean
-  currentBalance?: boolean
-  created?: boolean
-  updated?: boolean
-  isDeleted?: boolean
-  dealsRedeemed?: boolean
-  mollieCustomerId?: boolean
-  paypalPayerId?: boolean
-  advertisingType?: boolean
-  deviceIdentifier?: boolean
-  stripeCustomerId?: boolean
-  userLanguageCode?: boolean
-  cultureName?: boolean
-  currencyCode?: boolean
-  countryCode?: boolean
-  firebaseAppInstanceId?: boolean
-  mobilePlatform?: boolean
-  specialOfferTriggeredAt?: boolean
-  blockImportForEventTrackingServices?: boolean
-  imageId?: boolean
-  referralId?: boolean
-  personalReferralCodeId?: boolean
-  approximatedCityId?: boolean
-  userName?: boolean
-  normalizedUserName?: boolean
   email?: boolean
-  normalizedEmail?: boolean
-  emailConfirmed?: boolean
-  passwordHash?: boolean
-  securityStamp?: boolean
-  concurrencyStamp?: boolean
-  phoneNumber?: boolean
-  phoneNumberConfirmed?: boolean
-  twoFactorEnabled?: boolean
-  lockoutEnd?: boolean
-  lockoutEnabled?: boolean
-  accessFailedCount?: boolean
-  canImpersonate?: boolean
-  disabled?: boolean
-  celloReferrerCode?: boolean
-  referralCodes?: boolean | Prisma.users$referralCodesArgs<ExtArgs>
-  subscriptions?: boolean | Prisma.users$subscriptionsArgs<ExtArgs>
-  userClaims?: boolean | Prisma.users$userClaimsArgs<ExtArgs>
-  userLogins?: boolean | Prisma.users$userLoginsArgs<ExtArgs>
-  userRoles?: boolean | Prisma.users$userRolesArgs<ExtArgs>
-  userTokens?: boolean | Prisma.users$userTokensArgs<ExtArgs>
-  referrals?: boolean | Prisma.users$referralsArgs<ExtArgs>
+  password?: boolean
+  name?: boolean
+  password_salt?: boolean
+  token_salt?: boolean
+  collections?: boolean | Prisma.users$collectionsArgs<ExtArgs>
+  translations?: boolean | Prisma.users$translationsArgs<ExtArgs>
   _count?: boolean | Prisma.UsersCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["users"]>
 
 export type usersSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  firstName?: boolean
-  lastName?: boolean
-  streetAndNumber?: boolean
-  postalCode?: boolean
-  city?: boolean
-  country?: boolean
-  refreshToken?: boolean
-  smsVerificationId?: boolean
-  imageUrl?: boolean
-  currentBalance?: boolean
-  created?: boolean
-  updated?: boolean
-  isDeleted?: boolean
-  dealsRedeemed?: boolean
-  mollieCustomerId?: boolean
-  paypalPayerId?: boolean
-  advertisingType?: boolean
-  deviceIdentifier?: boolean
-  stripeCustomerId?: boolean
-  userLanguageCode?: boolean
-  cultureName?: boolean
-  currencyCode?: boolean
-  countryCode?: boolean
-  firebaseAppInstanceId?: boolean
-  mobilePlatform?: boolean
-  specialOfferTriggeredAt?: boolean
-  blockImportForEventTrackingServices?: boolean
-  imageId?: boolean
-  referralId?: boolean
-  personalReferralCodeId?: boolean
-  approximatedCityId?: boolean
-  userName?: boolean
-  normalizedUserName?: boolean
   email?: boolean
-  normalizedEmail?: boolean
-  emailConfirmed?: boolean
-  passwordHash?: boolean
-  securityStamp?: boolean
-  concurrencyStamp?: boolean
-  phoneNumber?: boolean
-  phoneNumberConfirmed?: boolean
-  twoFactorEnabled?: boolean
-  lockoutEnd?: boolean
-  lockoutEnabled?: boolean
-  accessFailedCount?: boolean
-  canImpersonate?: boolean
-  disabled?: boolean
-  celloReferrerCode?: boolean
-  referrals?: boolean | Prisma.users$referralsArgs<ExtArgs>
+  password?: boolean
+  name?: boolean
+  password_salt?: boolean
+  token_salt?: boolean
 }, ExtArgs["result"]["users"]>
 
 export type usersSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
-  firstName?: boolean
-  lastName?: boolean
-  streetAndNumber?: boolean
-  postalCode?: boolean
-  city?: boolean
-  country?: boolean
-  refreshToken?: boolean
-  smsVerificationId?: boolean
-  imageUrl?: boolean
-  currentBalance?: boolean
-  created?: boolean
-  updated?: boolean
-  isDeleted?: boolean
-  dealsRedeemed?: boolean
-  mollieCustomerId?: boolean
-  paypalPayerId?: boolean
-  advertisingType?: boolean
-  deviceIdentifier?: boolean
-  stripeCustomerId?: boolean
-  userLanguageCode?: boolean
-  cultureName?: boolean
-  currencyCode?: boolean
-  countryCode?: boolean
-  firebaseAppInstanceId?: boolean
-  mobilePlatform?: boolean
-  specialOfferTriggeredAt?: boolean
-  blockImportForEventTrackingServices?: boolean
-  imageId?: boolean
-  referralId?: boolean
-  personalReferralCodeId?: boolean
-  approximatedCityId?: boolean
-  userName?: boolean
-  normalizedUserName?: boolean
   email?: boolean
-  normalizedEmail?: boolean
-  emailConfirmed?: boolean
-  passwordHash?: boolean
-  securityStamp?: boolean
-  concurrencyStamp?: boolean
-  phoneNumber?: boolean
-  phoneNumberConfirmed?: boolean
-  twoFactorEnabled?: boolean
-  lockoutEnd?: boolean
-  lockoutEnabled?: boolean
-  accessFailedCount?: boolean
-  canImpersonate?: boolean
-  disabled?: boolean
-  celloReferrerCode?: boolean
-  referrals?: boolean | Prisma.users$referralsArgs<ExtArgs>
+  password?: boolean
+  name?: boolean
+  password_salt?: boolean
+  token_salt?: boolean
 }, ExtArgs["result"]["users"]>
 
 export type usersSelectScalar = {
   id?: boolean
-  firstName?: boolean
-  lastName?: boolean
-  streetAndNumber?: boolean
-  postalCode?: boolean
-  city?: boolean
-  country?: boolean
-  refreshToken?: boolean
-  smsVerificationId?: boolean
-  imageUrl?: boolean
-  currentBalance?: boolean
-  created?: boolean
-  updated?: boolean
-  isDeleted?: boolean
-  dealsRedeemed?: boolean
-  mollieCustomerId?: boolean
-  paypalPayerId?: boolean
-  advertisingType?: boolean
-  deviceIdentifier?: boolean
-  stripeCustomerId?: boolean
-  userLanguageCode?: boolean
-  cultureName?: boolean
-  currencyCode?: boolean
-  countryCode?: boolean
-  firebaseAppInstanceId?: boolean
-  mobilePlatform?: boolean
-  specialOfferTriggeredAt?: boolean
-  blockImportForEventTrackingServices?: boolean
-  imageId?: boolean
-  referralId?: boolean
-  personalReferralCodeId?: boolean
-  approximatedCityId?: boolean
-  userName?: boolean
-  normalizedUserName?: boolean
   email?: boolean
-  normalizedEmail?: boolean
-  emailConfirmed?: boolean
-  passwordHash?: boolean
-  securityStamp?: boolean
-  concurrencyStamp?: boolean
-  phoneNumber?: boolean
-  phoneNumberConfirmed?: boolean
-  twoFactorEnabled?: boolean
-  lockoutEnd?: boolean
-  lockoutEnabled?: boolean
-  accessFailedCount?: boolean
-  canImpersonate?: boolean
-  disabled?: boolean
-  celloReferrerCode?: boolean
+  password?: boolean
+  name?: boolean
+  password_salt?: boolean
+  token_salt?: boolean
 }
 
-export type usersOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "firstName" | "lastName" | "streetAndNumber" | "postalCode" | "city" | "country" | "refreshToken" | "smsVerificationId" | "imageUrl" | "currentBalance" | "created" | "updated" | "isDeleted" | "dealsRedeemed" | "mollieCustomerId" | "paypalPayerId" | "advertisingType" | "deviceIdentifier" | "stripeCustomerId" | "userLanguageCode" | "cultureName" | "currencyCode" | "countryCode" | "firebaseAppInstanceId" | "mobilePlatform" | "specialOfferTriggeredAt" | "blockImportForEventTrackingServices" | "imageId" | "referralId" | "personalReferralCodeId" | "approximatedCityId" | "userName" | "normalizedUserName" | "email" | "normalizedEmail" | "emailConfirmed" | "passwordHash" | "securityStamp" | "concurrencyStamp" | "phoneNumber" | "phoneNumberConfirmed" | "twoFactorEnabled" | "lockoutEnd" | "lockoutEnabled" | "accessFailedCount" | "canImpersonate" | "disabled" | "celloReferrerCode", ExtArgs["result"]["users"]>
+export type usersOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "email" | "password" | "name" | "password_salt" | "token_salt", ExtArgs["result"]["users"]>
 export type usersInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  referralCodes?: boolean | Prisma.users$referralCodesArgs<ExtArgs>
-  subscriptions?: boolean | Prisma.users$subscriptionsArgs<ExtArgs>
-  userClaims?: boolean | Prisma.users$userClaimsArgs<ExtArgs>
-  userLogins?: boolean | Prisma.users$userLoginsArgs<ExtArgs>
-  userRoles?: boolean | Prisma.users$userRolesArgs<ExtArgs>
-  userTokens?: boolean | Prisma.users$userTokensArgs<ExtArgs>
-  referrals?: boolean | Prisma.users$referralsArgs<ExtArgs>
+  collections?: boolean | Prisma.users$collectionsArgs<ExtArgs>
+  translations?: boolean | Prisma.users$translationsArgs<ExtArgs>
   _count?: boolean | Prisma.UsersCountOutputTypeDefaultArgs<ExtArgs>
 }
-export type usersIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  referrals?: boolean | Prisma.users$referralsArgs<ExtArgs>
-}
-export type usersIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  referrals?: boolean | Prisma.users$referralsArgs<ExtArgs>
-}
+export type usersIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
+export type usersIncludeUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
 
 export type $usersPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "users"
   objects: {
-    referralCodes: Prisma.$referralCodesPayload<ExtArgs> | null
-    subscriptions: Prisma.$subscriptionsPayload<ExtArgs>[]
-    userClaims: Prisma.$userClaimsPayload<ExtArgs>[]
-    userLogins: Prisma.$userLoginsPayload<ExtArgs>[]
-    userRoles: Prisma.$userRolesPayload<ExtArgs>[]
-    userTokens: Prisma.$userTokensPayload<ExtArgs>[]
-    referrals: Prisma.$referralsPayload<ExtArgs> | null
+    collections: Prisma.$collectionsPayload<ExtArgs>[]
+    translations: Prisma.$translationsPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
-    id: string
-    firstName: string | null
-    lastName: string | null
-    streetAndNumber: string | null
-    postalCode: string | null
-    city: string | null
-    country: string | null
-    refreshToken: string | null
-    smsVerificationId: string | null
-    imageUrl: string | null
-    currentBalance: runtime.Decimal
-    created: Date
-    updated: Date | null
-    isDeleted: boolean
-    dealsRedeemed: number
-    mollieCustomerId: string | null
-    paypalPayerId: string | null
-    advertisingType: number | null
-    deviceIdentifier: string | null
-    stripeCustomerId: string | null
-    userLanguageCode: string | null
-    cultureName: string | null
-    currencyCode: string | null
-    countryCode: string | null
-    firebaseAppInstanceId: string | null
-    mobilePlatform: string | null
-    specialOfferTriggeredAt: Date | null
-    blockImportForEventTrackingServices: boolean
-    imageId: string | null
-    referralId: string | null
-    personalReferralCodeId: string | null
-    approximatedCityId: string | null
-    userName: string | null
-    normalizedUserName: string | null
-    email: string | null
-    normalizedEmail: string | null
-    emailConfirmed: boolean
-    passwordHash: string | null
-    securityStamp: string | null
-    concurrencyStamp: string | null
-    phoneNumber: string | null
-    phoneNumberConfirmed: boolean
-    twoFactorEnabled: boolean
-    lockoutEnd: Date | null
-    lockoutEnabled: boolean
-    accessFailedCount: number
-    canImpersonate: boolean
-    disabled: boolean
-    celloReferrerCode: string | null
+    id: number
+    email: string
+    password: string
+    name: string | null
+    password_salt: string
+    token_salt: string
   }, ExtArgs["result"]["users"]>
   composites: {}
 }
@@ -4160,13 +1033,8 @@ readonly fields: usersFieldRefs;
  */
 export interface Prisma__usersClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  referralCodes<T extends Prisma.users$referralCodesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.users$referralCodesArgs<ExtArgs>>): Prisma.Prisma__referralCodesClient<runtime.Types.Result.GetResult<Prisma.$referralCodesPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
-  subscriptions<T extends Prisma.users$subscriptionsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.users$subscriptionsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$subscriptionsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  userClaims<T extends Prisma.users$userClaimsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.users$userClaimsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$userClaimsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  userLogins<T extends Prisma.users$userLoginsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.users$userLoginsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$userLoginsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  userRoles<T extends Prisma.users$userRolesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.users$userRolesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$userRolesPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  userTokens<T extends Prisma.users$userTokensArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.users$userTokensArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$userTokensPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
-  referrals<T extends Prisma.users$referralsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.users$referralsArgs<ExtArgs>>): Prisma.Prisma__referralsClient<runtime.Types.Result.GetResult<Prisma.$referralsPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
+  collections<T extends Prisma.users$collectionsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.users$collectionsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$collectionsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  translations<T extends Prisma.users$translationsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.users$translationsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$translationsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -4196,55 +1064,12 @@ export interface Prisma__usersClient<T, Null = never, ExtArgs extends runtime.Ty
  * Fields of the users model
  */
 export interface usersFieldRefs {
-  readonly id: Prisma.FieldRef<"users", 'String'>
-  readonly firstName: Prisma.FieldRef<"users", 'String'>
-  readonly lastName: Prisma.FieldRef<"users", 'String'>
-  readonly streetAndNumber: Prisma.FieldRef<"users", 'String'>
-  readonly postalCode: Prisma.FieldRef<"users", 'String'>
-  readonly city: Prisma.FieldRef<"users", 'String'>
-  readonly country: Prisma.FieldRef<"users", 'String'>
-  readonly refreshToken: Prisma.FieldRef<"users", 'String'>
-  readonly smsVerificationId: Prisma.FieldRef<"users", 'String'>
-  readonly imageUrl: Prisma.FieldRef<"users", 'String'>
-  readonly currentBalance: Prisma.FieldRef<"users", 'Decimal'>
-  readonly created: Prisma.FieldRef<"users", 'DateTime'>
-  readonly updated: Prisma.FieldRef<"users", 'DateTime'>
-  readonly isDeleted: Prisma.FieldRef<"users", 'Boolean'>
-  readonly dealsRedeemed: Prisma.FieldRef<"users", 'Int'>
-  readonly mollieCustomerId: Prisma.FieldRef<"users", 'String'>
-  readonly paypalPayerId: Prisma.FieldRef<"users", 'String'>
-  readonly advertisingType: Prisma.FieldRef<"users", 'Int'>
-  readonly deviceIdentifier: Prisma.FieldRef<"users", 'String'>
-  readonly stripeCustomerId: Prisma.FieldRef<"users", 'String'>
-  readonly userLanguageCode: Prisma.FieldRef<"users", 'String'>
-  readonly cultureName: Prisma.FieldRef<"users", 'String'>
-  readonly currencyCode: Prisma.FieldRef<"users", 'String'>
-  readonly countryCode: Prisma.FieldRef<"users", 'String'>
-  readonly firebaseAppInstanceId: Prisma.FieldRef<"users", 'String'>
-  readonly mobilePlatform: Prisma.FieldRef<"users", 'String'>
-  readonly specialOfferTriggeredAt: Prisma.FieldRef<"users", 'DateTime'>
-  readonly blockImportForEventTrackingServices: Prisma.FieldRef<"users", 'Boolean'>
-  readonly imageId: Prisma.FieldRef<"users", 'String'>
-  readonly referralId: Prisma.FieldRef<"users", 'String'>
-  readonly personalReferralCodeId: Prisma.FieldRef<"users", 'String'>
-  readonly approximatedCityId: Prisma.FieldRef<"users", 'String'>
-  readonly userName: Prisma.FieldRef<"users", 'String'>
-  readonly normalizedUserName: Prisma.FieldRef<"users", 'String'>
+  readonly id: Prisma.FieldRef<"users", 'Int'>
   readonly email: Prisma.FieldRef<"users", 'String'>
-  readonly normalizedEmail: Prisma.FieldRef<"users", 'String'>
-  readonly emailConfirmed: Prisma.FieldRef<"users", 'Boolean'>
-  readonly passwordHash: Prisma.FieldRef<"users", 'String'>
-  readonly securityStamp: Prisma.FieldRef<"users", 'String'>
-  readonly concurrencyStamp: Prisma.FieldRef<"users", 'String'>
-  readonly phoneNumber: Prisma.FieldRef<"users", 'String'>
-  readonly phoneNumberConfirmed: Prisma.FieldRef<"users", 'Boolean'>
-  readonly twoFactorEnabled: Prisma.FieldRef<"users", 'Boolean'>
-  readonly lockoutEnd: Prisma.FieldRef<"users", 'DateTime'>
-  readonly lockoutEnabled: Prisma.FieldRef<"users", 'Boolean'>
-  readonly accessFailedCount: Prisma.FieldRef<"users", 'Int'>
-  readonly canImpersonate: Prisma.FieldRef<"users", 'Boolean'>
-  readonly disabled: Prisma.FieldRef<"users", 'Boolean'>
-  readonly celloReferrerCode: Prisma.FieldRef<"users", 'String'>
+  readonly password: Prisma.FieldRef<"users", 'String'>
+  readonly name: Prisma.FieldRef<"users", 'String'>
+  readonly password_salt: Prisma.FieldRef<"users", 'String'>
+  readonly token_salt: Prisma.FieldRef<"users", 'String'>
 }
     
 
@@ -4494,10 +1319,6 @@ export type usersCreateManyAndReturnArgs<ExtArgs extends runtime.Types.Extension
    */
   data: Prisma.usersCreateManyInput | Prisma.usersCreateManyInput[]
   skipDuplicates?: boolean
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.usersIncludeCreateManyAndReturn<ExtArgs> | null
 }
 
 /**
@@ -4568,10 +1389,6 @@ export type usersUpdateManyAndReturnArgs<ExtArgs extends runtime.Types.Extension
    * Limit how many users to update.
    */
   limit?: number
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.usersIncludeUpdateManyAndReturn<ExtArgs> | null
 }
 
 /**
@@ -4641,161 +1458,51 @@ export type usersDeleteManyArgs<ExtArgs extends runtime.Types.Extensions.Interna
 }
 
 /**
- * users.referralCodes
+ * users.collections
  */
-export type users$referralCodesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type users$collectionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the referralCodes
+   * Select specific fields to fetch from the collections
    */
-  select?: Prisma.referralCodesSelect<ExtArgs> | null
+  select?: Prisma.collectionsSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the referralCodes
+   * Omit specific fields from the collections
    */
-  omit?: Prisma.referralCodesOmit<ExtArgs> | null
+  omit?: Prisma.collectionsOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.referralCodesInclude<ExtArgs> | null
-  where?: Prisma.referralCodesWhereInput
-}
-
-/**
- * users.subscriptions
- */
-export type users$subscriptionsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the subscriptions
-   */
-  select?: Prisma.subscriptionsSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the subscriptions
-   */
-  omit?: Prisma.subscriptionsOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.subscriptionsInclude<ExtArgs> | null
-  where?: Prisma.subscriptionsWhereInput
-  orderBy?: Prisma.subscriptionsOrderByWithRelationInput | Prisma.subscriptionsOrderByWithRelationInput[]
-  cursor?: Prisma.subscriptionsWhereUniqueInput
+  include?: Prisma.collectionsInclude<ExtArgs> | null
+  where?: Prisma.collectionsWhereInput
+  orderBy?: Prisma.collectionsOrderByWithRelationInput | Prisma.collectionsOrderByWithRelationInput[]
+  cursor?: Prisma.collectionsWhereUniqueInput
   take?: number
   skip?: number
-  distinct?: Prisma.SubscriptionsScalarFieldEnum | Prisma.SubscriptionsScalarFieldEnum[]
+  distinct?: Prisma.CollectionsScalarFieldEnum | Prisma.CollectionsScalarFieldEnum[]
 }
 
 /**
- * users.userClaims
+ * users.translations
  */
-export type users$userClaimsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type users$translationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the userClaims
+   * Select specific fields to fetch from the translations
    */
-  select?: Prisma.userClaimsSelect<ExtArgs> | null
+  select?: Prisma.translationsSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the userClaims
+   * Omit specific fields from the translations
    */
-  omit?: Prisma.userClaimsOmit<ExtArgs> | null
+  omit?: Prisma.translationsOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.userClaimsInclude<ExtArgs> | null
-  where?: Prisma.userClaimsWhereInput
-  orderBy?: Prisma.userClaimsOrderByWithRelationInput | Prisma.userClaimsOrderByWithRelationInput[]
-  cursor?: Prisma.userClaimsWhereUniqueInput
+  include?: Prisma.translationsInclude<ExtArgs> | null
+  where?: Prisma.translationsWhereInput
+  orderBy?: Prisma.translationsOrderByWithRelationInput | Prisma.translationsOrderByWithRelationInput[]
+  cursor?: Prisma.translationsWhereUniqueInput
   take?: number
   skip?: number
-  distinct?: Prisma.UserClaimsScalarFieldEnum | Prisma.UserClaimsScalarFieldEnum[]
-}
-
-/**
- * users.userLogins
- */
-export type users$userLoginsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the userLogins
-   */
-  select?: Prisma.userLoginsSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the userLogins
-   */
-  omit?: Prisma.userLoginsOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.userLoginsInclude<ExtArgs> | null
-  where?: Prisma.userLoginsWhereInput
-  orderBy?: Prisma.userLoginsOrderByWithRelationInput | Prisma.userLoginsOrderByWithRelationInput[]
-  cursor?: Prisma.userLoginsWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.UserLoginsScalarFieldEnum | Prisma.UserLoginsScalarFieldEnum[]
-}
-
-/**
- * users.userRoles
- */
-export type users$userRolesArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the userRoles
-   */
-  select?: Prisma.userRolesSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the userRoles
-   */
-  omit?: Prisma.userRolesOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.userRolesInclude<ExtArgs> | null
-  where?: Prisma.userRolesWhereInput
-  orderBy?: Prisma.userRolesOrderByWithRelationInput | Prisma.userRolesOrderByWithRelationInput[]
-  cursor?: Prisma.userRolesWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.UserRolesScalarFieldEnum | Prisma.UserRolesScalarFieldEnum[]
-}
-
-/**
- * users.userTokens
- */
-export type users$userTokensArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the userTokens
-   */
-  select?: Prisma.userTokensSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the userTokens
-   */
-  omit?: Prisma.userTokensOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.userTokensInclude<ExtArgs> | null
-  where?: Prisma.userTokensWhereInput
-  orderBy?: Prisma.userTokensOrderByWithRelationInput | Prisma.userTokensOrderByWithRelationInput[]
-  cursor?: Prisma.userTokensWhereUniqueInput
-  take?: number
-  skip?: number
-  distinct?: Prisma.UserTokensScalarFieldEnum | Prisma.UserTokensScalarFieldEnum[]
-}
-
-/**
- * users.referrals
- */
-export type users$referralsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  /**
-   * Select specific fields to fetch from the referrals
-   */
-  select?: Prisma.referralsSelect<ExtArgs> | null
-  /**
-   * Omit specific fields from the referrals
-   */
-  omit?: Prisma.referralsOmit<ExtArgs> | null
-  /**
-   * Choose, which related nodes to fetch as well
-   */
-  include?: Prisma.referralsInclude<ExtArgs> | null
-  where?: Prisma.referralsWhereInput
+  distinct?: Prisma.TranslationsScalarFieldEnum | Prisma.TranslationsScalarFieldEnum[]
 }
 
 /**
