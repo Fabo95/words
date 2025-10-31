@@ -1,0 +1,40 @@
+{
+    "compilerOptions": {
+        "target": "es2021",
+        "module": "NodeNext",
+        "esModuleInterop": true,
+        "noImplicitAny": true,
+        "moduleResolution": "NodeNext",
+        "outDir": "dist",
+        "experimentalDecorators": true,
+        "emitDecoratorMetadata": true,
+        "resolveJsonModule": true,
+        "skipDefaultLibCheck": true,
+        "skipLibCheck": true,
+        "strictNullChecks": true,
+
+        "useUnknownInCatchVariables": true,
+
+        "forceConsistentCasingInFileNames": true,
+        "allowSyntheticDefaultImports": true,
+        "typeRoots": ["./src/types", "./node_modules/@types"],
+        "baseUrl": ".",
+        "paths": {
+            "@/*": [
+              "./src/*"
+            ]
+        },
+        "noEmitHelpers": true,
+        "importHelpers": true,
+        "sourceMap": true,
+        "inlineSources": true,
+        "sourceRoot": "/",
+
+        "declaration": true
+    },
+    "exclude": ["node_modules", "__tests__/*"],
+    "include": ["src", "tests", "scripts/pre-migration-check.js"],
+    "watchOptions": {
+        "excludeDirectories": ["**/node_modules"]
+    }
+}

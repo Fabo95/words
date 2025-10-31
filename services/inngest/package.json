@@ -1,0 +1,41 @@
+{
+    "name": "user-api",
+    "version": "2.0.0",
+    "description": "",
+    "main": "./dist/index.js",
+    "type": "module",
+    "private": true,
+    "rootDir": "src",
+    "scripts": {
+        "start:api": "node ./dist/src/index.js",
+        "build": "rm -rf ./dist/* && yarn db-generate && yarn lint && tsc -p tsconfig.json && tsc-alias -p tsconfig.json",
+        "lint": "biome lint",
+        "ts": "tsc --noEmit",
+        "db-generate": "npx prisma generate",
+        "dev": "tsx watch src/index.ts"
+    },
+    "author": "Fabian Hinz",
+    "dependencies": {
+        "@fastify/awilix": "^8.0.0",
+        "@fastify/basic-auth": "^6.2.0",
+        "@fastify/cors": "^11.1.0",
+        "@fastify/swagger": "^9.5.1",
+        "@fastify/swagger-ui": "^5.2.2",
+        "@prisma/client": "^6.7.0",
+        "@prisma/migrate": "^6.7.0",
+        "awilix": "^12.0.5",
+        "dotenv": "^16.5.0",
+        "fastify": "^5.3.3",
+        "fastify-raw-body": "^5.0.0",
+        "fastify-type-provider-zod": "^4.0.2",
+        "inngest": "^3.40.1",
+        "uuid": "^11.1.0",
+        "zod": "^3.24.4"
+    },
+    "devDependencies": {
+        "@types/node": "^20.0.0",
+        "pino-pretty": "^13.0.0",
+        "prisma": "^6.7.0",
+        "tsc-alias": "^1.8.8"
+    }
+}
