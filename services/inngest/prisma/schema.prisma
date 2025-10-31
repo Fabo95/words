@@ -8,330 +8,47 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
-model EFMigrationsHistory {
-  migrationId    String @id(map: "pK___EFMigrationsHistory") @db.VarChar(150)
-  productVersion String @db.VarChar(32)
-
-  @@map("__EFMigrationsHistory")
-}
-
-model payments {
-  id                        String        @id(map: "pK_payments") @db.Uuid
-  subscriptionId            String        @db.Uuid
-  paymentProvider           String
-  paymentMethod             String?
-  netValue                  Decimal       @db.Decimal
-  taxValue                  Decimal       @db.Decimal
-  currency                  String?
-  paymentStatus             String
-  refundedDate              DateTime?     @db.Timestamptz(6)
-  providerRecordExternalId  String?
-  providerInvoiceExternalId String?
-  paymentProviderData       String?
-  isSetupPayment            Boolean
-  created                   DateTime      @default(now()) @db.Timestamptz(6)
-  updated                   DateTime?     @db.Timestamptz(6)
-  isDeleted                 Boolean
-  subscriptions             subscriptions @relation(fields: [subscriptionId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fK_payments_subscriptions_subscriptionId")
-
-  @@index([subscriptionId], map: "iX_payments_subscriptionId")
-  @@index([providerRecordExternalId], map: "idx_payments_providerrecordexternalid")
-}
-
-/// This model contains an expression index which requires additional setup for migrations. Visit https://pris.ly/d/expression-indexes for more info.
-model referralCodes {
-  id                String      @id(map: "pK_referralCodes") @db.Uuid
-  name              String
-  number            Int
-  fullCode          String      @unique(map: "iX_referralCodes_fullCode")
-  userId            String      @unique(map: "iX_referralCodes_userId") @db.Uuid
-  created           DateTime    @default(now()) @db.Timestamptz(6)
-  updated           DateTime?   @db.Timestamptz(6)
-  isDeleted         Boolean
-  celloReferralCode String?
-  users             users       @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fK_referralCodes_users_userId")
-  referrals         referrals[]
-
-  @@index([name], map: "iX_referralCodes_name")
-  @@index([number], map: "iX_referralCodes_number")
-}
-
-model referrals {
-  id                                                              String         @id(map: "pK_referrals") @db.Uuid
-  reward                                                          Decimal        @db.Decimal
-  referralCodeId                                                  String         @db.Uuid
-  referredSubscriptionId                                          String?        @unique(map: "iX_referrals_referredSubscriptionId") @db.Uuid
-  claimedForSubscriptionId                                        String?        @db.Uuid
-  created                                                         DateTime       @default(now()) @db.Timestamptz(6)
-  updated                                                         DateTime?      @db.Timestamptz(6)
-  isDeleted                                                       Boolean
-  isCelloReferral                                                 Boolean        @default(false)
-  referralCodes                                                   referralCodes  @relation(fields: [referralCodeId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fK_referrals_referralCodes_referralCodeId")
-  subscriptions_referrals_claimedForSubscriptionIdTosubscriptions subscriptions? @relation("referrals_claimedForSubscriptionIdTosubscriptions", fields: [claimedForSubscriptionId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fK_referrals_subscriptions_claimedForSubscriptionId")
-  subscriptions_referrals_referredSubscriptionIdTosubscriptions   subscriptions? @relation("referrals_referredSubscriptionIdTosubscriptions", fields: [referredSubscriptionId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fK_referrals_subscriptions_referredSubscriptionId")
-  users                                                           users[]
-
-  @@index([claimedForSubscriptionId], map: "iX_referrals_claimedForSubscriptionId")
-  @@index([referralCodeId], map: "iX_referrals_referralCodeId")
-}
-
-model roleClaims {
-  id         Int     @id(map: "pK_roleClaims") @default(autoincrement())
-  roleId     String  @db.Uuid
-  claimType  String?
-  claimValue String?
-  roles      roles   @relation(fields: [roleId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fK_roleClaims_roles_roleId")
-
-  @@index([roleId], map: "iX_roleClaims_roleId")
-}
-
-model roles {
-  id               String       @id(map: "pK_roles") @db.Uuid
-  name             String?      @db.VarChar(256)
-  normalizedName   String?      @unique(map: "RoleNameIndex") @db.VarChar(256)
-  concurrencyStamp String?
-  roleClaims       roleClaims[]
-  userRoles        userRoles[]
-}
-
-model subscriptionEvents {
-  id                               String        @id(map: "pK_subscriptionEvents") @db.Uuid
-  subscriptionId                   String        @db.Uuid
-  type                             String
-  voucherId                        String?       @db.Uuid
-  referralId                       String?       @db.Uuid
-  referralRewardId                 String?       @db.Uuid
-  value                            Float?
-  referralUserCodeId               String?       @db.Uuid
-  discountCodeUsed                 String?
-  suspendedTo                      DateTime?     @db.Timestamptz(6)
-  trialTo                          DateTime?     @db.Timestamptz(6)
-  subscriptionTypeAfterTrial       String?
-  trialActiveTo                    DateTime?     @db.Timestamptz(6)
-  paymentId                        String?       @db.Uuid
-  activeFrom                       DateTime?     @db.Timestamptz(6)
-  activeTo                         DateTime?     @db.Timestamptz(6)
-  priceId                          String?
-  productId                        String?
-  approximatedActivityRestaurantId String?       @db.Uuid
-  created                          DateTime      @default(now()) @db.Timestamptz(6)
-  updated                          DateTime?     @db.Timestamptz(6)
-  isDeleted                        Boolean
-  oldSubscriptionId                String?       @db.Uuid
-  subscriptions                    subscriptions @relation(fields: [subscriptionId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fK_subscriptionEvents_subscriptions_subscriptionId")
-
-  @@index([subscriptionId], map: "iX_subscriptionEvents_subscriptionId")
-}
-
-model subscriptionVouchers {
-  id             String        @id(map: "pK_subscriptionVouchers") @db.Uuid
-  subscriptionId String        @db.Uuid
-  voucherId      String        @db.Uuid
-  created        DateTime      @default(now()) @db.Timestamptz(6)
-  updated        DateTime?     @db.Timestamptz(6)
-  isDeleted      Boolean
-  subscriptions  subscriptions @relation(fields: [subscriptionId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fK_subscriptionVouchers_subscriptions_subscriptionId")
-  vouchers       vouchers      @relation(fields: [voucherId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fK_subscriptionVouchers_vouchers_voucherId")
-
-  @@index([subscriptionId], map: "iX_subscriptionVouchers_subscriptionId")
-  @@index([voucherId], map: "iX_subscriptionVouchers_voucherId")
-}
-
-model subscriptions {
-  id                                                          String                 @id(map: "pK_subscriptions") @db.Uuid
-  baseCost                                                    Decimal                @db.Decimal
-  userId                                                      String                 @db.Uuid
-  activeFrom                                                  DateTime               @db.Timestamptz(6)
-  activeTo                                                    DateTime               @db.Timestamptz(6)
-  confirmedAt                                                 DateTime?              @db.Timestamptz(6)
-  trialActiveTo                                               DateTime?              @db.Timestamptz(6)
-  canceledAt                                                  DateTime?              @db.Timestamptz(6)
-  paymentsSuspendedTo                                         DateTime?              @db.Timestamptz(6)
-  churnDate                                                   DateTime?              @db.Timestamptz(6)
-  specialOfferCost                                            Decimal?               @db.Decimal
-  specialOfferActiveTo                                        DateTime?              @db.Timestamptz(6)
-  subscriptionType                                            String
-  isCancellationConfirmed                                     Boolean
-  paymentProvider                                             String
-  subscriptionPlanExternalId                                  String?
-  subscriptionRecordExternalId                                String?
-  conversionDate                                              DateTime?              @db.Timestamptz(6)
-  paymentProviderData                                         String?
-  subscriptionState                                           String
-  created                                                     DateTime               @default(now()) @db.Timestamptz(6)
-  updated                                                     DateTime?              @db.Timestamptz(6)
-  isDeleted                                                   Boolean
-  paymentMethod                                               String?
-  payments                                                    payments[]
-  referrals_referrals_claimedForSubscriptionIdTosubscriptions referrals[]            @relation("referrals_claimedForSubscriptionIdTosubscriptions")
-  referrals_referrals_referredSubscriptionIdTosubscriptions   referrals?             @relation("referrals_referredSubscriptionIdTosubscriptions")
-  subscriptionEvents                                          subscriptionEvents[]
-  subscriptionVouchers                                        subscriptionVouchers[]
-  users                                                       users                  @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fK_subscriptions_users_userId")
-
-  @@index([userId], map: "iX_subscriptions_userId")
-  @@index([subscriptionRecordExternalId], map: "idx_subscriptions_subscriptionrecordexternalid")
-}
-
-model userClaims {
-  id         Int     @id(map: "pK_userClaims") @default(autoincrement())
-  userId     String  @db.Uuid
-  claimType  String?
-  claimValue String?
-  users      users   @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fK_userClaims_users_userId")
-
-  @@index([userId], map: "iX_userClaims_userId")
-}
-
-model userLogins {
-  loginProvider       String
-  providerKey         String
-  providerDisplayName String?
-  userId              String  @db.Uuid
-  users               users   @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fK_userLogins_users_userId")
-
-  @@id([loginProvider, providerKey], map: "pK_userLogins")
-  @@index([userId], map: "iX_userLogins_userId")
-}
-
-model userRoles {
-  userId String @db.Uuid
-  roleId String @db.Uuid
-  roles  roles  @relation(fields: [roleId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fK_userRoles_roles_roleId")
-  users  users  @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fK_userRoles_users_userId")
-
-  @@id([userId, roleId], map: "pK_userRoles")
-  @@index([roleId], map: "iX_userRoles_roleId")
-}
-
-model userTokens {
-  userId        String  @db.Uuid
-  loginProvider String
-  name          String
-  value         String?
-  users         users   @relation(fields: [userId], references: [id], onDelete: Cascade, onUpdate: NoAction, map: "fK_userTokens_users_userId")
-
-  @@id([userId, loginProvider, name], map: "pK_userTokens")
-}
-
 /// This model contains an expression index which requires additional setup for migrations. Visit https://pris.ly/d/expression-indexes for more info.
 model users {
-  id                                  String          @id(map: "pK_users") @db.Uuid
-  firstName                           String?
-  lastName                            String?
-  streetAndNumber                     String?
-  postalCode                          String?
-  city                                String?
-  country                             String?
-  refreshToken                        String?
-  smsVerificationId                   String?
-  imageUrl                            String?
-  currentBalance                      Decimal         @db.Decimal
-  created                             DateTime        @default(now()) @db.Timestamptz(6)
-  updated                             DateTime?       @db.Timestamptz(6)
-  isDeleted                           Boolean
-  dealsRedeemed                       Int
-  mollieCustomerId                    String?
-  paypalPayerId                       String?
-  advertisingType                     Int?
-  deviceIdentifier                    String?
-  stripeCustomerId                    String?
-  userLanguageCode                    String?         @default("de")
-  cultureName                         String?
-  currencyCode                        String?         @default("EUR")
-  countryCode                         String?
-  firebaseAppInstanceId               String?
-  mobilePlatform                      String?
-  specialOfferTriggeredAt             DateTime?       @db.Timestamptz(6)
-  blockImportForEventTrackingServices Boolean
-  imageId                             String?         @db.Uuid
-  referralId                          String?         @db.Uuid
-  personalReferralCodeId              String?         @db.Uuid
-  approximatedCityId                  String?         @db.Uuid
-  userName                            String?         @db.VarChar(256)
-  normalizedUserName                  String?         @unique(map: "UserNameIndex") @db.VarChar(256)
-  email                               String?         @db.VarChar(256)
-  normalizedEmail                     String?         @db.VarChar(256)
-  emailConfirmed                      Boolean
-  passwordHash                        String?
-  securityStamp                       String?
-  concurrencyStamp                    String?
-  phoneNumber                         String?
-  phoneNumberConfirmed                Boolean
-  twoFactorEnabled                    Boolean
-  lockoutEnd                          DateTime?       @db.Timestamptz(6)
-  lockoutEnabled                      Boolean
-  accessFailedCount                   Int
-  canImpersonate                      Boolean         @default(false)
-  disabled                            Boolean         @default(false)
-  celloReferrerCode                   String?
-  referralCodes                       referralCodes?
-  subscriptions                       subscriptions[]
-  userClaims                          userClaims[]
-  userLogins                          userLogins[]
-  userRoles                           userRoles[]
-  userTokens                          userTokens[]
-  referrals                           referrals?      @relation(fields: [referralId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fK_users_referrals_referralId")
-
-  @@index([normalizedEmail], map: "EmailIndex")
-  @@index([referralId], map: "iX_users_referralId")
-  @@index([created], map: "idx_users_created")
-  @@index([deviceIdentifier], map: "idx_users_deviceidentifier")
-  @@index([phoneNumber], map: "idx_users_phonenumber")
-  @@index([refreshToken], map: "idx_users_refreshtoken")
+  id            Int            @id @default(autoincrement())
+  email         String         @db.VarChar
+  password      String         @db.VarChar
+  name          String?        @db.VarChar
+  password_salt String         @db.VarChar
+  token_salt    String         @db.VarChar
+  collections   collections[]
+  translations  translations[]
 }
 
-model voucherGroups {
-  id                    String     @id(map: "pK_voucherGroups") @db.Uuid
-  name                  String     @unique(map: "iX_voucherGroups_name") @db.VarChar(100)
-  groupCode             String?    @unique(map: "iX_voucherGroups_groupCode")
-  totalUsesPerCode      Int?
-  quantity              Int
-  active                Boolean
-  subscriptionMandatory Boolean
-  restriction           Int
-  value                 Int
-  activeUntil           DateTime?  @db.Timestamptz(6)
-  periodType            Int
-  created               DateTime   @default(now()) @db.Timestamptz(6)
-  updated               DateTime?  @db.Timestamptz(6)
-  isDeleted             Boolean
-  vouchers              vouchers[]
+model collections {
+  id           Int            @id @default(autoincrement())
+  name         String         @db.VarChar
+  user_id      Int
+  users        users          @relation(fields: [user_id], references: [id], onDelete: Cascade, map: "FK_one_user_has_many_collections")
+  translations translations[]
 }
 
-/// This model contains an expression index which requires additional setup for migrations. Visit https://pris.ly/d/expression-indexes for more info.
-model vouchers {
-  id                    String                 @id(map: "pK_vouchers") @db.Uuid
-  code                  String                 @unique(map: "iX_vouchers_code") @db.VarChar(32)
-  uses                  Int
-  totalUses             Int?
-  active                Boolean
-  type                  String
-  subscriptionMandatory Boolean
-  restriction           String
-  value                 Float
-  monthlyValue          Int
-  activeUntil           DateTime?              @db.Timestamptz(6)
-  periodType            String?
-  dailyValue            Int
-  voucherGroupId        String?                @db.Uuid
-  created               DateTime               @default(now()) @db.Timestamptz(6)
-  updated               DateTime?              @db.Timestamptz(6)
-  isDeleted             Boolean
-  subscriptionVouchers  subscriptionVouchers[]
-  voucherGroups         voucherGroups?         @relation(fields: [voucherGroupId], references: [id], onDelete: NoAction, onUpdate: NoAction, map: "fK_vouchers_voucherGroups_voucherGroupId")
-
-  @@index([voucherGroupId], map: "iX_vouchers_voucherGroupId")
+model example_sentences {
+  id             Int          @id @default(autoincrement())
+  translation_id Int
+  sentence       String       @db.VarChar
+  translations   translations @relation(fields: [translation_id], references: [id], onDelete: Cascade, map: "FK_one_translation_has_many_examples")
 }
 
-model referralCampaigns {
-  id           String   @id(map: "pk_referralCampaigns") @db.Uuid
-  created      DateTime @default(now()) @db.Timestamptz(6)
-  updated      DateTime @default(now()) @db.Timestamptz(6)
-  isDeleted    Boolean  @default(false)
-  startDate    DateTime @db.Timestamptz(6)
-  endDate      DateTime @db.Timestamptz(6)
-  rewardAmount Int
+model seaql_migrations {
+  version    String @id @db.VarChar
+  applied_at BigInt
+}
 
-  @@index([startDate, endDate], map: "idx_referral_campaigns_dates")
+model translations {
+  id                Int                 @id @default(autoincrement())
+  source_language   String              @db.VarChar
+  source_text       String              @db.VarChar
+  target_language   String              @db.VarChar
+  target_text       String              @db.VarChar
+  user_id           Int
+  collection_id     Int?
+  example_sentences example_sentences[]
+  collections       collections?        @relation(fields: [collection_id], references: [id], onDelete: Cascade, map: "FK_one_collection_has_many_translations")
+  users             users               @relation(fields: [user_id], references: [id], onDelete: Cascade, map: "FK_one_user_has_many_translations")
 }

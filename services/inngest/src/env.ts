@@ -4,6 +4,8 @@ import z from "zod"
 dotenv.config()
 
 const schema = z.object({
+	PORT: z.coerce.number().default(8080),
+
 	ENVIRONMENT: z.enum(["development", "test", "production", "staging"]).default("production"),
 	DATABASE_URL: z.string(),
 

@@ -5,6 +5,7 @@ import { ClientsFactory } from "./setup/dependencies/factories/clientsFactory.js
 import { CommonServicesFactory } from "./setup/dependencies/factories/commonServicesFactory.js"
 import { ModelServicesFactory } from "./setup/dependencies/factories/modelServicesFactory.js"
 import { logger } from "./setup/logger.js"
+import { env } from "@/env.js"
 
 const fastify = createServer({
 	withLogger: true,
@@ -41,7 +42,7 @@ const fastify = createServer({
 })
 
 try {
-	const port = process.env.PORT ? parseInt(process.env.PORT) : 8080
+	const port = env.PORT
 	await fastify.listen({ port, host: "0.0.0.0" })
 } catch (err) {
 	fastify.log.error(err)

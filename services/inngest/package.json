@@ -12,7 +12,8 @@
         "lint": "biome lint",
         "ts": "tsc --noEmit",
         "db-generate": "npx prisma generate",
-        "dev": "tsx watch src/index.ts"
+        "dev": "tsx watch src/index.ts",
+        "generate-prisma-schema": "npx prisma db pull"
     },
     "author": "Fabian Hinz",
     "dependencies": {
@@ -30,7 +31,8 @@
         "fastify-type-provider-zod": "^4.0.2",
         "inngest": "^3.40.1",
         "uuid": "^11.1.0",
-        "zod": "^3.24.4"
+        "zod": "^3.24.4",
+        "pino": "^10.1.0"
     },
     "devDependencies": {
         "@types/node": "^20.0.0",

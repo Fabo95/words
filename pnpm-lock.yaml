@@ -14,7 +14,7 @@ importers:
         specifier: ^1.9.4
         version: 1.9.4
 
-  services/user-api:
+  services/inngest:
     dependencies:
       '@fastify/awilix':
         specifier: ^8.0.0
@@ -55,6 +55,9 @@ importers:
       inngest:
         specifier: ^3.40.1
         version: 3.44.4(fastify@5.6.1)(next@15.3.5(@opentelemetry/api@1.9.0)(react-dom@19.1.0(react@19.1.0))(react@19.1.0))(typescript@5.9.3)(zod@3.25.75)
+      pino:
+        specifier: ^10.1.0
+        version: 10.1.0
       uuid:
         specifier: ^11.1.0
         version: 11.1.0
@@ -2829,6 +2832,10 @@ packages:
   pino-std-serializers@7.0.0:
     resolution: {integrity: sha512-e906FRY0+tV27iq4juKzSYPbUj2do2X2JX4EzSca1631EB2QJQUqGbDuERal7LCtOpxl6x3+nvo9NPZcmjkiFA==}
 
+  pino@10.1.0:
+    resolution: {integrity: sha512-0zZC2ygfdqvqK8zJIr1e+wT1T/L+LF6qvqvbzEQ6tiMAoTqEVK9a1K3YRu8HEUvGEvNqZyPJTtb2sNIoTkB83w==}
+    hasBin: true
+
   pino@9.14.0:
     resolution: {integrity: sha512-8OEwKp5juEvb/MjpIc4hjqfgCNysrS94RIOMXYvpYCdm/jglrKEiAYmiumbmGhCvs+IcInsphYDFwqrjr7398w==}
     hasBin: true
@@ -5235,11 +5242,11 @@ snapshots:
 
   '@types/bunyan@1.8.11':
     dependencies:
-      '@types/node': 20.19.24
+      '@types/node': 22.18.13
 
   '@types/connect@3.4.38':
     dependencies:
-      '@types/node': 20.19.24
+      '@types/node': 22.18.13
 
   '@types/debug@4.1.12':
     dependencies:
@@ -5247,13 +5254,13 @@ snapshots:
 
   '@types/memcached@2.2.10':
     dependencies:
-      '@types/node': 20.19.24
+      '@types/node': 22.18.13
 
   '@types/ms@2.1.0': {}
 
   '@types/mysql@2.15.26':
     dependencies:
-      '@types/node': 20.19.24
+      '@types/node': 22.18.13
 
   '@types/negotiator@0.6.3': {}
 
@@ -5275,7 +5282,7 @@ snapshots:
 
   '@types/pg@8.6.1':
     dependencies:
-      '@types/node': 20.19.24
+      '@types/node': 22.18.13
       pg-protocol: 1.10.3
       pg-types: 2.2.0
 
@@ -5297,7 +5304,7 @@ snapshots:
 
   '@types/tedious@4.0.14':
     dependencies:
-      '@types/node': 20.19.24
+      '@types/node': 22.18.13
 
   abstract-logging@2.0.1: {}
 
@@ -6171,6 +6178,20 @@ snapshots:
 
   pino-std-serializers@7.0.0: {}
 
+  pino@10.1.0:
+    dependencies:
+      '@pinojs/redact': 0.4.0
+      atomic-sleep: 1.0.0
+      on-exit-leak-free: 2.1.2
+      pino-abstract-transport: 2.0.0
+      pino-std-serializers: 7.0.0
+      process-warning: 5.0.0
+      quick-format-unescaped: 4.0.4
+      real-require: 0.2.0
+      safe-stable-stringify: 2.5.0
+      sonic-boom: 4.2.0
+      thread-stream: 3.1.0
+
   pino@9.14.0:
     dependencies:
       '@pinojs/redact': 0.4.0
@@ -6249,7 +6270,7 @@ snapshots:
       '@protobufjs/path': 1.1.2
       '@protobufjs/pool': 1.1.0
       '@protobufjs/utf8': 1.1.0
-      '@types/node': 20.19.24
+      '@types/node': 22.18.13
       long: 5.3.2
 
   pump@3.0.3:
