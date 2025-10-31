@@ -3,17 +3,17 @@
 import { Book, HomeIcon, Languages, User } from "lucide-react"
 import * as React from "react"
 
-import { SidebarCollections } from "services/words/src/components/appSidebar/components/sidebarCollections/sidebarCollections"
-import { SidebarLanguageSwitch } from "services/words/src/components/appSidebar/components/sidebarLanguageSwitch"
-import { SidebarNavigation } from "services/words/src/components/appSidebar/components/sidebarNavigation"
-import { SidebarUserActions } from "services/words/src/components/appSidebar/components/sidebarUserActions"
+import { SidebarCollections } from "@app/components/appSidebar/components/sidebarCollections/sidebarCollections"
+import { SidebarLanguageSwitch } from "@app/components/appSidebar/components/sidebarLanguageSwitch"
+import { SidebarNavigation } from "@app/components/appSidebar/components/sidebarNavigation"
+import { SidebarUserActions } from "@app/components/appSidebar/components/sidebarUserActions"
 import {
 	Sidebar,
 	SidebarContent,
 	SidebarFooter,
 	SidebarHeader,
 	SidebarRail,
-} from "services/words/src/components/ui/sidebar"
+} from "@app/components/ui/sidebar"
 import { useTranslations } from "next-intl"
 import { useMemo } from "react"
 

@@ -5,8 +5,8 @@ import * as LabelPrimitive from "@radix-ui/react-label"
 import { Slot } from "@radix-ui/react-slot"
 import { Controller, ControllerProps, FieldPath, FieldValues, FormProvider, useFormContext } from "react-hook-form"
 
-import { Label } from "services/words/src/components/ui/label"
-import { cn } from "services/words/src/utils/shadcn/shadcnHelpers"
+import { Label } from "@app/components/ui/label"
+import { cn } from "@app/utils/shadcn/shadcnHelpers"
 import { ReactNode } from "react"
 
 import IntrinsicElements = JSX.IntrinsicElements

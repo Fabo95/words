@@ -1,4 +1,4 @@
-import { Button } from "services/words/src/components/ui/button"
+import { Button } from "@app/components/ui/button"
 
 export default function Home() {
 	console.log("have")

@@ -1,8 +1,8 @@
-import { CollectionTable } from "services/words/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/collectionTable"
-import { PageContent } from "services/words/src/components/ui/pageContent"
-import { $api } from "services/words/src/utils/api/apiRequests"
-import { Locale } from "services/words/src/utils/locale/localeTypes"
-import { getQueryClient } from "services/words/src/utils/reactQuery/reactQueryHelpers"
+import { CollectionTable } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/collectionTable"
+import { PageContent } from "@app/components/ui/pageContent"
+import { $api } from "@app/utils/api/apiRequests"
+import { Locale } from "@app/utils/locale/localeTypes"
+import { getQueryClient } from "@app/utils/reactQuery/reactQueryHelpers"
 import { HydrationBoundary, dehydrate } from "@tanstack/react-query"
 import { cookies } from "next/headers"
 

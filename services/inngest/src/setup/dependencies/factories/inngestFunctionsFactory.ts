@@ -1,8 +1,10 @@
 import { I_ClientsFactory } from "@/setup/dependencies/factories/clientsFactory.js"
 import { InngestFunctions, getInngestFunctions } from "@/utils/inngest/functions/index.js"
+import { ModelServicesFactory } from "@/setup/dependencies/factories/modelServicesFactory.js"
 
 export interface InngestFunctionsFactoryDeps {
 	clientsFactory: I_ClientsFactory
+	modelServicesFactory: ModelServicesFactory
 }
 
 export interface I_InngestFunctionsFactory {
@@ -21,6 +23,7 @@ export class InngestFunctionsFactory implements I_InngestFunctionsFactory {
 		if (!this.inngestFunctions) {
 			this.inngestFunctions = getInngestFunctions({
 				inngest: this.deps.clientsFactory.getInngest(),
+				translationsModelService: this.deps.modelServicesFactory.getTranslationsModelService(),
 			})
 		}
 

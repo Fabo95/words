@@ -1,12 +1,12 @@
 import { cookies } from "next/headers"
 import { ReactNode } from "react"
 
-import { AppSidebar } from "services/words/src/components/appSidebar/appSidebar"
-import { SidebarInset, SidebarProvider, SidebarTrigger } from "services/words/src/components/ui/sidebar"
-import { $api } from "services/words/src/utils/api/apiRequests"
-import { getQueryClient } from "services/words/src/utils/reactQuery/reactQueryHelpers"
+import { AppSidebar } from "@app/components/appSidebar/appSidebar"
+import { SidebarInset, SidebarProvider, SidebarTrigger } from "@app/components/ui/sidebar"
+import { $api } from "@app/utils/api/apiRequests"
+import { getQueryClient } from "@app/utils/reactQuery/reactQueryHelpers"
 import { HydrationBoundary, dehydrate } from "@tanstack/react-query"
-import { AddTranslationTrigger } from "services/words/src/app/[lang]/(loggedIn)/_content/addTranslationTrigger"
+import { AddTranslationTrigger } from "@app/app/[lang]/(loggedIn)/_content/addTranslationTrigger"
 
 export default async function Layout({ children }: { children: ReactNode }) {
 	// --- STATE ---

@@ -1,9 +1,9 @@
-import { AccountNameForm } from "services/words/src/app/[lang]/(loggedIn)/account/_content/accountNameForm/accountNameForm"
-import { AccountPasswordForm } from "services/words/src/app/[lang]/(loggedIn)/account/_content/accountPasswordForm/accountPasswordForm"
-import { PageContent } from "services/words/src/components/ui/pageContent"
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "services/words/src/components/ui/tabs"
+import { AccountNameForm } from "@app/app/[lang]/(loggedIn)/account/_content/accountNameForm/accountNameForm"
+import { AccountPasswordForm } from "@app/app/[lang]/(loggedIn)/account/_content/accountPasswordForm/accountPasswordForm"
+import { PageContent } from "@app/components/ui/pageContent"
+import { Tabs, TabsContent, TabsList, TabsTrigger } from "@app/components/ui/tabs"
 import { getTranslations } from "next-intl/server"
-import { Locale } from "services/words/src/utils/locale/localeTypes"
+import { Locale } from "@app/utils/locale/localeTypes"
 
 export default async function Page({ params }: { params: Promise<Record<"lang", Locale>> }) {
 	// --- STATE ---

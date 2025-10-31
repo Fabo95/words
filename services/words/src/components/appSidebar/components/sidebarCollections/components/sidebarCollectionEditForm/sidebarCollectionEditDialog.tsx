@@ -5,11 +5,11 @@ import {
 	DialogFooter,
 	DialogHeader,
 	DialogTitle,
-} from "services/words/src/components/ui/dialog"
+} from "@app/components/ui/dialog"
 import { useTranslations } from "next-intl"
 import { useCallback } from "react"
 import * as React from "react"
-import { SidebarCollectionEditForm } from "services/words/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionEditForm/sidebarCollectionEditForm"
+import { SidebarCollectionEditForm } from "@app/components/appSidebar/components/sidebarCollections/components/sidebarCollectionEditForm/sidebarCollectionEditForm"
 
 type ISidebarCollectionEditDialogProps = {
 	id: number

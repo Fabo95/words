@@ -1,12 +1,12 @@
 import { ColumnDef } from "@tanstack/react-table"
 
-import { CollectionTableActions } from "services/words/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableActions"
-import { CollectionTranslation } from "services/words/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/utils/collectionTableTypes"
-import { Checkbox } from "services/words/src/components/ui/checkbox"
-import { DataTableColumnHeader } from "services/words/src/components/ui/dataTable/dataTableColumnHeader"
-import { FormField } from "services/words/src/components/ui/formField"
-import { Input } from "services/words/src/components/ui/input"
-import { Tooltip, TooltipContent, TooltipTrigger } from "services/words/src/components/ui/tooltip"
+import { CollectionTableActions } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableActions"
+import { CollectionTranslation } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/utils/collectionTableTypes"
+import { Checkbox } from "@app/components/ui/checkbox"
+import { DataTableColumnHeader } from "@app/components/ui/dataTable/dataTableColumnHeader"
+import { FormField } from "@app/components/ui/formField"
+import { Input } from "@app/components/ui/input"
+import { Tooltip, TooltipContent, TooltipTrigger } from "@app/components/ui/tooltip"
 import * as React from "react"
 
 export const COLLECTION_TABLE_COLUMNS: ColumnDef<CollectionTranslation>[] = [

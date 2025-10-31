@@ -1,9 +1,9 @@
 "use client"
 
-import { COLLECTION_TABLE_COLUMNS } from "services/words/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/utils/collectionTableConstants"
-import { CollectionTranslation } from "services/words/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/utils/collectionTableTypes"
-import { DataTable } from "services/words/src/components/ui/dataTable/dataTable"
-import { $api } from "services/words/src/utils/api/apiRequests"
+import { COLLECTION_TABLE_COLUMNS } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/utils/collectionTableConstants"
+import { CollectionTranslation } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/utils/collectionTableTypes"
+import { DataTable } from "@app/components/ui/dataTable/dataTable"
+import { $api } from "@app/utils/api/apiRequests"
 import { useParams } from "next/navigation"
 import { useMemo } from "react"
 

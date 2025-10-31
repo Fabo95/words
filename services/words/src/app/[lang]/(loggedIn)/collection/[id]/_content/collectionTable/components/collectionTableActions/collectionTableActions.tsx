@@ -1,20 +1,20 @@
 import { Row } from "@tanstack/react-table"
 import { Delete, Edit, MoreHorizontal, Trash2 } from "lucide-react"
 
-import { CollectionTableDeleteFromCollectionDialog } from "services/words/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableDeleteFromCollectionDialog"
-import { CollectionTableDeleteTranslationDialog } from "services/words/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableDeleteTranslationDialog"
-import { CollectionTableEditTranslationForm } from "services/words/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableEditTranslationForm/collectionTableEditTranslationForm"
-import { CollectionTranslation } from "services/words/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/utils/collectionTableTypes"
-import { Button } from "services/words/src/components/ui/button"
-import { Dialog, DialogDescription, DialogHeader, DialogTitle } from "services/words/src/components/ui/dialog"
+import { CollectionTableDeleteFromCollectionDialog } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableDeleteFromCollectionDialog"
+import { CollectionTableDeleteTranslationDialog } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableDeleteTranslationDialog"
+import { CollectionTableEditTranslationForm } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableEditTranslationForm/collectionTableEditTranslationForm"
+import { CollectionTranslation } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/utils/collectionTableTypes"
+import { Button } from "@app/components/ui/button"
+import { Dialog, DialogDescription, DialogHeader, DialogTitle } from "@app/components/ui/dialog"
 import {
 	DropdownMenu,
 	DropdownMenuContent,
 	DropdownMenuItem,
 	DropdownMenuSeparator,
 	DropdownMenuTrigger,
-} from "services/words/src/components/ui/dropdown-menu"
-import { useSidebar } from "services/words/src/components/ui/sidebar"
+} from "@app/components/ui/dropdown-menu"
+import { useSidebar } from "@app/components/ui/sidebar"
 import { useState } from "react"
 import { useTranslations } from "next-intl"
 import * as React from "react"

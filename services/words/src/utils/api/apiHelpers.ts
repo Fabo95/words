@@ -1,4 +1,4 @@
-import { HttpMethod } from "services/words/src/utils/api/apiConstants"
+import { HttpMethod } from "@app/utils/api/apiConstants"
 
 type GetFetchOptions = Omit<RequestInit, "body"> & {
 	body?: {

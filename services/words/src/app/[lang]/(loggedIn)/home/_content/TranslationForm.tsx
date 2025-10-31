@@ -6,17 +6,17 @@ import { useForm, useWatch } from "react-hook-form"
 import { zodResolver } from "@hookform/resolvers/zod"
 import { useTranslations } from "next-intl"
 
-import { Button } from "services/words/src/components/ui/button"
-import { Form, FormProvider } from "services/words/src/components/ui/form"
-import { FormField } from "services/words/src/components/ui/formField"
-import { Input } from "services/words/src/components/ui/input"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "services/words/src/components/ui/select"
-import { useToast } from "services/words/src/components/ui/use-toast"
-import { $api } from "services/words/src/utils/api/apiRequests"
+import { Button } from "@app/components/ui/button"
+import { Form, FormProvider } from "@app/components/ui/form"
+import { FormField } from "@app/components/ui/formField"
+import { Input } from "@app/components/ui/input"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@app/components/ui/select"
+import { useToast } from "@app/components/ui/use-toast"
+import { $api } from "@app/utils/api/apiRequests"
 
-import { TranslationFormState } from "services/words/src/app/[lang]/(loggedIn)/home/_content/utils/translationFormTypes"
-import { getTranslationFormSchema } from "services/words/src/app/[lang]/(loggedIn)/home/_content/utils/translationFormSchema"
-import { getLanguageOptions, Locale } from "services/words/src/utils/locale/localeTypes"
+import { TranslationFormState } from "@app/app/[lang]/(loggedIn)/home/_content/utils/translationFormTypes"
+import { getTranslationFormSchema } from "@app/app/[lang]/(loggedIn)/home/_content/utils/translationFormSchema"
+import { getLanguageOptions, Locale } from "@app/utils/locale/localeTypes"
 
 export const TranslationForm = () => {
 	const { toast } = useToast()

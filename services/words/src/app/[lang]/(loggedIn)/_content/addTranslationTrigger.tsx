@@ -7,11 +7,11 @@ import {
 	DialogDescription,
 	DialogHeader,
 	DialogTitle,
-} from "services/words/src/components/ui/dialog"
-import { TranslationForm } from "services/words/src/app/[lang]/(loggedIn)/home/_content/TranslationForm"
+} from "@app/components/ui/dialog"
+import { TranslationForm } from "@app/app/[lang]/(loggedIn)/home/_content/TranslationForm"
 import * as React from "react"
 import { useTranslations } from "next-intl"
-import { Button } from "services/words/src/components/ui/button"
+import { Button } from "@app/components/ui/button"
 import { PlusIcon } from "@radix-ui/react-icons"
 
 export const AddTranslationTrigger = () => {

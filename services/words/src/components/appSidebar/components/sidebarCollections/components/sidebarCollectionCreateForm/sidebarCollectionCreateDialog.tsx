@@ -4,11 +4,11 @@ import {
 	DialogDescription,
 	DialogHeader,
 	DialogTitle,
-} from "services/words/src/components/ui/dialog"
+} from "@app/components/ui/dialog"
 import { useTranslations } from "next-intl"
 import { useCallback } from "react"
 import * as React from "react"
-import { SidebarCollectionCreateForm } from "services/words/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionCreateForm/sidebarCollectionCreateForm"
+import { SidebarCollectionCreateForm } from "@app/components/appSidebar/components/sidebarCollections/components/sidebarCollectionCreateForm/sidebarCollectionCreateForm"
 
 type ISidebarCollectionCreateDialogProps = {
 	isDialogOpen: boolean

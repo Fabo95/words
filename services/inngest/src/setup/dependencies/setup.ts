@@ -24,6 +24,10 @@ async function createRequestCradle(requerstCradleFactories: {
 		inngest: asFunction(() => requerstCradleFactories.clientsFactory.getInngest()),
 
 		inngestFunctions: asFunction(() => requerstCradleFactories.inngestFunctionsFactory.getInngestFunctions()),
+
+		translationsModelService: asFunction(() =>
+			requerstCradleFactories.modelServicesFactory.getTranslationsModelService(),
+		),
 	}
 }
 

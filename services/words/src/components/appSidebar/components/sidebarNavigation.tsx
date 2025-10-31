@@ -2,7 +2,7 @@
 
 import { type LucideIcon } from "lucide-react"
 
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "services/words/src/components/ui/collapsible"
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@app/components/ui/collapsible"
 import {
 	SidebarGroup,
 	SidebarGroupLabel,
@@ -12,7 +12,7 @@ import {
 	SidebarMenuSub,
 	SidebarMenuSubButton,
 	SidebarMenuSubItem,
-} from "services/words/src/components/ui/sidebar"
+} from "@app/components/ui/sidebar"
 import { ChevronRightIcon } from "@radix-ui/react-icons"
 import Link from "next/link"
 

@@ -1,9 +1,9 @@
 "use client"
 
 import { useEffect } from "react"
-import { Box } from "services/words/src/components/ui/box"
-import { Button } from "services/words/src/components/ui/button"
-import { Text } from "services/words/src/components/ui/text"
+import { Box } from "@app/components/ui/box"
+import { Button } from "@app/components/ui/button"
+import { Text } from "@app/components/ui/text"
 
 export default function Error({ error, reset }: { error: Error & { digest?: string }; reset: () => void }) {
 	useEffect(() => {

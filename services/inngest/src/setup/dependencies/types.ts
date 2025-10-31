@@ -5,6 +5,7 @@ import { FastifyBaseLogger } from "fastify"
 import { Inngest } from "@/clients/inngest.js"
 import { PrismaClient } from "@/generated/user-db/client.js"
 import { InngestFunctions } from "@/utils/inngest/functions/index.js"
+import { TranslationsModelService } from "@/services/model/translationsModelService.js"
 
 declare module "@fastify/awilix" {
 	// get initialized when app starts
@@ -16,6 +17,7 @@ declare module "@fastify/awilix" {
 	interface RequestCradle {
 		inngestFunctions: InngestFunctions
 		inngest: Inngest
+		translationsModelService: TranslationsModelService
 	}
 }
 

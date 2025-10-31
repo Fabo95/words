@@ -1,6 +1,6 @@
 import { useCallback } from "react"
 
-import { Button } from "services/words/src/components/ui/button"
+import { Button } from "@app/components/ui/button"
 import {
 	Dialog,
 	DialogContent,
@@ -8,9 +8,9 @@ import {
 	DialogFooter,
 	DialogHeader,
 	DialogTitle,
-} from "services/words/src/components/ui/dialog"
-import { useToast } from "services/words/src/components/ui/use-toast"
-import { $api } from "services/words/src/utils/api/apiRequests"
+} from "@app/components/ui/dialog"
+import { useToast } from "@app/components/ui/use-toast"
+import { $api } from "@app/utils/api/apiRequests"
 import { useTranslations } from "next-intl"
 import { useQueryClient } from "@tanstack/react-query"
 

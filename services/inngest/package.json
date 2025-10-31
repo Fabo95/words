@@ -1,5 +1,5 @@
 {
-    "name": "user-api",
+    "name": "inngest",
     "version": "2.0.0",
     "description": "",
     "main": "./dist/index.js",
@@ -8,15 +8,16 @@
     "rootDir": "src",
     "scripts": {
         "start:api": "node ./dist/src/index.js",
-        "build": "rm -rf ./dist/* && yarn db-generate && yarn lint && tsc -p tsconfig.json && tsc-alias -p tsconfig.json",
+        "build": "rm -rf ./dist/* && pnpm db-generate && pnpm lint && tsc -p tsconfig.json && tsc-alias -p tsconfig.json",
         "lint": "biome lint",
         "ts": "tsc --noEmit",
         "dev": "tsx watch src/index.ts",
-        "prisma:generate": "npx prisma generate",
-        "prisma:pull": "npx prisma db pull"
+        "prisma:pull": "npx prisma db pull",
+        "prisma:generate": "npx prisma generate"
     },
     "author": "Fabian Hinz",
     "dependencies": {
+        "tsx": "^4.20.6",
         "@fastify/awilix": "^8.0.0",
         "@fastify/basic-auth": "^6.2.0",
         "@fastify/cors": "^11.1.0",

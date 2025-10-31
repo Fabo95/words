@@ -29,6 +29,7 @@ const fastify = createServer({
 
 			const inngestFunctionsFactory = new InngestFunctionsFactory({
 				clientsFactory,
+				modelServicesFactory,
 			})
 
 			return {

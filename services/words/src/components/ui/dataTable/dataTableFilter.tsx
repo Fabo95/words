@@ -1,6 +1,6 @@
-import { Input } from "services/words/src/components/ui/input"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "services/words/src/components/ui/select"
-import { Option } from "services/words/src/utils/types/objectTypes"
+import { Input } from "@app/components/ui/input"
+import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@app/components/ui/select"
+import { Option } from "@app/utils/types/objectTypes"
 import { Table } from "@tanstack/react-table"
 import { useState } from "react"
 

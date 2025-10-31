@@ -28,6 +28,16 @@ services:
       - app-network
     restart: unless-stopped
 
+  inngest:
+    image: inngest/inngest:latest
+    ports:
+      - "8288:8288"
+    command: >
+      inngest dev -u http://host.docker.internal:8086/inngest/serve
+    environment:
+      INNGEST_DEV: 1
+
+
 networks:
   app-network:
     driver: bridge

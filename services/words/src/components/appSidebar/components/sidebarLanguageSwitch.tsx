@@ -9,9 +9,9 @@ import {
 	DropdownMenuLabel,
 	DropdownMenuSeparator,
 	DropdownMenuTrigger,
-} from "services/words/src/components/ui/dropdown-menu"
-import { SidebarMenu, SidebarMenuButton, SidebarMenuItem } from "services/words/src/components/ui/sidebar"
-import { Tooltip, TooltipContent, TooltipTrigger } from "services/words/src/components/ui/tooltip"
+} from "@app/components/ui/dropdown-menu"
+import { SidebarMenu, SidebarMenuButton, SidebarMenuItem } from "@app/components/ui/sidebar"
+import { Tooltip, TooltipContent, TooltipTrigger } from "@app/components/ui/tooltip"
 import { useTranslations } from "next-intl"
 import { CaretSortIcon, PlusIcon } from "@radix-ui/react-icons"
 

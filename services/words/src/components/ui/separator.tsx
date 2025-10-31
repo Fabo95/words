@@ -2,7 +2,7 @@
 
 import * as React from "react"
 import * as SeparatorPrimitive from "@radix-ui/react-separator"
-import { cn } from "services/words/src/utils/shadcn/shadcnHelpers"
+import { cn } from "@app/utils/shadcn/shadcnHelpers"
 
 const Separator = React.forwardRef<
 	React.ElementRef<typeof SeparatorPrimitive.Root>,

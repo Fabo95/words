@@ -1,6 +1,6 @@
 "use client"
 
-import { cn } from "services/words/src/utils/shadcn/shadcnHelpers"
+import { cn } from "@app/utils/shadcn/shadcnHelpers"
 import * as DialogPrimitive from "@radix-ui/react-dialog"
 import { Cross2Icon } from "@radix-ui/react-icons"
 import * as React from "react"

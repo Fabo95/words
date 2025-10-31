@@ -1,9 +1,9 @@
 import createMiddleware from "next-intl/middleware"
 import { routing } from "./i18n/routing"
 import { NextRequest, NextResponse } from "next/server"
-import { Cookies } from "services/words/src/utils/cookies/cookies"
-import { getIsLoggedInRoute, getIsLoggedOutRoute } from "services/words/src/utils/middleware/middlewareHelpers"
-import { ENV } from "services/words/src/utils/env/env"
+import { Cookies } from "@app/utils/cookies/cookies"
+import { getIsLoggedInRoute, getIsLoggedOutRoute } from "@app/utils/middleware/middlewareHelpers"
+import { ENV } from "@app/utils/env/env"
 
 const i18nMiddleware = createMiddleware(routing)
 

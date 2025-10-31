@@ -13,11 +13,11 @@ import {
 } from "@tanstack/react-table"
 import { useState } from "react"
 
-import { DataTableFilter } from "services/words/src/components/ui/dataTable/dataTableFilter"
-import { DataTablePagination } from "services/words/src/components/ui/dataTable/dataTablePagination"
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "services/words/src/components/ui/table"
-import { Tooltip, TooltipContent, TooltipTrigger } from "services/words/src/components/ui/tooltip"
-import { Option } from "services/words/src/utils/types/objectTypes"
+import { DataTableFilter } from "@app/components/ui/dataTable/dataTableFilter"
+import { DataTablePagination } from "@app/components/ui/dataTable/dataTablePagination"
+import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@app/components/ui/table"
+import { Tooltip, TooltipContent, TooltipTrigger } from "@app/components/ui/tooltip"
+import { Option } from "@app/utils/types/objectTypes"
 import * as React from "react"
 
 interface DataTableProps<TData, TValue> {

@@ -1,9 +1,9 @@
 import { z } from "zod"
 
-import { $api } from "services/words/src/utils/api/apiRequests"
+import { $api } from "@app/utils/api/apiRequests"
 import { TFunction } from "@app/utils/i18n/utils/i18nTypes"
-import { getQueryClient } from "services/words/src/utils/reactQuery/reactQueryHelpers"
-import { emailSchema } from "services/words/src/utils/schemas/schemas"
+import { getQueryClient } from "@app/utils/reactQuery/reactQueryHelpers"
+import { emailSchema } from "@app/utils/schemas/schemas"
 
 export const getRegistrationFormSchema = (t: TFunction) =>
 	z

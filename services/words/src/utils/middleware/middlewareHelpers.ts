@@ -1,7 +1,7 @@
-import { LOGGED_IN_PATHS, LOGGED_OUT_PATHS, routing } from "services/words/src/i18n/routing"
+import { LOGGED_IN_PATHS, LOGGED_OUT_PATHS, routing } from "@app/i18n/routing"
 import { URLPattern } from "next/server"
-import { Locale } from "services/words/src/utils/locale/localeTypes"
-import { ENV } from "services/words/src/utils/env/env"
+import { Locale } from "@app/utils/locale/localeTypes"
+import { ENV } from "@app/utils/env/env"
 
 function buildPatterns(paths: typeof LOGGED_IN_PATHS | typeof LOGGED_OUT_PATHS) {
 	return paths.flatMap((path) => {

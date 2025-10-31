@@ -1,5 +1,5 @@
-import { paths } from "services/words/src/generated/openApiTypes"
-import { ENV } from "services/words/src/utils/env/env"
+import { paths } from "@app/generated/openApiTypes"
+import { ENV } from "@app/utils/env/env"
 import createFetchClient, { Middleware } from "openapi-fetch"
 import createClient from "openapi-react-query"
 

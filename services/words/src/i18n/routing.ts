@@ -1,6 +1,6 @@
 // src/i18n/routes.ts
 import { defineRouting } from "next-intl/routing"
-import { Locale } from "services/words/src/utils/locale/localeTypes"
+import { Locale } from "@app/utils/locale/localeTypes"
 
 // 1 Your one source of truth: split by logged out and logged in paths (without locale prefix)
 

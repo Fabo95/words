@@ -1,6 +1,6 @@
-import { PageContent } from "services/words/src/components/ui/pageContent"
-import { getQueryClient } from "services/words/src/utils/reactQuery/reactQueryHelpers"
-import { $api } from "services/words/src/utils/api/apiRequests"
+import { PageContent } from "@app/components/ui/pageContent"
+import { getQueryClient } from "@app/utils/reactQuery/reactQueryHelpers"
+import { $api } from "@app/utils/api/apiRequests"
 import { cookies } from "next/headers"
 
 export default async function () {

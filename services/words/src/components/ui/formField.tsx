@@ -7,7 +7,7 @@ import {
 	FormItem,
 	FormLabel,
 	FormMessage,
-} from "services/words/src/components/ui/form"
+} from "@app/components/ui/form"
 
 type FormFieldProps<
 	TFieldValues extends FieldValues = FieldValues,

@@ -2,7 +2,7 @@
 
 import { LogOut, Sparkles, User } from "lucide-react"
 
-import { Avatar, AvatarFallback, AvatarImage } from "services/words/src/components/ui/avatar"
+import { Avatar, AvatarFallback, AvatarImage } from "@app/components/ui/avatar"
 import {
 	DropdownMenu,
 	DropdownMenuContent,
@@ -11,11 +11,11 @@ import {
 	DropdownMenuLabel,
 	DropdownMenuSeparator,
 	DropdownMenuTrigger,
-} from "services/words/src/components/ui/dropdown-menu"
-import { SidebarMenu, SidebarMenuButton, SidebarMenuItem, useSidebar } from "services/words/src/components/ui/sidebar"
-import { $api } from "services/words/src/utils/api/apiRequests"
+} from "@app/components/ui/dropdown-menu"
+import { SidebarMenu, SidebarMenuButton, SidebarMenuItem, useSidebar } from "@app/components/ui/sidebar"
+import { $api } from "@app/utils/api/apiRequests"
 import { useTranslations } from "next-intl"
-import { Page } from "services/words/src/utils/types/pageTypes"
+import { Page } from "@app/utils/types/pageTypes"
 import { CaretSortIcon } from "@radix-ui/react-icons"
 import { useQueryClient } from "@tanstack/react-query"
 import { useRouter } from "next/navigation"

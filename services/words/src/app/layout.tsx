@@ -1,16 +1,15 @@
 import { ReactNode } from "react"
-import "services/words/src/styles/globals.css"
+import "@app/styles/globals.css"
 
 import type { Metadata } from "next"
 import { Geist_Mono } from "next/font/google"
 
-import { QueryClientProvider } from "services/words/src/components/reactQuery/QueryClientProvider"
-import { Box } from "services/words/src/components/ui/box"
-import { Row } from "services/words/src/components/ui/row"
-import { Toaster } from "services/words/src/components/ui/toaster"
-import { cn } from "services/words/src/utils/shadcn/shadcnHelpers"
+import { Toaster } from "@app/components/ui/toaster"
+import { cn } from "@app/utils/shadcn/shadcnHelpers"
 import { getLocale } from "next-intl/server"
 import { NextIntlClientProvider } from "next-intl"
+import { QueryClientProvider } from "@app/components/reactQuery/QueryClientProvider"
+import { Box } from "@app/components/ui/box"
 
 const font = Geist_Mono({
 	subsets: ["latin"],

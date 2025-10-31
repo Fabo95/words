@@ -2,18 +2,18 @@
 
 import { Edit, Folder, Plus, Trash2 } from "lucide-react"
 
-import { SidebarCollectionCreateDialog } from "services/words/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionCreateForm/sidebarCollectionCreateDialog"
-import { SidebarCollectionDeleteDialog } from "services/words/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionDeleteDialog/sidebarCollectionDeleteDialog"
-import { SidebarCollectionEditDialog } from "services/words/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionEditForm/sidebarCollectionEditDialog"
-import { Button } from "services/words/src/components/ui/button"
-import { Dialog, DialogTrigger } from "services/words/src/components/ui/dialog"
+import { SidebarCollectionCreateDialog } from "@app/components/appSidebar/components/sidebarCollections/components/sidebarCollectionCreateForm/sidebarCollectionCreateDialog"
+import { SidebarCollectionDeleteDialog } from "@app/components/appSidebar/components/sidebarCollections/components/sidebarCollectionDeleteDialog/sidebarCollectionDeleteDialog"
+import { SidebarCollectionEditDialog } from "@app/components/appSidebar/components/sidebarCollections/components/sidebarCollectionEditForm/sidebarCollectionEditDialog"
+import { Button } from "@app/components/ui/button"
+import { Dialog, DialogTrigger } from "@app/components/ui/dialog"
 import {
 	DropdownMenu,
 	DropdownMenuContent,
 	DropdownMenuItem,
 	DropdownMenuSeparator,
 	DropdownMenuTrigger,
-} from "services/words/src/components/ui/dropdown-menu"
+} from "@app/components/ui/dropdown-menu"
 import {
 	SidebarGroup,
 	SidebarGroupLabel,
@@ -22,10 +22,10 @@ import {
 	SidebarMenuButton,
 	SidebarMenuItem,
 	useSidebar,
-} from "services/words/src/components/ui/sidebar"
-import { $api } from "services/words/src/utils/api/apiRequests"
+} from "@app/components/ui/sidebar"
+import { $api } from "@app/utils/api/apiRequests"
 import { useTranslations } from "next-intl"
-import { getCollectionPage } from "services/words/src/utils/urls/urls"
+import { getCollectionPage } from "@app/utils/urls/urls"
 import { DotsHorizontalIcon } from "@radix-ui/react-icons"
 import Link from "next/link"
 import { useRouter } from "next/navigation"

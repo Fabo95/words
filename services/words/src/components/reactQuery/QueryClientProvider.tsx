@@ -2,7 +2,7 @@
 
 // Since QueryClientProvider relies on useContext under the hood, we have to put 'use client' on top
 import { QueryClientProvider as ReactQueryClientProvider } from "@tanstack/react-query"
-import { getQueryClient } from "services/words/src/utils/reactQuery/reactQueryHelpers"
+import { getQueryClient } from "@app/utils/reactQuery/reactQueryHelpers"
 
 // See: https://tanstack.com/query/v5/docs/framework/react/guides/advanced-ssr#initial-setup
 export function QueryClientProvider({ children }: { children: React.ReactNode }) {
