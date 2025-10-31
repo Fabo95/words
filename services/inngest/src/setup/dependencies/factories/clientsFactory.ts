@@ -1,5 +1,6 @@
 import { Inngest } from "@/clients/inngest.js"
 import { FastifyBaseLogger } from "fastify"
+import { OpenAi } from "@/clients/openAi.js"
 
 interface ClientsFactoryDeps {
 	logger: FastifyBaseLogger
@@ -7,10 +8,12 @@ interface ClientsFactoryDeps {
 
 export interface I_ClientsFactory {
 	getInngest: () => Inngest
+	getOpenAi: () => OpenAi
 }
 
 export interface Clients {
 	inngest?: Inngest
+	openAi?: OpenAi
 }
 
 export class ClientsFactory implements I_ClientsFactory {
@@ -26,5 +29,12 @@ export class ClientsFactory implements I_ClientsFactory {
 			this.clients.inngest = new Inngest()
 		}
 		return this.clients.inngest
+	}
+
+	public getOpenAi() {
+		if (!this.clients.openAi) {
+			this.clients.openAi = new OpenAi()
+		}
+		return this.clients.openAi
 	}
 }

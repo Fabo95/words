@@ -23,10 +23,16 @@ async function createRequestCradle(requerstCradleFactories: {
 	return {
 		inngest: asFunction(() => requerstCradleFactories.clientsFactory.getInngest()),
 
+		openAi: asFunction(() => requerstCradleFactories.clientsFactory.getOpenAi()),
+
 		inngestFunctions: asFunction(() => requerstCradleFactories.inngestFunctionsFactory.getInngestFunctions()),
 
 		translationsModelService: asFunction(() =>
 			requerstCradleFactories.modelServicesFactory.getTranslationsModelService(),
+		),
+
+		exampleSentencesModelService: asFunction(() =>
+			requerstCradleFactories.modelServicesFactory.getExampleSentencesModelService(),
 		),
 	}
 }

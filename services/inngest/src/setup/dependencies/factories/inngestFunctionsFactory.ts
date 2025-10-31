@@ -22,8 +22,10 @@ export class InngestFunctionsFactory implements I_InngestFunctionsFactory {
 	public getInngestFunctions() {
 		if (!this.inngestFunctions) {
 			this.inngestFunctions = getInngestFunctions({
+				openAi: this.deps.clientsFactory.getOpenAi(),
 				inngest: this.deps.clientsFactory.getInngest(),
 				translationsModelService: this.deps.modelServicesFactory.getTranslationsModelService(),
+				exampleSentencesModelService: this.deps.modelServicesFactory.getExampleSentencesModelService(),
 			})
 		}
 

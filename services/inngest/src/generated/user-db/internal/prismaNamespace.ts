@@ -846,7 +846,8 @@ export type CollectionsScalarFieldEnum = (typeof CollectionsScalarFieldEnum)[key
 export const Example_sentencesScalarFieldEnum = {
   id: 'id',
   translation_id: 'translation_id',
-  sentence: 'sentence'
+  sentence: 'sentence',
+  language: 'language'
 } as const
 
 export type Example_sentencesScalarFieldEnum = (typeof Example_sentencesScalarFieldEnum)[keyof typeof Example_sentencesScalarFieldEnum]

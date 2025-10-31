@@ -32,6 +32,7 @@ model example_sentences {
   id             Int          @id @default(autoincrement())
   translation_id Int
   sentence       String       @db.VarChar
+  language       String       @db.VarChar
   translations   translations @relation(fields: [translation_id], references: [id], onDelete: Cascade, map: "FK_one_translation_has_many_examples")
 }
 

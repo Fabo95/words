@@ -39,18 +39,21 @@ export type Example_sentencesMinAggregateOutputType = {
   id: number | null
   translation_id: number | null
   sentence: string | null
+  language: string | null
 }
 
 export type Example_sentencesMaxAggregateOutputType = {
   id: number | null
   translation_id: number | null
   sentence: string | null
+  language: string | null
 }
 
 export type Example_sentencesCountAggregateOutputType = {
   id: number
   translation_id: number
   sentence: number
+  language: number
   _all: number
 }
 
@@ -69,18 +72,21 @@ export type Example_sentencesMinAggregateInputType = {
   id?: true
   translation_id?: true
   sentence?: true
+  language?: true
 }
 
 export type Example_sentencesMaxAggregateInputType = {
   id?: true
   translation_id?: true
   sentence?: true
+  language?: true
 }
 
 export type Example_sentencesCountAggregateInputType = {
   id?: true
   translation_id?: true
   sentence?: true
+  language?: true
   _all?: true
 }
 
@@ -174,6 +180,7 @@ export type Example_sentencesGroupByOutputType = {
   id: number
   translation_id: number
   sentence: string
+  language: string
   _count: Example_sentencesCountAggregateOutputType | null
   _avg: Example_sentencesAvgAggregateOutputType | null
   _sum: Example_sentencesSumAggregateOutputType | null
@@ -203,6 +210,7 @@ export type example_sentencesWhereInput = {
   id?: Prisma.IntFilter<"example_sentences"> | number
   translation_id?: Prisma.IntFilter<"example_sentences"> | number
   sentence?: Prisma.StringFilter<"example_sentences"> | string
+  language?: Prisma.StringFilter<"example_sentences"> | string
   translations?: Prisma.XOR<Prisma.TranslationsScalarRelationFilter, Prisma.translationsWhereInput>
 }
 
@@ -210,6 +218,7 @@ export type example_sentencesOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   translation_id?: Prisma.SortOrder
   sentence?: Prisma.SortOrder
+  language?: Prisma.SortOrder
   translations?: Prisma.translationsOrderByWithRelationInput
 }
 
@@ -220,6 +229,7 @@ export type example_sentencesWhereUniqueInput = Prisma.AtLeast<{
   NOT?: Prisma.example_sentencesWhereInput | Prisma.example_sentencesWhereInput[]
   translation_id?: Prisma.IntFilter<"example_sentences"> | number
   sentence?: Prisma.StringFilter<"example_sentences"> | string
+  language?: Prisma.StringFilter<"example_sentences"> | string
   translations?: Prisma.XOR<Prisma.TranslationsScalarRelationFilter, Prisma.translationsWhereInput>
 }, "id">
 
@@ -227,6 +237,7 @@ export type example_sentencesOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   translation_id?: Prisma.SortOrder
   sentence?: Prisma.SortOrder
+  language?: Prisma.SortOrder
   _count?: Prisma.example_sentencesCountOrderByAggregateInput
   _avg?: Prisma.example_sentencesAvgOrderByAggregateInput
   _max?: Prisma.example_sentencesMaxOrderByAggregateInput
@@ -241,10 +252,12 @@ export type example_sentencesScalarWhereWithAggregatesInput = {
   id?: Prisma.IntWithAggregatesFilter<"example_sentences"> | number
   translation_id?: Prisma.IntWithAggregatesFilter<"example_sentences"> | number
   sentence?: Prisma.StringWithAggregatesFilter<"example_sentences"> | string
+  language?: Prisma.StringWithAggregatesFilter<"example_sentences"> | string
 }
 
 export type example_sentencesCreateInput = {
   sentence: string
+  language: string
   translations: Prisma.translationsCreateNestedOneWithoutExample_sentencesInput
 }
 
@@ -252,10 +265,12 @@ export type example_sentencesUncheckedCreateInput = {
   id?: number
   translation_id: number
   sentence: string
+  language: string
 }
 
 export type example_sentencesUpdateInput = {
   sentence?: Prisma.StringFieldUpdateOperationsInput | string
+  language?: Prisma.StringFieldUpdateOperationsInput | string
   translations?: Prisma.translationsUpdateOneRequiredWithoutExample_sentencesNestedInput
 }
 
@@ -263,28 +278,33 @@ export type example_sentencesUncheckedUpdateInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   translation_id?: Prisma.IntFieldUpdateOperationsInput | number
   sentence?: Prisma.StringFieldUpdateOperationsInput | string
+  language?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 export type example_sentencesCreateManyInput = {
   id?: number
   translation_id: number
   sentence: string
+  language: string
 }
 
 export type example_sentencesUpdateManyMutationInput = {
   sentence?: Prisma.StringFieldUpdateOperationsInput | string
+  language?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 export type example_sentencesUncheckedUpdateManyInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   translation_id?: Prisma.IntFieldUpdateOperationsInput | number
   sentence?: Prisma.StringFieldUpdateOperationsInput | string
+  language?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 export type example_sentencesCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   translation_id?: Prisma.SortOrder
   sentence?: Prisma.SortOrder
+  language?: Prisma.SortOrder
 }
 
 export type example_sentencesAvgOrderByAggregateInput = {
@@ -296,12 +316,14 @@ export type example_sentencesMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   translation_id?: Prisma.SortOrder
   sentence?: Prisma.SortOrder
+  language?: Prisma.SortOrder
 }
 
 export type example_sentencesMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   translation_id?: Prisma.SortOrder
   sentence?: Prisma.SortOrder
+  language?: Prisma.SortOrder
 }
 
 export type example_sentencesSumOrderByAggregateInput = {
@@ -363,11 +385,13 @@ export type example_sentencesUncheckedUpdateManyWithoutTranslationsNestedInput =
 
 export type example_sentencesCreateWithoutTranslationsInput = {
   sentence: string
+  language: string
 }
 
 export type example_sentencesUncheckedCreateWithoutTranslationsInput = {
   id?: number
   sentence: string
+  language: string
 }
 
 export type example_sentencesCreateOrConnectWithoutTranslationsInput = {
@@ -403,25 +427,30 @@ export type example_sentencesScalarWhereInput = {
   id?: Prisma.IntFilter<"example_sentences"> | number
   translation_id?: Prisma.IntFilter<"example_sentences"> | number
   sentence?: Prisma.StringFilter<"example_sentences"> | string
+  language?: Prisma.StringFilter<"example_sentences"> | string
 }
 
 export type example_sentencesCreateManyTranslationsInput = {
   id?: number
   sentence: string
+  language: string
 }
 
 export type example_sentencesUpdateWithoutTranslationsInput = {
   sentence?: Prisma.StringFieldUpdateOperationsInput | string
+  language?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 export type example_sentencesUncheckedUpdateWithoutTranslationsInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   sentence?: Prisma.StringFieldUpdateOperationsInput | string
+  language?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 export type example_sentencesUncheckedUpdateManyWithoutTranslationsInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   sentence?: Prisma.StringFieldUpdateOperationsInput | string
+  language?: Prisma.StringFieldUpdateOperationsInput | string
 }
 
 
@@ -430,6 +459,7 @@ export type example_sentencesSelect<ExtArgs extends runtime.Types.Extensions.Int
   id?: boolean
   translation_id?: boolean
   sentence?: boolean
+  language?: boolean
   translations?: boolean | Prisma.translationsDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["example_sentences"]>
 
@@ -437,6 +467,7 @@ export type example_sentencesSelectCreateManyAndReturn<ExtArgs extends runtime.T
   id?: boolean
   translation_id?: boolean
   sentence?: boolean
+  language?: boolean
   translations?: boolean | Prisma.translationsDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["example_sentences"]>
 
@@ -444,6 +475,7 @@ export type example_sentencesSelectUpdateManyAndReturn<ExtArgs extends runtime.T
   id?: boolean
   translation_id?: boolean
   sentence?: boolean
+  language?: boolean
   translations?: boolean | Prisma.translationsDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["example_sentences"]>
 
@@ -451,9 +483,10 @@ export type example_sentencesSelectScalar = {
   id?: boolean
   translation_id?: boolean
   sentence?: boolean
+  language?: boolean
 }
 
-export type example_sentencesOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "translation_id" | "sentence", ExtArgs["result"]["example_sentences"]>
+export type example_sentencesOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "translation_id" | "sentence" | "language", ExtArgs["result"]["example_sentences"]>
 export type example_sentencesInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   translations?: boolean | Prisma.translationsDefaultArgs<ExtArgs>
 }
@@ -473,6 +506,7 @@ export type $example_sentencesPayload<ExtArgs extends runtime.Types.Extensions.I
     id: number
     translation_id: number
     sentence: string
+    language: string
   }, ExtArgs["result"]["example_sentences"]>
   composites: {}
 }
@@ -900,6 +934,7 @@ export interface example_sentencesFieldRefs {
   readonly id: Prisma.FieldRef<"example_sentences", 'Int'>
   readonly translation_id: Prisma.FieldRef<"example_sentences", 'Int'>
   readonly sentence: Prisma.FieldRef<"example_sentences", 'String'>
+  readonly language: Prisma.FieldRef<"example_sentences", 'String'>
 }
     
 

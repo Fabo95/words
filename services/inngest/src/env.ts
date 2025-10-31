@@ -13,6 +13,8 @@ const schema = z.object({
 	INNGEST_SIGNING_KEY: z.string(),
 	INNGEST_SIGNING_KEY_FALLBACK: z.string(),
 	INNGEST_SERVE_HOST: z.string().url(),
+
+	OPENAI_API_KEY: z.string(),
 })
 
 const parsed = schema.safeParse(process.env)
