@@ -5,7 +5,6 @@ import * as React from "react"
 import { getEditTranslationFormSchema } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableEditTranslationForm/utils/collectionTableEditTranslationFormSchema"
 import { EditTranslationFormState } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableEditTranslationForm/utils/collectionTableEditTranslationFormTypes"
 import { Button } from "@app/components/ui/button"
-import { DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@app/components/ui/dialog"
 import { Form, FormProvider } from "@app/components/ui/form"
 import { FormField } from "@app/components/ui/formField"
 import { Input } from "@app/components/ui/input"
@@ -101,53 +100,43 @@ export const CollectionTableEditTranslationForm = ({
 	// --- RENDER ---
 
 	return (
-		<DialogContent>
-			<DialogHeader>
-				<DialogTitle>{t("pages.collection.table.editTranslationForm.title")}</DialogTitle>
+		<FormProvider {...form}>
+			<Form onSubmit={form.handleSubmit(onSubmit)}>
+				<FormField
+					className="mb-5"
+					control={form.control}
+					label={t("pages.collection.table.editTranslationForm.wordLabel")}
+					name="sourceText"
+					render={(fieldProps) => (
+						<Input
+							placeholder={t("pages.collection.table.editTranslationForm.wordPlaceholder")}
+							type="text"
+							{...fieldProps.field}
+						/>
+					)}
+				/>
 
-				<DialogDescription>{t("pages.collection.table.editTranslationForm.description")}</DialogDescription>
-			</DialogHeader>
+				<FormField
+					control={form.control}
+					label={t("pages.collection.table.editTranslationForm.translationLabel")}
+					name="targetText"
+					render={(fieldProps) => (
+						<Input
+							placeholder={t("pages.collection.table.editTranslationForm.translationPlaceholder")}
+							type="text"
+							{...fieldProps.field}
+						/>
+					)}
+				/>
 
-			<FormProvider {...form}>
-				<Form onSubmit={form.handleSubmit(onSubmit)}>
-					<FormField
-						className="mb-5"
-						control={form.control}
-						label={t("pages.collection.table.editTranslationForm.wordLabel")}
-						name="sourceText"
-						render={(fieldProps) => (
-							<Input
-								placeholder={t("pages.collection.table.editTranslationForm.wordPlaceholder")}
-								type="text"
-								{...fieldProps.field}
-							/>
-						)}
-					/>
+				<Button className="mt-5" type="button" variant="secondary" onClick={() => handleIsDialogOpen(false)}>
+					{t("pages.collection.table.editTranslationForm.cancelButton")}
+				</Button>
 
-					<FormField
-						control={form.control}
-						label={t("pages.collection.table.editTranslationForm.translationLabel")}
-						name="targetText"
-						render={(fieldProps) => (
-							<Input
-								placeholder={t("pages.collection.table.editTranslationForm.translationPlaceholder")}
-								type="text"
-								{...fieldProps.field}
-							/>
-						)}
-					/>
-
-					<DialogFooter>
-						<Button className="mt-5" type="button" variant="secondary" onClick={() => handleIsDialogOpen(false)}>
-							{t("pages.collection.table.editTranslationForm.cancelButton")}
-						</Button>
-
-						<Button className="mt-5" disabled={!form.formState.isValid || !form.formState.isDirty}>
-							{t("pages.collection.table.editTranslationForm.saveButton")}
-						</Button>
-					</DialogFooter>
-				</Form>
-			</FormProvider>
-		</DialogContent>
+				<Button className="mt-5" disabled={!form.formState.isValid || !form.formState.isDirty}>
+					{t("pages.collection.table.editTranslationForm.saveButton")}
+				</Button>
+			</Form>
+		</FormProvider>
 	)
 }

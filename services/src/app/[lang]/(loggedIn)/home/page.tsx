@@ -1,5 +1,4 @@
 import { PageContent } from "@app/components/ui/pageContent"
-import { TranslationForm } from "@app/app/[lang]/(loggedIn)/home/_content/TranslationForm"
 import { getQueryClient } from "@app/utils/reactQuery/reactQueryHelpers"
 import { $api } from "@app/utils/api/apiRequests"
 import { cookies } from "next/headers"
@@ -16,9 +15,5 @@ export default async function () {
 		}),
 	)
 
-	return (
-		<PageContent>
-			<TranslationForm />
-		</PageContent>
-	)
+	return <PageContent>123</PageContent>
 }

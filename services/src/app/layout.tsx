@@ -5,8 +5,6 @@ import type { Metadata } from "next"
 import { Geist_Mono } from "next/font/google"
 
 import { QueryClientProvider } from "@app/components/reactQuery/QueryClientProvider"
-import { ModeToggle } from "@app/components/theme/modeToggle"
-import { ThemeProvider } from "@app/components/theme/themeProvider"
 import { Box } from "@app/components/ui/box"
 import { Row } from "@app/components/ui/row"
 import { Toaster } from "@app/components/ui/toaster"
@@ -33,19 +31,10 @@ export default async function RootLayout({ children }: RootLayoutProps) {
 		<html lang={locale}>
 			<body className={cn("min-h-screen bg-background font-sans antialiased", font.variable)}>
 				<NextIntlClientProvider>
-					<ThemeProvider disableTransitionOnChange enableSystem attribute="class" defaultTheme="dark">
-						<QueryClientProvider>
-							<Box className="p-5 h-screen">
-								<Row className="absolute top-5 right-5">
-									<ModeToggle />
-								</Row>
-
-								{children}
-							</Box>
-
-							<Toaster />
-						</QueryClientProvider>
-					</ThemeProvider>
+					<QueryClientProvider>
+						<Box className="p-5 h-screen">{children}</Box>
+						<Toaster />
+					</QueryClientProvider>
 				</NextIntlClientProvider>
 			</body>
 		</html>

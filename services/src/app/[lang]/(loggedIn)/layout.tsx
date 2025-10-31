@@ -6,6 +6,7 @@ import { SidebarInset, SidebarProvider, SidebarTrigger } from "@app/components/u
 import { $api } from "@app/utils/api/apiRequests"
 import { getQueryClient } from "@app/utils/reactQuery/reactQueryHelpers"
 import { HydrationBoundary, dehydrate } from "@tanstack/react-query"
+import { AddTranslationTrigger } from "@app/app/[lang]/(loggedIn)/_content/addTranslationTrigger"
 
 export default async function Layout({ children }: { children: ReactNode }) {
 	// --- STATE ---
@@ -52,9 +53,12 @@ export default async function Layout({ children }: { children: ReactNode }) {
 		<HydrationBoundary state={dehydrate(queryClient)}>
 			<SidebarProvider defaultOpen={defaultOpen}>
 				<AppSidebar />
-
 				<SidebarInset>
-					<SidebarTrigger />
+					<div className="flex justify-between w-full">
+						<SidebarTrigger />
+
+						<AddTranslationTrigger />
+					</div>
 
 					{children}
 				</SidebarInset>

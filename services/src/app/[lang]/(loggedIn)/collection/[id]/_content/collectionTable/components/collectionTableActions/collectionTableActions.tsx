@@ -6,7 +6,7 @@ import { CollectionTableDeleteTranslationDialog } from "@app/app/[lang]/(loggedI
 import { CollectionTableEditTranslationForm } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableEditTranslationForm/collectionTableEditTranslationForm"
 import { CollectionTranslation } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/utils/collectionTableTypes"
 import { Button } from "@app/components/ui/button"
-import { Dialog } from "@app/components/ui/dialog"
+import { Dialog, DialogDescription, DialogHeader, DialogTitle } from "@app/components/ui/dialog"
 import {
 	DropdownMenu,
 	DropdownMenuContent,
@@ -17,6 +17,8 @@ import {
 import { useSidebar } from "@app/components/ui/sidebar"
 import { useState } from "react"
 import { useTranslations } from "next-intl"
+import * as React from "react"
+import { DialogContent } from "@radix-ui/react-dialog"
 
 type CollectionTableActionsProps = { row: Row<CollectionTranslation> }
 export const CollectionTableActions = ({ row }: CollectionTableActionsProps) => {
@@ -70,15 +72,22 @@ export const CollectionTableActions = ({ row }: CollectionTableActionsProps) => 
 			</DropdownMenu>
 
 			<Dialog open={isEditFormOpen} onOpenChange={setIsEditFormOpen}>
-				{isEditFormOpen && (
-					<CollectionTableEditTranslationForm
-						id={row.original.id}
-						translationId={row.original.translationId}
-						sourceText={row.original.sourceText}
-						targetText={row.original.targetText}
-						handleIsDialogOpen={setIsEditFormOpen}
-					/>
-				)}
+				<DialogContent>
+					<DialogHeader>
+						<DialogTitle>{t("pages.collection.table.editTranslationForm.title")}</DialogTitle>
+
+						<DialogDescription>{t("pages.collection.table.editTranslationForm.description")}</DialogDescription>
+					</DialogHeader>
+					{isEditFormOpen && (
+						<CollectionTableEditTranslationForm
+							id={row.original.id}
+							translationId={row.original.translationId}
+							sourceText={row.original.sourceText}
+							targetText={row.original.targetText}
+							handleIsDialogOpen={setIsEditFormOpen}
+						/>
+					)}
+				</DialogContent>
 			</Dialog>
 
 			<Dialog open={isDeleteFromCollectionDialogOpen} onOpenChange={setIsDeleteFromCollectionDialogOpen}>
