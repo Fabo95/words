@@ -42,21 +42,31 @@ model seaql_migrations {
 }
 
 model translations {
-  id                Int                 @id @default(autoincrement())
-  source_language   String              @db.VarChar
-  source_text       String              @db.VarChar
-  target_language   String              @db.VarChar
-  target_text       String              @db.VarChar
-  user_id           Int
-  collection_id     Int?
-  cefr_level_id     Int?
-  example_sentences example_sentences[]
-  collections       collections?        @relation(fields: [collection_id], references: [id], onDelete: Cascade, map: "FK_one_collection_has_many_translations")
-  users             users               @relation(fields: [user_id], references: [id], onDelete: Cascade, map: "FK_one_user_has_many_translations")
-  cefr_levels       cefr_levels?        @relation(fields: [cefr_level_id], references: [id], map: "FK_translation_cefr_level")
+  id                   Int                 @id @default(autoincrement())
+  source_language      String              @db.VarChar
+  source_text          String              @db.VarChar
+  target_language      String              @db.VarChar
+  target_text          String              @db.VarChar
+  user_id              Int
+  collection_id        Int?
+  cefr_level_id        Int?
+  universal_pos_tag_id Int?
+  example_sentences    example_sentences[]
+  collections          collections?        @relation(fields: [collection_id], references: [id], onDelete: Cascade, map: "FK_one_collection_has_many_translations")
+  users                users               @relation(fields: [user_id], references: [id], onDelete: Cascade, map: "FK_one_user_has_many_translations")
+  cefr_levels          cefr_levels?        @relation(fields: [cefr_level_id], references: [id], map: "FK_translation_cefr_level")
+  universal_pos_tags   universal_pos_tags? @relation(fields: [universal_pos_tag_id], references: [id], map: "FK_translation_universal_pos_tag")
 }
 
 model cefr_levels {
+  id           Int            @id @default(autoincrement())
+  code         String         @unique @db.VarChar
+  name         String         @db.VarChar
+  description  String?        @db.VarChar
+  translations translations[]
+}
+
+model universal_pos_tags {
   id           Int            @id @default(autoincrement())
   code         String         @unique @db.VarChar
   name         String         @db.VarChar

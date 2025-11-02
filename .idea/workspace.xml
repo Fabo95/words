@@ -4,11 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="move to web folder">
-      <change afterPath="$PROJECT_DIR$/services/inngest/src/services/model/cefrLevelsModelsService.ts" afterDir="false" />
+    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="add check translation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/inngest/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/prisma/schema.prisma" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/clients/openAi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/clients/openAi.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/inngest/src/generated/user-db/browser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/generated/user-db/browser.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/inngest/src/generated/user-db/client.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/generated/user-db/client.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/inngest/src/generated/user-db/internal/class.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/generated/user-db/internal/class.ts" afterDir="false" />
@@ -16,14 +14,6 @@
       <change beforePath="$PROJECT_DIR$/services/inngest/src/generated/user-db/internal/prismaNamespaceBrowser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/generated/user-db/internal/prismaNamespaceBrowser.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/inngest/src/generated/user-db/models.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/generated/user-db/models.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/inngest/src/generated/user-db/models/translations.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/generated/user-db/models/translations.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/setup/dependencies/factories/inngestFunctionsFactory.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/setup/dependencies/factories/inngestFunctionsFactory.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/setup/dependencies/factories/modelServicesFactory.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/setup/dependencies/factories/modelServicesFactory.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/setup/dependencies/setup.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/setup/dependencies/setup.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/setup/dependencies/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/setup/dependencies/types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/utils/inngest/functions/eventFunctions/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/utils/inngest/functions/eventFunctions/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/utils/inngest/functions/eventFunctions/translation/events.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/utils/inngest/functions/eventFunctions/translation/events.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/utils/inngest/functions/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/utils/inngest/functions/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/utils/inngest/types/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/utils/inngest/types/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -246,15 +236,7 @@
       <workItem from="1761588214363" duration="97000" />
       <workItem from="1761597589319" duration="777000" />
       <workItem from="1761747939193" duration="99000" />
-      <workItem from="1761829140775" duration="39319000" />
-    </task>
-    <task id="LOCAL-00024" summary="migrated registrationCardContent.tsx">
-      <option name="closed" value="true" />
-      <created>1736113225077</created>
-      <option name="number" value="00024" />
-      <option name="presentableId" value="LOCAL-00024" />
-      <option name="project" value="LOCAL" />
-      <updated>1736113225077</updated>
+      <workItem from="1761829140775" duration="41751000" />
     </task>
     <task id="LOCAL-00025" summary="migrated registrationCardContent.tsx">
       <option name="closed" value="true" />
@@ -640,7 +622,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762087754176</updated>
     </task>
-    <option name="localTasksCounter" value="73" />
+    <task id="LOCAL-00073" summary="add check translation">
+      <option name="closed" value="true" />
+      <created>1762094577884</created>
+      <option name="number" value="00073" />
+      <option name="presentableId" value="LOCAL-00073" />
+      <option name="project" value="LOCAL" />
+      <updated>1762094577884</updated>
+    </task>
+    <option name="localTasksCounter" value="74" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -661,7 +651,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="renaming" />
     <MESSAGE value="added change password functionality" />
     <MESSAGE value="added ability to change name and password" />
     <MESSAGE value="added prefetching" />
@@ -686,7 +675,8 @@
     <MESSAGE value="added openAi to generate " />
     <MESSAGE value="add dependencies for OpenAI and ExampleSentencesModelService" />
     <MESSAGE value="move to web folder" />
-    <option name="LAST_COMMIT_MESSAGE" value="move to web folder" />
+    <MESSAGE value="add check translation" />
+    <option name="LAST_COMMIT_MESSAGE" value="add check translation" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

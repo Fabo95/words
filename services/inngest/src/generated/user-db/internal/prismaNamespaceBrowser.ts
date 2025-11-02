@@ -53,7 +53,8 @@ export const ModelName = {
   example_sentences: 'example_sentences',
   seaql_migrations: 'seaql_migrations',
   translations: 'translations',
-  cefr_levels: 'cefr_levels'
+  cefr_levels: 'cefr_levels',
+  universal_pos_tags: 'universal_pos_tags'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -119,7 +120,8 @@ export const TranslationsScalarFieldEnum = {
   target_text: 'target_text',
   user_id: 'user_id',
   collection_id: 'collection_id',
-  cefr_level_id: 'cefr_level_id'
+  cefr_level_id: 'cefr_level_id',
+  universal_pos_tag_id: 'universal_pos_tag_id'
 } as const
 
 export type TranslationsScalarFieldEnum = (typeof TranslationsScalarFieldEnum)[keyof typeof TranslationsScalarFieldEnum]
@@ -133,6 +135,16 @@ export const Cefr_levelsScalarFieldEnum = {
 } as const
 
 export type Cefr_levelsScalarFieldEnum = (typeof Cefr_levelsScalarFieldEnum)[keyof typeof Cefr_levelsScalarFieldEnum]
+
+
+export const Universal_pos_tagsScalarFieldEnum = {
+  id: 'id',
+  code: 'code',
+  name: 'name',
+  description: 'description'
+} as const
+
+export type Universal_pos_tagsScalarFieldEnum = (typeof Universal_pos_tagsScalarFieldEnum)[keyof typeof Universal_pos_tagsScalarFieldEnum]
 
 
 export const SortOrder = {
