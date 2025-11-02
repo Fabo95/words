@@ -68,3 +68,8 @@ export type seaql_migrations = Prisma.seaql_migrationsModel
  * 
  */
 export type translations = Prisma.translationsModel
+/**
+ * Model cefr_levels
+ * 
+ */
+export type cefr_levels = Prisma.cefr_levelsModel

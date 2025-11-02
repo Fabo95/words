@@ -8,6 +8,7 @@ import { InngestFunctions } from "@/utils/inngest/functions/index.js"
 import { TranslationsModelService } from "@/services/model/translationsModelService.js"
 import { OpenAi } from "@/clients/openAi.js"
 import { ExampleSentencesModelService } from "@/services/model/exampleSentencesModelService.js"
+import { CefrLevelsModelService } from "@/services/model/cefrLevelsModelsService.js"
 
 declare module "@fastify/awilix" {
 	// get initialized when app starts
@@ -26,6 +27,7 @@ declare module "@fastify/awilix" {
 		// models
 		translationsModelService: TranslationsModelService
 		exampleSentencesModelService: ExampleSentencesModelService
+		cefrLevelsModelService: CefrLevelsModelService
 	}
 }
 

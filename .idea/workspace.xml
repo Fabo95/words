@@ -5,12 +5,25 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="move to web folder">
+      <change afterPath="$PROJECT_DIR$/services/inngest/src/services/model/cefrLevelsModelsService.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-workspace.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-workspace.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/inngest/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/prisma/schema.prisma" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/inngest/src/clients/openAi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/clients/openAi.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/inngest/src/generated/user-db/browser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/generated/user-db/browser.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/inngest/src/generated/user-db/client.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/generated/user-db/client.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/inngest/src/generated/user-db/internal/class.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/generated/user-db/internal/class.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/inngest/src/generated/user-db/internal/prismaNamespace.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/generated/user-db/internal/prismaNamespace.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/inngest/src/generated/user-db/internal/prismaNamespaceBrowser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/generated/user-db/internal/prismaNamespaceBrowser.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/inngest/src/generated/user-db/models.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/generated/user-db/models.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/inngest/src/generated/user-db/models/translations.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/generated/user-db/models/translations.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/inngest/src/setup/dependencies/factories/inngestFunctionsFactory.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/setup/dependencies/factories/inngestFunctionsFactory.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/inngest/src/setup/dependencies/factories/modelServicesFactory.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/setup/dependencies/factories/modelServicesFactory.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/inngest/src/setup/dependencies/setup.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/setup/dependencies/setup.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/inngest/src/setup/dependencies/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/setup/dependencies/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/inngest/src/utils/inngest/functions/eventFunctions/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/utils/inngest/functions/eventFunctions/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/inngest/src/utils/inngest/functions/eventFunctions/translation/events.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/utils/inngest/functions/eventFunctions/translation/events.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/inngest/src/utils/inngest/functions/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/utils/inngest/functions/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/inngest/src/utils/inngest/types/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/utils/inngest/types/index.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +97,7 @@
     "npm.words > dev.executor": "Run",
     "prettierjs.PrettierConfiguration.Package": "/Users/fabianhinz/.npm-global/lib/node_modules/prettier",
     "settings.editor.selected.configurable": "settings.typescriptcompiler",
-    "ts.external.directory.path": "/Users/fabianhinz/repositories/words/services/words/node_modules/typescript/lib",
+    "ts.external.directory.path": "/Users/fabianhinz/repositories/words/services/web/node_modules/typescript/lib",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
@@ -109,7 +122,7 @@
       <recent name="$PROJECT_DIR$/service" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.dev">
+  <component name="RunManager" selected="npm.inngest &gt; prisma:generate">
     <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -162,9 +175,9 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.dev" />
         <item itemvalue="npm.inngest &gt; prisma:generate" />
         <item itemvalue="npm.inngest &gt; prisma:pull" />
+        <item itemvalue="npm.dev" />
         <item itemvalue="npm.words &gt; dev" />
         <item itemvalue="npm.inngest &gt; dev" />
       </list>
@@ -233,15 +246,7 @@
       <workItem from="1761588214363" duration="97000" />
       <workItem from="1761597589319" duration="777000" />
       <workItem from="1761747939193" duration="99000" />
-      <workItem from="1761829140775" duration="33395000" />
-    </task>
-    <task id="LOCAL-00023" summary="downgrade types since they lead to errors">
-      <option name="closed" value="true" />
-      <created>1736112029317</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1736112029317</updated>
+      <workItem from="1761829140775" duration="39319000" />
     </task>
     <task id="LOCAL-00024" summary="migrated registrationCardContent.tsx">
       <option name="closed" value="true" />
@@ -627,7 +632,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762087149880</updated>
     </task>
-    <option name="localTasksCounter" value="72" />
+    <task id="LOCAL-00072" summary="move to web folder">
+      <option name="closed" value="true" />
+      <created>1762087754176</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1762087754176</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

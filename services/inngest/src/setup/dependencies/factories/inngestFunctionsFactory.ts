@@ -26,6 +26,7 @@ export class InngestFunctionsFactory implements I_InngestFunctionsFactory {
 				inngest: this.deps.clientsFactory.getInngest(),
 				translationsModelService: this.deps.modelServicesFactory.getTranslationsModelService(),
 				exampleSentencesModelService: this.deps.modelServicesFactory.getExampleSentencesModelService(),
+				cefrLevelsModelService: this.deps.modelServicesFactory.getCefrLevelsModelService(),
 			})
 		}
 

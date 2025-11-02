@@ -2,6 +2,7 @@ import { PrismaClient } from "@/generated/user-db/client.js"
 import { FastifyBaseLogger } from "fastify"
 import { TranslationsModelService } from "@/services/model/translationsModelService.js"
 import { ExampleSentencesModelService } from "@/services/model/exampleSentencesModelService.js"
+import { CefrLevelsModelService } from "@/services/model/cefrLevelsModelsService.js"
 
 interface ModelServicesFactoryDeps {
 	prisma: PrismaClient
@@ -12,6 +13,7 @@ export class ModelServicesFactory {
 	private modelServices: {
 		translationsModelService?: TranslationsModelService
 		exampleSentencesModelService?: ExampleSentencesModelService
+		cefrLevelsModelService?: CefrLevelsModelService
 	} = {}
 
 	private deps: ModelServicesFactoryDeps
@@ -32,5 +34,12 @@ export class ModelServicesFactory {
 			this.modelServices.exampleSentencesModelService = new ExampleSentencesModelService({ prisma: this.deps.prisma })
 		}
 		return this.modelServices.exampleSentencesModelService
+	}
+
+	public getCefrLevelsModelService() {
+		if (!this.modelServices.cefrLevelsModelService) {
+			this.modelServices.cefrLevelsModelService = new CefrLevelsModelService({ prisma: this.deps.prisma })
+		}
+		return this.modelServices.cefrLevelsModelService
 	}
 }

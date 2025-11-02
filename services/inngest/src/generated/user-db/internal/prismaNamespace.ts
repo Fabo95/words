@@ -393,7 +393,8 @@ export const ModelName = {
   collections: 'collections',
   example_sentences: 'example_sentences',
   seaql_migrations: 'seaql_migrations',
-  translations: 'translations'
+  translations: 'translations',
+  cefr_levels: 'cefr_levels'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -409,7 +410,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "users" | "collections" | "example_sentences" | "seaql_migrations" | "translations"
+    modelProps: "users" | "collections" | "example_sentences" | "seaql_migrations" | "translations" | "cefr_levels"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -783,6 +784,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    cefr_levels: {
+      payload: Prisma.$cefr_levelsPayload<ExtArgs>
+      fields: Prisma.cefr_levelsFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.cefr_levelsFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$cefr_levelsPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.cefr_levelsFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$cefr_levelsPayload>
+        }
+        findFirst: {
+          args: Prisma.cefr_levelsFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$cefr_levelsPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.cefr_levelsFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$cefr_levelsPayload>
+        }
+        findMany: {
+          args: Prisma.cefr_levelsFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$cefr_levelsPayload>[]
+        }
+        create: {
+          args: Prisma.cefr_levelsCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$cefr_levelsPayload>
+        }
+        createMany: {
+          args: Prisma.cefr_levelsCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.cefr_levelsCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$cefr_levelsPayload>[]
+        }
+        delete: {
+          args: Prisma.cefr_levelsDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$cefr_levelsPayload>
+        }
+        update: {
+          args: Prisma.cefr_levelsUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$cefr_levelsPayload>
+        }
+        deleteMany: {
+          args: Prisma.cefr_levelsDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.cefr_levelsUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.cefr_levelsUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$cefr_levelsPayload>[]
+        }
+        upsert: {
+          args: Prisma.cefr_levelsUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$cefr_levelsPayload>
+        }
+        aggregate: {
+          args: Prisma.Cefr_levelsAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateCefr_levels>
+        }
+        groupBy: {
+          args: Prisma.cefr_levelsGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.Cefr_levelsGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.cefr_levelsCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.Cefr_levelsCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -868,10 +943,21 @@ export const TranslationsScalarFieldEnum = {
   target_language: 'target_language',
   target_text: 'target_text',
   user_id: 'user_id',
-  collection_id: 'collection_id'
+  collection_id: 'collection_id',
+  cefr_level_id: 'cefr_level_id'
 } as const
 
 export type TranslationsScalarFieldEnum = (typeof TranslationsScalarFieldEnum)[keyof typeof TranslationsScalarFieldEnum]
+
+
+export const Cefr_levelsScalarFieldEnum = {
+  id: 'id',
+  code: 'code',
+  name: 'name',
+  description: 'description'
+} as const
+
+export type Cefr_levelsScalarFieldEnum = (typeof Cefr_levelsScalarFieldEnum)[keyof typeof Cefr_levelsScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -1051,6 +1137,7 @@ export type GlobalOmitConfig = {
   example_sentences?: Prisma.example_sentencesOmit
   seaql_migrations?: Prisma.seaql_migrationsOmit
   translations?: Prisma.translationsOmit
+  cefr_levels?: Prisma.cefr_levelsOmit
 }
 
 /* Types for Logging */

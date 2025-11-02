@@ -4,6 +4,7 @@ import { getInngestEventFunctions } from "@/utils/inngest/functions/eventFunctio
 import { TranslationsModelService } from "@/services/model/translationsModelService.js"
 import { OpenAi } from "@/clients/openAi.js"
 import { ExampleSentencesModelService } from "@/services/model/exampleSentencesModelService.js"
+import { CefrLevelsModelService } from "@/services/model/cefrLevelsModelsService.js"
 
 export type InngestFunctions = ReturnType<typeof getInngestFunctions>
 
@@ -12,6 +13,7 @@ type InngestFunctionsDeps = {
 	inngest: Inngest
 	translationsModelService: TranslationsModelService
 	exampleSentencesModelService: ExampleSentencesModelService
+	cefrLevelsModelService: CefrLevelsModelService
 }
 
 export const getInngestFunctions = ({
@@ -19,12 +21,14 @@ export const getInngestFunctions = ({
 	inngest,
 	translationsModelService,
 	exampleSentencesModelService,
+	cefrLevelsModelService,
 }: InngestFunctionsDeps) => [
 	...getInngestEventFunctions({
 		openAi,
 		inngest,
 		translationsModelService,
 		exampleSentencesModelService,
+		cefrLevelsModelService,
 	}),
 	...getInngestCronFunctions({
 		inngest,

@@ -34,6 +34,8 @@ async function createRequestCradle(requerstCradleFactories: {
 		exampleSentencesModelService: asFunction(() =>
 			requerstCradleFactories.modelServicesFactory.getExampleSentencesModelService(),
 		),
+
+		cefrLevelsModelService: asFunction(() => requerstCradleFactories.modelServicesFactory.getCefrLevelsModelService()),
 	}
 }
 
