@@ -6,6 +6,7 @@
     "packages:force-node-modules-sync": "sudo find node_modules/.pnpm -name 'file+*' -type d -prune -print -exec rm -rf '{}' + && pnpm install",
     "remove:node-modules": "sudo find . -name 'node_modules' -type d -prune -print -exec rm -rf '{}' +",
     "prettier": "prettier --check 'src/**/*.{ts,tsx,js,jsx,json}'",
-    "prettier:write": "prettier --write 'src/**/*.{ts,tsx,js,jsx,json}'"
+    "prettier:write": "prettier --write 'src/**/*.{ts,tsx,js,jsx,json}'",
+    "dev": "pnpm dev --filter @words/inngest && pnpm dev --filter @words/web"
   }
 }

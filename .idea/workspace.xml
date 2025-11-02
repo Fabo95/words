@@ -4,28 +4,134 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="update prisma">
-      <change afterPath="$PROJECT_DIR$/services/inngest/src/clients/openAi.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/inngest/src/services/model/exampleSentencesModelService.ts" afterDir="false" />
+    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="add dependencies for OpenAI and ExampleSentencesModelService">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/.env.example" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/inngest/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/prisma/schema.prisma" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/env.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/env.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/generated/user-db/internal/class.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/generated/user-db/internal/class.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/generated/user-db/internal/prismaNamespace.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/generated/user-db/internal/prismaNamespace.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/generated/user-db/internal/prismaNamespaceBrowser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/generated/user-db/internal/prismaNamespaceBrowser.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/generated/user-db/models/example_sentences.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/generated/user-db/models/example_sentences.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/setup/dependencies/factories/clientsFactory.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/setup/dependencies/factories/clientsFactory.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/setup/dependencies/factories/inngestFunctionsFactory.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/setup/dependencies/factories/inngestFunctionsFactory.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/setup/dependencies/factories/modelServicesFactory.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/setup/dependencies/factories/modelServicesFactory.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/setup/dependencies/setup.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/setup/dependencies/setup.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/setup/dependencies/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/setup/dependencies/types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/utils/inngest/functions/eventFunctions/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/utils/inngest/functions/eventFunctions/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/utils/inngest/functions/eventFunctions/translation/events.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/utils/inngest/functions/eventFunctions/translation/events.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/utils/inngest/functions/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/utils/inngest/functions/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/tsconfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/.env.example" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/.env.example" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/Dockerfile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/biome.json" beforeDir="false" afterPath="$PROJECT_DIR$/biome.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/components.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/components.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/connector-config/debeziumWordsDbUsersCreatedConfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/connector-config/debeziumWordsDbUsersCreatedConfig.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/messages/de-DE.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/messages/de-DE.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/messages/en-GB.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/messages/en-GB.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/next.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/next.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/postcss.config.mjs" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/postcss.config.mjs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/public/next.svg" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/public/next.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/public/vercel.svg" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/public/vercel.svg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/app/[lang]/(loggedIn)/_content/addTranslationTrigger.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/_content/addTranslationTrigger.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/app/[lang]/(loggedIn)/account/_content/accountNameForm/accountNameForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/account/_content/accountNameForm/accountNameForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/app/[lang]/(loggedIn)/account/_content/accountNameForm/utils/accountNameFormSchema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/account/_content/accountNameForm/utils/accountNameFormSchema.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/app/[lang]/(loggedIn)/account/_content/accountNameForm/utils/accountNameFormTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/account/_content/accountNameForm/utils/accountNameFormTypes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/app/[lang]/(loggedIn)/account/_content/accountPasswordForm/accountPasswordForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/account/_content/accountPasswordForm/accountPasswordForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/app/[lang]/(loggedIn)/account/_content/accountPasswordForm/utils/accountPasswordFormSchema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/account/_content/accountPasswordForm/utils/accountPasswordFormSchema.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/app/[lang]/(loggedIn)/account/_content/accountPasswordForm/utils/accountPasswordFormTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/account/_content/accountPasswordForm/utils/accountPasswordFormTypes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/app/[lang]/(loggedIn)/account/error.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/account/error.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/app/[lang]/(loggedIn)/account/loading.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/account/loading.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/app/[lang]/(loggedIn)/account/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/account/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/collectionTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/collectionTable.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableActions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableActions.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableDeleteFromCollectionDialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableDeleteFromCollectionDialog.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableDeleteTranslationDialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableDeleteTranslationDialog.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableEditTranslationForm/collectionTableEditTranslationForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableEditTranslationForm/collectionTableEditTranslationForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableEditTranslationForm/utils/collectionTableEditTranslationFormSchema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableEditTranslationForm/utils/collectionTableEditTranslationFormSchema.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableEditTranslationForm/utils/collectionTableEditTranslationFormTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableEditTranslationForm/utils/collectionTableEditTranslationFormTypes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/utils/collectionTableConstants.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/utils/collectionTableConstants.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/utils/collectionTableTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/utils/collectionTableTypes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/app/[lang]/(loggedIn)/collection/[id]/error.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/error.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/app/[lang]/(loggedIn)/collection/[id]/loading.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/loading.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/app/[lang]/(loggedIn)/collection/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/app/[lang]/(loggedIn)/home/_content/TranslationForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/home/_content/TranslationForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/app/[lang]/(loggedIn)/home/_content/utils/translationFormSchema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/home/_content/utils/translationFormSchema.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/app/[lang]/(loggedIn)/home/_content/utils/translationFormTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/home/_content/utils/translationFormTypes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/app/[lang]/(loggedIn)/home/error.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/home/error.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/app/[lang]/(loggedIn)/home/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/home/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/app/[lang]/(loggedIn)/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/app/[lang]/(loggedOut)/authentication/_content/loginForm/loginForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedOut)/authentication/_content/loginForm/loginForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/app/[lang]/(loggedOut)/authentication/_content/loginForm/utils/loginFormSchema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedOut)/authentication/_content/loginForm/utils/loginFormSchema.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/app/[lang]/(loggedOut)/authentication/_content/loginForm/utils/loginFormTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedOut)/authentication/_content/loginForm/utils/loginFormTypes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/app/[lang]/(loggedOut)/authentication/_content/registrationForm/registrationForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedOut)/authentication/_content/registrationForm/registrationForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/app/[lang]/(loggedOut)/authentication/_content/registrationForm/utils/registrationFormSchema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedOut)/authentication/_content/registrationForm/utils/registrationFormSchema.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/app/[lang]/(loggedOut)/authentication/_content/registrationForm/utils/registrationFormTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedOut)/authentication/_content/registrationForm/utils/registrationFormTypes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/app/[lang]/(loggedOut)/authentication/error.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedOut)/authentication/error.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/app/[lang]/(loggedOut)/authentication/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedOut)/authentication/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/app/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/app/loading.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/loading.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/app/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/components/appSidebar/appSidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/appSidebar/appSidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionCreateForm/sidebarCollectionCreateDialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionCreateForm/sidebarCollectionCreateDialog.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionCreateForm/sidebarCollectionCreateForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionCreateForm/sidebarCollectionCreateForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionCreateForm/utils/collectionCreateFormTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionCreateForm/utils/collectionCreateFormTypes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionCreateForm/utils/collectionCreateFromSchema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionCreateForm/utils/collectionCreateFromSchema.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionDeleteDialog/sidebarCollectionDeleteDialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionDeleteDialog/sidebarCollectionDeleteDialog.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionEditForm/sidebarCollectionEditDialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionEditForm/sidebarCollectionEditDialog.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionEditForm/sidebarCollectionEditForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionEditForm/sidebarCollectionEditForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionEditForm/utils/collectionEditFormTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionEditForm/utils/collectionEditFormTypes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionEditForm/utils/collectionEditFromSchema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionEditForm/utils/collectionEditFromSchema.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/components/appSidebar/components/sidebarCollections/sidebarCollections.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/appSidebar/components/sidebarCollections/sidebarCollections.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/components/appSidebar/components/sidebarLanguageSwitch.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/appSidebar/components/sidebarLanguageSwitch.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/components/appSidebar/components/sidebarNavigation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/appSidebar/components/sidebarNavigation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/components/appSidebar/components/sidebarUserActions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/appSidebar/components/sidebarUserActions.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/components/reactQuery/QueryClientProvider.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/reactQuery/QueryClientProvider.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/components/ui/avatar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/avatar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/components/ui/box.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/box.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/components/ui/breadcrumb.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/breadcrumb.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/components/ui/button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/button.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/components/ui/card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/card.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/components/ui/checkbox.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/checkbox.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/components/ui/collapsible.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/collapsible.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/components/ui/dataTable/dataTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/dataTable/dataTable.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/components/ui/dataTable/dataTableColumnHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/dataTable/dataTableColumnHeader.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/components/ui/dataTable/dataTableFilter.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/dataTable/dataTableFilter.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/components/ui/dataTable/dataTablePagination.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/dataTable/dataTablePagination.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/components/ui/dialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/dialog.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/components/ui/drawer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/drawer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/components/ui/dropdown-menu.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/dropdown-menu.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/components/ui/form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/form.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/components/ui/formField.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/formField.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/components/ui/input.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/input.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/components/ui/label.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/label.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/components/ui/pageContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/pageContent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/components/ui/row.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/row.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/components/ui/scroll-area.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/scroll-area.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/components/ui/select.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/select.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/components/ui/separator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/separator.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/components/ui/sheet.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/sheet.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/components/ui/sidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/sidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/components/ui/skeleton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/skeleton.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/components/ui/table.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/table.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/components/ui/tabs.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/tabs.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/components/ui/text.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/text.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/components/ui/toast.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/toast.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/components/ui/toaster.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/toaster.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/components/ui/tooltip.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/tooltip.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/components/ui/use-toast.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/use-toast.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/generated/openApiTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/generated/openApiTypes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/hooks/use-mobile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/hooks/use-mobile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/i18n/navigation.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/i18n/navigation.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/i18n/request.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/i18n/request.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/i18n/routing.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/i18n/routing.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/middleware.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/middleware.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/styles/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/utils/api/apiConstants.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/utils/api/apiConstants.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/utils/api/apiHelpers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/utils/api/apiHelpers.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/utils/api/apiRequests.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/utils/api/apiRequests.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/utils/cookies/cookies.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/utils/cookies/cookies.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/utils/env/env.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/utils/env/env.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/utils/locale/localeTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/utils/locale/localeTypes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/utils/middleware/middlewareHelpers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/utils/middleware/middlewareHelpers.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/utils/reactQuery/reactQueryHelpers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/utils/reactQuery/reactQueryHelpers.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/utils/schemas/schemas.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/utils/schemas/schemas.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/utils/searchParams/searchParams.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/utils/searchParams/searchParams.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/utils/shadcn/shadcnHelpers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/utils/shadcn/shadcnHelpers.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/utils/types/objectTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/utils/types/objectTypes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/utils/types/pageTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/utils/types/pageTypes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/src/utils/urls/urls.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/utils/urls/urls.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/words/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,7 +160,7 @@
     <setting file="file://$PROJECT_DIR$/service/src/app/page.tsx" root0="SKIP_INSPECTION" />
   </component>
   <component name="PackageJsonUpdateNotifier">
-    <dismissed value="$PROJECT_DIR$/services/words/package.json" />
+    <dismissed value="$PROJECT_DIR$/services/web/package.json" />
   </component>
   <component name="ProblemsViewState">
     <option name="selectedTabId" value="ProjectErrors" />
@@ -85,6 +191,7 @@
     "node.js.selected.package.standard": "",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "npm.dev.executor": "Run",
     "npm.eslint-plugin-words-app-styleguide > build.executor": "Run",
     "npm.eslint-plugin-words-app-styleguide > build:clean.executor": "Run",
     "npm.inngest > dev.executor": "Run",
@@ -116,16 +223,16 @@
       <recent name="$PROJECT_DIR$/service" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/services/words" />
       <recent name="$PROJECT_DIR$/services/src" />
       <recent name="$PROJECT_DIR$/service/src/utils/types" />
       <recent name="$PROJECT_DIR$/service" />
-      <recent name="$PROJECT_DIR$/service/src/app/[lang]/(loggedIn)/account/_content/accountNameForm" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.inngest &gt; prisma:generate">
-    <configuration name="inngest &gt; dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/services/inngest/package.json" />
+  <component name="RunManager" selected="npm.dev">
+    <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
       <scripts>
         <script value="dev" />
@@ -134,11 +241,11 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="inngest &gt; generate-prisma-schema" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+    <configuration name="inngest &gt; dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/services/inngest/package.json" />
       <command value="run" />
       <scripts>
-        <script value="generate-prisma-schema" />
+        <script value="dev" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -176,11 +283,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.dev" />
         <item itemvalue="npm.inngest &gt; prisma:generate" />
         <item itemvalue="npm.inngest &gt; prisma:pull" />
         <item itemvalue="npm.words &gt; dev" />
         <item itemvalue="npm.inngest &gt; dev" />
-        <item itemvalue="npm.inngest &gt; generate-prisma-schema" />
       </list>
     </recent_temporary>
   </component>
@@ -247,15 +354,7 @@
       <workItem from="1761588214363" duration="97000" />
       <workItem from="1761597589319" duration="777000" />
       <workItem from="1761747939193" duration="99000" />
-      <workItem from="1761829140775" duration="27871000" />
-    </task>
-    <task id="LOCAL-00021" summary="added formField to replace inputWrapper.tsx">
-      <option name="closed" value="true" />
-      <created>1736111986035</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1736111986035</updated>
+      <workItem from="1761829140775" duration="32748000" />
     </task>
     <task id="LOCAL-00022" summary="downgrade types since they lead to errors">
       <option name="closed" value="true" />
@@ -641,7 +740,15 @@
       <option name="project" value="LOCAL" />
       <updated>1761935616499</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="add dependencies for OpenAI and ExampleSentencesModelService">
+      <option name="closed" value="true" />
+      <created>1761940722771</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1761940722771</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -662,8 +769,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added LanguageSwitcher" />
-    <MESSAGE value="added react query" />
     <MESSAGE value="added logout functionality" />
     <MESSAGE value="renaming" />
     <MESSAGE value="added change password functionality" />
@@ -687,13 +792,15 @@
     <MESSAGE value="add inngest" />
     <MESSAGE value="add schema.prisma" />
     <MESSAGE value="update prisma" />
-    <option name="LAST_COMMIT_MESSAGE" value="update prisma" />
+    <MESSAGE value="added openAi to generate " />
+    <MESSAGE value="add dependencies for OpenAI and ExampleSentencesModelService" />
+    <option name="LAST_COMMIT_MESSAGE" value="add dependencies for OpenAI and ExampleSentencesModelService" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/services/words/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableEditTranslationForm/collectionTableEditTranslationForm.tsx</url>
+          <url>file://$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableEditTranslationForm/collectionTableEditTranslationForm.tsx</url>
           <line>2</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="1" />
