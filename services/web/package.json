@@ -9,7 +9,7 @@
     "build": "next build && NODE_ENV=production",
     "start": "next start && NODE_ENV=production",
     "lint": "next lint",
-    "generate_open_api_types": "npx openapi-typescript http://localhost:8080/api-docs/openapi.json -o src/generated/openApiTypes.ts --export-type"
+    "open_api:generate": "npx openapi-typescript http://localhost:8080/api-docs/openapi.json -o src/generated/openApiTypes.ts --export-type"
   },
   "author": "Fabian Hinz",
   "dependencies": {
