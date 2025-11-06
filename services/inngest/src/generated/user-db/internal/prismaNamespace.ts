@@ -395,7 +395,8 @@ export const ModelName = {
   seaql_migrations: 'seaql_migrations',
   translations: 'translations',
   cefr_levels: 'cefr_levels',
-  universal_pos_tags: 'universal_pos_tags'
+  universal_pos_tags: 'universal_pos_tags',
+  translations_universal_pos_tags: 'translations_universal_pos_tags'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -411,7 +412,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "users" | "collections" | "example_sentences" | "seaql_migrations" | "translations" | "cefr_levels" | "universal_pos_tags"
+    modelProps: "users" | "collections" | "example_sentences" | "seaql_migrations" | "translations" | "cefr_levels" | "universal_pos_tags" | "translations_universal_pos_tags"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -933,6 +934,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    translations_universal_pos_tags: {
+      payload: Prisma.$translations_universal_pos_tagsPayload<ExtArgs>
+      fields: Prisma.translations_universal_pos_tagsFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.translations_universal_pos_tagsFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$translations_universal_pos_tagsPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.translations_universal_pos_tagsFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$translations_universal_pos_tagsPayload>
+        }
+        findFirst: {
+          args: Prisma.translations_universal_pos_tagsFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$translations_universal_pos_tagsPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.translations_universal_pos_tagsFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$translations_universal_pos_tagsPayload>
+        }
+        findMany: {
+          args: Prisma.translations_universal_pos_tagsFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$translations_universal_pos_tagsPayload>[]
+        }
+        create: {
+          args: Prisma.translations_universal_pos_tagsCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$translations_universal_pos_tagsPayload>
+        }
+        createMany: {
+          args: Prisma.translations_universal_pos_tagsCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.translations_universal_pos_tagsCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$translations_universal_pos_tagsPayload>[]
+        }
+        delete: {
+          args: Prisma.translations_universal_pos_tagsDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$translations_universal_pos_tagsPayload>
+        }
+        update: {
+          args: Prisma.translations_universal_pos_tagsUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$translations_universal_pos_tagsPayload>
+        }
+        deleteMany: {
+          args: Prisma.translations_universal_pos_tagsDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.translations_universal_pos_tagsUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.translations_universal_pos_tagsUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$translations_universal_pos_tagsPayload>[]
+        }
+        upsert: {
+          args: Prisma.translations_universal_pos_tagsUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$translations_universal_pos_tagsPayload>
+        }
+        aggregate: {
+          args: Prisma.Translations_universal_pos_tagsAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateTranslations_universal_pos_tags>
+        }
+        groupBy: {
+          args: Prisma.translations_universal_pos_tagsGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.Translations_universal_pos_tagsGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.translations_universal_pos_tagsCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.Translations_universal_pos_tagsCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -1019,8 +1094,7 @@ export const TranslationsScalarFieldEnum = {
   target_text: 'target_text',
   user_id: 'user_id',
   collection_id: 'collection_id',
-  cefr_level_id: 'cefr_level_id',
-  universal_pos_tag_id: 'universal_pos_tag_id'
+  cefr_level_id: 'cefr_level_id'
 } as const
 
 export type TranslationsScalarFieldEnum = (typeof TranslationsScalarFieldEnum)[keyof typeof TranslationsScalarFieldEnum]
@@ -1044,6 +1118,15 @@ export const Universal_pos_tagsScalarFieldEnum = {
 } as const
 
 export type Universal_pos_tagsScalarFieldEnum = (typeof Universal_pos_tagsScalarFieldEnum)[keyof typeof Universal_pos_tagsScalarFieldEnum]
+
+
+export const Translations_universal_pos_tagsScalarFieldEnum = {
+  id: 'id',
+  translation_id: 'translation_id',
+  universal_pos_tag_id: 'universal_pos_tag_id'
+} as const
+
+export type Translations_universal_pos_tagsScalarFieldEnum = (typeof Translations_universal_pos_tagsScalarFieldEnum)[keyof typeof Translations_universal_pos_tagsScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -1225,6 +1308,7 @@ export type GlobalOmitConfig = {
   translations?: Prisma.translationsOmit
   cefr_levels?: Prisma.cefr_levelsOmit
   universal_pos_tags?: Prisma.universal_pos_tagsOmit
+  translations_universal_pos_tags?: Prisma.translations_universal_pos_tagsOmit
 }
 
 /* Types for Logging */

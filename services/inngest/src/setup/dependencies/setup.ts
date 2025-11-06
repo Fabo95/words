@@ -36,7 +36,11 @@ async function createRequestCradle(requerstCradleFactories: {
 		),
 
 		cefrLevelsModelService: asFunction(() => requerstCradleFactories.modelServicesFactory.getCefrLevelsModelService()),
-	}
+        universalPosTagsModelService: asFunction(() => requerstCradleFactories.modelServicesFactory.getUniversalPosTagsModelService()),
+        translationsUniversalPosTagsModelService: asFunction(() => requerstCradleFactories.modelServicesFactory.getTranslationsUniversalPosTagsModelService()),
+
+
+    }
 }
 
 export { createCradle, createRequestCradle }

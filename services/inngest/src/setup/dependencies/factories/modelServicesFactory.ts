@@ -3,6 +3,8 @@ import { FastifyBaseLogger } from "fastify"
 import { TranslationsModelService } from "@/services/model/translationsModelService.js"
 import { ExampleSentencesModelService } from "@/services/model/exampleSentencesModelService.js"
 import { CefrLevelsModelService } from "@/services/model/cefrLevelsModelsService.js"
+import {UniversalPosTagsModelService} from "@/services/model/universalPosTagsModelService.js";
+import {TranslationsUniversalPosTagsModelService} from "@/services/model/translationsUniversalPosTagsModelService.js";
 
 interface ModelServicesFactoryDeps {
 	prisma: PrismaClient
@@ -14,6 +16,8 @@ export class ModelServicesFactory {
 		translationsModelService?: TranslationsModelService
 		exampleSentencesModelService?: ExampleSentencesModelService
 		cefrLevelsModelService?: CefrLevelsModelService
+        universalPosTagsModelService?: UniversalPosTagsModelService
+        translationsUniversalPosTagsModelService?: TranslationsUniversalPosTagsModelService
 	} = {}
 
 	private deps: ModelServicesFactoryDeps
@@ -42,4 +46,18 @@ export class ModelServicesFactory {
 		}
 		return this.modelServices.cefrLevelsModelService
 	}
+
+    public getUniversalPosTagsModelService() {
+        if (!this.modelServices.universalPosTagsModelService) {
+            this.modelServices.universalPosTagsModelService = new UniversalPosTagsModelService({ prisma: this.deps.prisma })
+        }
+        return this.modelServices.universalPosTagsModelService
+    }
+
+    public getTranslationsUniversalPosTagsModelService() {
+        if (!this.modelServices.translationsUniversalPosTagsModelService) {
+            this.modelServices.translationsUniversalPosTagsModelService = new TranslationsUniversalPosTagsModelService({ prisma: this.deps.prisma })
+        }
+        return this.modelServices.translationsUniversalPosTagsModelService
+    }
 }

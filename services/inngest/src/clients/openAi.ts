@@ -1,13 +1,7 @@
 import OpenAI from "openai"
 import { env } from "@/env.js"
 import z from "zod"
-
-export type CheckTranslationInput = {
-	source_language: string
-	source_text: string
-	target_language: string
-	target_text: string
-}
+import {translations} from "@/generated/user-db/client.js";
 
 const CheckTranslationResultSchema = z
 	.object({
@@ -21,12 +15,6 @@ const CheckTranslationResultSchema = z
 
 export type CheckTranslationResult = z.infer<typeof CheckTranslationResultSchema>
 
-export type GenerateExampleSentencesInput = {
-	source_language: string
-	source_text: string
-	target_language: string
-	target_text: string
-}
 
 const ExampleSentencesSchema = z
 	.object({
@@ -44,14 +32,21 @@ const CefrLevelSchema = z
 	})
 	.strict()
 
-export type GetCefrLevelInput = {
-	source_language: string
-	source_text: string
-	target_language: string
-	target_text: string
-}
-
 export type GetCefrLevelResult = z.infer<typeof CefrLevelSchema>
+
+const UD_TAGS = [
+    "ADJ","ADP","ADV","AUX","CCONJ","DET","INTJ","NOUN","NUM",
+    "PART","PRON","PROPN","SCONJ","SYM","VERB","X","PUNCT",
+] as const
+
+const PossibleUniversalPosTagsSchema = z
+    .object({
+        source_possible_pos: z.array(z.enum(UD_TAGS)).nonempty(),
+        target_possible_pos: z.array(z.enum(UD_TAGS)).nonempty(),
+    })
+    .strict()
+
+export type PossibleUniversalPosTagsResult = z.infer<typeof PossibleUniversalPosTagsSchema>
 
 export class OpenAi {
 	private client: OpenAI
@@ -66,7 +61,7 @@ export class OpenAi {
 	 * - Ensures source_text is in source_language and target_text is in target_language.
 	 * - If needed, it rewrites texts to satisfy those constraints and to be a faithful translation.
 	 */
-	async checkTranslation(input: CheckTranslationInput): Promise<CheckTranslationResult> {
+	async checkTranslation(input: translations): Promise<CheckTranslationResult> {
 		const { source_language, source_text, target_language, target_text } = input
 
 		const system = [
@@ -148,12 +143,68 @@ export class OpenAi {
 		}
 	}
 
-	/**
+    async getAllUniversalPosTags(
+        input: translations
+    ): Promise<PossibleUniversalPosTagsResult> {
+        const { source_language, source_text, target_language, target_text } = input
+
+        const system = [
+            "You are a precise linguistic analyzer using Universal Dependencies (UD) POS tags.",
+            "Task: for each text, list ALL possible UD POS tags that could apply.",
+            `Allowed tags: ${UD_TAGS.join(", ")}.`,
+            "Output strict JSON, single line, with exactly two keys:",
+            "- source_possible_pos: array of tag codes for the source_text.",
+            "- target_possible_pos: array of tag codes for the target_text.",
+            "No explanations, no reasoning, no extra keys, no code fences.",
+        ].join("\n")
+
+        const user = [
+            `source_language: ${source_language}`,
+            `source_text: ${source_text}`,
+            `target_language: ${target_language}`,
+            `target_text: ${target_text}`,
+            "",
+            "Output format (strict JSON, one line):",
+            `{"source_possible_pos":["VERB","NOUN"],"target_possible_pos":["VERB","NOUN"]}`,
+        ].join("\n")
+
+        const res = await this.client.chat.completions.create({
+            model: "gpt-4o-mini",
+            temperature: 0.2,
+            messages: [
+                { role: "system", content: system },
+                { role: "user", content: user },
+            ],
+        })
+
+        const raw = res.choices?.[0]?.message?.content?.trim() ?? ""
+        if (!raw) throw new Error("No POS tags generated")
+
+        let candidate: unknown
+        try {
+            candidate = JSON.parse(raw)
+        } catch {
+            const cleaned = raw.replace(/```json|```/g, "").trim()
+            candidate = JSON.parse(cleaned)
+        }
+
+        const parsed = PossibleUniversalPosTagsSchema.safeParse(candidate)
+
+        if (!parsed.success) {
+            const issues = parsed.error.issues.map((i) => `${i.path.join(".")}: ${i.message}`).join("; ")
+            throw new Error(`Invalid model output: ${issues}`)
+        }
+
+        return parsed.data
+    }
+
+
+    /**
 	 * Generates two example sentences:
 	 * - source_example_sentence: a natural sentence in the source_language that uses the source_text naturally.
 	 * - target_example_sentence: a natural sentence in the target_language that uses the target_text naturally.
 	 */
-	async generateExampleSentences(input: GenerateExampleSentencesInput): Promise<GenerateExampleSentencesResult> {
+	async generateExampleSentences(input: translations): Promise<GenerateExampleSentencesResult> {
 		const { source_language, source_text, target_language, target_text } = input
 
 		const system = [
@@ -225,7 +276,7 @@ export class OpenAi {
 	 * Estimates the CEFR language level (A1–C2) for the given translation.
 	 * The model considers both source_text and target_text complexity.
 	 */
-	async getCefrLevel(input: GetCefrLevelInput): Promise<GetCefrLevelResult> {
+	async getCefrLevel(input: translations): Promise<GetCefrLevelResult> {
 		const { source_language, source_text, target_language, target_text } = input
 
 		const system = [

@@ -4,6 +4,8 @@ import { TranslationsModelService } from "@/services/model/translationsModelServ
 import { OpenAi } from "@/clients/openAi.js"
 import { ExampleSentencesModelService } from "@/services/model/exampleSentencesModelService.js"
 import { CefrLevelsModelService } from "@/services/model/cefrLevelsModelsService.js"
+import { UniversalPosTagsModelService } from "@/services/model/universalPosTagsModelService.js"
+import { TranslationsUniversalPosTagsModelService } from "@/services/model/translationsUniversalPosTagsModelService.js"
 
 type InngestEventFunctionsDeps = {
 	openAi: OpenAi
@@ -11,6 +13,8 @@ type InngestEventFunctionsDeps = {
 	translationsModelService: TranslationsModelService
 	exampleSentencesModelService: ExampleSentencesModelService
 	cefrLevelsModelService: CefrLevelsModelService
+	universalPosTagsModelService: UniversalPosTagsModelService
+	translationsUniversalPosTagsModelService: TranslationsUniversalPosTagsModelService
 }
 
 export const getInngestEventFunctions = ({
@@ -19,6 +23,8 @@ export const getInngestEventFunctions = ({
 	translationsModelService,
 	exampleSentencesModelService,
 	cefrLevelsModelService,
+	universalPosTagsModelService,
+	translationsUniversalPosTagsModelService,
 }: InngestEventFunctionsDeps) => [
 	...getInngestTranslationEventFunctions({
 		openAi,
@@ -26,5 +32,7 @@ export const getInngestEventFunctions = ({
 		translationsModelService,
 		exampleSentencesModelService,
 		cefrLevelsModelService,
+		universalPosTagsModelService,
+		translationsUniversalPosTagsModelService,
 	}),
 ]

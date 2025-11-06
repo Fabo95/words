@@ -16,12 +16,14 @@ const fastify = createServer({
 			}
 		},
 		getRequestCradleFactories: async ({ logger, appDependenciesFactory }) => {
-			const clientsFactory = new ClientsFactory({ logger })
 
-			const modelServicesFactory = new ModelServicesFactory({
-				prisma: await appDependenciesFactory.getPrisma(),
-				logger,
-			})
+
+            const modelServicesFactory = new ModelServicesFactory({
+                prisma: await appDependenciesFactory.getPrisma(),
+                logger,
+            })
+
+            const clientsFactory = new ClientsFactory({ logger })
 
 			const commonServicesFactory = new CommonServicesFactory({
 				logger,

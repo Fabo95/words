@@ -207,7 +207,7 @@ export type universal_pos_tagsWhereInput = {
   code?: Prisma.StringFilter<"universal_pos_tags"> | string
   name?: Prisma.StringFilter<"universal_pos_tags"> | string
   description?: Prisma.StringNullableFilter<"universal_pos_tags"> | string | null
-  translations?: Prisma.TranslationsListRelationFilter
+  translations_universal_pos_tags?: Prisma.Translations_universal_pos_tagsListRelationFilter
 }
 
 export type universal_pos_tagsOrderByWithRelationInput = {
@@ -215,7 +215,7 @@ export type universal_pos_tagsOrderByWithRelationInput = {
   code?: Prisma.SortOrder
   name?: Prisma.SortOrder
   description?: Prisma.SortOrderInput | Prisma.SortOrder
-  translations?: Prisma.translationsOrderByRelationAggregateInput
+  translations_universal_pos_tags?: Prisma.translations_universal_pos_tagsOrderByRelationAggregateInput
 }
 
 export type universal_pos_tagsWhereUniqueInput = Prisma.AtLeast<{
@@ -226,7 +226,7 @@ export type universal_pos_tagsWhereUniqueInput = Prisma.AtLeast<{
   NOT?: Prisma.universal_pos_tagsWhereInput | Prisma.universal_pos_tagsWhereInput[]
   name?: Prisma.StringFilter<"universal_pos_tags"> | string
   description?: Prisma.StringNullableFilter<"universal_pos_tags"> | string | null
-  translations?: Prisma.TranslationsListRelationFilter
+  translations_universal_pos_tags?: Prisma.Translations_universal_pos_tagsListRelationFilter
 }, "id" | "code">
 
 export type universal_pos_tagsOrderByWithAggregationInput = {
@@ -255,7 +255,7 @@ export type universal_pos_tagsCreateInput = {
   code: string
   name: string
   description?: string | null
-  translations?: Prisma.translationsCreateNestedManyWithoutUniversal_pos_tagsInput
+  translations_universal_pos_tags?: Prisma.translations_universal_pos_tagsCreateNestedManyWithoutUniversal_pos_tagsInput
 }
 
 export type universal_pos_tagsUncheckedCreateInput = {
@@ -263,14 +263,14 @@ export type universal_pos_tagsUncheckedCreateInput = {
   code: string
   name: string
   description?: string | null
-  translations?: Prisma.translationsUncheckedCreateNestedManyWithoutUniversal_pos_tagsInput
+  translations_universal_pos_tags?: Prisma.translations_universal_pos_tagsUncheckedCreateNestedManyWithoutUniversal_pos_tagsInput
 }
 
 export type universal_pos_tagsUpdateInput = {
   code?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  translations?: Prisma.translationsUpdateManyWithoutUniversal_pos_tagsNestedInput
+  translations_universal_pos_tags?: Prisma.translations_universal_pos_tagsUpdateManyWithoutUniversal_pos_tagsNestedInput
 }
 
 export type universal_pos_tagsUncheckedUpdateInput = {
@@ -278,7 +278,7 @@ export type universal_pos_tagsUncheckedUpdateInput = {
   code?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-  translations?: Prisma.translationsUncheckedUpdateManyWithoutUniversal_pos_tagsNestedInput
+  translations_universal_pos_tags?: Prisma.translations_universal_pos_tagsUncheckedUpdateManyWithoutUniversal_pos_tagsNestedInput
 }
 
 export type universal_pos_tagsCreateManyInput = {
@@ -299,11 +299,6 @@ export type universal_pos_tagsUncheckedUpdateManyInput = {
   code?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
-}
-
-export type Universal_pos_tagsNullableScalarRelationFilter = {
-  is?: Prisma.universal_pos_tagsWhereInput | null
-  isNot?: Prisma.universal_pos_tagsWhereInput | null
 }
 
 export type universal_pos_tagsCountOrderByAggregateInput = {
@@ -335,58 +330,61 @@ export type universal_pos_tagsSumOrderByAggregateInput = {
   id?: Prisma.SortOrder
 }
 
-export type universal_pos_tagsCreateNestedOneWithoutTranslationsInput = {
-  create?: Prisma.XOR<Prisma.universal_pos_tagsCreateWithoutTranslationsInput, Prisma.universal_pos_tagsUncheckedCreateWithoutTranslationsInput>
-  connectOrCreate?: Prisma.universal_pos_tagsCreateOrConnectWithoutTranslationsInput
+export type Universal_pos_tagsScalarRelationFilter = {
+  is?: Prisma.universal_pos_tagsWhereInput
+  isNot?: Prisma.universal_pos_tagsWhereInput
+}
+
+export type universal_pos_tagsCreateNestedOneWithoutTranslations_universal_pos_tagsInput = {
+  create?: Prisma.XOR<Prisma.universal_pos_tagsCreateWithoutTranslations_universal_pos_tagsInput, Prisma.universal_pos_tagsUncheckedCreateWithoutTranslations_universal_pos_tagsInput>
+  connectOrCreate?: Prisma.universal_pos_tagsCreateOrConnectWithoutTranslations_universal_pos_tagsInput
   connect?: Prisma.universal_pos_tagsWhereUniqueInput
 }
 
-export type universal_pos_tagsUpdateOneWithoutTranslationsNestedInput = {
-  create?: Prisma.XOR<Prisma.universal_pos_tagsCreateWithoutTranslationsInput, Prisma.universal_pos_tagsUncheckedCreateWithoutTranslationsInput>
-  connectOrCreate?: Prisma.universal_pos_tagsCreateOrConnectWithoutTranslationsInput
-  upsert?: Prisma.universal_pos_tagsUpsertWithoutTranslationsInput
-  disconnect?: Prisma.universal_pos_tagsWhereInput | boolean
-  delete?: Prisma.universal_pos_tagsWhereInput | boolean
+export type universal_pos_tagsUpdateOneRequiredWithoutTranslations_universal_pos_tagsNestedInput = {
+  create?: Prisma.XOR<Prisma.universal_pos_tagsCreateWithoutTranslations_universal_pos_tagsInput, Prisma.universal_pos_tagsUncheckedCreateWithoutTranslations_universal_pos_tagsInput>
+  connectOrCreate?: Prisma.universal_pos_tagsCreateOrConnectWithoutTranslations_universal_pos_tagsInput
+  upsert?: Prisma.universal_pos_tagsUpsertWithoutTranslations_universal_pos_tagsInput
   connect?: Prisma.universal_pos_tagsWhereUniqueInput
-  update?: Prisma.XOR<Prisma.XOR<Prisma.universal_pos_tagsUpdateToOneWithWhereWithoutTranslationsInput, Prisma.universal_pos_tagsUpdateWithoutTranslationsInput>, Prisma.universal_pos_tagsUncheckedUpdateWithoutTranslationsInput>
+  update?: Prisma.XOR<Prisma.XOR<Prisma.universal_pos_tagsUpdateToOneWithWhereWithoutTranslations_universal_pos_tagsInput, Prisma.universal_pos_tagsUpdateWithoutTranslations_universal_pos_tagsInput>, Prisma.universal_pos_tagsUncheckedUpdateWithoutTranslations_universal_pos_tagsInput>
 }
 
-export type universal_pos_tagsCreateWithoutTranslationsInput = {
+export type universal_pos_tagsCreateWithoutTranslations_universal_pos_tagsInput = {
   code: string
   name: string
   description?: string | null
 }
 
-export type universal_pos_tagsUncheckedCreateWithoutTranslationsInput = {
+export type universal_pos_tagsUncheckedCreateWithoutTranslations_universal_pos_tagsInput = {
   id?: number
   code: string
   name: string
   description?: string | null
 }
 
-export type universal_pos_tagsCreateOrConnectWithoutTranslationsInput = {
+export type universal_pos_tagsCreateOrConnectWithoutTranslations_universal_pos_tagsInput = {
   where: Prisma.universal_pos_tagsWhereUniqueInput
-  create: Prisma.XOR<Prisma.universal_pos_tagsCreateWithoutTranslationsInput, Prisma.universal_pos_tagsUncheckedCreateWithoutTranslationsInput>
+  create: Prisma.XOR<Prisma.universal_pos_tagsCreateWithoutTranslations_universal_pos_tagsInput, Prisma.universal_pos_tagsUncheckedCreateWithoutTranslations_universal_pos_tagsInput>
 }
 
-export type universal_pos_tagsUpsertWithoutTranslationsInput = {
-  update: Prisma.XOR<Prisma.universal_pos_tagsUpdateWithoutTranslationsInput, Prisma.universal_pos_tagsUncheckedUpdateWithoutTranslationsInput>
-  create: Prisma.XOR<Prisma.universal_pos_tagsCreateWithoutTranslationsInput, Prisma.universal_pos_tagsUncheckedCreateWithoutTranslationsInput>
+export type universal_pos_tagsUpsertWithoutTranslations_universal_pos_tagsInput = {
+  update: Prisma.XOR<Prisma.universal_pos_tagsUpdateWithoutTranslations_universal_pos_tagsInput, Prisma.universal_pos_tagsUncheckedUpdateWithoutTranslations_universal_pos_tagsInput>
+  create: Prisma.XOR<Prisma.universal_pos_tagsCreateWithoutTranslations_universal_pos_tagsInput, Prisma.universal_pos_tagsUncheckedCreateWithoutTranslations_universal_pos_tagsInput>
   where?: Prisma.universal_pos_tagsWhereInput
 }
 
-export type universal_pos_tagsUpdateToOneWithWhereWithoutTranslationsInput = {
+export type universal_pos_tagsUpdateToOneWithWhereWithoutTranslations_universal_pos_tagsInput = {
   where?: Prisma.universal_pos_tagsWhereInput
-  data: Prisma.XOR<Prisma.universal_pos_tagsUpdateWithoutTranslationsInput, Prisma.universal_pos_tagsUncheckedUpdateWithoutTranslationsInput>
+  data: Prisma.XOR<Prisma.universal_pos_tagsUpdateWithoutTranslations_universal_pos_tagsInput, Prisma.universal_pos_tagsUncheckedUpdateWithoutTranslations_universal_pos_tagsInput>
 }
 
-export type universal_pos_tagsUpdateWithoutTranslationsInput = {
+export type universal_pos_tagsUpdateWithoutTranslations_universal_pos_tagsInput = {
   code?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
   description?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
 }
 
-export type universal_pos_tagsUncheckedUpdateWithoutTranslationsInput = {
+export type universal_pos_tagsUncheckedUpdateWithoutTranslations_universal_pos_tagsInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   code?: Prisma.StringFieldUpdateOperationsInput | string
   name?: Prisma.StringFieldUpdateOperationsInput | string
@@ -399,11 +397,11 @@ export type universal_pos_tagsUncheckedUpdateWithoutTranslationsInput = {
  */
 
 export type Universal_pos_tagsCountOutputType = {
-  translations: number
+  translations_universal_pos_tags: number
 }
 
 export type Universal_pos_tagsCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  translations?: boolean | Universal_pos_tagsCountOutputTypeCountTranslationsArgs
+  translations_universal_pos_tags?: boolean | Universal_pos_tagsCountOutputTypeCountTranslations_universal_pos_tagsArgs
 }
 
 /**
@@ -419,8 +417,8 @@ export type Universal_pos_tagsCountOutputTypeDefaultArgs<ExtArgs extends runtime
 /**
  * Universal_pos_tagsCountOutputType without action
  */
-export type Universal_pos_tagsCountOutputTypeCountTranslationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  where?: Prisma.translationsWhereInput
+export type Universal_pos_tagsCountOutputTypeCountTranslations_universal_pos_tagsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.translations_universal_pos_tagsWhereInput
 }
 
 
@@ -429,7 +427,7 @@ export type universal_pos_tagsSelect<ExtArgs extends runtime.Types.Extensions.In
   code?: boolean
   name?: boolean
   description?: boolean
-  translations?: boolean | Prisma.universal_pos_tags$translationsArgs<ExtArgs>
+  translations_universal_pos_tags?: boolean | Prisma.universal_pos_tags$translations_universal_pos_tagsArgs<ExtArgs>
   _count?: boolean | Prisma.Universal_pos_tagsCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["universal_pos_tags"]>
 
@@ -456,7 +454,7 @@ export type universal_pos_tagsSelectScalar = {
 
 export type universal_pos_tagsOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "code" | "name" | "description", ExtArgs["result"]["universal_pos_tags"]>
 export type universal_pos_tagsInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
-  translations?: boolean | Prisma.universal_pos_tags$translationsArgs<ExtArgs>
+  translations_universal_pos_tags?: boolean | Prisma.universal_pos_tags$translations_universal_pos_tagsArgs<ExtArgs>
   _count?: boolean | Prisma.Universal_pos_tagsCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type universal_pos_tagsIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
@@ -465,7 +463,7 @@ export type universal_pos_tagsIncludeUpdateManyAndReturn<ExtArgs extends runtime
 export type $universal_pos_tagsPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   name: "universal_pos_tags"
   objects: {
-    translations: Prisma.$translationsPayload<ExtArgs>[]
+    translations_universal_pos_tags: Prisma.$translations_universal_pos_tagsPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: number
@@ -866,7 +864,7 @@ readonly fields: universal_pos_tagsFieldRefs;
  */
 export interface Prisma__universal_pos_tagsClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
-  translations<T extends Prisma.universal_pos_tags$translationsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.universal_pos_tags$translationsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$translationsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  translations_universal_pos_tags<T extends Prisma.universal_pos_tags$translations_universal_pos_tagsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.universal_pos_tags$translations_universal_pos_tagsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$translations_universal_pos_tagsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1288,27 +1286,27 @@ export type universal_pos_tagsDeleteManyArgs<ExtArgs extends runtime.Types.Exten
 }
 
 /**
- * universal_pos_tags.translations
+ * universal_pos_tags.translations_universal_pos_tags
  */
-export type universal_pos_tags$translationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+export type universal_pos_tags$translations_universal_pos_tagsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   /**
-   * Select specific fields to fetch from the translations
+   * Select specific fields to fetch from the translations_universal_pos_tags
    */
-  select?: Prisma.translationsSelect<ExtArgs> | null
+  select?: Prisma.translations_universal_pos_tagsSelect<ExtArgs> | null
   /**
-   * Omit specific fields from the translations
+   * Omit specific fields from the translations_universal_pos_tags
    */
-  omit?: Prisma.translationsOmit<ExtArgs> | null
+  omit?: Prisma.translations_universal_pos_tagsOmit<ExtArgs> | null
   /**
    * Choose, which related nodes to fetch as well
    */
-  include?: Prisma.translationsInclude<ExtArgs> | null
-  where?: Prisma.translationsWhereInput
-  orderBy?: Prisma.translationsOrderByWithRelationInput | Prisma.translationsOrderByWithRelationInput[]
-  cursor?: Prisma.translationsWhereUniqueInput
+  include?: Prisma.translations_universal_pos_tagsInclude<ExtArgs> | null
+  where?: Prisma.translations_universal_pos_tagsWhereInput
+  orderBy?: Prisma.translations_universal_pos_tagsOrderByWithRelationInput | Prisma.translations_universal_pos_tagsOrderByWithRelationInput[]
+  cursor?: Prisma.translations_universal_pos_tagsWhereUniqueInput
   take?: number
   skip?: number
-  distinct?: Prisma.TranslationsScalarFieldEnum | Prisma.TranslationsScalarFieldEnum[]
+  distinct?: Prisma.Translations_universal_pos_tagsScalarFieldEnum | Prisma.Translations_universal_pos_tagsScalarFieldEnum[]
 }
 
 /**

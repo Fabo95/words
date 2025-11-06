@@ -42,20 +42,19 @@ model seaql_migrations {
 }
 
 model translations {
-  id                   Int                 @id @default(autoincrement())
-  source_language      String              @db.VarChar
-  source_text          String              @db.VarChar
-  target_language      String              @db.VarChar
-  target_text          String              @db.VarChar
-  user_id              Int
-  collection_id        Int?
-  cefr_level_id        Int?
-  universal_pos_tag_id Int?
-  example_sentences    example_sentences[]
-  collections          collections?        @relation(fields: [collection_id], references: [id], onDelete: Cascade, map: "FK_one_collection_has_many_translations")
-  users                users               @relation(fields: [user_id], references: [id], onDelete: Cascade, map: "FK_one_user_has_many_translations")
-  cefr_levels          cefr_levels?        @relation(fields: [cefr_level_id], references: [id], map: "FK_translation_cefr_level")
-  universal_pos_tags   universal_pos_tags? @relation(fields: [universal_pos_tag_id], references: [id], map: "FK_translation_universal_pos_tag")
+  id                              Int                               @id @default(autoincrement())
+  source_language                 String                            @db.VarChar
+  source_text                     String                            @db.VarChar
+  target_language                 String                            @db.VarChar
+  target_text                     String                            @db.VarChar
+  user_id                         Int
+  collection_id                   Int?
+  cefr_level_id                   Int?
+  example_sentences               example_sentences[]
+  collections                     collections?                      @relation(fields: [collection_id], references: [id], onDelete: Cascade, map: "FK_one_collection_has_many_translations")
+  users                           users                             @relation(fields: [user_id], references: [id], onDelete: Cascade, map: "FK_one_user_has_many_translations")
+  cefr_levels                     cefr_levels?                      @relation(fields: [cefr_level_id], references: [id], map: "FK_translation_cefr_level")
+  translations_universal_pos_tags translations_universal_pos_tags[]
 }
 
 model cefr_levels {
@@ -67,9 +66,20 @@ model cefr_levels {
 }
 
 model universal_pos_tags {
-  id           Int            @id @default(autoincrement())
-  code         String         @unique @db.VarChar
-  name         String         @db.VarChar
-  description  String?        @db.VarChar
-  translations translations[]
+  id                              Int                               @id @default(autoincrement())
+  code                            String                            @unique @db.VarChar
+  name                            String                            @db.VarChar
+  description                     String?                           @db.VarChar
+  translations_universal_pos_tags translations_universal_pos_tags[]
+}
+
+model translations_universal_pos_tags {
+  id                   Int                @id @default(autoincrement())
+  translation_id       Int
+  universal_pos_tag_id Int
+  translations         translations       @relation(fields: [translation_id], references: [id], onDelete: Cascade, map: "FK_tupt_translation")
+  universal_pos_tags   universal_pos_tags @relation(fields: [universal_pos_tag_id], references: [id], onDelete: Cascade, map: "FK_tupt_universal_pos_tag")
+
+  @@index([translation_id], map: "idx_tupt_translation_id")
+  @@index([universal_pos_tag_id], map: "idx_tupt_universal_pos_tag_id")
 }

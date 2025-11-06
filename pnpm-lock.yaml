@@ -74,6 +74,9 @@ importers:
       '@types/node':
         specifier: ^20.0.0
         version: 20.19.24
+      '@words/biome-config':
+        specifier: file:../../packages/biome-config
+        version: link:../../packages/biome-config
       pino-pretty:
         specifier: ^13.0.0
         version: 13.1.2

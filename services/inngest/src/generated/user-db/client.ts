@@ -78,3 +78,8 @@ export type cefr_levels = Prisma.cefr_levelsModel
  * 
  */
 export type universal_pos_tags = Prisma.universal_pos_tagsModel
+/**
+ * Model translations_universal_pos_tags
+ * 
+ */
+export type translations_universal_pos_tags = Prisma.translations_universal_pos_tagsModel
