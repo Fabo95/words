@@ -4,36 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="add universal pos tags">
-      <change afterPath="$PROJECT_DIR$/services/web/biome.json" afterDir="false" />
+    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="moved form component top level">
+      <change afterPath="$PROJECT_DIR$/services/web/src/utils/types/tFunction.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/messages/de-DE.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/messages/de-DE.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/messages/en-GB.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/messages/en-GB.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/_content/addTranslationTrigger.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/_content/addTranslationTrigger.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/account/_content/accountNameForm/accountNameForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/accountNameForm/accountNameForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/account/_content/accountNameForm/utils/accountNameFormSchema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/accountNameForm/utils/accountNameFormSchema.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/account/_content/accountNameForm/utils/accountNameFormTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/accountNameForm/utils/accountNameFormTypes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/account/_content/accountPasswordForm/accountPasswordForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/accountPasswordForm/accountPasswordForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/account/_content/accountPasswordForm/utils/accountPasswordFormSchema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/accountPasswordForm/utils/accountPasswordFormSchema.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/account/_content/accountPasswordForm/utils/accountPasswordFormTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/accountPasswordForm/utils/accountPasswordFormTypes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/account/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/account/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/collectionTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/collectionTable.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableActions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableActions.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableDeleteFromCollectionDialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/dialogs/deleteTranslationFromCollectionDialogContent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableDeleteTranslationDialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/dialogs/deleteTranslationDialogContent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableEditTranslationForm/collectionTableEditTranslationForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/editTranslationForm/editTranslationForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableEditTranslationForm/utils/collectionTableEditTranslationFormSchema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/editTranslationForm/utils/collectionTableEditTranslationFormSchema.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableEditTranslationForm/utils/collectionTableEditTranslationFormTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/editTranslationForm/utils/collectionTableEditTranslationFormTypes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/home/_content/TranslationForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/createTranslationForm/createTranslationForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/home/_content/utils/translationFormSchema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/createTranslationForm/utils/translationFormSchema.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/home/_content/utils/translationFormTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/createTranslationForm/utils/translationFormTypes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedOut)/authentication/_content/loginForm/loginForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/loginForm/loginForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedOut)/authentication/_content/loginForm/utils/loginFormSchema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/loginForm/utils/loginFormSchema.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedOut)/authentication/_content/loginForm/utils/loginFormTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/loginForm/utils/loginFormTypes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedOut)/authentication/_content/registrationForm/registrationForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/registrationForm/registrationForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedOut)/authentication/_content/registrationForm/utils/registrationFormSchema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/registrationForm/utils/registrationFormSchema.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedOut)/authentication/_content/registrationForm/utils/registrationFormTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/registrationForm/utils/registrationFormTypes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedOut)/authentication/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedOut)/authentication/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionCreateForm/sidebarCollectionCreateForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionCreateForm/sidebarCollectionCreateForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionCreateForm/utils/collectionCreateFromSchema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionCreateForm/utils/collectionCreateFromSchema.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionDeleteDialog/sidebarCollectionDeleteDialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionDeleteDialog/sidebarCollectionDeleteDialog.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionEditForm/sidebarCollectionEditForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionEditForm/sidebarCollectionEditForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionEditForm/utils/collectionEditFromSchema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionEditForm/utils/collectionEditFromSchema.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/components/forms/accountNameForm/utils/accountNameFormSchema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/accountNameForm/utils/accountNameFormSchema.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/components/forms/createTranslationForm/utils/translationFormSchema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/createTranslationForm/utils/translationFormSchema.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/components/forms/editTranslationForm/editTranslationForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/editTranslationForm/editTranslationForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/components/forms/editTranslationForm/utils/collectionTableEditTranslationFormSchema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/editTranslationForm/utils/collectionTableEditTranslationFormSchema.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/components/forms/loginForm/utils/loginFormSchema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/loginForm/utils/loginFormSchema.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/components/forms/registrationForm/utils/registrationFormSchema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/registrationForm/utils/registrationFormSchema.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -261,15 +245,7 @@
       <workItem from="1762337536822" duration="8000" />
       <workItem from="1762445988688" duration="9577000" />
       <workItem from="1762510443208" duration="2165000" />
-      <workItem from="1762626129150" duration="2274000" />
-    </task>
-    <task id="LOCAL-00027" summary="migrated registrationCardContent.tsx">
-      <option name="closed" value="true" />
-      <created>1736201371257</created>
-      <option name="number" value="00027" />
-      <option name="presentableId" value="LOCAL-00027" />
-      <option name="project" value="LOCAL" />
-      <updated>1736201371257</updated>
+      <workItem from="1762626129150" duration="3719000" />
     </task>
     <task id="LOCAL-00028" summary="send cookie to server">
       <option name="closed" value="true" />
@@ -655,7 +631,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762453290052</updated>
     </task>
-    <option name="localTasksCounter" value="76" />
+    <task id="LOCAL-00076" summary="moved form component top level">
+      <option name="closed" value="true" />
+      <created>1762628487402</created>
+      <option name="number" value="00076" />
+      <option name="presentableId" value="LOCAL-00076" />
+      <option name="project" value="LOCAL" />
+      <updated>1762628487402</updated>
+    </task>
+    <option name="localTasksCounter" value="77" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -676,7 +660,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added ability to change name and password" />
     <MESSAGE value="added prefetching" />
     <MESSAGE value="added much react query" />
     <MESSAGE value="added password change api" />
@@ -701,18 +684,8 @@
     <MESSAGE value="move to web folder" />
     <MESSAGE value="add check translation" />
     <MESSAGE value="add universal pos tags" />
-    <option name="LAST_COMMIT_MESSAGE" value="add universal pos tags" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/services/web/src/components/forms/editTranslationForm/editTranslationForm.tsx</url>
-          <line>2</line>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="moved form component top level" />
+    <option name="LAST_COMMIT_MESSAGE" value="moved form component top level" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

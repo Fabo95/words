@@ -1,6 +1,6 @@
 import { z } from "zod"
 
-import { TFunction } from "@app/utils/i18n/utils/i18nTypes"
+import { TFunction } from "@app/utils/types/tFunction"
 
 export const getCollectionCreateFormSchema = (t: TFunction) =>
 	z.object({

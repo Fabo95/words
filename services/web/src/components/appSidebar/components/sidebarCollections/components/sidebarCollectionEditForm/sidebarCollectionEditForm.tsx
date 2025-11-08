@@ -41,21 +41,10 @@ export const SidebarCollectionEditForm = ({
 	})
 
 	const { mutateAsync: mutateCollectionEdit } = $api.useMutation("patch", "/collection/{id}", {
-		onSuccess: (data) => {
+		onSuccess: async (data) => {
 			console.log({ data })
-			queryClient.setQueryData(["get", "/user/collections"], (oldData) =>
-				oldData
-					? {
-							...oldData,
-							response_object: oldData.response_object?.map((collection) => {
-								if (collection.id === id) {
-									return data.response_object
-								}
-								return collection
-							}),
-						}
-					: oldData,
-			)
+
+			await queryClient.invalidateQueries({ queryKey: ["/user/collections", "/collections"] })
 
 			toast({
 				title: t("components.navCollections.editForm.toast.success.title"),

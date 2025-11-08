@@ -34,17 +34,10 @@ export const SidebarCollectionDeleteDialog = ({
 	const queryClient = useQueryClient()
 
 	const { mutateAsync: mutateCollectionDelete } = $api.useMutation("delete", "/collection/{id}", {
-		onSuccess: (data) => {
+		onSuccess: async (data) => {
 			console.log({ data })
 
-			queryClient.setQueryData(["get", "/user/collections"], (oldData) =>
-				oldData
-					? {
-							...oldData,
-							response_object: oldData.response_object.filter((collection) => collection.id !== id),
-						}
-					: oldData,
-			)
+			await queryClient.invalidateQueries({ queryKey: ["/user/collections"] })
 
 			toast({
 				title: t("components.navCollections.deleteDialog.toast.success.title"),

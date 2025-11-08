@@ -33,16 +33,10 @@ export const SidebarCollectionCreateForm = ({ onSubmit, onCancel }: ISidebarColl
 	})
 
 	const { mutateAsync: mutateCollectionCreate } = $api.useMutation("post", "/collection", {
-		onSuccess: (data) => {
+		onSuccess: async (data) => {
 			console.log({ data })
-			queryClient.setQueryData(["get", "/user/collections"], (oldData) =>
-				oldData
-					? {
-							...oldData,
-							response_object: [...oldData.response_object, data.response_object],
-						}
-					: oldData,
-			)
+
+			await queryClient.invalidateQueries({ queryKey: ["/user/collections"] })
 
 			toast({
 				title: t("components.navCollections.createForm.toast.success.title"),

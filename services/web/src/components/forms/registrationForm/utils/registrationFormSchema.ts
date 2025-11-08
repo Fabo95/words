@@ -1,7 +1,7 @@
 import { z } from "zod"
 
 import { $api } from "@app/utils/api/apiRequests"
-import { TFunction } from "@app/utils/i18n/utils/i18nTypes"
+import { TFunction } from "@app/utils/types/tFunction"
 import { getQueryClient } from "@app/utils/reactQuery/reactQueryHelpers"
 import { emailSchema } from "@app/utils/schemas/schemas"
 

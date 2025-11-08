@@ -1,4 +1,5 @@
 import { z } from "zod"
+import { TFunction } from "@app/utils/types/tFunction"
 
 export const getTranslationFormSchema = (t: TFunction) =>
 	z.object({

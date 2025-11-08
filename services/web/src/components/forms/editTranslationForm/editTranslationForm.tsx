@@ -40,25 +40,8 @@ export const EditTranslationForm = ({
 	const queryClient = useQueryClient()
 
 	const { mutateAsync: mutateTranslationUpdate } = $api.useMutation("patch", "/translation/{id}", {
-		onSuccess: (data) => {
-			queryClient.setQueryData(
-				["get", "/collection/{id}/translations", { params: { path: { id } } }],
-				(oldData: { response_object: unknown[] }) => {
-					console.log("oldData", oldData)
-					return oldData
-						? {
-								...oldData,
-								response_object: oldData.response_object.map((translation) => {
-									if (translation.id !== translationId) {
-										return translation
-									}
-
-									return data.response_object
-								}),
-							}
-						: oldData
-				},
-			)
+		onSuccess: async () => {
+			await queryClient.invalidateQueries({ queryKey: ["/translation/{id}", "/collection/{id}/translations"] })
 
 			handleIsDialogOpen(false)
 
