@@ -1,12 +1,11 @@
 import { Row } from "@tanstack/react-table"
 import { Delete, Edit, MoreHorizontal, Trash2 } from "lucide-react"
 
-import { CollectionTableDeleteFromCollectionDialog } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableDeleteFromCollectionDialog"
-import { CollectionTableDeleteTranslationDialog } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableDeleteTranslationDialog"
-import { CollectionTableEditTranslationForm } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableEditTranslationForm/collectionTableEditTranslationForm"
+import { DeleteTranslationFromCollectionDialogContent } from "@app/components/dialogs/deleteTranslationFromCollectionDialogContent"
+import { DeleteTranslationDialogContent } from "@app/components/dialogs/deleteTranslationDialogContent"
+import { EditTranslationForm } from "@app/components/forms/editTranslationForm/editTranslationForm"
 import { CollectionTranslation } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/utils/collectionTableTypes"
 import { Button } from "@app/components/ui/button"
-import { Dialog, DialogDescription, DialogHeader, DialogTitle } from "@app/components/ui/dialog"
 import {
 	DropdownMenu,
 	DropdownMenuContent,
@@ -18,7 +17,9 @@ import { useSidebar } from "@app/components/ui/sidebar"
 import { useState } from "react"
 import { useTranslations } from "next-intl"
 import * as React from "react"
-import { DialogContent } from "@radix-ui/react-dialog"
+import { DialogBody } from "next/dist/client/components/react-dev-overlay/ui/components/dialog"
+
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@app/components/ui/dialog"
 
 type CollectionTableActionsProps = { row: Row<CollectionTranslation> }
 export const CollectionTableActions = ({ row }: CollectionTableActionsProps) => {
@@ -34,8 +35,6 @@ export const CollectionTableActions = ({ row }: CollectionTableActionsProps) => 
 	const [isDeleteFromCollectionDialogOpen, setIsDeleteFromCollectionDialogOpen] = useState(false)
 
 	// --- RENDER ---
-
-	console.log(row.original.id)
 
 	return (
 		<>
@@ -74,24 +73,27 @@ export const CollectionTableActions = ({ row }: CollectionTableActionsProps) => 
 			<Dialog open={isEditFormOpen} onOpenChange={setIsEditFormOpen}>
 				<DialogContent>
 					<DialogHeader>
-						<DialogTitle>{t("pages.collection.table.editTranslationForm.title")}</DialogTitle>
+						<DialogTitle>{t("forms.editTranslationForm.title")}</DialogTitle>
 
-						<DialogDescription>{t("pages.collection.table.editTranslationForm.description")}</DialogDescription>
+						<DialogDescription>{t("forms.editTranslationForm.description")}</DialogDescription>
 					</DialogHeader>
-					{isEditFormOpen && (
-						<CollectionTableEditTranslationForm
-							id={row.original.id}
-							translationId={row.original.translationId}
-							sourceText={row.original.sourceText}
-							targetText={row.original.targetText}
-							handleIsDialogOpen={setIsEditFormOpen}
-						/>
-					)}
+
+					<DialogBody>
+						{isEditFormOpen && (
+							<EditTranslationForm
+								id={row.original.id}
+								translationId={row.original.translationId}
+								sourceText={row.original.sourceText}
+								targetText={row.original.targetText}
+								handleIsDialogOpen={setIsEditFormOpen}
+							/>
+						)}
+					</DialogBody>
 				</DialogContent>
 			</Dialog>
 
 			<Dialog open={isDeleteFromCollectionDialogOpen} onOpenChange={setIsDeleteFromCollectionDialogOpen}>
-				<CollectionTableDeleteFromCollectionDialog
+				<DeleteTranslationFromCollectionDialogContent
 					id={row.original.id}
 					translationId={row.original.translationId}
 					handleIsDialogOpen={setIsDeleteFromCollectionDialogOpen}
@@ -99,7 +101,7 @@ export const CollectionTableActions = ({ row }: CollectionTableActionsProps) => 
 			</Dialog>
 
 			<Dialog open={isDeleteTranslationDialogOpen} onOpenChange={setIsDeleteTranslationDialogOpen}>
-				<CollectionTableDeleteTranslationDialog
+				<DeleteTranslationDialogContent
 					id={row.original.id}
 					translationId={row.original.translationId}
 					handleIsDialogOpen={setIsDeleteTranslationDialogOpen}

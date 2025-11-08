@@ -1,5 +1,5 @@
-import { AccountNameForm } from "@app/app/[lang]/(loggedIn)/account/_content/accountNameForm/accountNameForm"
-import { AccountPasswordForm } from "@app/app/[lang]/(loggedIn)/account/_content/accountPasswordForm/accountPasswordForm"
+import { AccountNameForm } from "@app/components/forms/accountNameForm/accountNameForm"
+import { AccountPasswordForm } from "@app/components/forms/accountPasswordForm/accountPasswordForm"
 import { PageContent } from "@app/components/ui/pageContent"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@app/components/ui/tabs"
 import { getTranslations } from "next-intl/server"
@@ -18,9 +18,9 @@ export default async function Page({ params }: { params: Promise<Record<"lang", 
 		<PageContent>
 			<Tabs defaultValue="name" className="max-w-[400px] w-full">
 				<TabsList className="grid w-full grid-cols-2">
-					<TabsTrigger value="name">{t("pages.account.name.title")}</TabsTrigger>
+					<TabsTrigger value="name">{t("forms.accountNameForm.title")}</TabsTrigger>
 
-					<TabsTrigger value="password">{t("pages.account.password.title")}</TabsTrigger>
+					<TabsTrigger value="password">{t("forms.accountPasswordForm.title")}</TabsTrigger>
 				</TabsList>
 
 				<TabsContent value="name">

@@ -5,6 +5,146 @@
         "english": "English"
       }
     },
+    "dialogs": {
+      "deleteTranslationDialog": {
+        "title": "Delete translation",
+        "description": "You really want to delete the translation?",
+        "cancelButton": "Cancel",
+        "deleteButton": "Delete",
+        "toast": {
+          "success": {
+            "title": "Deletion successful",
+            "description": "The translation was deleted."
+          },
+          "error": {
+            "title": "Deletion failed",
+            "description": "Please try again."
+          }
+        }
+      }
+    },
+    "forms": {
+      "registrationForm": {
+        "title": "Registration",
+        "description": "Register now.",
+        "emailLabel": "Email",
+        "passwordLabel": "Password",
+        "passwordConfirmLabel": "Confirm password",
+        "emailPlaceholder": "Enter your email.",
+        "passwordPlaceholder": "Enter your password.",
+        "passwordConfirmPlaceholder": "Confirm your password.",
+        "button": "Continue",
+        "error": {
+          "emailDoesNotExist": "This email does exist.",
+          "passwordDoesNotMatch": "Passwords do not match.",
+          "email": "Please enter a email.",
+          "password": "Please enter at least 8 characters.",
+          "toastTitle": "Registration failed",
+          "toastDescription": "Please try again."
+        }
+      },
+      "loginForm": {
+        "title": "Login",
+        "description": "Log in to your account.",
+        "emailLabel": "Email",
+        "passwordLabel": "Password",
+        "emailPlaceholder": "Enter your email.",
+        "passwordPlaceholder": "Enter your password.",
+        "button": "Login",
+        "error": {
+          "emailDoesNotExist": "This email does not exist.",
+          "passwordDoesNotMatch": "Password is not correct.",
+          "email": "Please enter a email.",
+          "password": "Please enter at least 8 characters.",
+          "toastTitle": "Login failed",
+          "toastDescription": "Please try again."
+        }
+      },
+      "accountNameForm": {
+        "title": "Name",
+        "description": "Change your name.",
+        "emailLabel": "Email",
+        "nameLabel": "Name",
+        "namePlaceholder": "Enter your name.",
+        "button": "Save",
+        "emailTooltip": "The email can't be changed.",
+        "error": {
+          "email": "The email is not changeable.",
+          "name": "Please enter a name."
+        },
+        "toast": {
+          "success": {
+            "title": "Update successful",
+            "description": "Your name has been updated."
+          },
+          "error": {
+            "title": "Update failed",
+            "description": "Please try again."
+          }
+        }
+      },
+      "accountPasswordForm": {
+        "title": "Password",
+        "description": "Change your password.",
+        "passwordLabel": "Change password",
+        "passwordConfirmLabel": "Confirm password",
+        "passwordPlaceholder": "Enter a new password.",
+        "button": "Save",
+        "passwordConfirmPlaceholder": "Confirm the new password.",
+        "error": {
+          "passwordsDoNotMatch": "The passwords are not matching.",
+          "password": "Please enter at least 8 characters."
+        }
+      },
+      "createTranslationForm": {
+        "title": "Create Translation",
+        "description": "Create a new translation.",
+        "cancelButton": "Cancel",
+        "saveButton": "Save",
+        "wordLabel": "Word",
+        "translationLabel": "Translation",
+        "collectionIdLabel": "Collection",
+        "wordPlaceholder": "Enter a word",
+        "translationPlaceholder": "Enter a translation",
+        "collectionPlaceholder": "Select a collection",
+        "collectionDescription": "The translation will be assigned to this collection.",
+        "wordError": "Please enter at least 2 characters.",
+        "translationError": "Please enter at least 2 characters.",
+        "collectionError": "Please select a collection.",
+        "toast": {
+          "success": {
+            "title": "Saved successfully",
+            "description": "The translation has been created."
+          },
+          "error": {
+            "title": "Save failed",
+            "description": "Please try again."
+          }
+        }
+      },
+      "editTranslationForm": {
+        "title": "Adjust translation",
+        "description": "Change the word and / or the translation.",
+        "cancelButton": "Cancel",
+        "saveButton": "Save",
+        "wordLabel": "Word",
+        "translationLabel": "Translation",
+        "wordPlaceholder": "Enter the word",
+        "translationPlaceholder": "Enter the translation",
+        "wordError": "Please enter at least 2 characters.",
+        "translationError": "Please enter at least 2 characters.",
+        "toast": {
+          "success": {
+            "title": "Saving successful",
+            "description": "Your translation has been updated."
+          },
+          "error": {
+            "title": "Saving failed",
+            "description": "Please try again."
+          }
+        }
+      }
+    },
 	"components": {
 		"pageNavigation": {
 			"title": "Pages"
@@ -83,33 +223,7 @@
 	},
 	"pages": {
 		"home": {
-			"title": "Home",
-            "createTranslationForm": {
-              "title": "Create Translation",
-              "description": "Create a new translation.",
-              "cancelButton": "Cancel",
-              "saveButton": "Save",
-              "wordLabel": "Word",
-              "translationLabel": "Translation",
-              "collectionIdLabel": "Collection",
-              "wordPlaceholder": "Enter a word",
-              "translationPlaceholder": "Enter a translation",
-              "collectionPlaceholder": "Select a collection",
-              "collectionDescription": "The translation will be assigned to this collection.",
-              "wordError": "Please enter at least 2 characters.",
-              "translationError": "Please enter at least 2 characters.",
-              "collectionError": "Please select a collection.",
-              "toast": {
-                "success": {
-                  "title": "Saved successfully",
-                  "description": "The translation has been created."
-                },
-                "error": {
-                  "title": "Save failed",
-                  "description": "Please try again."
-                }
-              }
-            }
+			"title": "Home"
         },
 		"learning": {
 			"title": "Learn"
@@ -121,123 +235,11 @@
 					"dropdownEditButton": "Edit translation",
 					"dropdownDeleteTranslationButton": "Delete translation",
 					"dropdownDeleteFromCollectionButton": "Delete translation from collection"
-				},
-				"editTranslationForm": {
-					"title": "Adjust translation",
-					"description": "Change the word and / or the translation.",
-					"cancelButton": "Cancel",
-					"saveButton": "Save",
-					"wordLabel": "Word",
-					"translationLabel": "Translation",
-					"wordPlaceholder": "Enter the word",
-					"translationPlaceholder": "Enter the translation",
-					"wordError": "Please enter at least 2 characters.",
-					"translationError": "Please enter at least 2 characters.",
-					"toast": {
-						"success": {
-							"title": "Saving successful",
-							"description": "Your translation has been updated."
-						},
-						"error": {
-							"title": "Saving failed",
-							"description": "Please try again."
-						}
-					}
-				},
-				"deleteTranslationDialog": {
-					"title": "Delete translation",
-					"description": "You really want to delete the translation?",
-					"cancelButton": "Cancel",
-					"deleteButton": "Delete",
-					"toast": {
-						"success": {
-							"title": "Deletion successful",
-							"description": "The translation was deleted."
-						},
-						"error": {
-							"title": "Deletion failed",
-							"description": "Please try again."
-						}
-					}
 				}
 			}
 		},
 		"account": {
-			"title": "Account",
-			"name": {
-				"title": "Name",
-				"description": "Change your name.",
-				"emailLabel": "Email",
-				"nameLabel": "Name",
-				"namePlaceholder": "Enter your name.",
-				"button": "Save",
-				"emailTooltip": "The email can't be changed.",
-				"error": {
-					"email": "The email is not changeable.",
-					"name": "Please enter a name."
-				},
-				"toast": {
-					"success": {
-						"title": "Update successful",
-						"description": "Your name has been updated."
-					},
-					"error": {
-						"title": "Update failed",
-						"description": "Please try again."
-					}
-				}
-			},
-			"password": {
-				"title": "Password",
-				"description": "Change your password.",
-				"passwordLabel": "Change password",
-				"passwordConfirmLabel": "Confirm password",
-				"passwordPlaceholder": "Enter a new password.",
-				"button": "Save",
-				"passwordConfirmPlaceholder": "Confirm the new password.",
-				"error": {
-					"passwordsDoNotMatch": "The passwords are not matching.",
-					"password": "Please enter at least 8 characters."
-				}
-			}
-		},
-		"authentication": {
-			"login": {
-				"title": "Login",
-				"description": "Log in to your account.",
-				"emailLabel": "Email",
-				"passwordLabel": "Password",
-				"emailPlaceholder": "Enter your email.",
-				"passwordPlaceholder": "Enter your password.",
-				"button": "Login",
-				"error": {
-					"emailDoesNotExist": "This email does not exist.",
-					"passwordDoesNotMatch": "Password is not correct.",
-					"email": "Please enter a email.",
-					"password": "Please enter at least 8 characters.",
-					"toastTitle": "Login failed",
-					"toastDescription": "Please try again."
-				}
-			},
-			"registration": {
-				"title": "Registration",
-				"description": "Register now.",
-				"emailLabel": "Email",
-				"passwordLabel": "Password",
-				"passwordConfirmLabel": "Confirm password",
-				"emailPlaceholder": "Enter your email.",
-				"passwordPlaceholder": "Enter your password.",
-				"passwordConfirmPlaceholder": "Confirm your password.",
-				"button": "Continue",
-				"error": {
-					"emailDoesNotExist": "This email does exist.",
-					"passwordDoesNotMatch": "Passwords do not match.",
-					"email": "Please enter a email.",
-					"password": "Please enter at least 8 characters.",
-					"toastTitle": "Registration failed",
-					"toastDescription": "Please try again."
-				}
-			}
+			"title": "Account"
 		}
 	}
 }

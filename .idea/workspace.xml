@@ -5,31 +5,35 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="add universal pos tags">
-      <change afterPath="$PROJECT_DIR$/services/inngest/src/services/model/translationsUniversalPosTagsModelService.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/inngest/src/services/model/universalPosTagsModelService.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/web/biome.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/biome.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/biome.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/prisma/schema.prisma" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/clients/openAi.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/clients/openAi.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/generated/user-db/browser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/generated/user-db/browser.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/generated/user-db/client.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/generated/user-db/client.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/generated/user-db/internal/class.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/generated/user-db/internal/class.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/generated/user-db/internal/prismaNamespace.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/generated/user-db/internal/prismaNamespace.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/generated/user-db/internal/prismaNamespaceBrowser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/generated/user-db/internal/prismaNamespaceBrowser.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/generated/user-db/models.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/generated/user-db/models.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/generated/user-db/models/translations.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/generated/user-db/models/translations.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/generated/user-db/models/universal_pos_tags.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/generated/user-db/models/universal_pos_tags.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/setup/dependencies/factories/inngestFunctionsFactory.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/setup/dependencies/factories/inngestFunctionsFactory.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/setup/dependencies/factories/modelServicesFactory.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/setup/dependencies/factories/modelServicesFactory.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/setup/dependencies/setup.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/setup/dependencies/setup.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/setup/dependencies/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/setup/dependencies/types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/utils/inngest/functions/eventFunctions/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/utils/inngest/functions/eventFunctions/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/utils/inngest/functions/eventFunctions/translation/events.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/utils/inngest/functions/eventFunctions/translation/events.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/utils/inngest/functions/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/utils/inngest/functions/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/utils/inngest/types/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/utils/inngest/types/index.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/messages/de-DE.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/messages/de-DE.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/messages/en-GB.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/messages/en-GB.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/_content/addTranslationTrigger.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/_content/addTranslationTrigger.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/account/_content/accountNameForm/accountNameForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/accountNameForm/accountNameForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/account/_content/accountNameForm/utils/accountNameFormSchema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/accountNameForm/utils/accountNameFormSchema.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/account/_content/accountNameForm/utils/accountNameFormTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/accountNameForm/utils/accountNameFormTypes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/account/_content/accountPasswordForm/accountPasswordForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/accountPasswordForm/accountPasswordForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/account/_content/accountPasswordForm/utils/accountPasswordFormSchema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/accountPasswordForm/utils/accountPasswordFormSchema.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/account/_content/accountPasswordForm/utils/accountPasswordFormTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/accountPasswordForm/utils/accountPasswordFormTypes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/account/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/account/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/collectionTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/collectionTable.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableActions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableActions.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableDeleteFromCollectionDialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/dialogs/deleteTranslationFromCollectionDialogContent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableDeleteTranslationDialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/dialogs/deleteTranslationDialogContent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableEditTranslationForm/collectionTableEditTranslationForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/editTranslationForm/editTranslationForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableEditTranslationForm/utils/collectionTableEditTranslationFormSchema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/editTranslationForm/utils/collectionTableEditTranslationFormSchema.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableEditTranslationForm/utils/collectionTableEditTranslationFormTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/editTranslationForm/utils/collectionTableEditTranslationFormTypes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/home/_content/TranslationForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/createTranslationForm/createTranslationForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/home/_content/utils/translationFormSchema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/createTranslationForm/utils/translationFormSchema.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/home/_content/utils/translationFormTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/createTranslationForm/utils/translationFormTypes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedOut)/authentication/_content/loginForm/loginForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/loginForm/loginForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedOut)/authentication/_content/loginForm/utils/loginFormSchema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/loginForm/utils/loginFormSchema.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedOut)/authentication/_content/loginForm/utils/loginFormTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/loginForm/utils/loginFormTypes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedOut)/authentication/_content/registrationForm/registrationForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/registrationForm/registrationForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedOut)/authentication/_content/registrationForm/utils/registrationFormSchema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/registrationForm/utils/registrationFormSchema.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedOut)/authentication/_content/registrationForm/utils/registrationFormTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/registrationForm/utils/registrationFormTypes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedOut)/authentication/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedOut)/authentication/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,59 +78,59 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "git-widget-placeholder": "main",
-    "last_opened_file_path": "/Users/fabianhinz/repositories/words/services",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.dev.executor": "Run",
-    "npm.eslint-plugin-words-app-styleguide > build.executor": "Run",
-    "npm.eslint-plugin-words-app-styleguide > build:clean.executor": "Run",
-    "npm.inngest > dev.executor": "Run",
-    "npm.inngest > generate-prisma-schema.executor": "Run",
-    "npm.inngest > prisma:generate.executor": "Run",
-    "npm.inngest > prisma:pull.executor": "Run",
-    "npm.packages:force-node-modules-sync.executor": "Run",
-    "npm.service > dev.executor": "Run",
-    "npm.service > generate_open_api_types.executor": "Run",
-    "npm.user-api > db-generate.executor": "Run",
-    "npm.web > dev.executor": "Run",
-    "npm.words > dev.executor": "Run",
-    "prettierjs.PrettierConfiguration.Package": "/Users/fabianhinz/.npm-global/lib/node_modules/prettier",
-    "settings.editor.selected.configurable": "Settings.Biome",
-    "ts.external.directory.path": "/Users/fabianhinz/repositories/words/services/web/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/fabianhinz/repositories/words/services/web&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
+    &quot;npm.eslint-plugin-words-app-styleguide &gt; build.executor&quot;: &quot;Run&quot;,
+    &quot;npm.eslint-plugin-words-app-styleguide &gt; build:clean.executor&quot;: &quot;Run&quot;,
+    &quot;npm.inngest &gt; dev.executor&quot;: &quot;Run&quot;,
+    &quot;npm.inngest &gt; generate-prisma-schema.executor&quot;: &quot;Run&quot;,
+    &quot;npm.inngest &gt; prisma:generate.executor&quot;: &quot;Run&quot;,
+    &quot;npm.inngest &gt; prisma:pull.executor&quot;: &quot;Run&quot;,
+    &quot;npm.packages:force-node-modules-sync.executor&quot;: &quot;Run&quot;,
+    &quot;npm.service &gt; dev.executor&quot;: &quot;Run&quot;,
+    &quot;npm.service &gt; generate_open_api_types.executor&quot;: &quot;Run&quot;,
+    &quot;npm.user-api &gt; db-generate.executor&quot;: &quot;Run&quot;,
+    &quot;npm.web &gt; dev.executor&quot;: &quot;Run&quot;,
+    &quot;npm.words &gt; dev.executor&quot;: &quot;Run&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/fabianhinz/.npm-global/lib/node_modules/prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Settings.Biome&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/fabianhinz/repositories/words/services/web/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/services/web" />
       <recent name="$PROJECT_DIR$/services" />
       <recent name="$PROJECT_DIR$/service/src/app/[lang]/(loggedIn)/home/_content" />
       <recent name="$PROJECT_DIR$/service/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionCreateForm" />
       <recent name="$PROJECT_DIR$/service/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionEditForm" />
-      <recent name="$PROJECT_DIR$/service" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/services/web/src/components/forms" />
+      <recent name="$PROJECT_DIR$/services/web/src/components/dialog" />
+      <recent name="$PROJECT_DIR$/services/web/src/components/forms/createTranslationForm" />
       <recent name="$PROJECT_DIR$/services/inngest" />
       <recent name="$PROJECT_DIR$/services/web" />
-      <recent name="$PROJECT_DIR$" />
-      <recent name="$PROJECT_DIR$/services/words" />
-      <recent name="$PROJECT_DIR$/services/src" />
     </key>
   </component>
   <component name="RunManager" selected="npm.dev">
@@ -255,15 +259,9 @@
       <workItem from="1761747939193" duration="99000" />
       <workItem from="1761829140775" duration="42713000" />
       <workItem from="1762337536822" duration="8000" />
-      <workItem from="1762445988688" duration="7268000" />
-    </task>
-    <task id="LOCAL-00026" summary="migrated registrationCardContent.tsx">
-      <option name="closed" value="true" />
-      <created>1736197739066</created>
-      <option name="number" value="00026" />
-      <option name="presentableId" value="LOCAL-00026" />
-      <option name="project" value="LOCAL" />
-      <updated>1736197739067</updated>
+      <workItem from="1762445988688" duration="9577000" />
+      <workItem from="1762510443208" duration="2165000" />
+      <workItem from="1762626129150" duration="2274000" />
     </task>
     <task id="LOCAL-00027" summary="migrated registrationCardContent.tsx">
       <option name="closed" value="true" />
@@ -649,7 +647,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762124302590</updated>
     </task>
-    <option name="localTasksCounter" value="75" />
+    <task id="LOCAL-00075" summary="add universal pos tags">
+      <option name="closed" value="true" />
+      <created>1762453290052</created>
+      <option name="number" value="00075" />
+      <option name="presentableId" value="LOCAL-00075" />
+      <option name="project" value="LOCAL" />
+      <updated>1762453290052</updated>
+    </task>
+    <option name="localTasksCounter" value="76" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -701,7 +707,7 @@
     <breakpoint-manager>
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableEditTranslationForm/collectionTableEditTranslationForm.tsx</url>
+          <url>file://$PROJECT_DIR$/services/web/src/components/forms/editTranslationForm/editTranslationForm.tsx</url>
           <line>2</line>
           <option name="timeStamp" value="1" />
         </line-breakpoint>

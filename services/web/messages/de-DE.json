@@ -5,6 +5,150 @@
         "english": "Englisch"
       }
     },
+    "dialogs": {
+      "deleteTranslationDialog": {
+        "title": "Übersetzung löschen",
+        "description": "Möchtest du die Übersetzung wirklich löschen?",
+        "cancelButton": "Abbrechen",
+        "deleteButton": "Löschen",
+        "toast": {
+          "success": {
+            "title": "Löschen erfolgreich",
+            "description": "Die Übersetzung wurde gelöscht."
+          },
+          "error": {
+            "title": "Löschen fehlgeschlagen",
+            "description": "Bitte versuche es erneut."
+          }
+        }
+      }
+    },
+    "forms": {
+      "registrationForm": {
+        "title": "Registrierung",
+        "description": "Registriere dich jetzt.",
+        "emailLabel": "E-Mail",
+        "passwordLabel": "Passwort",
+        "passwordConfirmLabel": "Password bestätigen",
+        "emailPlaceholder": "Gib deine E-Mail an.",
+        "passwordPlaceholder": "Gib dein Password an.",
+        "passwordConfirmPlaceholder": "Bestätige dein Password.",
+        "button": "Weiter",
+        "error": {
+          "emailDoesExist": "Diese E-Mail existiert bereits.",
+          "passwordDoesNotMatch": "Passwörter stimmen nicht überein.",
+          "email": "Bitte gib eine E-Mail an.",
+          "password": "Bitte gib mindestens 8 Zeichen an.",
+          "toastTitle": "Registrierung fehlgeschlagen",
+          "toastDescription": "Bitte versuche es erneut."
+        }
+      },
+      "loginForm": {
+        "title": "Login",
+        "description": "Logge dich in deinen Account ein.",
+        "emailLabel": "E-Mail",
+        "passwordLabel": "Passwort",
+        "emailPlaceholder": "Gib deine E-Mail an.",
+        "passwordPlaceholder": "Gib dein Password an.",
+        "button": "Login",
+        "error": {
+          "emailDoesNotExist": "Diese E-Mail existiert nicht.",
+          "passwordDoesNotMatch": "Das Password ist nicht korrekt.",
+          "email": "Bitte gib eine E-Mail an.",
+          "password": "Bitte gib mindestens 8 Zeichen an.",
+          "toastTitle": "Login fehlgeschlagen",
+          "toastDescription": "Bitte versuche es erneut."
+        }
+      },
+      "accountNameForm": {
+        "title": "Name",
+        "description": "Pass deinen Namen an.",
+        "emailLabel": "E-Mail",
+        "nameLabel": "Name",
+        "namePlaceholder": "Gib deinen Namen an.",
+        "button": "Speichern",
+        "emailTooltip": "Die E-Mailadresse kann nicht geändert werden.",
+        "error": {
+          "email": "Die E-Mail ist nicht veränderbar.",
+          "name": "Bitte gib einen Namen an."
+        },
+        "toast": {
+          "success": {
+            "title": "Aktualisierung erfolreich",
+            "description": "Dein Name ist auf dem neusten Stand."
+          },
+          "error": {
+            "title": "Aktualisierung fehlgeschlagen",
+            "description": "Bitte versuche es erneut."
+          }
+        }
+      },
+      "accountPasswordForm": {
+        "title": "Password",
+        "description": "Pass dein Password an.",
+        "passwordLabel": "Passwort ändern",
+        "passwordConfirmLabel": "Password bestätigen",
+        "passwordPlaceholder": "Gib ein neues Password an.",
+        "button": "Speichern",
+        "passwordConfirmPlaceholder": "Bestätige das neue Password.",
+        "error": {
+          "passwordsDoNotMatch": "Die Passwörter stimmen nicht überein.",
+          "password": "Bitte gib mindestens 8 Zeichen an."
+        }
+      },
+      "createTranslationForm": {
+        "title": "Übersetzung erstellen",
+        "description": "Erstelle die Übersetzung.",
+        "cancelButton": "Abbrechen",
+        "saveButton": "Speichern",
+        "wordLabel": "Wort",
+        "sourceLanguageLabel": "Von",
+        "targetLanguageLabel": "Nach",
+        "translationLabel": "Übersetzung",
+        "collectionIdLabel": "Sammlung",
+        "wordPlaceholder": "Wort angeben",
+        "translationPlaceholder": "Übersetzung angeben",
+        "collectionPlaceholder": "Sammlung auswählen",
+        "sourceLanguagePlaceholder": "Wähle eine Sprache von der aus übersetzt werden soll.",
+        "targetLanguagePlaceholder": "Wähle eine Sprache zu der übersetzt werden soll.",
+        "collectionDescription": "Die Übersetzung wird dieser Sammlung zugeordnet.",
+        "wordError": "Bitte gib mindestens 2 Zeichen an.",
+        "translationError": "Bitte gib mindestens 2 Zeichen an.",
+        "collectionError": "Wähle eine Sammlung aus.",
+        "toast": {
+          "success": {
+            "title": "Speichern erfolgreich",
+            "description": "Die Übersetzung wurde erstellt."
+          },
+          "error": {
+            "title": "Speichern fehlgeschlagen",
+            "description": "Bitte versuche es erneut."
+          }
+        }
+      },
+      "editTranslationForm": {
+        "title": "Übersetzung anpassen",
+        "description": "Ändere das Wort und / oder die Übersetzung.",
+        "cancelButton": "Abbrechen",
+        "saveButton": "Speichern",
+        "wordLabel": "Wort",
+        "translationLabel": "Übersetzung",
+        "wordPlaceholder": "Wort angeben",
+        "translationPlaceholder": "Übersetzung angeben",
+        "wordError": "Bitte gib mindestens 2 Zeichen an.",
+        "translationError": "Bitte gib mindestens 2 Zeichen an.",
+        "toast": {
+          "success": {
+            "title": "Speichern erfolgreich",
+            "description": "Die Übersetzung wurde angepasst."
+          },
+          "error": {
+            "title": "Speichern fehlgeschlagen",
+            "description": "Bitte versuche es erneut."
+          }
+        }
+      }
+    },
 	"components": {
 		"pageNavigation": {
 			"title": "Seiten"
@@ -83,37 +227,7 @@
 	},
 	"pages": {
 		"home": {
-			"title": "Home",
-            "createTranslationForm": {
-              "title": "Übersetzung erstellen",
-              "description": "Erstelle die Übersetzung.",
-              "cancelButton": "Abbrechen",
-              "saveButton": "Speichern",
-              "wordLabel": "Wort",
-              "sourceLanguageLabel": "Von",
-              "targetLanguageLabel": "Nach",
-              "translationLabel": "Übersetzung",
-              "collectionIdLabel": "Sammlung",
-              "wordPlaceholder": "Wort angeben",
-              "translationPlaceholder": "Übersetzung angeben",
-              "collectionPlaceholder": "Sammlung auswählen",
-              "sourceLanguagePlaceholder": "Wähle eine Sprache von der aus übersetzt werden soll.",
-              "targetLanguagePlaceholder": "Wähle eine Sprache zu der übersetzt werden soll.",
-              "collectionDescription": "Die Übersetzung wird dieser Sammlung zugeordnet.",
-              "wordError": "Bitte gib mindestens 2 Zeichen an.",
-              "translationError": "Bitte gib mindestens 2 Zeichen an.",
-              "collectionError": "Wähle eine Sammlung aus.",
-              "toast": {
-                "success": {
-                  "title": "Speichern erfolgreich",
-                  "description": "Die Übersetzung wurde erstellt."
-                },
-                "error": {
-                  "title": "Speichern fehlgeschlagen",
-                  "description": "Bitte versuche es erneut."
-                }
-              }
-            }
+			"title": "Home"
         },
 		"learning": {
 			"title": "Lernen"
@@ -125,123 +239,11 @@
 					"dropdownEditButton": "Übersetzung anpassen",
 					"dropdownDeleteTranslationButton": "Übersetzung löschen",
 					"dropdownDeleteFromCollectionButton": "Übersetzung aus Sammlung löschen"
-				},
-				"editTranslationForm": {
-					"title": "Übersetzung anpassen",
-					"description": "Ändere das Wort und / oder die Übersetzung.",
-					"cancelButton": "Abbrechen",
-					"saveButton": "Speichern",
-					"wordLabel": "Wort",
-					"translationLabel": "Übersetzung",
-					"wordPlaceholder": "Wort angeben",
-					"translationPlaceholder": "Übersetzung angeben",
-					"wordError": "Bitte gib mindestens 2 Zeichen an.",
-					"translationError": "Bitte gib mindestens 2 Zeichen an.",
-					"toast": {
-						"success": {
-							"title": "Speichern erfolgreich",
-							"description": "Die Übersetzung wurde angepasst."
-						},
-						"error": {
-							"title": "Speichern fehlgeschlagen",
-							"description": "Bitte versuche es erneut."
-						}
-					}
-				},
-				"deleteTranslationDialog": {
-					"title": "Übersetzung löschen",
-					"description": "Möchtest du die Übersetzung wirklich löschen?",
-					"cancelButton": "Abbrechen",
-					"deleteButton": "Löschen",
-					"toast": {
-						"success": {
-							"title": "Löschen erfolgreich",
-							"description": "Die Übersetzung wurde gelöscht."
-						},
-						"error": {
-							"title": "Löschen fehlgeschlagen",
-							"description": "Bitte versuche es erneut."
-						}
-					}
 				}
 			}
 		},
 		"account": {
-			"title": "Account",
-			"name": {
-				"title": "Name",
-				"description": "Pass deinen Namen an.",
-				"emailLabel": "E-Mail",
-				"nameLabel": "Name",
-				"namePlaceholder": "Gib deinen Namen an.",
-				"button": "Speichern",
-				"emailTooltip": "Die E-Mailadresse kann nicht geändert werden.",
-				"error": {
-					"email": "Die E-Mail ist nicht veränderbar.",
-					"name": "Bitte gib einen Namen an."
-				},
-				"toast": {
-					"success": {
-						"title": "Aktualisierung erfolreich",
-						"description": "Dein Name ist auf dem neusten Stand."
-					},
-					"error": {
-						"title": "Aktualisierung fehlgeschlagen",
-						"description": "Bitte versuche es erneut."
-					}
-				}
-			},
-			"password": {
-				"title": "Password",
-				"description": "Pass dein Password an.",
-				"passwordLabel": "Passwort ändern",
-				"passwordConfirmLabel": "Password bestätigen",
-				"passwordPlaceholder": "Gib ein neues Password an.",
-				"button": "Speichern",
-				"passwordConfirmPlaceholder": "Bestätige das neue Password.",
-				"error": {
-					"passwordsDoNotMatch": "Die Passwörter stimmen nicht überein.",
-					"password": "Bitte gib mindestens 8 Zeichen an."
-				}
-			}
-		},
-		"authentication": {
-			"login": {
-				"title": "Login",
-				"description": "Logge dich in deinen Account ein.",
-				"emailLabel": "E-Mail",
-				"passwordLabel": "Passwort",
-				"emailPlaceholder": "Gib deine E-Mail an.",
-				"passwordPlaceholder": "Gib dein Password an.",
-				"button": "Login",
-				"error": {
-					"emailDoesNotExist": "Diese E-Mail existiert nicht.",
-					"passwordDoesNotMatch": "Das Password ist nicht korrekt.",
-					"email": "Bitte gib eine E-Mail an.",
-					"password": "Bitte gib mindestens 8 Zeichen an.",
-					"toastTitle": "Login fehlgeschlagen",
-					"toastDescription": "Bitte versuche es erneut."
-				}
-			},
-			"registration": {
-				"title": "Registrierung",
-				"description": "Registriere dich jetzt.",
-				"emailLabel": "E-Mail",
-				"passwordLabel": "Passwort",
-				"passwordConfirmLabel": "Password bestätigen",
-				"emailPlaceholder": "Gib deine E-Mail an.",
-				"passwordPlaceholder": "Gib dein Password an.",
-				"passwordConfirmPlaceholder": "Bestätige dein Password.",
-				"button": "Weiter",
-				"error": {
-					"emailDoesExist": "Diese E-Mail existiert bereits.",
-					"passwordDoesNotMatch": "Passwörter stimmen nicht überein.",
-					"email": "Bitte gib eine E-Mail an.",
-					"password": "Bitte gib mindestens 8 Zeichen an.",
-					"toastTitle": "Registrierung fehlgeschlagen",
-					"toastDescription": "Bitte versuche es erneut."
-				}
-			}
+			"title": "Account"
 		}
 	}
 }

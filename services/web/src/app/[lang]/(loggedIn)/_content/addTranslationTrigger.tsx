@@ -1,14 +1,8 @@
 "use client"
 
 import { useState } from "react"
-import {
-	Dialog,
-	DialogContent,
-	DialogDescription,
-	DialogHeader,
-	DialogTitle,
-} from "@app/components/ui/dialog"
-import { TranslationForm } from "@app/app/[lang]/(loggedIn)/home/_content/TranslationForm"
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@app/components/ui/dialog"
+import { CreateTranslationForm } from "@app/components/forms/createTranslationForm/createTranslationForm"
 import * as React from "react"
 import { useTranslations } from "next-intl"
 import { Button } from "@app/components/ui/button"
@@ -35,12 +29,12 @@ export const AddTranslationTrigger = () => {
 			<Dialog open={isTranslationFormOpen} onOpenChange={setIsTranslationFormOpen}>
 				<DialogContent>
 					<DialogHeader>
-						<DialogTitle>{t("pages.home.createTranslationForm.title")}</DialogTitle>
+						<DialogTitle>{t("forms.createTranslationForm.title")}</DialogTitle>
 
-						<DialogDescription>{t("pages.home.createTranslationForm.description")}</DialogDescription>
+						<DialogDescription>{t("forms.createTranslationForm.description")}</DialogDescription>
 					</DialogHeader>
 
-					{isTranslationFormOpen && <TranslationForm />}
+					{isTranslationFormOpen && <CreateTranslationForm />}
 				</DialogContent>
 			</Dialog>
 		</>

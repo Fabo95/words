@@ -22,8 +22,6 @@ export const CollectionTable = () => {
 		params: { path: { id: Number(params.id) } },
 	})
 
-	console.log("data", data)
-
 	// --- MEMOIZED DATA ---
 
 	const tableData: CollectionTranslation[] = useMemo(() => {

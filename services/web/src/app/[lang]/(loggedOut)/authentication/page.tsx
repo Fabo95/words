@@ -1,5 +1,5 @@
-import { LoginForm } from "@app/app/[lang]/(loggedOut)/authentication/_content/loginForm/loginForm"
-import { RegistrationForm } from "@app/app/[lang]/(loggedOut)/authentication/_content/registrationForm/registrationForm"
+import { LoginForm } from "@app/components/forms/loginForm/loginForm"
+import { RegistrationForm } from "@app/components/forms/registrationForm/registrationForm"
 import { PageContent } from "@app/components/ui/pageContent"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@app/components/ui/tabs"
 import { getTranslations } from "next-intl/server"
@@ -18,9 +18,9 @@ export default async function Authentication({ params }: { params: Promise<Recor
 		<PageContent>
 			<Tabs defaultValue="login" className="max-w-[400px] w-full">
 				<TabsList className="grid w-full grid-cols-2">
-					<TabsTrigger value="login">{t("pages.authentication.login.title")}</TabsTrigger>
+					<TabsTrigger value="login">{t("forms.loginForm.title")}</TabsTrigger>
 
-					<TabsTrigger value="register">{t("pages.authentication.registration.title")}</TabsTrigger>
+					<TabsTrigger value="register">{t("forms.registrationForm.title")}</TabsTrigger>
 				</TabsList>
 
 				<TabsContent value="login">
