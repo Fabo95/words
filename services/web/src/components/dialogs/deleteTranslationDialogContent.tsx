@@ -54,7 +54,7 @@ export const DeleteTranslationDialogContent = ({
 	// --- RENDER ---
 
 	return (
-		<DialogContent>
+		<DialogContent onClick={(e) => e.stopPropagation()}>
 			<DialogHeader>
 				<DialogTitle>{t("dialogs.deleteTranslationDialog.title")}</DialogTitle>
 

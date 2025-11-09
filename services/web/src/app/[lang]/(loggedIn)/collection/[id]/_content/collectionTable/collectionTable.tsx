@@ -6,11 +6,22 @@ import { DataTable } from "@app/components/ui/dataTable/dataTable"
 import { $api } from "@app/utils/api/apiRequests"
 import { useParams } from "next/navigation"
 import { useMemo } from "react"
+import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@app/components/ui/dialog"
+import * as React from "react"
+import { useTranslations } from "next-intl"
+import { ScrollArea } from "@app/components/ui/scroll-area"
+import { Separator } from "@app/components/ui/separator"
+import { TranslationDetails } from "@app/utils/entities/translationDetails"
+import { TranslationDetailsDialog } from "@app/components/dialogs/translationDetailsDialog"
 
 export const CollectionTable = () => {
 	// --- STATE ---
 
+	const t = useTranslations()
+
 	const params = useParams<{ id: string }>()
+
+	const [selectedRow, setSelectedRow] = React.useState<TranslationDetails>()
 
 	const {
 		data: { response_object },
@@ -26,7 +37,7 @@ export const CollectionTable = () => {
 
 	// --- MEMOIZED DATA ---
 
-	const tableData: CollectionTranslation[] = useMemo(() => {
+	const tableData: TranslationDetails[] = useMemo(() => {
 		if (!response_object) {
 			return []
 		}
@@ -38,23 +49,37 @@ export const CollectionTable = () => {
 			sourceText: translation.source_text,
 			targetLanguage: translation.target_language,
 			targetText: translation.target_text,
+			cefrLevel: translation.cefr_level ?? undefined,
+			universalPosTags: translation.universal_pos_tags,
+			exampleSentences: translation.example_sentences,
 		}))
 	}, [response_object, params.id])
 
 	// --- RENDER ---
 
 	return (
-		<div className="w-4/5 overflow-hidden">
-			<h1>{data.response_object?.name}</h1>
+		<>
+			<div className="w-4/5 overflow-hidden">
+				<h1>{data.response_object?.name}</h1>
 
-			<DataTable
-				filters={[
-					{ value: "sourceText", label: "Wort" },
-					{ value: "targetText", label: "Übersetzung" },
-				]}
-				columns={COLLECTION_TABLE_COLUMNS}
-				data={tableData}
-			/>
-		</div>
+				<DataTable
+					filters={[
+						{ value: "sourceText", label: "Wort" },
+						{ value: "targetText", label: "Übersetzung" },
+					]}
+					columns={COLLECTION_TABLE_COLUMNS}
+					data={tableData}
+					onRowClick={(row) => setSelectedRow(row)}
+				/>
+			</div>
+			{selectedRow && (
+				<TranslationDetailsDialog
+					selectedRow={selectedRow}
+					isOpen={Boolean(selectedRow)}
+					onOpenChange={(isOpen) => setSelectedRow(isOpen ? selectedRow : undefined)}
+				/>
+			)}
+			)
+		</>
 	)
 }

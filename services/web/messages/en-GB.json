@@ -235,7 +235,16 @@
 					"dropdownEditButton": "Edit translation",
 					"dropdownDeleteTranslationButton": "Delete translation",
 					"dropdownDeleteFromCollectionButton": "Delete translation from collection"
-				}
+				},
+                "dialog": {
+                  "title": "Details",
+                  "description": "Information about the translation.",
+                  "word": "Word",
+                  "translation": "Translation",
+                  "cefrLevel": "Language level",
+                  "universalPosTag": "Word type",
+                  "exampleSentences": "Example sentences"
+                }
 			}
 		},
 		"account": {

@@ -239,7 +239,16 @@
 					"dropdownEditButton": "Übersetzung anpassen",
 					"dropdownDeleteTranslationButton": "Übersetzung löschen",
 					"dropdownDeleteFromCollectionButton": "Übersetzung aus Sammlung löschen"
-				}
+				},
+              "dialog": {
+                "title": "Details",
+                "description": "Hier siehst du zusätzliche Informationen zu der Übersetzung.",
+                "word": "Wort",
+                "translation": "Übersetzung",
+                "cefrLevel": "Sprachniveau",
+                "universalPosTags": "Wortart",
+                "exampleSentences": "Beispielsätze"
+              }
 			}
 		},
 		"account": {

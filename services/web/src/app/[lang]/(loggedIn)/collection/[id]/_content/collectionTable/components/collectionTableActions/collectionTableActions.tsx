@@ -47,6 +47,7 @@ export const CollectionTableActions = ({ row }: CollectionTableActionsProps) => 
 					</Button>
 				</DropdownMenuTrigger>
 				<DropdownMenuContent
+					onClick={(e) => e.stopPropagation()}
 					className="rounded-lg"
 					side={isMobile ? "bottom" : "right"}
 					align={isMobile ? "end" : "start"}
@@ -71,7 +72,7 @@ export const CollectionTableActions = ({ row }: CollectionTableActionsProps) => 
 			</DropdownMenu>
 
 			<Dialog open={isEditFormOpen} onOpenChange={setIsEditFormOpen}>
-				<DialogContent>
+				<DialogContent onClick={(e) => e.stopPropagation()}>
 					<DialogHeader>
 						<DialogTitle>{t("forms.editTranslationForm.title")}</DialogTitle>
 

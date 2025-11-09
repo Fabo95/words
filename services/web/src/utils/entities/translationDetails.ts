@@ -1,4 +1,4 @@
-export type CollectionTranslation = {
+export type TranslationDetails = {
 	id: number
 	translationId: number
 	sourceLanguage: string

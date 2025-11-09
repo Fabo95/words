@@ -16,17 +16,17 @@ import { useState } from "react"
 import { DataTableFilter } from "@app/components/ui/dataTable/dataTableFilter"
 import { DataTablePagination } from "@app/components/ui/dataTable/dataTablePagination"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@app/components/ui/table"
-import { Tooltip, TooltipContent, TooltipTrigger } from "@app/components/ui/tooltip"
 import { Option } from "@app/utils/types/objectTypes"
 import * as React from "react"
 
 interface DataTableProps<TData, TValue> {
+	onRowClick?: (row: TData) => void
 	columns: ColumnDef<TData, TValue>[]
 	data: TData[]
 	filters: Option<string & keyof TData>[]
 }
 
-export function DataTable<TData, TValue>({ columns, data, filters }: DataTableProps<TData, TValue>) {
+export function DataTable<TData, TValue>({ onRowClick, columns, data, filters }: DataTableProps<TData, TValue>) {
 	// --- STATE ---
 
 	const [sorting, setSorting] = useState<SortingState>([])
@@ -75,16 +75,14 @@ export function DataTable<TData, TValue>({ columns, data, filters }: DataTablePr
 					<TableBody>
 						{table.getRowModel().rows?.length ? (
 							table.getRowModel().rows.map((row) => (
-								<TableRow key={row.id} data-state={row.getIsSelected() && "selected"}>
+								<TableRow
+									onClick={() => onRowClick?.(row.original)}
+									key={row.id}
+									data-state={row.getIsSelected() && "selected"}
+								>
 									{row.getVisibleCells().map((cell) => (
 										<TableCell className="max-w-0 overflow-hidden" key={cell.id}>
-											<Tooltip>
-												<TooltipContent>{flexRender(cell.column.columnDef.cell, cell.getContext())}</TooltipContent>
-
-												<TooltipTrigger className="w-full">
-													{flexRender(cell.column.columnDef.cell, cell.getContext())}
-												</TooltipTrigger>
-											</Tooltip>
+											{flexRender(cell.column.columnDef.cell, cell.getContext())}
 										</TableCell>
 									))}
 								</TableRow>
