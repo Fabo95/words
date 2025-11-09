@@ -17,16 +17,22 @@ import { $api } from "@app/utils/api/apiRequests"
 import { TranslationFormState } from "@app/components/forms/createTranslationForm/utils/translationFormTypes"
 import { getTranslationFormSchema } from "@app/components/forms/createTranslationForm/utils/translationFormSchema"
 import { getLanguageOptions, Locale } from "@app/utils/locale/localeTypes"
+import { useQueryClient } from "@tanstack/react-query"
 
 export const CreateTranslationForm = () => {
 	const { toast } = useToast()
+
+	const queryClient = useQueryClient()
+
 	const {
 		data: { response_object },
 	} = $api.useSuspenseQuery("get", "/user/collections")
 	const t = useTranslations()
 
 	const { mutateAsync: mutateTranslationCreate } = $api.useMutation("post", "/translation", {
-		onSuccess: () => {
+		onSuccess: async () => {
+			await queryClient.invalidateQueries({ queryKey: ["get", "/collection/{id}/translations"] })
+
 			toast({
 				title: t("forms.createTranslationForm.toast.success.title"),
 				description: t("forms.createTranslationForm.toast.success.description"),
@@ -54,8 +60,6 @@ export const CreateTranslationForm = () => {
 
 	const sourceLang = useWatch({ control: form.control, name: "sourceLanguage" })
 	const targetLang = useWatch({ control: form.control, name: "targetLanguage" })
-
-	console.log("state", form.watch())
 
 	const onSubmit = useCallback(
 		async (value: TranslationFormState) => {

@@ -4,20 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="moved form component top level">
-      <change afterPath="$PROJECT_DIR$/services/web/src/utils/types/tFunction.ts" afterDir="false" />
+    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="add tfunction type">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionCreateForm/sidebarCollectionCreateForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionCreateForm/sidebarCollectionCreateForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionCreateForm/utils/collectionCreateFromSchema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionCreateForm/utils/collectionCreateFromSchema.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionDeleteDialog/sidebarCollectionDeleteDialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionDeleteDialog/sidebarCollectionDeleteDialog.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionEditForm/sidebarCollectionEditForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionEditForm/sidebarCollectionEditForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionEditForm/utils/collectionEditFromSchema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionEditForm/utils/collectionEditFromSchema.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/components/forms/accountNameForm/utils/accountNameFormSchema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/accountNameForm/utils/accountNameFormSchema.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/components/forms/createTranslationForm/utils/translationFormSchema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/createTranslationForm/utils/translationFormSchema.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/inngest/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/prisma/schema.prisma" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/inngest/src/generated/user-db/internal/class.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/generated/user-db/internal/class.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/inngest/src/generated/user-db/internal/prismaNamespace.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/generated/user-db/internal/prismaNamespace.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/inngest/src/generated/user-db/internal/prismaNamespaceBrowser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/generated/user-db/internal/prismaNamespaceBrowser.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/inngest/src/generated/user-db/models/translations_universal_pos_tags.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/generated/user-db/models/translations_universal_pos_tags.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/collectionTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/collectionTable.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/components/dialogs/deleteTranslationDialogContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/dialogs/deleteTranslationDialogContent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/components/dialogs/deleteTranslationFromCollectionDialogContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/dialogs/deleteTranslationFromCollectionDialogContent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/components/forms/createTranslationForm/createTranslationForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/createTranslationForm/createTranslationForm.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/web/src/components/forms/editTranslationForm/editTranslationForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/editTranslationForm/editTranslationForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/components/forms/editTranslationForm/utils/collectionTableEditTranslationFormSchema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/editTranslationForm/utils/collectionTableEditTranslationFormSchema.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/components/forms/loginForm/utils/loginFormSchema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/loginForm/utils/loginFormSchema.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/components/forms/registrationForm/utils/registrationFormSchema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/registrationForm/utils/registrationFormSchema.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -117,7 +115,7 @@
       <recent name="$PROJECT_DIR$/services/web" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.dev">
+  <component name="RunManager" selected="npm.web &gt; open_api:generate">
     <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -158,11 +156,11 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="web &gt; dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+    <configuration name="web &gt; open_api:generate" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/services/web/package.json" />
       <command value="run" />
       <scripts>
-        <script value="dev" />
+        <script value="open_api:generate" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -170,11 +168,11 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.dev" />
+        <item itemvalue="npm.web &gt; open_api:generate" />
         <item itemvalue="npm.inngest &gt; prisma:generate" />
         <item itemvalue="npm.inngest &gt; prisma:pull" />
+        <item itemvalue="npm.dev" />
         <item itemvalue="npm.packages:force-node-modules-sync" />
-        <item itemvalue="npm.web &gt; dev" />
       </list>
     </recent_temporary>
   </component>
@@ -245,15 +243,7 @@
       <workItem from="1762337536822" duration="8000" />
       <workItem from="1762445988688" duration="9577000" />
       <workItem from="1762510443208" duration="2165000" />
-      <workItem from="1762626129150" duration="3719000" />
-    </task>
-    <task id="LOCAL-00028" summary="send cookie to server">
-      <option name="closed" value="true" />
-      <created>1736287438293</created>
-      <option name="number" value="00028" />
-      <option name="presentableId" value="LOCAL-00028" />
-      <option name="project" value="LOCAL" />
-      <updated>1736287438293</updated>
+      <workItem from="1762626129150" duration="13283000" />
     </task>
     <task id="LOCAL-00029" summary="added validation for current email">
       <option name="closed" value="true" />
@@ -639,7 +629,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762628487402</updated>
     </task>
-    <option name="localTasksCounter" value="77" />
+    <task id="LOCAL-00077" summary="add tfunction type">
+      <option name="closed" value="true" />
+      <created>1762629892678</created>
+      <option name="number" value="00077" />
+      <option name="presentableId" value="LOCAL-00077" />
+      <option name="project" value="LOCAL" />
+      <updated>1762629892678</updated>
+    </task>
+    <option name="localTasksCounter" value="78" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -660,7 +658,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added prefetching" />
     <MESSAGE value="added much react query" />
     <MESSAGE value="added password change api" />
     <MESSAGE value="adjusted page navigation in sidebar" />
@@ -685,7 +682,8 @@
     <MESSAGE value="add check translation" />
     <MESSAGE value="add universal pos tags" />
     <MESSAGE value="moved form component top level" />
-    <option name="LAST_COMMIT_MESSAGE" value="moved form component top level" />
+    <MESSAGE value="add tfunction type" />
+    <option name="LAST_COMMIT_MESSAGE" value="add tfunction type" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

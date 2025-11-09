@@ -148,7 +148,6 @@ export type Universal_pos_tagsScalarFieldEnum = (typeof Universal_pos_tagsScalar
 
 
 export const Translations_universal_pos_tagsScalarFieldEnum = {
-  id: 'id',
   translation_id: 'translation_id',
   universal_pos_tag_id: 'universal_pos_tag_id'
 } as const

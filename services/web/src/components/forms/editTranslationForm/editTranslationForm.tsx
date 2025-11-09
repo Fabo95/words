@@ -41,7 +41,7 @@ export const EditTranslationForm = ({
 
 	const { mutateAsync: mutateTranslationUpdate } = $api.useMutation("patch", "/translation/{id}", {
 		onSuccess: async () => {
-			await queryClient.invalidateQueries({ queryKey: ["/translation/{id}", "/collection/{id}/translations"] })
+			await queryClient.invalidateQueries({ queryKey: ["get", "/collection/{id}/translations"] })
 
 			handleIsDialogOpen(false)
 

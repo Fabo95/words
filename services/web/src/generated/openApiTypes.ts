@@ -236,12 +236,15 @@ export type components = {
             isAuthenticated: boolean;
         };
         CollectionForCreate: {
+            /** @description Collection name: must be 1–100 characters, no control characters */
             name: string;
         };
         CollectionForUpdate: {
+            /** @description Collection name: must be 1–100 characters, no control characters */
             name: string;
         };
         EmailForCheck: {
+            /** @description Must be a valid email address */
             email: string;
         };
         EmailForCheckResponse: {
@@ -271,6 +274,15 @@ export type components = {
             };
             success: boolean;
         };
+        HttpResponseBody_Vec_TranslationWithRelations: {
+            message: string;
+            response_object?: (components["schemas"]["entity.translationsModel"] & {
+                cefr_level?: null | components["schemas"]["entity.cefr_levelsModel"];
+                example_sentences: components["schemas"]["entity.example_sentencesModel"][];
+                universal_pos_tags: components["schemas"]["entity.universal_pos_tagsModel"][];
+            })[];
+            success: boolean;
+        };
         "HttpResponseBody_Vec_entity.collectionsModel": {
             message: string;
             response_object?: {
@@ -285,6 +297,8 @@ export type components = {
         "HttpResponseBody_Vec_entity.translationsModel": {
             message: string;
             response_object?: {
+                /** Format: int32 */
+                cefr_level_id?: number | null;
                 /** Format: int32 */
                 collection_id?: number | null;
                 /** Format: int32 */
@@ -313,6 +327,8 @@ export type components = {
             message: string;
             response_object?: {
                 /** Format: int32 */
+                cefr_level_id?: number | null;
+                /** Format: int32 */
                 collection_id?: number | null;
                 /** Format: int32 */
                 id: number;
@@ -332,34 +348,46 @@ export type components = {
             success: boolean;
         };
         TranslationForCreate: {
-            /**
-             * Format: int32
-             * @description Optional ID of the collection (must be > 0 if provided)
-             */
+            /** Format: int32 */
             collection_id?: number | null;
+            /** @description Must be one of: "en-GB", "de-DE" */
             source_language: string;
+            /** @description Cannot be empty, must be reasonable length */
             source_text: string;
+            /** @description Must be one of: "en-GB", "de-DE" */
             target_language: string;
+            /** @description Cannot be empty, must be reasonable length */
             target_text: string;
         };
         TranslationForUpdate: {
-            /**
-             * Format: int32
-             * @description Optional ID of the collection (must be > 0 if provided)
-             */
+            /** Format: int32 */
             collection_id?: number | null;
+            /** @description Optional, but must be 2–5 chars (e.g. "en-GB", "de-DE") if provided. */
             source_language?: string | null;
+            /** @description Optional, but cannot be empty or exceed 4000 chars if provided. */
             source_text?: string | null;
+            /** @description Optional, but must be 2–5 chars (e.g. "en-GB", "de-DE") if provided. */
             target_language?: string | null;
+            /** @description Optional, but cannot be empty or exceed 4000 chars if provided. */
             target_text?: string | null;
         };
+        TranslationWithRelations: components["schemas"]["entity.translationsModel"] & {
+            cefr_level?: null | components["schemas"]["entity.cefr_levelsModel"];
+            example_sentences: components["schemas"]["entity.example_sentencesModel"][];
+            universal_pos_tags: components["schemas"]["entity.universal_pos_tagsModel"][];
+        };
         UserForCreate: {
+            /** @description Must match `password` */
             confirmPassword: string;
+            /** @description Must be a valid email address */
             email: string;
+            /** @description Password: min length 8, reasonable max, no control characters */
             password: string;
         };
         UserForLogin: {
+            /** @description Must be a valid email address */
             email: string;
+            /** @description Password: min 8, max 128, no control characters */
             password: string;
         };
         UserForResponse: {
@@ -369,8 +397,11 @@ export type components = {
             name?: string | null;
         };
         UserForUpdate: {
+            /** @description Optional; if provided, must match `password` */
             confirmPassword?: string | null;
+            /** @description Optional; if provided: 2–100 chars, no control characters */
             name?: string | null;
+            /** @description Optional; if provided: min 8, max 128, no control characters */
             password?: string | null;
         };
         WebhooksTranslationForCreate: {
@@ -379,12 +410,26 @@ export type components = {
              * @description Optional ID of the collection (must be > 0 if provided)
              */
             collection_id?: number | null;
+            /**
+             * Format: int32
+             * @description Must be greater than 0 (ID of the original translation)
+             */
+            id: number;
+            /** @description Must be one of: "en-GB", "de-DE" */
+            source_language: string;
+            /** @description Cannot be empty, must be reasonable length */
+            source_text: string;
+            /** @description Must be one of: "en-GB", "de-DE" */
+            target_language: string;
+            /** @description Cannot be empty, must be reasonable length */
+            target_text: string;
+        };
+        "entity.cefr_levelsModel": {
+            code: string;
+            description?: string | null;
             /** Format: int32 */
             id: number;
-            source_language: string;
-            source_text: string;
-            target_language: string;
-            target_text: string;
+            name: string;
         };
         "entity.collectionsModel": {
             /** Format: int32 */
@@ -393,7 +438,17 @@ export type components = {
             /** Format: int32 */
             user_id: number;
         };
+        "entity.example_sentencesModel": {
+            /** Format: int32 */
+            id: number;
+            language: string;
+            sentence: string;
+            /** Format: int32 */
+            translation_id: number;
+        };
         "entity.translationsModel": {
+            /** Format: int32 */
+            cefr_level_id?: number | null;
             /** Format: int32 */
             collection_id?: number | null;
             /** Format: int32 */
@@ -404,6 +459,13 @@ export type components = {
             target_text: string;
             /** Format: int32 */
             user_id: number;
+        };
+        "entity.universal_pos_tagsModel": {
+            code: string;
+            description?: string | null;
+            /** Format: int32 */
+            id: number;
+            name: string;
         };
     };
     responses: never;
@@ -539,7 +601,7 @@ export interface operations {
                     [name: string]: unknown;
                 };
                 content: {
-                    "application/json": components["schemas"]["HttpResponseBody_Vec_entity.translationsModel"];
+                    "application/json": components["schemas"]["HttpResponseBody_Vec_TranslationWithRelations"];
                 };
             };
         };

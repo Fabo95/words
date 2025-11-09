@@ -26,31 +26,26 @@ export type AggregateTranslations_universal_pos_tags = {
 }
 
 export type Translations_universal_pos_tagsAvgAggregateOutputType = {
-  id: number | null
   translation_id: number | null
   universal_pos_tag_id: number | null
 }
 
 export type Translations_universal_pos_tagsSumAggregateOutputType = {
-  id: number | null
   translation_id: number | null
   universal_pos_tag_id: number | null
 }
 
 export type Translations_universal_pos_tagsMinAggregateOutputType = {
-  id: number | null
   translation_id: number | null
   universal_pos_tag_id: number | null
 }
 
 export type Translations_universal_pos_tagsMaxAggregateOutputType = {
-  id: number | null
   translation_id: number | null
   universal_pos_tag_id: number | null
 }
 
 export type Translations_universal_pos_tagsCountAggregateOutputType = {
-  id: number
   translation_id: number
   universal_pos_tag_id: number
   _all: number
@@ -58,31 +53,26 @@ export type Translations_universal_pos_tagsCountAggregateOutputType = {
 
 
 export type Translations_universal_pos_tagsAvgAggregateInputType = {
-  id?: true
   translation_id?: true
   universal_pos_tag_id?: true
 }
 
 export type Translations_universal_pos_tagsSumAggregateInputType = {
-  id?: true
   translation_id?: true
   universal_pos_tag_id?: true
 }
 
 export type Translations_universal_pos_tagsMinAggregateInputType = {
-  id?: true
   translation_id?: true
   universal_pos_tag_id?: true
 }
 
 export type Translations_universal_pos_tagsMaxAggregateInputType = {
-  id?: true
   translation_id?: true
   universal_pos_tag_id?: true
 }
 
 export type Translations_universal_pos_tagsCountAggregateInputType = {
-  id?: true
   translation_id?: true
   universal_pos_tag_id?: true
   _all?: true
@@ -175,7 +165,6 @@ export type translations_universal_pos_tagsGroupByArgs<ExtArgs extends runtime.T
 }
 
 export type Translations_universal_pos_tagsGroupByOutputType = {
-  id: number
   translation_id: number
   universal_pos_tag_id: number
   _count: Translations_universal_pos_tagsCountAggregateOutputType | null
@@ -204,7 +193,6 @@ export type translations_universal_pos_tagsWhereInput = {
   AND?: Prisma.translations_universal_pos_tagsWhereInput | Prisma.translations_universal_pos_tagsWhereInput[]
   OR?: Prisma.translations_universal_pos_tagsWhereInput[]
   NOT?: Prisma.translations_universal_pos_tagsWhereInput | Prisma.translations_universal_pos_tagsWhereInput[]
-  id?: Prisma.IntFilter<"translations_universal_pos_tags"> | number
   translation_id?: Prisma.IntFilter<"translations_universal_pos_tags"> | number
   universal_pos_tag_id?: Prisma.IntFilter<"translations_universal_pos_tags"> | number
   translations?: Prisma.XOR<Prisma.TranslationsScalarRelationFilter, Prisma.translationsWhereInput>
@@ -212,7 +200,6 @@ export type translations_universal_pos_tagsWhereInput = {
 }
 
 export type translations_universal_pos_tagsOrderByWithRelationInput = {
-  id?: Prisma.SortOrder
   translation_id?: Prisma.SortOrder
   universal_pos_tag_id?: Prisma.SortOrder
   translations?: Prisma.translationsOrderByWithRelationInput
@@ -220,7 +207,7 @@ export type translations_universal_pos_tagsOrderByWithRelationInput = {
 }
 
 export type translations_universal_pos_tagsWhereUniqueInput = Prisma.AtLeast<{
-  id?: number
+  translation_id_universal_pos_tag_id?: Prisma.translations_universal_pos_tagsTranslation_idUniversal_pos_tag_idCompoundUniqueInput
   AND?: Prisma.translations_universal_pos_tagsWhereInput | Prisma.translations_universal_pos_tagsWhereInput[]
   OR?: Prisma.translations_universal_pos_tagsWhereInput[]
   NOT?: Prisma.translations_universal_pos_tagsWhereInput | Prisma.translations_universal_pos_tagsWhereInput[]
@@ -228,10 +215,9 @@ export type translations_universal_pos_tagsWhereUniqueInput = Prisma.AtLeast<{
   universal_pos_tag_id?: Prisma.IntFilter<"translations_universal_pos_tags"> | number
   translations?: Prisma.XOR<Prisma.TranslationsScalarRelationFilter, Prisma.translationsWhereInput>
   universal_pos_tags?: Prisma.XOR<Prisma.Universal_pos_tagsScalarRelationFilter, Prisma.universal_pos_tagsWhereInput>
-}, "id">
+}, "translation_id_universal_pos_tag_id">
 
 export type translations_universal_pos_tagsOrderByWithAggregationInput = {
-  id?: Prisma.SortOrder
   translation_id?: Prisma.SortOrder
   universal_pos_tag_id?: Prisma.SortOrder
   _count?: Prisma.translations_universal_pos_tagsCountOrderByAggregateInput
@@ -245,7 +231,6 @@ export type translations_universal_pos_tagsScalarWhereWithAggregatesInput = {
   AND?: Prisma.translations_universal_pos_tagsScalarWhereWithAggregatesInput | Prisma.translations_universal_pos_tagsScalarWhereWithAggregatesInput[]
   OR?: Prisma.translations_universal_pos_tagsScalarWhereWithAggregatesInput[]
   NOT?: Prisma.translations_universal_pos_tagsScalarWhereWithAggregatesInput | Prisma.translations_universal_pos_tagsScalarWhereWithAggregatesInput[]
-  id?: Prisma.IntWithAggregatesFilter<"translations_universal_pos_tags"> | number
   translation_id?: Prisma.IntWithAggregatesFilter<"translations_universal_pos_tags"> | number
   universal_pos_tag_id?: Prisma.IntWithAggregatesFilter<"translations_universal_pos_tags"> | number
 }
@@ -256,7 +241,6 @@ export type translations_universal_pos_tagsCreateInput = {
 }
 
 export type translations_universal_pos_tagsUncheckedCreateInput = {
-  id?: number
   translation_id: number
   universal_pos_tag_id: number
 }
@@ -267,13 +251,11 @@ export type translations_universal_pos_tagsUpdateInput = {
 }
 
 export type translations_universal_pos_tagsUncheckedUpdateInput = {
-  id?: Prisma.IntFieldUpdateOperationsInput | number
   translation_id?: Prisma.IntFieldUpdateOperationsInput | number
   universal_pos_tag_id?: Prisma.IntFieldUpdateOperationsInput | number
 }
 
 export type translations_universal_pos_tagsCreateManyInput = {
-  id?: number
   translation_id: number
   universal_pos_tag_id: number
 }
@@ -283,7 +265,6 @@ export type translations_universal_pos_tagsUpdateManyMutationInput = {
 }
 
 export type translations_universal_pos_tagsUncheckedUpdateManyInput = {
-  id?: Prisma.IntFieldUpdateOperationsInput | number
   translation_id?: Prisma.IntFieldUpdateOperationsInput | number
   universal_pos_tag_id?: Prisma.IntFieldUpdateOperationsInput | number
 }
@@ -298,32 +279,32 @@ export type translations_universal_pos_tagsOrderByRelationAggregateInput = {
   _count?: Prisma.SortOrder
 }
 
+export type translations_universal_pos_tagsTranslation_idUniversal_pos_tag_idCompoundUniqueInput = {
+  translation_id: number
+  universal_pos_tag_id: number
+}
+
 export type translations_universal_pos_tagsCountOrderByAggregateInput = {
-  id?: Prisma.SortOrder
   translation_id?: Prisma.SortOrder
   universal_pos_tag_id?: Prisma.SortOrder
 }
 
 export type translations_universal_pos_tagsAvgOrderByAggregateInput = {
-  id?: Prisma.SortOrder
   translation_id?: Prisma.SortOrder
   universal_pos_tag_id?: Prisma.SortOrder
 }
 
 export type translations_universal_pos_tagsMaxOrderByAggregateInput = {
-  id?: Prisma.SortOrder
   translation_id?: Prisma.SortOrder
   universal_pos_tag_id?: Prisma.SortOrder
 }
 
 export type translations_universal_pos_tagsMinOrderByAggregateInput = {
-  id?: Prisma.SortOrder
   translation_id?: Prisma.SortOrder
   universal_pos_tag_id?: Prisma.SortOrder
 }
 
 export type translations_universal_pos_tagsSumOrderByAggregateInput = {
-  id?: Prisma.SortOrder
   translation_id?: Prisma.SortOrder
   universal_pos_tag_id?: Prisma.SortOrder
 }
@@ -417,7 +398,6 @@ export type translations_universal_pos_tagsCreateWithoutTranslationsInput = {
 }
 
 export type translations_universal_pos_tagsUncheckedCreateWithoutTranslationsInput = {
-  id?: number
   universal_pos_tag_id: number
 }
 
@@ -451,7 +431,6 @@ export type translations_universal_pos_tagsScalarWhereInput = {
   AND?: Prisma.translations_universal_pos_tagsScalarWhereInput | Prisma.translations_universal_pos_tagsScalarWhereInput[]
   OR?: Prisma.translations_universal_pos_tagsScalarWhereInput[]
   NOT?: Prisma.translations_universal_pos_tagsScalarWhereInput | Prisma.translations_universal_pos_tagsScalarWhereInput[]
-  id?: Prisma.IntFilter<"translations_universal_pos_tags"> | number
   translation_id?: Prisma.IntFilter<"translations_universal_pos_tags"> | number
   universal_pos_tag_id?: Prisma.IntFilter<"translations_universal_pos_tags"> | number
 }
@@ -461,7 +440,6 @@ export type translations_universal_pos_tagsCreateWithoutUniversal_pos_tagsInput 
 }
 
 export type translations_universal_pos_tagsUncheckedCreateWithoutUniversal_pos_tagsInput = {
-  id?: number
   translation_id: number
 }
 
@@ -492,7 +470,6 @@ export type translations_universal_pos_tagsUpdateManyWithWhereWithoutUniversal_p
 }
 
 export type translations_universal_pos_tagsCreateManyTranslationsInput = {
-  id?: number
   universal_pos_tag_id: number
 }
 
@@ -501,17 +478,14 @@ export type translations_universal_pos_tagsUpdateWithoutTranslationsInput = {
 }
 
 export type translations_universal_pos_tagsUncheckedUpdateWithoutTranslationsInput = {
-  id?: Prisma.IntFieldUpdateOperationsInput | number
   universal_pos_tag_id?: Prisma.IntFieldUpdateOperationsInput | number
 }
 
 export type translations_universal_pos_tagsUncheckedUpdateManyWithoutTranslationsInput = {
-  id?: Prisma.IntFieldUpdateOperationsInput | number
   universal_pos_tag_id?: Prisma.IntFieldUpdateOperationsInput | number
 }
 
 export type translations_universal_pos_tagsCreateManyUniversal_pos_tagsInput = {
-  id?: number
   translation_id: number
 }
 
@@ -520,19 +494,16 @@ export type translations_universal_pos_tagsUpdateWithoutUniversal_pos_tagsInput 
 }
 
 export type translations_universal_pos_tagsUncheckedUpdateWithoutUniversal_pos_tagsInput = {
-  id?: Prisma.IntFieldUpdateOperationsInput | number
   translation_id?: Prisma.IntFieldUpdateOperationsInput | number
 }
 
 export type translations_universal_pos_tagsUncheckedUpdateManyWithoutUniversal_pos_tagsInput = {
-  id?: Prisma.IntFieldUpdateOperationsInput | number
   translation_id?: Prisma.IntFieldUpdateOperationsInput | number
 }
 
 
 
 export type translations_universal_pos_tagsSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
-  id?: boolean
   translation_id?: boolean
   universal_pos_tag_id?: boolean
   translations?: boolean | Prisma.translationsDefaultArgs<ExtArgs>
@@ -540,7 +511,6 @@ export type translations_universal_pos_tagsSelect<ExtArgs extends runtime.Types.
 }, ExtArgs["result"]["translations_universal_pos_tags"]>
 
 export type translations_universal_pos_tagsSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
-  id?: boolean
   translation_id?: boolean
   universal_pos_tag_id?: boolean
   translations?: boolean | Prisma.translationsDefaultArgs<ExtArgs>
@@ -548,7 +518,6 @@ export type translations_universal_pos_tagsSelectCreateManyAndReturn<ExtArgs ext
 }, ExtArgs["result"]["translations_universal_pos_tags"]>
 
 export type translations_universal_pos_tagsSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
-  id?: boolean
   translation_id?: boolean
   universal_pos_tag_id?: boolean
   translations?: boolean | Prisma.translationsDefaultArgs<ExtArgs>
@@ -556,12 +525,11 @@ export type translations_universal_pos_tagsSelectUpdateManyAndReturn<ExtArgs ext
 }, ExtArgs["result"]["translations_universal_pos_tags"]>
 
 export type translations_universal_pos_tagsSelectScalar = {
-  id?: boolean
   translation_id?: boolean
   universal_pos_tag_id?: boolean
 }
 
-export type translations_universal_pos_tagsOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "translation_id" | "universal_pos_tag_id", ExtArgs["result"]["translations_universal_pos_tags"]>
+export type translations_universal_pos_tagsOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"translation_id" | "universal_pos_tag_id", ExtArgs["result"]["translations_universal_pos_tags"]>
 export type translations_universal_pos_tagsInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   translations?: boolean | Prisma.translationsDefaultArgs<ExtArgs>
   universal_pos_tags?: boolean | Prisma.universal_pos_tagsDefaultArgs<ExtArgs>
@@ -582,7 +550,6 @@ export type $translations_universal_pos_tagsPayload<ExtArgs extends runtime.Type
     universal_pos_tags: Prisma.$universal_pos_tagsPayload<ExtArgs>
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
-    id: number
     translation_id: number
     universal_pos_tag_id: number
   }, ExtArgs["result"]["translations_universal_pos_tags"]>
@@ -668,8 +635,8 @@ export interface translations_universal_pos_tagsDelegate<ExtArgs extends runtime
    * // Get first 10 Translations_universal_pos_tags
    * const translations_universal_pos_tags = await prisma.translations_universal_pos_tags.findMany({ take: 10 })
    * 
-   * // Only select the `id`
-   * const translations_universal_pos_tagsWithIdOnly = await prisma.translations_universal_pos_tags.findMany({ select: { id: true } })
+   * // Only select the `translation_id`
+   * const translations_universal_pos_tagsWithTranslation_idOnly = await prisma.translations_universal_pos_tags.findMany({ select: { translation_id: true } })
    * 
    */
   findMany<T extends translations_universal_pos_tagsFindManyArgs>(args?: Prisma.SelectSubset<T, translations_universal_pos_tagsFindManyArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$translations_universal_pos_tagsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions>>
@@ -713,9 +680,9 @@ export interface translations_universal_pos_tagsDelegate<ExtArgs extends runtime
    *   ]
    * })
    * 
-   * // Create many Translations_universal_pos_tags and only return the `id`
-   * const translations_universal_pos_tagsWithIdOnly = await prisma.translations_universal_pos_tags.createManyAndReturn({
-   *   select: { id: true },
+   * // Create many Translations_universal_pos_tags and only return the `translation_id`
+   * const translations_universal_pos_tagsWithTranslation_idOnly = await prisma.translations_universal_pos_tags.createManyAndReturn({
+   *   select: { translation_id: true },
    *   data: [
    *     // ... provide data here
    *   ]
@@ -804,9 +771,9 @@ export interface translations_universal_pos_tagsDelegate<ExtArgs extends runtime
    *   ]
    * })
    * 
-   * // Update zero or more Translations_universal_pos_tags and only return the `id`
-   * const translations_universal_pos_tagsWithIdOnly = await prisma.translations_universal_pos_tags.updateManyAndReturn({
-   *   select: { id: true },
+   * // Update zero or more Translations_universal_pos_tags and only return the `translation_id`
+   * const translations_universal_pos_tagsWithTranslation_idOnly = await prisma.translations_universal_pos_tags.updateManyAndReturn({
+   *   select: { translation_id: true },
    *   where: {
    *     // ... provide filter here
    *   },
@@ -1010,7 +977,6 @@ export interface Prisma__translations_universal_pos_tagsClient<T, Null = never, 
  * Fields of the translations_universal_pos_tags model
  */
 export interface translations_universal_pos_tagsFieldRefs {
-  readonly id: Prisma.FieldRef<"translations_universal_pos_tags", 'Int'>
   readonly translation_id: Prisma.FieldRef<"translations_universal_pos_tags", 'Int'>
   readonly universal_pos_tag_id: Prisma.FieldRef<"translations_universal_pos_tags", 'Int'>
 }

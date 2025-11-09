@@ -46,8 +46,10 @@ export const DeleteTranslationDialogContent = ({
 	const handleDeleteCollection = useCallback(async () => {
 		await mutateTranslationDelete({ params: { path: { id: translationId } } })
 
+		await queryClient.invalidateQueries({ queryKey: ["get", "/collection/{id}/translations"] })
+
 		handleIsDialogOpen(false)
-	}, [translationId, mutateTranslationDelete, handleIsDialogOpen])
+	}, [translationId, mutateTranslationDelete, handleIsDialogOpen, queryClient.invalidateQueries])
 
 	// --- RENDER ---
 

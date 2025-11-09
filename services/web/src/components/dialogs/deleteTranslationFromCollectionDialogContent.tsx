@@ -26,8 +26,8 @@ export const DeleteTranslationFromCollectionDialogContent = ({
 	const queryClient = useQueryClient()
 
 	const { mutateAsync: mutateTranslationDelete } = $api.useMutation("delete", "/translation/{id}", {
-		onSuccess: (data) => {
-			console.log({ data })
+		onSuccess: async () => {
+			await queryClient.invalidateQueries({ queryKey: ["get", "/collection/{id}/translations"] })
 
 			toast({
 				title: t("dialogs.deleteTranslationDialog.toast.success.title"),

@@ -74,12 +74,12 @@ model universal_pos_tags {
 }
 
 model translations_universal_pos_tags {
-  id                   Int                @id @default(autoincrement())
   translation_id       Int
   universal_pos_tag_id Int
   translations         translations       @relation(fields: [translation_id], references: [id], onDelete: Cascade, map: "FK_tupt_translation")
   universal_pos_tags   universal_pos_tags @relation(fields: [universal_pos_tag_id], references: [id], onDelete: Cascade, map: "FK_tupt_universal_pos_tag")
 
+  @@id([translation_id, universal_pos_tag_id])
   @@index([translation_id], map: "idx_tupt_translation_id")
   @@index([universal_pos_tag_id], map: "idx_tupt_universal_pos_tag_id")
 }
