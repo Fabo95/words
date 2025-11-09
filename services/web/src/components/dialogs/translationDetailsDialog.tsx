@@ -8,14 +8,18 @@ import { useTranslations } from "next-intl"
 type TranslationDetailsDialogProps = {
 	isOpen: boolean
 	onOpenChange: (isOpen: boolean) => void
-	selectedRow: TranslationDetails
+	translationDetails: TranslationDetails
 }
 
-export const TranslationDetailsDialog = ({ isOpen, onOpenChange, selectedRow }: TranslationDetailsDialogProps) => {
+export const TranslationDetailsDialog = ({
+	isOpen,
+	onOpenChange,
+	translationDetails,
+}: TranslationDetailsDialogProps) => {
 	const t = useTranslations()
 
 	return (
-		<Dialog open={Boolean(selectedRow)} onOpenChange={onOpenChange}>
+		<Dialog open={Boolean(translationDetails)} onOpenChange={onOpenChange}>
 			<DialogContent className="sm:max-w-lg p-0 overflow-hidden">
 				<DialogHeader className="px-6 py-4">
 					<DialogTitle className="text-xl">{t("pages.collection.table.dialog.title")}</DialogTitle>
@@ -34,7 +38,7 @@ export const TranslationDetailsDialog = ({ isOpen, onOpenChange, selectedRow }: 
 										{t("pages.collection.table.dialog.word")}
 									</h4>
 								</div>
-								<p className="text-base">{selectedRow?.sourceText ?? "—"}</p>
+								<p className="text-base">{translationDetails?.sourceText ?? "—"}</p>
 							</div>
 
 							<div className="text-right space-y-1">
@@ -42,7 +46,7 @@ export const TranslationDetailsDialog = ({ isOpen, onOpenChange, selectedRow }: 
 									{t("pages.collection.table.dialog.translation")}
 								</h4>
 
-								<p className="text-base">{selectedRow?.targetText ?? "—"}</p>
+								<p className="text-base">{translationDetails?.targetText ?? "—"}</p>
 							</div>
 						</div>
 
@@ -54,7 +58,7 @@ export const TranslationDetailsDialog = ({ isOpen, onOpenChange, selectedRow }: 
 								<h4 className="text-sm font-medium text-muted-foreground mb-1">
 									{t("pages.collection.table.dialog.cefrLevel")}
 								</h4>
-								<p className="text-base">{selectedRow?.cefrLevel?.code ?? "—"}</p>
+								<p className="text-base">{translationDetails?.cefrLevel?.code ?? "—"}</p>
 							</div>
 
 							<div className="sm:col-span-2">
@@ -62,9 +66,9 @@ export const TranslationDetailsDialog = ({ isOpen, onOpenChange, selectedRow }: 
 									{t("pages.collection.table.dialog.universalPosTags")}
 								</h4>
 
-								{selectedRow?.universalPosTags.length ? (
+								{translationDetails?.universalPosTags.length ? (
 									<div className="flex flex-wrap gap-2">
-										{(selectedRow?.universalPosTags ?? []).map((tag) => (
+										{(translationDetails?.universalPosTags ?? []).map((tag) => (
 											<p className="text-base" key={tag.id}>
 												{tag.name},
 											</p>
@@ -83,9 +87,9 @@ export const TranslationDetailsDialog = ({ isOpen, onOpenChange, selectedRow }: 
 							<h4 className="text-sm font-medium text-muted-foreground mb-2">
 								{t("pages.collection.table.dialog.exampleSentences")}
 							</h4>
-							{selectedRow?.exampleSentences.length ? (
+							{translationDetails?.exampleSentences.length ? (
 								<ul className="space-y-3">
-									{(selectedRow?.exampleSentences ?? []).map((ex) => (
+									{(translationDetails?.exampleSentences ?? []).map((ex) => (
 										<li key={ex.id ?? ex.sentence} className="rounded-lg border p-3 text-sm leading-relaxed">
 											<p className="text-sm">{ex.sentence}</p>
 										</li>

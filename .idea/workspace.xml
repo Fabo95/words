@@ -4,20 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="fetch latest openAPi types">
-      <change afterPath="$PROJECT_DIR$/services/web/src/components/dialogs/translationDetailsDialog.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/web/src/utils/entities/translationDetails.ts" afterDir="false" />
+    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="add translation details dialog">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/messages/de-DE.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/messages/de-DE.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/messages/en-GB.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/messages/en-GB.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/collectionTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/collectionTable.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableActions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableActions.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/utils/collectionTableTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/utils/collectionTableTypes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/components/dialogs/deleteTranslationDialogContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/dialogs/deleteTranslationDialogContent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/components/dialogs/deleteTranslationFromCollectionDialogContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/dialogs/deleteTranslationFromCollectionDialogContent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/components/ui/dataTable/dataTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/dataTable/dataTable.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/components/dialogs/translationDetailsDialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/dialogs/translationDetailsDialog.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -246,15 +236,7 @@
       <workItem from="1762337536822" duration="8000" />
       <workItem from="1762445988688" duration="9577000" />
       <workItem from="1762510443208" duration="2165000" />
-      <workItem from="1762626129150" duration="16927000" />
-    </task>
-    <task id="LOCAL-00030" summary="added login">
-      <option name="closed" value="true" />
-      <created>1736459536486</created>
-      <option name="number" value="00030" />
-      <option name="presentableId" value="LOCAL-00030" />
-      <option name="project" value="LOCAL" />
-      <updated>1736459536487</updated>
+      <workItem from="1762626129150" duration="17030000" />
     </task>
     <task id="LOCAL-00031" summary="added sidebar">
       <option name="closed" value="true" />
@@ -640,7 +622,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762701805248</updated>
     </task>
-    <option name="localTasksCounter" value="79" />
+    <task id="LOCAL-00079" summary="add translation details dialog">
+      <option name="closed" value="true" />
+      <created>1762705589426</created>
+      <option name="number" value="00079" />
+      <option name="presentableId" value="LOCAL-00079" />
+      <option name="project" value="LOCAL" />
+      <updated>1762705589426</updated>
+    </task>
+    <option name="localTasksCounter" value="80" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -661,7 +651,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added password change api" />
     <MESSAGE value="adjusted page navigation in sidebar" />
     <MESSAGE value="added README.md" />
     <MESSAGE value="&quot;e&quot;" />
@@ -686,7 +675,8 @@
     <MESSAGE value="moved form component top level" />
     <MESSAGE value="add tfunction type" />
     <MESSAGE value="fetch latest openAPi types" />
-    <option name="LAST_COMMIT_MESSAGE" value="fetch latest openAPi types" />
+    <MESSAGE value="add translation details dialog" />
+    <option name="LAST_COMMIT_MESSAGE" value="add translation details dialog" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

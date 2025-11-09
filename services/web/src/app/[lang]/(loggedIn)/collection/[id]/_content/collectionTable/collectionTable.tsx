@@ -6,11 +6,8 @@ import { DataTable } from "@app/components/ui/dataTable/dataTable"
 import { $api } from "@app/utils/api/apiRequests"
 import { useParams } from "next/navigation"
 import { useMemo } from "react"
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@app/components/ui/dialog"
 import * as React from "react"
 import { useTranslations } from "next-intl"
-import { ScrollArea } from "@app/components/ui/scroll-area"
-import { Separator } from "@app/components/ui/separator"
 import { TranslationDetails } from "@app/utils/entities/translationDetails"
 import { TranslationDetailsDialog } from "@app/components/dialogs/translationDetailsDialog"
 
@@ -37,7 +34,7 @@ export const CollectionTable = () => {
 
 	// --- MEMOIZED DATA ---
 
-	const tableData: TranslationDetails[] = useMemo(() => {
+	const tableData: CollectionTranslation[] = useMemo(() => {
 		if (!response_object) {
 			return []
 		}
@@ -74,7 +71,7 @@ export const CollectionTable = () => {
 			</div>
 			{selectedRow && (
 				<TranslationDetailsDialog
-					selectedRow={selectedRow}
+					translationDetails={selectedRow}
 					isOpen={Boolean(selectedRow)}
 					onOpenChange={(isOpen) => setSelectedRow(isOpen ? selectedRow : undefined)}
 				/>
