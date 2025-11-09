@@ -10,16 +10,16 @@ export type TranslationDetails = {
 	exampleSentences: ExampleSentence[]
 }
 
-type CefrLevel = {
+export type CefrLevel = {
 	code: string
 	description?: string | null
 	id: number
 	name: string
 }
 
-type ExampleSentence = { id: number; language: string; sentence: string; translation_id: number }
+export type ExampleSentence = { id: number; language: string; sentence: string; translation_id: number }
 
-type UniversalPosTag = {
+export type UniversalPosTag = {
 	code: string
 	description?: string | null
 	id: number

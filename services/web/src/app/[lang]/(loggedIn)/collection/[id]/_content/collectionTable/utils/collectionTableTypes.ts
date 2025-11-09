@@ -1,3 +1,5 @@
+import { CefrLevel, ExampleSentence, UniversalPosTag } from "@app/utils/entities/translationDetails"
+
 export type CollectionTranslation = {
 	id: number
 	translationId: number
@@ -8,20 +10,4 @@ export type CollectionTranslation = {
 	cefrLevel?: CefrLevel
 	universalPosTags: UniversalPosTag[]
 	exampleSentences: ExampleSentence[]
-}
-
-type CefrLevel = {
-	code: string
-	description?: string | null
-	id: number
-	name: string
-}
-
-type ExampleSentence = { id: number; language: string; sentence: string; translation_id: number }
-
-type UniversalPosTag = {
-	code: string
-	description?: string | null
-	id: number
-	name: string
 }

@@ -7,14 +7,11 @@ import { $api } from "@app/utils/api/apiRequests"
 import { useParams } from "next/navigation"
 import { useMemo } from "react"
 import * as React from "react"
-import { useTranslations } from "next-intl"
 import { TranslationDetails } from "@app/utils/entities/translationDetails"
 import { TranslationDetailsDialog } from "@app/components/dialogs/translationDetailsDialog"
 
 export const CollectionTable = () => {
 	// --- STATE ---
-
-	const t = useTranslations()
 
 	const params = useParams<{ id: string }>()
 
