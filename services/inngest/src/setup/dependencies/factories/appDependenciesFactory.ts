@@ -1,5 +1,5 @@
 import { PrismaClient } from "@/generated/user-db/client.js"
-import { getUserDbPrisma } from "@/setup/database/prisma.js"
+import { getPrisma } from "@/setup/database/prisma.js"
 
 export interface AppDependencies {
 	prisma?: PrismaClient
@@ -14,7 +14,7 @@ export class AppDependenciesFactory implements I_AppDependenciesFactory {
 
 	async getPrisma() {
 		if (!this.appDependencies.prisma) {
-			this.appDependencies.prisma = getUserDbPrisma()
+			this.appDependencies.prisma = getPrisma()
 			await this.appDependencies.prisma.$connect()
 		}
 		return this.appDependencies.prisma

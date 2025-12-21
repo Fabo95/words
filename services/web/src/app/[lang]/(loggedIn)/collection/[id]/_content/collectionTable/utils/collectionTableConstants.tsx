@@ -8,10 +8,12 @@ import { FormField } from "@app/components/ui/formField"
 import { Input } from "@app/components/ui/input"
 import { Tooltip, TooltipContent, TooltipTrigger } from "@app/components/ui/tooltip"
 import * as React from "react"
+import { Badge } from "@app/components/ui/badge"
+import { TFunction } from "@app/utils/types/tFunction"
 
-export const COLLECTION_TABLE_COLUMNS: ColumnDef<CollectionTranslation>[] = [
+export const getCollectionTableColumns: (t: TFunction) => ColumnDef<CollectionTranslation>[] = (t) => [
 	// https://ui.shadcn.com/docs/components/data-table#row-selection
-	{
+	/* {
 		id: "select",
 		header: ({ table }) => (
 			<Checkbox
@@ -29,33 +31,61 @@ export const COLLECTION_TABLE_COLUMNS: ColumnDef<CollectionTranslation>[] = [
 		),
 		enableSorting: false,
 		enableHiding: false,
-	},
-	{
-		accessorKey: "sourceLanguage",
-		header: ({ column }) => <DataTableColumnHeader column={column} title="Übersetzt von" />,
-		cell: ({ row }) => {
-			return <p className="pl-3 pr-3 truncate">{row.getValue("sourceLanguage")}</p>
 		},
-	},
+	 */
+
 	{
 		accessorKey: "sourceText",
-		header: ({ column }) => <DataTableColumnHeader column={column} title="Wort" />,
+		header: ({ column }) => <DataTableColumnHeader column={column} title={t("pages.collection.table.columns.word")} />,
 		cell: ({ row }) => {
 			return <p className="pl-3 pr-3 truncate">{row.getValue("sourceText")}</p>
 		},
 	},
-	{
-		accessorKey: "targetLanguage",
-		header: ({ column }) => <DataTableColumnHeader column={column} title="Übersetzt in" />,
-		cell: ({ row }) => {
-			return <p className="pl-3 pr-3 truncate">{row.getValue("targetLanguage")}</p>
-		},
-	},
+
 	{
 		accessorKey: "targetText",
-		header: ({ column }) => <DataTableColumnHeader column={column} title="Übersetzung" />,
+		header: ({ column }) => (
+			<DataTableColumnHeader column={column} title={t("pages.collection.table.columns.translation")} />
+		),
 		cell: ({ row }) => {
 			return <p className="pl-3 pr-3 truncate">{row.getValue("targetText")}</p>
+		},
+	},
+
+	{
+		accessorKey: "cefrLevel",
+		header: ({ column }) => (
+			<DataTableColumnHeader column={column} title={t("pages.collection.table.columns.cefrLevel")} />
+		),
+		cell: ({ row }) => {
+			const te = row.original.cefrLevel?.code
+
+			return (
+				<Badge variant="secondary" className="text-xs">
+					{te}
+				</Badge>
+			)
+		},
+	},
+
+	{
+		accessorKey: "universalPosTags",
+		header: ({ column }) => (
+			<DataTableColumnHeader column={column} title={t("pages.collection.table.columns.universalPosTags")} />
+		),
+		cell: ({ row }) => {
+			const names = row.original.universalPosTags?.map((tag) => tag.name) ?? []
+
+			return (
+				<div className="flex gap-1 flex-wrap">
+					{names?.map((name, index) => (
+						// biome-ignore lint/suspicious/noArrayIndexKey: stable display-only list
+						<Badge key={index} variant="secondary" className="text-xs">
+							{name}
+						</Badge>
+					))}
+				</div>
+			)
 		},
 	},
 

@@ -1,21 +1,20 @@
 "use client"
 
-import { COLLECTION_TABLE_COLUMNS } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/utils/collectionTableConstants"
+import { getCollectionTableColumns } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/utils/collectionTableConstants"
 import { CollectionTranslation } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/utils/collectionTableTypes"
 import { DataTable } from "@app/components/ui/dataTable/dataTable"
 import { $api } from "@app/utils/api/apiRequests"
 import { useParams } from "next/navigation"
 import { useMemo } from "react"
 import * as React from "react"
-import { TranslationDetails } from "@app/utils/entities/translationDetails"
-import { TranslationDetailsDialog } from "@app/components/dialogs/translationDetailsDialog"
+import { useTranslations } from "next-intl"
 
 export const CollectionTable = () => {
 	// --- STATE ---
 
-	const params = useParams<{ id: string }>()
+	const t = useTranslations()
 
-	const [selectedRow, setSelectedRow] = React.useState<TranslationDetails>()
+	const params = useParams<{ id: string }>()
 
 	const {
 		data: { response_object },
@@ -26,8 +25,6 @@ export const CollectionTable = () => {
 	const { data } = $api.useSuspenseQuery("get", "/collection/test/{id}", {
 		params: { path: { id: Number(params.id) } },
 	})
-
-	console.log("response_object,,", response_object)
 
 	// --- MEMOIZED DATA ---
 
@@ -49,6 +46,8 @@ export const CollectionTable = () => {
 		}))
 	}, [response_object, params.id])
 
+	console.log("tableData", tableData)
+
 	// --- RENDER ---
 
 	return (
@@ -61,19 +60,10 @@ export const CollectionTable = () => {
 						{ value: "sourceText", label: "Wort" },
 						{ value: "targetText", label: "Übersetzung" },
 					]}
-					columns={COLLECTION_TABLE_COLUMNS}
+					columns={getCollectionTableColumns(t)}
 					data={tableData}
-					onRowClick={(row) => setSelectedRow(row)}
 				/>
 			</div>
-			{selectedRow && (
-				<TranslationDetailsDialog
-					translationDetails={selectedRow}
-					isOpen={Boolean(selectedRow)}
-					onOpenChange={(isOpen) => setSelectedRow(isOpen ? selectedRow : undefined)}
-				/>
-			)}
-			)
 		</>
 	)
 }

@@ -230,13 +230,7 @@
 		},
 		"collection": {
 			"table": {
-				"actions": {
-					"dropdownTrigger": "Open",
-					"dropdownEditButton": "Edit translation",
-					"dropdownDeleteTranslationButton": "Delete translation",
-					"dropdownDeleteFromCollectionButton": "Delete translation from collection"
-				},
-                "dialog": {
+                "columns": {
                   "title": "Details",
                   "description": "Information about the translation.",
                   "word": "Word",
@@ -244,7 +238,13 @@
                   "cefrLevel": "Language level",
                   "universalPosTag": "Word type",
                   "exampleSentences": "Example sentences"
-                }
+                },
+				"actions": {
+					"dropdownTrigger": "Open",
+					"dropdownEditButton": "Edit translation",
+					"dropdownDeleteTranslationButton": "Delete translation",
+					"dropdownDeleteFromCollectionButton": "Delete translation from collection"
+				}
 			}
 		},
 		"account": {

@@ -2,7 +2,7 @@ import { ReactNode } from "react"
 import "@app/styles/globals.css"
 
 import type { Metadata } from "next"
-import { Geist_Mono } from "next/font/google"
+import { Inter } from "next/font/google"
 
 import { Toaster } from "@app/components/ui/toaster"
 import { cn } from "@app/utils/shadcn/shadcnHelpers"
@@ -11,7 +11,7 @@ import { NextIntlClientProvider } from "next-intl"
 import { QueryClientProvider } from "@app/components/reactQuery/QueryClientProvider"
 import { Box } from "@app/components/ui/box"
 
-const font = Geist_Mono({
+const font = Inter({
 	subsets: ["latin"],
 	variable: "--font-sans",
 })

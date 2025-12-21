@@ -234,21 +234,19 @@
 		},
 		"collection": {
 			"table": {
-				"actions": {
-					"dropdownTrigger": "Öffnen",
-					"dropdownEditButton": "Übersetzung anpassen",
-					"dropdownDeleteTranslationButton": "Übersetzung löschen",
-					"dropdownDeleteFromCollectionButton": "Übersetzung aus Sammlung löschen"
-				},
-              "dialog": {
-                "title": "Details",
-                "description": "Hier siehst du zusätzliche Informationen zu der Übersetzung.",
+              "columns":{
                 "word": "Wort",
                 "translation": "Übersetzung",
                 "cefrLevel": "Sprachniveau",
                 "universalPosTags": "Wortart",
                 "exampleSentences": "Beispielsätze"
-              }
+              },
+            "actions": {
+                "dropdownTrigger": "Öffnen",
+                "dropdownEditButton": "Übersetzung anpassen",
+                "dropdownDeleteTranslationButton": "Übersetzung löschen",
+                "dropdownDeleteFromCollectionButton": "Übersetzung aus Sammlung löschen"
+            }
 			}
 		},
 		"account": {

@@ -21,7 +21,7 @@ export const logger = pino({
 			return {
 				statusCode: res.statusCode,
 				url: res.request?.url,
-				path: path ? `${res.request.method} ${path}` : `not found`,
+				path: path ? `${res.request.method} ${path}` : "not found",
 			}
 		},
 		req(req) {

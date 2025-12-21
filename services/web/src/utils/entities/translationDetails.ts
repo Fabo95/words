@@ -1,9 +1,7 @@
 export type TranslationDetails = {
 	id: number
 	translationId: number
-	sourceLanguage: string
 	sourceText: string
-	targetLanguage: string
 	targetText: string
 	cefrLevel?: CefrLevel
 	universalPosTags: UniversalPosTag[]

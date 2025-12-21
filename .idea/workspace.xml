@@ -6,7 +6,22 @@
   <component name="ChangeListManager">
     <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="add translation details dialog">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/inngest/src/setup/database/prisma.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/setup/database/prisma.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/inngest/src/setup/dependencies/factories/appDependenciesFactory.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/setup/dependencies/factories/appDependenciesFactory.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/inngest/src/setup/logger.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/setup/logger.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/messages/de-DE.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/messages/de-DE.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/messages/en-GB.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/messages/en-GB.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/collectionTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/collectionTable.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/utils/collectionTableConstants.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/utils/collectionTableConstants.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/utils/collectionTableTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/utils/collectionTableTypes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/components/dialogs/translationDetailsDialog.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/components/ui/dataTable/dataTablePagination.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/dataTable/dataTablePagination.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/components/ui/pageContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/pageContent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/styles/globals.css" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/styles/globals.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/utils/entities/translationDetails.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/utils/entities/translationDetails.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +30,10 @@
   </component>
   <component name="ComposerSettings">
     <execution />
+  </component>
+  <component name="EmbeddingIndexingInfo">
+    <option name="cachedIndexableFilesCount" value="195" />
+    <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -33,6 +52,10 @@
 }</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/service/src/app/page.tsx" root0="SKIP_INSPECTION" />
+  </component>
+  <component name="McpProjectServerCommands">
+    <commands />
+    <urls />
   </component>
   <component name="PackageJsonUpdateNotifier">
     <dismissed value="$PROJECT_DIR$/services/web/package.json" />
@@ -54,10 +77,13 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
     "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "git-widget-placeholder": "main",
+    "javascript.preferred.runtime.type.id": "node",
     "last_opened_file_path": "/Users/fabianhinz/repositories/words/services/web",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
@@ -107,7 +133,7 @@
       <recent name="$PROJECT_DIR$/services/web" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.web &gt; open_api:generate">
+  <component name="RunManager" selected="npm.dev">
     <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -160,10 +186,10 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.dev" />
         <item itemvalue="npm.web &gt; open_api:generate" />
         <item itemvalue="npm.inngest &gt; prisma:generate" />
         <item itemvalue="npm.inngest &gt; prisma:pull" />
-        <item itemvalue="npm.dev" />
         <item itemvalue="npm.packages:force-node-modules-sync" />
       </list>
     </recent_temporary>
@@ -171,7 +197,7 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-3aa1da707db6-JavaScript-WS-252.26830.93" />
+        <option value="bundled-js-predefined-d6986cc7102b-9b0f141eb926-JavaScript-WS-253.29346.143" />
       </set>
     </attachedChunks>
   </component>
@@ -235,15 +261,8 @@
       <workItem from="1762337536822" duration="8000" />
       <workItem from="1762445988688" duration="9577000" />
       <workItem from="1762510443208" duration="2165000" />
-      <workItem from="1762626129150" duration="17128000" />
-    </task>
-    <task id="LOCAL-00032" summary="added sidebar">
-      <option name="closed" value="true" />
-      <created>1736799692288</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1736799692288</updated>
+      <workItem from="1762626129150" duration="18862000" />
+      <workItem from="1766334244174" duration="7845000" />
     </task>
     <task id="LOCAL-00033" summary="added sidebar">
       <option name="closed" value="true" />
@@ -629,7 +648,15 @@
       <option name="project" value="LOCAL" />
       <updated>1762705640057</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="add translation details dialog">
+      <option name="closed" value="true" />
+      <created>1762705774226</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1762705774226</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
