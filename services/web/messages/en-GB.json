@@ -104,13 +104,16 @@
         "wordLabel": "Word",
         "translationLabel": "Translation",
         "collectionIdLabel": "Collection",
+        "cefrLevelIdLabel": "Language level",
         "wordPlaceholder": "Enter a word",
         "translationPlaceholder": "Enter a translation",
         "collectionPlaceholder": "Select a collection",
+        "cefrLevelIdPlaceholder": "Select a language level",
         "collectionDescription": "The translation will be assigned to this collection.",
         "wordError": "Please enter at least 2 characters.",
         "translationError": "Please enter at least 2 characters.",
         "collectionError": "Please select a collection.",
+        "cefrLevelIdError":  "Please select a language level.",
         "toast": {
           "success": {
             "title": "Saved successfully",

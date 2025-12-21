@@ -45,7 +45,7 @@ export function SidebarCollections() {
 	const t = useTranslations()
 
 	const {
-		data: { response_object },
+		data: { response_object: collections },
 	} = $api.useSuspenseQuery("get", "/user/collections")
 
 	// --- RENDER ---
@@ -55,7 +55,7 @@ export function SidebarCollections() {
 			<SidebarGroupLabel>{t("components.navCollections.title")}</SidebarGroupLabel>
 
 			<SidebarMenu>
-				{response_object?.map((collection) => (
+				{collections?.map((collection) => (
 					<SidebarMenuItem key={collection.id}>
 						<SidebarMenuButton asChild>
 							<Link href={getCollectionPage(collection.id)}>

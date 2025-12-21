@@ -20,6 +20,22 @@ export type paths = {
         patch?: never;
         trace?: never;
     };
+    "/cefr-levels": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["get_cefr_levels"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/collection": {
         parameters: {
             query?: never;
@@ -283,6 +299,17 @@ export type components = {
             })[];
             success: boolean;
         };
+        "HttpResponseBody_Vec_entity.cefr_levelsModel": {
+            message: string;
+            response_object?: {
+                code: string;
+                description?: string | null;
+                /** Format: int32 */
+                id: number;
+                name: string;
+            }[];
+            success: boolean;
+        };
         "HttpResponseBody_Vec_entity.collectionsModel": {
             message: string;
             response_object?: {
@@ -349,6 +376,8 @@ export type components = {
         };
         TranslationForCreate: {
             /** Format: int32 */
+            cefr_level_id?: number | null;
+            /** Format: int32 */
             collection_id?: number | null;
             /** @description Must be one of: "en-GB", "de-DE" */
             source_language: string;
@@ -405,6 +434,8 @@ export type components = {
             password?: string | null;
         };
         WebhooksTranslationForCreate: {
+            /** Format: int32 */
+            cefr_level_id?: number | null;
             /**
              * Format: int32
              * @description Optional ID of the collection (must be > 0 if provided)
@@ -491,6 +522,25 @@ export interface operations {
                 };
                 content: {
                     "application/json": components["schemas"]["HttpResponseBody_AuthenticationResponse"];
+                };
+            };
+        };
+    };
+    get_cefr_levels: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HttpResponseBody_Vec_entity.cefr_levelsModel"];
                 };
             };
         };

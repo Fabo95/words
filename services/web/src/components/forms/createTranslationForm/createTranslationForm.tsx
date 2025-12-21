@@ -25,9 +25,14 @@ export const CreateTranslationForm = () => {
 	const queryClient = useQueryClient()
 
 	const {
-		data: { response_object },
+		data: { response_object: collections },
 	} = $api.useSuspenseQuery("get", "/user/collections")
+
 	const t = useTranslations()
+
+	const {
+		data: { response_object: cefrLevels },
+	} = $api.useSuspenseQuery("get", "/cefr-levels")
 
 	const { mutateAsync: mutateTranslationCreate } = $api.useMutation("post", "/translation", {
 		onSuccess: async () => {
@@ -70,6 +75,7 @@ export const CreateTranslationForm = () => {
 					source_text: value.sourceText,
 					target_text: value.targetText,
 					collection_id: value.collectionId,
+					cefr_level_id: value.cefrLevelId,
 				},
 			})
 		},
@@ -190,10 +196,36 @@ export const CreateTranslationForm = () => {
 							<SelectTrigger className="h-8">
 								<SelectValue placeholder={t("forms.createTranslationForm.collectionPlaceholder")} />
 							</SelectTrigger>
+
 							<SelectContent side="top">
-								{response_object?.map((collection) => (
-									<SelectItem key={collection.id} value={String(collection.id)}>
+								{collections?.map((collection) => (
+									<SelectItem className="cursor-pointer" key={collection.id} value={String(collection.id)}>
 										{collection.name}
+									</SelectItem>
+								))}
+							</SelectContent>
+						</Select>
+					)}
+				/>
+
+				<FormField
+					className="mb-3"
+					control={form.control}
+					label={t("forms.createTranslationForm.cefrLevelIdLabel")}
+					name="cefrLevelId"
+					render={({ field }) => (
+						<Select
+							value={field.value ? String(field.value) : ""}
+							onValueChange={(value) => field.onChange(value ? Number(value) : undefined)}
+						>
+							<SelectTrigger className="h-8">
+								<SelectValue placeholder={t("forms.createTranslationForm.cefrLevelIdPlaceholder")} />
+							</SelectTrigger>
+
+							<SelectContent side="top">
+								{cefrLevels?.map((cefrLevel) => (
+									<SelectItem className="cursor-pointer" key={cefrLevel.id} value={String(cefrLevel.id)}>
+										{cefrLevel.code}
 									</SelectItem>
 								))}
 							</SelectContent>

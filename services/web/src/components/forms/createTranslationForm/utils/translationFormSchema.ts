@@ -8,4 +8,5 @@ export const getTranslationFormSchema = (t: TFunction) =>
 		sourceText: z.string().min(1, { message: t("forms.createTranslationForm.wordError") }),
 		targetText: z.string().min(1, { message: t("forms.createTranslationForm.wordError") }),
 		collectionId: z.number({ message: t("forms.createTranslationForm.collectionError") }).optional(),
+		cefrLevelId: z.number({ message: t("forms.createTranslationForm.collectionError") }).optional(),
 	})

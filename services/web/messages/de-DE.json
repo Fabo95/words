@@ -106,15 +106,18 @@
         "targetLanguageLabel": "Nach",
         "translationLabel": "Übersetzung",
         "collectionIdLabel": "Sammlung",
+        "cefrLevelIdLabel": "Sprachniveau",
         "wordPlaceholder": "Wort angeben",
         "translationPlaceholder": "Übersetzung angeben",
         "collectionPlaceholder": "Sammlung auswählen",
+        "cefrLevelIdPlaceholder": "Sprachniveau auswählen",
         "sourceLanguagePlaceholder": "Wähle eine Sprache von der aus übersetzt werden soll.",
         "targetLanguagePlaceholder": "Wähle eine Sprache zu der übersetzt werden soll.",
         "collectionDescription": "Die Übersetzung wird dieser Sammlung zugeordnet.",
         "wordError": "Bitte gib mindestens 2 Zeichen an.",
         "translationError": "Bitte gib mindestens 2 Zeichen an.",
         "collectionError": "Wähle eine Sammlung aus.",
+        "cefrLevelIdError": "Wähle ein Sprachniveau aus",
         "toast": {
           "success": {
             "title": "Speichern erfolgreich",

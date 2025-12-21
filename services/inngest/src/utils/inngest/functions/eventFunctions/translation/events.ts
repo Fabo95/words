@@ -56,6 +56,15 @@ export const getInngestTranslationEventFunctions = ({
 
 			if (!translation) throw new Error(`Translation with id ${event.data.translationId} not found`)
 
+			if (translation.cefr_level_id) {
+				await inngest.send({
+					name: "translation.cefr_assigned",
+					data: { translationId: translation.id },
+				})
+
+				return
+			}
+
 			const { cefr_level } = await openAi.getCefrLevel(translation)
 
 			const cefrLevel = await cefrLevelsModelService.findFirst({ code: cefr_level })
