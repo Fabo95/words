@@ -1,9 +1,9 @@
-import { LOGGED_IN_PATHS, LOGGED_OUT_PATHS, routing } from "@app/i18n/routing"
+import { LOGGED_IN_PATHNAME, LOGGED_OUT_PATHNAME, routing } from "@app/i18n/routing"
 import { URLPattern } from "next/server"
 import { Locale } from "@app/utils/locale/localeTypes"
 import { ENV } from "@app/utils/env/env"
 
-function buildPatterns(paths: typeof LOGGED_IN_PATHS | typeof LOGGED_OUT_PATHS) {
+function buildPatterns(paths: typeof LOGGED_IN_PATHNAME | typeof LOGGED_OUT_PATHNAME) {
 	return paths.flatMap((path) => {
 		// routing.pathnames[internal] is a Record<Locale, localizedPath>
 		return (Object.entries(routing.pathnames[path]) as [Locale, string][]).map(
@@ -14,9 +14,9 @@ function buildPatterns(paths: typeof LOGGED_IN_PATHS | typeof LOGGED_OUT_PATHS) 
 	})
 }
 
-export const LOGGED_OUT_URL_PATTERNS = buildPatterns(LOGGED_OUT_PATHS)
+export const LOGGED_OUT_URL_PATTERNS = buildPatterns(LOGGED_OUT_PATHNAME)
 
-export const LOGGED_IN_URL_PATTERNS = buildPatterns(LOGGED_IN_PATHS)
+export const LOGGED_IN_URL_PATTERNS = buildPatterns(LOGGED_IN_PATHNAME)
 
 export const URL_PATTERNS = [...LOGGED_OUT_URL_PATTERNS, ...LOGGED_IN_URL_PATTERNS]
 

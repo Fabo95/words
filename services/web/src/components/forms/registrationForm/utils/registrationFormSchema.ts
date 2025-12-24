@@ -24,11 +24,9 @@ export const getRegistrationFormSchema = (t: TFunction) =>
 
 						console.log("queryClient", queryClient)
 
-						const { response_object } = await queryClient.fetchQuery(
-							$api.queryOptions("post", "/user/check", { body: { email } }),
-						)
+						const { data } = await queryClient.fetchQuery($api.queryOptions("post", "/user/check", { body: { email } }))
 
-						return !response_object?.isEmailValid
+						return !data?.isEmailValid
 					},
 					{ message: t("forms.registrationForm.error.emailDoesExist") },
 				),

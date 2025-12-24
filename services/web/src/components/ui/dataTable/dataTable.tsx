@@ -13,20 +13,17 @@ import {
 } from "@tanstack/react-table"
 import { useState } from "react"
 
-import { DataTableFilter } from "@app/components/ui/dataTable/dataTableFilter"
 import { DataTablePagination } from "@app/components/ui/dataTable/dataTablePagination"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@app/components/ui/table"
-import { Option } from "@app/utils/types/objectTypes"
 import * as React from "react"
 
 interface DataTableProps<TData, TValue> {
 	onRowClick?: (row: TData) => void
 	columns: ColumnDef<TData, TValue>[]
 	data: TData[]
-	filters: Option<string & keyof TData>[]
 }
 
-export function DataTable<TData, TValue>({ onRowClick, columns, data, filters }: DataTableProps<TData, TValue>) {
+export function DataTable<TData, TValue>({ onRowClick, columns, data }: DataTableProps<TData, TValue>) {
 	// --- STATE ---
 
 	const [sorting, setSorting] = useState<SortingState>([])
@@ -54,8 +51,6 @@ export function DataTable<TData, TValue>({ onRowClick, columns, data, filters }:
 
 	return (
 		<>
-			<DataTableFilter filters={filters} table={table} />
-
 			<div className="rounded-md border mb-3">
 				<Table className="table-auto w-full">
 					<TableHeader>
@@ -97,8 +92,6 @@ export function DataTable<TData, TValue>({ onRowClick, columns, data, filters }:
 					</TableBody>
 				</Table>
 			</div>
-
-			<DataTablePagination table={table} />
 		</>
 	)
 }

@@ -33,7 +33,7 @@ export function SidebarUserActions() {
 	const router = useRouter()
 
 	const {
-		data: { response_object },
+		data: { data },
 	} = $api.useSuspenseQuery("get", "/user")
 
 	const { mutateAsync: mutateUserLogout } = $api.useMutation("post", "/user/logout", {
@@ -61,12 +61,12 @@ export function SidebarUserActions() {
 							className="data-[state=open]:bg-sidebar-accent data-[state=open]:text-sidebar-accent-foreground"
 						>
 							<Avatar className="h-8 w-8 rounded-lg">
-								<AvatarImage src="/avatars/shadcn.jpg" alt={response_object?.name ?? "Avatar"} />
+								<AvatarImage src="/avatars/shadcn.jpg" alt={data?.name ?? "Avatar"} />
 								<AvatarFallback className="rounded-lg">CN</AvatarFallback>
 							</Avatar>
 							<div className="grid flex-1 text-left text-sm leading-tight">
-								<span className="truncate font-semibold">{response_object?.name ?? "-"}</span>
-								<span className="truncate text-xs">{response_object?.email ?? "-"}</span>
+								<span className="truncate font-semibold">{data?.name ?? "-"}</span>
+								<span className="truncate text-xs">{data?.email ?? "-"}</span>
 							</div>
 							<CaretSortIcon className="ml-auto size-4" />
 						</SidebarMenuButton>
@@ -80,12 +80,12 @@ export function SidebarUserActions() {
 						<DropdownMenuLabel className="p-0 font-normal">
 							<div className="flex items-center gap-2 px-1 py-1.5 text-left text-sm">
 								<Avatar className="h-8 w-8 rounded-lg">
-									<AvatarImage src="/avatars/shadcn.jpg" alt={response_object?.name ?? "Avatar"} />
+									<AvatarImage src="/avatars/shadcn.jpg" alt={data?.name ?? "Avatar"} />
 									<AvatarFallback className="rounded-lg">CN</AvatarFallback>
 								</Avatar>
 								<div className="grid flex-1 text-left text-sm leading-tight">
-									<span className="truncate font-semibold">{response_object?.name ?? "-"}</span>
-									<span className="truncate text-xs">{response_object?.email ?? "-"}</span>
+									<span className="truncate font-semibold">{data?.name ?? "-"}</span>
+									<span className="truncate text-xs">{data?.email ?? "-"}</span>
 								</div>
 							</div>
 						</DropdownMenuLabel>

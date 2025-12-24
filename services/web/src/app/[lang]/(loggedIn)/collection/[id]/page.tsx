@@ -16,14 +16,14 @@ export default async function Page({ params }: { params: Promise<{ lang: Locale;
 
 	const queryClient = getQueryClient()
 
-	queryClient.prefetchQuery(
+	await queryClient.prefetchQuery(
 		$api.queryOptions("get", "/collection/test/{id}", {
 			params: { path: { id: Number(id) } },
 			headers: { Cookie: `auth-cookie=${authCookieValue}` },
 		}),
 	)
 
-	queryClient.prefetchQuery(
+	await queryClient.prefetchQuery(
 		$api.queryOptions("get", "/collection/{id}/translations", {
 			params: { path: { id: Number(id) } },
 			headers: { Cookie: `auth-cookie=${authCookieValue}` },

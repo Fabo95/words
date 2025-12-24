@@ -2,11 +2,11 @@
 
 import { useState } from "react"
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@app/components/ui/dialog"
-import { CreateTranslationForm } from "@app/components/forms/createTranslationForm/createTranslationForm"
 import * as React from "react"
 import { useTranslations } from "next-intl"
 import { Button } from "@app/components/ui/button"
 import { PlusIcon } from "@radix-ui/react-icons"
+import { TranslationForm } from "@app/components/forms/translationForm/translationForm"
 
 export const AddTranslationTrigger = () => {
 	const t = useTranslations()
@@ -29,12 +29,19 @@ export const AddTranslationTrigger = () => {
 			<Dialog open={isTranslationFormOpen} onOpenChange={setIsTranslationFormOpen}>
 				<DialogContent>
 					<DialogHeader>
-						<DialogTitle>{t("forms.createTranslationForm.title")}</DialogTitle>
+						<DialogTitle>{t("forms.translationForm.title")}</DialogTitle>
 
-						<DialogDescription>{t("forms.createTranslationForm.description")}</DialogDescription>
+						<DialogDescription>{t("forms.translationForm.description")}</DialogDescription>
 					</DialogHeader>
 
-					{isTranslationFormOpen && <CreateTranslationForm />}
+					{isTranslationFormOpen && (
+						<TranslationForm
+							onSubmit={() => setIsTranslationFormOpen(false)}
+							onCancel={() => setIsTranslationFormOpen(false)}
+							formType="create"
+							defaultValues={{}}
+						/>
+					)}
 				</DialogContent>
 			</Dialog>
 		</>

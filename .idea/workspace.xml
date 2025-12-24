@@ -4,15 +4,42 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="add translation details dialog">
+    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="add cefr to translation creation">
+      <change afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collection-value-filter.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/utils/collectionTableQuery.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/web/src/components/forms/translationForm/translationForm.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/web/src/utils/functions/run.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/web/src/utils/number/parseStringToInteger.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/web/src/utils/urls/useSearchParamState.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/utils/inngest/functions/eventFunctions/translation/events.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/utils/inngest/functions/eventFunctions/translation/events.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/web/messages/de-DE.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/messages/de-DE.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/web/messages/en-GB.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/messages/en-GB.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/_content/addTranslationTrigger.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/_content/addTranslationTrigger.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/collectionTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/collectionTable.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableActions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableActions.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/home/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/home/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionCreateForm/sidebarCollectionCreateForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionCreateForm/sidebarCollectionCreateForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionDeleteDialog/sidebarCollectionDeleteDialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionDeleteDialog/sidebarCollectionDeleteDialog.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionEditForm/sidebarCollectionEditForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionEditForm/sidebarCollectionEditForm.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/web/src/components/appSidebar/components/sidebarCollections/sidebarCollections.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/appSidebar/components/sidebarCollections/sidebarCollections.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/components/forms/createTranslationForm/createTranslationForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/createTranslationForm/createTranslationForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/components/forms/createTranslationForm/utils/translationFormSchema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/createTranslationForm/utils/translationFormSchema.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/generated/openApiTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/generated/openApiTypes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/components/appSidebar/components/sidebarUserActions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/appSidebar/components/sidebarUserActions.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/components/forms/accountNameForm/accountNameForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/accountNameForm/accountNameForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/components/forms/createTranslationForm/createTranslationForm.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/components/forms/createTranslationForm/utils/translationFormSchema.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/components/forms/createTranslationForm/utils/translationFormTypes.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/components/forms/editTranslationForm/editTranslationForm.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/components/forms/editTranslationForm/utils/collectionTableEditTranslationFormSchema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/translationForm/utils/translationFormSchema.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/components/forms/editTranslationForm/utils/collectionTableEditTranslationFormTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/translationForm/utils/translationFormTypes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/components/forms/loginForm/utils/loginFormSchema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/loginForm/utils/loginFormSchema.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/components/forms/registrationForm/utils/registrationFormSchema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/registrationForm/utils/registrationFormSchema.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/components/ui/dataTable/dataTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/dataTable/dataTable.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/components/ui/dataTable/dataTableFilter.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/generated/openApiTypes.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/i18n/routing.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/i18n/routing.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/utils/locale/localeTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/utils/locale/localeTypes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/utils/middleware/middlewareHelpers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/utils/middleware/middlewareHelpers.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,7 +102,7 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "git-widget-placeholder": "main",
     "javascript.preferred.runtime.type.id": "node",
-    "last_opened_file_path": "/Users/fabianhinz/repositories/words/services/web",
+    "last_opened_file_path": "/Users/fabianhinz/repositories/words/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
@@ -110,18 +137,18 @@
 }]]></component>
   <component name="RecapSpentCounter">
     <option name="endsOfQuotaMs" value="1767430816454" />
-    <option name="spentUsd" value="0.04883775" />
+    <option name="spentUsd" value="0.17932963" />
   </component>
   <component name="RecapUselessUpdatesCounter">
-    <option name="suspendCountdown" value="9" />
+    <option name="suspendCountdown" value="0" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components" />
+      <recent name="$PROJECT_DIR$/services/web/src/utils/urls" />
       <recent name="$PROJECT_DIR$/services/web" />
       <recent name="$PROJECT_DIR$/services" />
       <recent name="$PROJECT_DIR$/service/src/app/[lang]/(loggedIn)/home/_content" />
-      <recent name="$PROJECT_DIR$/service/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionCreateForm" />
-      <recent name="$PROJECT_DIR$/service/src/components/appSidebar/components/sidebarCollections/components/sidebarCollectionEditForm" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/services/web/src/components/forms" />
@@ -260,15 +287,7 @@
       <workItem from="1762445988688" duration="9577000" />
       <workItem from="1762510443208" duration="2165000" />
       <workItem from="1762626129150" duration="18862000" />
-      <workItem from="1766334244174" duration="10499000" />
-    </task>
-    <task id="LOCAL-00034" summary="added sidebar">
-      <option name="closed" value="true" />
-      <created>1736801654473</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1736801654473</updated>
+      <workItem from="1766334244174" duration="29718000" />
     </task>
     <task id="LOCAL-00035" summary="added sidebar">
       <option name="closed" value="true" />
@@ -654,7 +673,15 @@
       <option name="project" value="LOCAL" />
       <updated>1766345754949</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="add cefr to translation creation">
+      <option name="closed" value="true" />
+      <created>1766348383088</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1766348383088</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -675,7 +702,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="adjusted page navigation in sidebar" />
     <MESSAGE value="added README.md" />
     <MESSAGE value="&quot;e&quot;" />
     <MESSAGE value="added envs, added openApi generation" />
@@ -700,7 +726,8 @@
     <MESSAGE value="add tfunction type" />
     <MESSAGE value="fetch latest openAPi types" />
     <MESSAGE value="add translation details dialog" />
-    <option name="LAST_COMMIT_MESSAGE" value="add translation details dialog" />
+    <MESSAGE value="add cefr to translation creation" />
+    <option name="LAST_COMMIT_MESSAGE" value="add cefr to translation creation" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

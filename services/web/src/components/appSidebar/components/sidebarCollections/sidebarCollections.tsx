@@ -45,8 +45,8 @@ export function SidebarCollections() {
 	const t = useTranslations()
 
 	const {
-		data: { response_object: collections },
-	} = $api.useSuspenseQuery("get", "/user/collections")
+		data: { data: collections },
+	} = $api.useSuspenseQuery("get", "/collection/wip1")
 
 	// --- RENDER ---
 

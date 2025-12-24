@@ -3,7 +3,7 @@ import { Delete, Edit, MoreHorizontal, Trash2 } from "lucide-react"
 
 import { DeleteTranslationFromCollectionDialogContent } from "@app/components/dialogs/deleteTranslationFromCollectionDialogContent"
 import { DeleteTranslationDialogContent } from "@app/components/dialogs/deleteTranslationDialogContent"
-import { EditTranslationForm } from "@app/components/forms/editTranslationForm/editTranslationForm"
+import { TranslationForm } from "@app/components/forms/translationForm/translationForm"
 import { CollectionTranslation } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/utils/collectionTableTypes"
 import { Button } from "@app/components/ui/button"
 import {
@@ -74,19 +74,24 @@ export const CollectionTableActions = ({ row }: CollectionTableActionsProps) => 
 			<Dialog open={isEditFormOpen} onOpenChange={setIsEditFormOpen}>
 				<DialogContent onClick={(e) => e.stopPropagation()}>
 					<DialogHeader>
-						<DialogTitle>{t("forms.editTranslationForm.title")}</DialogTitle>
+						<DialogTitle>{t("forms.translationForm.title")}</DialogTitle>
 
-						<DialogDescription>{t("forms.editTranslationForm.description")}</DialogDescription>
+						<DialogDescription>{t("forms.translationForm.description")}</DialogDescription>
 					</DialogHeader>
 
 					<DialogBody>
 						{isEditFormOpen && (
-							<EditTranslationForm
-								id={row.original.id}
+							<TranslationForm
 								translationId={row.original.translationId}
-								sourceText={row.original.sourceText}
-								targetText={row.original.targetText}
-								handleIsDialogOpen={setIsEditFormOpen}
+								formType="update"
+								defaultValues={{
+									sourceText: row.original.sourceText,
+									targetText: row.original.targetText,
+									collectionId: row.original.id,
+									cefrLevelId: row.original.cefrLevel?.id,
+								}}
+								onSubmit={() => setIsEditFormOpen(false)}
+								onCancel={() => setIsEditFormOpen(false)}
 							/>
 						)}
 					</DialogBody>

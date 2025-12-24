@@ -10,7 +10,7 @@ export default async function () {
 	const queryClient = getQueryClient()
 
 	queryClient.prefetchQuery(
-		$api.queryOptions("get", "/user/collections", {
+		$api.queryOptions("get", "/collection/wip1", {
 			headers: { Cookie: `auth-cookie=${authCookieValue}` },
 		}),
 	)

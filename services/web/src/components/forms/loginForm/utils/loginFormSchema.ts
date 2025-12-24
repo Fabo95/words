@@ -21,11 +21,9 @@ export const getLoginFormSchema = (t: TFunction) =>
 
 					const queryClient = getQueryClient()
 
-					const { response_object } = await queryClient.fetchQuery(
-						$api.queryOptions("post", "/user/check", { body: { email } }),
-					)
+					const { data } = await queryClient.fetchQuery($api.queryOptions("post", "/user/check", { body: { email } }))
 
-					return response_object?.isEmailValid
+					return data?.isEmailValid
 				},
 				{ message: t("forms.loginForm.error.emailDoesNotExist") },
 			),

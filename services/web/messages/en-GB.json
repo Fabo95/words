@@ -96,50 +96,28 @@
           "password": "Please enter at least 8 characters."
         }
       },
-      "createTranslationForm": {
-        "title": "Create Translation",
-        "description": "Create a new translation.",
-        "cancelButton": "Cancel",
-        "saveButton": "Save",
-        "wordLabel": "Word",
-        "translationLabel": "Translation",
-        "collectionIdLabel": "Collection",
-        "cefrLevelIdLabel": "Language level",
-        "wordPlaceholder": "Enter a word",
-        "translationPlaceholder": "Enter a translation",
-        "collectionPlaceholder": "Select a collection",
-        "cefrLevelIdPlaceholder": "Select a language level",
-        "collectionDescription": "The translation will be assigned to this collection.",
-        "wordError": "Please enter at least 2 characters.",
-        "translationError": "Please enter at least 2 characters.",
-        "collectionError": "Please select a collection.",
-        "cefrLevelIdError":  "Please select a language level.",
-        "toast": {
-          "success": {
-            "title": "Saved successfully",
-            "description": "The translation has been created."
-          },
-          "error": {
-            "title": "Save failed",
-            "description": "Please try again."
-          }
-        }
-      },
-      "editTranslationForm": {
+      "translationForm": {
         "title": "Adjust translation",
         "description": "Change the word and / or the translation.",
         "cancelButton": "Cancel",
         "saveButton": "Save",
         "wordLabel": "Word",
         "translationLabel": "Translation",
+        "collectionIdLabel": "Collection",
+        "cefrLevelIdLabel": "Language level",
         "wordPlaceholder": "Enter the word",
         "translationPlaceholder": "Enter the translation",
+        "collectionPlaceholder": "Select a collection",
+        "cefrLevelIdPlaceholder": "Select a language level",
         "wordError": "Please enter at least 2 characters.",
         "translationError": "Please enter at least 2 characters.",
+        "collectionError": "Please select a collection.",
+        "cefrLevelIdError":  "Please select a language level.",
+        "collectionDescription": "The translation will be assigned to this collection.",
         "toast": {
           "success": {
             "title": "Saving successful",
-            "description": "Your translation has been updated."
+            "description": "Your translation has been saved."
           },
           "error": {
             "title": "Saving failed",

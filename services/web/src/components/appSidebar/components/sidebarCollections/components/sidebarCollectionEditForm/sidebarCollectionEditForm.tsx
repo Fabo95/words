@@ -44,7 +44,7 @@ export const SidebarCollectionEditForm = ({
 		onSuccess: async (data) => {
 			console.log({ data })
 
-			await queryClient.invalidateQueries({ queryKey: ["/user/collections", "/collections"] })
+			await queryClient.invalidateQueries({ queryKey: ["/collection/wip1", "/collections"] })
 
 			toast({
 				title: t("components.navCollections.editForm.toast.success.title"),

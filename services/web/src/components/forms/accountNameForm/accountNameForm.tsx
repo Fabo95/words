@@ -27,9 +27,7 @@ export const AccountNameForm = () => {
 
 	const queryClient = useQueryClient()
 
-	const {
-		data: { response_object },
-	} = $api.useSuspenseQuery("get", "/user")
+	const { data } = $api.useSuspenseQuery("get", "/user")
 
 	const { mutateAsync: mutateUserUpdate } = $api.useMutation("patch", "/user", {
 		onSuccess: (data) => {
@@ -50,8 +48,8 @@ export const AccountNameForm = () => {
 
 	const form = useForm<AccountNameFormState>({
 		defaultValues: {
-			email: response_object?.email ?? "",
-			name: response_object?.name || "",
+			email: data?.data?.email ?? "",
+			name: data?.data?.name || "",
 		},
 		mode: "onBlur",
 		resolver: zodResolver(getAccountNameFormSchema(t)),

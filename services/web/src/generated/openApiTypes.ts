@@ -52,7 +52,23 @@ export type paths = {
         patch?: never;
         trace?: never;
     };
-    "/collection/test/{id}": {
+    "/collection/wip1": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["get_collections_handler"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/collection/wip2/{id}": {
         parameters: {
             query?: never;
             header?: never;
@@ -91,7 +107,7 @@ export type paths = {
             path?: never;
             cookie?: never;
         };
-        get: operations["find_collection_translations"];
+        get: operations["get_collection_translations"];
         put?: never;
         post?: never;
         delete?: never;
@@ -107,7 +123,7 @@ export type paths = {
             path?: never;
             cookie?: never;
         };
-        get?: never;
+        get: operations["get_translations_handler"];
         put?: never;
         post: operations["create_translation_handler"];
         delete?: never;
@@ -139,7 +155,7 @@ export type paths = {
             path?: never;
             cookie?: never;
         };
-        get: operations["find_user_by_id_handler"];
+        get: operations["get_user_by_id_handler"];
         put?: never;
         post: operations["create_user_handler"];
         delete?: never;
@@ -158,22 +174,6 @@ export type paths = {
         get?: never;
         put?: never;
         post: operations["check_email_handler"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/user/collections": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["find_user_collections"];
-        put?: never;
-        post?: never;
         delete?: never;
         options?: never;
         head?: never;
@@ -212,22 +212,6 @@ export type paths = {
         patch?: never;
         trace?: never;
     };
-    "/user/translations": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["find_user_translations"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
     "/webhooks": {
         parameters: {
             query?: never;
@@ -237,7 +221,7 @@ export type paths = {
         };
         get?: never;
         put?: never;
-        post: operations["create_translation_handler"];
+        post: operations["webhook_create_translation_handler"];
         delete?: never;
         options?: never;
         head?: never;
@@ -267,63 +251,68 @@ export type components = {
             isEmailValid: boolean;
         };
         HttpResponseBody_AuthenticationResponse: {
-            message: string;
-            response_object?: {
+            data?: {
                 isAuthenticated: boolean;
             };
+            message: string;
+            meta?: null | components["schemas"]["PaginatedMeta"];
             success: boolean;
         };
         HttpResponseBody_EmailForCheckResponse: {
-            message: string;
-            response_object?: {
+            data?: {
                 isEmailValid: boolean;
             };
+            message: string;
+            meta?: null | components["schemas"]["PaginatedMeta"];
             success: boolean;
         };
         HttpResponseBody_UserForResponse: {
-            message: string;
-            response_object?: {
+            data?: {
                 email: string;
                 /** Format: int32 */
                 id: number;
                 name?: string | null;
             };
+            message: string;
+            meta?: null | components["schemas"]["PaginatedMeta"];
             success: boolean;
         };
         HttpResponseBody_Vec_TranslationWithRelations: {
-            message: string;
-            response_object?: (components["schemas"]["entity.translationsModel"] & {
+            data?: (components["schemas"]["entity.translationsModel"] & {
                 cefr_level?: null | components["schemas"]["entity.cefr_levelsModel"];
                 example_sentences: components["schemas"]["entity.example_sentencesModel"][];
                 universal_pos_tags: components["schemas"]["entity.universal_pos_tagsModel"][];
             })[];
+            message: string;
+            meta?: null | components["schemas"]["PaginatedMeta"];
             success: boolean;
         };
         "HttpResponseBody_Vec_entity.cefr_levelsModel": {
-            message: string;
-            response_object?: {
+            data?: {
                 code: string;
                 description?: string | null;
                 /** Format: int32 */
                 id: number;
                 name: string;
             }[];
+            message: string;
+            meta?: null | components["schemas"]["PaginatedMeta"];
             success: boolean;
         };
         "HttpResponseBody_Vec_entity.collectionsModel": {
-            message: string;
-            response_object?: {
+            data?: {
                 /** Format: int32 */
                 id: number;
                 name: string;
                 /** Format: int32 */
                 user_id: number;
             }[];
+            message: string;
+            meta?: null | components["schemas"]["PaginatedMeta"];
             success: boolean;
         };
         "HttpResponseBody_Vec_entity.translationsModel": {
-            message: string;
-            response_object?: {
+            data?: {
                 /** Format: int32 */
                 cefr_level_id?: number | null;
                 /** Format: int32 */
@@ -337,22 +326,24 @@ export type components = {
                 /** Format: int32 */
                 user_id: number;
             }[];
+            message: string;
+            meta?: null | components["schemas"]["PaginatedMeta"];
             success: boolean;
         };
         "HttpResponseBody_entity.collectionsModel": {
-            message: string;
-            response_object?: {
+            data?: {
                 /** Format: int32 */
                 id: number;
                 name: string;
                 /** Format: int32 */
                 user_id: number;
             };
+            message: string;
+            meta?: null | components["schemas"]["PaginatedMeta"];
             success: boolean;
         };
         "HttpResponseBody_entity.translationsModel": {
-            message: string;
-            response_object?: {
+            data?: {
                 /** Format: int32 */
                 cefr_level_id?: number | null;
                 /** Format: int32 */
@@ -366,13 +357,26 @@ export type components = {
                 /** Format: int32 */
                 user_id: number;
             };
+            message: string;
+            meta?: null | components["schemas"]["PaginatedMeta"];
             success: boolean;
         };
         HttpResponseBody_u64: {
-            message: string;
             /** Format: int64 */
-            response_object?: number;
+            data?: number;
+            message: string;
+            meta?: null | components["schemas"]["PaginatedMeta"];
             success: boolean;
+        };
+        PaginatedMeta: {
+            /** Format: int64 */
+            page: number;
+            /** Format: int64 */
+            page_size: number;
+            /** Format: int64 */
+            total_items: number;
+            /** Format: int64 */
+            total_pages: number;
         };
         TranslationForCreate: {
             /** Format: int32 */
@@ -389,6 +393,8 @@ export type components = {
             target_text: string;
         };
         TranslationForUpdate: {
+            /** Format: int32 */
+            cefr_level_id?: number | null;
             /** Format: int32 */
             collection_id?: number | null;
             /** @description Optional, but must be 2–5 chars (e.g. "en-GB", "de-DE") if provided. */
@@ -568,6 +574,25 @@ export interface operations {
             };
         };
     };
+    get_collections_handler: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HttpResponseBody_Vec_entity.collectionsModel"];
+                };
+            };
+        };
+    };
     get_collection_handler: {
         parameters: {
             query?: never;
@@ -635,9 +660,13 @@ export interface operations {
             };
         };
     };
-    find_collection_translations: {
+    get_collection_translations: {
         parameters: {
-            query?: never;
+            query?: {
+                page?: number;
+                page_size?: number;
+                search?: string;
+            };
             header?: never;
             path: {
                 id: number;
@@ -652,6 +681,25 @@ export interface operations {
                 };
                 content: {
                     "application/json": components["schemas"]["HttpResponseBody_Vec_TranslationWithRelations"];
+                };
+            };
+        };
+    };
+    get_translations_handler: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HttpResponseBody_Vec_entity.translationsModel"];
                 };
             };
         };
@@ -725,7 +773,7 @@ export interface operations {
             };
         };
     };
-    find_user_by_id_handler: {
+    get_user_by_id_handler: {
         parameters: {
             query?: never;
             header?: never;
@@ -813,25 +861,6 @@ export interface operations {
             };
         };
     };
-    find_user_collections: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HttpResponseBody_Vec_entity.collectionsModel"];
-                };
-            };
-        };
-    };
     login_handler: {
         parameters: {
             query?: never;
@@ -872,26 +901,7 @@ export interface operations {
             };
         };
     };
-    find_user_translations: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HttpResponseBody_Vec_entity.translationsModel"];
-                };
-            };
-        };
-    };
-    create_translation_handler: {
+    webhook_create_translation_handler: {
         parameters: {
             query?: never;
             header?: never;

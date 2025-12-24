@@ -37,7 +37,7 @@ export const SidebarCollectionDeleteDialog = ({
 		onSuccess: async (data) => {
 			console.log({ data })
 
-			await queryClient.invalidateQueries({ queryKey: ["/user/collections"] })
+			await queryClient.invalidateQueries({ queryKey: ["/collection/wip1"] })
 
 			toast({
 				title: t("components.navCollections.deleteDialog.toast.success.title"),

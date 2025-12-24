@@ -36,7 +36,7 @@ export const SidebarCollectionCreateForm = ({ onSubmit, onCancel }: ISidebarColl
 		onSuccess: async (data) => {
 			console.log({ data })
 
-			await queryClient.invalidateQueries({ queryKey: ["/user/collections"] })
+			await queryClient.invalidateQueries({ queryKey: ["/collection/wip1"] })
 
 			toast({
 				title: t("components.navCollections.createForm.toast.success.title"),
