@@ -10,7 +10,6 @@ import * as React from "react"
 import { useTranslations } from "next-intl"
 import { useCollectionTableQuery } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/utils/collectionTableQuery"
 import { CollectionStringFilter } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collection-value-filter"
-import { run } from "@app/utils/functions/run"
 import { Button } from "@app/components/ui/button"
 
 export const CollectionTable = () => {
@@ -42,11 +41,11 @@ export const CollectionTable = () => {
 		(direction: "next" | "prev") => () => {
 			switch (direction) {
 				case "next":
-					setters.setPage(query.page + 1)
+					setters.setPage((query.page ?? 1) + 1)
 					break
 
 				case "prev":
-					setters.setPage(Math.max(query.page - 1, 0))
+					setters.setPage(Math.max((query.page ?? 1) - 1, 0))
 					break
 			}
 		},
@@ -73,6 +72,26 @@ export const CollectionTable = () => {
 		}))
 	}, [translationsData, params.id])
 
+	const pagination = useMemo(() => {
+		if (!translationsData || !translationsData.meta?.page_size) {
+			return null
+		}
+
+		const start = translationsData.meta?.page_size * (translationsData.meta.page - 1) + 1
+		const end = Math.min(
+			translationsData.meta.page_size * translationsData.meta.page,
+			translationsData.meta.total_items,
+		)
+
+		return t.rich("pagination.summary", {
+			start,
+			end,
+			totalItems: translationsData.meta.total_items,
+			range: (chunks) => <span className="font-medium text-foreground/80">{chunks}</span>,
+			total: (chunks) => <span className="font-medium text-foreground/80">{chunks}</span>,
+		})
+	}, [translationsData, t.rich])
+
 	// --- RENDER ---
 
 	return (
@@ -86,29 +105,7 @@ export const CollectionTable = () => {
 
 				<div className="flex items-center justify-between space-x-2 py-4">
 					<div>
-						<p className="text-[12px] text-foreground/40 font-normal">
-							{run(() => {
-								if (!translationsData || !translationsData.meta?.page_size) {
-									return null
-								}
-
-								const start = translationsData.meta?.page_size * (translationsData.meta.page - 1) + 1
-								const end = Math.min(
-									translationsData.meta.page_size * translationsData.meta.page,
-									translationsData.meta.total_items,
-								)
-
-								return (
-									<span>
-										Showing results{" "}
-										<span className="font-medium text-foreground/80">
-											{start} – {end}
-										</span>{" "}
-										of <span className="font-medium text-foreground/80">{translationsData.meta.total_items} total</span>
-									</span>
-								)
-							})}
-						</p>
+						<p className="text-[12px] text-foreground/40 font-normal">{pagination}</p>
 					</div>
 
 					<div className="space-x-2">
@@ -118,7 +115,7 @@ export const CollectionTable = () => {
 							disabled={(query.page ?? 1) <= 1}
 							onClick={makeOnPaginationChange("prev")}
 						>
-							Previous
+							{t("pagination.previous")}
 						</Button>
 
 						<Button
@@ -127,7 +124,7 @@ export const CollectionTable = () => {
 							disabled={(translationsData?.meta?.total_items ?? 0) <= (translationsData?.meta?.page ?? 1) * 20}
 							onClick={makeOnPaginationChange("next")}
 						>
-							Next
+							{t("pagination.next")}
 						</Button>
 					</div>
 				</div>

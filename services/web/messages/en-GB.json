@@ -5,6 +5,11 @@
         "english": "English"
       }
     },
+    "pagination": {
+      "summary": "Showing results <range>{start} – {end}</range> of <total>{totalItems}</total>",
+      "next": "Next",
+      "previous": "Previous"
+    },
     "dialogs": {
       "deleteTranslationDialog": {
         "title": "Delete translation",

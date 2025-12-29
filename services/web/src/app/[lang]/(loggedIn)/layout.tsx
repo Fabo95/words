@@ -47,6 +47,10 @@ export default async function Layout({ children }: { children: ReactNode }) {
 		$api.queryOptions("get", "/collection/wip1", { headers: { Cookie: `auth-cookie=${authCookieValue}` } }),
 	)
 
+	queryClient.prefetchQuery(
+		$api.queryOptions("get", "/cefr-levels", { headers: { Cookie: `auth-cookie=${authCookieValue}` } }),
+	)
+
 	// --- RENDER ---
 
 	return (

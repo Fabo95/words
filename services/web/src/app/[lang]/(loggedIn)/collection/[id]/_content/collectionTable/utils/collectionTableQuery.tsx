@@ -62,11 +62,13 @@ export function useCollectionTableQuery(): UseCollectionTableQueryReturn {
 
 	const setSearch = useCallback(
 		(nextSearch: string | undefined) => {
+			setPage(1)
+
 			setRawSearch(nextSearch, route("/collection/:id").getUrl(id, { ...query, search: nextSearch }), {
 				scroll: false,
 			})
 		},
-		[query, id, setRawSearch],
+		[query, id, setRawSearch, setPage],
 	)
 
 	const setters = useMemo(

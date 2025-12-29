@@ -45,9 +45,13 @@ export const TranslationForm = (props: TranslationFormProps) => {
 		data: { data: collections },
 	} = $api.useSuspenseQuery("get", "/collection/wip1")
 
+	console.log("collections", collections)
+
 	const {
 		data: { data: cefrLevels },
 	} = $api.useSuspenseQuery("get", "/cefr-levels")
+
+	console.log("cefrLevels", cefrLevels)
 
 	const { mutateAsync: createTranslation } = $api.useMutation("post", "/translation", {
 		onSuccess: async () => {
