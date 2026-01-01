@@ -1,5 +1,10 @@
+import { PageContent } from "@app/components/ui/pageContent"
+import { Spinner } from "@app/components/ui/spinner"
+
 export default function Loading() {
-    console.log("run");
-    // You can add any UI inside Loading, including a Skeleton.
-    return "123";
+	return (
+		<PageContent className="flex justify-center items-center h-full">
+			<Spinner className="size-5" />
+		</PageContent>
+	)
 }

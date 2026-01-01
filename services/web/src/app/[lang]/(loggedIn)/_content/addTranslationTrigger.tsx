@@ -7,11 +7,20 @@ import { useTranslations } from "next-intl"
 import { Button } from "@app/components/ui/button"
 import { PlusIcon } from "@radix-ui/react-icons"
 import { TranslationForm } from "@app/components/forms/translationForm/translationForm"
+import { $api } from "@app/utils/api/apiRequests"
 
 export const AddTranslationTrigger = () => {
 	const t = useTranslations()
 
 	const [isTranslationFormOpen, setIsTranslationFormOpen] = useState(false)
+
+	const {
+		data: { data: collections },
+	} = $api.useSuspenseQuery("get", "/collection/wip1")
+
+	const {
+		data: { data: cefrLevels },
+	} = $api.useSuspenseQuery("get", "/cefr-levels")
 
 	return (
 		<>
@@ -23,7 +32,7 @@ export const AddTranslationTrigger = () => {
 				onClick={() => setIsTranslationFormOpen(true)}
 			>
 				<PlusIcon />
-				<span className="sr-only">Toggle Sidebar</span>
+				<span className="sr-only">Toggle translation form</span>
 			</Button>
 
 			<Dialog open={isTranslationFormOpen} onOpenChange={setIsTranslationFormOpen}>
@@ -36,6 +45,8 @@ export const AddTranslationTrigger = () => {
 
 					{isTranslationFormOpen && (
 						<TranslationForm
+							cefrLevels={cefrLevels}
+							collections={collections}
 							onSubmit={() => setIsTranslationFormOpen(false)}
 							onCancel={() => setIsTranslationFormOpen(false)}
 							formType="create"

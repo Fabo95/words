@@ -18,8 +18,11 @@ import { useForm } from "react-hook-form"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@app/components/ui/select"
 import { Badge } from "@app/components/ui/badge"
 import { Locale } from "@app/utils/locale/localeTypes"
+import { CefrLevel, Collection } from "@app/utils/types/api"
 
 type TranslationFormProps = {
+	cefrLevels: CefrLevel[] | undefined
+	collections: Collection[] | undefined
 	onSubmit: () => void
 	onCancel: () => void
 } & (
@@ -40,18 +43,6 @@ export const TranslationForm = (props: TranslationFormProps) => {
 	const { toast } = useToast()
 
 	const queryClient = useQueryClient()
-
-	const {
-		data: { data: collections },
-	} = $api.useSuspenseQuery("get", "/collection/wip1")
-
-	console.log("collections", collections)
-
-	const {
-		data: { data: cefrLevels },
-	} = $api.useSuspenseQuery("get", "/cefr-levels")
-
-	console.log("cefrLevels", cefrLevels)
 
 	const { mutateAsync: createTranslation } = $api.useMutation("post", "/translation", {
 		onSuccess: async () => {
@@ -180,7 +171,7 @@ export const TranslationForm = (props: TranslationFormProps) => {
 							</SelectTrigger>
 
 							<SelectContent side="top">
-								{collections?.map((collection) => (
+								{props.collections?.map((collection) => (
 									<SelectItem className="cursor-pointer" key={collection.id} value={String(collection.id)}>
 										{collection.name}
 									</SelectItem>
@@ -205,7 +196,7 @@ export const TranslationForm = (props: TranslationFormProps) => {
 							</SelectTrigger>
 
 							<SelectContent side="top">
-								{cefrLevels?.map((cefrLevel) => (
+								{props.cefrLevels?.map((cefrLevel) => (
 									<SelectItem className="cursor-pointer" key={cefrLevel.id} value={String(cefrLevel.id)}>
 										<Badge variant="secondary" className="text-xs">
 											{cefrLevel.code}

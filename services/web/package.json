@@ -13,6 +13,7 @@
   },
   "author": "Fabian Hinz",
   "dependencies": {
+    "motion": "12.6.3",
     "@formatjs/intl-localematcher": "^0.5.9",
     "@hookform/resolvers": "^3.9.1",
     "@radix-ui/react-avatar": "^1.1.2",

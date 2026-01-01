@@ -1,5 +1,5 @@
 import { cookies } from "next/headers"
-import { ReactNode } from "react"
+import { ReactNode, Suspense } from "react"
 
 import { AppSidebar } from "@app/components/appSidebar/appSidebar"
 import { SidebarInset, SidebarProvider, SidebarTrigger } from "@app/components/ui/sidebar"
@@ -34,7 +34,7 @@ export default async function Layout({ children }: { children: ReactNode }) {
 	// - const queryClient = getQueryClient() in Server Component
 	// - don't await queryClient.prefetchQuery in Server Component
 	// - add HydrationBoundary state={dehydrate(queryClient)} in Server Component
-	// - on the client use useSuspenseQuery and the component will suspense util the Promise is resolved.
+	// - on the client use useSuspenseQuery and the component will suspend util the Promise is resolved.
 	//     - Note that we are using useSuspenseQuery instead of useQuery.
 	//       you could also useQuery instead of useSuspenseQuery, and the Promise would still be picked up correctly.
 	//       However, NextJs won't suspend in that case and the component will render in the pending status, which also opts out of server rendering the content.
@@ -58,11 +58,13 @@ export default async function Layout({ children }: { children: ReactNode }) {
 			<SidebarProvider defaultOpen={defaultOpen}>
 				<AppSidebar />
 				<SidebarInset>
-					<div className="flex justify-between w-full">
+					<nav className="bg-black flex justify-between sticky top-0 py-5 border-b z-50 w-full">
 						<SidebarTrigger />
 
-						<AddTranslationTrigger />
-					</div>
+						<Suspense fallback={null}>
+							<AddTranslationTrigger />
+						</Suspense>
+					</nav>
 
 					{children}
 				</SidebarInset>
