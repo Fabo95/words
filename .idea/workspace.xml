@@ -4,19 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="add pagination">
-      <change afterPath="$PROJECT_DIR$/services/web/src/utils/motion/helpers.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/web/src/utils/types/api.ts" afterDir="false" />
+    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="fix ui">
+      <change afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/account/loading.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedOut)/layout.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/web/src/components/appSidebar/components/sidebarGroupFallback.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/_content/addTranslationTrigger.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/_content/addTranslationTrigger.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/account/loading.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/account/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/account/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/utils/collectionTableTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/utils/collectionTableTypes.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/loading.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/loading.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/home/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/home/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/components/forms/translationForm/translationForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/translationForm/translationForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedOut)/authentication/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedOut)/authentication/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/loading.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/loading.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/components/appSidebar/appSidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/appSidebar/appSidebar.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/web/src/components/ui/pageContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/pageContent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/utils/entities/translationDetails.ts" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/utils/types/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/utils/types/api.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -79,7 +83,7 @@
     "RunOnceActivity.typescript.service.memoryLimit.init": "true",
     "git-widget-placeholder": "main",
     "javascript.preferred.runtime.type.id": "node",
-    "last_opened_file_path": "/Users/fabianhinz/repositories/words/services/web/src/app/[lang]/(loggedIn)/collection",
+    "last_opened_file_path": "/Users/fabianhinz/repositories/words/services/web/src/app/[lang]/(loggedOut)",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.standard": "true",
     "node.js.detected.package.tslint": "true",
@@ -121,18 +125,18 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedOut)" />
+      <recent name="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/account" />
       <recent name="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection" />
       <recent name="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)" />
       <recent name="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components" />
-      <recent name="$PROJECT_DIR$/services/web/src/utils/urls" />
-      <recent name="$PROJECT_DIR$/services/web" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/services/web/src/utils/types" />
       <recent name="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]" />
       <recent name="$PROJECT_DIR$/services/web/src/components/forms" />
       <recent name="$PROJECT_DIR$/services/web/src/components/dialog" />
       <recent name="$PROJECT_DIR$/services/web/src/components/forms/createTranslationForm" />
-      <recent name="$PROJECT_DIR$/services/inngest" />
     </key>
   </component>
   <component name="RunManager" selected="npm.dev">
@@ -264,15 +268,7 @@
       <workItem from="1762445988688" duration="9577000" />
       <workItem from="1762510443208" duration="2165000" />
       <workItem from="1762626129150" duration="18862000" />
-      <workItem from="1766334244174" duration="41594000" />
-    </task>
-    <task id="LOCAL-00037" summary="added react query">
-      <option name="closed" value="true" />
-      <created>1737241383601</created>
-      <option name="number" value="00037" />
-      <option name="presentableId" value="LOCAL-00037" />
-      <option name="project" value="LOCAL" />
-      <updated>1737241383601</updated>
+      <workItem from="1766334244174" duration="46638000" />
     </task>
     <task id="LOCAL-00038" summary="added logout functionality">
       <option name="closed" value="true" />
@@ -658,7 +654,15 @@
       <option name="project" value="LOCAL" />
       <updated>1767033004227</updated>
     </task>
-    <option name="localTasksCounter" value="86" />
+    <task id="LOCAL-00086" summary="fix ui">
+      <option name="closed" value="true" />
+      <created>1767272685344</created>
+      <option name="number" value="00086" />
+      <option name="presentableId" value="LOCAL-00086" />
+      <option name="project" value="LOCAL" />
+      <updated>1767272685344</updated>
+    </task>
+    <option name="localTasksCounter" value="87" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -679,7 +683,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="&quot;e&quot;" />
     <MESSAGE value="added envs, added openApi generation" />
     <MESSAGE value="added openapi-react-query to ensure typesafe fetching." />
     <MESSAGE value="update form field" />
@@ -704,19 +707,8 @@
     <MESSAGE value="add translation details dialog" />
     <MESSAGE value="add cefr to translation creation" />
     <MESSAGE value="add pagination" />
-    <option name="LAST_COMMIT_MESSAGE" value="add pagination" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/page.tsx</url>
-          <line>29</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="2" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
+    <MESSAGE value="fix ui" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix ui" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

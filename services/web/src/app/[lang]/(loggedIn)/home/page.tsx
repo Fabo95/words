@@ -1,4 +1,3 @@
-import { PageContent } from "@app/components/ui/pageContent"
 import { getQueryClient } from "@app/utils/reactQuery/reactQueryHelpers"
 import { $api } from "@app/utils/api/apiRequests"
 import { cookies } from "next/headers"
@@ -15,5 +14,5 @@ export default async function () {
 		}),
 	)
 
-	return <PageContent>123</PageContent>
+	return 123
 }

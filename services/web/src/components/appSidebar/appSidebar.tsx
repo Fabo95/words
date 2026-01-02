@@ -7,15 +7,11 @@ import { SidebarCollections } from "@app/components/appSidebar/components/sideba
 import { SidebarLanguageSwitch } from "@app/components/appSidebar/components/sidebarLanguageSwitch"
 import { SidebarNavigation } from "@app/components/appSidebar/components/sidebarNavigation"
 import { SidebarUserActions } from "@app/components/appSidebar/components/sidebarUserActions"
-import {
-	Sidebar,
-	SidebarContent,
-	SidebarFooter,
-	SidebarHeader,
-	SidebarRail,
-} from "@app/components/ui/sidebar"
+import { Sidebar, SidebarContent, SidebarFooter, SidebarHeader, SidebarRail } from "@app/components/ui/sidebar"
 import { useTranslations } from "next-intl"
-import { useMemo } from "react"
+import { Suspense, useMemo } from "react"
+import { SidebarGroupFallback } from "@app/components/appSidebar/components/sidebarGroupFallback"
+import { Skeleton } from "@app/components/ui/skeleton"
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 	// --- STATE ---
@@ -65,10 +61,15 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 			</SidebarHeader>
 			<SidebarContent>
 				<SidebarNavigation title={t("components.pageNavigation.title")} items={pageItems} />
-				<SidebarCollections />
+
+				<Suspense fallback={<SidebarGroupFallback rows={2} />}>
+					<SidebarCollections />
+				</Suspense>
 			</SidebarContent>
 			<SidebarFooter>
-				<SidebarUserActions />
+				<Suspense fallback={<Skeleton className="h-12" />}>
+					<SidebarUserActions />
+				</Suspense>
 			</SidebarFooter>
 			<SidebarRail />
 		</Sidebar>

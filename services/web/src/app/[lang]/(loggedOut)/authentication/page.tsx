@@ -1,6 +1,5 @@
 import { LoginForm } from "@app/components/forms/loginForm/loginForm"
 import { RegistrationForm } from "@app/components/forms/registrationForm/registrationForm"
-import { PageContent } from "@app/components/ui/pageContent"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@app/components/ui/tabs"
 import { getTranslations } from "next-intl/server"
 import { Locale } from "@app/utils/locale/localeTypes"
@@ -15,22 +14,20 @@ export default async function Authentication({ params }: { params: Promise<Recor
 	// --- RENDER ---
 
 	return (
-		<PageContent>
-			<Tabs defaultValue="login" className="max-w-[400px] w-full">
-				<TabsList className="grid w-full grid-cols-2">
-					<TabsTrigger value="login">{t("forms.loginForm.title")}</TabsTrigger>
+		<Tabs defaultValue="login" className="max-w-[400px] w-full">
+			<TabsList className="grid w-full grid-cols-2">
+				<TabsTrigger value="login">{t("forms.loginForm.title")}</TabsTrigger>
 
-					<TabsTrigger value="register">{t("forms.registrationForm.title")}</TabsTrigger>
-				</TabsList>
+				<TabsTrigger value="register">{t("forms.registrationForm.title")}</TabsTrigger>
+			</TabsList>
 
-				<TabsContent value="login">
-					<LoginForm />
-				</TabsContent>
+			<TabsContent value="login">
+				<LoginForm />
+			</TabsContent>
 
-				<TabsContent value="register">
-					<RegistrationForm />
-				</TabsContent>
-			</Tabs>
-		</PageContent>
+			<TabsContent value="register">
+				<RegistrationForm />
+			</TabsContent>
+		</Tabs>
 	)
 }

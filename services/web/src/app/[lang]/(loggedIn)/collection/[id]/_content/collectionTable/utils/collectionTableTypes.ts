@@ -1,4 +1,4 @@
-import { CefrLevel, ExampleSentence, UniversalPosTag } from "@app/utils/entities/translationDetails"
+import { CefrLevel, ExampleSentence, UniversalPosTag } from "@app/utils/types/api"
 
 export type CollectionTranslation = {
 	id: number

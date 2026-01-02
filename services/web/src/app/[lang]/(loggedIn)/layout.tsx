@@ -7,6 +7,9 @@ import { $api } from "@app/utils/api/apiRequests"
 import { getQueryClient } from "@app/utils/reactQuery/reactQueryHelpers"
 import { HydrationBoundary, dehydrate } from "@tanstack/react-query"
 import { AddTranslationTrigger } from "@app/app/[lang]/(loggedIn)/_content/addTranslationTrigger"
+import { PageContent } from "@app/components/ui/pageContent"
+import { Skeleton } from "@app/components/ui/skeleton"
+import * as React from "react"
 
 export default async function Layout({ children }: { children: ReactNode }) {
 	// --- STATE ---
@@ -57,16 +60,17 @@ export default async function Layout({ children }: { children: ReactNode }) {
 		<HydrationBoundary state={dehydrate(queryClient)}>
 			<SidebarProvider defaultOpen={defaultOpen}>
 				<AppSidebar />
+
 				<SidebarInset>
 					<nav className="bg-black flex justify-between sticky top-0 py-5 border-b z-50 w-full">
 						<SidebarTrigger />
 
-						<Suspense fallback={null}>
+						<Suspense fallback={<Skeleton className="h-7 w-7" />}>
 							<AddTranslationTrigger />
 						</Suspense>
 					</nav>
 
-					{children}
+					<PageContent>{children}</PageContent>
 				</SidebarInset>
 			</SidebarProvider>
 		</HydrationBoundary>

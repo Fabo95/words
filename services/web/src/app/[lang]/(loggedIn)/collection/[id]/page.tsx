@@ -1,5 +1,4 @@
 import { CollectionTable } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/collectionTable"
-import { PageContent } from "@app/components/ui/pageContent"
 import { $api } from "@app/utils/api/apiRequests"
 import { Locale } from "@app/utils/locale/localeTypes"
 import { getQueryClient } from "@app/utils/reactQuery/reactQueryHelpers"
@@ -34,9 +33,7 @@ export default async function Page({ params }: { params: Promise<{ lang: Locale;
 
 	return (
 		<HydrationBoundary state={dehydrate(queryClient)}>
-			<PageContent>
-				<CollectionTable />
-			</PageContent>
+			<CollectionTable />
 		</HydrationBoundary>
 	)
 }
