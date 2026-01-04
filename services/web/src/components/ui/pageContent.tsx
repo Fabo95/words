@@ -17,7 +17,7 @@ export const PageContent = ({ children, className }: PageContentProps) => {
 		<motion.div
 			key={pathname}
 			{...getMotion(0)}
-			className={cn("flex justify-center pt-16 pb-16 items-center", className)}
+			className={cn("flex justify-center pt-16 pb-16 px-5 items-center", className)}
 		>
 			{children}
 		</motion.div>

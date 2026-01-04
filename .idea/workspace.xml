@@ -4,23 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="fix ui">
-      <change afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/account/loading.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedOut)/layout.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/web/src/components/appSidebar/components/sidebarGroupFallback.tsx" afterDir="false" />
+    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="add loading ui">
+      <change afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/collectionCardList.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/account/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/account/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/utils/collectionTableTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/utils/collectionTableTypes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/next.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/next.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/collectionTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/collectionTable.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableActions.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableActions.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/loading.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/loading.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/home/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/home/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedOut)/authentication/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedOut)/authentication/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/loading.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/loading.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/layout.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/web/src/components/appSidebar/appSidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/appSidebar/appSidebar.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/web/src/components/ui/pageContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/pageContent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/utils/entities/translationDetails.ts" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/utils/types/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/utils/types/api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/utils/reactQuery/reactQueryHelpers.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/utils/reactQuery/reactQueryHelpers.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/tsconfig.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,7 +30,7 @@
     <execution />
   </component>
   <component name="EmbeddingIndexingInfo">
-    <option name="cachedIndexableFilesCount" value="196" />
+    <option name="cachedIndexableFilesCount" value="201" />
     <option name="fileBasedEmbeddingIndicesEnabled" value="true" />
   </component>
   <component name="Git.Settings">
@@ -268,15 +267,7 @@
       <workItem from="1762445988688" duration="9577000" />
       <workItem from="1762510443208" duration="2165000" />
       <workItem from="1762626129150" duration="18862000" />
-      <workItem from="1766334244174" duration="46638000" />
-    </task>
-    <task id="LOCAL-00038" summary="added logout functionality">
-      <option name="closed" value="true" />
-      <created>1737241404376</created>
-      <option name="number" value="00038" />
-      <option name="presentableId" value="LOCAL-00038" />
-      <option name="project" value="LOCAL" />
-      <updated>1737241404376</updated>
+      <workItem from="1766334244174" duration="54511000" />
     </task>
     <task id="LOCAL-00039" summary="renaming">
       <option name="closed" value="true" />
@@ -662,7 +653,15 @@
       <option name="project" value="LOCAL" />
       <updated>1767272685344</updated>
     </task>
-    <option name="localTasksCounter" value="87" />
+    <task id="LOCAL-00087" summary="add loading ui">
+      <option name="closed" value="true" />
+      <created>1767380858894</created>
+      <option name="number" value="00087" />
+      <option name="presentableId" value="LOCAL-00087" />
+      <option name="project" value="LOCAL" />
+      <updated>1767380858894</updated>
+    </task>
+    <option name="localTasksCounter" value="88" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -683,7 +682,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="added envs, added openApi generation" />
     <MESSAGE value="added openapi-react-query to ensure typesafe fetching." />
     <MESSAGE value="update form field" />
     <MESSAGE value="update tailwind" />
@@ -708,7 +706,8 @@
     <MESSAGE value="add cefr to translation creation" />
     <MESSAGE value="add pagination" />
     <MESSAGE value="fix ui" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix ui" />
+    <MESSAGE value="add loading ui" />
+    <option name="LAST_COMMIT_MESSAGE" value="add loading ui" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

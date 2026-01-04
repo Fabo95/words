@@ -60,7 +60,9 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 				<SidebarLanguageSwitch languages={LANGUAGES} />
 			</SidebarHeader>
 			<SidebarContent>
-				<SidebarNavigation title={t("components.pageNavigation.title")} items={pageItems} />
+				<Suspense fallback={<SidebarGroupFallback rows={3} showButton={false} />}>
+					<SidebarNavigation title={t("components.pageNavigation.title")} items={pageItems} />
+				</Suspense>
 
 				<Suspense fallback={<SidebarGroupFallback rows={2} />}>
 					<SidebarCollections />

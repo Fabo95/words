@@ -62,7 +62,7 @@ export default async function Layout({ children }: { children: ReactNode }) {
 				<AppSidebar />
 
 				<SidebarInset>
-					<nav className="bg-black flex justify-between sticky top-0 py-5 border-b z-50 w-full">
+					<nav className="bg-black flex justify-between sticky top-0 p-5 border-b z-50 w-full">
 						<SidebarTrigger />
 
 						<Suspense fallback={<Skeleton className="h-7 w-7" />}>

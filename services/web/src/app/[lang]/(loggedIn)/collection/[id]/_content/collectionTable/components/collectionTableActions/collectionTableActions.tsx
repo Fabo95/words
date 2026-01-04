@@ -17,15 +17,23 @@ import { useSidebar } from "@app/components/ui/sidebar"
 import { useState } from "react"
 import { useTranslations } from "next-intl"
 import * as React from "react"
-import { DialogBody } from "next/dist/client/components/react-dev-overlay/ui/components/dialog"
 
 import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@app/components/ui/dialog"
+import { $api } from "@app/utils/api/apiRequests"
 
 type CollectionTableActionsProps = { row: Row<CollectionTranslation> }
 export const CollectionTableActions = ({ row }: CollectionTableActionsProps) => {
 	// --- STATE ---
 
 	const t = useTranslations()
+
+	const {
+		data: { data: collections },
+	} = $api.useSuspenseQuery("get", "/collection/wip1")
+
+	const {
+		data: { data: cefrLevels },
+	} = $api.useSuspenseQuery("get", "/cefr-levels")
 
 	const { isMobile } = useSidebar()
 
@@ -79,22 +87,22 @@ export const CollectionTableActions = ({ row }: CollectionTableActionsProps) => 
 						<DialogDescription>{t("forms.translationForm.description")}</DialogDescription>
 					</DialogHeader>
 
-					<DialogBody>
-						{isEditFormOpen && (
-							<TranslationForm
-								translationId={row.original.translationId}
-								formType="update"
-								defaultValues={{
-									sourceText: row.original.sourceText,
-									targetText: row.original.targetText,
-									collectionId: row.original.id,
-									cefrLevelId: row.original.cefrLevel?.id,
-								}}
-								onSubmit={() => setIsEditFormOpen(false)}
-								onCancel={() => setIsEditFormOpen(false)}
-							/>
-						)}
-					</DialogBody>
+					{isEditFormOpen && (
+						<TranslationForm
+							cefrLevels={cefrLevels}
+							collections={collections}
+							translationId={row.original.translationId}
+							formType="update"
+							defaultValues={{
+								sourceText: row.original.sourceText,
+								targetText: row.original.targetText,
+								collectionId: row.original.id,
+								cefrLevelId: row.original.cefrLevel?.id,
+							}}
+							onSubmit={() => setIsEditFormOpen(false)}
+							onCancel={() => setIsEditFormOpen(false)}
+						/>
+					)}
 				</DialogContent>
 			</Dialog>
 

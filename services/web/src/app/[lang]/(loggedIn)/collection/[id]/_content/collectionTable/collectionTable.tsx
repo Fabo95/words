@@ -11,6 +11,8 @@ import { useTranslations } from "next-intl"
 import { useCollectionTableQuery } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/utils/collectionTableQuery"
 import { CollectionStringFilter } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collection-value-filter"
 import { Button } from "@app/components/ui/button"
+import { useIsMobile } from "@app/hooks/use-mobile"
+import { CollectionCardList } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/collectionCardList"
 
 export const CollectionTable = () => {
 	// --- STATE ---
@@ -19,7 +21,11 @@ export const CollectionTable = () => {
 
 	const t = useTranslations()
 
+	const isMobile = useIsMobile()
+
 	const params = useParams<{ id: string }>()
+
+	const pageSize = isMobile ? 10 : 20
 
 	const { data: translationsData } = $api.useQuery(
 		"get",
@@ -27,7 +33,7 @@ export const CollectionTable = () => {
 		{
 			params: {
 				path: { id: Number(params.id) },
-				query: { page: query.page ?? 1, page_size: 20, search: query.search ?? undefined },
+				query: { page: query.page ?? 1, page_size: pageSize, search: query.search ?? undefined },
 			},
 		},
 		{ placeholderData: (prev) => prev },
@@ -41,10 +47,14 @@ export const CollectionTable = () => {
 		(direction: "next" | "prev") => () => {
 			switch (direction) {
 				case "next":
+					window.scrollTo({ top: 0, behavior: "instant" })
+
 					setters.setPage((query.page ?? 1) + 1)
 					break
 
 				case "prev":
+					window.scrollTo({ top: 0, behavior: "instant" })
+
 					setters.setPage(Math.max((query.page ?? 1) - 1, 0))
 					break
 			}
@@ -54,7 +64,7 @@ export const CollectionTable = () => {
 
 	// --- MEMOIZED DATA ---
 
-	const tableData: CollectionTranslation[] = useMemo(() => {
+	const collectionTranslations: CollectionTranslation[] = useMemo(() => {
 		if (!translationsData || !translationsData.data) {
 			return []
 		}
@@ -101,7 +111,9 @@ export const CollectionTable = () => {
 
 				<CollectionStringFilter value={query.search ?? undefined} setValue={setters.setSearch} />
 
-				<DataTable columns={getCollectionTableColumns(t)} data={tableData} />
+				{!isMobile && <DataTable columns={getCollectionTableColumns(t)} data={collectionTranslations} />}
+
+				{isMobile && <CollectionCardList items={collectionTranslations} />}
 
 				<div className="flex items-center justify-between space-x-2 py-4">
 					<div>
@@ -121,7 +133,7 @@ export const CollectionTable = () => {
 						<Button
 							variant="outline"
 							size="sm"
-							disabled={(translationsData?.meta?.total_items ?? 0) <= (translationsData?.meta?.page ?? 1) * 20}
+							disabled={(translationsData?.meta?.total_items ?? 0) <= (translationsData?.meta?.page ?? 1) * pageSize}
 							onClick={makeOnPaginationChange("next")}
 						>
 							{t("pagination.next")}
