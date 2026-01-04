@@ -8,8 +8,23 @@ import { Button } from "@app/components/ui/button"
 import { PlusIcon } from "@radix-ui/react-icons"
 import { TranslationForm } from "@app/components/forms/translationForm/translationForm"
 import { $api } from "@app/utils/api/apiRequests"
+import { TranslationFormState } from "@app/components/forms/translationForm/utils/translationFormTypes"
 
-export const AddTranslationTrigger = () => {
+type AddTranslationTriggerProps = {
+	defaultValues?: Partial<TranslationFormState>
+	title?: string
+	className?: string
+	size: "sm" | "icon"
+	variant: "ghost" | "outline"
+}
+
+export const AddTranslationTrigger = ({
+	defaultValues,
+	title,
+	className,
+	size,
+	variant,
+}: AddTranslationTriggerProps) => {
 	const t = useTranslations()
 
 	const [isTranslationFormOpen, setIsTranslationFormOpen] = useState(false)
@@ -25,14 +40,15 @@ export const AddTranslationTrigger = () => {
 	return (
 		<>
 			<Button
+				className={className}
 				data-sidebar="trigger"
-				variant="ghost"
-				size="icon"
-				className="h-7 w-7"
+				variant={variant}
+				size={size}
 				onClick={() => setIsTranslationFormOpen(true)}
 			>
 				<PlusIcon />
-				<span className="sr-only">Toggle translation form</span>
+
+				{title && <span>{title}</span>}
 			</Button>
 
 			<Dialog open={isTranslationFormOpen} onOpenChange={setIsTranslationFormOpen}>
@@ -50,7 +66,7 @@ export const AddTranslationTrigger = () => {
 							onSubmit={() => setIsTranslationFormOpen(false)}
 							onCancel={() => setIsTranslationFormOpen(false)}
 							formType="create"
-							defaultValues={{}}
+							defaultValues={defaultValues ?? {}}
 						/>
 					)}
 				</DialogContent>

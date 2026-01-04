@@ -1,4 +1,4 @@
-import { CollectionTable } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/collectionTable"
+import { CollectionTable } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collection/collectionTable"
 import { $api } from "@app/utils/api/apiRequests"
 import { Locale } from "@app/utils/locale/localeTypes"
 import { getQueryClient } from "@app/utils/reactQuery/reactQueryHelpers"

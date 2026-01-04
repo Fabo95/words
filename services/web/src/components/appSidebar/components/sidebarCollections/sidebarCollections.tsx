@@ -6,7 +6,6 @@ import { SidebarCollectionCreateDialog } from "@app/components/appSidebar/compon
 import { SidebarCollectionDeleteDialog } from "@app/components/appSidebar/components/sidebarCollections/components/sidebarCollectionDeleteDialog/sidebarCollectionDeleteDialog"
 import { SidebarCollectionEditDialog } from "@app/components/appSidebar/components/sidebarCollections/components/sidebarCollectionEditForm/sidebarCollectionEditDialog"
 import { Button } from "@app/components/ui/button"
-import { Dialog, DialogTrigger } from "@app/components/ui/dialog"
 import {
 	DropdownMenu,
 	DropdownMenuContent,
@@ -26,7 +25,7 @@ import {
 import { $api } from "@app/utils/api/apiRequests"
 import { useTranslations } from "next-intl"
 import { getCollectionPage } from "@app/utils/urls/urls"
-import { DotsHorizontalIcon } from "@radix-ui/react-icons"
+import { DotsHorizontalIcon, PlusIcon } from "@radix-ui/react-icons"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
@@ -112,7 +111,8 @@ export function SidebarCollections() {
 
 				<SidebarMenuItem className="mt-3">
 					<Button onClick={() => setIsCreateDialogOpen(true)} size="sm" variant="outline" className="w-full">
-						<Plus className="w-5 mr-1" />
+						<PlusIcon className="w-5 mr-1" />
+
 						<span>{t("components.navCollections.addCollectionButton")}</span>
 					</Button>
 				</SidebarMenuItem>

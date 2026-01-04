@@ -4,7 +4,7 @@ import { Delete, Edit, MoreHorizontal, Trash2 } from "lucide-react"
 import { DeleteTranslationFromCollectionDialogContent } from "@app/components/dialogs/deleteTranslationFromCollectionDialogContent"
 import { DeleteTranslationDialogContent } from "@app/components/dialogs/deleteTranslationDialogContent"
 import { TranslationForm } from "@app/components/forms/translationForm/translationForm"
-import { CollectionTranslation } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/utils/collectionTableTypes"
+import { CollectionTranslation } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collection/utils/collectionTableTypes"
 import { Button } from "@app/components/ui/button"
 import {
 	DropdownMenu,

@@ -1,18 +1,19 @@
 "use client"
 
-import { getCollectionTableColumns } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/utils/collectionTableConstants"
-import { CollectionTranslation } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/utils/collectionTableTypes"
+import { getCollectionTableColumns } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collection/utils/collectionTableConstants"
+import { CollectionTranslation } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collection/utils/collectionTableTypes"
 import { DataTable } from "@app/components/ui/dataTable/dataTable"
 import { $api } from "@app/utils/api/apiRequests"
 import { useParams } from "next/navigation"
 import { useCallback, useMemo } from "react"
 import * as React from "react"
 import { useTranslations } from "next-intl"
-import { useCollectionTableQuery } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/utils/collectionTableQuery"
-import { CollectionStringFilter } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collection-value-filter"
+import { useCollectionTableQuery } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collection/utils/collectionTableQuery"
+import { CollectionStringFilter } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collection/components/collection-value-filter"
 import { Button } from "@app/components/ui/button"
 import { useIsMobile } from "@app/hooks/use-mobile"
-import { CollectionCardList } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/collectionCardList"
+import { CollectionCardList } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collection/collectionCardList"
+import { CollectionEmptyState } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collection/collectionEmptyState"
 
 export const CollectionTable = () => {
 	// --- STATE ---
@@ -87,7 +88,11 @@ export const CollectionTable = () => {
 			return null
 		}
 
-		const start = translationsData.meta?.page_size * (translationsData.meta.page - 1) + 1
+		const start = translationsData.meta.total_items
+			? translationsData.meta.page_size * (translationsData.meta.page - 1) + 1
+			: 0
+
+		console.log("translationsData", translationsData.meta)
 		const end = Math.min(
 			translationsData.meta.page_size * translationsData.meta.page,
 			translationsData.meta.total_items,
@@ -109,11 +114,19 @@ export const CollectionTable = () => {
 			<div className="w-4/5 overflow-hidden">
 				<h1 className="mb-8">{collectionData.data?.name}</h1>
 
-				<CollectionStringFilter value={query.search ?? undefined} setValue={setters.setSearch} />
+				<CollectionStringFilter
+					isDisabled={!collectionTranslations.length}
+					value={query.search ?? undefined}
+					setValue={setters.setSearch}
+				/>
 
-				{!isMobile && <DataTable columns={getCollectionTableColumns(t)} data={collectionTranslations} />}
+				{translationsData && !collectionTranslations.length && <CollectionEmptyState />}
 
-				{isMobile && <CollectionCardList items={collectionTranslations} />}
+				{!isMobile && Boolean(collectionTranslations.length) && (
+					<DataTable columns={getCollectionTableColumns(t)} data={collectionTranslations} />
+				)}
+
+				{isMobile && Boolean(collectionTranslations.length) && <CollectionCardList items={collectionTranslations} />}
 
 				<div className="flex items-center justify-between space-x-2 py-4">
 					<div>

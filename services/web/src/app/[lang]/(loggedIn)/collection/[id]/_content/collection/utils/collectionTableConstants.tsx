@@ -1,7 +1,7 @@
 import { ColumnDef } from "@tanstack/react-table"
 
-import { CollectionTableActions } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableActions"
-import { CollectionTranslation } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/utils/collectionTableTypes"
+import { CollectionTableActions } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collection/components/collectionTableActions/collectionTableActions"
+import { CollectionTranslation } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collection/utils/collectionTableTypes"
 import { Checkbox } from "@app/components/ui/checkbox"
 import { DataTableColumnHeader } from "@app/components/ui/dataTable/dataTableColumnHeader"
 import { FormField } from "@app/components/ui/formField"

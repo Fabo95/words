@@ -66,7 +66,7 @@ export default async function Layout({ children }: { children: ReactNode }) {
 						<SidebarTrigger />
 
 						<Suspense fallback={<Skeleton className="h-7 w-7" />}>
-							<AddTranslationTrigger />
+							<AddTranslationTrigger variant="ghost" className="h-7 w-7" size="icon" />
 						</Suspense>
 					</nav>
 

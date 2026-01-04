@@ -5,11 +5,12 @@ import { debounce } from "next/dist/server/utils"
 import { Input } from "@app/components/ui/input"
 
 type VouchersValueFilterProps = {
+	isDisabled?: boolean
 	value?: string
 	setValue: (value: string | undefined) => void
 }
 
-export const CollectionStringFilter = ({ value, setValue }: VouchersValueFilterProps) => {
+export const CollectionStringFilter = ({ isDisabled, value, setValue }: VouchersValueFilterProps) => {
 	const [searchInput, setSearchInput] = useState(value)
 
 	// --- MEMOIZED DATA ---
@@ -40,5 +41,13 @@ export const CollectionStringFilter = ({ value, setValue }: VouchersValueFilterP
 
 	// --- RENDER ---
 
-	return <Input placeholder="e.g. h" value={searchInput ?? ""} onChange={onChange} className="w-[300px] mb-3" />
+	return (
+		<Input
+			disabled={isDisabled}
+			placeholder="e.g. h"
+			value={searchInput ?? ""}
+			onChange={onChange}
+			className="w-[300px] mb-3"
+		/>
+	)
 }

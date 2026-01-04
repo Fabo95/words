@@ -6,8 +6,8 @@ import { useTranslations } from "next-intl"
 import { Badge } from "@app/components/ui/badge"
 import { Card, CardContent, CardHeader } from "@app/components/ui/card"
 
-import { CollectionTranslation } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/utils/collectionTableTypes"
-import { CollectionTableActions } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/components/collectionTableActions/collectionTableActions"
+import { CollectionTranslation } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collection/utils/collectionTableTypes"
+import { CollectionTableActions } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collection/components/collectionTableActions/collectionTableActions"
 
 type CollectionCardListProps = {
 	items: CollectionTranslation[]

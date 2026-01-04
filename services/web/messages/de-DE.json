@@ -215,6 +215,11 @@
 			"title": "Lernen"
 		},
 		"collection": {
+            "empty": {
+              "title": "Zu dieser Sammlung gibt es noch keine Übersetzungen.",
+              "description": "Fügen deine erste Übersetzung hinzu, um Übersetzung zu organisieren und zu lernen.",
+              "cta": "Übersetzung hinzufügen"
+            },
 			"table": {
               "columns":{
                 "word": "Wort",
@@ -223,12 +228,12 @@
                 "universalPosTags": "Wortart",
                 "exampleSentences": "Beispielsätze"
               },
-            "actions": {
-                "dropdownTrigger": "Öffnen",
-                "dropdownEditButton": "Übersetzung anpassen",
-                "dropdownDeleteTranslationButton": "Übersetzung löschen",
-                "dropdownDeleteFromCollectionButton": "Übersetzung aus Sammlung löschen"
-            }
+              "actions": {
+                  "dropdownTrigger": "Öffnen",
+                  "dropdownEditButton": "Übersetzung anpassen",
+                  "dropdownDeleteTranslationButton": "Übersetzung löschen",
+                  "dropdownDeleteFromCollectionButton": "Übersetzung aus Sammlung löschen"
+              }
 			}
 		},
 		"account": {

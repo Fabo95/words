@@ -215,6 +215,11 @@
 			"title": "Learn"
 		},
 		"collection": {
+            "empty": {
+              "title": "No translations are related to this collection yet.",
+              "description": "Add your first translation to start practicing and organizing your vocabulary.",
+              "cta": "Add translation"
+            },
 			"table": {
                 "columns": {
                   "title": "Details",

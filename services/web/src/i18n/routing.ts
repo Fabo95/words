@@ -4,7 +4,7 @@ import { Locale } from "@app/utils/locale/localeTypes"
 import {
 	CollectionTableQuery,
 	CollectionTableQueryy,
-} from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collectionTable/utils/collectionTableQuery"
+} from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collection/utils/collectionTableQuery"
 
 // 1 Your one source of truth: split by logged out and logged in paths (without locale prefix)
 export const LOGGED_OUT_PATHNAME = ["/authentication"] as const
