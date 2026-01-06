@@ -28,7 +28,9 @@ export default async function RootLayout({ children }: RootLayoutProps) {
 
 	return (
 		<html lang={locale}>
-			<body className={cn("min-h-screen box-content bg-background font-sans antialiased", font.variable)}>
+			<body
+				className={cn("min-h-screen box-content bg-background font-sans antialiased tracking-tight", font.variable)}
+			>
 				<NextIntlClientProvider>
 					<QueryClientProvider>
 						<Box>{children}</Box>

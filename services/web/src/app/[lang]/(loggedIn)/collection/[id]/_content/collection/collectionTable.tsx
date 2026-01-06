@@ -12,7 +12,7 @@ import { useCollectionTableQuery } from "@app/app/[lang]/(loggedIn)/collection/[
 import { CollectionStringFilter } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collection/components/collection-value-filter"
 import { Button } from "@app/components/ui/button"
 import { useIsMobile } from "@app/hooks/use-mobile"
-import { CollectionCardList } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collection/collectionCardList"
+import { TranslationList } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collection/translationList"
 import { CollectionEmptyState } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collection/collectionEmptyState"
 
 export const CollectionTable = () => {
@@ -92,7 +92,6 @@ export const CollectionTable = () => {
 			? translationsData.meta.page_size * (translationsData.meta.page - 1) + 1
 			: 0
 
-		console.log("translationsData", translationsData.meta)
 		const end = Math.min(
 			translationsData.meta.page_size * translationsData.meta.page,
 			translationsData.meta.total_items,
@@ -112,10 +111,10 @@ export const CollectionTable = () => {
 	return (
 		<>
 			<div className="w-4/5 overflow-hidden">
-				<h1 className="mb-8">{collectionData.data?.name}</h1>
+				<h1 className="mb-8 text-xl font-semibold">{collectionData.data?.name}</h1>
 
 				<CollectionStringFilter
-					isDisabled={!collectionTranslations.length}
+					isDisabled={!collectionTranslations.length && !query.search}
 					value={query.search ?? undefined}
 					setValue={setters.setSearch}
 				/>
@@ -126,14 +125,14 @@ export const CollectionTable = () => {
 					<DataTable columns={getCollectionTableColumns(t)} data={collectionTranslations} />
 				)}
 
-				{isMobile && Boolean(collectionTranslations.length) && <CollectionCardList items={collectionTranslations} />}
+				{isMobile && Boolean(collectionTranslations.length) && <TranslationList items={collectionTranslations} />}
 
 				<div className="flex items-center justify-between space-x-2 py-4">
 					<div>
 						<p className="text-[12px] text-foreground/40 font-normal">{pagination}</p>
 					</div>
 
-					<div className="space-x-2">
+					<div className="flex gap-1">
 						<Button
 							variant="outline"
 							size="sm"

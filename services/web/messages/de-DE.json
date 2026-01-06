@@ -209,15 +209,21 @@
 	},
 	"pages": {
 		"home": {
-			"title": "Home"
+			"title": "Home",
+            "greeting": {
+              "morning": "Guten Morgen",
+              "noon": "Guten Tag",
+              "afternoon": "Guten Nachmittag",
+              "evening": "Guten Abend"
+            }
         },
 		"learning": {
 			"title": "Lernen"
 		},
 		"collection": {
             "empty": {
-              "title": "Zu dieser Sammlung gibt es noch keine Übersetzungen.",
-              "description": "Fügen deine erste Übersetzung hinzu, um Übersetzung zu organisieren und zu lernen.",
+              "title": "Keine Übersetzung gefunden.",
+              "description": "Fügen eine Übersetzung hinzu, um sie zu in dieser Sammlung zu organisieren.",
               "cta": "Übersetzung hinzufügen"
             },
 			"table": {

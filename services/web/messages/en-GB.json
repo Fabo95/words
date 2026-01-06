@@ -209,15 +209,21 @@
 	},
 	"pages": {
 		"home": {
-			"title": "Home"
+			"title": "Home",
+            "greeting": {
+              "morning": "Good morning",
+              "noon": "Hello",
+              "afternoon": "Good afternoon",
+              "evening": "Good evening"
+            }
         },
 		"learning": {
 			"title": "Learn"
 		},
 		"collection": {
             "empty": {
-              "title": "No translations are related to this collection yet.",
-              "description": "Add your first translation to start practicing and organizing your vocabulary.",
+              "title": "No translation found.",
+              "description": "Add a translation to organizing in this collection..",
               "cta": "Add translation"
             },
 			"table": {

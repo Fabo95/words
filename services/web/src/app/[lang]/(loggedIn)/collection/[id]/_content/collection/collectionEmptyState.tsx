@@ -21,7 +21,7 @@ export function CollectionEmptyState() {
 
 			<div className="mt-6 w-full">
 				<AddTranslationTrigger
-					defaultValues={{ collectionId: params.id }}
+					defaultValues={{ collectionId: Number(params.id) }}
 					variant="outline"
 					className="gap-2"
 					title={t("pages.collection.empty.cta")}

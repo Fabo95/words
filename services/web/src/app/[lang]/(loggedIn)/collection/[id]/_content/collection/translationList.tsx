@@ -13,7 +13,7 @@ type CollectionCardListProps = {
 	items: CollectionTranslation[]
 }
 
-export function CollectionCardList({ items }: CollectionCardListProps) {
+export function TranslationList({ items }: CollectionCardListProps) {
 	const t = useTranslations()
 
 	if (!items?.length) {

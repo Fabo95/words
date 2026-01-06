@@ -1,18 +1,11 @@
-import { getQueryClient } from "@app/utils/reactQuery/reactQueryHelpers"
-import { $api } from "@app/utils/api/apiRequests"
-import { cookies } from "next/headers"
+import { Greeting } from "@app/app/[lang]/(loggedIn)/home/_content/greeting"
+import { Suspense } from "react"
+import { GreetingFallback } from "@app/app/[lang]/(loggedIn)/home/_content/greetingFallback"
 
 export default async function () {
-	const cookieStore = await cookies()
-	const authCookieValue = cookieStore.get("auth-cookie")?.value
-
-	const queryClient = getQueryClient()
-
-	queryClient.prefetchQuery(
-		$api.queryOptions("get", "/collection/wip1", {
-			headers: { Cookie: `auth-cookie=${authCookieValue}` },
-		}),
+	return (
+		<Suspense fallback={<GreetingFallback />}>
+			<Greeting />
+		</Suspense>
 	)
-
-	return 123
 }
