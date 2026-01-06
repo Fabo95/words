@@ -85,6 +85,7 @@ export const AccountPasswordForm = () => {
 
 						<FormField
 							control={form.control}
+							className="mb-8"
 							label={t("forms.accountPasswordForm.passwordConfirmLabel")}
 							name="confirmPassword"
 							render={(fieldProps) => (
@@ -96,9 +97,7 @@ export const AccountPasswordForm = () => {
 							)}
 						/>
 
-						<Button disabled={!form.formState.isValid} className="mt-5">
-							{t("forms.accountPasswordForm.button")}
-						</Button>
+						<Button disabled={!form.formState.isValid}>{t("forms.accountPasswordForm.button")}</Button>
 					</Form>
 				</FormProvider>
 			</CardContent>

@@ -1,5 +1,5 @@
-import { CollectionEditFormState } from "@app/components/appSidebar/components/sidebarCollections/components/sidebarCollectionEditForm/utils/collectionEditFormTypes"
-import { getCollectionEditFormSchema } from "@app/components/appSidebar/components/sidebarCollections/components/sidebarCollectionEditForm/utils/collectionEditFromSchema"
+import { CollectionEditFormState } from "@app/components/forms/collectionEditForm/utils/collectionEditFormTypes"
+import { getCollectionEditFormSchema } from "@app/components/forms/collectionEditForm/utils/collectionEditFromSchema"
 import { Button } from "@app/components/ui/button"
 import { Form, FormProvider } from "@app/components/ui/form"
 import { FormField } from "@app/components/ui/formField"
@@ -12,6 +12,7 @@ import { useQueryClient } from "@tanstack/react-query"
 import { useCallback } from "react"
 import { useForm } from "react-hook-form"
 import * as React from "react"
+import { useIsMobile } from "@app/hooks/use-mobile"
 
 type ISidebarCollectionEditFormProps = {
 	id: number
@@ -20,15 +21,12 @@ type ISidebarCollectionEditFormProps = {
 	onCancel: () => void
 }
 
-export const SidebarCollectionEditForm = ({
-	id,
-	defaultValues,
-	onCancel,
-	onSubmit,
-}: ISidebarCollectionEditFormProps) => {
+export const CollectionEditForm = ({ id, defaultValues, onCancel, onSubmit }: ISidebarCollectionEditFormProps) => {
 	// --- STATE ---
 
 	const { toast } = useToast()
+
+	const isMobile = useIsMobile()
 
 	const t = useTranslations()
 
@@ -110,6 +108,7 @@ export const SidebarCollectionEditForm = ({
 				<FormField
 					control={form.control}
 					label={t("components.navCollections.editForm.label")}
+					className="mb-8"
 					name="name"
 					render={(fieldProps) => (
 						<Input
@@ -120,7 +119,11 @@ export const SidebarCollectionEditForm = ({
 					)}
 				/>
 
-				<div className="flex justify-end mt-4 gap-4">
+				<div
+					className={
+						isMobile ? "mt-auto flex flex-col gap-2" : "flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2"
+					}
+				>
 					<Button type="button" variant="destructive" onClick={handleCancel}>
 						{t("components.navCollection")}
 					</Button>

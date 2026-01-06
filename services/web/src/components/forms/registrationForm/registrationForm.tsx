@@ -99,6 +99,7 @@ export const RegistrationForm = () => {
 
 						<FormField
 							control={form.control}
+							className="mb-8"
 							label={t("forms.registrationForm.passwordConfirmLabel")}
 							name="confirmPassword"
 							render={(fieldProps) => (
@@ -110,9 +111,7 @@ export const RegistrationForm = () => {
 							)}
 						/>
 
-						<Button disabled={!form.formState.isValid} className="mt-5">
-							{t("forms.registrationForm.button")}
-						</Button>
+						<Button disabled={!form.formState.isValid}>{t("forms.registrationForm.button")}</Button>
 					</Form>
 				</FormProvider>
 			</CardContent>

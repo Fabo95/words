@@ -1,5 +1,5 @@
-import { CollectionCreateFormState } from "@app/components/appSidebar/components/sidebarCollections/components/sidebarCollectionCreateForm/utils/collectionCreateFormTypes"
-import { getCollectionCreateFormSchema } from "@app/components/appSidebar/components/sidebarCollections/components/sidebarCollectionCreateForm/utils/collectionCreateFromSchema"
+import { CollectionCreateFormState } from "@app/components/forms/collectionCreateForm/utils/collectionCreateFormTypes"
+import { getCollectionCreateFormSchema } from "@app/components/forms/collectionCreateForm/utils/collectionCreateFromSchema"
 import { Button } from "@app/components/ui/button"
 import { Form, FormProvider } from "@app/components/ui/form"
 import { FormField } from "@app/components/ui/formField"
@@ -12,13 +12,16 @@ import { useQueryClient } from "@tanstack/react-query"
 import { useCallback } from "react"
 import { useForm } from "react-hook-form"
 import * as React from "react"
+import { useIsMobile } from "@app/hooks/use-mobile"
 
 type ISidebarCollectionCreateFormProps = { onSubmit: () => void; onCancel: () => void }
 
-export const SidebarCollectionCreateForm = ({ onSubmit, onCancel }: ISidebarCollectionCreateFormProps) => {
+export const CollectionCreateForm = ({ onSubmit, onCancel }: ISidebarCollectionCreateFormProps) => {
 	// --- STATE ---
 
 	const { toast } = useToast()
+
+	const isMobile = useIsMobile()
 
 	const t = useTranslations()
 
@@ -100,6 +103,7 @@ export const SidebarCollectionCreateForm = ({ onSubmit, onCancel }: ISidebarColl
 			<Form onKeyDown={handleKeyDownSubmit} onSubmit={form.handleSubmit(handleSubmit)}>
 				<FormField
 					control={form.control}
+					className="mb-8"
 					label={t("components.navCollections.createForm.label")}
 					name="name"
 					render={(fieldProps) => (
@@ -111,7 +115,11 @@ export const SidebarCollectionCreateForm = ({ onSubmit, onCancel }: ISidebarColl
 					)}
 				/>
 
-				<div className="flex justify-end mt-4 gap-4">
+				<div
+					className={
+						isMobile ? "mt-auto flex flex-col gap-2" : "flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2"
+					}
+				>
 					<Button type="button" variant="destructive" onClick={handleCancel}>
 						{t("components.navCollection")}
 					</Button>

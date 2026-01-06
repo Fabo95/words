@@ -1,7 +1,6 @@
 "use client"
 
 import { useState } from "react"
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@app/components/ui/dialog"
 import * as React from "react"
 import { useTranslations } from "next-intl"
 import { Button } from "@app/components/ui/button"
@@ -9,6 +8,13 @@ import { PlusIcon } from "@radix-ui/react-icons"
 import { TranslationForm } from "@app/components/forms/translationForm/translationForm"
 import { $api } from "@app/utils/api/apiRequests"
 import { TranslationFormState } from "@app/components/forms/translationForm/utils/translationFormTypes"
+import {
+	DialogOrDrawer,
+	DialogOrDrawerContent,
+	DialogOrDrawerDescription,
+	DialogOrDrawerHeader,
+	DialogOrDrawerTitle,
+} from "@app/components/ui/dialogOrDrawer"
 
 type AddTranslationTriggerProps = {
 	defaultValues?: Partial<TranslationFormState>
@@ -51,13 +57,13 @@ export const AddTranslationTrigger = ({
 				{title && <span>{title}</span>}
 			</Button>
 
-			<Dialog open={isTranslationFormOpen} onOpenChange={setIsTranslationFormOpen}>
-				<DialogContent>
-					<DialogHeader>
-						<DialogTitle>{t("forms.translationForm.title")}</DialogTitle>
+			<DialogOrDrawer open={isTranslationFormOpen} onOpenChange={setIsTranslationFormOpen}>
+				<DialogOrDrawerContent>
+					<DialogOrDrawerHeader>
+						<DialogOrDrawerTitle>{t("forms.translationForm.title")}</DialogOrDrawerTitle>
 
-						<DialogDescription>{t("forms.translationForm.description")}</DialogDescription>
-					</DialogHeader>
+						<DialogOrDrawerDescription>{t("forms.translationForm.description")}</DialogOrDrawerDescription>
+					</DialogOrDrawerHeader>
 
 					{isTranslationFormOpen && (
 						<TranslationForm
@@ -69,8 +75,8 @@ export const AddTranslationTrigger = ({
 							defaultValues={defaultValues ?? {}}
 						/>
 					)}
-				</DialogContent>
-			</Dialog>
+				</DialogOrDrawerContent>
+			</DialogOrDrawer>
 		</>
 	)
 }

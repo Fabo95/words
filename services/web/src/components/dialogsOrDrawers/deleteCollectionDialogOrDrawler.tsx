@@ -1,33 +1,36 @@
 import { useCallback } from "react"
 
 import { Button } from "@app/components/ui/button"
-import {
-	Dialog,
-	DialogContent,
-	DialogDescription,
-	DialogFooter,
-	DialogHeader,
-	DialogTitle,
-} from "@app/components/ui/dialog"
 import { useToast } from "@app/components/ui/use-toast"
 import { $api } from "@app/utils/api/apiRequests"
 import { useTranslations } from "next-intl"
 import { useQueryClient } from "@tanstack/react-query"
+import {
+	DialogOrDrawer,
+	DialogOrDrawerContent,
+	DialogOrDrawerDescription,
+	DialogOrDrawerFooter,
+	DialogOrDrawerHeader,
+	DialogOrDrawerTitle,
+} from "@app/components/ui/dialogOrDrawer"
+import { useIsMobile } from "@app/hooks/use-mobile"
 
-type ISidebarCollectionDeleteDialogProps = {
+type DeleteCollectionDialogOrDrawlerProps = {
 	isDialogOpen: boolean
 	id: number
 	setIsDialogOpen: (isOpen: boolean) => void
 }
 
-export const SidebarCollectionDeleteDialog = ({
+export const DeleteCollectionDialogOrDrawler = ({
 	id,
 	isDialogOpen,
 	setIsDialogOpen,
-}: ISidebarCollectionDeleteDialogProps) => {
+}: DeleteCollectionDialogOrDrawlerProps) => {
 	// --- STATE ---
 
 	const { toast } = useToast()
+
+	const isMobile = useIsMobile()
 
 	const t = useTranslations()
 
@@ -63,24 +66,31 @@ export const SidebarCollectionDeleteDialog = ({
 	// --- RENDER ---
 
 	return (
-		<Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-			<DialogContent>
-				<DialogHeader>
-					<DialogTitle>{t("components.navCollections.deleteDialog.title")}</DialogTitle>
+		<DialogOrDrawer open={isDialogOpen} onOpenChange={setIsDialogOpen}>
+			<DialogOrDrawerContent>
+				<DialogOrDrawerHeader>
+					<DialogOrDrawerTitle>{t("components.navCollections.deleteDialog.title")}</DialogOrDrawerTitle>
 
-					<DialogDescription>{t("components.navCollections.deleteDialog.description")}</DialogDescription>
-				</DialogHeader>
+					<DialogOrDrawerDescription>
+						{t("components.navCollections.deleteDialog.description")}
+					</DialogOrDrawerDescription>
+				</DialogOrDrawerHeader>
 
-				<DialogFooter>
-					<Button onClick={() => setIsDialogOpen(false)}>
-						{t("components.navCollections.deleteDialog.cancelButton")}
-					</Button>
-
-					<Button variant="destructive" onClick={handleDeleteCollection}>
-						{t("components.navCollections.deleteDialog.deleteButton")}
-					</Button>
-				</DialogFooter>
-			</DialogContent>
-		</Dialog>
+				<DialogOrDrawerFooter>
+					<div
+						className={
+							isMobile ? "mt-auto flex flex-col gap-2" : "flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2"
+						}
+					>
+						<Button onClick={() => setIsDialogOpen(false)}>
+							{t("components.navCollections.deleteDialog.cancelButton")}
+						</Button>
+						<Button variant="destructive" onClick={handleDeleteCollection}>
+							{t("components.navCollections.deleteDialog.deleteButton")}
+						</Button>
+					</div>
+				</DialogOrDrawerFooter>
+			</DialogOrDrawerContent>
+		</DialogOrDrawer>
 	)
 }

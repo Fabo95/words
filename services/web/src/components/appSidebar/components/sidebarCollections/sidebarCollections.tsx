@@ -2,9 +2,9 @@
 
 import { Edit, Folder, Plus, Trash2 } from "lucide-react"
 
-import { SidebarCollectionCreateDialog } from "@app/components/appSidebar/components/sidebarCollections/components/sidebarCollectionCreateForm/sidebarCollectionCreateDialog"
-import { SidebarCollectionDeleteDialog } from "@app/components/appSidebar/components/sidebarCollections/components/sidebarCollectionDeleteDialog/sidebarCollectionDeleteDialog"
-import { SidebarCollectionEditDialog } from "@app/components/appSidebar/components/sidebarCollections/components/sidebarCollectionEditForm/sidebarCollectionEditDialog"
+import { CreateCollectionDialogOrDrawler } from "@app/components/dialogsOrDrawers/createCollectionDialogOrDrawler"
+import { DeleteCollectionDialogOrDrawler } from "@app/components/dialogsOrDrawers/deleteCollectionDialogOrDrawler"
+import { EditCollectionDialogOrDrawler } from "@app/components/dialogsOrDrawers/editCollectionDialogOrDrawler"
 import { Button } from "@app/components/ui/button"
 import {
 	DropdownMenu,
@@ -94,14 +94,14 @@ export function SidebarCollections() {
 							</DropdownMenuContent>
 						</DropdownMenu>
 
-						<SidebarCollectionEditDialog
+						<EditCollectionDialogOrDrawler
 							name={collection.name}
 							id={collection.id}
 							isDialogOpen={isEditDialogOpen}
 							setIsDialogOpen={setIsEditDialogOpen}
 						/>
 
-						<SidebarCollectionDeleteDialog
+						<DeleteCollectionDialogOrDrawler
 							isDialogOpen={isDeleteDialogOpen}
 							id={collection.id}
 							setIsDialogOpen={setIsDeleteDialogOpen}
@@ -117,7 +117,7 @@ export function SidebarCollections() {
 					</Button>
 				</SidebarMenuItem>
 
-				<SidebarCollectionCreateDialog setIsDialogOpen={setIsCreateDialogOpen} isDialogOpen={isCreateDialogOpen} />
+				<CreateCollectionDialogOrDrawler setIsDialogOpen={setIsCreateDialogOpen} isDialogOpen={isCreateDialogOpen} />
 			</SidebarMenu>
 		</SidebarGroup>
 	)

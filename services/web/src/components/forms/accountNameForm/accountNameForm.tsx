@@ -93,6 +93,7 @@ export const AccountNameForm = () => {
 
 						<FormField
 							control={form.control}
+							className="mb-8"
 							label={t("forms.accountNameForm.nameLabel")}
 							name="name"
 							render={(fieldProps) => (
@@ -100,7 +101,7 @@ export const AccountNameForm = () => {
 							)}
 						/>
 
-						<Button disabled={!form.formState.isValid || !form.formState.isDirty} className="mt-5">
+						<Button disabled={!form.formState.isValid || !form.formState.isDirty}>
 							{t("forms.accountNameForm.button")}
 						</Button>
 					</Form>

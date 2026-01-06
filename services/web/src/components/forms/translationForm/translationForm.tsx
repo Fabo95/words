@@ -19,6 +19,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Badge } from "@app/components/ui/badge"
 import { Locale } from "@app/utils/locale/localeTypes"
 import { CefrLevel, Collection } from "@app/utils/types/api"
+import { useIsMobile } from "@app/hooks/use-mobile"
 
 type TranslationFormProps = {
 	cefrLevels: CefrLevel[] | undefined
@@ -41,6 +42,8 @@ export const TranslationForm = (props: TranslationFormProps) => {
 	const t = useTranslations()
 
 	const { toast } = useToast()
+
+	const isMobile = useIsMobile()
 
 	const queryClient = useQueryClient()
 
@@ -182,7 +185,7 @@ export const TranslationForm = (props: TranslationFormProps) => {
 				/>
 
 				<FormField
-					className="mb-3"
+					className="mb-8"
 					control={form.control}
 					label={t("forms.translationForm.cefrLevelIdLabel")}
 					name="cefrLevelId"
@@ -208,12 +211,16 @@ export const TranslationForm = (props: TranslationFormProps) => {
 					)}
 				/>
 
-				<div className="flex w-full gap-2">
-					<Button className="mt-5" type="button" variant="secondary" onClick={() => props.onCancel()}>
+				<div
+					className={
+						isMobile ? "mt-auto flex flex-col gap-2" : "flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2"
+					}
+				>
+					<Button type="button" variant="secondary" onClick={() => props.onCancel()}>
 						{t("forms.translationForm.cancelButton")}
 					</Button>
 
-					<Button className="mt-5" disabled={!form.formState.isValid || !form.formState.isDirty}>
+					<Button disabled={!form.formState.isValid || !form.formState.isDirty}>
 						{t("forms.translationForm.saveButton")}
 					</Button>
 				</div>

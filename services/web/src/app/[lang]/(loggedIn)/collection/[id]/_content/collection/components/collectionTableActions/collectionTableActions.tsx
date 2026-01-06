@@ -1,8 +1,8 @@
 import { Row } from "@tanstack/react-table"
 import { Delete, Edit, MoreHorizontal, Trash2 } from "lucide-react"
 
-import { DeleteTranslationFromCollectionDialogContent } from "@app/components/dialogs/deleteTranslationFromCollectionDialogContent"
-import { DeleteTranslationDialogContent } from "@app/components/dialogs/deleteTranslationDialogContent"
+import { DeleteTranslationFromCollectionContent } from "@app/components/dialogsOrDrawers/deleteTranslationFromCollectionContent"
+import { DeleteTranslationContent } from "@app/components/dialogsOrDrawers/deleteTranslationContent"
 import { TranslationForm } from "@app/components/forms/translationForm/translationForm"
 import { CollectionTranslation } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collection/utils/collectionTableTypes"
 import { Button } from "@app/components/ui/button"
@@ -18,10 +18,17 @@ import { useState } from "react"
 import { useTranslations } from "next-intl"
 import * as React from "react"
 
-import { Dialog, DialogContent, DialogDescription, DialogHeader, DialogTitle } from "@app/components/ui/dialog"
 import { $api } from "@app/utils/api/apiRequests"
+import {
+	DialogOrDrawer,
+	DialogOrDrawerContent,
+	DialogOrDrawerDescription,
+	DialogOrDrawerHeader,
+	DialogOrDrawerTitle,
+} from "@app/components/ui/dialogOrDrawer"
 
 type CollectionTableActionsProps = { row: Row<CollectionTranslation> }
+
 export const CollectionTableActions = ({ row }: CollectionTableActionsProps) => {
 	// --- STATE ---
 
@@ -79,13 +86,13 @@ export const CollectionTableActions = ({ row }: CollectionTableActionsProps) => 
 				</DropdownMenuContent>
 			</DropdownMenu>
 
-			<Dialog open={isEditFormOpen} onOpenChange={setIsEditFormOpen}>
-				<DialogContent onClick={(e) => e.stopPropagation()}>
-					<DialogHeader>
-						<DialogTitle>{t("forms.translationForm.title")}</DialogTitle>
+			<DialogOrDrawer open={isEditFormOpen} onOpenChange={setIsEditFormOpen}>
+				<DialogOrDrawerContent onClick={(e) => e.stopPropagation()}>
+					<DialogOrDrawerHeader>
+						<DialogOrDrawerTitle>{t("forms.translationForm.title")}</DialogOrDrawerTitle>
 
-						<DialogDescription>{t("forms.translationForm.description")}</DialogDescription>
-					</DialogHeader>
+						<DialogOrDrawerDescription>{t("forms.translationForm.description")}</DialogOrDrawerDescription>
+					</DialogOrDrawerHeader>
 
 					{isEditFormOpen && (
 						<TranslationForm
@@ -103,24 +110,24 @@ export const CollectionTableActions = ({ row }: CollectionTableActionsProps) => 
 							onCancel={() => setIsEditFormOpen(false)}
 						/>
 					)}
-				</DialogContent>
-			</Dialog>
+				</DialogOrDrawerContent>
+			</DialogOrDrawer>
 
-			<Dialog open={isDeleteFromCollectionDialogOpen} onOpenChange={setIsDeleteFromCollectionDialogOpen}>
-				<DeleteTranslationFromCollectionDialogContent
+			<DialogOrDrawer open={isDeleteFromCollectionDialogOpen} onOpenChange={setIsDeleteFromCollectionDialogOpen}>
+				<DeleteTranslationFromCollectionContent
 					id={row.original.id}
 					translationId={row.original.translationId}
 					handleIsDialogOpen={setIsDeleteFromCollectionDialogOpen}
 				/>
-			</Dialog>
+			</DialogOrDrawer>
 
-			<Dialog open={isDeleteTranslationDialogOpen} onOpenChange={setIsDeleteTranslationDialogOpen}>
-				<DeleteTranslationDialogContent
+			<DialogOrDrawer open={isDeleteTranslationDialogOpen} onOpenChange={setIsDeleteTranslationDialogOpen}>
+				<DeleteTranslationContent
 					id={row.original.id}
 					translationId={row.original.translationId}
 					handleIsDialogOpen={setIsDeleteTranslationDialogOpen}
 				/>
-			</Dialog>
+			</DialogOrDrawer>
 		</>
 	)
 }
