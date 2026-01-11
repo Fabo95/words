@@ -44,10 +44,8 @@ export function Greeting() {
 	const greeting = getGreetingByHour(hour, t)
 	const dateText = formatDate(now, locale as Locale)
 
-	const te = new Promise((resolve) => setTimeout(resolve, 10000))
-
 	return (
-		<section>
+		<section className="mb-10">
 			<p className="text-center text-sm font-medium text-foreground/40 mb-1">{dateText}</p>
 
 			<h1 className="text-center text-xl font-semibold">

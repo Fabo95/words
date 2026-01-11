@@ -3,6 +3,13 @@
       "language":{
         "german": "German",
         "english": "English"
+      },
+      "relativeTime": {
+        "justNow": "just now",
+        "minutesAgo": "{count} min ago",
+        "hoursAgo": "{count} hours ago",
+        "daysAgo": "{count} days ago",
+        "dateFallback": "{date}"
       }
     },
     "pagination": {
@@ -215,6 +222,12 @@
               "noon": "Hello",
               "afternoon": "Good afternoon",
               "evening": "Good evening"
+            },
+            "lastAddedTranslations": {
+              "title": "Recently added",
+              "description": "Your most recently added translations at a glance",
+              "empty": "No translations yet.",
+              "emptyHint": "Add a translation so it appears here."
             }
         },
 		"learning": {

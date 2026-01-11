@@ -3,6 +3,13 @@
       "language":{
         "german": "Deutsch",
         "english": "Englisch"
+      },
+      "relativeTime": {
+        "justNow": "gerade eben",
+        "minutesAgo": "vor {count} Min.",
+        "hoursAgo": "vor {count} Std.",
+        "daysAgo": "vor {count} Tagen",
+        "dateFallback": "{date}"
       }
     },
     "pagination": {
@@ -215,6 +222,12 @@
               "noon": "Guten Tag",
               "afternoon": "Guten Nachmittag",
               "evening": "Guten Abend"
+            },
+            "lastAddedTranslations": {
+              "title": "Zuletzt hinzugefügt",
+              "description": "Deine zuletzt hinzugefügten Übersetzungen auf einen Blick",
+              "empty": "Noch keine Übersetzungen vorhanden.",
+              "emptyHint": "Füge eine Übersetzung hinzu, damit sie hier erscheint."
             }
         },
 		"learning": {
