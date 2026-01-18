@@ -29,3 +29,67 @@ export type UniversalPosTag = {
 	id: number
 	name: string
 }
+
+// what your API actually returns
+export type TranslationApiResponse = {
+	id: number
+	source_text: string
+	target_text: string
+	source_language: string
+	target_language: string
+	collection_id?: number | null
+	cefr_level_id?: number | null
+	cefr_level?: {
+		id: number
+		code: string
+		name: string
+		description?: string | null
+	} | null
+	universal_pos_tags: {
+		id: number
+		code: string
+		name: string
+		description?: string | null
+	}[]
+	example_sentences: {
+		id: number
+		sentence: string
+		language: string
+		translation_id: number
+	}[]
+	created_at: string
+	updated_at: string
+	user_id: number
+}
+
+export function mapTranslationResponseToTranslation(api: TranslationApiResponse): Translation {
+	return {
+		id: api.id,
+		translationId: api.id, // intentional duplication (UI convenience)
+		sourceText: api.source_text,
+		targetText: api.target_text,
+
+		cefrLevel: api.cefr_level
+			? {
+					id: api.cefr_level.id,
+					code: api.cefr_level.code,
+					name: api.cefr_level.name,
+					description: api.cefr_level.description ?? null,
+				}
+			: undefined,
+
+		universalPosTags: api.universal_pos_tags.map((tag) => ({
+			id: tag.id,
+			code: tag.code,
+			name: tag.name,
+			description: tag.description ?? null,
+		})),
+
+		exampleSentences: api.example_sentences.map((ex) => ({
+			id: ex.id,
+			language: ex.language,
+			sentence: ex.sentence,
+			translation_id: ex.translation_id,
+		})),
+	}
+}

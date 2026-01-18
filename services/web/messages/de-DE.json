@@ -109,6 +109,26 @@
         }
       },
       "translationForm": {
+        "enriching": {
+          "title": "Wir verbessern deine Übersetzung",
+          "description": "Das dauert meist nur ein paar Sekunden.",
+          "inProgress": "läuft…",
+          "done": "fertig",
+          "steps": {
+            "cefr": {
+              "title": "Sprachniveau bestimmen",
+              "description": "Wir ordnen dein Wort einem CEFR-Level zu."
+            },
+            "pos": {
+              "title": "Wortart erkennen",
+              "description": "Wir schlagen passende Wortarten (UD-POS) vor."
+            },
+            "examples": {
+              "title": "Beispiele generieren",
+              "description": "Wir erstellen Beispielsätze für beide Sprachen."
+            }
+          }
+        },
         "title": "Übersetzung anpassen",
         "description": "Ändere das Wort und / oder die Übersetzung.",
         "cancelButton": "Abbrechen",

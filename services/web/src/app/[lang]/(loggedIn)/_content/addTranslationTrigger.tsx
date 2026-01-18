@@ -52,6 +52,8 @@ export const AddTranslationTrigger = ({
 		data: { data: universalPosTags },
 	} = useSuspenseQuery(getUniversalPosTagsQueryOptions())
 
+	const [isEnriching, setIsEnriching] = useState(false)
+
 	return (
 		<>
 			<Button
@@ -69,9 +71,17 @@ export const AddTranslationTrigger = ({
 			<DialogOrDrawer open={isTranslationFormOpen} onOpenChange={setIsTranslationFormOpen}>
 				<DialogOrDrawerContent>
 					<DialogOrDrawerHeader>
-						<DialogOrDrawerTitle>{t("forms.translationForm.title")}</DialogOrDrawerTitle>
+						{isEnriching ? (
+							<DialogOrDrawerTitle>{t("forms.translationForm.enriching.title")}</DialogOrDrawerTitle>
+						) : (
+							<DialogOrDrawerTitle>{t("forms.translationForm.title")}</DialogOrDrawerTitle>
+						)}
 
-						<DialogOrDrawerDescription>{t("forms.translationForm.description")}</DialogOrDrawerDescription>
+						{isEnriching ? (
+							<DialogOrDrawerDescription>{t("forms.translationForm.enriching.description")}</DialogOrDrawerDescription>
+						) : (
+							<DialogOrDrawerDescription>{t("forms.translationForm.description")}</DialogOrDrawerDescription>
+						)}
 					</DialogOrDrawerHeader>
 
 					{isTranslationFormOpen && (
@@ -81,6 +91,7 @@ export const AddTranslationTrigger = ({
 							collections={collections}
 							onSubmit={() => setIsTranslationFormOpen(false)}
 							onCancel={() => setIsTranslationFormOpen(false)}
+							onEnrich={() => setIsEnriching(true)}
 							formType="create"
 							defaultValues={defaultValues ?? {}}
 						/>

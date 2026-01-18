@@ -132,6 +132,22 @@ export type paths = {
         patch?: never;
         trace?: never;
     };
+    "/translation/wip2/{id}": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["get_translation"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/translation/{id}": {
         parameters: {
             query?: never;
@@ -277,6 +293,16 @@ export type components = {
         HttpResponseBody_EmailForCheckResponse: {
             data?: {
                 isEmailValid: boolean;
+            };
+            message: string;
+            meta?: null | components["schemas"]["PaginatedMeta"];
+            success: boolean;
+        };
+        HttpResponseBody_TranslationWithRelations: {
+            data?: components["schemas"]["entity.translationsModel"] & {
+                cefr_level?: null | components["schemas"]["entity.cefr_levelsModel"];
+                example_sentences: components["schemas"]["entity.example_sentencesModel"][];
+                universal_pos_tags: components["schemas"]["entity.universal_pos_tagsModel"][];
             };
             message: string;
             meta?: null | components["schemas"]["PaginatedMeta"];
@@ -764,6 +790,27 @@ export interface operations {
                 };
                 content: {
                     "application/json": components["schemas"]["HttpResponseBody_entity.translationsModel"];
+                };
+            };
+        };
+    };
+    get_translation: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                id: number;
+            };
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HttpResponseBody_TranslationWithRelations"];
                 };
             };
         };

@@ -109,6 +109,26 @@
         }
       },
       "translationForm": {
+        "enriching": {
+          "title": "We’re improving your translation",
+          "description": "This usually only takes a few seconds.",
+          "inProgress": "in progress…",
+          "done": "done",
+          "steps": {
+            "cefr": {
+              "title": "Determine language level",
+              "description": "We assign your word to a CEFR level."
+            },
+            "pos": {
+              "title": "Detect part of speech",
+              "description": "We suggest suitable word types (UD POS tags)."
+            },
+            "examples": {
+              "title": "Generate examples",
+              "description": "We create example sentences for both languages."
+            }
+          }
+        },
         "title": "Adjust translation",
         "description": "Change the word and / or the translation.",
         "cancelButton": "Cancel",

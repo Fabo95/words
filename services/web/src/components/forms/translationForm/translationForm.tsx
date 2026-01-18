@@ -12,16 +12,17 @@ import { useToast } from "@app/components/ui/use-toast"
 import { $api } from "@app/utils/api/apiRequests"
 import { useTranslations } from "next-intl"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { useQueryClient } from "@tanstack/react-query"
-import { useCallback } from "react"
+import { useQuery, useQueryClient } from "@tanstack/react-query"
+import { useCallback, useEffect } from "react"
 import { useForm } from "react-hook-form"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@app/components/ui/select"
 import { Badge } from "@app/components/ui/badge"
 import { Locale } from "@app/utils/locale/localeTypes"
-import { CefrLevel, Collection, UniversalPosTag } from "@app/utils/types/api"
+import { CefrLevel, Collection, mapTranslationResponseToTranslation, UniversalPosTag } from "@app/utils/types/api"
 import { useIsMobile } from "@app/hooks/use-mobile"
-import { getLatestTranslationsQueryOptions } from "@app/utils/reactQuery/queryOptions"
+import { getLatestTranslationsQueryOptions, getTranslationByIdQueryOptions } from "@app/utils/reactQuery/queryOptions"
 import { Cross2Icon } from "@radix-ui/react-icons"
+import { isTranslationEnriched, TranslationEnrich } from "@app/components/forms/translationForm/translationEnrich"
 
 type TranslationFormProps = {
 	cefrLevels: CefrLevel[] | undefined
@@ -29,6 +30,7 @@ type TranslationFormProps = {
 	collections: Collection[] | undefined
 	onSubmit: () => void
 	onCancel: () => void
+	onEnrich?: () => void
 } & (
 	| { defaultValues: Partial<TranslationFormState>; formType: "create" }
 	| { translationId: number; defaultValues: TranslationFormState; formType: "update" }
@@ -44,6 +46,9 @@ export const TranslationForm = (props: TranslationFormProps) => {
 
 	const t = useTranslations()
 
+	const [mode, setMode] = React.useState<"form" | "enriching">("form")
+	const [createdTranslationId, setCreatedTranslationId] = React.useState<number>()
+
 	const { toast } = useToast()
 
 	const isMobile = useIsMobile()
@@ -51,7 +56,7 @@ export const TranslationForm = (props: TranslationFormProps) => {
 	const queryClient = useQueryClient()
 
 	const { mutateAsync: createTranslation, isPending } = $api.useMutation("post", "/translation", {
-		onSuccess: async () => {
+		onSuccess: async (data) => {
 			await Promise.all([
 				queryClient.invalidateQueries({
 					queryKey: ["get", "/collection/{id}/translations"],
@@ -59,13 +64,11 @@ export const TranslationForm = (props: TranslationFormProps) => {
 				queryClient.invalidateQueries({ queryKey: getLatestTranslationsQueryOptions().queryKey }),
 			])
 
-			props.onSubmit()
-			form.reset()
+			setMode("enriching")
 
-			toast({
-				title: t("forms.translationForm.toast.success.title"),
-				description: t("forms.translationForm.toast.success.description"),
-			})
+			props.onEnrich?.()
+
+			setCreatedTranslationId(data.data?.id)
 		},
 		onError: () => {
 			toast({
@@ -106,6 +109,45 @@ export const TranslationForm = (props: TranslationFormProps) => {
 		resolver: zodResolver(getTranslationFormSchema(t)),
 	})
 
+	const { data: translationAfterCreation } = useQuery({
+		...getTranslationByIdQueryOptions(createdTranslationId ?? -1),
+		enabled: mode === "enriching" && typeof createdTranslationId === "number",
+		refetchInterval: (q) => {
+			const translation = q.state.data?.data
+
+			if (!translation) return 1200
+			return isTranslationEnriched(mapTranslationResponseToTranslation(translation)) ? false : 1200
+		},
+		select: (data) => (data.data ? mapTranslationResponseToTranslation(data.data) : undefined),
+	})
+
+	// --- EFFECTS ---
+
+	useEffect(() => {
+		if (mode !== "enriching") return
+
+		if (!translationAfterCreation || !isTranslationEnriched(translationAfterCreation)) return
+		;(async () => {
+			await Promise.all([
+				queryClient.invalidateQueries({ queryKey: ["get", "/collection/{id}/translations"] }),
+				queryClient.invalidateQueries({ queryKey: getLatestTranslationsQueryOptions().queryKey }),
+				createdTranslationId
+					? queryClient.invalidateQueries({ queryKey: getTranslationByIdQueryOptions(createdTranslationId).queryKey })
+					: Promise.resolve(),
+			])
+
+			setTimeout(() => {
+				props.onSubmit()
+				form.reset()
+
+				toast({
+					title: t("forms.translationForm.toast.success.title"),
+					description: t("forms.translationForm.toast.success.description"),
+				})
+			}, 100000)
+		})()
+	}, [mode, translationAfterCreation, queryClient, props, form, toast, t, createdTranslationId])
+
 	// --- CALLBACKS ---
 
 	const onSubmit = useCallback(
@@ -134,6 +176,10 @@ export const TranslationForm = (props: TranslationFormProps) => {
 	)
 
 	// --- RENDER ---
+
+	if (mode === "enriching" && translationAfterCreation) {
+		return <TranslationEnrich translation={translationAfterCreation} />
+	}
 
 	return (
 		<FormProvider {...form}>

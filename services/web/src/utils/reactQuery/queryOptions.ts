@@ -57,3 +57,8 @@ export const getCollectionByIdQueryOptions = (id: number, authCookieValue?: stri
 		params: { path: { id } },
 		...(authCookieValue ? { headers: { Cookie: `auth-cookie=${authCookieValue}` } } : {}),
 	})
+
+export const getTranslationByIdQueryOptions = (id: number) =>
+	$api.queryOptions("get", "/translation/wip2/{id}", {
+		params: { path: { id } },
+	})
