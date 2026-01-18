@@ -17,9 +17,10 @@ import { $api } from "@app/utils/api/apiRequests"
 import { useTranslations } from "next-intl"
 import { Page } from "@app/utils/types/pageTypes"
 import { CaretSortIcon } from "@radix-ui/react-icons"
-import { useQueryClient } from "@tanstack/react-query"
+import { useQueryClient, useSuspenseQuery } from "@tanstack/react-query"
 import { useRouter } from "next/navigation"
 import { useCallback } from "react"
+import { getUserQueryOptions } from "@app/utils/reactQuery/queryOptions"
 
 export function SidebarUserActions() {
 	// --- STATE ---
@@ -34,12 +35,12 @@ export function SidebarUserActions() {
 
 	const {
 		data: { data },
-	} = $api.useSuspenseQuery("get", "/user")
+	} = useSuspenseQuery(getUserQueryOptions())
 
 	const { mutateAsync: mutateUserLogout } = $api.useMutation("post", "/user/logout", {
-		onSuccess: () => {
+		onSuccess: async () => {
 			router.push(`/${Page.AUTHENTICATION}`)
-			queryClient.invalidateQueries()
+			await queryClient.invalidateQueries()
 		},
 	})
 

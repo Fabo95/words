@@ -20,6 +20,7 @@ import { Badge } from "@app/components/ui/badge"
 import { Locale } from "@app/utils/locale/localeTypes"
 import { CefrLevel, Collection } from "@app/utils/types/api"
 import { useIsMobile } from "@app/hooks/use-mobile"
+import { getLatestTranslationsQueryOptions } from "@app/utils/reactQuery/queryOptions"
 
 type TranslationFormProps = {
 	cefrLevels: CefrLevel[] | undefined
@@ -49,36 +50,50 @@ export const TranslationForm = (props: TranslationFormProps) => {
 
 	const { mutateAsync: createTranslation } = $api.useMutation("post", "/translation", {
 		onSuccess: async () => {
-			await queryClient.invalidateQueries({ queryKey: ["get", "/collection/{id}/translations"] })
+			await Promise.all([
+				queryClient.invalidateQueries({
+					queryKey: ["get", "/collection/{id}/translations"],
+				}),
+				queryClient.invalidateQueries({ queryKey: getLatestTranslationsQueryOptions().queryKey }),
+			])
+
+			props.onSubmit()
+			form.reset()
 
 			toast({
-				title: t("forms.createTranslationForm.toast.success.title"),
-				description: t("forms.createTranslationForm.toast.success.description"),
+				title: t("forms.translationForm.toast.success.title"),
+				description: t("forms.translationForm.toast.success.description"),
 			})
 		},
 		onError: () => {
 			toast({
-				title: t("forms.createTranslationForm.toast.error.title"),
-				description: t("forms.createTranslationForm.toast.error.description"),
+				title: t("forms.translationForm.toast.error.title"),
+				description: t("forms.translationForm.toast.error.description"),
 			})
 		},
 	})
 
 	const { mutateAsync: updateTranslation } = $api.useMutation("patch", "/translation/{id}", {
 		onSuccess: async () => {
-			await queryClient.invalidateQueries({ queryKey: ["get", "/collection/{id}/translations"] })
+			await Promise.all([
+				queryClient.invalidateQueries({
+					queryKey: ["get", "/collection/{id}/translations"],
+				}),
+				queryClient.invalidateQueries({ queryKey: getLatestTranslationsQueryOptions().queryKey }),
+			])
 
 			props.onSubmit()
+			form.reset()
 
 			toast({
-				title: t("forms.accountNameForm.toast.success.title"),
-				description: t("forms.accountNameForm.toast.success.description"),
+				title: t("forms.translationForm.toast.success.title"),
+				description: t("forms.translationForm.toast.success.description"),
 			})
 		},
 		onError: () => {
 			toast({
-				title: t("forms.accountNameForm.toast.error.title"),
-				description: t("forms.accountNameForm.toast.error.description"),
+				title: t("forms.translationForm.toast.error.title"),
+				description: t("forms.translationForm.toast.error.description"),
 			})
 		},
 	})
@@ -93,44 +108,27 @@ export const TranslationForm = (props: TranslationFormProps) => {
 
 	const onSubmit = useCallback(
 		async (formState: TranslationFormState) => {
-			try {
-				const requestBody = {
-					source_language: Locale.DE_DE,
-					target_language: Locale.EN_GB,
-					source_text: formState.sourceText,
-					target_text: formState.targetText,
-					collection_id: formState.collectionId,
-					cefr_level_id: formState.cefrLevelId,
-				}
+			const requestBody = {
+				source_language: Locale.DE_DE,
+				target_language: Locale.EN_GB,
+				source_text: formState.sourceText,
+				target_text: formState.targetText,
+				collection_id: formState.collectionId,
+				cefr_level_id: formState.cefrLevelId,
+			}
 
-				if (isCreateForm) {
-					await createTranslation({ body: requestBody })
-				}
+			if (isCreateForm) {
+				await createTranslation({ body: requestBody })
+			}
 
-				if (isUpdateForm) {
-					await updateTranslation({
-						body: requestBody,
-						params: { path: { id: props.translationId } },
-					})
-				}
-
-				toast({
-					title: t("forms.translationForm.toast.success.title"),
-					description: t("forms.translationForm.toast.success.description"),
-				})
-
-				await queryClient.invalidateQueries({ queryKey: ["get", "/collection/{id}/translations"] })
-
-				form.reset()
-				props.onSubmit()
-			} catch (error) {
-				toast({
-					title: t("forms.translationForm.toast.error.title"),
-					description: t("forms.translationForm.toast.error.description"),
+			if (isUpdateForm) {
+				await updateTranslation({
+					body: requestBody,
+					params: { path: { id: props.translationId } },
 				})
 			}
 		},
-		[createTranslation, form, isCreateForm, isUpdateForm, props, queryClient, t, toast, updateTranslation],
+		[createTranslation, isCreateForm, isUpdateForm, props, updateTranslation],
 	)
 
 	// --- RENDER ---

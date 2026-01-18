@@ -14,9 +14,10 @@ import { useToast } from "@app/components/ui/use-toast"
 import { $api } from "@app/utils/api/apiRequests"
 import { useTranslations } from "next-intl"
 import { zodResolver } from "@hookform/resolvers/zod"
-import { useQueryClient } from "@tanstack/react-query"
+import {useQueryClient, useSuspenseQuery} from "@tanstack/react-query"
 import { useCallback } from "react"
 import { useForm } from "react-hook-form"
+import {getUserQueryOptions} from "@app/utils/reactQuery/queryOptions";
 
 export const AccountNameForm = () => {
 	// --- STATE ---
@@ -27,7 +28,7 @@ export const AccountNameForm = () => {
 
 	const queryClient = useQueryClient()
 
-	const { data } = $api.useSuspenseQuery("get", "/user")
+	const { data } = useSuspenseQuery(getUserQueryOptions())
 
 	const { mutateAsync: mutateUserUpdate } = $api.useMutation("patch", "/user", {
 		onSuccess: (data) => {

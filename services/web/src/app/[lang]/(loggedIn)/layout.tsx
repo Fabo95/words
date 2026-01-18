@@ -3,13 +3,17 @@ import { ReactNode, Suspense } from "react"
 
 import { AppSidebar } from "@app/components/appSidebar/appSidebar"
 import { SidebarInset, SidebarProvider, SidebarTrigger } from "@app/components/ui/sidebar"
-import { $api } from "@app/utils/api/apiRequests"
 import { getQueryClient } from "@app/utils/reactQuery/reactQueryHelpers"
 import { HydrationBoundary, dehydrate } from "@tanstack/react-query"
 import { AddTranslationTrigger } from "@app/app/[lang]/(loggedIn)/_content/addTranslationTrigger"
 import { PageContent } from "@app/components/ui/pageContent"
 import { Skeleton } from "@app/components/ui/skeleton"
 import * as React from "react"
+import {
+	getCefrLevelsQueryOptions,
+	getCollectionsQueryOptions,
+	getUserQueryOptions,
+} from "@app/utils/reactQuery/queryOptions"
 
 export default async function Layout({ children }: { children: ReactNode }) {
 	// --- STATE ---
@@ -42,17 +46,11 @@ export default async function Layout({ children }: { children: ReactNode }) {
 	//       you could also useQuery instead of useSuspenseQuery, and the Promise would still be picked up correctly.
 	//       However, NextJs won't suspend in that case and the component will render in the pending status, which also opts out of server rendering the content.
 	// See: https://tanstack.com/query/v5/docs/framework/react/guides/advanced-ssr#streaming-with-server-components
-	queryClient.prefetchQuery(
-		$api.queryOptions("get", "/user", { headers: { Cookie: `auth-cookie=${authCookieValue}` } }),
-	)
+	void queryClient.prefetchQuery(getUserQueryOptions(authCookieValue))
 
-	queryClient.prefetchQuery(
-		$api.queryOptions("get", "/collection/wip1", { headers: { Cookie: `auth-cookie=${authCookieValue}` } }),
-	)
+	void queryClient.prefetchQuery(getCollectionsQueryOptions(authCookieValue))
 
-	queryClient.prefetchQuery(
-		$api.queryOptions("get", "/cefr-levels", { headers: { Cookie: `auth-cookie=${authCookieValue}` } }),
-	)
+	void queryClient.prefetchQuery(getCefrLevelsQueryOptions(authCookieValue))
 
 	// --- RENDER ---
 

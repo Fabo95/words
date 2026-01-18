@@ -1,6 +1,6 @@
 import { ColumnDef } from "@tanstack/react-table"
 
-import { CollectionTableActions } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collection/components/collectionTableActions/collectionTableActions"
+import { TranslationActions } from "@app/components/translationActions/translationActions"
 import { CollectionTranslation } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collection/utils/collectionTableTypes"
 import { Checkbox } from "@app/components/ui/checkbox"
 import { DataTableColumnHeader } from "@app/components/ui/dataTable/dataTableColumnHeader"
@@ -95,7 +95,13 @@ export const getCollectionTableColumns: (t: TFunction) => ColumnDef<CollectionTr
 		header: () => <div className="w-11" />,
 		cell: ({ row }) => (
 			<div className="pl-3 pr-3">
-				<CollectionTableActions row={row} />
+				<TranslationActions
+					collectionId={row.original.id}
+					translationId={row.original.translationId}
+					sourceText={row.original.sourceText}
+					targetText={row.original.targetText}
+					cefrLevelId={row.original.cefrLevel?.id}
+				/>
 			</div>
 		),
 	},

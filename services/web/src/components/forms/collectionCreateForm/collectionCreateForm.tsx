@@ -13,6 +13,7 @@ import { useCallback } from "react"
 import { useForm } from "react-hook-form"
 import * as React from "react"
 import { useIsMobile } from "@app/hooks/use-mobile"
+import { getCollectionsQueryOptions } from "@app/utils/reactQuery/queryOptions"
 
 type ISidebarCollectionCreateFormProps = { onSubmit: () => void; onCancel: () => void }
 
@@ -36,10 +37,8 @@ export const CollectionCreateForm = ({ onSubmit, onCancel }: ISidebarCollectionC
 	})
 
 	const { mutateAsync: mutateCollectionCreate } = $api.useMutation("post", "/collection", {
-		onSuccess: async (data) => {
-			console.log({ data })
-
-			await queryClient.invalidateQueries({ queryKey: ["/collection/wip1"] })
+		onSuccess: async () => {
+			await queryClient.invalidateQueries({ queryKey: getCollectionsQueryOptions().queryKey })
 
 			toast({
 				title: t("components.navCollections.createForm.toast.success.title"),

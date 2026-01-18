@@ -139,6 +139,12 @@
       }
     },
 	"components": {
+        "translationActions": {
+          "dropdownTrigger": "Öffnen",
+          "dropdownEditButton": "Übersetzung anpassen",
+          "dropdownDeleteTranslationButton": "Übersetzung löschen",
+          "dropdownDeleteFromCollectionButton": "Übersetzung aus Sammlung löschen"
+        },
 		"pageNavigation": {
 			"title": "Seiten"
 		},
@@ -246,12 +252,6 @@
                 "cefrLevel": "Sprachniveau",
                 "universalPosTags": "Wortart",
                 "exampleSentences": "Beispielsätze"
-              },
-              "actions": {
-                  "dropdownTrigger": "Öffnen",
-                  "dropdownEditButton": "Übersetzung anpassen",
-                  "dropdownDeleteTranslationButton": "Übersetzung löschen",
-                  "dropdownDeleteFromCollectionButton": "Übersetzung aus Sammlung löschen"
               }
 			}
 		},

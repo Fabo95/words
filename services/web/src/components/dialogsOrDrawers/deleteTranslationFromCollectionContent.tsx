@@ -12,6 +12,10 @@ import {
 	DialogOrDrawerHeader,
 	DialogOrDrawerTitle,
 } from "@app/components/ui/dialogOrDrawer"
+import {
+	getCollectionTranslationsQueryOptions,
+	getLatestTranslationsQueryOptions,
+} from "@app/utils/reactQuery/queryOptions"
 
 type DeleteTranslationFromCollectionDialogContentProps = {
 	id: number
@@ -20,6 +24,7 @@ type DeleteTranslationFromCollectionDialogContentProps = {
 }
 
 export const DeleteTranslationFromCollectionContent = ({
+	id,
 	translationId,
 	handleIsDialogOpen,
 }: DeleteTranslationFromCollectionDialogContentProps) => {
@@ -33,7 +38,17 @@ export const DeleteTranslationFromCollectionContent = ({
 
 	const { mutateAsync: mutateTranslationDelete } = $api.useMutation("delete", "/translation/{id}", {
 		onSuccess: async () => {
-			await queryClient.invalidateQueries({ queryKey: ["get", "/collection/{id}/translations"] })
+			console.log(
+				"getLatestTranslationsQueryOptions().queryKey",
+				...getLatestTranslationsQueryOptions().queryKey.join(),
+			)
+
+			await Promise.all([
+				queryClient.invalidateQueries({
+					queryKey: ["get", "/collection/{id}/translations"],
+				}),
+				queryClient.invalidateQueries({ queryKey: getLatestTranslationsQueryOptions().queryKey }),
+			])
 
 			toast({
 				title: t("dialogs.deleteTranslationDialog.toast.success.title"),

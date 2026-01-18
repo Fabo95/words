@@ -1,10 +1,8 @@
-import { Row } from "@tanstack/react-table"
 import { Delete, Edit, MoreHorizontal, Trash2 } from "lucide-react"
 
 import { DeleteTranslationFromCollectionContent } from "@app/components/dialogsOrDrawers/deleteTranslationFromCollectionContent"
 import { DeleteTranslationContent } from "@app/components/dialogsOrDrawers/deleteTranslationContent"
 import { TranslationForm } from "@app/components/forms/translationForm/translationForm"
-import { CollectionTranslation } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collection/utils/collectionTableTypes"
 import { Button } from "@app/components/ui/button"
 import {
 	DropdownMenu,
@@ -18,7 +16,6 @@ import { useState } from "react"
 import { useTranslations } from "next-intl"
 import * as React from "react"
 
-import { $api } from "@app/utils/api/apiRequests"
 import {
 	DialogOrDrawer,
 	DialogOrDrawerContent,
@@ -26,21 +23,35 @@ import {
 	DialogOrDrawerHeader,
 	DialogOrDrawerTitle,
 } from "@app/components/ui/dialogOrDrawer"
+import { useSuspenseQuery } from "@tanstack/react-query"
+import { getCefrLevelsQueryOptions, getCollectionsQueryOptions } from "@app/utils/reactQuery/queryOptions"
 
-type CollectionTableActionsProps = { row: Row<CollectionTranslation> }
+type TranslationActionsProps = {
+	collectionId?: number
+	translationId: number
+	sourceText: string
+	targetText: string
+	cefrLevelId?: number
+}
 
-export const CollectionTableActions = ({ row }: CollectionTableActionsProps) => {
+export const TranslationActions = ({
+	collectionId,
+	translationId,
+	sourceText,
+	targetText,
+	cefrLevelId,
+}: TranslationActionsProps) => {
 	// --- STATE ---
 
 	const t = useTranslations()
 
 	const {
 		data: { data: collections },
-	} = $api.useSuspenseQuery("get", "/collection/wip1")
+	} = useSuspenseQuery(getCollectionsQueryOptions())
 
 	const {
 		data: { data: cefrLevels },
-	} = $api.useSuspenseQuery("get", "/cefr-levels")
+	} = useSuspenseQuery(getCefrLevelsQueryOptions())
 
 	const { isMobile } = useSidebar()
 
@@ -56,7 +67,7 @@ export const CollectionTableActions = ({ row }: CollectionTableActionsProps) => 
 			<DropdownMenu>
 				<DropdownMenuTrigger asChild>
 					<Button variant="ghost" className="h-8 w-8 p-0">
-						<span className="sr-only">{t("pages.collection.table.actions.dropdownTrigger")}</span>
+						<span className="sr-only">{t("components.translationActions.dropdownTrigger")}</span>
 
 						<MoreHorizontal className="h-4 w-4" />
 					</Button>
@@ -69,19 +80,19 @@ export const CollectionTableActions = ({ row }: CollectionTableActionsProps) => 
 				>
 					<DropdownMenuItem onClick={() => setIsEditFormOpen(true)}>
 						<Edit className="text-muted-foreground" />
-						<span>{t("pages.collection.table.actions.dropdownEditButton")}</span>
+						<span>{t("components.translationActions.dropdownEditButton")}</span>
 					</DropdownMenuItem>
 
 					<DropdownMenuSeparator />
 
-					<DropdownMenuItem onClick={() => setIsDeleteFromCollectionDialogOpen(true)}>
+					<DropdownMenuItem disabled={!collectionId} onClick={() => setIsDeleteFromCollectionDialogOpen(true)}>
 						<Delete className="text-muted-foreground" />
-						<span>{t("pages.collection.table.actions.dropdownDeleteFromCollectionButton")}</span>
+						<span>{t("components.translationActions.dropdownDeleteFromCollectionButton")}</span>
 					</DropdownMenuItem>
 
 					<DropdownMenuItem onClick={() => setIsDeleteTranslationDialogOpen(true)}>
 						<Trash2 className="text-muted-foreground" />
-						<span>{t("pages.collection.table.actions.dropdownDeleteTranslationButton")}</span>
+						<span>{t("components.translationActions.dropdownDeleteTranslationButton")}</span>
 					</DropdownMenuItem>
 				</DropdownMenuContent>
 			</DropdownMenu>
@@ -98,13 +109,13 @@ export const CollectionTableActions = ({ row }: CollectionTableActionsProps) => 
 						<TranslationForm
 							cefrLevels={cefrLevels}
 							collections={collections}
-							translationId={row.original.translationId}
+							translationId={translationId}
 							formType="update"
 							defaultValues={{
-								sourceText: row.original.sourceText,
-								targetText: row.original.targetText,
-								collectionId: row.original.id,
-								cefrLevelId: row.original.cefrLevel?.id,
+								sourceText,
+								targetText,
+								collectionId,
+								cefrLevelId,
 							}}
 							onSubmit={() => setIsEditFormOpen(false)}
 							onCancel={() => setIsEditFormOpen(false)}
@@ -113,20 +124,18 @@ export const CollectionTableActions = ({ row }: CollectionTableActionsProps) => 
 				</DialogOrDrawerContent>
 			</DialogOrDrawer>
 
-			<DialogOrDrawer open={isDeleteFromCollectionDialogOpen} onOpenChange={setIsDeleteFromCollectionDialogOpen}>
-				<DeleteTranslationFromCollectionContent
-					id={row.original.id}
-					translationId={row.original.translationId}
-					handleIsDialogOpen={setIsDeleteFromCollectionDialogOpen}
-				/>
-			</DialogOrDrawer>
+			{collectionId && (
+				<DialogOrDrawer open={isDeleteFromCollectionDialogOpen} onOpenChange={setIsDeleteFromCollectionDialogOpen}>
+					<DeleteTranslationFromCollectionContent
+						id={collectionId}
+						translationId={translationId}
+						handleIsDialogOpen={setIsDeleteFromCollectionDialogOpen}
+					/>
+				</DialogOrDrawer>
+			)}
 
 			<DialogOrDrawer open={isDeleteTranslationDialogOpen} onOpenChange={setIsDeleteTranslationDialogOpen}>
-				<DeleteTranslationContent
-					id={row.original.id}
-					translationId={row.original.translationId}
-					handleIsDialogOpen={setIsDeleteTranslationDialogOpen}
-				/>
+				<DeleteTranslationContent translationId={translationId} handleIsDialogOpen={setIsDeleteTranslationDialogOpen} />
 			</DialogOrDrawer>
 		</>
 	)

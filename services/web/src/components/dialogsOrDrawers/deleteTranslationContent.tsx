@@ -1,7 +1,6 @@
 import { useCallback } from "react"
 
 import { Button } from "@app/components/ui/button"
-import { DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@app/components/ui/dialog"
 import { useToast } from "@app/components/ui/use-toast"
 import { $api } from "@app/utils/api/apiRequests"
 import { useQueryClient } from "@tanstack/react-query"
@@ -13,15 +12,14 @@ import {
 	DialogOrDrawerHeader,
 	DialogOrDrawerTitle,
 } from "@app/components/ui/dialogOrDrawer"
+import { getLatestTranslationsQueryOptions } from "@app/utils/reactQuery/queryOptions"
 
 type DeleteTranslationDialogContentProps = {
-	id: number
 	translationId: number
 	handleIsDialogOpen: (isOpen: boolean) => void
 }
 
 export const DeleteTranslationContent = ({
-	id,
 	translationId,
 	handleIsDialogOpen,
 }: DeleteTranslationDialogContentProps) => {
@@ -34,7 +32,14 @@ export const DeleteTranslationContent = ({
 	const queryClient = useQueryClient()
 
 	const { mutateAsync: mutateTranslationDelete } = $api.useMutation("delete", "/translation/{id}", {
-		onSuccess: () => {
+		onSuccess: async () => {
+			await Promise.all([
+				queryClient.invalidateQueries({
+					queryKey: ["get", "/collection/{id}/translations"],
+				}),
+				queryClient.invalidateQueries({ queryKey: getLatestTranslationsQueryOptions().queryKey }),
+			])
+
 			toast({
 				title: t("dialogs.deleteTranslationDialog.toast.success.title"),
 				description: t("dialogs.deleteTranslationDialog.toast.success.description"),
@@ -53,7 +58,12 @@ export const DeleteTranslationContent = ({
 	const handleDeleteCollection = useCallback(async () => {
 		await mutateTranslationDelete({ params: { path: { id: translationId } } })
 
-		await queryClient.invalidateQueries({ queryKey: ["get", "/collection/{id}/translations"] })
+		await Promise.all([
+			queryClient.invalidateQueries({
+				queryKey: ["get", "/collection/{id}/translations"],
+			}),
+			queryClient.invalidateQueries({ queryKey: getLatestTranslationsQueryOptions().queryKey }),
+		])
 
 		handleIsDialogOpen(false)
 	}, [translationId, mutateTranslationDelete, handleIsDialogOpen, queryClient.invalidateQueries])

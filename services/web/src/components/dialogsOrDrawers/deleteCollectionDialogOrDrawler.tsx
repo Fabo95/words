@@ -14,6 +14,7 @@ import {
 	DialogOrDrawerTitle,
 } from "@app/components/ui/dialogOrDrawer"
 import { useIsMobile } from "@app/hooks/use-mobile"
+import { getCollectionsQueryOptions, getLatestTranslationsQueryOptions } from "@app/utils/reactQuery/queryOptions"
 
 type DeleteCollectionDialogOrDrawlerProps = {
 	isDialogOpen: boolean
@@ -40,7 +41,13 @@ export const DeleteCollectionDialogOrDrawler = ({
 		onSuccess: async (data) => {
 			console.log({ data })
 
-			await queryClient.invalidateQueries({ queryKey: ["/collection/wip1"] })
+			await Promise.all([
+				queryClient.invalidateQueries({
+					queryKey: ["get", "/collection/{id}/translations"],
+				}),
+				queryClient.invalidateQueries({ queryKey: getCollectionsQueryOptions().queryKey }),
+				queryClient.invalidateQueries({ queryKey: getLatestTranslationsQueryOptions().queryKey }),
+			])
 
 			toast({
 				title: t("components.navCollections.deleteDialog.toast.success.title"),

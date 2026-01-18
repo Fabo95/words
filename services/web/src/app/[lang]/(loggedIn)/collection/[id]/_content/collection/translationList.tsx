@@ -7,7 +7,7 @@ import { Badge } from "@app/components/ui/badge"
 import { Card, CardContent, CardHeader } from "@app/components/ui/card"
 
 import { CollectionTranslation } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collection/utils/collectionTableTypes"
-import { CollectionTableActions } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collection/components/collectionTableActions/collectionTableActions"
+import { TranslationActions } from "@app/components/translationActions/translationActions"
 
 type CollectionCardListProps = {
 	items: CollectionTranslation[]
@@ -52,9 +52,12 @@ export function TranslationList({ items }: CollectionCardListProps) {
 							</div>
 
 							<div className="shrink-0">
-								<CollectionTableActions
-									// biome-ignore lint/suspicious/noExplicitAny: row-like adapter for card view
-									row={{ original: item } as any}
+								<TranslationActions
+									collectionId={item.id}
+									translationId={item.translationId}
+									sourceText={item.sourceText}
+									targetText={item.targetText}
+									cefrLevelId={item.cefrLevel?.id}
 								/>
 							</div>
 						</CardHeader>

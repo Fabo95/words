@@ -13,6 +13,11 @@ import { useCallback } from "react"
 import { useForm } from "react-hook-form"
 import * as React from "react"
 import { useIsMobile } from "@app/hooks/use-mobile"
+import {
+	getCollectionByIdQueryOptions,
+	getCollectionsQueryOptions,
+	getLatestTranslationsQueryOptions,
+} from "@app/utils/reactQuery/queryOptions"
 
 type ISidebarCollectionEditFormProps = {
 	id: number
@@ -25,6 +30,8 @@ export const CollectionEditForm = ({ id, defaultValues, onCancel, onSubmit }: IS
 	// --- STATE ---
 
 	const { toast } = useToast()
+
+	console.log("id", id)
 
 	const isMobile = useIsMobile()
 
@@ -40,9 +47,14 @@ export const CollectionEditForm = ({ id, defaultValues, onCancel, onSubmit }: IS
 
 	const { mutateAsync: mutateCollectionEdit } = $api.useMutation("patch", "/collection/{id}", {
 		onSuccess: async (data) => {
-			console.log({ data })
-
-			await queryClient.invalidateQueries({ queryKey: ["/collection/wip1", "/collections"] })
+			await Promise.all([
+				queryClient.invalidateQueries({ queryKey: getCollectionByIdQueryOptions(Number(data.data?.id)).queryKey }),
+				queryClient.invalidateQueries({ queryKey: getCollectionsQueryOptions().queryKey }),
+				queryClient.invalidateQueries({
+					queryKey: ["get", "/collection/{id}/translations"],
+				}),
+				queryClient.invalidateQueries({ queryKey: getLatestTranslationsQueryOptions().queryKey }),
+			])
 
 			toast({
 				title: t("components.navCollections.editForm.toast.success.title"),

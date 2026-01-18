@@ -7,14 +7,12 @@ import { Locale } from "@app/utils/locale/localeTypes"
 export default async function Authentication({ params }: { params: Promise<Record<"lang", Locale>> }) {
 	// --- STATE ---
 
-	const { lang } = await params
-
 	const t = await getTranslations()
 
 	// --- RENDER ---
 
 	return (
-		<Tabs defaultValue="login" className="max-w-[400px] w-full">
+		<Tabs defaultValue="login" className="max-w-100 w-full">
 			<TabsList className="grid w-full grid-cols-2">
 				<TabsTrigger value="login">{t("forms.loginForm.title")}</TabsTrigger>
 

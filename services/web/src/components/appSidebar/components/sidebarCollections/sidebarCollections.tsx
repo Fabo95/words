@@ -1,6 +1,6 @@
 "use client"
 
-import { Edit, Folder, Plus, Trash2 } from "lucide-react"
+import { Edit, Folder, Trash2 } from "lucide-react"
 
 import { CreateCollectionDialogOrDrawler } from "@app/components/dialogsOrDrawers/createCollectionDialogOrDrawler"
 import { DeleteCollectionDialogOrDrawler } from "@app/components/dialogsOrDrawers/deleteCollectionDialogOrDrawler"
@@ -22,13 +22,14 @@ import {
 	SidebarMenuItem,
 	useSidebar,
 } from "@app/components/ui/sidebar"
-import { $api } from "@app/utils/api/apiRequests"
 import { useTranslations } from "next-intl"
 import { getCollectionPage } from "@app/utils/urls/urls"
 import { DotsHorizontalIcon, PlusIcon } from "@radix-ui/react-icons"
 import Link from "next/link"
 import { useRouter } from "next/navigation"
 import { useState } from "react"
+import { getCollectionsQueryOptions } from "@app/utils/reactQuery/queryOptions"
+import { useSuspenseQuery } from "@tanstack/react-query"
 
 export function SidebarCollections() {
 	// --- STATE ---
@@ -38,14 +39,14 @@ export function SidebarCollections() {
 	const { isMobile } = useSidebar()
 
 	const [isCreateDialogOpen, setIsCreateDialogOpen] = useState(false)
-	const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false)
-	const [isEditDialogOpen, setIsEditDialogOpen] = useState(false)
+	const [deleteCollectionId, setDeleteCollectionId] = useState<number>()
+	const [editCollectionId, setEditCollectionId] = useState<number>()
 
 	const t = useTranslations()
 
 	const {
 		data: { data: collections },
-	} = $api.useSuspenseQuery("get", "/collection/wip1")
+	} = useSuspenseQuery(getCollectionsQueryOptions())
 
 	// --- RENDER ---
 
@@ -80,14 +81,14 @@ export function SidebarCollections() {
 									<span>{t("components.navCollections.dropdownOpenButton")}</span>
 								</DropdownMenuItem>
 
-								<DropdownMenuItem onClick={() => setIsEditDialogOpen(true)}>
+								<DropdownMenuItem onClick={() => setEditCollectionId(collection.id)}>
 									<Edit className="text-muted-foreground" />
 									<span>{t("components.navCollections.dropdownEditButton")}</span>
 								</DropdownMenuItem>
 
 								<DropdownMenuSeparator />
 
-								<DropdownMenuItem onClick={() => setIsDeleteDialogOpen(true)}>
+								<DropdownMenuItem onClick={() => setDeleteCollectionId(collection.id)}>
 									<Trash2 className="text-muted-foreground" />
 									<span>{t("components.navCollections.dropdownDeleteButton")}</span>
 								</DropdownMenuItem>
@@ -97,14 +98,14 @@ export function SidebarCollections() {
 						<EditCollectionDialogOrDrawler
 							name={collection.name}
 							id={collection.id}
-							isDialogOpen={isEditDialogOpen}
-							setIsDialogOpen={setIsEditDialogOpen}
+							isDialogOpen={collection.id === editCollectionId}
+							setIsDialogOpen={(isOpen) => setEditCollectionId(isOpen ? editCollectionId : undefined)}
 						/>
 
 						<DeleteCollectionDialogOrDrawler
-							isDialogOpen={isDeleteDialogOpen}
 							id={collection.id}
-							setIsDialogOpen={setIsDeleteDialogOpen}
+							isDialogOpen={collection.id === deleteCollectionId}
+							setIsDialogOpen={(isOpen) => setDeleteCollectionId(isOpen ? deleteCollectionId : undefined)}
 						/>
 					</SidebarMenuItem>
 				))}

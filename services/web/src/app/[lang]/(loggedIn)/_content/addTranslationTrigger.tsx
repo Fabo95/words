@@ -6,7 +6,6 @@ import { useTranslations } from "next-intl"
 import { Button } from "@app/components/ui/button"
 import { PlusIcon } from "@radix-ui/react-icons"
 import { TranslationForm } from "@app/components/forms/translationForm/translationForm"
-import { $api } from "@app/utils/api/apiRequests"
 import { TranslationFormState } from "@app/components/forms/translationForm/utils/translationFormTypes"
 import {
 	DialogOrDrawer,
@@ -15,6 +14,8 @@ import {
 	DialogOrDrawerHeader,
 	DialogOrDrawerTitle,
 } from "@app/components/ui/dialogOrDrawer"
+import { getCefrLevelsQueryOptions, getCollectionsQueryOptions } from "@app/utils/reactQuery/queryOptions"
+import { useSuspenseQuery } from "@tanstack/react-query"
 
 type AddTranslationTriggerProps = {
 	defaultValues?: Partial<TranslationFormState>
@@ -37,11 +38,11 @@ export const AddTranslationTrigger = ({
 
 	const {
 		data: { data: collections },
-	} = $api.useSuspenseQuery("get", "/collection/wip1")
+	} = useSuspenseQuery(getCollectionsQueryOptions())
 
 	const {
 		data: { data: cefrLevels },
-	} = $api.useSuspenseQuery("get", "/cefr-levels")
+	} = useSuspenseQuery(getCefrLevelsQueryOptions())
 
 	return (
 		<>

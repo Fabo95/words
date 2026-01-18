@@ -3,7 +3,6 @@
 import { getCollectionTableColumns } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collection/utils/collectionTableConstants"
 import { CollectionTranslation } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collection/utils/collectionTableTypes"
 import { DataTable } from "@app/components/ui/dataTable/dataTable"
-import { $api } from "@app/utils/api/apiRequests"
 import { useParams } from "next/navigation"
 import { useCallback, useMemo } from "react"
 import * as React from "react"
@@ -14,6 +13,11 @@ import { Button } from "@app/components/ui/button"
 import { useIsMobile } from "@app/hooks/use-mobile"
 import { TranslationList } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collection/translationList"
 import { CollectionEmptyState } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collection/collectionEmptyState"
+import { useQuery, useSuspenseQuery } from "@tanstack/react-query"
+import {
+	getCollectionByIdQueryOptions,
+	getCollectionTranslationsQueryOptions,
+} from "@app/utils/reactQuery/queryOptions"
 
 export const CollectionTable = () => {
 	// --- STATE ---
@@ -28,21 +32,16 @@ export const CollectionTable = () => {
 
 	const pageSize = isMobile ? 10 : 20
 
-	const { data: translationsData } = $api.useQuery(
-		"get",
-		"/collection/{id}/translations",
-		{
-			params: {
-				path: { id: Number(params.id) },
-				query: { page: query.page ?? 1, page_size: pageSize, search: query.search ?? undefined },
-			},
-		},
-		{ placeholderData: (prev) => prev },
+	const { data: translationsData } = useQuery(
+		getCollectionTranslationsQueryOptions({
+			id: Number(params.id),
+			page: query.page ?? 1,
+			search: query.search ?? undefined,
+			pageSize,
+		}),
 	)
 
-	const { data: collectionData } = $api.useSuspenseQuery("get", "/collection/wip2/{id}", {
-		params: { path: { id: Number(params.id) } },
-	})
+	const { data: collectionData } = useSuspenseQuery(getCollectionByIdQueryOptions(Number(params.id)))
 
 	const makeOnPaginationChange = useCallback(
 		(direction: "next" | "prev") => () => {
@@ -111,7 +110,7 @@ export const CollectionTable = () => {
 	return (
 		<>
 			<div className="w-4/5 overflow-hidden">
-				<h1 className="mb-8 text-xl font-semibold">{collectionData.data?.name}</h1>
+				<h1 className="text-3xl mb-8 md:text-4xl font-semibold tracking-tight">{collectionData.data?.name}</h1>
 
 				<CollectionStringFilter
 					isDisabled={!collectionTranslations.length && !query.search}
