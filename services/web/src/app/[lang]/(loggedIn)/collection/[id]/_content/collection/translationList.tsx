@@ -58,6 +58,7 @@ export function TranslationList({ items }: CollectionCardListProps) {
 									sourceText={item.sourceText}
 									targetText={item.targetText}
 									cefrLevelId={item.cefrLevel?.id}
+									universalPosTagIds={item.universalPosTags.map((universalPosTag) => universalPosTag.id)}
 								/>
 							</div>
 						</CardHeader>

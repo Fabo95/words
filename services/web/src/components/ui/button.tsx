@@ -4,6 +4,8 @@ import { Slot } from "@radix-ui/react-slot"
 import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@app/utils/shadcn/shadcnHelpers"
+import { omit } from "lodash"
+import { Spinner } from "@app/components/ui/spinner"
 
 const buttonVariants = cva(
 	"inline-flex cursor-pointer items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50",
@@ -35,12 +37,22 @@ export interface ButtonProps
 	extends React.ButtonHTMLAttributes<HTMLButtonElement>,
 		VariantProps<typeof buttonVariants> {
 	asChild?: boolean
+	isLoading?: boolean
 }
 
 const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
-	({ asChild = false, className, size, variant, ...props }, ref) => {
+	({ asChild = false, className, size, variant, isLoading, children, ...props }, ref) => {
 		const Comp = asChild ? Slot : "button"
-		return <Comp className={cn(buttonVariants({ className, size, variant }))} ref={ref} {...props} />
+		return (
+			<Comp className={cn(buttonVariants({ size, variant }), "relative", className)} ref={ref} {...props}>
+				{isLoading && (
+					<span className="absolute inset-0 flex items-center justify-center">
+						<Spinner />
+					</span>
+				)}
+				<span className={cn("flex items-center", isLoading && "invisible")}>{children}</span>
+			</Comp>
+		)
 	},
 )
 Button.displayName = "Button"

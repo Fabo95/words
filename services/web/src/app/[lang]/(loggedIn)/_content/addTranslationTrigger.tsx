@@ -14,7 +14,11 @@ import {
 	DialogOrDrawerHeader,
 	DialogOrDrawerTitle,
 } from "@app/components/ui/dialogOrDrawer"
-import { getCefrLevelsQueryOptions, getCollectionsQueryOptions } from "@app/utils/reactQuery/queryOptions"
+import {
+	getCefrLevelsQueryOptions,
+	getCollectionsQueryOptions,
+	getUniversalPosTagsQueryOptions,
+} from "@app/utils/reactQuery/queryOptions"
 import { useSuspenseQuery } from "@tanstack/react-query"
 
 type AddTranslationTriggerProps = {
@@ -44,6 +48,10 @@ export const AddTranslationTrigger = ({
 		data: { data: cefrLevels },
 	} = useSuspenseQuery(getCefrLevelsQueryOptions())
 
+	const {
+		data: { data: universalPosTags },
+	} = useSuspenseQuery(getUniversalPosTagsQueryOptions())
+
 	return (
 		<>
 			<Button
@@ -68,6 +76,7 @@ export const AddTranslationTrigger = ({
 
 					{isTranslationFormOpen && (
 						<TranslationForm
+							universalPosTags={universalPosTags}
 							cefrLevels={cefrLevels}
 							collections={collections}
 							onSubmit={() => setIsTranslationFormOpen(false)}

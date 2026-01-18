@@ -23,6 +23,11 @@ export const getCefrLevelsQueryOptions = (authCookieValue?: string) =>
 		...(authCookieValue ? { headers: { Cookie: `auth-cookie=${authCookieValue}` } } : {}),
 	})
 
+export const getUniversalPosTagsQueryOptions = (authCookieValue?: string) =>
+	$api.queryOptions("get", "/universal-pos-tags", {
+		...(authCookieValue ? { headers: { Cookie: `auth-cookie=${authCookieValue}` } } : {}),
+	})
+
 export const getUserQueryOptions = (authCookieValue?: string) =>
 	$api.queryOptions("get", "/user", {
 		...(authCookieValue ? { headers: { Cookie: `auth-cookie=${authCookieValue}` } } : {}),

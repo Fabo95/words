@@ -101,6 +101,7 @@ export const getCollectionTableColumns: (t: TFunction) => ColumnDef<CollectionTr
 					sourceText={row.original.sourceText}
 					targetText={row.original.targetText}
 					cefrLevelId={row.original.cefrLevel?.id}
+					universalPosTagIds={row.original.universalPosTags.map((universalPosTag) => universalPosTag.id)}
 				/>
 			</div>
 		),

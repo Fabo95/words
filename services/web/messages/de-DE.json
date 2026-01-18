@@ -118,13 +118,16 @@
         "wordPlaceholder": "Wort angeben",
         "collectionIdLabel": "Sammlung",
         "cefrLevelIdLabel": "Sprachniveau",
+        "universalPosTagIdsLabel": "Wortart",
         "translationPlaceholder": "Übersetzung angeben",
         "collectionPlaceholder": "Sammlung auswählen",
         "cefrLevelIdPlaceholder": "Sprachniveau auswählen",
+        "universalPosTagIdsPlaceholder": "Wortart auswählen",
         "wordError": "Bitte gib mindestens 2 Zeichen an.",
         "translationError": "Bitte gib mindestens 2 Zeichen an.",
         "collectionError": "Wähle eine Sammlung aus.",
         "cefrLevelIdError": "Wähle ein Sprachniveau aus",
+        "universalPosTagIdsError": "Wähle eine Wortart aus",
         "collectionDescription": "Die Übersetzung wird dieser Sammlung zugeordnet.",
         "toast": {
           "success": {

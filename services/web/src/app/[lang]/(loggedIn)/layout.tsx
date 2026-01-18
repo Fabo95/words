@@ -12,6 +12,7 @@ import * as React from "react"
 import {
 	getCefrLevelsQueryOptions,
 	getCollectionsQueryOptions,
+	getUniversalPosTagsQueryOptions,
 	getUserQueryOptions,
 } from "@app/utils/reactQuery/queryOptions"
 
@@ -52,6 +53,8 @@ export default async function Layout({ children }: { children: ReactNode }) {
 
 	void queryClient.prefetchQuery(getCefrLevelsQueryOptions(authCookieValue))
 
+	void queryClient.prefetchQuery(getUniversalPosTagsQueryOptions(authCookieValue))
+
 	// --- RENDER ---
 
 	return (
@@ -64,7 +67,12 @@ export default async function Layout({ children }: { children: ReactNode }) {
 						<SidebarTrigger />
 
 						<Suspense fallback={<Skeleton className="h-7 w-7" />}>
-							<AddTranslationTrigger variant="ghost" className="h-7 w-7" size="icon" />
+							<AddTranslationTrigger
+								variant="ghost"
+								className="h-7 w-7"
+								size="icon"
+								defaultValues={{ universalPosTagIds: [] }}
+							/>
 						</Suspense>
 					</nav>
 

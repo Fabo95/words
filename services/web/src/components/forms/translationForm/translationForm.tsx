@@ -18,12 +18,14 @@ import { useForm } from "react-hook-form"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@app/components/ui/select"
 import { Badge } from "@app/components/ui/badge"
 import { Locale } from "@app/utils/locale/localeTypes"
-import { CefrLevel, Collection } from "@app/utils/types/api"
+import { CefrLevel, Collection, UniversalPosTag } from "@app/utils/types/api"
 import { useIsMobile } from "@app/hooks/use-mobile"
 import { getLatestTranslationsQueryOptions } from "@app/utils/reactQuery/queryOptions"
+import { Cross2Icon } from "@radix-ui/react-icons"
 
 type TranslationFormProps = {
 	cefrLevels: CefrLevel[] | undefined
+	universalPosTags: UniversalPosTag[] | undefined
 	collections: Collection[] | undefined
 	onSubmit: () => void
 	onCancel: () => void
@@ -48,7 +50,7 @@ export const TranslationForm = (props: TranslationFormProps) => {
 
 	const queryClient = useQueryClient()
 
-	const { mutateAsync: createTranslation } = $api.useMutation("post", "/translation", {
+	const { mutateAsync: createTranslation, isPending } = $api.useMutation("post", "/translation", {
 		onSuccess: async () => {
 			await Promise.all([
 				queryClient.invalidateQueries({
@@ -157,7 +159,7 @@ export const TranslationForm = (props: TranslationFormProps) => {
 				/>
 
 				<FormField
-					className="mb-3"
+					className={isCreateForm ? "mb-8" : "mb-3"}
 					control={form.control}
 					label={t("forms.translationForm.collectionIdLabel")}
 					description={t("forms.translationForm.collectionDescription")}
@@ -174,33 +176,8 @@ export const TranslationForm = (props: TranslationFormProps) => {
 							<SelectContent side="top">
 								{props.collections?.map((collection) => (
 									<SelectItem className="cursor-pointer" key={collection.id} value={String(collection.id)}>
-										{collection.name}
-									</SelectItem>
-								))}
-							</SelectContent>
-						</Select>
-					)}
-				/>
-
-				<FormField
-					className="mb-8"
-					control={form.control}
-					label={t("forms.translationForm.cefrLevelIdLabel")}
-					name="cefrLevelId"
-					render={({ field }) => (
-						<Select
-							value={field.value ? String(field.value) : ""}
-							onValueChange={(value) => field.onChange(value ? Number(value) : undefined)}
-						>
-							<SelectTrigger className="h-8">
-								<SelectValue placeholder={t("forms.translationForm.cefrLevelIdPlaceholder")} />
-							</SelectTrigger>
-
-							<SelectContent side="top">
-								{props.cefrLevels?.map((cefrLevel) => (
-									<SelectItem className="cursor-pointer" key={cefrLevel.id} value={String(cefrLevel.id)}>
 										<Badge variant="secondary" className="text-xs">
-											{cefrLevel.code}
+											{collection.name}
 										</Badge>
 									</SelectItem>
 								))}
@@ -208,6 +185,96 @@ export const TranslationForm = (props: TranslationFormProps) => {
 						</Select>
 					)}
 				/>
+
+				{isUpdateForm && (
+					<>
+						<FormField
+							className="mb-3"
+							control={form.control}
+							label={t("forms.translationForm.cefrLevelIdLabel")}
+							name="cefrLevelId"
+							render={({ field }) => (
+								<Select
+									value={field.value ? String(field.value) : ""}
+									onValueChange={(value) => field.onChange(value ? Number(value) : undefined)}
+								>
+									<SelectTrigger className="h-8">
+										<SelectValue placeholder={t("forms.translationForm.cefrLevelIdPlaceholder")} />
+									</SelectTrigger>
+
+									<SelectContent side="top">
+										{props.cefrLevels?.map((cefrLevel) => (
+											<SelectItem className="cursor-pointer" key={cefrLevel.id} value={String(cefrLevel.id)}>
+												<Badge variant="secondary" className="text-xs">
+													{cefrLevel.code}
+												</Badge>
+											</SelectItem>
+										))}
+									</SelectContent>
+								</Select>
+							)}
+						/>
+
+						<FormField
+							className="mb-8"
+							control={form.control}
+							label={t("forms.translationForm.universalPosTagIdsLabel")}
+							name="universalPosTagIds"
+							render={({ field }) => (
+								<Select
+									// biome-ignore lint/nursery/useConsistentCurlyBraces: <explanation>
+									value={""}
+									onValueChange={(value) => field.onChange([...field.value, Number(value)])}
+								>
+									<SelectTrigger className="h-8">
+										<SelectValue placeholder={t("forms.translationForm.universalPosTagIdsPlaceholder")} />
+									</SelectTrigger>
+
+									{field.value?.length > 0 ? (
+										<div className="flex flex-wrap gap-2">
+											{field.value.map((id) => {
+												const tag = props.universalPosTags?.find((t) => t.id === id)
+												if (!tag) return null
+
+												return (
+													<Badge key={tag.id} variant="secondary" className="text-xs flex items-center gap-1 pr-1">
+														<span>{tag.name}</span>
+
+														<Button
+															type="button"
+															variant="ghost"
+															size="icon"
+															className="h-5 w-5 rounded-full"
+															onClick={() => field.onChange(field.value.filter((x) => x !== id))}
+														>
+															<Cross2Icon className="h-3 w-3" />
+														</Button>
+													</Badge>
+												)
+											})}
+										</div>
+									) : null}
+
+									<SelectContent side="top">
+										{props.universalPosTags
+											?.filter((universalPosTag) => !field.value.includes(universalPosTag.id))
+											?.map((universalPosTag) => (
+												<SelectItem
+													className="cursor-pointer"
+													key={universalPosTag.id}
+													value={String(universalPosTag.id)}
+												>
+													<Badge variant="secondary" className="text-xs">
+														{universalPosTag.name}
+													</Badge>
+												</SelectItem>
+											))}
+									</SelectContent>
+								</Select>
+							)}
+						/>
+					</>
+				)}
 
 				<div
 					className={
@@ -218,7 +285,7 @@ export const TranslationForm = (props: TranslationFormProps) => {
 						{t("forms.translationForm.cancelButton")}
 					</Button>
 
-					<Button disabled={!form.formState.isValid || !form.formState.isDirty}>
+					<Button isLoading={isPending} disabled={!form.formState.isValid || !form.formState.isDirty}>
 						{t("forms.translationForm.saveButton")}
 					</Button>
 				</div>

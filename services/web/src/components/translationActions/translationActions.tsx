@@ -24,7 +24,11 @@ import {
 	DialogOrDrawerTitle,
 } from "@app/components/ui/dialogOrDrawer"
 import { useSuspenseQuery } from "@tanstack/react-query"
-import { getCefrLevelsQueryOptions, getCollectionsQueryOptions } from "@app/utils/reactQuery/queryOptions"
+import {
+	getCefrLevelsQueryOptions,
+	getCollectionsQueryOptions,
+	getUniversalPosTagsQueryOptions,
+} from "@app/utils/reactQuery/queryOptions"
 
 type TranslationActionsProps = {
 	collectionId?: number
@@ -32,6 +36,7 @@ type TranslationActionsProps = {
 	sourceText: string
 	targetText: string
 	cefrLevelId?: number
+	universalPosTagIds: number[]
 }
 
 export const TranslationActions = ({
@@ -40,6 +45,7 @@ export const TranslationActions = ({
 	sourceText,
 	targetText,
 	cefrLevelId,
+	universalPosTagIds,
 }: TranslationActionsProps) => {
 	// --- STATE ---
 
@@ -52,6 +58,10 @@ export const TranslationActions = ({
 	const {
 		data: { data: cefrLevels },
 	} = useSuspenseQuery(getCefrLevelsQueryOptions())
+
+	const {
+		data: { data: universalPosTags },
+	} = useSuspenseQuery(getUniversalPosTagsQueryOptions())
 
 	const { isMobile } = useSidebar()
 
@@ -107,11 +117,13 @@ export const TranslationActions = ({
 
 					{isEditFormOpen && (
 						<TranslationForm
+							universalPosTags={universalPosTags}
 							cefrLevels={cefrLevels}
 							collections={collections}
 							translationId={translationId}
 							formType="update"
 							defaultValues={{
+								universalPosTagIds,
 								sourceText,
 								targetText,
 								collectionId,

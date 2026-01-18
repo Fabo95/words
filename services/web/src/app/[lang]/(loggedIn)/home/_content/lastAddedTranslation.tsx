@@ -8,9 +8,12 @@ import { Badge } from "@app/components/ui/badge"
 import { cn } from "@app/utils/shadcn/shadcnHelpers"
 import { getCollectionsQueryOptions, getLatestTranslationsQueryOptions } from "@app/utils/reactQuery/queryOptions"
 import { useSuspenseQuery } from "@tanstack/react-query"
+import { getCollectionPage } from "@app/utils/urls/urls"
+import { useRouter } from "next/navigation"
 
 export function LastAddedTranslation() {
 	const t = useTranslations()
+	const router = useRouter()
 
 	const {
 		data: { data },
@@ -26,6 +29,7 @@ export function LastAddedTranslation() {
 		return map
 	}, [collections])
 
+	console.log("translation", data)
 	return (
 		<section>
 			<div className="mb-5 text-center">
@@ -58,30 +62,36 @@ export function LastAddedTranslation() {
 										index === data.length - 1 && "rounded-b-xl",
 									)}
 								>
-									<div className="flex items-start justify-between gap-4">
-										<div className="flex items-start gap-2">
-											<div className="min-w-0">
-												<p className="text-sm font-semibold leading-5 truncate">{translation.source_text}</p>
-
-												<p className="mt-1 text-sm text-foreground/60 leading-5 truncate">{translation.target_text}</p>
-											</div>
-
-											{collectionName ? (
+									<div className="flex items-end justify-between gap-4">
+										<div className="flex flex-col gap-2 justify-end h-full">
+											{collectionName && collectionId ? (
 												<div className="flex items-center gap-2">
-													<Badge variant="secondary" className="max-w-55 truncate text-xs" title={collectionName}>
+													<Badge
+														onClick={() => router.push(getCollectionPage(collectionId))}
+														variant="secondary"
+														className="max-w-55 truncate text-xs cursor-pointer"
+														title={collectionName}
+													>
 														{collectionName}
 													</Badge>
 												</div>
 											) : null}
+
+											<div className="flex gap-2">
+												<p className="text-sm font-semibold leading-5 truncate">{translation.source_text}</p>
+
+												<p className="text-sm text-foreground/60 leading-5 truncate">{translation.target_text}</p>
+											</div>
 										</div>
 
-										<div className="shrink-0 flex w-18 flex-col items-end justify-between self-stretch">
+										<div className="shrink-0 flex gap-1 w-18 flex-col items-end justify-between self-stretch">
 											<TranslationActions
 												translationId={translation.id}
 												sourceText={translation.source_text}
 												targetText={translation.target_text}
 												cefrLevelId={translation.cefr_level?.id}
 												collectionId={collectionId}
+												universalPosTagIds={translation.universal_pos_tags.map((universalPosTag) => universalPosTag.id)}
 											/>
 
 											<p className="text-xs text-foreground/40 tabular-nums">{relative}</p>

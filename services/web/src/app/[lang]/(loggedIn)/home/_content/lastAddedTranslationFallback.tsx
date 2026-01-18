@@ -11,7 +11,7 @@ export function LastAddedTranslationFallback() {
 			<Skeleton className="mx-auto mb-4 h-4 w-80" />
 
 			{/* list container */}
-			<div className="mx-auto w-93 overflow-hidden rounded-xl border bg-background/40">
+			<div className="mx-auto overflow-hidden rounded-xl border bg-background/40">
 				<ul className="divide-y">
 					{Array.from({ length: 3 }).map((_, i) => (
 						// biome-ignore lint/suspicious/noArrayIndexKey: stable skeleton list
