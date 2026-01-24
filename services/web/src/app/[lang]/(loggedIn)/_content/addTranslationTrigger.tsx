@@ -85,6 +85,7 @@ export const AddTranslationTrigger = ({
 		hasShownEnrichmentToast.current = true
 
 		void Promise.all([
+			queryClient.invalidateQueries({ queryKey: ["get", "/translation"] }),
 			queryClient.invalidateQueries({ queryKey: ["get", "/collection/{id}/translations"] }),
 			queryClient.invalidateQueries({ queryKey: getLatestTranslationsQueryOptions().queryKey }),
 			createdTranslationId

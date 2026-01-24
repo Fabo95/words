@@ -9,11 +9,11 @@ import { Card, CardContent, CardHeader } from "@app/components/ui/card"
 import { CollectionTranslation } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collection/utils/collectionTableTypes"
 import { TranslationActions } from "@app/components/translationActions/translationActions"
 
-type CollectionCardListProps = {
+type CollectionsTranslationsMobileProps = {
 	items: CollectionTranslation[]
 }
 
-export function TranslationList({ items }: CollectionCardListProps) {
+export function CollectionsTranslationsMobile({ items }: CollectionsTranslationsMobileProps) {
 	const t = useTranslations()
 
 	if (!items?.length) {

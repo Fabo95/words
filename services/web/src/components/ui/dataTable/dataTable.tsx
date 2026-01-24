@@ -11,7 +11,7 @@ import {
 	getSortedRowModel,
 	useReactTable,
 } from "@tanstack/react-table"
-import { useState } from "react"
+import { useLayoutEffect, useRef, useState } from "react"
 
 import { DataTablePagination } from "@app/components/ui/dataTable/dataTablePagination"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@app/components/ui/table"
@@ -30,6 +30,10 @@ export function DataTable<TData, TValue>({ onRowClick, columns, data }: DataTabl
 	const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([])
 	const [rowSelection, setRowSelection] = useState({})
 
+	const tableRef = useRef<HTMLDivElement>(null)
+
+	console.log("tableRef", tableRef.current?.clientHeight)
+
 	const table = useReactTable({
 		data,
 		columns,
@@ -47,51 +51,67 @@ export function DataTable<TData, TValue>({ onRowClick, columns, data }: DataTabl
 		},
 	})
 
+	const [minHeight, setMinHeight] = useState<number | undefined>(undefined)
+
+	useLayoutEffect(() => {
+		if (!minHeight && tableRef.current && data.length > 0) {
+			console.log("run")
+			const currentHeight = tableRef.current.offsetHeight
+
+			setMinHeight(currentHeight)
+		}
+	}, [])
+
+	console.log("minHeight", minHeight)
 	// --- RENDER
 
 	return (
-		<>
-			<div className="rounded-md border mb-3">
-				<Table className="table-auto w-full">
-					<TableHeader>
-						{table.getHeaderGroups().map((headerGroup) => (
-							<TableRow key={headerGroup.id}>
-								{headerGroup.headers.map((header) => {
-									return (
-										<TableHead className="whitespace-nowral" key={header.id}>
-											{header.isPlaceholder ? null : flexRender(header.column.columnDef.header, header.getContext())}
-										</TableHead>
-									)
-								})}
-							</TableRow>
-						))}
-					</TableHeader>
+		<div
+			style={{
+				height: minHeight ? `${minHeight}px` : "auto",
+			}}
+			ref={tableRef}
+			className="rounded-md border mb-3 "
+		>
+			<Table className="table-auto w-full">
+				<TableHeader>
+					{table.getHeaderGroups().map((headerGroup) => (
+						<TableRow key={headerGroup.id}>
+							{headerGroup.headers.map((header) => {
+								return (
+									<TableHead className="whitespace-nowral" key={header.id}>
+										{header.isPlaceholder ? null : flexRender(header.column.columnDef.header, header.getContext())}
+									</TableHead>
+								)
+							})}
+						</TableRow>
+					))}
+				</TableHeader>
 
-					<TableBody>
-						{table.getRowModel().rows?.length ? (
-							table.getRowModel().rows.map((row) => (
-								<TableRow
-									onClick={() => onRowClick?.(row.original)}
-									key={row.id}
-									data-state={row.getIsSelected() && "selected"}
-								>
-									{row.getVisibleCells().map((cell) => (
-										<TableCell className="max-w-0 overflow-hidden" key={cell.id}>
-											{flexRender(cell.column.columnDef.cell, cell.getContext())}
-										</TableCell>
-									))}
-								</TableRow>
-							))
-						) : (
-							<TableRow>
-								<TableCell colSpan={columns.length} className="h-24 text-center max-w-0 overflow-hidden">
-									No results.
-								</TableCell>
+				<TableBody>
+					{table.getRowModel().rows?.length ? (
+						table.getRowModel().rows.map((row) => (
+							<TableRow
+								onClick={() => onRowClick?.(row.original)}
+								key={row.id}
+								data-state={row.getIsSelected() && "selected"}
+							>
+								{row.getVisibleCells().map((cell) => (
+									<TableCell className="max-w-0 overflow-hidden" key={cell.id}>
+										{flexRender(cell.column.columnDef.cell, cell.getContext())}
+									</TableCell>
+								))}
 							</TableRow>
-						)}
-					</TableBody>
-				</Table>
-			</div>
-		</>
+						))
+					) : (
+						<TableRow>
+							<TableCell colSpan={columns.length} className="h-24 text-center max-w-0 overflow-hidden">
+								No results.
+							</TableCell>
+						</TableRow>
+					)}
+				</TableBody>
+			</Table>
+		</div>
 	)
 }

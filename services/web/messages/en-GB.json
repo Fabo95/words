@@ -286,6 +286,24 @@
 		},
 		"account": {
 			"title": "Account"
+		},
+		"translations": {
+			"title": "Translations",
+			"empty": {
+				"title": "No translations found.",
+				"description": "Add your first translation to get started.",
+				"cta": "Add translation"
+			},
+			"table": {
+				"emptyState": "No results.",
+				"columns": {
+					"word": "Word",
+					"translation": "Translation",
+					"collection": "Collection",
+					"cefrLevel": "Language level",
+					"universalPosTags": "Word type"
+				}
+			}
 		}
 	}
 }

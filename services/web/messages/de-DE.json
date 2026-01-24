@@ -287,6 +287,24 @@
 		},
 		"account": {
 			"title": "Account"
+		},
+		"translations": {
+			"title": "Übersetzungen",
+			"empty": {
+				"title": "Keine Übersetzungen gefunden.",
+				"description": "Füge deine erste Übersetzung hinzu, um loszulegen.",
+				"cta": "Übersetzung hinzufügen"
+			},
+			"table": {
+				"emptyState": "Keine Ergebnisse.",
+				"columns": {
+					"word": "Wort",
+					"translation": "Übersetzung",
+					"collection": "Sammlung",
+					"cefrLevel": "Sprachniveau",
+					"universalPosTags": "Wortart"
+				}
+			}
 		}
 	}
 }

@@ -1,6 +1,6 @@
 "use client"
 
-import { Book, HomeIcon, Languages, User } from "lucide-react"
+import { Book, HomeIcon, Languages, ListIcon, User } from "lucide-react"
 import * as React from "react"
 
 import { SidebarCollections } from "@app/components/appSidebar/components/sidebarCollections/sidebarCollections"
@@ -26,6 +26,11 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 				title: t("pages.home.title"),
 				url: "/home",
 				icon: HomeIcon,
+			},
+			{
+				title: t("pages.translations.title"),
+				url: "/translations",
+				icon: ListIcon,
 			},
 			{
 				title: t("pages.learning.title"),

@@ -38,12 +38,10 @@ export const DeleteTranslationFromCollectionContent = ({
 
 	const { mutateAsync: mutateTranslationDelete } = $api.useMutation("delete", "/translation/{id}", {
 		onSuccess: async () => {
-			console.log(
-				"getLatestTranslationsQueryOptions().queryKey",
-				...getLatestTranslationsQueryOptions().queryKey.join(),
-			)
-
 			await Promise.all([
+				queryClient.invalidateQueries({
+					queryKey: ["get", "/translation"],
+				}),
 				queryClient.invalidateQueries({
 					queryKey: ["get", "/collection/{id}/translations"],
 				}),

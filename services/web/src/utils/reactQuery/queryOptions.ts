@@ -33,6 +33,23 @@ export const getUserQueryOptions = (authCookieValue?: string) =>
 		...(authCookieValue ? { headers: { Cookie: `auth-cookie=${authCookieValue}` } } : {}),
 	})
 
+export const getTranslationsQueryOptions = (args: {
+	page: number
+	pageSize: number
+	search?: string
+	authCookieValue?: string
+}) =>
+	$api.queryOptions("get", "/translation", {
+		params: {
+			query: {
+				page: args.page,
+				page_size: args.pageSize,
+				search: args.search,
+			},
+		},
+		...(args.authCookieValue ? { headers: { Cookie: `auth-cookie=${args.authCookieValue}` } } : {}),
+	})
+
 export const getCollectionTranslationsQueryOptions = (args: {
 	id: number
 	page: number

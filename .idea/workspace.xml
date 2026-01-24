@@ -5,12 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="add translation enrichment status">
+      <change afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/translations/_content/utils/translationsTableTypes.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/translations/error.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/translations/loading.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/translations/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/web/messages/de-DE.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/messages/de-DE.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/web/messages/en-GB.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/messages/en-GB.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/_content/addTranslationTrigger.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/_content/addTranslationTrigger.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/components/forms/translationForm/translationEnrich.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/translationForm/translationEnrich.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collection/collectionTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collection/collectionTranslations.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collection/translationList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collection/collectionsTranslationsMobile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/components/appSidebar/appSidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/appSidebar/appSidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/components/dialogsOrDrawers/deleteTranslationFromCollectionContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/dialogsOrDrawers/deleteTranslationFromCollectionContent.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/web/src/components/forms/translationForm/translationForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/translationForm/translationForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/components/ui/dataTable/dataTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/dataTable/dataTable.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/i18n/routing.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/i18n/routing.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/utils/reactQuery/queryOptions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/utils/reactQuery/queryOptions.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,49 +74,49 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/fabianhinz/repositories/words/services/web/src/app/[lang]/(loggedIn)/home/_content&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
-    &quot;npm.eslint-plugin-words-app-styleguide &gt; build.executor&quot;: &quot;Run&quot;,
-    &quot;npm.eslint-plugin-words-app-styleguide &gt; build:clean.executor&quot;: &quot;Run&quot;,
-    &quot;npm.inngest &gt; dev.executor&quot;: &quot;Run&quot;,
-    &quot;npm.inngest &gt; generate-prisma-schema.executor&quot;: &quot;Run&quot;,
-    &quot;npm.inngest &gt; prisma:generate.executor&quot;: &quot;Run&quot;,
-    &quot;npm.inngest &gt; prisma:pull.executor&quot;: &quot;Run&quot;,
-    &quot;npm.packages:force-node-modules-sync.executor&quot;: &quot;Run&quot;,
-    &quot;npm.service &gt; dev.executor&quot;: &quot;Run&quot;,
-    &quot;npm.service &gt; generate_open_api_types.executor&quot;: &quot;Run&quot;,
-    &quot;npm.user-api &gt; db-generate.executor&quot;: &quot;Run&quot;,
-    &quot;npm.web &gt; dev.executor&quot;: &quot;Run&quot;,
-    &quot;npm.web &gt; open_api:generate.executor&quot;: &quot;Run&quot;,
-    &quot;npm.words &gt; dev.executor&quot;: &quot;Run&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/fabianhinz/.npm-global/lib/node_modules/prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;Settings.Biome&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/fabianhinz/repositories/words/services/web/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "git-widget-placeholder": "main",
+    "javascript.preferred.runtime.type.id": "node",
+    "last_opened_file_path": "/Users/fabianhinz/repositories/words/services/web/src/app/[lang]/(loggedIn)/translations",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.dev.executor": "Run",
+    "npm.eslint-plugin-words-app-styleguide > build.executor": "Run",
+    "npm.eslint-plugin-words-app-styleguide > build:clean.executor": "Run",
+    "npm.inngest > dev.executor": "Run",
+    "npm.inngest > generate-prisma-schema.executor": "Run",
+    "npm.inngest > prisma:generate.executor": "Run",
+    "npm.inngest > prisma:pull.executor": "Run",
+    "npm.packages:force-node-modules-sync.executor": "Run",
+    "npm.service > dev.executor": "Run",
+    "npm.service > generate_open_api_types.executor": "Run",
+    "npm.user-api > db-generate.executor": "Run",
+    "npm.web > dev.executor": "Run",
+    "npm.web > open_api:generate.executor": "Run",
+    "npm.words > dev.executor": "Run",
+    "prettierjs.PrettierConfiguration.Package": "/Users/fabianhinz/.npm-global/lib/node_modules/prettier",
+    "settings.editor.selected.configurable": "Settings.Biome",
+    "ts.external.directory.path": "/Users/fabianhinz/repositories/words/services/web/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecapSpentCounter">
     <option name="endsOfQuotaMs" value="1767430816454" />
     <option name="spentUsd" value="0.17932963" />
@@ -115,11 +126,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/translations" />
       <recent name="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/home/_content" />
       <recent name="$PROJECT_DIR$/services/web/src/components/ui" />
       <recent name="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedOut)" />
       <recent name="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/account" />
-      <recent name="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/services/web/src/components" />
@@ -265,15 +276,7 @@
       <workItem from="1768150497803" duration="1574000" />
       <workItem from="1768152455661" duration="5114000" />
       <workItem from="1768686083435" duration="24834000" />
-      <workItem from="1769284940233" duration="3594000" />
-    </task>
-    <task id="LOCAL-00048" summary="added envs, added openApi generation">
-      <option name="closed" value="true" />
-      <created>1740236421193</created>
-      <option name="number" value="00048" />
-      <option name="presentableId" value="LOCAL-00048" />
-      <option name="project" value="LOCAL" />
-      <updated>1740236421193</updated>
+      <workItem from="1769284940233" duration="8019000" />
     </task>
     <task id="LOCAL-00049" summary="added openapi-react-query to ensure typesafe fetching.">
       <option name="closed" value="true" />
@@ -659,7 +662,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768768183637</updated>
     </task>
-    <option name="localTasksCounter" value="97" />
+    <task id="LOCAL-00097" summary="add translation enrichment status">
+      <option name="closed" value="true" />
+      <created>1769288795510</created>
+      <option name="number" value="00097" />
+      <option name="presentableId" value="LOCAL-00097" />
+      <option name="project" value="LOCAL" />
+      <updated>1769288795510</updated>
+    </task>
+    <option name="localTasksCounter" value="98" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

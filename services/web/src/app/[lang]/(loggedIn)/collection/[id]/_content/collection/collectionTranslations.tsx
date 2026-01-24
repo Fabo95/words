@@ -11,7 +11,7 @@ import { useCollectionTableQuery } from "@app/app/[lang]/(loggedIn)/collection/[
 import { CollectionStringFilter } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collection/components/collection-value-filter"
 import { Button } from "@app/components/ui/button"
 import { useIsMobile } from "@app/hooks/use-mobile"
-import { TranslationList } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collection/translationList"
+import { CollectionsTranslationsMobile } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collection/collectionsTranslationsMobile"
 import { CollectionEmptyState } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collection/collectionEmptyState"
 import { useQuery, useSuspenseQuery } from "@tanstack/react-query"
 import {
@@ -19,7 +19,7 @@ import {
 	getCollectionTranslationsQueryOptions,
 } from "@app/utils/reactQuery/queryOptions"
 
-export const CollectionTable = () => {
+export const CollectionTranslations = () => {
 	// --- STATE ---
 
 	const { query, setters } = useCollectionTableQuery()
@@ -124,7 +124,9 @@ export const CollectionTable = () => {
 					<DataTable columns={getCollectionTableColumns(t)} data={collectionTranslations} />
 				)}
 
-				{isMobile && Boolean(collectionTranslations.length) && <TranslationList items={collectionTranslations} />}
+				{isMobile && Boolean(collectionTranslations.length) && (
+					<CollectionsTranslationsMobile items={collectionTranslations} />
+				)}
 
 				<div className="flex items-center justify-between space-x-2 py-4">
 					<div>

@@ -8,7 +8,7 @@ import {
 
 // 1 Your one source of truth: split by logged out and logged in paths (without locale prefix)
 export const LOGGED_OUT_PATHNAME = ["/authentication"] as const
-export const LOGGED_IN_PATHNAME = ["/home", "/account", "/collection/:id"] as const
+export const LOGGED_IN_PATHNAME = ["/home", "/account", "/collection/:id", "/translations"] as const
 
 // 2 Combined source of truth of all paths
 export const PATHNAME = [...LOGGED_OUT_PATHNAME, ...LOGGED_IN_PATHNAME] as const
@@ -31,6 +31,10 @@ export const LOCALIZED_PATHNAME_CONFIG = {
 	"/collection/:id": {
 		[Locale.DE_DE]: "/sammlung/:id",
 		[Locale.EN_GB]: "/collection/:id",
+	},
+	"/translations": {
+		[Locale.DE_DE]: "/uebersetzungen",
+		[Locale.EN_GB]: "/translations",
 	},
 } satisfies Record<Pathname, Record<Locale, string>>
 
@@ -74,6 +78,9 @@ const ROUTE_CONFIG = {
 
 			return queryString ? `${basePath}?${queryString}` : basePath
 		},
+	},
+	"/translations": {
+		getUrl: () => "/translations",
 	},
 	// biome-ignore lint/suspicious/noExplicitAny: Only keys are relevant for the typing
 } satisfies Record<Pathname, any>

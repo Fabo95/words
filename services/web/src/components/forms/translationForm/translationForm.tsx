@@ -20,7 +20,11 @@ import { Badge } from "@app/components/ui/badge"
 import { Locale } from "@app/utils/locale/localeTypes"
 import { CefrLevel, Collection, Translation, UniversalPosTag } from "@app/utils/types/api"
 import { useIsMobile } from "@app/hooks/use-mobile"
-import { getLatestTranslationsQueryOptions, getTranslationByIdQueryOptions } from "@app/utils/reactQuery/queryOptions"
+import {
+	getLatestTranslationsQueryOptions,
+	getTranslationByIdQueryOptions,
+	getTranslationsQueryOptions,
+} from "@app/utils/reactQuery/queryOptions"
 import { Cross2Icon } from "@radix-ui/react-icons"
 import { TranslationEnrich } from "@app/components/forms/translationForm/translationEnrich"
 
@@ -57,6 +61,7 @@ export const TranslationForm = (props: TranslationFormProps) => {
 	const { mutateAsync: createTranslation, isPending } = $api.useMutation("post", "/translation", {
 		onSuccess: async (data) => {
 			await Promise.all([
+				queryClient.invalidateQueries({ queryKey: ["get", "/translation"] }),
 				queryClient.invalidateQueries({ queryKey: ["get", "/collection/{id}/translations"] }),
 				queryClient.invalidateQueries({ queryKey: getLatestTranslationsQueryOptions().queryKey }),
 				queryClient.invalidateQueries({ queryKey: getTranslationByIdQueryOptions(data.data?.id ?? -1).queryKey }),
@@ -82,6 +87,7 @@ export const TranslationForm = (props: TranslationFormProps) => {
 	const { mutateAsync: updateTranslation } = $api.useMutation("patch", "/translation/{id}", {
 		onSuccess: async (data) => {
 			await Promise.all([
+				queryClient.invalidateQueries({ queryKey: ["get", "/translation"] }),
 				queryClient.invalidateQueries({ queryKey: ["get", "/collection/{id}/translations"] }),
 				queryClient.invalidateQueries({ queryKey: getLatestTranslationsQueryOptions().queryKey }),
 				queryClient.invalidateQueries({ queryKey: getTranslationByIdQueryOptions(data.data?.id ?? -1).queryKey }),
