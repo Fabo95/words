@@ -110,10 +110,17 @@
       },
       "translationForm": {
         "enriching": {
-          "title": "We’re improving your translation",
-          "description": "This usually only takes a few seconds.",
+          "title": "We're improving your translation",
+          "description": "Feel free to close this and keep going – we'll finish up in the background.",
           "inProgress": "in progress…",
           "done": "done",
+          "completeButton": "Done",
+          "toast": {
+            "success": {
+              "title": "Optimisation successful",
+              "description": "Your translation has been enhanced with additional details."
+            }
+          },
           "steps": {
             "cefr": {
               "title": "Determine language level",

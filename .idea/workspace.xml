@@ -4,16 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="adjust query invalidation">
-      <change afterPath="$PROJECT_DIR$/services/web/src/components/forms/translationForm/translationEnrich.tsx" afterDir="false" />
+    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="add translation enrichment status">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/web/messages/de-DE.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/messages/de-DE.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/web/messages/en-GB.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/messages/en-GB.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/_content/addTranslationTrigger.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/_content/addTranslationTrigger.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/components/forms/translationForm/translationEnrich.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/translationForm/translationEnrich.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/web/src/components/forms/translationForm/translationForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/translationForm/translationForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/generated/openApiTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/generated/openApiTypes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/utils/reactQuery/queryOptions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/utils/reactQuery/queryOptions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/utils/types/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/utils/types/api.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -267,15 +264,8 @@
       <workItem from="1767800464681" duration="9000" />
       <workItem from="1768150497803" duration="1574000" />
       <workItem from="1768152455661" duration="5114000" />
-      <workItem from="1768686083435" duration="24155000" />
-    </task>
-    <task id="LOCAL-00047" summary="&quot;e&quot;">
-      <option name="closed" value="true" />
-      <created>1740234791172</created>
-      <option name="number" value="00047" />
-      <option name="presentableId" value="LOCAL-00047" />
-      <option name="project" value="LOCAL" />
-      <updated>1740234791172</updated>
+      <workItem from="1768686083435" duration="24834000" />
+      <workItem from="1769284940233" duration="3594000" />
     </task>
     <task id="LOCAL-00048" summary="added envs, added openApi generation">
       <option name="closed" value="true" />
@@ -661,7 +651,15 @@
       <option name="project" value="LOCAL" />
       <updated>1768763968498</updated>
     </task>
-    <option name="localTasksCounter" value="96" />
+    <task id="LOCAL-00096" summary="add translation enrichment status">
+      <option name="closed" value="true" />
+      <created>1768768183637</created>
+      <option name="number" value="00096" />
+      <option name="presentableId" value="LOCAL-00096" />
+      <option name="project" value="LOCAL" />
+      <updated>1768768183637</updated>
+    </task>
+    <option name="localTasksCounter" value="97" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -682,7 +680,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="separated dialog and form" />
     <MESSAGE value="add TranslationForm.tsx" />
     <MESSAGE value="move to services" />
     <MESSAGE value="add inngest" />
@@ -707,7 +704,8 @@
     <MESSAGE value="add drawer.tsx components and refactor" />
     <MESSAGE value="add last added translation section" />
     <MESSAGE value="adjust query invalidation" />
-    <option name="LAST_COMMIT_MESSAGE" value="adjust query invalidation" />
+    <MESSAGE value="add translation enrichment status" />
+    <option name="LAST_COMMIT_MESSAGE" value="add translation enrichment status" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

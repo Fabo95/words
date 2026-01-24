@@ -111,9 +111,16 @@
       "translationForm": {
         "enriching": {
           "title": "Wir verbessern deine Übersetzung",
-          "description": "Das dauert meist nur ein paar Sekunden.",
+          "description": "Mach ruhig weiter – wir erledigen den Rest im Hintergrund.",
           "inProgress": "läuft…",
           "done": "fertig",
+          "completeButton": "Fertig",
+          "toast": {
+            "success": {
+              "title": "Optimierung erfolgreich",
+              "description": "Deine Übersetzung wurde mit zusätzlichen Details erweitert."
+            }
+          },
           "steps": {
             "cefr": {
               "title": "Sprachniveau bestimmen",

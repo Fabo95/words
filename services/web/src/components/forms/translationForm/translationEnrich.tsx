@@ -3,6 +3,7 @@ import * as React from "react"
 import { cn } from "@app/utils/shadcn/shadcnHelpers"
 import { CheckCircle2, Circle, Loader2, Tags, GraduationCap, MessageSquareText } from "lucide-react"
 import { CefrLevel, ExampleSentence, Translation, UniversalPosTag } from "@app/utils/types/api"
+import { Button } from "@app/components/ui/button"
 
 export function isTranslationEnriched(translation: Translation) {
 	const hasCefrLevel = isCefrLevelDone(translation?.cefrLevel)
@@ -26,9 +27,9 @@ function isExamplesDone(exampleSentences?: ExampleSentence[]) {
 	return (exampleSentences?.length ?? 0) > 0
 }
 
-type TranslationEnrichProps = { translation: Translation }
+type TranslationEnrichProps = { translation: Translation; onComplete: () => void }
 
-export function TranslationEnrich({ translation }: TranslationEnrichProps) {
+export function TranslationEnrich({ translation, onComplete }: TranslationEnrichProps) {
 	const t = useTranslations()
 
 	const cefrDone = isCefrLevelDone(translation.cefrLevel)
@@ -61,6 +62,8 @@ export function TranslationEnrich({ translation }: TranslationEnrichProps) {
 			done: exDone,
 		},
 	]
+
+	const allDone = cefrDone && posDone && exDone
 
 	return (
 		<div className="space-y-8">
@@ -135,6 +138,10 @@ export function TranslationEnrich({ translation }: TranslationEnrichProps) {
 						)
 					})}
 				</div>
+
+				<Button className="mt-6 w-full" onClick={onComplete}>
+					{t("forms.translationForm.enriching.completeButton")}
+				</Button>
 			</div>
 		</div>
 	)
