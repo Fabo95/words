@@ -15,6 +15,7 @@ export default async function Page({
 
 	const queryClient = getQueryClient()
 
+	// This is to check if translations exist.
 	void queryClient.prefetchQuery(
 		getTranslationsQueryOptions({
 			page: 1,

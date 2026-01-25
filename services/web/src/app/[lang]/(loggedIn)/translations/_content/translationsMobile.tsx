@@ -5,16 +5,50 @@ import { useTranslations } from "next-intl"
 
 import { Badge } from "@app/components/ui/badge"
 import { Card, CardContent, CardHeader } from "@app/components/ui/card"
+import { Skeleton } from "@app/components/ui/skeleton"
 
 import { TranslationActions } from "@app/components/translationActions/translationActions"
 import { TranslationsTableItem } from "@app/app/[lang]/(loggedIn)/translations/_content/utils/translationsTableTypes"
 
 type TranslationsMobileProps = {
 	items: TranslationsTableItem[]
+	isLoading?: boolean
+	skeletonRowCount?: number
 }
 
-export function TranslationsMobile({ items }: TranslationsMobileProps) {
+export function TranslationsMobile({ items, isLoading, skeletonRowCount = 5 }: TranslationsMobileProps) {
 	const t = useTranslations()
+
+	if (isLoading) {
+		return (
+			<div className="space-y-3">
+				{Array.from({ length: skeletonRowCount }).map((_, index) => (
+					// biome-ignore lint/suspicious/noArrayIndexKey: skeleton cards are static
+					<Card key={`skeleton-${index}`} className="rounded-xl gap-3 h-37.5">
+						<CardHeader className="flex flex-row items-center justify-between gap-3 space-y-0">
+							<div className="flex flex-wrap items-center gap-2">
+								<Skeleton className="h-5 w-16" />
+								<Skeleton className="h-5 w-12" />
+							</div>
+							<Skeleton className="h-8 w-8 rounded" />
+						</CardHeader>
+						<CardContent className="pt-0">
+							<div className="flex gap-10">
+								<div className="flex-1">
+									<Skeleton className="h-3 w-10 mb-2" />
+									<Skeleton className="h-5 w-24" />
+								</div>
+								<div className="flex-1">
+									<Skeleton className="h-3 w-16 mb-2" />
+									<Skeleton className="h-5 w-28" />
+								</div>
+							</div>
+						</CardContent>
+					</Card>
+				))}
+			</div>
+		)
+	}
 
 	if (!items?.length) {
 		return (

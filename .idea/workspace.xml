@@ -4,16 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="add translation enrichment status">
+    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="add translations page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/next.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/next.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/translations/_content/translations.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/translations/_content/translations.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/translations/_content/translationsMobile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/translations/_content/translationsMobile.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/translations/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/translations/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/components/appSidebar/components/sidebarLanguageSwitch.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/appSidebar/components/sidebarLanguageSwitch.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/components/dialogsOrDrawers/deleteTranslationContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/dialogsOrDrawers/deleteTranslationContent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/components/dialogsOrDrawers/deleteTranslationFromCollectionContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/dialogsOrDrawers/deleteTranslationFromCollectionContent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/components/forms/accountPasswordForm/utils/accountPasswordFormSchema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/accountPasswordForm/utils/accountPasswordFormSchema.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/components/forms/collectionCreateForm/collectionCreateForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/collectionCreateForm/collectionCreateForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/components/ui/dataTable/dataTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/dataTable/dataTable.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -269,15 +264,7 @@
       <workItem from="1768150497803" duration="1574000" />
       <workItem from="1768152455661" duration="5114000" />
       <workItem from="1768686083435" duration="24834000" />
-      <workItem from="1769284940233" duration="14464000" />
-    </task>
-    <task id="LOCAL-00050" summary="added openapi-react-query to ensure typesafe fetching.">
-      <option name="closed" value="true" />
-      <created>1740247645783</created>
-      <option name="number" value="00050" />
-      <option name="presentableId" value="LOCAL-00050" />
-      <option name="project" value="LOCAL" />
-      <updated>1740247645784</updated>
+      <workItem from="1769284940233" duration="14752000" />
     </task>
     <task id="LOCAL-00051" summary="update form field">
       <option name="closed" value="true" />
@@ -663,7 +650,15 @@
       <option name="project" value="LOCAL" />
       <updated>1769295461149</updated>
     </task>
-    <option name="localTasksCounter" value="99" />
+    <task id="LOCAL-00099" summary="add translations page">
+      <option name="closed" value="true" />
+      <created>1769374370880</created>
+      <option name="number" value="00099" />
+      <option name="presentableId" value="LOCAL-00099" />
+      <option name="project" value="LOCAL" />
+      <updated>1769374370880</updated>
+    </task>
+    <option name="localTasksCounter" value="100" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -684,7 +679,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add TranslationForm.tsx" />
     <MESSAGE value="move to services" />
     <MESSAGE value="add inngest" />
     <MESSAGE value="add schema.prisma" />
@@ -709,7 +703,8 @@
     <MESSAGE value="add last added translation section" />
     <MESSAGE value="adjust query invalidation" />
     <MESSAGE value="add translation enrichment status" />
-    <option name="LAST_COMMIT_MESSAGE" value="add translation enrichment status" />
+    <MESSAGE value="add translations page" />
+    <option name="LAST_COMMIT_MESSAGE" value="add translations page" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

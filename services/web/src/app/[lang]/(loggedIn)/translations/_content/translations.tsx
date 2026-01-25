@@ -146,7 +146,7 @@ export const Translations = () => {
 					/>
 				)}
 
-				{isMobile && !isEmpty && <TranslationsMobile items={translations} />}
+				{isMobile && !isEmpty && <TranslationsMobile items={translations} isLoading={isFetching} skeletonRowCount={pageSize} />}
 
 				<div className="flex items-center justify-between space-x-2 py-4">
 					<div>
