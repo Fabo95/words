@@ -73,8 +73,6 @@ export const AddTranslationTrigger = ({
 		select: (data) => (data.data ? mapTranslationResponseToTranslation(data.data) : undefined),
 	})
 
-	console.log("addedTranslation", addedTranslation)
-
 	const isEnrichmentComplete = addedTranslation && isTranslationEnriched(addedTranslation)
 
 	useEffect(() => {

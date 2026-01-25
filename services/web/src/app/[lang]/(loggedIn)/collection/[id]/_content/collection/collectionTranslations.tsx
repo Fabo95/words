@@ -17,7 +17,10 @@ import { useQuery, useSuspenseQuery } from "@tanstack/react-query"
 import {
 	getCollectionByIdQueryOptions,
 	getCollectionTranslationsQueryOptions,
+	getTranslationsQueryOptions,
 } from "@app/utils/reactQuery/queryOptions"
+import { useTranslationsPageSize } from "@app/app/[lang]/(loggedIn)/translations/_content/utils/useTranslationsPageSize"
+import { TranslationsMobile } from "@app/app/[lang]/(loggedIn)/translations/_content/translationsMobile"
 
 export const CollectionTranslations = () => {
 	// --- STATE ---
@@ -30,9 +33,20 @@ export const CollectionTranslations = () => {
 
 	const params = useParams<{ id: string }>()
 
-	const pageSize = isMobile ? 10 : 20
+	const pageSize = useTranslationsPageSize()
 
-	const { data: translationsData } = useQuery(
+	const { data: collectionData } = useSuspenseQuery(getCollectionByIdQueryOptions(Number(params.id)))
+
+	const { data: isEmpty } = useSuspenseQuery({
+		...getCollectionTranslationsQueryOptions({
+			id: Number(params.id),
+			page: 1,
+			pageSize: 1,
+		}),
+		select: (translations) => translations.data?.length === 0,
+	})
+
+	const { data: translationsData, isFetching } = useQuery(
 		getCollectionTranslationsQueryOptions({
 			id: Number(params.id),
 			page: query.page ?? 1,
@@ -40,8 +54,6 @@ export const CollectionTranslations = () => {
 			pageSize,
 		}),
 	)
-
-	const { data: collectionData } = useSuspenseQuery(getCollectionByIdQueryOptions(Number(params.id)))
 
 	const makeOnPaginationChange = useCallback(
 		(direction: "next" | "prev") => () => {
@@ -118,14 +130,19 @@ export const CollectionTranslations = () => {
 					setValue={setters.setSearch}
 				/>
 
-				{translationsData && !collectionTranslations.length && <CollectionEmptyState />}
+				{isEmpty && <CollectionEmptyState />}
 
-				{!isMobile && Boolean(collectionTranslations.length) && (
-					<DataTable columns={getCollectionTableColumns(t)} data={collectionTranslations} />
+				{!isMobile && !isEmpty && (
+					<DataTable
+						columns={getCollectionTableColumns(t)}
+						data={collectionTranslations}
+						isLoading={isFetching}
+						skeletonRowCount={pageSize}
+					/>
 				)}
 
-				{isMobile && Boolean(collectionTranslations.length) && (
-					<CollectionsTranslationsMobile items={collectionTranslations} />
+				{isMobile && !isEmpty && (
+					<TranslationsMobile items={collectionTranslations} isLoading={isFetching} skeletonRowCount={pageSize} />
 				)}
 
 				<div className="flex items-center justify-between space-x-2 py-4">

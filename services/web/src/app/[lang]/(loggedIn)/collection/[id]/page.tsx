@@ -6,6 +6,7 @@ import { cookies } from "next/headers"
 import {
 	getCollectionByIdQueryOptions,
 	getCollectionTranslationsQueryOptions,
+	getTranslationsQueryOptions,
 } from "@app/utils/reactQuery/queryOptions"
 
 export default async function Page({
@@ -24,12 +25,12 @@ export default async function Page({
 
 	void queryClient.prefetchQuery(getCollectionByIdQueryOptions(Number(id), authCookieValue))
 
+	// This is to check if translations exist.
 	void queryClient.prefetchQuery(
 		getCollectionTranslationsQueryOptions({
 			id: Number(id),
-			page: Number(page) ?? 1,
-			search: search ?? undefined,
-			pageSize: 20,
+			page: 1,
+			pageSize: 1,
 			authCookieValue,
 		}),
 	)

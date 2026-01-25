@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="add translations page">
+    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="add loading for transaltionsMobile">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/translations/_content/translations.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/translations/_content/translations.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/translations/_content/translationsMobile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/translations/_content/translationsMobile.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/translations/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/translations/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collection/collectionTranslations.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collection/collectionTranslations.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/page.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -264,15 +263,7 @@
       <workItem from="1768150497803" duration="1574000" />
       <workItem from="1768152455661" duration="5114000" />
       <workItem from="1768686083435" duration="24834000" />
-      <workItem from="1769284940233" duration="14752000" />
-    </task>
-    <task id="LOCAL-00051" summary="update form field">
-      <option name="closed" value="true" />
-      <created>1751577937170</created>
-      <option name="number" value="00051" />
-      <option name="presentableId" value="LOCAL-00051" />
-      <option name="project" value="LOCAL" />
-      <updated>1751577937170</updated>
+      <workItem from="1769284940233" duration="15508000" />
     </task>
     <task id="LOCAL-00052" summary="update form field">
       <option name="closed" value="true" />
@@ -658,7 +649,15 @@
       <option name="project" value="LOCAL" />
       <updated>1769374370880</updated>
     </task>
-    <option name="localTasksCounter" value="100" />
+    <task id="LOCAL-00100" summary="add loading for transaltionsMobile">
+      <option name="closed" value="true" />
+      <created>1769374616905</created>
+      <option name="number" value="00100" />
+      <option name="presentableId" value="LOCAL-00100" />
+      <option name="project" value="LOCAL" />
+      <updated>1769374616905</updated>
+    </task>
+    <option name="localTasksCounter" value="101" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -679,7 +678,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="move to services" />
     <MESSAGE value="add inngest" />
     <MESSAGE value="add schema.prisma" />
     <MESSAGE value="update prisma" />
@@ -704,7 +702,8 @@
     <MESSAGE value="adjust query invalidation" />
     <MESSAGE value="add translation enrichment status" />
     <MESSAGE value="add translations page" />
-    <option name="LAST_COMMIT_MESSAGE" value="add translations page" />
+    <MESSAGE value="add loading for transaltionsMobile" />
+    <option name="LAST_COMMIT_MESSAGE" value="add loading for transaltionsMobile" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
