@@ -11,28 +11,32 @@ import {
 	getSortedRowModel,
 	useReactTable,
 } from "@tanstack/react-table"
-import { useLayoutEffect, useRef, useState } from "react"
+import { useState } from "react"
 
-import { DataTablePagination } from "@app/components/ui/dataTable/dataTablePagination"
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@app/components/ui/table"
+import { Skeleton } from "@app/components/ui/skeleton"
 import * as React from "react"
 
 interface DataTableProps<TData, TValue> {
 	onRowClick?: (row: TData) => void
 	columns: ColumnDef<TData, TValue>[]
 	data: TData[]
+	isLoading?: boolean
+	skeletonRowCount?: number
 }
 
-export function DataTable<TData, TValue>({ onRowClick, columns, data }: DataTableProps<TData, TValue>) {
+export function DataTable<TData, TValue>({
+	onRowClick,
+	columns,
+	data,
+	isLoading,
+	skeletonRowCount = 5,
+}: DataTableProps<TData, TValue>) {
 	// --- STATE ---
 
 	const [sorting, setSorting] = useState<SortingState>([])
 	const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([])
 	const [rowSelection, setRowSelection] = useState({})
-
-	const tableRef = useRef<HTMLDivElement>(null)
-
-	console.log("tableRef", tableRef.current?.clientHeight)
 
 	const table = useReactTable({
 		data,
@@ -50,29 +54,24 @@ export function DataTable<TData, TValue>({ onRowClick, columns, data }: DataTabl
 			rowSelection,
 		},
 	})
-
-	const [minHeight, setMinHeight] = useState<number | undefined>(undefined)
-
-	useLayoutEffect(() => {
-		if (!minHeight && tableRef.current && data.length > 0) {
-			console.log("run")
-			const currentHeight = tableRef.current.offsetHeight
-
-			setMinHeight(currentHeight)
-		}
-	}, [])
-
-	console.log("minHeight", minHeight)
 	// --- RENDER
 
+	const renderSkeletonRows = () => {
+		return Array.from({ length: skeletonRowCount }).map((_, rowIndex) => (
+			// biome-ignore lint/suspicious/noArrayIndexKey: skeleton rows are static
+			<TableRow key={`skeleton-${rowIndex}`}>
+				{columns.map((_, colIndex) => (
+					// biome-ignore lint/suspicious/noArrayIndexKey: skeleton cells are static
+					<TableCell key={`skeleton-cell-${colIndex}`} className="max-w-0 h-12.25  overflow-hidden">
+						<Skeleton className="h-5 w-full" />
+					</TableCell>
+				))}
+			</TableRow>
+		))
+	}
+
 	return (
-		<div
-			style={{
-				height: minHeight ? `${minHeight}px` : "auto",
-			}}
-			ref={tableRef}
-			className="rounded-md border mb-3 "
-		>
+		<div className="rounded-md border mb-3">
 			<Table className="table-auto w-full">
 				<TableHeader>
 					{table.getHeaderGroups().map((headerGroup) => (
@@ -89,7 +88,9 @@ export function DataTable<TData, TValue>({ onRowClick, columns, data }: DataTabl
 				</TableHeader>
 
 				<TableBody>
-					{table.getRowModel().rows?.length ? (
+					{isLoading ? (
+						renderSkeletonRows()
+					) : table.getRowModel().rows?.length ? (
 						table.getRowModel().rows.map((row) => (
 							<TableRow
 								onClick={() => onRowClick?.(row.original)}

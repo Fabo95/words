@@ -5,23 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="add translation enrichment status">
-      <change afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/translations/_content/utils/translationsTableTypes.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/translations/error.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/translations/loading.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/translations/page.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/messages/de-DE.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/messages/de-DE.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/messages/en-GB.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/messages/en-GB.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/_content/addTranslationTrigger.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/_content/addTranslationTrigger.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collection/collectionTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collection/collectionTranslations.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collection/translationList.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collection/collectionsTranslationsMobile.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/components/appSidebar/appSidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/appSidebar/appSidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/next.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/next.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/translations/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/translations/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/components/appSidebar/components/sidebarLanguageSwitch.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/appSidebar/components/sidebarLanguageSwitch.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/components/dialogsOrDrawers/deleteTranslationContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/dialogsOrDrawers/deleteTranslationContent.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/web/src/components/dialogsOrDrawers/deleteTranslationFromCollectionContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/dialogsOrDrawers/deleteTranslationFromCollectionContent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/components/forms/translationForm/translationForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/translationForm/translationForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/components/forms/accountPasswordForm/utils/accountPasswordFormSchema.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/accountPasswordForm/utils/accountPasswordFormSchema.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/components/forms/collectionCreateForm/collectionCreateForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/collectionCreateForm/collectionCreateForm.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/web/src/components/ui/dataTable/dataTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/dataTable/dataTable.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/i18n/routing.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/i18n/routing.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/utils/reactQuery/queryOptions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/utils/reactQuery/queryOptions.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -103,6 +95,7 @@
     "npm.service > dev.executor": "Run",
     "npm.service > generate_open_api_types.executor": "Run",
     "npm.user-api > db-generate.executor": "Run",
+    "npm.web > build.executor": "Run",
     "npm.web > dev.executor": "Run",
     "npm.web > open_api:generate.executor": "Run",
     "npm.words > dev.executor": "Run",
@@ -171,11 +164,11 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="packages:force-node-modules-sync" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/package.json" />
+    <configuration name="web &gt; build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/services/web/package.json" />
       <command value="run" />
       <scripts>
-        <script value="packages:force-node-modules-sync" />
+        <script value="build" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -194,10 +187,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="npm.dev" />
+        <item itemvalue="npm.web &gt; build" />
         <item itemvalue="npm.web &gt; open_api:generate" />
         <item itemvalue="npm.inngest &gt; prisma:generate" />
         <item itemvalue="npm.inngest &gt; prisma:pull" />
-        <item itemvalue="npm.packages:force-node-modules-sync" />
       </list>
     </recent_temporary>
   </component>
@@ -276,15 +269,7 @@
       <workItem from="1768150497803" duration="1574000" />
       <workItem from="1768152455661" duration="5114000" />
       <workItem from="1768686083435" duration="24834000" />
-      <workItem from="1769284940233" duration="8019000" />
-    </task>
-    <task id="LOCAL-00049" summary="added openapi-react-query to ensure typesafe fetching.">
-      <option name="closed" value="true" />
-      <created>1740247640693</created>
-      <option name="number" value="00049" />
-      <option name="presentableId" value="LOCAL-00049" />
-      <option name="project" value="LOCAL" />
-      <updated>1740247640693</updated>
+      <workItem from="1769284940233" duration="14464000" />
     </task>
     <task id="LOCAL-00050" summary="added openapi-react-query to ensure typesafe fetching.">
       <option name="closed" value="true" />
@@ -670,7 +655,15 @@
       <option name="project" value="LOCAL" />
       <updated>1769288795510</updated>
     </task>
-    <option name="localTasksCounter" value="98" />
+    <task id="LOCAL-00098" summary="add translation enrichment status">
+      <option name="closed" value="true" />
+      <created>1769295461149</created>
+      <option name="number" value="00098" />
+      <option name="presentableId" value="LOCAL-00098" />
+      <option name="project" value="LOCAL" />
+      <updated>1769295461149</updated>
+    </task>
+    <option name="localTasksCounter" value="99" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

@@ -13,15 +13,12 @@ export default async function Page({
 	const cookieStore = await cookies()
 	const authCookieValue = cookieStore.get("auth-cookie")?.value
 
-	const { page, search } = await searchParams
-
 	const queryClient = getQueryClient()
 
 	void queryClient.prefetchQuery(
 		getTranslationsQueryOptions({
-			page: Number(page) ?? 1,
-			search: search ?? undefined,
-			pageSize: 20,
+			page: 1,
+			pageSize: 1,
 			authCookieValue,
 		}),
 	)

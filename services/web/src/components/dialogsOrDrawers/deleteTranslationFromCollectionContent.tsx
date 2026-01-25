@@ -1,4 +1,4 @@
-import { useCallback } from "react"
+import { SyntheticEvent, useCallback } from "react"
 
 import { Button } from "@app/components/ui/button"
 import { useToast } from "@app/components/ui/use-toast"
@@ -72,7 +72,7 @@ export const DeleteTranslationFromCollectionContent = ({
 	// --- RENDER ---
 
 	return (
-		<DialogOrDrawerContent onClick={(e) => e.stopPropagation()}>
+		<DialogOrDrawerContent onClick={(e: SyntheticEvent) => e.stopPropagation()}>
 			<DialogOrDrawerHeader>
 				<DialogOrDrawerTitle>{t("dialogs.deleteTranslationDialog.title")}</DialogOrDrawerTitle>
 

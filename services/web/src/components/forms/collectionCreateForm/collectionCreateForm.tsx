@@ -99,6 +99,7 @@ export const CollectionCreateForm = ({ onSubmit, onCancel }: ISidebarCollectionC
 
 	return (
 		<FormProvider {...form}>
+			{/* @ts-ignore */}
 			<Form onKeyDown={handleKeyDownSubmit} onSubmit={form.handleSubmit(handleSubmit)}>
 				<FormField
 					control={form.control}
