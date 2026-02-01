@@ -5,6 +5,10 @@ import { z } from "zod"
 import { useSearchParamState } from "@app/utils/urls/useSearchParamState"
 import { LearnItem, LearnItemApiResponse, learnItemSchema } from "@app/utils/types/api"
 
+// ============================================================================
+// Schemas
+// ============================================================================
+
 const reviewResultSchema = z.object({
 	translationId: z.number(),
 	correct: z.boolean(),
@@ -21,6 +25,11 @@ const completeDataSchema = z.object({
 	totalItems: z.number(),
 })
 
+// ============================================================================
+// Types
+// ============================================================================
+
+type ReviewResult = z.infer<typeof reviewResultSchema>
 type SessionData = z.infer<typeof sessionDataSchema>
 type CompleteData = z.infer<typeof completeDataSchema>
 
@@ -36,14 +45,16 @@ export type LearningSessionActions = {
 	restart: () => void
 }
 
-// URL-safe base64 encoding
+// ============================================================================
+// URL Encoding
+// ============================================================================
+
 function toUrlSafeBase64(str: string): string {
 	return btoa(str).replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/, "")
 }
 
 function fromUrlSafeBase64(str: string): string {
 	let base64 = str.replace(/-/g, "+").replace(/_/g, "/")
-	// Add padding if needed
 	while (base64.length % 4) {
 		base64 += "="
 	}
@@ -56,12 +67,15 @@ function encodeSessionData(data: SessionData | CompleteData): string {
 
 function decodeSessionData<T>(encoded: string, schema: z.ZodSchema<T>): T | null {
 	try {
-		const parsed = JSON.parse(fromUrlSafeBase64(encoded))
-		return schema.parse(parsed)
+		return schema.parse(JSON.parse(fromUrlSafeBase64(encoded)))
 	} catch {
 		return null
 	}
 }
+
+// ============================================================================
+// Transformers
+// ============================================================================
 
 function toLearnItem(item: LearnItemApiResponse): LearnItem {
 	return {
@@ -71,6 +85,40 @@ function toLearnItem(item: LearnItemApiResponse): LearnItem {
 		isNew: item.is_new,
 	}
 }
+
+function buildUrl(phase: string | undefined, data: string | undefined): string {
+	const params = new URLSearchParams()
+	if (phase) params.append("phase", phase)
+	if (data) params.append("data", data)
+	const query = params.toString()
+	return query ? `/learning?${query}` : "/learning"
+}
+
+// ============================================================================
+// State Parser
+// ============================================================================
+
+function parseState(phase: string | undefined, encodedData: string | undefined): LearningSessionState | null {
+	if (phase === "session" && encodedData) {
+		const data = decodeSessionData(encodedData, sessionDataSchema)
+		if (data?.items.length) {
+			return { phase: "session", data }
+		}
+	}
+
+	if (phase === "complete" && encodedData) {
+		const data = decodeSessionData(encodedData, completeDataSchema)
+		if (data) {
+			return { phase: "complete", data }
+		}
+	}
+
+	return null
+}
+
+// ============================================================================
+// Hook
+// ============================================================================
 
 export function useLearningSessionQuery(): {
 	state: LearningSessionState
@@ -86,35 +134,18 @@ export function useLearningSessionQuery(): {
 	}, [setPhase, setEncodedData])
 
 	const state = useMemo<LearningSessionState>(() => {
-		if (phase === "session" && encodedData) {
-			const data = decodeSessionData(encodedData, sessionDataSchema)
-			if (data?.items && data.items.length > 0) {
-				return { phase: "session", data }
-			}
-		}
+		const parsed = parseState(phase, encodedData)
+		if (parsed) return parsed
 
-		if (phase === "complete" && encodedData) {
-			const data = decodeSessionData(encodedData, completeDataSchema)
-			if (data) {
-				return { phase: "complete", data }
-			}
+		if (phase || encodedData) {
+			restart()
 		}
-
-		restart()
 		return { phase: "landing" }
 	}, [phase, encodedData, restart])
 
-	const getUpdatedUrl = useCallback((newPhase: string | undefined, newData: string | undefined) => {
-		const searchParams = new URLSearchParams()
-		if (newPhase) searchParams.append("phase", newPhase)
-		if (newData) searchParams.append("data", newData)
-		const queryString = searchParams.toString()
-		return queryString ? `/learning?${queryString}` : "/learning"
-	}, [])
-
 	const startSession = useCallback(
 		(items: LearnItemApiResponse[]) => {
-			if (items.length === 0) return
+			if (!items.length) return
 
 			const data: SessionData = {
 				items: items.map(toLearnItem),
@@ -122,11 +153,11 @@ export function useLearningSessionQuery(): {
 				results: [],
 			}
 			const encoded = encodeSessionData(data)
-			const url = getUpdatedUrl("session", encoded)
+			const url = buildUrl("session", encoded)
 			setPhase("session", url, { scroll: false })
 			setEncodedData(encoded, url, { scroll: false })
 		},
-		[setPhase, setEncodedData, getUpdatedUrl],
+		[setPhase, setEncodedData],
 	)
 
 	const submitReview = useCallback(
@@ -134,51 +165,36 @@ export function useLearningSessionQuery(): {
 			if (state.phase !== "session") return
 
 			const { items, currentIndex, results } = state.data
-			const newResults = [...results, { translationId, correct }]
+			const newResults: ReviewResult[] = [...results, { translationId, correct }]
+			const isLastItem = currentIndex >= items.length - 1
 
-			if (currentIndex >= items.length - 1) {
-				const completeData: CompleteData = {
-					results: newResults,
-					totalItems: items.length,
-				}
-				const encoded = encodeSessionData(completeData)
-				const url = getUpdatedUrl("complete", encoded)
+			if (isLastItem) {
+				const data: CompleteData = { results: newResults, totalItems: items.length }
+				const encoded = encodeSessionData(data)
+				const url = buildUrl("complete", encoded)
 				setPhase("complete", url, { scroll: false })
 				setEncodedData(encoded, url, { scroll: false })
 			} else {
-				const sessionData: SessionData = {
-					items,
-					currentIndex: currentIndex + 1,
-					results: newResults,
-				}
-				const encoded = encodeSessionData(sessionData)
-				const url = getUpdatedUrl("session", encoded)
-				setEncodedData(encoded, url, { scroll: false })
+				const data: SessionData = { items, currentIndex: currentIndex + 1, results: newResults }
+				const encoded = encodeSessionData(data)
+				setEncodedData(encoded, buildUrl("session", encoded), { scroll: false })
 			}
 		},
-		[state, setPhase, setEncodedData, getUpdatedUrl],
+		[state, setPhase, setEncodedData],
 	)
 
 	const completeSession = useCallback(() => {
 		if (state.phase !== "session") return
 
-		const completeData: CompleteData = {
-			results: state.data.results,
-			totalItems: state.data.items.length,
-		}
-		const encoded = encodeSessionData(completeData)
-		const url = getUpdatedUrl("complete", encoded)
+		const data: CompleteData = { results: state.data.results, totalItems: state.data.items.length }
+		const encoded = encodeSessionData(data)
+		const url = buildUrl("complete", encoded)
 		setPhase("complete", url, { scroll: false })
 		setEncodedData(encoded, url, { scroll: false })
-	}, [state, setPhase, setEncodedData, getUpdatedUrl])
+	}, [state, setPhase, setEncodedData])
 
 	const actions = useMemo<LearningSessionActions>(
-		() => ({
-			startSession,
-			submitReview,
-			completeSession,
-			restart,
-		}),
+		() => ({ startSession, submitReview, completeSession, restart }),
 		[startSession, submitReview, completeSession, restart],
 	)
 
