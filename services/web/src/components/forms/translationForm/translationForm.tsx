@@ -256,7 +256,7 @@ export const TranslationForm = (props: TranslationFormProps) => {
 
 												return (
 													<Badge key={tag.id} variant="secondary" className="text-xs flex items-center gap-1 pr-1">
-														<span>{tag.name}</span>
+														<span>{t(`common.posTags.${tag.code}`)}</span>
 
 														<Button
 															type="button"
@@ -283,7 +283,7 @@ export const TranslationForm = (props: TranslationFormProps) => {
 													value={String(universalPosTag.id)}
 												>
 													<Badge variant="secondary" className="text-xs">
-														{universalPosTag.name}
+														{t(`common.posTags.${universalPosTag.code}`)}
 													</Badge>
 												</SelectItem>
 											))}

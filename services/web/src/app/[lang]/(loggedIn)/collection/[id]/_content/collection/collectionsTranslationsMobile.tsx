@@ -30,8 +30,8 @@ export function CollectionsTranslationsMobile({ items }: CollectionsTranslations
 		<div className="space-y-3">
 			{items.map((item) => {
 				const cefrCode = item.cefrLevel?.code
-				const posNames = item.universalPosTags?.map((tag) => tag.name) ?? []
-				const posPrimary = posNames[0]
+				const posTags = item.universalPosTags ?? []
+				const posPrimary = posTags[0]
 
 				return (
 					<Card key={item.translationId} className="rounded-xl gap-3">
@@ -45,8 +45,8 @@ export function CollectionsTranslationsMobile({ items }: CollectionsTranslations
 
 								{posPrimary ? (
 									<Badge variant="secondary" className="text-xs">
-										{posPrimary}
-										{posNames.length > 1 ? ` +${posNames.length - 1}` : ""}
+										{t(`common.posTags.${posPrimary.code}`)}
+										{posTags.length > 1 ? ` +${posTags.length - 1}` : ""}
 									</Badge>
 								) : null}
 							</div>

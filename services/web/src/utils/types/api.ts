@@ -1,3 +1,5 @@
+import { z } from "zod"
+
 export type Collection = {
 	id: number
 	name: string
@@ -19,6 +21,47 @@ export type CefrLevel = {
 	description?: string | null
 	id: number
 	name: string
+}
+
+export const learnItemSchema = z.object({
+	id: z.number(),
+	sourceText: z.string(),
+	targetText: z.string(),
+	isNew: z.boolean(),
+})
+
+export type LearnItem = z.infer<typeof learnItemSchema>
+
+// biome-ignore lint/suspicious/noExplicitAny: <explanation>
+export type LearningProgressApiResponse = any
+
+export interface LearnItemApiResponse {
+	id: number
+	user_id: number
+	collection_id?: number | null
+
+	// CEFR Data
+	cefr_level_id?: number | null
+	cefr_level?: CefrLevel | null
+
+	// Content
+	source_language: string
+	source_text: string
+	target_language: string
+	target_text: string
+
+	// Arrays
+	example_sentences: ExampleSentence[]
+	universal_pos_tags: UniversalPosTag[]
+
+	// Status flags
+	is_due: boolean
+	is_new: boolean
+	learning_progress?: LearningProgressApiResponse | null
+
+	// Timestamps (represented as ISO strings)
+	created_at: string
+	updated_at: string
 }
 
 export type ExampleSentence = { id: number; language: string; sentence: string; translation_id: number }

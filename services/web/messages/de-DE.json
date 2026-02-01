@@ -4,6 +4,25 @@
         "german": "Deutsch",
         "english": "Englisch"
       },
+      "posTags": {
+        "ADJ": "Adjektiv",
+        "ADP": "Adposition",
+        "ADV": "Adverb",
+        "AUX": "Hilfsverb",
+        "CCONJ": "Koordinierende Konjunktion",
+        "DET": "Determinierer",
+        "INTJ": "Interjektion",
+        "NOUN": "Substantiv",
+        "NUM": "Numerale",
+        "PART": "Partikel",
+        "PRON": "Pronomen",
+        "PROPN": "Eigenname",
+        "SCONJ": "Subordinierende Konjunktion",
+        "SYM": "Symbol",
+        "VERB": "Verb",
+        "X": "Sonstiges",
+        "PUNCT": "Satzzeichen"
+      },
       "relativeTime": {
         "justNow": "gerade eben",
         "minutesAgo": "vor {count} Min.",
@@ -264,10 +283,53 @@
               "description": "Deine zuletzt hinzugefügten Übersetzungen auf einen Blick",
               "empty": "Noch keine Übersetzungen vorhanden.",
               "emptyHint": "Füge eine Übersetzung hinzu, damit sie hier erscheint."
+            },
+            "statistics": {
+              "title": "Statistik",
+              "description": "Ein Überblick über deine Übersetzungen",
+              "totalTranslations": "Übersetzungen insgesamt",
+              "wordsByPosTag": "Wörter nach Wortart"
             }
         },
 		"learning": {
-			"title": "Lernen"
+			"title": "Lernen",
+			"stats": {
+				"due": "Fällig",
+				"new": "Neu",
+				"learning": "Lernend",
+				"mature": "Gefestigt"
+			},
+			"landing": {
+				"title": "Bereit zu lernen?",
+				"description": "Wiederhole deinen Wortschatz mit Karteikarten",
+				"startButton": "Lernen starten"
+			},
+			"session": {
+				"showAnswer": "Antwort zeigen",
+				"wrong": "Falsch",
+				"right": "Richtig",
+				"progress": "{current} von {total}",
+				"newBadge": "Neu"
+			},
+			"complete": {
+				"title": "Sitzung abgeschlossen!",
+				"summary": "Du hast {total} Karten wiederholt",
+				"correct": "{count} richtig",
+				"incorrect": "{count} falsch",
+				"continueButton": "Weiter lernen",
+				"finishButton": "Beenden"
+			},
+			"empty": {
+				"title": "Alles erledigt!",
+				"description": "Du hast keine Karten zur Wiederholung.",
+				"hint": "Füge mehr Übersetzungen hinzu oder komm später wieder."
+			},
+			"toast": {
+				"reviewError": {
+					"title": "Bewertung fehlgeschlagen",
+					"description": "Bitte versuche es erneut."
+				}
+			}
 		},
 		"collection": {
             "empty": {

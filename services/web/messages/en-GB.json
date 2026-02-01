@@ -4,6 +4,25 @@
         "german": "German",
         "english": "English"
       },
+      "posTags": {
+        "ADJ": "Adjective",
+        "ADP": "Adposition",
+        "ADV": "Adverb",
+        "AUX": "Auxiliary",
+        "CCONJ": "Coordinating Conjunction",
+        "DET": "Determiner",
+        "INTJ": "Interjection",
+        "NOUN": "Noun",
+        "NUM": "Numeral",
+        "PART": "Particle",
+        "PRON": "Pronoun",
+        "PROPN": "Proper Noun",
+        "SCONJ": "Subordinating Conjunction",
+        "SYM": "Symbol",
+        "VERB": "Verb",
+        "X": "Other",
+        "PUNCT": "Punctuation"
+      },
       "relativeTime": {
         "justNow": "just now",
         "minutesAgo": "{count} min ago",
@@ -261,10 +280,53 @@
               "description": "Your most recently added translations at a glance",
               "empty": "No translations yet.",
               "emptyHint": "Add a translation so it appears here."
+            },
+            "statistics": {
+              "title": "Statistics",
+              "description": "An overview of your translations",
+              "totalTranslations": "Total translations",
+              "wordsByPosTag": "Words by type"
             }
         },
 		"learning": {
-			"title": "Learn"
+			"title": "Learn",
+			"stats": {
+				"due": "Due",
+				"new": "New",
+				"learning": "Learning",
+				"mature": "Mature"
+			},
+			"landing": {
+				"title": "Ready to learn?",
+				"description": "Review your vocabulary with spaced repetition",
+				"startButton": "Start Learning"
+			},
+			"session": {
+				"showAnswer": "Show Answer",
+				"wrong": "Wrong",
+				"right": "Right",
+				"progress": "{current} of {total}",
+				"newBadge": "New"
+			},
+			"complete": {
+				"title": "Session Complete!",
+				"summary": "You reviewed {total} cards",
+				"correct": "{count} correct",
+				"incorrect": "{count} incorrect",
+				"continueButton": "Continue Learning",
+				"finishButton": "Finish"
+			},
+			"empty": {
+				"title": "All caught up!",
+				"description": "You have no cards due for review.",
+				"hint": "Add more translations or come back later."
+			},
+			"toast": {
+				"reviewError": {
+					"title": "Review failed",
+					"description": "Please try again."
+				}
+			}
 		},
 		"collection": {
             "empty": {

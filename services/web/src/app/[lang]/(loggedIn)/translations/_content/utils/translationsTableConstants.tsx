@@ -79,14 +79,13 @@ export const getTranslationsTableColumns = (
 				<DataTableColumnHeader column={column} title={t("pages.translations.table.columns.universalPosTags")} />
 			),
 			cell: ({ row }) => {
-				const names = row.original.universalPosTags?.map((tag) => tag.name) ?? []
+				const tags = row.original.universalPosTags ?? []
 
 				return (
 					<div className="flex gap-1 flex-wrap">
-						{names?.map((name, index) => (
-							// biome-ignore lint/suspicious/noArrayIndexKey: stable display-only list
-							<Badge key={index} variant="secondary" className="text-xs">
-								{name}
+						{tags.map((tag) => (
+							<Badge key={tag.id} variant="secondary" className="text-xs">
+								{t(`common.posTags.${tag.code}`)}
 							</Badge>
 						))}
 					</div>

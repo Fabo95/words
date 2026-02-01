@@ -116,6 +116,54 @@ export type paths = {
         patch?: never;
         trace?: never;
     };
+    "/learn": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["get_learn_items_handler"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/learn/stats": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["get_stats_handler"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/learn/{translation_id}/review": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch: operations["record_review_handler"];
+        trace?: never;
+    };
     "/translation": {
         parameters: {
             query?: never;
@@ -126,6 +174,22 @@ export type paths = {
         get: operations["get_translations_handler"];
         put?: never;
         post: operations["create_translation_handler"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/translation/statistics": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["get_statistics_handler"];
+        put?: never;
+        post?: never;
         delete?: never;
         options?: never;
         head?: never;
@@ -298,6 +362,51 @@ export type components = {
             meta?: null | components["schemas"]["PaginatedMeta"];
             success: boolean;
         };
+        HttpResponseBody_LearnResponse: {
+            data?: {
+                items: components["schemas"]["LearnItem"][];
+            };
+            message: string;
+            meta?: null | components["schemas"]["PaginatedMeta"];
+            success: boolean;
+        };
+        HttpResponseBody_LearnStats: {
+            data?: {
+                /** Format: int64 */
+                due_count: number;
+                /** Format: int64 */
+                learning_count: number;
+                /** Format: int64 */
+                mature_count: number;
+                /** Format: int64 */
+                new_count: number;
+            };
+            message: string;
+            meta?: null | components["schemas"]["PaginatedMeta"];
+            success: boolean;
+        };
+        HttpResponseBody_ReviewResponse: {
+            data?: {
+                learning_progress: components["schemas"]["entity.learning_progressModel"];
+                /** Format: int32 */
+                new_interval: number;
+                /** Format: int32 */
+                previous_interval: number;
+            };
+            message: string;
+            meta?: null | components["schemas"]["PaginatedMeta"];
+            success: boolean;
+        };
+        HttpResponseBody_TranslationStatistics: {
+            data?: {
+                /** Format: int64 */
+                total_translations: number;
+                words_per_pos_tag: components["schemas"]["PosTagCount"][];
+            };
+            message: string;
+            meta?: null | components["schemas"]["PaginatedMeta"];
+            success: boolean;
+        };
         HttpResponseBody_TranslationWithRelations: {
             data?: components["schemas"]["entity.translationsModel"] & {
                 cefr_level?: null | components["schemas"]["entity.cefr_levelsModel"];
@@ -415,6 +524,24 @@ export type components = {
             meta?: null | components["schemas"]["PaginatedMeta"];
             success: boolean;
         };
+        LearnItem: components["schemas"]["TranslationWithRelations"] & {
+            is_due: boolean;
+            is_new: boolean;
+            learning_progress?: null | components["schemas"]["entity.learning_progressModel"];
+        };
+        LearnResponse: {
+            items: components["schemas"]["LearnItem"][];
+        };
+        LearnStats: {
+            /** Format: int64 */
+            due_count: number;
+            /** Format: int64 */
+            learning_count: number;
+            /** Format: int64 */
+            mature_count: number;
+            /** Format: int64 */
+            new_count: number;
+        };
         PaginatedMeta: {
             /** Format: int64 */
             page: number;
@@ -424,6 +551,25 @@ export type components = {
             total_items: number;
             /** Format: int64 */
             total_pages: number;
+        };
+        PosTagCount: {
+            code: string;
+            /** Format: int64 */
+            count: number;
+            name: string;
+            /** Format: int32 */
+            universal_pos_tag_id: number;
+        };
+        ReviewRequest: {
+            /** @description true = correct answer, false = incorrect */
+            correct: boolean;
+        };
+        ReviewResponse: {
+            learning_progress: components["schemas"]["entity.learning_progressModel"];
+            /** Format: int32 */
+            new_interval: number;
+            /** Format: int32 */
+            previous_interval: number;
         };
         /** @enum {string} */
         SortBy: "created_at" | "updated_at";
@@ -456,6 +602,11 @@ export type components = {
             target_language?: string | null;
             /** @description Optional, but cannot be empty or exceed 4000 chars if provided. */
             target_text?: string | null;
+        };
+        TranslationStatistics: {
+            /** Format: int64 */
+            total_translations: number;
+            words_per_pos_tag: components["schemas"]["PosTagCount"][];
         };
         TranslationWithRelations: components["schemas"]["entity.translationsModel"] & {
             cefr_level?: null | components["schemas"]["entity.cefr_levelsModel"];
@@ -537,6 +688,28 @@ export type components = {
             sentence: string;
             /** Format: int32 */
             translation_id: number;
+        };
+        "entity.learning_progressModel": {
+            /** Format: date-time */
+            created_at: string;
+            /** Format: float */
+            ease_factor: number;
+            /** Format: int32 */
+            id: number;
+            /** Format: int32 */
+            interval: number;
+            /** Format: date-time */
+            last_reviewed_at: string;
+            /** Format: date-time */
+            next_review_at: string;
+            /** Format: int32 */
+            repetition_count: number;
+            /** Format: int32 */
+            translation_id: number;
+            /** Format: date-time */
+            updated_at: string;
+            /** Format: int32 */
+            user_id: number;
         };
         "entity.translationsModel": {
             /** Format: int32 */
@@ -746,6 +919,77 @@ export interface operations {
             };
         };
     };
+    get_learn_items_handler: {
+        parameters: {
+            query?: {
+                /** @description Number of items to return (default: 10, max: 50) */
+                limit?: number;
+                /** @description Filter by collection */
+                collection_id?: number;
+                /** @description Include new (never reviewed) translations (default: true) */
+                include_new?: boolean;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HttpResponseBody_LearnResponse"];
+                };
+            };
+        };
+    };
+    get_stats_handler: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HttpResponseBody_LearnStats"];
+                };
+            };
+        };
+    };
+    record_review_handler: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path: {
+                /** @description Translation ID to review */
+                translation_id: number;
+            };
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["ReviewRequest"];
+            };
+        };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HttpResponseBody_ReviewResponse"];
+                };
+            };
+        };
+    };
     get_translations_handler: {
         parameters: {
             query?: {
@@ -790,6 +1034,25 @@ export interface operations {
                 };
                 content: {
                     "application/json": components["schemas"]["HttpResponseBody_entity.translationsModel"];
+                };
+            };
+        };
+    };
+    get_statistics_handler: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HttpResponseBody_TranslationStatistics"];
                 };
             };
         };

@@ -79,3 +79,30 @@ export const getTranslationByIdQueryOptions = (id: number) =>
 	$api.queryOptions("get", "/translation/wip2/{id}", {
 		params: { path: { id } },
 	})
+
+export const getTranslationStatisticsQueryOptions = (authCookieValue?: string) =>
+	$api.queryOptions("get", "/translation/statistics", {
+		...(authCookieValue ? { headers: { Cookie: `auth-cookie=${authCookieValue}` } } : {}),
+	})
+
+export const getLearnItemsQueryOptions = (args: {
+	limit?: number
+	collection_id?: number
+	include_new?: boolean
+	authCookieValue?: string
+}) =>
+	$api.queryOptions("get", "/learn", {
+		params: {
+			query: {
+				limit: args.limit,
+				collection_id: args.collection_id,
+				include_new: args.include_new,
+			},
+		},
+		...(args.authCookieValue ? { headers: { Cookie: `auth-cookie=${args.authCookieValue}` } } : {}),
+	})
+
+export const getLearnStatsQueryOptions = (authCookieValue?: string) =>
+	$api.queryOptions("get", "/learn/stats", {
+		...(authCookieValue ? { headers: { Cookie: `auth-cookie=${authCookieValue}` } } : {}),
+	})
