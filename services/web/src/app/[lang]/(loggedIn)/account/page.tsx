@@ -3,6 +3,7 @@ import { AccountPasswordForm } from "@app/components/forms/accountPasswordForm/a
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@app/components/ui/tabs"
 import { getTranslations } from "next-intl/server"
 import { Locale } from "@app/utils/locale/localeTypes"
+import { User, Lock } from "lucide-react"
 
 export default async function Page({ params }: { params: Promise<Record<"lang", Locale>> }) {
 	// --- STATE ---
@@ -16,9 +17,15 @@ export default async function Page({ params }: { params: Promise<Record<"lang", 
 	return (
 		<Tabs defaultValue="name" className="max-w-[400px] w-full">
 			<TabsList className="grid w-full grid-cols-2">
-				<TabsTrigger value="name">{t("forms.accountNameForm.title")}</TabsTrigger>
+				<TabsTrigger value="name" className="gap-2">
+					<User className="h-4 w-4" />
+					{t("forms.accountNameForm.title")}
+				</TabsTrigger>
 
-				<TabsTrigger value="password">{t("forms.accountPasswordForm.title")}</TabsTrigger>
+				<TabsTrigger value="password" className="gap-2">
+					<Lock className="h-4 w-4" />
+					{t("forms.accountPasswordForm.title")}
+				</TabsTrigger>
 			</TabsList>
 
 			<TabsContent value="name">

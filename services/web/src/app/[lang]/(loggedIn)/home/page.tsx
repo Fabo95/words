@@ -7,7 +7,10 @@ import { LastAddedTranslation } from "@app/app/[lang]/(loggedIn)/home/_content/l
 import { LastAddedTranslationFallback } from "@app/app/[lang]/(loggedIn)/home/_content/lastAddedTranslationFallback"
 import { Statistics } from "@app/app/[lang]/(loggedIn)/home/_content/statistics"
 import { StatisticsFallback } from "@app/app/[lang]/(loggedIn)/home/_content/statisticsFallback"
-import { getLatestTranslationsQueryOptions, getTranslationStatisticsQueryOptions } from "@app/utils/reactQuery/queryOptions"
+import {
+	getLatestTranslationsQueryOptions,
+	getTranslationStatisticsQueryOptions,
+} from "@app/utils/reactQuery/queryOptions"
 
 export default async function () {
 	const cookieStore = await cookies()
@@ -24,17 +27,9 @@ export default async function () {
 				<Greeting />
 			</Suspense>
 
-			<div className="my-10 w-full flex justify-center">
-				<div className="h-px w-full bg-border/40" />
-			</div>
-
 			<Suspense fallback={<LastAddedTranslationFallback />}>
 				<LastAddedTranslation />
 			</Suspense>
-
-			<div className="my-10 w-full flex justify-center">
-				<div className="h-px w-full bg-border/40" />
-			</div>
 
 			<Suspense fallback={<StatisticsFallback />}>
 				<Statistics />

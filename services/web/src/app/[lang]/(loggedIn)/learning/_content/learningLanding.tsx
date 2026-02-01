@@ -51,10 +51,8 @@ export function LearningLanding({ stats, onStartLearning, isLoading }: LearningL
 	return (
 		<div className="mx-auto w-full max-w-lg">
 			<div className="text-center mb-8">
-				<h1 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-					{t("pages.learning.landing.title")}
-				</h1>
-				<p className="text-sm text-foreground/60">{t("pages.learning.landing.description")}</p>
+				<h1 className="text-lg md:text-xl font-semibold tracking-tight mb-2">{t("pages.learning.landing.title")}</h1>
+				<p className="text-sm text-muted-foreground">{t("pages.learning.landing.description")}</p>
 			</div>
 
 			<div className="grid grid-cols-2 gap-3 mb-8">
@@ -69,9 +67,7 @@ export function LearningLanding({ stats, onStartLearning, isLoading }: LearningL
 											item.highlight ? "bg-primary/10" : "bg-muted"
 										}`}
 									>
-										<Icon
-											className={`h-5 w-5 ${item.highlight ? "text-primary" : "text-foreground/60"}`}
-										/>
+										<Icon className={`h-5 w-5 ${item.highlight ? "text-primary" : "text-foreground/60"}`} />
 									</div>
 									<div>
 										<p
@@ -90,7 +86,7 @@ export function LearningLanding({ stats, onStartLearning, isLoading }: LearningL
 				})}
 			</div>
 
-			<Button className="w-full h-12 text-base" onClick={onStartLearning} isLoading={isLoading}>
+			<Button className="w-full text-base" onClick={onStartLearning} isLoading={isLoading}>
 				{t("pages.learning.landing.startButton")}
 			</Button>
 		</div>

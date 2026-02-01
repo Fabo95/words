@@ -10,6 +10,7 @@ import { getCollectionsQueryOptions, getLatestTranslationsQueryOptions } from "@
 import { useSuspenseQuery } from "@tanstack/react-query"
 import { getCollectionPage } from "@app/utils/urls/urls"
 import { useRouter } from "next/navigation"
+import { History } from "lucide-react"
 
 export function LastAddedTranslation() {
 	const t = useTranslations()
@@ -31,8 +32,13 @@ export function LastAddedTranslation() {
 
 	console.log("translation", data)
 	return (
-		<section>
+		<section className="mb-20">
 			<div className="mb-5 text-center">
+				<div className="flex justify-center mb-3">
+					<div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
+						<History className="h-6 w-6 text-primary" />
+					</div>
+				</div>
 				<h2 className="text-lg md:text-xl font-semibold">{t("pages.home.lastAddedTranslations.title")}</h2>
 				<p className="mt-1 text-sm text-foreground/40">{t("pages.home.lastAddedTranslations.description")}</p>
 			</div>

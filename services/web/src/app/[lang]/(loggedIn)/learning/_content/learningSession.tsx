@@ -56,7 +56,7 @@ export function LearningSession({ currentItem, currentIndex, totalItems, onRevie
 			{/* Progress */}
 			<div className="mb-6">
 				<div className="flex justify-between items-center mb-2">
-					<p className="text-sm text-foreground/60">
+					<p className="text-sm text-muted-foreground">
 						{t("pages.learning.session.progress", {
 							current: currentIndex + 1,
 							total: totalItems,

@@ -5,7 +5,7 @@ import { Skeleton } from "@app/components/ui/skeleton"
 
 export function LastAddedTranslationFallback() {
 	return (
-		<section>
+		<section className="mb-20">
 			{/* keep the same header layout */}
 			<Skeleton className="mx-auto mb-2 h-6 w-44" />
 			<Skeleton className="mx-auto mb-4 h-4 w-80" />

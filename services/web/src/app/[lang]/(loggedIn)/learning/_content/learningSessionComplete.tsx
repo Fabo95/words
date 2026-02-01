@@ -17,12 +17,7 @@ type LearningSessionCompleteProps = {
 	onFinish: () => void
 }
 
-export function LearningSessionComplete({
-	results,
-	totalItems,
-	onContinue,
-	onFinish,
-}: LearningSessionCompleteProps) {
+export function LearningSessionComplete({ results, totalItems, onContinue, onFinish }: LearningSessionCompleteProps) {
 	const t = useTranslations()
 
 	const correctCount = results.filter((r) => r.correct).length
@@ -32,16 +27,12 @@ export function LearningSessionComplete({
 		<div className="mx-auto w-full max-w-lg">
 			<div className="text-center mb-8">
 				<div className="flex justify-center mb-4">
-					<div className="flex h-16 w-16 items-center justify-center rounded-full bg-primary/10">
-						<Trophy className="h-8 w-8 text-primary" />
+					<div className="flex h-14 w-14 items-center justify-center rounded-full bg-primary/10">
+						<Trophy className="h-6 w-6 text-primary" />
 					</div>
 				</div>
-				<h1 className="text-2xl md:text-3xl font-semibold tracking-tight mb-2">
-					{t("pages.learning.complete.title")}
-				</h1>
-				<p className="text-foreground/60">
-					{t("pages.learning.complete.summary", { total: totalItems })}
-				</p>
+				<h1 className="text-lg md:text-xl font-semibold">{t("pages.learning.complete.title")}</h1>
+				<p className="text-sm text-muted-foreground">{t("pages.learning.complete.summary", { total: totalItems })}</p>
 			</div>
 
 			<div className="grid grid-cols-2 gap-3 mb-8">
@@ -78,12 +69,13 @@ export function LearningSessionComplete({
 				</Card>
 			</div>
 
-			<div className="flex flex-col gap-3">
-				<Button className="w-full h-12 text-base" onClick={onContinue}>
-					{t("pages.learning.complete.continueButton")}
-				</Button>
-				<Button variant="outline" className="w-full h-12 text-base" onClick={onFinish}>
+			<div className="flex gap-3">
+				<Button variant="outline" className="flex-1 text-base" onClick={onFinish}>
 					{t("pages.learning.complete.finishButton")}
+				</Button>
+
+				<Button className="flex-1 text-base" onClick={onContinue}>
+					{t("pages.learning.complete.continueButton")}
 				</Button>
 			</div>
 		</div>

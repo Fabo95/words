@@ -18,7 +18,9 @@ import {
 	getCefrLevelsQueryOptions,
 	getCollectionsQueryOptions,
 	getLatestTranslationsQueryOptions,
+	getLearnStatsQueryOptions,
 	getTranslationByIdQueryOptions,
+	getTranslationStatisticsQueryOptions,
 	getUniversalPosTagsQueryOptions,
 } from "@app/utils/reactQuery/queryOptions"
 import { useQuery, useQueryClient, useSuspenseQuery } from "@tanstack/react-query"
@@ -86,6 +88,8 @@ export const AddTranslationTrigger = ({
 			queryClient.invalidateQueries({ queryKey: ["get", "/translation"] }),
 			queryClient.invalidateQueries({ queryKey: ["get", "/collection/{id}/translations"] }),
 			queryClient.invalidateQueries({ queryKey: getLatestTranslationsQueryOptions().queryKey }),
+			queryClient.invalidateQueries({ queryKey: getTranslationStatisticsQueryOptions().queryKey }),
+			queryClient.invalidateQueries({ queryKey: getLearnStatsQueryOptions().queryKey }),
 			createdTranslationId
 				? queryClient.invalidateQueries({ queryKey: getTranslationByIdQueryOptions(createdTranslationId).queryKey })
 				: Promise.resolve(),

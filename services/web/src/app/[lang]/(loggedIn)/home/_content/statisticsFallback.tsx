@@ -4,7 +4,7 @@ import { Skeleton } from "@app/components/ui/skeleton"
 
 export function StatisticsFallback() {
 	return (
-		<section>
+		<section className="mb-12">
 			<Skeleton className="mx-auto mb-2 h-6 w-32" />
 			<Skeleton className="mx-auto mb-4 h-4 w-64" />
 

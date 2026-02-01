@@ -4,12 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="add learn page">
+    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="organize helpers">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/learning/_content/learning.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/learning/_content/learning.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/_content/addTranslationTrigger.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/_content/addTranslationTrigger.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/account/error.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/account/error.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/account/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/account/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collection/collectionEmptyState.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collection/collectionEmptyState.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/error.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/error.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/home/_content/greeting.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/home/_content/greeting.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/home/_content/greetingFallback.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/home/_content/greetingFallback.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/home/_content/lastAddedTranslation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/home/_content/lastAddedTranslation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/home/_content/lastAddedTranslationFallback.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/home/_content/lastAddedTranslationFallback.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/home/_content/statistics.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/home/_content/statistics.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/home/_content/statisticsFallback.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/home/_content/statisticsFallback.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/home/error.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/home/error.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/home/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/home/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/learning/_content/learningEmptyState.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/learning/_content/learningEmptyState.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/learning/_content/learningLanding.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/learning/_content/learningLanding.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/learning/_content/learningSession.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/learning/_content/learningSession.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/learning/_content/utils/useLearningSessionQuery.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/learning/_content/utils/useLearningSessionQuery.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/utils/urls/useSearchParamState.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/utils/urls/useSearchParamState.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/learning/_content/learningSessionComplete.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/learning/_content/learningSessionComplete.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/learning/error.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/learning/error.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/translations/_content/translationsEmptyState.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/translations/_content/translationsEmptyState.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/translations/error.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/translations/error.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedOut)/authentication/error.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedOut)/authentication/error.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -266,23 +283,7 @@
       <workItem from="1768152455661" duration="5114000" />
       <workItem from="1768686083435" duration="24834000" />
       <workItem from="1769284940233" duration="16174000" />
-      <workItem from="1769809608107" duration="10772000" />
-    </task>
-    <task id="LOCAL-00054" summary="update form field">
-      <option name="closed" value="true" />
-      <created>1752421835069</created>
-      <option name="number" value="00054" />
-      <option name="presentableId" value="LOCAL-00054" />
-      <option name="project" value="LOCAL" />
-      <updated>1752421835069</updated>
-    </task>
-    <task id="LOCAL-00055" summary="update tailwind">
-      <option name="closed" value="true" />
-      <created>1752421902778</created>
-      <option name="number" value="00055" />
-      <option name="presentableId" value="LOCAL-00055" />
-      <option name="project" value="LOCAL" />
-      <updated>1752421902778</updated>
+      <workItem from="1769809608107" duration="13499000" />
     </task>
     <task id="LOCAL-00056" summary="update tailwind">
       <option name="closed" value="true" />
@@ -660,7 +661,23 @@
       <option name="project" value="LOCAL" />
       <updated>1769950753643</updated>
     </task>
-    <option name="localTasksCounter" value="103" />
+    <task id="LOCAL-00103" summary="add learn page">
+      <option name="closed" value="true" />
+      <created>1769951188076</created>
+      <option name="number" value="00103" />
+      <option name="presentableId" value="LOCAL-00103" />
+      <option name="project" value="LOCAL" />
+      <updated>1769951188076</updated>
+    </task>
+    <task id="LOCAL-00104" summary="organize helpers">
+      <option name="closed" value="true" />
+      <created>1769951395566</created>
+      <option name="number" value="00104" />
+      <option name="presentableId" value="LOCAL-00104" />
+      <option name="project" value="LOCAL" />
+      <updated>1769951395566</updated>
+    </task>
+    <option name="localTasksCounter" value="105" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -681,7 +698,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="update prisma" />
     <MESSAGE value="added openAi to generate " />
     <MESSAGE value="add dependencies for OpenAI and ExampleSentencesModelService" />
     <MESSAGE value="move to web folder" />
@@ -706,7 +722,8 @@
     <MESSAGE value="add loading for transaltionsMobile" />
     <MESSAGE value="add loading to translationsMobile" />
     <MESSAGE value="add learn page" />
-    <option name="LAST_COMMIT_MESSAGE" value="add learn page" />
+    <MESSAGE value="organize helpers" />
+    <option name="LAST_COMMIT_MESSAGE" value="organize helpers" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
