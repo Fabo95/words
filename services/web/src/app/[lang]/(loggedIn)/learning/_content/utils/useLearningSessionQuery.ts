@@ -79,6 +79,12 @@ export function useLearningSessionQuery(): {
 	const [phase, setPhase] = useSearchParamState<string>("phase", "search", "string", "replace")
 	const [encodedData, setEncodedData] = useSearchParamState<string>("data", "search", "string", "replace")
 
+	const restart = useCallback(() => {
+		const url = "/learning"
+		setPhase(undefined, url, { scroll: false })
+		setEncodedData(undefined, url, { scroll: false })
+	}, [setPhase, setEncodedData])
+
 	const state = useMemo<LearningSessionState>(() => {
 		if (phase === "session" && encodedData) {
 			const data = decodeSessionData(encodedData, sessionDataSchema)
@@ -94,8 +100,9 @@ export function useLearningSessionQuery(): {
 			}
 		}
 
+		restart()
 		return { phase: "landing" }
-	}, [phase, encodedData])
+	}, [phase, encodedData, restart])
 
 	const getUpdatedUrl = useCallback((newPhase: string | undefined, newData: string | undefined) => {
 		const searchParams = new URLSearchParams()
@@ -164,12 +171,6 @@ export function useLearningSessionQuery(): {
 		setPhase("complete", url, { scroll: false })
 		setEncodedData(encoded, url, { scroll: false })
 	}, [state, setPhase, setEncodedData, getUpdatedUrl])
-
-	const restart = useCallback(() => {
-		const url = "/learning"
-		setPhase(undefined, url, { scroll: false })
-		setEncodedData(undefined, url, { scroll: false })
-	}, [setPhase, setEncodedData])
 
 	const actions = useMemo<LearningSessionActions>(
 		() => ({

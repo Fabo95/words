@@ -62,21 +62,17 @@ function useOptimisticUrlSetState<T>(
 
 	return useCallback(
 		(newValue, nextUrl, navigateOptions) => {
-			flushSync(() => {
-				setState(newValue)
-			})
+			setState(newValue)
 
-			flushSync(() => {
-				switch (method) {
-					case "replace":
-						router.replace(nextUrl, navigateOptions)
-						break
+			switch (method) {
+				case "replace":
+					router.replace(nextUrl, navigateOptions)
+					break
 
-					case "push":
-						router.push(nextUrl, navigateOptions)
-						break
-				}
-			})
+				case "push":
+					router.push(nextUrl, navigateOptions)
+					break
+			}
 		},
 		[setState, router, method],
 	)

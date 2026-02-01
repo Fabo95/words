@@ -61,7 +61,6 @@ export function Learning() {
 		setIsLoading(true)
 		try {
 			const result = await fetchItems()
-			console.log("result", result)
 
 			if (result.data?.data?.items && result.data.data.items.length > 0) {
 				actions.startSession(result.data.data.items)
@@ -89,6 +88,7 @@ export function Learning() {
 			actions.restart()
 			return null
 		}
+
 		return (
 			<LearningSession
 				currentItem={currentItem}

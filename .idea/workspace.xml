@@ -4,19 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="add loading to translationsMobile">
+    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="add learn page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/messages/de-DE.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/messages/de-DE.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/messages/en-GB.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/messages/en-GB.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collection/collectionsTranslationsMobile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collection/collectionsTranslationsMobile.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collection/utils/collectionTableConstants.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collection/utils/collectionTableConstants.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/home/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/home/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/translations/_content/translationsMobile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/translations/_content/translationsMobile.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/translations/_content/utils/translationsTableConstants.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/translations/_content/utils/translationsTableConstants.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/components/forms/translationForm/translationForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/translationForm/translationForm.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/generated/openApiTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/generated/openApiTypes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/utils/reactQuery/queryOptions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/utils/reactQuery/queryOptions.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/utils/types/api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/utils/types/api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/learning/_content/learning.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/learning/_content/learning.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/learning/_content/learningSession.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/learning/_content/learningSession.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/learning/_content/utils/useLearningSessionQuery.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/learning/_content/utils/useLearningSessionQuery.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/utils/urls/useSearchParamState.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/utils/urls/useSearchParamState.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -273,15 +266,7 @@
       <workItem from="1768152455661" duration="5114000" />
       <workItem from="1768686083435" duration="24834000" />
       <workItem from="1769284940233" duration="16174000" />
-      <workItem from="1769809608107" duration="10191000" />
-    </task>
-    <task id="LOCAL-00053" summary="update form field">
-      <option name="closed" value="true" />
-      <created>1752421819365</created>
-      <option name="number" value="00053" />
-      <option name="presentableId" value="LOCAL-00053" />
-      <option name="project" value="LOCAL" />
-      <updated>1752421819365</updated>
+      <workItem from="1769809608107" duration="10772000" />
     </task>
     <task id="LOCAL-00054" summary="update form field">
       <option name="closed" value="true" />
@@ -667,7 +652,15 @@
       <option name="project" value="LOCAL" />
       <updated>1769375374999</updated>
     </task>
-    <option name="localTasksCounter" value="102" />
+    <task id="LOCAL-00102" summary="add learn page">
+      <option name="closed" value="true" />
+      <created>1769950753643</created>
+      <option name="number" value="00102" />
+      <option name="presentableId" value="LOCAL-00102" />
+      <option name="project" value="LOCAL" />
+      <updated>1769950753643</updated>
+    </task>
+    <option name="localTasksCounter" value="103" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -688,7 +681,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add schema.prisma" />
     <MESSAGE value="update prisma" />
     <MESSAGE value="added openAi to generate " />
     <MESSAGE value="add dependencies for OpenAI and ExampleSentencesModelService" />
@@ -713,7 +705,8 @@
     <MESSAGE value="add translations page" />
     <MESSAGE value="add loading for transaltionsMobile" />
     <MESSAGE value="add loading to translationsMobile" />
-    <option name="LAST_COMMIT_MESSAGE" value="add loading to translationsMobile" />
+    <MESSAGE value="add learn page" />
+    <option name="LAST_COMMIT_MESSAGE" value="add learn page" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

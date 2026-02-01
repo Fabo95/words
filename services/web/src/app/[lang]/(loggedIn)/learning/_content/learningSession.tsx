@@ -74,10 +74,10 @@ export function LearningSession({ currentItem, currentIndex, totalItems, onRevie
 			{/* Flashcard */}
 			<div className="mb-8">
 				<Flashcard
-					sourceText={currentItem.source_text}
-					targetText={currentItem.target_text}
+					sourceText={currentItem.sourceText}
+					targetText={currentItem.targetText}
 					isFlipped={isFlipped}
-					isNew={currentItem.is_new}
+					isNew={currentItem.isNew}
 					onFlip={handleFlip}
 				/>
 			</div>
