@@ -76,7 +76,7 @@ export function LearningSession({ currentItem, currentIndex, totalItems, onRevie
 				<Flashcard
 					sourceText={currentItem.sourceText}
 					targetText={currentItem.targetText}
-					isFlipped={isFlipped}
+					isRevealed={isFlipped}
 					isNew={currentItem.isNew}
 					onFlip={handleFlip}
 				/>

@@ -305,7 +305,8 @@
 				"startButton": "Lernen starten"
 			},
 			"session": {
-				"showAnswer": "Antwort zeigen",
+				"showAnswer": "Tippen zum Aufdecken",
+				"revealing": "Wird aufgedeckt...",
 				"wrong": "Falsch",
 				"right": "Richtig",
 				"progress": "{current} von {total}",

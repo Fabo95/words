@@ -302,7 +302,8 @@
 				"startButton": "Start Learning"
 			},
 			"session": {
-				"showAnswer": "Show Answer",
+				"showAnswer": "Tap to reveal",
+				"revealing": "Revealing...",
 				"wrong": "Wrong",
 				"right": "Right",
 				"progress": "{current} of {total}",
