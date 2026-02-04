@@ -1,8 +1,7 @@
 "use client"
 
-import * as React from "react"
-import { useState, useEffect, useCallback, useMemo } from "react"
-import { motion, AnimatePresence } from "motion/react"
+import { useMemo } from "react"
+import { motion } from "motion/react"
 import { useTranslations } from "next-intl"
 import { Badge } from "@app/components/ui/badge"
 import { cn } from "@app/utils/shadcn/shadcnHelpers"
@@ -13,106 +12,63 @@ type FlashcardProps = {
 	isRevealed: boolean
 	isNew: boolean
 	onFlip: () => void
+	onRevealComplete?: () => void
 }
 
 function shuffleArray<T>(array: T[]): T[] {
 	const shuffled = [...array]
 	for (let i = shuffled.length - 1; i > 0; i--) {
 		const j = Math.floor(Math.random() * (i + 1))
+		// @ts-ignore
 		;[shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]]
 	}
 	return shuffled
 }
 
-export function Flashcard({ sourceText, targetText, isRevealed, isNew, onFlip }: FlashcardProps) {
+export function Flashcard({ sourceText, targetText, isRevealed, isNew, onFlip, onRevealComplete }: FlashcardProps) {
 	const t = useTranslations()
-	const [revealedIndices, setRevealedIndices] = useState<Set<number>>(new Set())
-	const [isAnimating, setIsAnimating] = useState(false)
 
-	const charIndices = useMemo(() => {
+	const { charDelays, lastCharIndex } = useMemo(() => {
 		const indices: number[] = []
 		for (let i = 0; i < targetText.length; i++) {
 			if (targetText[i] !== " ") {
 				indices.push(i)
 			}
 		}
-		return shuffleArray(indices)
+		const shuffled = shuffleArray(indices)
+		return {
+			charDelays: new Map(shuffled.map((idx, pos) => [idx, pos * 0.05])),
+			lastCharIndex: shuffled[shuffled.length - 1],
+		}
 	}, [targetText])
 
-	useEffect(() => {
-		if (!isRevealed) {
-			setRevealedIndices(new Set())
-			setIsAnimating(false)
-			return
-		}
+	const renderTargetText = () => {
+		return targetText.split("").map((char, index) => {
+			const isSpace = char === " "
+			const delay = charDelays.get(index) ?? 0
+			const isLastChar = index === lastCharIndex
 
-		setIsAnimating(true)
-		const revealOrder = [...charIndices]
-		let cancelled = false
-
-		const revealNext = (index: number) => {
-			if (cancelled || index >= revealOrder.length) {
-				if (!cancelled) setIsAnimating(false)
-				return
-			}
-
-			setRevealedIndices((prev) => {
-				const next = new Set(prev)
-				next.add(revealOrder[index])
-				return next
-			})
-
-			setTimeout(() => revealNext(index + 1), 50)
-		}
-
-		revealNext(0)
-
-		return () => {
-			cancelled = true
-		}
-	}, [isRevealed, charIndices])
-
-	const renderTargetText = useCallback(
-		(showRevealed: boolean) => {
-			return targetText.split("").map((char, index) => {
-				const isSpace = char === " "
-				const isRevealed = showRevealed && (isSpace || revealedIndices.has(index))
-
-				return (
-					<span
-						// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
-						key={`${char}-${index}`}
-						className="relative inline-block"
-					>
-						<AnimatePresence mode="wait">
-							{isRevealed ? (
-								<motion.span
-									key="char"
-									initial={{ opacity: 0, scale: 0.5 }}
-									animate={{ opacity: 1, scale: 1 }}
-									transition={{ duration: 0.15 }}
-									className="inline-block"
-								>
-									{char}
-								</motion.span>
-							) : (
-								<motion.span
-									key="placeholder"
-									className="inline-block text-foreground/20"
-									initial={{ opacity: 1 }}
-									exit={{ opacity: 0 }}
-									transition={{ duration: 0.1 }}
-								>
-									{isSpace ? "\u00A0" : "•"}
-								</motion.span>
-							)}
-						</AnimatePresence>
-					</span>
-				)
-			})
-		},
-		[targetText, revealedIndices],
-	)
+			return (
+				<span key={index} className="relative inline-block overflow-hidden">
+					{isRevealed && !isSpace ? (
+						<motion.span
+							className="inline-block"
+							initial={{ y: "100%" }}
+							animate={{ y: 0 }}
+							transition={{ duration: 0.2, delay, ease: "easeOut" }}
+							onAnimationComplete={isLastChar ? onRevealComplete : undefined}
+						>
+							{char}
+						</motion.span>
+					) : (
+						<span className={isRevealed ? "" : "text-foreground/20"}>
+							{isSpace ? "\u00A0" : isRevealed ? char : "•"}
+						</span>
+					)}
+				</span>
+			)
+		})
+	}
 
 	return (
 		// biome-ignore lint/a11y/useKeyWithClickEvents: <explanation>
@@ -133,14 +89,12 @@ export function Flashcard({ sourceText, targetText, isRevealed, isNew, onFlip }:
 				)}
 
 				<p className="text-3xl md:text-2xl font-semibold text-center wrap-break-word mb-2">{sourceText}</p>
-				<p className="text-3xl md:text-2xl font-semibold text-center wrap-break-word">{renderTargetText(isRevealed)}</p>
-				<p className="absolute bottom-6 text-sm text-foreground/40">
-					{isAnimating
-						? t("pages.learning.session.revealing")
-						: !isRevealed
-							? t("pages.learning.session.showAnswer")
-							: null}
-				</p>
+				<p className="text-3xl md:text-2xl font-semibold text-center wrap-break-word">{renderTargetText()}</p>
+				{!isRevealed && (
+					<p className="absolute bottom-6 text-sm text-foreground/40">
+						{t("pages.learning.session.showAnswer")}
+					</p>
+				)}
 			</div>
 		</div>
 	)

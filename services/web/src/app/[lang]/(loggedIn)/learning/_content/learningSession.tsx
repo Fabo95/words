@@ -2,6 +2,7 @@
 
 import * as React from "react"
 import { useState, useCallback } from "react"
+import { motion } from "motion/react"
 import { useTranslations } from "next-intl"
 import { Button } from "@app/components/ui/button"
 import { useToast } from "@app/components/ui/use-toast"
@@ -22,10 +23,12 @@ export function LearningSession({ currentItem, currentIndex, totalItems, onRevie
 	const { toast } = useToast()
 
 	const [isFlipped, setIsFlipped] = useState(false)
+	const [showButtons, setShowButtons] = useState(false)
 
 	const { mutate: submitReview, isPending } = $api.useMutation("patch", "/learn/{translation_id}/review", {
 		onSuccess: (_, variables) => {
 			setIsFlipped(false)
+			setShowButtons(false)
 			onReview(variables.body.correct, currentItem.id)
 		},
 		onError: () => {
@@ -39,6 +42,10 @@ export function LearningSession({ currentItem, currentIndex, totalItems, onRevie
 
 	const handleFlip = useCallback(() => {
 		setIsFlipped(true)
+	}, [])
+
+	const handleRevealComplete = useCallback(() => {
+		setShowButtons(true)
 	}, [])
 
 	const handleReview = useCallback(
@@ -79,12 +86,18 @@ export function LearningSession({ currentItem, currentIndex, totalItems, onRevie
 					isRevealed={isFlipped}
 					isNew={currentItem.isNew}
 					onFlip={handleFlip}
+					onRevealComplete={handleRevealComplete}
 				/>
 			</div>
 
 			{/* Actions */}
-			{isFlipped && (
-				<div className="flex gap-3">
+			{showButtons && (
+				<motion.div
+					className="flex gap-3"
+					initial={{ opacity: 0 }}
+					animate={{ opacity: 1 }}
+					transition={{ duration: 0.3 }}
+				>
 					<Button
 						variant="secondary"
 						className="flex-1 text-base"
@@ -104,7 +117,7 @@ export function LearningSession({ currentItem, currentIndex, totalItems, onRevie
 						<Check className="h-5 w-5 mr-2" />
 						{t("pages.learning.session.right")}
 					</Button>
-				</div>
+				</motion.div>
 			)}
 		</div>
 	)

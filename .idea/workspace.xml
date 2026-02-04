@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="add icons">
+    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="add reveal animation">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/messages/de-DE.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/messages/de-DE.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/messages/en-GB.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/messages/en-GB.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/learning/_content/flashcard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/learning/_content/flashcard.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -128,7 +126,7 @@
       <recent name="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.web &gt; open_api:generate">
+  <component name="RunManager" selected="npm.dev">
     <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -181,8 +179,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="npm.web &gt; open_api:generate" />
         <item itemvalue="npm.dev" />
+        <item itemvalue="npm.web &gt; open_api:generate" />
         <item itemvalue="npm.web &gt; build" />
         <item itemvalue="npm.inngest &gt; prisma:generate" />
         <item itemvalue="npm.inngest &gt; prisma:pull" />
@@ -265,15 +263,7 @@
       <workItem from="1768152455661" duration="5114000" />
       <workItem from="1768686083435" duration="24834000" />
       <workItem from="1769284940233" duration="16174000" />
-      <workItem from="1769809608107" duration="14674000" />
-    </task>
-    <task id="LOCAL-00057" summary="update tailwind">
-      <option name="closed" value="true" />
-      <created>1752422904550</created>
-      <option name="number" value="00057" />
-      <option name="presentableId" value="LOCAL-00057" />
-      <option name="project" value="LOCAL" />
-      <updated>1752422904550</updated>
+      <workItem from="1769809608107" duration="18342000" />
     </task>
     <task id="LOCAL-00058" summary="remove tailwind config">
       <option name="closed" value="true" />
@@ -659,7 +649,15 @@
       <option name="project" value="LOCAL" />
       <updated>1769984669346</updated>
     </task>
-    <option name="localTasksCounter" value="106" />
+    <task id="LOCAL-00106" summary="add reveal animation">
+      <option name="closed" value="true" />
+      <created>1769985858806</created>
+      <option name="number" value="00106" />
+      <option name="presentableId" value="LOCAL-00106" />
+      <option name="project" value="LOCAL" />
+      <updated>1769985858806</updated>
+    </task>
+    <option name="localTasksCounter" value="107" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -680,7 +678,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add dependencies for OpenAI and ExampleSentencesModelService" />
     <MESSAGE value="move to web folder" />
     <MESSAGE value="add check translation" />
     <MESSAGE value="add universal pos tags" />
@@ -705,7 +702,8 @@
     <MESSAGE value="add learn page" />
     <MESSAGE value="organize helpers" />
     <MESSAGE value="add icons" />
-    <option name="LAST_COMMIT_MESSAGE" value="add icons" />
+    <MESSAGE value="add reveal animation" />
+    <option name="LAST_COMMIT_MESSAGE" value="add reveal animation" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
