@@ -1,14 +1,14 @@
 "use client"
 
 import * as React from "react"
-import { useState, useCallback } from "react"
+import { useState, useCallback, useEffect } from "react"
 import { motion } from "motion/react"
 import { useTranslations } from "next-intl"
 import { Button } from "@app/components/ui/button"
 import { useToast } from "@app/components/ui/use-toast"
 import { $api } from "@app/utils/api/apiRequests"
 import { Flashcard } from "./flashcard"
-import { X, Check } from "lucide-react"
+import { X, Check, Keyboard } from "lucide-react"
 import { LearnItem } from "@app/utils/types/api"
 
 type LearningSessionProps = {
@@ -58,6 +58,31 @@ export function LearningSession({ currentItem, currentIndex, totalItems, onRevie
 		[submitReview, currentItem.id],
 	)
 
+	useEffect(() => {
+		const handleKeyDown = (e: KeyboardEvent) => {
+			if (isPending) return
+
+			if (!isFlipped && e.code === "Space") {
+				e.preventDefault()
+				handleFlip()
+				return
+			}
+
+			if (showButtons) {
+				if (e.code === "ArrowLeft" || e.code === "Digit1" || e.code === "Numpad1") {
+					e.preventDefault()
+					handleReview(false)
+				} else if (e.code === "ArrowRight" || e.code === "Digit2" || e.code === "Numpad2") {
+					e.preventDefault()
+					handleReview(true)
+				}
+			}
+		}
+
+		window.addEventListener("keydown", handleKeyDown)
+		return () => window.removeEventListener("keydown", handleKeyDown)
+	}, [isFlipped, showButtons, isPending, handleFlip, handleReview])
+
 	return (
 		<div className="mx-auto w-full max-w-lg">
 			{/* Progress */}
@@ -91,34 +116,53 @@ export function LearningSession({ currentItem, currentIndex, totalItems, onRevie
 			</div>
 
 			{/* Actions */}
-			{showButtons && (
-				<motion.div
-					className="flex gap-3"
-					initial={{ opacity: 0 }}
-					animate={{ opacity: 1 }}
-					transition={{ duration: 0.3 }}
-				>
-					<Button
-						variant="secondary"
-						className="flex-1 text-base"
-						onClick={() => handleReview(false)}
-						disabled={isPending}
+			<div className="h-10">
+				{showButtons && (
+					<motion.div
+						className="flex gap-3"
+						initial={{ opacity: 0 }}
+						animate={{ opacity: 1 }}
+						transition={{ duration: 0.3 }}
 					>
-						<X className="h-5 w-5 mr-2" />
-						{t("pages.learning.session.wrong")}
-					</Button>
-					<Button
-						variant="default"
-						className="flex-1 text-base"
-						onClick={() => handleReview(true)}
-						disabled={isPending}
-						isLoading={isPending}
-					>
-						<Check className="h-5 w-5 mr-2" />
-						{t("pages.learning.session.right")}
-					</Button>
-				</motion.div>
-			)}
+						<Button
+							variant="secondary"
+							className="flex-1 text-base"
+							onClick={() => handleReview(false)}
+							disabled={isPending}
+						>
+							<X className="h-5 w-5 mr-2" />
+							{t("pages.learning.session.wrong")}
+						</Button>
+						<Button
+							variant="default"
+							className="flex-1 text-base"
+							onClick={() => handleReview(true)}
+							disabled={isPending}
+							isLoading={isPending}
+						>
+							<Check className="h-5 w-5 mr-2" />
+							{t("pages.learning.session.right")}
+						</Button>
+					</motion.div>
+				)}
+			</div>
+
+			{/* Keyboard shortcuts legend */}
+			<div className="mt-8 flex flex-col items-center gap-1 text-xs text-muted-foreground">
+				{!isFlipped ? (
+					<div className="flex flex-col items-center gap-1">
+						<Keyboard className="h-3 w-3" />
+						<span>{t("pages.learning.session.shortcuts.reveal")}</span>
+					</div>
+				) : (
+					<>
+						<Keyboard className="h-3 w-3" />
+
+						<span>{t("pages.learning.session.shortcuts.wrong")}</span>
+						<span>{t("pages.learning.session.shortcuts.right")}</span>
+					</>
+				)}
+			</div>
 		</div>
 	)
 }

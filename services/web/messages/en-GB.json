@@ -307,7 +307,12 @@
 				"wrong": "Wrong",
 				"right": "Right",
 				"progress": "{current} of {total}",
-				"newBadge": "New"
+				"newBadge": "New",
+				"shortcuts": {
+					"reveal": "Space to reveal",
+					"wrong": "← or 1 wrong",
+					"right": "→ or 2 right"
+				}
 			},
 			"complete": {
 				"title": "Session Complete!",

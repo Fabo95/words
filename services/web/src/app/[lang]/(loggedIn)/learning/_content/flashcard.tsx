@@ -49,6 +49,7 @@ export function Flashcard({ sourceText, targetText, isRevealed, isNew, onFlip, o
 			const isLastChar = index === lastCharIndex
 
 			return (
+				// biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
 				<span key={index} className="relative inline-block overflow-hidden">
 					{isRevealed && !isSpace ? (
 						<motion.span
@@ -91,9 +92,7 @@ export function Flashcard({ sourceText, targetText, isRevealed, isNew, onFlip, o
 				<p className="text-3xl md:text-2xl font-semibold text-center wrap-break-word mb-2">{sourceText}</p>
 				<p className="text-3xl md:text-2xl font-semibold text-center wrap-break-word">{renderTargetText()}</p>
 				{!isRevealed && (
-					<p className="absolute bottom-6 text-sm text-foreground/40">
-						{t("pages.learning.session.showAnswer")}
-					</p>
+					<p className="absolute bottom-6 text-sm text-foreground/40">{t("pages.learning.session.showAnswer")}</p>
 				)}
 			</div>
 		</div>

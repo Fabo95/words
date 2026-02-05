@@ -310,7 +310,12 @@
 				"wrong": "Falsch",
 				"right": "Richtig",
 				"progress": "{current} von {total}",
-				"newBadge": "Neu"
+				"newBadge": "Neu",
+				"shortcuts": {
+					"reveal": "Leertaste zum Aufdecken",
+					"wrong": "← oder 1 falsch",
+					"right": "→ oder 2 richtig"
+				}
 			},
 			"complete": {
 				"title": "Sitzung abgeschlossen!",
