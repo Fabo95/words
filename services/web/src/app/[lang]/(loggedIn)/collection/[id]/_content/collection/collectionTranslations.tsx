@@ -91,6 +91,7 @@ export const CollectionTranslations = () => {
 			cefrLevel: translation.cefr_level ?? undefined,
 			universalPosTags: translation.universal_pos_tags,
 			exampleSentences: translation.example_sentences,
+			learningProgress: translation.learning_progress ?? undefined,
 		}))
 	}, [translationsData, params.id])
 

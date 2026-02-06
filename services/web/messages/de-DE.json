@@ -29,6 +29,14 @@
         "hoursAgo": "vor {count} Std.",
         "daysAgo": "vor {count} Tagen",
         "dateFallback": "{date}"
+      },
+      "nextReview": {
+        "new": "Neu",
+        "now": "Jetzt",
+        "inHours": "In {hours} Stunden",
+        "tomorrow": "Morgen",
+        "inDays": "In {days} Tagen",
+        "overdue": "Überfällig"
       }
     },
     "pagination": {
@@ -315,11 +323,23 @@
 				"right": "Richtig",
 				"progress": "{current} von {total}",
 				"newBadge": "Neu",
+				"resultCorrect": "Richtig!",
+				"resultWrong": "Falsch",
+				"nextReview": {
+					"today": "Heute nochmal wiederholen",
+					"tomorrow": "Nächste Wiederholung morgen",
+					"inDays": "Nächste Wiederholung in {days} Tagen"
+				},
 				"shortcuts": {
 					"reveal": "Leertaste zum Aufdecken",
 					"revealAlt": "oder Karte antippen",
-					"wrong": "← oder 1 falsch",
-					"right": "→ oder 2 richtig"
+					"grades": "1 Nochmal · 2 Schwer · 3 Gut · 4 Einfach"
+				},
+				"grades": {
+					"again": "Nochmal",
+					"hard": "Schwer",
+					"good": "Gut",
+					"easy": "Einfach"
 				}
 			},
 			"complete": {
@@ -354,7 +374,8 @@
                 "translation": "Übersetzung",
                 "cefrLevel": "Sprachniveau",
                 "universalPosTags": "Wortart",
-                "exampleSentences": "Beispielsätze"
+                "exampleSentences": "Beispielsätze",
+                "nextReview": "Nächste Wiederholung"
               }
 			}
 		},
@@ -375,7 +396,8 @@
 					"translation": "Übersetzung",
 					"collection": "Sammlung",
 					"cefrLevel": "Sprachniveau",
-					"universalPosTags": "Wortart"
+					"universalPosTags": "Wortart",
+					"nextReview": "Nächste Wiederholung"
 				}
 			}
 		}

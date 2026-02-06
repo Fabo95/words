@@ -9,6 +9,7 @@ import { Skeleton } from "@app/components/ui/skeleton"
 
 import { TranslationActions } from "@app/components/translationActions/translationActions"
 import { TranslationsTableItem } from "@app/app/[lang]/(loggedIn)/translations/_content/utils/translationsTableTypes"
+import { formatNextReviewDate } from "@app/utils/helpers/formatNextReviewDate"
 
 type TranslationsMobileProps = {
 	items: TranslationsTableItem[]
@@ -66,6 +67,9 @@ export function TranslationsMobile({ items, isLoading, skeletonRowCount = 5 }: T
 				const cefrCode = item.cefrLevel?.code
 				const posTags = item.universalPosTags ?? []
 				const posPrimary = posTags[0]
+				const nextReview = item.learningProgress
+					? formatNextReviewDate(item.learningProgress.next_review_at, t)
+					: t("common.nextReview.new")
 
 				return (
 					<Card key={item.translationId} className="rounded-xl gap-3">
@@ -112,6 +116,11 @@ export function TranslationsMobile({ items, isLoading, skeletonRowCount = 5 }: T
 								<div>
 									<p className="text-xs text-muted-foreground">{t("pages.translations.table.columns.translation")}</p>
 									<p className="mt-1 break-words">{item.targetText}</p>
+								</div>
+
+								<div>
+									<p className="text-xs text-muted-foreground">{t("pages.translations.table.columns.nextReview")}</p>
+									<p className="mt-1 text-sm">{nextReview}</p>
 								</div>
 							</div>
 						</CardContent>

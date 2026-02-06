@@ -4,10 +4,11 @@ import { useTranslations } from "next-intl"
 import { Button } from "@app/components/ui/button"
 import { Card, CardContent } from "@app/components/ui/card"
 import { CheckCircle2, XCircle, Trophy } from "lucide-react"
+import type { ReviewGrade } from "./utils/useLearningSessionQuery"
 
 type ReviewResult = {
 	translationId: number
-	correct: boolean
+	grade: ReviewGrade
 }
 
 type LearningSessionCompleteProps = {
@@ -20,8 +21,8 @@ type LearningSessionCompleteProps = {
 export function LearningSessionComplete({ results, totalItems, onContinue, onFinish }: LearningSessionCompleteProps) {
 	const t = useTranslations()
 
-	const correctCount = results.filter((r) => r.correct).length
-	const incorrectCount = results.filter((r) => !r.correct).length
+	const correctCount = results.filter((r) => r.grade === "good" || r.grade === "easy").length
+	const incorrectCount = results.filter((r) => r.grade === "again" || r.grade === "hard").length
 
 	return (
 		<div className="mx-auto w-full max-w-lg">

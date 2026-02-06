@@ -6,7 +6,7 @@ import { useSuspenseQuery, useQueryClient } from "@tanstack/react-query"
 import { getLearnStatsQueryOptions } from "@app/utils/reactQuery/queryOptions"
 import { $api } from "@app/utils/api/apiRequests"
 import { LearningLanding } from "./learningLanding"
-import { LearningSession } from "./learningSession"
+import { LearningSession, ReviewGrade } from "./learningSession"
 import { LearningSessionComplete } from "./learningSessionComplete"
 import { LearningEmptyState } from "./learningEmptyState"
 import { useLearningSessionQuery } from "./utils/useLearningSessionQuery"
@@ -46,8 +46,8 @@ export function Learning() {
 	}, [fetchItems, actions])
 
 	const handleReview = useCallback(
-		(correct: boolean, translationId: number) => {
-			actions.submitReview(correct, translationId)
+		(grade: ReviewGrade, translationId: number) => {
+			actions.submitReview(grade, translationId)
 		},
 		[actions],
 	)

@@ -32,6 +32,15 @@ export const learnItemSchema = z.object({
 
 export type LearnItem = z.infer<typeof learnItemSchema>
 
+export type LearningProgress = {
+	id: number
+	next_review_at: string
+	interval: number
+	ease_factor: number
+	repetition_count: number
+	last_reviewed_at: string
+}
+
 // biome-ignore lint/suspicious/noExplicitAny: <explanation>
 export type LearningProgressApiResponse = any
 

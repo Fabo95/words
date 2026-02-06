@@ -1,36 +1,75 @@
 "use client"
 
 import * as React from "react"
-import { useState, useCallback, useEffect } from "react"
+import { useState, useCallback, useEffect, useRef } from "react"
 import { motion } from "motion/react"
 import { useTranslations } from "next-intl"
 import { Button } from "@app/components/ui/button"
 import { useToast } from "@app/components/ui/use-toast"
 import { $api } from "@app/utils/api/apiRequests"
 import { Flashcard } from "./flashcard"
-import { X, Check } from "lucide-react"
 import { LearnItem } from "@app/utils/types/api"
+import type { ReviewGrade } from "./utils/useLearningSessionQuery"
+
+export type { ReviewGrade }
+
+type ReviewResult = {
+	grade: ReviewGrade
+	nextReviewAt: string
+	newInterval: number
+}
 
 type LearningSessionProps = {
 	currentItem: LearnItem
 	currentIndex: number
 	totalItems: number
-	onReview: (correct: boolean, translationId: number) => void
+	onReview: (grade: ReviewGrade, translationId: number) => void
 	reverseMode: boolean
 }
 
-export function LearningSession({ currentItem, currentIndex, totalItems, onReview, reverseMode }: LearningSessionProps) {
+export function LearningSession({
+	currentItem,
+	currentIndex,
+	totalItems,
+	onReview,
+	reverseMode,
+}: LearningSessionProps) {
 	const t = useTranslations()
 	const { toast } = useToast()
 
 	const [isFlipped, setIsFlipped] = useState(false)
 	const [showButtons, setShowButtons] = useState(false)
+	const [reviewResult, setReviewResult] = useState<ReviewResult | null>(null)
+	const timeoutRef = useRef<NodeJS.Timeout | null>(null)
+
+	useEffect(() => {
+		return () => {
+			if (timeoutRef.current) clearTimeout(timeoutRef.current)
+		}
+	}, [])
 
 	const { mutate: submitReview, isPending } = $api.useMutation("patch", "/learn/{translation_id}/review", {
-		onSuccess: (_, variables) => {
-			setIsFlipped(false)
-			setShowButtons(false)
-			onReview(variables.body.correct, currentItem.id)
+		onSuccess: (response, variables) => {
+			const data = response.data
+			if (data) {
+				setReviewResult({
+					grade: variables.body.grade as ReviewGrade,
+					nextReviewAt: data.learning_progress.next_review_at,
+					newInterval: data.new_interval,
+				})
+				setShowButtons(false)
+
+				// Auto-advance after showing result
+				timeoutRef.current = setTimeout(() => {
+					setIsFlipped(false)
+					setReviewResult(null)
+					onReview(variables.body.grade as ReviewGrade, currentItem.id)
+				}, 1500)
+			} else {
+				setIsFlipped(false)
+				setShowButtons(false)
+				onReview(variables.body.grade as ReviewGrade, currentItem.id)
+			}
 		},
 		onError: () => {
 			toast({
@@ -50,10 +89,10 @@ export function LearningSession({ currentItem, currentIndex, totalItems, onRevie
 	}, [])
 
 	const handleReview = useCallback(
-		(correct: boolean) => {
+		(grade: ReviewGrade) => {
 			submitReview({
 				params: { path: { translation_id: currentItem.id } },
-				body: { correct },
+				body: { grade },
 			})
 		},
 		[submitReview, currentItem.id],
@@ -70,12 +109,18 @@ export function LearningSession({ currentItem, currentIndex, totalItems, onRevie
 			}
 
 			if (showButtons) {
-				if (e.code === "ArrowLeft" || e.code === "Digit1" || e.code === "Numpad1") {
+				if (e.code === "Digit1" || e.code === "Numpad1") {
 					e.preventDefault()
-					handleReview(false)
-				} else if (e.code === "ArrowRight" || e.code === "Digit2" || e.code === "Numpad2") {
+					handleReview("again")
+				} else if (e.code === "Digit2" || e.code === "Numpad2") {
 					e.preventDefault()
-					handleReview(true)
+					handleReview("hard")
+				} else if (e.code === "Digit3" || e.code === "Numpad3") {
+					e.preventDefault()
+					handleReview("good")
+				} else if (e.code === "Digit4" || e.code === "Numpad4") {
+					e.preventDefault()
+					handleReview("easy")
 				}
 			}
 		}
@@ -113,6 +158,7 @@ export function LearningSession({ currentItem, currentIndex, totalItems, onRevie
 					isNew={currentItem.isNew}
 					onFlip={handleFlip}
 					onRevealComplete={handleRevealComplete}
+					reviewResult={reviewResult}
 				/>
 			</div>
 
@@ -120,34 +166,46 @@ export function LearningSession({ currentItem, currentIndex, totalItems, onRevie
 			<div className="h-10">
 				{showButtons && (
 					<motion.div
-						className="flex gap-3"
+						className="flex gap-2"
 						initial={{ opacity: 0 }}
 						animate={{ opacity: 1 }}
 						transition={{ duration: 0.3 }}
 					>
 						<Button
-							variant="secondary"
-							className="flex-1 text-base"
-							onClick={() => handleReview(false)}
+							variant="destructive"
+							className="flex-1"
+							onClick={() => handleReview("again")}
 							disabled={isPending}
 						>
-							<X className="h-5 w-5 mr-2" />
-							{t("pages.learning.session.wrong")}
+							{t("pages.learning.session.grades.again")}
+						</Button>
+						<Button
+							variant="secondary"
+							className="flex-1"
+							onClick={() => handleReview("hard")}
+							disabled={isPending}
+						>
+							{t("pages.learning.session.grades.hard")}
+						</Button>
+						<Button
+							variant="secondary"
+							className="flex-1"
+							onClick={() => handleReview("good")}
+							disabled={isPending}
+						>
+							{t("pages.learning.session.grades.good")}
 						</Button>
 						<Button
 							variant="default"
-							className="flex-1 text-base"
-							onClick={() => handleReview(true)}
+							className="flex-1"
+							onClick={() => handleReview("easy")}
 							disabled={isPending}
-							isLoading={isPending}
 						>
-							<Check className="h-5 w-5 mr-2" />
-							{t("pages.learning.session.right")}
+							{t("pages.learning.session.grades.easy")}
 						</Button>
 					</motion.div>
 				)}
 			</div>
-
-					</div>
+		</div>
 	)
 }

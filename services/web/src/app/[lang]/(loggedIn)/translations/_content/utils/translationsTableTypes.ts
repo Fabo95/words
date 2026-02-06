@@ -1,4 +1,4 @@
-import { CefrLevel, ExampleSentence, UniversalPosTag } from "@app/utils/types/api"
+import { CefrLevel, ExampleSentence, LearningProgress, UniversalPosTag } from "@app/utils/types/api"
 
 export type TranslationsTableItem = {
 	translationId: number
@@ -9,4 +9,5 @@ export type TranslationsTableItem = {
 	cefrLevel?: CefrLevel
 	universalPosTags: UniversalPosTag[]
 	exampleSentences: ExampleSentence[]
+	learningProgress?: LearningProgress
 }

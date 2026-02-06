@@ -29,6 +29,14 @@
         "hoursAgo": "{count} hours ago",
         "daysAgo": "{count} days ago",
         "dateFallback": "{date}"
+      },
+      "nextReview": {
+        "new": "New",
+        "now": "Now",
+        "inHours": "In {hours} hours",
+        "tomorrow": "Tomorrow",
+        "inDays": "In {days} days",
+        "overdue": "Overdue"
       }
     },
     "pagination": {
@@ -312,11 +320,23 @@
 				"right": "Right",
 				"progress": "{current} of {total}",
 				"newBadge": "New",
+				"resultCorrect": "Correct!",
+				"resultWrong": "Wrong",
+				"nextReview": {
+					"today": "Review again today",
+					"tomorrow": "Next review tomorrow",
+					"inDays": "Next review in {days} days"
+				},
 				"shortcuts": {
 					"reveal": "Space to reveal",
 					"revealAlt": "or tap the card",
-					"wrong": "← or 1 wrong",
-					"right": "→ or 2 right"
+					"grades": "1 Again · 2 Hard · 3 Good · 4 Easy"
+				},
+				"grades": {
+					"again": "Again",
+					"hard": "Hard",
+					"good": "Good",
+					"easy": "Easy"
 				}
 			},
 			"complete": {
@@ -353,7 +373,8 @@
                   "translation": "Translation",
                   "cefrLevel": "Language level",
                   "universalPosTag": "Word type",
-                  "exampleSentences": "Example sentences"
+                  "exampleSentences": "Example sentences",
+                  "nextReview": "Next review"
                 }
 			}
 		},
@@ -374,7 +395,8 @@
 					"translation": "Translation",
 					"collection": "Collection",
 					"cefrLevel": "Language level",
-					"universalPosTags": "Word type"
+					"universalPosTags": "Word type",
+					"nextReview": "Next review"
 				}
 			}
 		}

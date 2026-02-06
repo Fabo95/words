@@ -6,6 +6,7 @@ import { DataTableColumnHeader } from "@app/components/ui/dataTable/dataTableCol
 import { Badge } from "@app/components/ui/badge"
 import { TFunction } from "@app/utils/types/tFunction"
 import { getCollectionPage } from "@app/utils/urls/urls"
+import { formatNextReviewDate } from "@app/utils/helpers/formatNextReviewDate"
 import * as React from "react"
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime"
 
@@ -89,6 +90,24 @@ export const getTranslationsTableColumns = (
 							</Badge>
 						))}
 					</div>
+				)
+			},
+		},
+
+		{
+			accessorKey: "learningProgress",
+			header: ({ column }) => (
+				<DataTableColumnHeader column={column} title={t("pages.translations.table.columns.nextReview")} />
+			),
+			cell: ({ row }) => {
+				const learningProgress = row.original.learningProgress
+
+				if (!learningProgress) {
+					return <span className="text-muted-foreground text-xs">{t("common.nextReview.new")}</span>
+				}
+
+				return (
+					<span className="text-xs">{formatNextReviewDate(learningProgress.next_review_at, t)}</span>
 				)
 			},
 		},

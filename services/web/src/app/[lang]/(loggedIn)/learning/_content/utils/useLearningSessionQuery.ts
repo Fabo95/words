@@ -9,9 +9,11 @@ import { LearnItem, LearnItemApiResponse, learnItemSchema } from "@app/utils/typ
 // Schemas
 // ============================================================================
 
+const reviewGradeSchema = z.enum(["again", "hard", "good", "easy"])
+
 const reviewResultSchema = z.object({
 	translationId: z.number(),
-	correct: z.boolean(),
+	grade: reviewGradeSchema,
 })
 
 const sessionDataSchema = z.object({
@@ -29,6 +31,7 @@ const completeDataSchema = z.object({
 // Types
 // ============================================================================
 
+export type ReviewGrade = z.infer<typeof reviewGradeSchema>
 type ReviewResult = z.infer<typeof reviewResultSchema>
 type SessionData = z.infer<typeof sessionDataSchema>
 type CompleteData = z.infer<typeof completeDataSchema>
@@ -40,7 +43,7 @@ export type LearningSessionState =
 
 export type LearningSessionActions = {
 	startSession: (items: LearnItemApiResponse[]) => void
-	submitReview: (correct: boolean, translationId: number) => void
+	submitReview: (grade: ReviewGrade, translationId: number) => void
 	completeSession: () => void
 	restart: () => void
 }
@@ -161,11 +164,11 @@ export function useLearningSessionQuery(): {
 	)
 
 	const submitReview = useCallback(
-		(correct: boolean, translationId: number) => {
+		(grade: ReviewGrade, translationId: number) => {
 			if (state.phase !== "session") return
 
 			const { items, currentIndex, results } = state.data
-			const newResults: ReviewResult[] = [...results, { translationId, correct }]
+			const newResults: ReviewResult[] = [...results, { translationId, grade }]
 			const isLastItem = currentIndex >= items.length - 1
 
 			if (isLastItem) {

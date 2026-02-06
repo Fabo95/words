@@ -411,6 +411,7 @@ export type components = {
             data?: components["schemas"]["entity.translationsModel"] & {
                 cefr_level?: null | components["schemas"]["entity.cefr_levelsModel"];
                 example_sentences: components["schemas"]["entity.example_sentencesModel"][];
+                learning_progress?: null | components["schemas"]["entity.learning_progressModel"];
                 universal_pos_tags: components["schemas"]["entity.universal_pos_tagsModel"][];
             };
             message: string;
@@ -432,6 +433,7 @@ export type components = {
             data?: (components["schemas"]["entity.translationsModel"] & {
                 cefr_level?: null | components["schemas"]["entity.cefr_levelsModel"];
                 example_sentences: components["schemas"]["entity.example_sentencesModel"][];
+                learning_progress?: null | components["schemas"]["entity.learning_progressModel"];
                 universal_pos_tags: components["schemas"]["entity.universal_pos_tagsModel"][];
             })[];
             message: string;
@@ -560,9 +562,11 @@ export type components = {
             /** Format: int32 */
             universal_pos_tag_id: number;
         };
+        /** @enum {string} */
+        ReviewGrade: "again" | "hard" | "good" | "easy";
         ReviewRequest: {
-            /** @description true = correct answer, false = incorrect */
-            correct: boolean;
+            /** @description Quality of recall: again, hard, good, or easy */
+            grade: components["schemas"]["ReviewGrade"];
         };
         ReviewResponse: {
             learning_progress: components["schemas"]["entity.learning_progressModel"];
@@ -611,6 +615,7 @@ export type components = {
         TranslationWithRelations: components["schemas"]["entity.translationsModel"] & {
             cefr_level?: null | components["schemas"]["entity.cefr_levelsModel"];
             example_sentences: components["schemas"]["entity.example_sentencesModel"][];
+            learning_progress?: null | components["schemas"]["entity.learning_progressModel"];
             universal_pos_tags: components["schemas"]["entity.universal_pos_tagsModel"][];
         };
         UserForCreate: {
