@@ -8,7 +8,7 @@ import { Button } from "@app/components/ui/button"
 import { useToast } from "@app/components/ui/use-toast"
 import { $api } from "@app/utils/api/apiRequests"
 import { Flashcard } from "./flashcard"
-import { X, Check, Keyboard } from "lucide-react"
+import { X, Check } from "lucide-react"
 import { LearnItem } from "@app/utils/types/api"
 
 type LearningSessionProps = {
@@ -147,22 +147,6 @@ export function LearningSession({ currentItem, currentIndex, totalItems, onRevie
 				)}
 			</div>
 
-			{/* Keyboard shortcuts legend */}
-			<div className="mt-8 flex flex-col items-center gap-1 text-xs text-muted-foreground">
-				{!isFlipped ? (
-					<div className="flex flex-col items-center gap-1">
-						<Keyboard className="h-3 w-3" />
-						<span>{t("pages.learning.session.shortcuts.reveal")}</span>
 					</div>
-				) : (
-					<>
-						<Keyboard className="h-3 w-3" />
-
-						<span>{t("pages.learning.session.shortcuts.wrong")}</span>
-						<span>{t("pages.learning.session.shortcuts.right")}</span>
-					</>
-				)}
-			</div>
-		</div>
 	)
 }

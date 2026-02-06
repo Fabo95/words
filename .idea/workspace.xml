@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="change animation">
+    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="add keyboard support in learn page">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/web/messages/de-DE.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/messages/de-DE.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/web/messages/en-GB.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/messages/en-GB.json" afterDir="false" />
@@ -266,15 +266,7 @@
       <workItem from="1768152455661" duration="5114000" />
       <workItem from="1768686083435" duration="24834000" />
       <workItem from="1769284940233" duration="16174000" />
-      <workItem from="1769809608107" duration="21849000" />
-    </task>
-    <task id="LOCAL-00059" summary="add translations">
-      <option name="closed" value="true" />
-      <created>1752427402475</created>
-      <option name="number" value="00059" />
-      <option name="presentableId" value="LOCAL-00059" />
-      <option name="project" value="LOCAL" />
-      <updated>1752427402475</updated>
+      <workItem from="1769809608107" duration="23717000" />
     </task>
     <task id="LOCAL-00060" summary="moved to dialog">
       <option name="closed" value="true" />
@@ -660,7 +652,15 @@
       <option name="project" value="LOCAL" />
       <updated>1770245411559</updated>
     </task>
-    <option name="localTasksCounter" value="108" />
+    <task id="LOCAL-00108" summary="add keyboard support in learn page">
+      <option name="closed" value="true" />
+      <created>1770331091737</created>
+      <option name="number" value="00108" />
+      <option name="presentableId" value="LOCAL-00108" />
+      <option name="project" value="LOCAL" />
+      <updated>1770331091737</updated>
+    </task>
+    <option name="localTasksCounter" value="109" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -681,7 +681,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add check translation" />
     <MESSAGE value="add universal pos tags" />
     <MESSAGE value="moved form component top level" />
     <MESSAGE value="add tfunction type" />
@@ -706,7 +705,8 @@
     <MESSAGE value="add icons" />
     <MESSAGE value="add reveal animation" />
     <MESSAGE value="change animation" />
-    <option name="LAST_COMMIT_MESSAGE" value="change animation" />
+    <MESSAGE value="add keyboard support in learn page" />
+    <option name="LAST_COMMIT_MESSAGE" value="add keyboard support in learn page" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

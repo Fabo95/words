@@ -313,6 +313,7 @@
 				"newBadge": "Neu",
 				"shortcuts": {
 					"reveal": "Leertaste zum Aufdecken",
+					"revealAlt": "oder Karte antippen",
 					"wrong": "← oder 1 falsch",
 					"right": "→ oder 2 richtig"
 				}

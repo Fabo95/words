@@ -310,6 +310,7 @@
 				"newBadge": "New",
 				"shortcuts": {
 					"reveal": "Space to reveal",
+					"revealAlt": "or tap the card",
 					"wrong": "← or 1 wrong",
 					"right": "→ or 2 right"
 				}

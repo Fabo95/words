@@ -3,6 +3,7 @@
 import { useMemo } from "react"
 import { motion } from "motion/react"
 import { useTranslations } from "next-intl"
+import { Keyboard } from "lucide-react"
 import { Badge } from "@app/components/ui/badge"
 import { cn } from "@app/utils/shadcn/shadcnHelpers"
 
@@ -91,9 +92,20 @@ export function Flashcard({ sourceText, targetText, isRevealed, isNew, onFlip, o
 
 				<p className="text-3xl md:text-2xl font-semibold text-center wrap-break-word mb-2">{sourceText}</p>
 				<p className="text-3xl md:text-2xl font-semibold text-center wrap-break-word">{renderTargetText()}</p>
-				{!isRevealed && (
-					<p className="absolute bottom-6 text-sm text-foreground/40">{t("pages.learning.session.showAnswer")}</p>
-				)}
+				<div className="absolute bottom-6 flex flex-col items-center gap-1 text-sm text-foreground/40">
+					<Keyboard className="h-3 w-3" />
+					{!isRevealed ? (
+						<>
+							<span>{t("pages.learning.session.shortcuts.reveal")}</span>
+							<span>{t("pages.learning.session.shortcuts.revealAlt")}</span>
+						</>
+					) : (
+						<>
+							<span>{t("pages.learning.session.shortcuts.wrong")}</span>
+							<span>{t("pages.learning.session.shortcuts.right")}</span>
+						</>
+					)}
+				</div>
 			</div>
 		</div>
 	)
