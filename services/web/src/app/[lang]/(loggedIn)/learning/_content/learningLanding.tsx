@@ -3,8 +3,9 @@
 import { useTranslations } from "next-intl"
 import { Button } from "@app/components/ui/button"
 import { Card, CardContent } from "@app/components/ui/card"
+import { Switch } from "@app/components/ui/switch"
+import { Label } from "@app/components/ui/label"
 import { Clock, Sparkles, BookOpen, Award } from "lucide-react"
-import { cn } from "@app/utils/shadcn/shadcnHelpers"
 
 type LearnStats = {
 	due_count: number
@@ -96,29 +97,18 @@ export function LearningLanding({
 			</div>
 
 			{/* Direction toggle */}
-			<div className="mb-4">
-				<div className="flex rounded-lg border bg-muted/50 p-1">
-					<button
-						type="button"
-						onClick={() => onReverseModeChange(false)}
-						className={cn(
-							"flex-1 px-3 py-2 text-sm font-medium rounded-md transition-colors",
-							!reverseMode ? "bg-background shadow-sm" : "text-muted-foreground hover:text-foreground",
-						)}
-					>
-						{t("pages.learning.landing.directionNormal")}
-					</button>
-					<button
-						type="button"
-						onClick={() => onReverseModeChange(true)}
-						className={cn(
-							"flex-1 px-3 py-2 text-sm font-medium rounded-md transition-colors",
-							reverseMode ? "bg-background shadow-sm" : "text-muted-foreground hover:text-foreground",
-						)}
-					>
-						{t("pages.learning.landing.directionReverse")}
-					</button>
+			<div className="mb-4 flex items-center justify-between rounded-lg border bg-card p-3">
+				<div>
+					<Label htmlFor="reverse-mode" className="text-sm font-medium cursor-pointer">
+						{reverseMode ? t("pages.learning.landing.directionReverse") : t("pages.learning.landing.directionNormal")}
+					</Label>
+					<p className="text-xs text-muted-foreground">
+						{reverseMode
+							? t("pages.learning.landing.directionReverseHint")
+							: t("pages.learning.landing.directionNormalHint")}
+					</p>
 				</div>
+				<Switch id="reverse-mode" checked={reverseMode} onCheckedChange={onReverseModeChange} />
 			</div>
 
 			<Button className="w-full text-base" onClick={onStartLearning} isLoading={isLoading}>

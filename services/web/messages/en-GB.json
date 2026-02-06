@@ -300,9 +300,10 @@
 				"title": "Ready to learn?",
 				"description": "Review your vocabulary with spaced repetition",
 				"startButton": "Start Learning",
-				"direction": "Direction",
-				"directionNormal": "German → English",
-				"directionReverse": "English → German"
+				"directionNormal": "German to English",
+				"directionNormalHint": "See the German word, recall the English",
+				"directionReverse": "English to German",
+				"directionReverseHint": "See the English word, recall the German"
 			},
 			"session": {
 				"showAnswer": "Tap to reveal",
