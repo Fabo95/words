@@ -299,7 +299,10 @@
 			"landing": {
 				"title": "Ready to learn?",
 				"description": "Review your vocabulary with spaced repetition",
-				"startButton": "Start Learning"
+				"startButton": "Start Learning",
+				"direction": "Direction",
+				"directionNormal": "German → English",
+				"directionReverse": "English → German"
 			},
 			"session": {
 				"showAnswer": "Tap to reveal",

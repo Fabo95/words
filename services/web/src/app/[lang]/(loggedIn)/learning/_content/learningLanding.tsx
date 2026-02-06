@@ -4,6 +4,7 @@ import { useTranslations } from "next-intl"
 import { Button } from "@app/components/ui/button"
 import { Card, CardContent } from "@app/components/ui/card"
 import { Clock, Sparkles, BookOpen, Award } from "lucide-react"
+import { cn } from "@app/utils/shadcn/shadcnHelpers"
 
 type LearnStats = {
 	due_count: number
@@ -16,9 +17,17 @@ type LearningLandingProps = {
 	stats: LearnStats | undefined
 	onStartLearning: () => void
 	isLoading: boolean
+	reverseMode: boolean
+	onReverseModeChange: (value: boolean) => void
 }
 
-export function LearningLanding({ stats, onStartLearning, isLoading }: LearningLandingProps) {
+export function LearningLanding({
+	stats,
+	onStartLearning,
+	isLoading,
+	reverseMode,
+	onReverseModeChange,
+}: LearningLandingProps) {
 	const t = useTranslations()
 
 	const statItems = [
@@ -84,6 +93,32 @@ export function LearningLanding({ stats, onStartLearning, isLoading }: LearningL
 						</Card>
 					)
 				})}
+			</div>
+
+			{/* Direction toggle */}
+			<div className="mb-4">
+				<div className="flex rounded-lg border bg-muted/50 p-1">
+					<button
+						type="button"
+						onClick={() => onReverseModeChange(false)}
+						className={cn(
+							"flex-1 px-3 py-2 text-sm font-medium rounded-md transition-colors",
+							!reverseMode ? "bg-background shadow-sm" : "text-muted-foreground hover:text-foreground",
+						)}
+					>
+						{t("pages.learning.landing.directionNormal")}
+					</button>
+					<button
+						type="button"
+						onClick={() => onReverseModeChange(true)}
+						className={cn(
+							"flex-1 px-3 py-2 text-sm font-medium rounded-md transition-colors",
+							reverseMode ? "bg-background shadow-sm" : "text-muted-foreground hover:text-foreground",
+						)}
+					>
+						{t("pages.learning.landing.directionReverse")}
+					</button>
+				</div>
 			</div>
 
 			<Button className="w-full text-base" onClick={onStartLearning} isLoading={isLoading}>

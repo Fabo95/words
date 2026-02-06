@@ -16,9 +16,10 @@ type LearningSessionProps = {
 	currentIndex: number
 	totalItems: number
 	onReview: (correct: boolean, translationId: number) => void
+	reverseMode: boolean
 }
 
-export function LearningSession({ currentItem, currentIndex, totalItems, onReview }: LearningSessionProps) {
+export function LearningSession({ currentItem, currentIndex, totalItems, onReview, reverseMode }: LearningSessionProps) {
 	const t = useTranslations()
 	const { toast } = useToast()
 
@@ -106,8 +107,8 @@ export function LearningSession({ currentItem, currentIndex, totalItems, onRevie
 			{/* Flashcard */}
 			<div className="mb-8">
 				<Flashcard
-					sourceText={currentItem.sourceText}
-					targetText={currentItem.targetText}
+					sourceText={reverseMode ? currentItem.targetText : currentItem.sourceText}
+					targetText={reverseMode ? currentItem.sourceText : currentItem.targetText}
 					isRevealed={isFlipped}
 					isNew={currentItem.isNew}
 					onFlip={handleFlip}

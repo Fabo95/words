@@ -302,7 +302,10 @@
 			"landing": {
 				"title": "Bereit zu lernen?",
 				"description": "Wiederhole deinen Wortschatz mit Karteikarten",
-				"startButton": "Lernen starten"
+				"startButton": "Lernen starten",
+				"direction": "Richtung",
+				"directionNormal": "Deutsch → Englisch",
+				"directionReverse": "Englisch → Deutsch"
 			},
 			"session": {
 				"showAnswer": "Tippen zum Aufdecken",

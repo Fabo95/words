@@ -16,6 +16,7 @@ export function Learning() {
 
 	const { state, actions } = useLearningSessionQuery()
 	const [isLoading, setIsLoading] = useState(false)
+	const [reverseMode, setReverseMode] = useState(false)
 
 	const {
 		data: { data: stats },
@@ -79,7 +80,15 @@ export function Learning() {
 			return <LearningEmptyState />
 		}
 
-		return <LearningLanding stats={stats} onStartLearning={handleStartLearning} isLoading={isLoading} />
+		return (
+			<LearningLanding
+				stats={stats}
+				onStartLearning={handleStartLearning}
+				isLoading={isLoading}
+				reverseMode={reverseMode}
+				onReverseModeChange={setReverseMode}
+			/>
+		)
 	}
 
 	if (state.phase === "session") {
@@ -95,6 +104,7 @@ export function Learning() {
 				currentIndex={state.data.currentIndex}
 				totalItems={state.data.items.length}
 				onReview={handleReview}
+				reverseMode={reverseMode}
 			/>
 		)
 	}
