@@ -4,16 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="add grade summary">
+    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="add learn collection feature">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/web/messages/de-DE.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/messages/de-DE.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/web/messages/en-GB.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/messages/en-GB.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/learning/_content/learning.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/learning/_content/learning.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/learning/_content/learningEmptyState.tsx" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/learning/_content/learningLanding.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/learning/_content/learningLanding.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/learning/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/learning/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/generated/openApiTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/generated/openApiTypes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/utils/reactQuery/queryOptions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/utils/reactQuery/queryOptions.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -270,15 +264,7 @@
       <workItem from="1768152455661" duration="5114000" />
       <workItem from="1768686083435" duration="24834000" />
       <workItem from="1769284940233" duration="16174000" />
-      <workItem from="1769809608107" duration="35507000" />
-    </task>
-    <task id="LOCAL-00066" summary="add inngest">
-      <option name="closed" value="true" />
-      <created>1761918161791</created>
-      <option name="number" value="00066" />
-      <option name="presentableId" value="LOCAL-00066" />
-      <option name="project" value="LOCAL" />
-      <updated>1761918161791</updated>
+      <workItem from="1769809608107" duration="35746000" />
     </task>
     <task id="LOCAL-00067" summary="add schema.prisma">
       <option name="closed" value="true" />
@@ -664,7 +650,15 @@
       <option name="project" value="LOCAL" />
       <updated>1770489054080</updated>
     </task>
-    <option name="localTasksCounter" value="115" />
+    <task id="LOCAL-00115" summary="add learn collection feature">
+      <option name="closed" value="true" />
+      <created>1770493465760</created>
+      <option name="number" value="00115" />
+      <option name="presentableId" value="LOCAL-00115" />
+      <option name="project" value="LOCAL" />
+      <updated>1770493465760</updated>
+    </task>
+    <option name="localTasksCounter" value="116" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -685,7 +679,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add translation details dialog" />
     <MESSAGE value="add cefr to translation creation" />
     <MESSAGE value="add pagination" />
     <MESSAGE value="fix ui" />
@@ -710,7 +703,8 @@
     <MESSAGE value="add next review data + improve learning page" />
     <MESSAGE value="add grade" />
     <MESSAGE value="add grade summary" />
-    <option name="LAST_COMMIT_MESSAGE" value="add grade summary" />
+    <MESSAGE value="add learn collection feature" />
+    <option name="LAST_COMMIT_MESSAGE" value="add learn collection feature" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

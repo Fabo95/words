@@ -312,9 +312,9 @@
 				"allCollections": "All collections",
 				"collectionHint": "Select a collection to learn only its vocabulary.",
 				"noItemsTooltip": "No due or new vocabulary to learn.",
-				"directionNormal": "German to English",
+				"directionNormal": "Reverse",
 				"directionNormalHint": "See the German word, recall the English",
-				"directionReverse": "English to German",
+				"directionReverse": "Reverse",
 				"directionReverseHint": "See the English word, recall the German"
 			},
 			"session": {
