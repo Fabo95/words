@@ -3,7 +3,8 @@
 import { useTranslations } from "next-intl"
 import { Button } from "@app/components/ui/button"
 import { Card, CardContent } from "@app/components/ui/card"
-import { CheckCircle2, XCircle, Trophy } from "lucide-react"
+import { X, Minus, Check, Trophy } from "lucide-react"
+import { cn } from "@app/utils/shadcn/shadcnHelpers"
 import type { ReviewGrade } from "./utils/useLearningSessionQuery"
 
 type ReviewResult = {
@@ -18,11 +19,24 @@ type LearningSessionCompleteProps = {
 	onFinish: () => void
 }
 
+const gradeConfig: Record<ReviewGrade, { icon: typeof X; colorClass: string; bgClass: string }> = {
+	again: { icon: X, colorClass: "text-red-500", bgClass: "bg-red-500/10" },
+	hard: { icon: Minus, colorClass: "text-muted-foreground", bgClass: "bg-muted" },
+	good: { icon: Check, colorClass: "text-green-500", bgClass: "bg-green-500/10" },
+	easy: { icon: Check, colorClass: "text-green-600", bgClass: "bg-green-500/10" },
+}
+
 export function LearningSessionComplete({ results, totalItems, onContinue, onFinish }: LearningSessionCompleteProps) {
 	const t = useTranslations()
 
-	const correctCount = results.filter((r) => r.grade === "good" || r.grade === "easy").length
-	const incorrectCount = results.filter((r) => r.grade === "again" || r.grade === "hard").length
+	const gradeCounts: Record<ReviewGrade, number> = {
+		again: results.filter((r) => r.grade === "again").length,
+		hard: results.filter((r) => r.grade === "hard").length,
+		good: results.filter((r) => r.grade === "good").length,
+		easy: results.filter((r) => r.grade === "easy").length,
+	}
+
+	const grades: ReviewGrade[] = ["again", "hard", "good", "easy"]
 
 	return (
 		<div className="mx-auto w-full max-w-lg">
@@ -36,38 +50,24 @@ export function LearningSessionComplete({ results, totalItems, onContinue, onFin
 				<p className="text-sm text-muted-foreground">{t("pages.learning.complete.summary", { total: totalItems })}</p>
 			</div>
 
-			<div className="grid grid-cols-2 gap-3 mb-8">
-				<Card>
-					<CardContent className="p-4">
-						<div className="flex items-center gap-3">
-							<div className="flex h-10 w-10 items-center justify-center rounded-full bg-green-500/10">
-								<CheckCircle2 className="h-5 w-5 text-green-600" />
-							</div>
-							<div>
-								<p className="text-2xl font-semibold tabular-nums text-green-600">{correctCount}</p>
-								<p className="text-xs text-foreground/50">
-									{t("pages.learning.complete.correct")}
-								</p>
-							</div>
-						</div>
-					</CardContent>
-				</Card>
-
-				<Card>
-					<CardContent className="p-4">
-						<div className="flex items-center gap-3">
-							<div className="flex h-10 w-10 items-center justify-center rounded-full bg-destructive/10">
-								<XCircle className="h-5 w-5 text-destructive" />
-							</div>
-							<div>
-								<p className="text-2xl font-semibold tabular-nums text-destructive">{incorrectCount}</p>
-								<p className="text-xs text-foreground/50">
-									{t("pages.learning.complete.incorrect")}
-								</p>
-							</div>
-						</div>
-					</CardContent>
-				</Card>
+			<div className="grid grid-cols-2 gap-2 mb-8">
+				{grades.map((grade) => {
+					const config = gradeConfig[grade]
+					const Icon = config.icon
+					return (
+						<Card key={grade}>
+							<CardContent className="p-3 text-center">
+								<div
+									className={cn("mx-auto mb-2 flex h-8 w-8 items-center justify-center rounded-full", config.bgClass)}
+								>
+									<Icon className={cn("h-4 w-4", config.colorClass)} />
+								</div>
+								<p className={cn("text-xl font-semibold tabular-nums", config.colorClass)}>{gradeCounts[grade]}</p>
+								<p className="text-xs text-muted-foreground">{t(`pages.learning.session.grades.${grade}`)}</p>
+							</CardContent>
+						</Card>
+					)
+				})}
 			</div>
 
 			<div className="flex gap-3">

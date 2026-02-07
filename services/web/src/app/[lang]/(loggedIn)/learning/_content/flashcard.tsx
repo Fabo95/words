@@ -123,14 +123,14 @@ export function Flashcard({
 								reviewResult.grade === "good" || reviewResult.grade === "easy"
 									? "bg-green-500/10"
 									: reviewResult.grade === "hard"
-										? "bg-yellow-500/10"
+										? "bg-muted"
 										: "bg-red-500/10",
 							)}
 						>
 							{reviewResult.grade === "good" || reviewResult.grade === "easy" ? (
 								<Check className="h-4 w-4 text-green-500" />
 							) : reviewResult.grade === "hard" ? (
-								<Minus className="h-4 w-4 text-yellow-500" />
+								<Minus className="h-4 w-4 text-muted-foreground" />
 							) : (
 								<X className="h-4 w-4 text-red-500" />
 							)}

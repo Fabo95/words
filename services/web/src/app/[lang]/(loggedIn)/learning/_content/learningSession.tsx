@@ -172,7 +172,7 @@ export function LearningSession({
 						transition={{ duration: 0.3 }}
 					>
 						<Button
-							variant="destructive"
+							variant="outline"
 							className="flex-1"
 							onClick={() => handleReview("again")}
 							disabled={isPending}
@@ -180,7 +180,7 @@ export function LearningSession({
 							{t("pages.learning.session.grades.again")}
 						</Button>
 						<Button
-							variant="secondary"
+							variant="outline"
 							className="flex-1"
 							onClick={() => handleReview("hard")}
 							disabled={isPending}
@@ -188,7 +188,7 @@ export function LearningSession({
 							{t("pages.learning.session.grades.hard")}
 						</Button>
 						<Button
-							variant="secondary"
+							variant="outline"
 							className="flex-1"
 							onClick={() => handleReview("good")}
 							disabled={isPending}
@@ -196,7 +196,7 @@ export function LearningSession({
 							{t("pages.learning.session.grades.good")}
 						</Button>
 						<Button
-							variant="default"
+							variant="outline"
 							className="flex-1"
 							onClick={() => handleReview("easy")}
 							disabled={isPending}
