@@ -40,6 +40,8 @@ export type UsersMinAggregateOutputType = {
   name: string | null
   password_salt: string | null
   token_salt: string | null
+  created_at: Date | null
+  updated_at: Date | null
 }
 
 export type UsersMaxAggregateOutputType = {
@@ -49,6 +51,8 @@ export type UsersMaxAggregateOutputType = {
   name: string | null
   password_salt: string | null
   token_salt: string | null
+  created_at: Date | null
+  updated_at: Date | null
 }
 
 export type UsersCountAggregateOutputType = {
@@ -58,6 +62,8 @@ export type UsersCountAggregateOutputType = {
   name: number
   password_salt: number
   token_salt: number
+  created_at: number
+  updated_at: number
   _all: number
 }
 
@@ -77,6 +83,8 @@ export type UsersMinAggregateInputType = {
   name?: true
   password_salt?: true
   token_salt?: true
+  created_at?: true
+  updated_at?: true
 }
 
 export type UsersMaxAggregateInputType = {
@@ -86,6 +94,8 @@ export type UsersMaxAggregateInputType = {
   name?: true
   password_salt?: true
   token_salt?: true
+  created_at?: true
+  updated_at?: true
 }
 
 export type UsersCountAggregateInputType = {
@@ -95,6 +105,8 @@ export type UsersCountAggregateInputType = {
   name?: true
   password_salt?: true
   token_salt?: true
+  created_at?: true
+  updated_at?: true
   _all?: true
 }
 
@@ -191,6 +203,8 @@ export type UsersGroupByOutputType = {
   name: string | null
   password_salt: string
   token_salt: string
+  created_at: Date
+  updated_at: Date
   _count: UsersCountAggregateOutputType | null
   _avg: UsersAvgAggregateOutputType | null
   _sum: UsersSumAggregateOutputType | null
@@ -223,8 +237,12 @@ export type usersWhereInput = {
   name?: Prisma.StringNullableFilter<"users"> | string | null
   password_salt?: Prisma.StringFilter<"users"> | string
   token_salt?: Prisma.StringFilter<"users"> | string
+  created_at?: Prisma.DateTimeFilter<"users"> | Date | string
+  updated_at?: Prisma.DateTimeFilter<"users"> | Date | string
   collections?: Prisma.CollectionsListRelationFilter
+  learning_progress?: Prisma.Learning_progressListRelationFilter
   translations?: Prisma.TranslationsListRelationFilter
+  user_daily_goals?: Prisma.XOR<Prisma.User_daily_goalsNullableScalarRelationFilter, Prisma.user_daily_goalsWhereInput> | null
 }
 
 export type usersOrderByWithRelationInput = {
@@ -234,8 +252,12 @@ export type usersOrderByWithRelationInput = {
   name?: Prisma.SortOrderInput | Prisma.SortOrder
   password_salt?: Prisma.SortOrder
   token_salt?: Prisma.SortOrder
+  created_at?: Prisma.SortOrder
+  updated_at?: Prisma.SortOrder
   collections?: Prisma.collectionsOrderByRelationAggregateInput
+  learning_progress?: Prisma.learning_progressOrderByRelationAggregateInput
   translations?: Prisma.translationsOrderByRelationAggregateInput
+  user_daily_goals?: Prisma.user_daily_goalsOrderByWithRelationInput
 }
 
 export type usersWhereUniqueInput = Prisma.AtLeast<{
@@ -248,8 +270,12 @@ export type usersWhereUniqueInput = Prisma.AtLeast<{
   name?: Prisma.StringNullableFilter<"users"> | string | null
   password_salt?: Prisma.StringFilter<"users"> | string
   token_salt?: Prisma.StringFilter<"users"> | string
+  created_at?: Prisma.DateTimeFilter<"users"> | Date | string
+  updated_at?: Prisma.DateTimeFilter<"users"> | Date | string
   collections?: Prisma.CollectionsListRelationFilter
+  learning_progress?: Prisma.Learning_progressListRelationFilter
   translations?: Prisma.TranslationsListRelationFilter
+  user_daily_goals?: Prisma.XOR<Prisma.User_daily_goalsNullableScalarRelationFilter, Prisma.user_daily_goalsWhereInput> | null
 }, "id">
 
 export type usersOrderByWithAggregationInput = {
@@ -259,6 +285,8 @@ export type usersOrderByWithAggregationInput = {
   name?: Prisma.SortOrderInput | Prisma.SortOrder
   password_salt?: Prisma.SortOrder
   token_salt?: Prisma.SortOrder
+  created_at?: Prisma.SortOrder
+  updated_at?: Prisma.SortOrder
   _count?: Prisma.usersCountOrderByAggregateInput
   _avg?: Prisma.usersAvgOrderByAggregateInput
   _max?: Prisma.usersMaxOrderByAggregateInput
@@ -276,6 +304,8 @@ export type usersScalarWhereWithAggregatesInput = {
   name?: Prisma.StringNullableWithAggregatesFilter<"users"> | string | null
   password_salt?: Prisma.StringWithAggregatesFilter<"users"> | string
   token_salt?: Prisma.StringWithAggregatesFilter<"users"> | string
+  created_at?: Prisma.DateTimeWithAggregatesFilter<"users"> | Date | string
+  updated_at?: Prisma.DateTimeWithAggregatesFilter<"users"> | Date | string
 }
 
 export type usersCreateInput = {
@@ -284,8 +314,12 @@ export type usersCreateInput = {
   name?: string | null
   password_salt: string
   token_salt: string
+  created_at?: Date | string
+  updated_at?: Date | string
   collections?: Prisma.collectionsCreateNestedManyWithoutUsersInput
+  learning_progress?: Prisma.learning_progressCreateNestedManyWithoutUsersInput
   translations?: Prisma.translationsCreateNestedManyWithoutUsersInput
+  user_daily_goals?: Prisma.user_daily_goalsCreateNestedOneWithoutUsersInput
 }
 
 export type usersUncheckedCreateInput = {
@@ -295,8 +329,12 @@ export type usersUncheckedCreateInput = {
   name?: string | null
   password_salt: string
   token_salt: string
+  created_at?: Date | string
+  updated_at?: Date | string
   collections?: Prisma.collectionsUncheckedCreateNestedManyWithoutUsersInput
+  learning_progress?: Prisma.learning_progressUncheckedCreateNestedManyWithoutUsersInput
   translations?: Prisma.translationsUncheckedCreateNestedManyWithoutUsersInput
+  user_daily_goals?: Prisma.user_daily_goalsUncheckedCreateNestedOneWithoutUsersInput
 }
 
 export type usersUpdateInput = {
@@ -305,8 +343,12 @@ export type usersUpdateInput = {
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   password_salt?: Prisma.StringFieldUpdateOperationsInput | string
   token_salt?: Prisma.StringFieldUpdateOperationsInput | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   collections?: Prisma.collectionsUpdateManyWithoutUsersNestedInput
+  learning_progress?: Prisma.learning_progressUpdateManyWithoutUsersNestedInput
   translations?: Prisma.translationsUpdateManyWithoutUsersNestedInput
+  user_daily_goals?: Prisma.user_daily_goalsUpdateOneWithoutUsersNestedInput
 }
 
 export type usersUncheckedUpdateInput = {
@@ -316,8 +358,12 @@ export type usersUncheckedUpdateInput = {
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   password_salt?: Prisma.StringFieldUpdateOperationsInput | string
   token_salt?: Prisma.StringFieldUpdateOperationsInput | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   collections?: Prisma.collectionsUncheckedUpdateManyWithoutUsersNestedInput
+  learning_progress?: Prisma.learning_progressUncheckedUpdateManyWithoutUsersNestedInput
   translations?: Prisma.translationsUncheckedUpdateManyWithoutUsersNestedInput
+  user_daily_goals?: Prisma.user_daily_goalsUncheckedUpdateOneWithoutUsersNestedInput
 }
 
 export type usersCreateManyInput = {
@@ -327,6 +373,8 @@ export type usersCreateManyInput = {
   name?: string | null
   password_salt: string
   token_salt: string
+  created_at?: Date | string
+  updated_at?: Date | string
 }
 
 export type usersUpdateManyMutationInput = {
@@ -335,6 +383,8 @@ export type usersUpdateManyMutationInput = {
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   password_salt?: Prisma.StringFieldUpdateOperationsInput | string
   token_salt?: Prisma.StringFieldUpdateOperationsInput | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type usersUncheckedUpdateManyInput = {
@@ -344,6 +394,8 @@ export type usersUncheckedUpdateManyInput = {
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   password_salt?: Prisma.StringFieldUpdateOperationsInput | string
   token_salt?: Prisma.StringFieldUpdateOperationsInput | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type usersCountOrderByAggregateInput = {
@@ -353,6 +405,8 @@ export type usersCountOrderByAggregateInput = {
   name?: Prisma.SortOrder
   password_salt?: Prisma.SortOrder
   token_salt?: Prisma.SortOrder
+  created_at?: Prisma.SortOrder
+  updated_at?: Prisma.SortOrder
 }
 
 export type usersAvgOrderByAggregateInput = {
@@ -366,6 +420,8 @@ export type usersMaxOrderByAggregateInput = {
   name?: Prisma.SortOrder
   password_salt?: Prisma.SortOrder
   token_salt?: Prisma.SortOrder
+  created_at?: Prisma.SortOrder
+  updated_at?: Prisma.SortOrder
 }
 
 export type usersMinOrderByAggregateInput = {
@@ -375,6 +431,8 @@ export type usersMinOrderByAggregateInput = {
   name?: Prisma.SortOrder
   password_salt?: Prisma.SortOrder
   token_salt?: Prisma.SortOrder
+  created_at?: Prisma.SortOrder
+  updated_at?: Prisma.SortOrder
 }
 
 export type usersSumOrderByAggregateInput = {
@@ -392,6 +450,10 @@ export type StringFieldUpdateOperationsInput = {
 
 export type NullableStringFieldUpdateOperationsInput = {
   set?: string | null
+}
+
+export type DateTimeFieldUpdateOperationsInput = {
+  set?: Date | string
 }
 
 export type IntFieldUpdateOperationsInput = {
@@ -430,13 +492,45 @@ export type usersUpdateOneRequiredWithoutTranslationsNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.usersUpdateToOneWithWhereWithoutTranslationsInput, Prisma.usersUpdateWithoutTranslationsInput>, Prisma.usersUncheckedUpdateWithoutTranslationsInput>
 }
 
+export type usersCreateNestedOneWithoutLearning_progressInput = {
+  create?: Prisma.XOR<Prisma.usersCreateWithoutLearning_progressInput, Prisma.usersUncheckedCreateWithoutLearning_progressInput>
+  connectOrCreate?: Prisma.usersCreateOrConnectWithoutLearning_progressInput
+  connect?: Prisma.usersWhereUniqueInput
+}
+
+export type usersUpdateOneRequiredWithoutLearning_progressNestedInput = {
+  create?: Prisma.XOR<Prisma.usersCreateWithoutLearning_progressInput, Prisma.usersUncheckedCreateWithoutLearning_progressInput>
+  connectOrCreate?: Prisma.usersCreateOrConnectWithoutLearning_progressInput
+  upsert?: Prisma.usersUpsertWithoutLearning_progressInput
+  connect?: Prisma.usersWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.usersUpdateToOneWithWhereWithoutLearning_progressInput, Prisma.usersUpdateWithoutLearning_progressInput>, Prisma.usersUncheckedUpdateWithoutLearning_progressInput>
+}
+
+export type usersCreateNestedOneWithoutUser_daily_goalsInput = {
+  create?: Prisma.XOR<Prisma.usersCreateWithoutUser_daily_goalsInput, Prisma.usersUncheckedCreateWithoutUser_daily_goalsInput>
+  connectOrCreate?: Prisma.usersCreateOrConnectWithoutUser_daily_goalsInput
+  connect?: Prisma.usersWhereUniqueInput
+}
+
+export type usersUpdateOneRequiredWithoutUser_daily_goalsNestedInput = {
+  create?: Prisma.XOR<Prisma.usersCreateWithoutUser_daily_goalsInput, Prisma.usersUncheckedCreateWithoutUser_daily_goalsInput>
+  connectOrCreate?: Prisma.usersCreateOrConnectWithoutUser_daily_goalsInput
+  upsert?: Prisma.usersUpsertWithoutUser_daily_goalsInput
+  connect?: Prisma.usersWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.usersUpdateToOneWithWhereWithoutUser_daily_goalsInput, Prisma.usersUpdateWithoutUser_daily_goalsInput>, Prisma.usersUncheckedUpdateWithoutUser_daily_goalsInput>
+}
+
 export type usersCreateWithoutCollectionsInput = {
   email: string
   password: string
   name?: string | null
   password_salt: string
   token_salt: string
+  created_at?: Date | string
+  updated_at?: Date | string
+  learning_progress?: Prisma.learning_progressCreateNestedManyWithoutUsersInput
   translations?: Prisma.translationsCreateNestedManyWithoutUsersInput
+  user_daily_goals?: Prisma.user_daily_goalsCreateNestedOneWithoutUsersInput
 }
 
 export type usersUncheckedCreateWithoutCollectionsInput = {
@@ -446,7 +540,11 @@ export type usersUncheckedCreateWithoutCollectionsInput = {
   name?: string | null
   password_salt: string
   token_salt: string
+  created_at?: Date | string
+  updated_at?: Date | string
+  learning_progress?: Prisma.learning_progressUncheckedCreateNestedManyWithoutUsersInput
   translations?: Prisma.translationsUncheckedCreateNestedManyWithoutUsersInput
+  user_daily_goals?: Prisma.user_daily_goalsUncheckedCreateNestedOneWithoutUsersInput
 }
 
 export type usersCreateOrConnectWithoutCollectionsInput = {
@@ -471,7 +569,11 @@ export type usersUpdateWithoutCollectionsInput = {
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   password_salt?: Prisma.StringFieldUpdateOperationsInput | string
   token_salt?: Prisma.StringFieldUpdateOperationsInput | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  learning_progress?: Prisma.learning_progressUpdateManyWithoutUsersNestedInput
   translations?: Prisma.translationsUpdateManyWithoutUsersNestedInput
+  user_daily_goals?: Prisma.user_daily_goalsUpdateOneWithoutUsersNestedInput
 }
 
 export type usersUncheckedUpdateWithoutCollectionsInput = {
@@ -481,7 +583,11 @@ export type usersUncheckedUpdateWithoutCollectionsInput = {
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   password_salt?: Prisma.StringFieldUpdateOperationsInput | string
   token_salt?: Prisma.StringFieldUpdateOperationsInput | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  learning_progress?: Prisma.learning_progressUncheckedUpdateManyWithoutUsersNestedInput
   translations?: Prisma.translationsUncheckedUpdateManyWithoutUsersNestedInput
+  user_daily_goals?: Prisma.user_daily_goalsUncheckedUpdateOneWithoutUsersNestedInput
 }
 
 export type usersCreateWithoutTranslationsInput = {
@@ -490,7 +596,11 @@ export type usersCreateWithoutTranslationsInput = {
   name?: string | null
   password_salt: string
   token_salt: string
+  created_at?: Date | string
+  updated_at?: Date | string
   collections?: Prisma.collectionsCreateNestedManyWithoutUsersInput
+  learning_progress?: Prisma.learning_progressCreateNestedManyWithoutUsersInput
+  user_daily_goals?: Prisma.user_daily_goalsCreateNestedOneWithoutUsersInput
 }
 
 export type usersUncheckedCreateWithoutTranslationsInput = {
@@ -500,7 +610,11 @@ export type usersUncheckedCreateWithoutTranslationsInput = {
   name?: string | null
   password_salt: string
   token_salt: string
+  created_at?: Date | string
+  updated_at?: Date | string
   collections?: Prisma.collectionsUncheckedCreateNestedManyWithoutUsersInput
+  learning_progress?: Prisma.learning_progressUncheckedCreateNestedManyWithoutUsersInput
+  user_daily_goals?: Prisma.user_daily_goalsUncheckedCreateNestedOneWithoutUsersInput
 }
 
 export type usersCreateOrConnectWithoutTranslationsInput = {
@@ -525,7 +639,11 @@ export type usersUpdateWithoutTranslationsInput = {
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   password_salt?: Prisma.StringFieldUpdateOperationsInput | string
   token_salt?: Prisma.StringFieldUpdateOperationsInput | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   collections?: Prisma.collectionsUpdateManyWithoutUsersNestedInput
+  learning_progress?: Prisma.learning_progressUpdateManyWithoutUsersNestedInput
+  user_daily_goals?: Prisma.user_daily_goalsUpdateOneWithoutUsersNestedInput
 }
 
 export type usersUncheckedUpdateWithoutTranslationsInput = {
@@ -535,7 +653,151 @@ export type usersUncheckedUpdateWithoutTranslationsInput = {
   name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
   password_salt?: Prisma.StringFieldUpdateOperationsInput | string
   token_salt?: Prisma.StringFieldUpdateOperationsInput | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   collections?: Prisma.collectionsUncheckedUpdateManyWithoutUsersNestedInput
+  learning_progress?: Prisma.learning_progressUncheckedUpdateManyWithoutUsersNestedInput
+  user_daily_goals?: Prisma.user_daily_goalsUncheckedUpdateOneWithoutUsersNestedInput
+}
+
+export type usersCreateWithoutLearning_progressInput = {
+  email: string
+  password: string
+  name?: string | null
+  password_salt: string
+  token_salt: string
+  created_at?: Date | string
+  updated_at?: Date | string
+  collections?: Prisma.collectionsCreateNestedManyWithoutUsersInput
+  translations?: Prisma.translationsCreateNestedManyWithoutUsersInput
+  user_daily_goals?: Prisma.user_daily_goalsCreateNestedOneWithoutUsersInput
+}
+
+export type usersUncheckedCreateWithoutLearning_progressInput = {
+  id?: number
+  email: string
+  password: string
+  name?: string | null
+  password_salt: string
+  token_salt: string
+  created_at?: Date | string
+  updated_at?: Date | string
+  collections?: Prisma.collectionsUncheckedCreateNestedManyWithoutUsersInput
+  translations?: Prisma.translationsUncheckedCreateNestedManyWithoutUsersInput
+  user_daily_goals?: Prisma.user_daily_goalsUncheckedCreateNestedOneWithoutUsersInput
+}
+
+export type usersCreateOrConnectWithoutLearning_progressInput = {
+  where: Prisma.usersWhereUniqueInput
+  create: Prisma.XOR<Prisma.usersCreateWithoutLearning_progressInput, Prisma.usersUncheckedCreateWithoutLearning_progressInput>
+}
+
+export type usersUpsertWithoutLearning_progressInput = {
+  update: Prisma.XOR<Prisma.usersUpdateWithoutLearning_progressInput, Prisma.usersUncheckedUpdateWithoutLearning_progressInput>
+  create: Prisma.XOR<Prisma.usersCreateWithoutLearning_progressInput, Prisma.usersUncheckedCreateWithoutLearning_progressInput>
+  where?: Prisma.usersWhereInput
+}
+
+export type usersUpdateToOneWithWhereWithoutLearning_progressInput = {
+  where?: Prisma.usersWhereInput
+  data: Prisma.XOR<Prisma.usersUpdateWithoutLearning_progressInput, Prisma.usersUncheckedUpdateWithoutLearning_progressInput>
+}
+
+export type usersUpdateWithoutLearning_progressInput = {
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  password_salt?: Prisma.StringFieldUpdateOperationsInput | string
+  token_salt?: Prisma.StringFieldUpdateOperationsInput | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  collections?: Prisma.collectionsUpdateManyWithoutUsersNestedInput
+  translations?: Prisma.translationsUpdateManyWithoutUsersNestedInput
+  user_daily_goals?: Prisma.user_daily_goalsUpdateOneWithoutUsersNestedInput
+}
+
+export type usersUncheckedUpdateWithoutLearning_progressInput = {
+  id?: Prisma.IntFieldUpdateOperationsInput | number
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  password_salt?: Prisma.StringFieldUpdateOperationsInput | string
+  token_salt?: Prisma.StringFieldUpdateOperationsInput | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  collections?: Prisma.collectionsUncheckedUpdateManyWithoutUsersNestedInput
+  translations?: Prisma.translationsUncheckedUpdateManyWithoutUsersNestedInput
+  user_daily_goals?: Prisma.user_daily_goalsUncheckedUpdateOneWithoutUsersNestedInput
+}
+
+export type usersCreateWithoutUser_daily_goalsInput = {
+  email: string
+  password: string
+  name?: string | null
+  password_salt: string
+  token_salt: string
+  created_at?: Date | string
+  updated_at?: Date | string
+  collections?: Prisma.collectionsCreateNestedManyWithoutUsersInput
+  learning_progress?: Prisma.learning_progressCreateNestedManyWithoutUsersInput
+  translations?: Prisma.translationsCreateNestedManyWithoutUsersInput
+}
+
+export type usersUncheckedCreateWithoutUser_daily_goalsInput = {
+  id?: number
+  email: string
+  password: string
+  name?: string | null
+  password_salt: string
+  token_salt: string
+  created_at?: Date | string
+  updated_at?: Date | string
+  collections?: Prisma.collectionsUncheckedCreateNestedManyWithoutUsersInput
+  learning_progress?: Prisma.learning_progressUncheckedCreateNestedManyWithoutUsersInput
+  translations?: Prisma.translationsUncheckedCreateNestedManyWithoutUsersInput
+}
+
+export type usersCreateOrConnectWithoutUser_daily_goalsInput = {
+  where: Prisma.usersWhereUniqueInput
+  create: Prisma.XOR<Prisma.usersCreateWithoutUser_daily_goalsInput, Prisma.usersUncheckedCreateWithoutUser_daily_goalsInput>
+}
+
+export type usersUpsertWithoutUser_daily_goalsInput = {
+  update: Prisma.XOR<Prisma.usersUpdateWithoutUser_daily_goalsInput, Prisma.usersUncheckedUpdateWithoutUser_daily_goalsInput>
+  create: Prisma.XOR<Prisma.usersCreateWithoutUser_daily_goalsInput, Prisma.usersUncheckedCreateWithoutUser_daily_goalsInput>
+  where?: Prisma.usersWhereInput
+}
+
+export type usersUpdateToOneWithWhereWithoutUser_daily_goalsInput = {
+  where?: Prisma.usersWhereInput
+  data: Prisma.XOR<Prisma.usersUpdateWithoutUser_daily_goalsInput, Prisma.usersUncheckedUpdateWithoutUser_daily_goalsInput>
+}
+
+export type usersUpdateWithoutUser_daily_goalsInput = {
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  password_salt?: Prisma.StringFieldUpdateOperationsInput | string
+  token_salt?: Prisma.StringFieldUpdateOperationsInput | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  collections?: Prisma.collectionsUpdateManyWithoutUsersNestedInput
+  learning_progress?: Prisma.learning_progressUpdateManyWithoutUsersNestedInput
+  translations?: Prisma.translationsUpdateManyWithoutUsersNestedInput
+}
+
+export type usersUncheckedUpdateWithoutUser_daily_goalsInput = {
+  id?: Prisma.IntFieldUpdateOperationsInput | number
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  password?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  password_salt?: Prisma.StringFieldUpdateOperationsInput | string
+  token_salt?: Prisma.StringFieldUpdateOperationsInput | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  collections?: Prisma.collectionsUncheckedUpdateManyWithoutUsersNestedInput
+  learning_progress?: Prisma.learning_progressUncheckedUpdateManyWithoutUsersNestedInput
+  translations?: Prisma.translationsUncheckedUpdateManyWithoutUsersNestedInput
 }
 
 
@@ -545,11 +807,13 @@ export type usersUncheckedUpdateWithoutTranslationsInput = {
 
 export type UsersCountOutputType = {
   collections: number
+  learning_progress: number
   translations: number
 }
 
 export type UsersCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   collections?: boolean | UsersCountOutputTypeCountCollectionsArgs
+  learning_progress?: boolean | UsersCountOutputTypeCountLearning_progressArgs
   translations?: boolean | UsersCountOutputTypeCountTranslationsArgs
 }
 
@@ -573,6 +837,13 @@ export type UsersCountOutputTypeCountCollectionsArgs<ExtArgs extends runtime.Typ
 /**
  * UsersCountOutputType without action
  */
+export type UsersCountOutputTypeCountLearning_progressArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.learning_progressWhereInput
+}
+
+/**
+ * UsersCountOutputType without action
+ */
 export type UsersCountOutputTypeCountTranslationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   where?: Prisma.translationsWhereInput
 }
@@ -585,8 +856,12 @@ export type usersSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   name?: boolean
   password_salt?: boolean
   token_salt?: boolean
+  created_at?: boolean
+  updated_at?: boolean
   collections?: boolean | Prisma.users$collectionsArgs<ExtArgs>
+  learning_progress?: boolean | Prisma.users$learning_progressArgs<ExtArgs>
   translations?: boolean | Prisma.users$translationsArgs<ExtArgs>
+  user_daily_goals?: boolean | Prisma.users$user_daily_goalsArgs<ExtArgs>
   _count?: boolean | Prisma.UsersCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["users"]>
 
@@ -597,6 +872,8 @@ export type usersSelectCreateManyAndReturn<ExtArgs extends runtime.Types.Extensi
   name?: boolean
   password_salt?: boolean
   token_salt?: boolean
+  created_at?: boolean
+  updated_at?: boolean
 }, ExtArgs["result"]["users"]>
 
 export type usersSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
@@ -606,6 +883,8 @@ export type usersSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.Extensi
   name?: boolean
   password_salt?: boolean
   token_salt?: boolean
+  created_at?: boolean
+  updated_at?: boolean
 }, ExtArgs["result"]["users"]>
 
 export type usersSelectScalar = {
@@ -615,12 +894,16 @@ export type usersSelectScalar = {
   name?: boolean
   password_salt?: boolean
   token_salt?: boolean
+  created_at?: boolean
+  updated_at?: boolean
 }
 
-export type usersOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "email" | "password" | "name" | "password_salt" | "token_salt", ExtArgs["result"]["users"]>
+export type usersOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "email" | "password" | "name" | "password_salt" | "token_salt" | "created_at" | "updated_at", ExtArgs["result"]["users"]>
 export type usersInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   collections?: boolean | Prisma.users$collectionsArgs<ExtArgs>
+  learning_progress?: boolean | Prisma.users$learning_progressArgs<ExtArgs>
   translations?: boolean | Prisma.users$translationsArgs<ExtArgs>
+  user_daily_goals?: boolean | Prisma.users$user_daily_goalsArgs<ExtArgs>
   _count?: boolean | Prisma.UsersCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type usersIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
@@ -630,7 +913,9 @@ export type $usersPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs 
   name: "users"
   objects: {
     collections: Prisma.$collectionsPayload<ExtArgs>[]
+    learning_progress: Prisma.$learning_progressPayload<ExtArgs>[]
     translations: Prisma.$translationsPayload<ExtArgs>[]
+    user_daily_goals: Prisma.$user_daily_goalsPayload<ExtArgs> | null
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: number
@@ -639,6 +924,8 @@ export type $usersPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs 
     name: string | null
     password_salt: string
     token_salt: string
+    created_at: Date
+    updated_at: Date
   }, ExtArgs["result"]["users"]>
   composites: {}
 }
@@ -1034,7 +1321,9 @@ readonly fields: usersFieldRefs;
 export interface Prisma__usersClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
   collections<T extends Prisma.users$collectionsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.users$collectionsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$collectionsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  learning_progress<T extends Prisma.users$learning_progressArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.users$learning_progressArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$learning_progressPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   translations<T extends Prisma.users$translationsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.users$translationsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$translationsPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  user_daily_goals<T extends Prisma.users$user_daily_goalsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.users$user_daily_goalsArgs<ExtArgs>>): Prisma.Prisma__user_daily_goalsClient<runtime.Types.Result.GetResult<Prisma.$user_daily_goalsPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1070,6 +1359,8 @@ export interface usersFieldRefs {
   readonly name: Prisma.FieldRef<"users", 'String'>
   readonly password_salt: Prisma.FieldRef<"users", 'String'>
   readonly token_salt: Prisma.FieldRef<"users", 'String'>
+  readonly created_at: Prisma.FieldRef<"users", 'DateTime'>
+  readonly updated_at: Prisma.FieldRef<"users", 'DateTime'>
 }
     
 
@@ -1482,6 +1773,30 @@ export type users$collectionsArgs<ExtArgs extends runtime.Types.Extensions.Inter
 }
 
 /**
+ * users.learning_progress
+ */
+export type users$learning_progressArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the learning_progress
+   */
+  select?: Prisma.learning_progressSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the learning_progress
+   */
+  omit?: Prisma.learning_progressOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.learning_progressInclude<ExtArgs> | null
+  where?: Prisma.learning_progressWhereInput
+  orderBy?: Prisma.learning_progressOrderByWithRelationInput | Prisma.learning_progressOrderByWithRelationInput[]
+  cursor?: Prisma.learning_progressWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.Learning_progressScalarFieldEnum | Prisma.Learning_progressScalarFieldEnum[]
+}
+
+/**
  * users.translations
  */
 export type users$translationsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
@@ -1503,6 +1818,25 @@ export type users$translationsArgs<ExtArgs extends runtime.Types.Extensions.Inte
   take?: number
   skip?: number
   distinct?: Prisma.TranslationsScalarFieldEnum | Prisma.TranslationsScalarFieldEnum[]
+}
+
+/**
+ * users.user_daily_goals
+ */
+export type users$user_daily_goalsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the user_daily_goals
+   */
+  select?: Prisma.user_daily_goalsSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the user_daily_goals
+   */
+  omit?: Prisma.user_daily_goalsOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.user_daily_goalsInclude<ExtArgs> | null
+  where?: Prisma.user_daily_goalsWhereInput
 }
 
 /**

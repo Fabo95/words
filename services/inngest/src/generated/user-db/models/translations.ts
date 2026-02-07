@@ -46,6 +46,8 @@ export type TranslationsMinAggregateOutputType = {
   target_language: string | null
   target_text: string | null
   user_id: number | null
+  created_at: Date | null
+  updated_at: Date | null
   collection_id: number | null
   cefr_level_id: number | null
 }
@@ -57,6 +59,8 @@ export type TranslationsMaxAggregateOutputType = {
   target_language: string | null
   target_text: string | null
   user_id: number | null
+  created_at: Date | null
+  updated_at: Date | null
   collection_id: number | null
   cefr_level_id: number | null
 }
@@ -68,6 +72,8 @@ export type TranslationsCountAggregateOutputType = {
   target_language: number
   target_text: number
   user_id: number
+  created_at: number
+  updated_at: number
   collection_id: number
   cefr_level_id: number
   _all: number
@@ -95,6 +101,8 @@ export type TranslationsMinAggregateInputType = {
   target_language?: true
   target_text?: true
   user_id?: true
+  created_at?: true
+  updated_at?: true
   collection_id?: true
   cefr_level_id?: true
 }
@@ -106,6 +114,8 @@ export type TranslationsMaxAggregateInputType = {
   target_language?: true
   target_text?: true
   user_id?: true
+  created_at?: true
+  updated_at?: true
   collection_id?: true
   cefr_level_id?: true
 }
@@ -117,6 +127,8 @@ export type TranslationsCountAggregateInputType = {
   target_language?: true
   target_text?: true
   user_id?: true
+  created_at?: true
+  updated_at?: true
   collection_id?: true
   cefr_level_id?: true
   _all?: true
@@ -215,6 +227,8 @@ export type TranslationsGroupByOutputType = {
   target_language: string
   target_text: string
   user_id: number
+  created_at: Date
+  updated_at: Date
   collection_id: number | null
   cefr_level_id: number | null
   _count: TranslationsCountAggregateOutputType | null
@@ -249,9 +263,12 @@ export type translationsWhereInput = {
   target_language?: Prisma.StringFilter<"translations"> | string
   target_text?: Prisma.StringFilter<"translations"> | string
   user_id?: Prisma.IntFilter<"translations"> | number
+  created_at?: Prisma.DateTimeFilter<"translations"> | Date | string
+  updated_at?: Prisma.DateTimeFilter<"translations"> | Date | string
   collection_id?: Prisma.IntNullableFilter<"translations"> | number | null
   cefr_level_id?: Prisma.IntNullableFilter<"translations"> | number | null
   example_sentences?: Prisma.Example_sentencesListRelationFilter
+  learning_progress?: Prisma.Learning_progressListRelationFilter
   collections?: Prisma.XOR<Prisma.CollectionsNullableScalarRelationFilter, Prisma.collectionsWhereInput> | null
   users?: Prisma.XOR<Prisma.UsersScalarRelationFilter, Prisma.usersWhereInput>
   cefr_levels?: Prisma.XOR<Prisma.Cefr_levelsNullableScalarRelationFilter, Prisma.cefr_levelsWhereInput> | null
@@ -265,9 +282,12 @@ export type translationsOrderByWithRelationInput = {
   target_language?: Prisma.SortOrder
   target_text?: Prisma.SortOrder
   user_id?: Prisma.SortOrder
+  created_at?: Prisma.SortOrder
+  updated_at?: Prisma.SortOrder
   collection_id?: Prisma.SortOrderInput | Prisma.SortOrder
   cefr_level_id?: Prisma.SortOrderInput | Prisma.SortOrder
   example_sentences?: Prisma.example_sentencesOrderByRelationAggregateInput
+  learning_progress?: Prisma.learning_progressOrderByRelationAggregateInput
   collections?: Prisma.collectionsOrderByWithRelationInput
   users?: Prisma.usersOrderByWithRelationInput
   cefr_levels?: Prisma.cefr_levelsOrderByWithRelationInput
@@ -284,9 +304,12 @@ export type translationsWhereUniqueInput = Prisma.AtLeast<{
   target_language?: Prisma.StringFilter<"translations"> | string
   target_text?: Prisma.StringFilter<"translations"> | string
   user_id?: Prisma.IntFilter<"translations"> | number
+  created_at?: Prisma.DateTimeFilter<"translations"> | Date | string
+  updated_at?: Prisma.DateTimeFilter<"translations"> | Date | string
   collection_id?: Prisma.IntNullableFilter<"translations"> | number | null
   cefr_level_id?: Prisma.IntNullableFilter<"translations"> | number | null
   example_sentences?: Prisma.Example_sentencesListRelationFilter
+  learning_progress?: Prisma.Learning_progressListRelationFilter
   collections?: Prisma.XOR<Prisma.CollectionsNullableScalarRelationFilter, Prisma.collectionsWhereInput> | null
   users?: Prisma.XOR<Prisma.UsersScalarRelationFilter, Prisma.usersWhereInput>
   cefr_levels?: Prisma.XOR<Prisma.Cefr_levelsNullableScalarRelationFilter, Prisma.cefr_levelsWhereInput> | null
@@ -300,6 +323,8 @@ export type translationsOrderByWithAggregationInput = {
   target_language?: Prisma.SortOrder
   target_text?: Prisma.SortOrder
   user_id?: Prisma.SortOrder
+  created_at?: Prisma.SortOrder
+  updated_at?: Prisma.SortOrder
   collection_id?: Prisma.SortOrderInput | Prisma.SortOrder
   cefr_level_id?: Prisma.SortOrderInput | Prisma.SortOrder
   _count?: Prisma.translationsCountOrderByAggregateInput
@@ -319,6 +344,8 @@ export type translationsScalarWhereWithAggregatesInput = {
   target_language?: Prisma.StringWithAggregatesFilter<"translations"> | string
   target_text?: Prisma.StringWithAggregatesFilter<"translations"> | string
   user_id?: Prisma.IntWithAggregatesFilter<"translations"> | number
+  created_at?: Prisma.DateTimeWithAggregatesFilter<"translations"> | Date | string
+  updated_at?: Prisma.DateTimeWithAggregatesFilter<"translations"> | Date | string
   collection_id?: Prisma.IntNullableWithAggregatesFilter<"translations"> | number | null
   cefr_level_id?: Prisma.IntNullableWithAggregatesFilter<"translations"> | number | null
 }
@@ -328,7 +355,10 @@ export type translationsCreateInput = {
   source_text: string
   target_language: string
   target_text: string
+  created_at?: Date | string
+  updated_at?: Date | string
   example_sentences?: Prisma.example_sentencesCreateNestedManyWithoutTranslationsInput
+  learning_progress?: Prisma.learning_progressCreateNestedManyWithoutTranslationsInput
   collections?: Prisma.collectionsCreateNestedOneWithoutTranslationsInput
   users: Prisma.usersCreateNestedOneWithoutTranslationsInput
   cefr_levels?: Prisma.cefr_levelsCreateNestedOneWithoutTranslationsInput
@@ -342,9 +372,12 @@ export type translationsUncheckedCreateInput = {
   target_language: string
   target_text: string
   user_id: number
+  created_at?: Date | string
+  updated_at?: Date | string
   collection_id?: number | null
   cefr_level_id?: number | null
   example_sentences?: Prisma.example_sentencesUncheckedCreateNestedManyWithoutTranslationsInput
+  learning_progress?: Prisma.learning_progressUncheckedCreateNestedManyWithoutTranslationsInput
   translations_universal_pos_tags?: Prisma.translations_universal_pos_tagsUncheckedCreateNestedManyWithoutTranslationsInput
 }
 
@@ -353,7 +386,10 @@ export type translationsUpdateInput = {
   source_text?: Prisma.StringFieldUpdateOperationsInput | string
   target_language?: Prisma.StringFieldUpdateOperationsInput | string
   target_text?: Prisma.StringFieldUpdateOperationsInput | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   example_sentences?: Prisma.example_sentencesUpdateManyWithoutTranslationsNestedInput
+  learning_progress?: Prisma.learning_progressUpdateManyWithoutTranslationsNestedInput
   collections?: Prisma.collectionsUpdateOneWithoutTranslationsNestedInput
   users?: Prisma.usersUpdateOneRequiredWithoutTranslationsNestedInput
   cefr_levels?: Prisma.cefr_levelsUpdateOneWithoutTranslationsNestedInput
@@ -367,9 +403,12 @@ export type translationsUncheckedUpdateInput = {
   target_language?: Prisma.StringFieldUpdateOperationsInput | string
   target_text?: Prisma.StringFieldUpdateOperationsInput | string
   user_id?: Prisma.IntFieldUpdateOperationsInput | number
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   collection_id?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   cefr_level_id?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   example_sentences?: Prisma.example_sentencesUncheckedUpdateManyWithoutTranslationsNestedInput
+  learning_progress?: Prisma.learning_progressUncheckedUpdateManyWithoutTranslationsNestedInput
   translations_universal_pos_tags?: Prisma.translations_universal_pos_tagsUncheckedUpdateManyWithoutTranslationsNestedInput
 }
 
@@ -380,6 +419,8 @@ export type translationsCreateManyInput = {
   target_language: string
   target_text: string
   user_id: number
+  created_at?: Date | string
+  updated_at?: Date | string
   collection_id?: number | null
   cefr_level_id?: number | null
 }
@@ -389,6 +430,8 @@ export type translationsUpdateManyMutationInput = {
   source_text?: Prisma.StringFieldUpdateOperationsInput | string
   target_language?: Prisma.StringFieldUpdateOperationsInput | string
   target_text?: Prisma.StringFieldUpdateOperationsInput | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type translationsUncheckedUpdateManyInput = {
@@ -398,6 +441,8 @@ export type translationsUncheckedUpdateManyInput = {
   target_language?: Prisma.StringFieldUpdateOperationsInput | string
   target_text?: Prisma.StringFieldUpdateOperationsInput | string
   user_id?: Prisma.IntFieldUpdateOperationsInput | number
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   collection_id?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   cefr_level_id?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
 }
@@ -424,6 +469,8 @@ export type translationsCountOrderByAggregateInput = {
   target_language?: Prisma.SortOrder
   target_text?: Prisma.SortOrder
   user_id?: Prisma.SortOrder
+  created_at?: Prisma.SortOrder
+  updated_at?: Prisma.SortOrder
   collection_id?: Prisma.SortOrder
   cefr_level_id?: Prisma.SortOrder
 }
@@ -442,6 +489,8 @@ export type translationsMaxOrderByAggregateInput = {
   target_language?: Prisma.SortOrder
   target_text?: Prisma.SortOrder
   user_id?: Prisma.SortOrder
+  created_at?: Prisma.SortOrder
+  updated_at?: Prisma.SortOrder
   collection_id?: Prisma.SortOrder
   cefr_level_id?: Prisma.SortOrder
 }
@@ -453,6 +502,8 @@ export type translationsMinOrderByAggregateInput = {
   target_language?: Prisma.SortOrder
   target_text?: Prisma.SortOrder
   user_id?: Prisma.SortOrder
+  created_at?: Prisma.SortOrder
+  updated_at?: Prisma.SortOrder
   collection_id?: Prisma.SortOrder
   cefr_level_id?: Prisma.SortOrder
 }
@@ -626,12 +677,29 @@ export type translationsUpdateOneRequiredWithoutTranslations_universal_pos_tagsN
   update?: Prisma.XOR<Prisma.XOR<Prisma.translationsUpdateToOneWithWhereWithoutTranslations_universal_pos_tagsInput, Prisma.translationsUpdateWithoutTranslations_universal_pos_tagsInput>, Prisma.translationsUncheckedUpdateWithoutTranslations_universal_pos_tagsInput>
 }
 
+export type translationsCreateNestedOneWithoutLearning_progressInput = {
+  create?: Prisma.XOR<Prisma.translationsCreateWithoutLearning_progressInput, Prisma.translationsUncheckedCreateWithoutLearning_progressInput>
+  connectOrCreate?: Prisma.translationsCreateOrConnectWithoutLearning_progressInput
+  connect?: Prisma.translationsWhereUniqueInput
+}
+
+export type translationsUpdateOneRequiredWithoutLearning_progressNestedInput = {
+  create?: Prisma.XOR<Prisma.translationsCreateWithoutLearning_progressInput, Prisma.translationsUncheckedCreateWithoutLearning_progressInput>
+  connectOrCreate?: Prisma.translationsCreateOrConnectWithoutLearning_progressInput
+  upsert?: Prisma.translationsUpsertWithoutLearning_progressInput
+  connect?: Prisma.translationsWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.translationsUpdateToOneWithWhereWithoutLearning_progressInput, Prisma.translationsUpdateWithoutLearning_progressInput>, Prisma.translationsUncheckedUpdateWithoutLearning_progressInput>
+}
+
 export type translationsCreateWithoutUsersInput = {
   source_language: string
   source_text: string
   target_language: string
   target_text: string
+  created_at?: Date | string
+  updated_at?: Date | string
   example_sentences?: Prisma.example_sentencesCreateNestedManyWithoutTranslationsInput
+  learning_progress?: Prisma.learning_progressCreateNestedManyWithoutTranslationsInput
   collections?: Prisma.collectionsCreateNestedOneWithoutTranslationsInput
   cefr_levels?: Prisma.cefr_levelsCreateNestedOneWithoutTranslationsInput
   translations_universal_pos_tags?: Prisma.translations_universal_pos_tagsCreateNestedManyWithoutTranslationsInput
@@ -643,9 +711,12 @@ export type translationsUncheckedCreateWithoutUsersInput = {
   source_text: string
   target_language: string
   target_text: string
+  created_at?: Date | string
+  updated_at?: Date | string
   collection_id?: number | null
   cefr_level_id?: number | null
   example_sentences?: Prisma.example_sentencesUncheckedCreateNestedManyWithoutTranslationsInput
+  learning_progress?: Prisma.learning_progressUncheckedCreateNestedManyWithoutTranslationsInput
   translations_universal_pos_tags?: Prisma.translations_universal_pos_tagsUncheckedCreateNestedManyWithoutTranslationsInput
 }
 
@@ -685,6 +756,8 @@ export type translationsScalarWhereInput = {
   target_language?: Prisma.StringFilter<"translations"> | string
   target_text?: Prisma.StringFilter<"translations"> | string
   user_id?: Prisma.IntFilter<"translations"> | number
+  created_at?: Prisma.DateTimeFilter<"translations"> | Date | string
+  updated_at?: Prisma.DateTimeFilter<"translations"> | Date | string
   collection_id?: Prisma.IntNullableFilter<"translations"> | number | null
   cefr_level_id?: Prisma.IntNullableFilter<"translations"> | number | null
 }
@@ -694,7 +767,10 @@ export type translationsCreateWithoutCollectionsInput = {
   source_text: string
   target_language: string
   target_text: string
+  created_at?: Date | string
+  updated_at?: Date | string
   example_sentences?: Prisma.example_sentencesCreateNestedManyWithoutTranslationsInput
+  learning_progress?: Prisma.learning_progressCreateNestedManyWithoutTranslationsInput
   users: Prisma.usersCreateNestedOneWithoutTranslationsInput
   cefr_levels?: Prisma.cefr_levelsCreateNestedOneWithoutTranslationsInput
   translations_universal_pos_tags?: Prisma.translations_universal_pos_tagsCreateNestedManyWithoutTranslationsInput
@@ -707,8 +783,11 @@ export type translationsUncheckedCreateWithoutCollectionsInput = {
   target_language: string
   target_text: string
   user_id: number
+  created_at?: Date | string
+  updated_at?: Date | string
   cefr_level_id?: number | null
   example_sentences?: Prisma.example_sentencesUncheckedCreateNestedManyWithoutTranslationsInput
+  learning_progress?: Prisma.learning_progressUncheckedCreateNestedManyWithoutTranslationsInput
   translations_universal_pos_tags?: Prisma.translations_universal_pos_tagsUncheckedCreateNestedManyWithoutTranslationsInput
 }
 
@@ -743,6 +822,9 @@ export type translationsCreateWithoutExample_sentencesInput = {
   source_text: string
   target_language: string
   target_text: string
+  created_at?: Date | string
+  updated_at?: Date | string
+  learning_progress?: Prisma.learning_progressCreateNestedManyWithoutTranslationsInput
   collections?: Prisma.collectionsCreateNestedOneWithoutTranslationsInput
   users: Prisma.usersCreateNestedOneWithoutTranslationsInput
   cefr_levels?: Prisma.cefr_levelsCreateNestedOneWithoutTranslationsInput
@@ -756,8 +838,11 @@ export type translationsUncheckedCreateWithoutExample_sentencesInput = {
   target_language: string
   target_text: string
   user_id: number
+  created_at?: Date | string
+  updated_at?: Date | string
   collection_id?: number | null
   cefr_level_id?: number | null
+  learning_progress?: Prisma.learning_progressUncheckedCreateNestedManyWithoutTranslationsInput
   translations_universal_pos_tags?: Prisma.translations_universal_pos_tagsUncheckedCreateNestedManyWithoutTranslationsInput
 }
 
@@ -782,6 +867,9 @@ export type translationsUpdateWithoutExample_sentencesInput = {
   source_text?: Prisma.StringFieldUpdateOperationsInput | string
   target_language?: Prisma.StringFieldUpdateOperationsInput | string
   target_text?: Prisma.StringFieldUpdateOperationsInput | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  learning_progress?: Prisma.learning_progressUpdateManyWithoutTranslationsNestedInput
   collections?: Prisma.collectionsUpdateOneWithoutTranslationsNestedInput
   users?: Prisma.usersUpdateOneRequiredWithoutTranslationsNestedInput
   cefr_levels?: Prisma.cefr_levelsUpdateOneWithoutTranslationsNestedInput
@@ -795,8 +883,11 @@ export type translationsUncheckedUpdateWithoutExample_sentencesInput = {
   target_language?: Prisma.StringFieldUpdateOperationsInput | string
   target_text?: Prisma.StringFieldUpdateOperationsInput | string
   user_id?: Prisma.IntFieldUpdateOperationsInput | number
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   collection_id?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   cefr_level_id?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  learning_progress?: Prisma.learning_progressUncheckedUpdateManyWithoutTranslationsNestedInput
   translations_universal_pos_tags?: Prisma.translations_universal_pos_tagsUncheckedUpdateManyWithoutTranslationsNestedInput
 }
 
@@ -805,7 +896,10 @@ export type translationsCreateWithoutCefr_levelsInput = {
   source_text: string
   target_language: string
   target_text: string
+  created_at?: Date | string
+  updated_at?: Date | string
   example_sentences?: Prisma.example_sentencesCreateNestedManyWithoutTranslationsInput
+  learning_progress?: Prisma.learning_progressCreateNestedManyWithoutTranslationsInput
   collections?: Prisma.collectionsCreateNestedOneWithoutTranslationsInput
   users: Prisma.usersCreateNestedOneWithoutTranslationsInput
   translations_universal_pos_tags?: Prisma.translations_universal_pos_tagsCreateNestedManyWithoutTranslationsInput
@@ -818,8 +912,11 @@ export type translationsUncheckedCreateWithoutCefr_levelsInput = {
   target_language: string
   target_text: string
   user_id: number
+  created_at?: Date | string
+  updated_at?: Date | string
   collection_id?: number | null
   example_sentences?: Prisma.example_sentencesUncheckedCreateNestedManyWithoutTranslationsInput
+  learning_progress?: Prisma.learning_progressUncheckedCreateNestedManyWithoutTranslationsInput
   translations_universal_pos_tags?: Prisma.translations_universal_pos_tagsUncheckedCreateNestedManyWithoutTranslationsInput
 }
 
@@ -854,7 +951,10 @@ export type translationsCreateWithoutTranslations_universal_pos_tagsInput = {
   source_text: string
   target_language: string
   target_text: string
+  created_at?: Date | string
+  updated_at?: Date | string
   example_sentences?: Prisma.example_sentencesCreateNestedManyWithoutTranslationsInput
+  learning_progress?: Prisma.learning_progressCreateNestedManyWithoutTranslationsInput
   collections?: Prisma.collectionsCreateNestedOneWithoutTranslationsInput
   users: Prisma.usersCreateNestedOneWithoutTranslationsInput
   cefr_levels?: Prisma.cefr_levelsCreateNestedOneWithoutTranslationsInput
@@ -867,9 +967,12 @@ export type translationsUncheckedCreateWithoutTranslations_universal_pos_tagsInp
   target_language: string
   target_text: string
   user_id: number
+  created_at?: Date | string
+  updated_at?: Date | string
   collection_id?: number | null
   cefr_level_id?: number | null
   example_sentences?: Prisma.example_sentencesUncheckedCreateNestedManyWithoutTranslationsInput
+  learning_progress?: Prisma.learning_progressUncheckedCreateNestedManyWithoutTranslationsInput
 }
 
 export type translationsCreateOrConnectWithoutTranslations_universal_pos_tagsInput = {
@@ -893,7 +996,10 @@ export type translationsUpdateWithoutTranslations_universal_pos_tagsInput = {
   source_text?: Prisma.StringFieldUpdateOperationsInput | string
   target_language?: Prisma.StringFieldUpdateOperationsInput | string
   target_text?: Prisma.StringFieldUpdateOperationsInput | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   example_sentences?: Prisma.example_sentencesUpdateManyWithoutTranslationsNestedInput
+  learning_progress?: Prisma.learning_progressUpdateManyWithoutTranslationsNestedInput
   collections?: Prisma.collectionsUpdateOneWithoutTranslationsNestedInput
   users?: Prisma.usersUpdateOneRequiredWithoutTranslationsNestedInput
   cefr_levels?: Prisma.cefr_levelsUpdateOneWithoutTranslationsNestedInput
@@ -906,9 +1012,86 @@ export type translationsUncheckedUpdateWithoutTranslations_universal_pos_tagsInp
   target_language?: Prisma.StringFieldUpdateOperationsInput | string
   target_text?: Prisma.StringFieldUpdateOperationsInput | string
   user_id?: Prisma.IntFieldUpdateOperationsInput | number
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   collection_id?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   cefr_level_id?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   example_sentences?: Prisma.example_sentencesUncheckedUpdateManyWithoutTranslationsNestedInput
+  learning_progress?: Prisma.learning_progressUncheckedUpdateManyWithoutTranslationsNestedInput
+}
+
+export type translationsCreateWithoutLearning_progressInput = {
+  source_language: string
+  source_text: string
+  target_language: string
+  target_text: string
+  created_at?: Date | string
+  updated_at?: Date | string
+  example_sentences?: Prisma.example_sentencesCreateNestedManyWithoutTranslationsInput
+  collections?: Prisma.collectionsCreateNestedOneWithoutTranslationsInput
+  users: Prisma.usersCreateNestedOneWithoutTranslationsInput
+  cefr_levels?: Prisma.cefr_levelsCreateNestedOneWithoutTranslationsInput
+  translations_universal_pos_tags?: Prisma.translations_universal_pos_tagsCreateNestedManyWithoutTranslationsInput
+}
+
+export type translationsUncheckedCreateWithoutLearning_progressInput = {
+  id?: number
+  source_language: string
+  source_text: string
+  target_language: string
+  target_text: string
+  user_id: number
+  created_at?: Date | string
+  updated_at?: Date | string
+  collection_id?: number | null
+  cefr_level_id?: number | null
+  example_sentences?: Prisma.example_sentencesUncheckedCreateNestedManyWithoutTranslationsInput
+  translations_universal_pos_tags?: Prisma.translations_universal_pos_tagsUncheckedCreateNestedManyWithoutTranslationsInput
+}
+
+export type translationsCreateOrConnectWithoutLearning_progressInput = {
+  where: Prisma.translationsWhereUniqueInput
+  create: Prisma.XOR<Prisma.translationsCreateWithoutLearning_progressInput, Prisma.translationsUncheckedCreateWithoutLearning_progressInput>
+}
+
+export type translationsUpsertWithoutLearning_progressInput = {
+  update: Prisma.XOR<Prisma.translationsUpdateWithoutLearning_progressInput, Prisma.translationsUncheckedUpdateWithoutLearning_progressInput>
+  create: Prisma.XOR<Prisma.translationsCreateWithoutLearning_progressInput, Prisma.translationsUncheckedCreateWithoutLearning_progressInput>
+  where?: Prisma.translationsWhereInput
+}
+
+export type translationsUpdateToOneWithWhereWithoutLearning_progressInput = {
+  where?: Prisma.translationsWhereInput
+  data: Prisma.XOR<Prisma.translationsUpdateWithoutLearning_progressInput, Prisma.translationsUncheckedUpdateWithoutLearning_progressInput>
+}
+
+export type translationsUpdateWithoutLearning_progressInput = {
+  source_language?: Prisma.StringFieldUpdateOperationsInput | string
+  source_text?: Prisma.StringFieldUpdateOperationsInput | string
+  target_language?: Prisma.StringFieldUpdateOperationsInput | string
+  target_text?: Prisma.StringFieldUpdateOperationsInput | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  example_sentences?: Prisma.example_sentencesUpdateManyWithoutTranslationsNestedInput
+  collections?: Prisma.collectionsUpdateOneWithoutTranslationsNestedInput
+  users?: Prisma.usersUpdateOneRequiredWithoutTranslationsNestedInput
+  cefr_levels?: Prisma.cefr_levelsUpdateOneWithoutTranslationsNestedInput
+  translations_universal_pos_tags?: Prisma.translations_universal_pos_tagsUpdateManyWithoutTranslationsNestedInput
+}
+
+export type translationsUncheckedUpdateWithoutLearning_progressInput = {
+  id?: Prisma.IntFieldUpdateOperationsInput | number
+  source_language?: Prisma.StringFieldUpdateOperationsInput | string
+  source_text?: Prisma.StringFieldUpdateOperationsInput | string
+  target_language?: Prisma.StringFieldUpdateOperationsInput | string
+  target_text?: Prisma.StringFieldUpdateOperationsInput | string
+  user_id?: Prisma.IntFieldUpdateOperationsInput | number
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  collection_id?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  cefr_level_id?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
+  example_sentences?: Prisma.example_sentencesUncheckedUpdateManyWithoutTranslationsNestedInput
+  translations_universal_pos_tags?: Prisma.translations_universal_pos_tagsUncheckedUpdateManyWithoutTranslationsNestedInput
 }
 
 export type translationsCreateManyUsersInput = {
@@ -917,6 +1100,8 @@ export type translationsCreateManyUsersInput = {
   source_text: string
   target_language: string
   target_text: string
+  created_at?: Date | string
+  updated_at?: Date | string
   collection_id?: number | null
   cefr_level_id?: number | null
 }
@@ -926,7 +1111,10 @@ export type translationsUpdateWithoutUsersInput = {
   source_text?: Prisma.StringFieldUpdateOperationsInput | string
   target_language?: Prisma.StringFieldUpdateOperationsInput | string
   target_text?: Prisma.StringFieldUpdateOperationsInput | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   example_sentences?: Prisma.example_sentencesUpdateManyWithoutTranslationsNestedInput
+  learning_progress?: Prisma.learning_progressUpdateManyWithoutTranslationsNestedInput
   collections?: Prisma.collectionsUpdateOneWithoutTranslationsNestedInput
   cefr_levels?: Prisma.cefr_levelsUpdateOneWithoutTranslationsNestedInput
   translations_universal_pos_tags?: Prisma.translations_universal_pos_tagsUpdateManyWithoutTranslationsNestedInput
@@ -938,9 +1126,12 @@ export type translationsUncheckedUpdateWithoutUsersInput = {
   source_text?: Prisma.StringFieldUpdateOperationsInput | string
   target_language?: Prisma.StringFieldUpdateOperationsInput | string
   target_text?: Prisma.StringFieldUpdateOperationsInput | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   collection_id?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   cefr_level_id?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   example_sentences?: Prisma.example_sentencesUncheckedUpdateManyWithoutTranslationsNestedInput
+  learning_progress?: Prisma.learning_progressUncheckedUpdateManyWithoutTranslationsNestedInput
   translations_universal_pos_tags?: Prisma.translations_universal_pos_tagsUncheckedUpdateManyWithoutTranslationsNestedInput
 }
 
@@ -950,6 +1141,8 @@ export type translationsUncheckedUpdateManyWithoutUsersInput = {
   source_text?: Prisma.StringFieldUpdateOperationsInput | string
   target_language?: Prisma.StringFieldUpdateOperationsInput | string
   target_text?: Prisma.StringFieldUpdateOperationsInput | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   collection_id?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   cefr_level_id?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
 }
@@ -961,6 +1154,8 @@ export type translationsCreateManyCollectionsInput = {
   target_language: string
   target_text: string
   user_id: number
+  created_at?: Date | string
+  updated_at?: Date | string
   cefr_level_id?: number | null
 }
 
@@ -969,7 +1164,10 @@ export type translationsUpdateWithoutCollectionsInput = {
   source_text?: Prisma.StringFieldUpdateOperationsInput | string
   target_language?: Prisma.StringFieldUpdateOperationsInput | string
   target_text?: Prisma.StringFieldUpdateOperationsInput | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   example_sentences?: Prisma.example_sentencesUpdateManyWithoutTranslationsNestedInput
+  learning_progress?: Prisma.learning_progressUpdateManyWithoutTranslationsNestedInput
   users?: Prisma.usersUpdateOneRequiredWithoutTranslationsNestedInput
   cefr_levels?: Prisma.cefr_levelsUpdateOneWithoutTranslationsNestedInput
   translations_universal_pos_tags?: Prisma.translations_universal_pos_tagsUpdateManyWithoutTranslationsNestedInput
@@ -982,8 +1180,11 @@ export type translationsUncheckedUpdateWithoutCollectionsInput = {
   target_language?: Prisma.StringFieldUpdateOperationsInput | string
   target_text?: Prisma.StringFieldUpdateOperationsInput | string
   user_id?: Prisma.IntFieldUpdateOperationsInput | number
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   cefr_level_id?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   example_sentences?: Prisma.example_sentencesUncheckedUpdateManyWithoutTranslationsNestedInput
+  learning_progress?: Prisma.learning_progressUncheckedUpdateManyWithoutTranslationsNestedInput
   translations_universal_pos_tags?: Prisma.translations_universal_pos_tagsUncheckedUpdateManyWithoutTranslationsNestedInput
 }
 
@@ -994,6 +1195,8 @@ export type translationsUncheckedUpdateManyWithoutCollectionsInput = {
   target_language?: Prisma.StringFieldUpdateOperationsInput | string
   target_text?: Prisma.StringFieldUpdateOperationsInput | string
   user_id?: Prisma.IntFieldUpdateOperationsInput | number
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   cefr_level_id?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
 }
 
@@ -1004,6 +1207,8 @@ export type translationsCreateManyCefr_levelsInput = {
   target_language: string
   target_text: string
   user_id: number
+  created_at?: Date | string
+  updated_at?: Date | string
   collection_id?: number | null
 }
 
@@ -1012,7 +1217,10 @@ export type translationsUpdateWithoutCefr_levelsInput = {
   source_text?: Prisma.StringFieldUpdateOperationsInput | string
   target_language?: Prisma.StringFieldUpdateOperationsInput | string
   target_text?: Prisma.StringFieldUpdateOperationsInput | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   example_sentences?: Prisma.example_sentencesUpdateManyWithoutTranslationsNestedInput
+  learning_progress?: Prisma.learning_progressUpdateManyWithoutTranslationsNestedInput
   collections?: Prisma.collectionsUpdateOneWithoutTranslationsNestedInput
   users?: Prisma.usersUpdateOneRequiredWithoutTranslationsNestedInput
   translations_universal_pos_tags?: Prisma.translations_universal_pos_tagsUpdateManyWithoutTranslationsNestedInput
@@ -1025,8 +1233,11 @@ export type translationsUncheckedUpdateWithoutCefr_levelsInput = {
   target_language?: Prisma.StringFieldUpdateOperationsInput | string
   target_text?: Prisma.StringFieldUpdateOperationsInput | string
   user_id?: Prisma.IntFieldUpdateOperationsInput | number
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   collection_id?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
   example_sentences?: Prisma.example_sentencesUncheckedUpdateManyWithoutTranslationsNestedInput
+  learning_progress?: Prisma.learning_progressUncheckedUpdateManyWithoutTranslationsNestedInput
   translations_universal_pos_tags?: Prisma.translations_universal_pos_tagsUncheckedUpdateManyWithoutTranslationsNestedInput
 }
 
@@ -1037,6 +1248,8 @@ export type translationsUncheckedUpdateManyWithoutCefr_levelsInput = {
   target_language?: Prisma.StringFieldUpdateOperationsInput | string
   target_text?: Prisma.StringFieldUpdateOperationsInput | string
   user_id?: Prisma.IntFieldUpdateOperationsInput | number
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   collection_id?: Prisma.NullableIntFieldUpdateOperationsInput | number | null
 }
 
@@ -1047,11 +1260,13 @@ export type translationsUncheckedUpdateManyWithoutCefr_levelsInput = {
 
 export type TranslationsCountOutputType = {
   example_sentences: number
+  learning_progress: number
   translations_universal_pos_tags: number
 }
 
 export type TranslationsCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   example_sentences?: boolean | TranslationsCountOutputTypeCountExample_sentencesArgs
+  learning_progress?: boolean | TranslationsCountOutputTypeCountLearning_progressArgs
   translations_universal_pos_tags?: boolean | TranslationsCountOutputTypeCountTranslations_universal_pos_tagsArgs
 }
 
@@ -1075,6 +1290,13 @@ export type TranslationsCountOutputTypeCountExample_sentencesArgs<ExtArgs extend
 /**
  * TranslationsCountOutputType without action
  */
+export type TranslationsCountOutputTypeCountLearning_progressArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.learning_progressWhereInput
+}
+
+/**
+ * TranslationsCountOutputType without action
+ */
 export type TranslationsCountOutputTypeCountTranslations_universal_pos_tagsArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   where?: Prisma.translations_universal_pos_tagsWhereInput
 }
@@ -1087,9 +1309,12 @@ export type translationsSelect<ExtArgs extends runtime.Types.Extensions.Internal
   target_language?: boolean
   target_text?: boolean
   user_id?: boolean
+  created_at?: boolean
+  updated_at?: boolean
   collection_id?: boolean
   cefr_level_id?: boolean
   example_sentences?: boolean | Prisma.translations$example_sentencesArgs<ExtArgs>
+  learning_progress?: boolean | Prisma.translations$learning_progressArgs<ExtArgs>
   collections?: boolean | Prisma.translations$collectionsArgs<ExtArgs>
   users?: boolean | Prisma.usersDefaultArgs<ExtArgs>
   cefr_levels?: boolean | Prisma.translations$cefr_levelsArgs<ExtArgs>
@@ -1104,6 +1329,8 @@ export type translationsSelectCreateManyAndReturn<ExtArgs extends runtime.Types.
   target_language?: boolean
   target_text?: boolean
   user_id?: boolean
+  created_at?: boolean
+  updated_at?: boolean
   collection_id?: boolean
   cefr_level_id?: boolean
   collections?: boolean | Prisma.translations$collectionsArgs<ExtArgs>
@@ -1118,6 +1345,8 @@ export type translationsSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.
   target_language?: boolean
   target_text?: boolean
   user_id?: boolean
+  created_at?: boolean
+  updated_at?: boolean
   collection_id?: boolean
   cefr_level_id?: boolean
   collections?: boolean | Prisma.translations$collectionsArgs<ExtArgs>
@@ -1132,13 +1361,16 @@ export type translationsSelectScalar = {
   target_language?: boolean
   target_text?: boolean
   user_id?: boolean
+  created_at?: boolean
+  updated_at?: boolean
   collection_id?: boolean
   cefr_level_id?: boolean
 }
 
-export type translationsOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "source_language" | "source_text" | "target_language" | "target_text" | "user_id" | "collection_id" | "cefr_level_id", ExtArgs["result"]["translations"]>
+export type translationsOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "source_language" | "source_text" | "target_language" | "target_text" | "user_id" | "created_at" | "updated_at" | "collection_id" | "cefr_level_id", ExtArgs["result"]["translations"]>
 export type translationsInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   example_sentences?: boolean | Prisma.translations$example_sentencesArgs<ExtArgs>
+  learning_progress?: boolean | Prisma.translations$learning_progressArgs<ExtArgs>
   collections?: boolean | Prisma.translations$collectionsArgs<ExtArgs>
   users?: boolean | Prisma.usersDefaultArgs<ExtArgs>
   cefr_levels?: boolean | Prisma.translations$cefr_levelsArgs<ExtArgs>
@@ -1160,6 +1392,7 @@ export type $translationsPayload<ExtArgs extends runtime.Types.Extensions.Intern
   name: "translations"
   objects: {
     example_sentences: Prisma.$example_sentencesPayload<ExtArgs>[]
+    learning_progress: Prisma.$learning_progressPayload<ExtArgs>[]
     collections: Prisma.$collectionsPayload<ExtArgs> | null
     users: Prisma.$usersPayload<ExtArgs>
     cefr_levels: Prisma.$cefr_levelsPayload<ExtArgs> | null
@@ -1172,6 +1405,8 @@ export type $translationsPayload<ExtArgs extends runtime.Types.Extensions.Intern
     target_language: string
     target_text: string
     user_id: number
+    created_at: Date
+    updated_at: Date
     collection_id: number | null
     cefr_level_id: number | null
   }, ExtArgs["result"]["translations"]>
@@ -1569,6 +1804,7 @@ readonly fields: translationsFieldRefs;
 export interface Prisma__translationsClient<T, Null = never, ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs, GlobalOmitOptions = {}> extends Prisma.PrismaPromise<T> {
   readonly [Symbol.toStringTag]: "PrismaPromise"
   example_sentences<T extends Prisma.translations$example_sentencesArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.translations$example_sentencesArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$example_sentencesPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  learning_progress<T extends Prisma.translations$learning_progressArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.translations$learning_progressArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$learning_progressPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   collections<T extends Prisma.translations$collectionsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.translations$collectionsArgs<ExtArgs>>): Prisma.Prisma__collectionsClient<runtime.Types.Result.GetResult<Prisma.$collectionsPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
   users<T extends Prisma.usersDefaultArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.usersDefaultArgs<ExtArgs>>): Prisma.Prisma__usersClient<runtime.Types.Result.GetResult<Prisma.$usersPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | Null, Null, ExtArgs, GlobalOmitOptions>
   cefr_levels<T extends Prisma.translations$cefr_levelsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.translations$cefr_levelsArgs<ExtArgs>>): Prisma.Prisma__cefr_levelsClient<runtime.Types.Result.GetResult<Prisma.$cefr_levelsPayload<ExtArgs>, T, "findUniqueOrThrow", GlobalOmitOptions> | null, null, ExtArgs, GlobalOmitOptions>
@@ -1608,6 +1844,8 @@ export interface translationsFieldRefs {
   readonly target_language: Prisma.FieldRef<"translations", 'String'>
   readonly target_text: Prisma.FieldRef<"translations", 'String'>
   readonly user_id: Prisma.FieldRef<"translations", 'Int'>
+  readonly created_at: Prisma.FieldRef<"translations", 'DateTime'>
+  readonly updated_at: Prisma.FieldRef<"translations", 'DateTime'>
   readonly collection_id: Prisma.FieldRef<"translations", 'Int'>
   readonly cefr_level_id: Prisma.FieldRef<"translations", 'Int'>
 }
@@ -2027,6 +2265,30 @@ export type translations$example_sentencesArgs<ExtArgs extends runtime.Types.Ext
   take?: number
   skip?: number
   distinct?: Prisma.Example_sentencesScalarFieldEnum | Prisma.Example_sentencesScalarFieldEnum[]
+}
+
+/**
+ * translations.learning_progress
+ */
+export type translations$learning_progressArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the learning_progress
+   */
+  select?: Prisma.learning_progressSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the learning_progress
+   */
+  omit?: Prisma.learning_progressOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.learning_progressInclude<ExtArgs> | null
+  where?: Prisma.learning_progressWhereInput
+  orderBy?: Prisma.learning_progressOrderByWithRelationInput | Prisma.learning_progressOrderByWithRelationInput[]
+  cursor?: Prisma.learning_progressWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.Learning_progressScalarFieldEnum | Prisma.Learning_progressScalarFieldEnum[]
 }
 
 /**

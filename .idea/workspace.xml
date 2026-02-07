@@ -4,27 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="add learn collection feature">
+    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="improve mobile css">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/account/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/account/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collection/collectionEmptyState.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collection/collectionEmptyState.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collection/collectionTranslations.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collection/collectionTranslations.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collection/collectionsTranslationsMobile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collection/collectionsTranslationsMobile.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/home/_content/greeting.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/home/_content/greeting.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/home/_content/lastAddedTranslation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/home/_content/lastAddedTranslation.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/layout.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/learning/_content/flashcard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/learning/_content/flashcard.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/learning/_content/learningLanding.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/learning/_content/learningLanding.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/learning/_content/learningSession.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/learning/_content/learningSession.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/learning/_content/learningSessionComplete.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/learning/_content/learningSessionComplete.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/translations/_content/translations.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/translations/_content/translations.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/translations/_content/translationsEmptyState.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/translations/_content/translationsEmptyState.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/translations/_content/translationsMobile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/translations/_content/translationsMobile.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/components/ui/card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/card.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/components/ui/dialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/dialog.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/components/ui/input.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/input.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/components/ui/pageContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/pageContent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/components/ui/select.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/select.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -144,7 +125,7 @@
       <recent name="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.web &gt; open_api:generate">
+  <component name="RunManager" selected="npm.inngest &gt; prisma:generate">
     <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -197,11 +178,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.inngest &gt; prisma:generate" />
+        <item itemvalue="npm.inngest &gt; prisma:pull" />
         <item itemvalue="npm.web &gt; open_api:generate" />
         <item itemvalue="npm.dev" />
         <item itemvalue="npm.web &gt; build" />
-        <item itemvalue="npm.inngest &gt; prisma:generate" />
-        <item itemvalue="npm.inngest &gt; prisma:pull" />
       </list>
     </recent_temporary>
   </component>
@@ -281,15 +262,7 @@
       <workItem from="1768152455661" duration="5114000" />
       <workItem from="1768686083435" duration="24834000" />
       <workItem from="1769284940233" duration="16174000" />
-      <workItem from="1769809608107" duration="37182000" />
-    </task>
-    <task id="LOCAL-00068" summary="update prisma">
-      <option name="closed" value="true" />
-      <created>1761918828501</created>
-      <option name="number" value="00068" />
-      <option name="presentableId" value="LOCAL-00068" />
-      <option name="project" value="LOCAL" />
-      <updated>1761918828501</updated>
+      <workItem from="1769809608107" duration="42210000" />
     </task>
     <task id="LOCAL-00069" summary="update prisma">
       <option name="closed" value="true" />
@@ -675,7 +648,15 @@
       <option name="project" value="LOCAL" />
       <updated>1770493633623</updated>
     </task>
-    <option name="localTasksCounter" value="117" />
+    <task id="LOCAL-00117" summary="improve mobile css">
+      <option name="closed" value="true" />
+      <created>1770495224385</created>
+      <option name="number" value="00117" />
+      <option name="presentableId" value="LOCAL-00117" />
+      <option name="project" value="LOCAL" />
+      <updated>1770495224385</updated>
+    </task>
+    <option name="localTasksCounter" value="118" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -696,7 +677,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add cefr to translation creation" />
     <MESSAGE value="add pagination" />
     <MESSAGE value="fix ui" />
     <MESSAGE value="add loading ui" />
@@ -721,7 +701,8 @@
     <MESSAGE value="add grade" />
     <MESSAGE value="add grade summary" />
     <MESSAGE value="add learn collection feature" />
-    <option name="LAST_COMMIT_MESSAGE" value="add learn collection feature" />
+    <MESSAGE value="improve mobile css" />
+    <option name="LAST_COMMIT_MESSAGE" value="improve mobile css" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

@@ -396,7 +396,9 @@ export const ModelName = {
   translations: 'translations',
   cefr_levels: 'cefr_levels',
   universal_pos_tags: 'universal_pos_tags',
-  translations_universal_pos_tags: 'translations_universal_pos_tags'
+  translations_universal_pos_tags: 'translations_universal_pos_tags',
+  learning_progress: 'learning_progress',
+  user_daily_goals: 'user_daily_goals'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -412,7 +414,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "users" | "collections" | "example_sentences" | "seaql_migrations" | "translations" | "cefr_levels" | "universal_pos_tags" | "translations_universal_pos_tags"
+    modelProps: "users" | "collections" | "example_sentences" | "seaql_migrations" | "translations" | "cefr_levels" | "universal_pos_tags" | "translations_universal_pos_tags" | "learning_progress" | "user_daily_goals"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -1008,6 +1010,154 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    learning_progress: {
+      payload: Prisma.$learning_progressPayload<ExtArgs>
+      fields: Prisma.learning_progressFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.learning_progressFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$learning_progressPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.learning_progressFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$learning_progressPayload>
+        }
+        findFirst: {
+          args: Prisma.learning_progressFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$learning_progressPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.learning_progressFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$learning_progressPayload>
+        }
+        findMany: {
+          args: Prisma.learning_progressFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$learning_progressPayload>[]
+        }
+        create: {
+          args: Prisma.learning_progressCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$learning_progressPayload>
+        }
+        createMany: {
+          args: Prisma.learning_progressCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.learning_progressCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$learning_progressPayload>[]
+        }
+        delete: {
+          args: Prisma.learning_progressDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$learning_progressPayload>
+        }
+        update: {
+          args: Prisma.learning_progressUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$learning_progressPayload>
+        }
+        deleteMany: {
+          args: Prisma.learning_progressDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.learning_progressUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.learning_progressUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$learning_progressPayload>[]
+        }
+        upsert: {
+          args: Prisma.learning_progressUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$learning_progressPayload>
+        }
+        aggregate: {
+          args: Prisma.Learning_progressAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateLearning_progress>
+        }
+        groupBy: {
+          args: Prisma.learning_progressGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.Learning_progressGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.learning_progressCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.Learning_progressCountAggregateOutputType> | number
+        }
+      }
+    }
+    user_daily_goals: {
+      payload: Prisma.$user_daily_goalsPayload<ExtArgs>
+      fields: Prisma.user_daily_goalsFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.user_daily_goalsFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$user_daily_goalsPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.user_daily_goalsFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$user_daily_goalsPayload>
+        }
+        findFirst: {
+          args: Prisma.user_daily_goalsFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$user_daily_goalsPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.user_daily_goalsFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$user_daily_goalsPayload>
+        }
+        findMany: {
+          args: Prisma.user_daily_goalsFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$user_daily_goalsPayload>[]
+        }
+        create: {
+          args: Prisma.user_daily_goalsCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$user_daily_goalsPayload>
+        }
+        createMany: {
+          args: Prisma.user_daily_goalsCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.user_daily_goalsCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$user_daily_goalsPayload>[]
+        }
+        delete: {
+          args: Prisma.user_daily_goalsDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$user_daily_goalsPayload>
+        }
+        update: {
+          args: Prisma.user_daily_goalsUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$user_daily_goalsPayload>
+        }
+        deleteMany: {
+          args: Prisma.user_daily_goalsDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.user_daily_goalsUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.user_daily_goalsUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$user_daily_goalsPayload>[]
+        }
+        upsert: {
+          args: Prisma.user_daily_goalsUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$user_daily_goalsPayload>
+        }
+        aggregate: {
+          args: Prisma.User_daily_goalsAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateUser_daily_goals>
+        }
+        groupBy: {
+          args: Prisma.user_daily_goalsGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.User_daily_goalsGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.user_daily_goalsCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.User_daily_goalsCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -1053,7 +1203,9 @@ export const UsersScalarFieldEnum = {
   password: 'password',
   name: 'name',
   password_salt: 'password_salt',
-  token_salt: 'token_salt'
+  token_salt: 'token_salt',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
 } as const
 
 export type UsersScalarFieldEnum = (typeof UsersScalarFieldEnum)[keyof typeof UsersScalarFieldEnum]
@@ -1062,7 +1214,9 @@ export type UsersScalarFieldEnum = (typeof UsersScalarFieldEnum)[keyof typeof Us
 export const CollectionsScalarFieldEnum = {
   id: 'id',
   name: 'name',
-  user_id: 'user_id'
+  user_id: 'user_id',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
 } as const
 
 export type CollectionsScalarFieldEnum = (typeof CollectionsScalarFieldEnum)[keyof typeof CollectionsScalarFieldEnum]
@@ -1093,6 +1247,8 @@ export const TranslationsScalarFieldEnum = {
   target_language: 'target_language',
   target_text: 'target_text',
   user_id: 'user_id',
+  created_at: 'created_at',
+  updated_at: 'updated_at',
   collection_id: 'collection_id',
   cefr_level_id: 'cefr_level_id'
 } as const
@@ -1126,6 +1282,38 @@ export const Translations_universal_pos_tagsScalarFieldEnum = {
 } as const
 
 export type Translations_universal_pos_tagsScalarFieldEnum = (typeof Translations_universal_pos_tagsScalarFieldEnum)[keyof typeof Translations_universal_pos_tagsScalarFieldEnum]
+
+
+export const Learning_progressScalarFieldEnum = {
+  id: 'id',
+  user_id: 'user_id',
+  translation_id: 'translation_id',
+  ease_factor: 'ease_factor',
+  interval: 'interval',
+  repetition_count: 'repetition_count',
+  next_review_at: 'next_review_at',
+  last_reviewed_at: 'last_reviewed_at',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
+} as const
+
+export type Learning_progressScalarFieldEnum = (typeof Learning_progressScalarFieldEnum)[keyof typeof Learning_progressScalarFieldEnum]
+
+
+export const User_daily_goalsScalarFieldEnum = {
+  id: 'id',
+  user_id: 'user_id',
+  daily_add_words_goal: 'daily_add_words_goal',
+  words_added_today: 'words_added_today',
+  current_streak: 'current_streak',
+  longest_streak: 'longest_streak',
+  last_goal_completed_date: 'last_goal_completed_date',
+  last_reset_date: 'last_reset_date',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
+} as const
+
+export type User_daily_goalsScalarFieldEnum = (typeof User_daily_goalsScalarFieldEnum)[keyof typeof User_daily_goalsScalarFieldEnum]
 
 
 export const SortOrder = {
@@ -1183,6 +1371,20 @@ export type StringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 
  * Reference to a field of type 'String[]'
  */
 export type ListStringFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'String[]'>
+    
+
+
+/**
+ * Reference to a field of type 'DateTime'
+ */
+export type DateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime'>
+    
+
+
+/**
+ * Reference to a field of type 'DateTime[]'
+ */
+export type ListDateTimeFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'DateTime[]'>
     
 
 
@@ -1308,6 +1510,8 @@ export type GlobalOmitConfig = {
   cefr_levels?: Prisma.cefr_levelsOmit
   universal_pos_tags?: Prisma.universal_pos_tagsOmit
   translations_universal_pos_tags?: Prisma.translations_universal_pos_tagsOmit
+  learning_progress?: Prisma.learning_progressOmit
+  user_daily_goals?: Prisma.user_daily_goalsOmit
 }
 
 /* Types for Logging */

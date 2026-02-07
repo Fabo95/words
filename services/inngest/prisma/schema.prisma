@@ -10,20 +10,26 @@ datasource db {
 
 /// This model contains an expression index which requires additional setup for migrations. Visit https://pris.ly/d/expression-indexes for more info.
 model users {
-  id            Int            @id @default(autoincrement())
-  email         String         @db.VarChar
-  password      String         @db.VarChar
-  name          String?        @db.VarChar
-  password_salt String         @db.VarChar
-  token_salt    String         @db.VarChar
-  collections   collections[]
-  translations  translations[]
+  id                Int                 @id @default(autoincrement())
+  email             String              @db.VarChar
+  password          String              @db.VarChar
+  name              String?             @db.VarChar
+  password_salt     String              @db.VarChar
+  token_salt        String              @db.VarChar
+  created_at        DateTime            @default(now()) @db.Timestamp(6)
+  updated_at        DateTime            @default(now()) @db.Timestamp(6)
+  collections       collections[]
+  learning_progress learning_progress[]
+  translations      translations[]
+  user_daily_goals  user_daily_goals?
 }
 
 model collections {
   id           Int            @id @default(autoincrement())
   name         String         @db.VarChar
   user_id      Int
+  created_at   DateTime       @default(now()) @db.Timestamp(6)
+  updated_at   DateTime       @default(now()) @db.Timestamp(6)
   users        users          @relation(fields: [user_id], references: [id], onDelete: Cascade, map: "FK_one_user_has_many_collections")
   translations translations[]
 }
@@ -48,10 +54,13 @@ model translations {
   target_language                 String                            @db.VarChar
   target_text                     String                            @db.VarChar
   user_id                         Int
+  created_at                      DateTime                          @default(now()) @db.Timestamp(6)
+  updated_at                      DateTime                          @default(now()) @db.Timestamp(6)
   collection_id                   Int?
   cefr_level_id                   Int?
   example_sentences               example_sentences[]
-  collections                     collections?                      @relation(fields: [collection_id], references: [id], onDelete: Cascade, map: "FK_one_collection_has_many_translations")
+  learning_progress               learning_progress[]
+  collections                     collections?                      @relation(fields: [collection_id], references: [id], map: "FK_one_collection_has_many_translations")
   users                           users                             @relation(fields: [user_id], references: [id], onDelete: Cascade, map: "FK_one_user_has_many_translations")
   cefr_levels                     cefr_levels?                      @relation(fields: [cefr_level_id], references: [id], map: "FK_translation_cefr_level")
   translations_universal_pos_tags translations_universal_pos_tags[]
@@ -82,4 +91,38 @@ model translations_universal_pos_tags {
   @@id([translation_id, universal_pos_tag_id])
   @@index([translation_id], map: "idx_tupt_translation_id")
   @@index([universal_pos_tag_id], map: "idx_tupt_universal_pos_tag_id")
+}
+
+model learning_progress {
+  id               Int          @id @default(autoincrement())
+  user_id          Int
+  translation_id   Int
+  ease_factor      Float        @default(2.5) @db.Real
+  interval         Int          @default(0)
+  repetition_count Int          @default(0)
+  next_review_at   DateTime?    @db.Timestamp(6)
+  last_reviewed_at DateTime?    @db.Timestamp(6)
+  created_at       DateTime     @default(now()) @db.Timestamp(6)
+  updated_at       DateTime     @default(now()) @db.Timestamp(6)
+  translations     translations @relation(fields: [translation_id], references: [id], onDelete: Cascade, map: "FK_learning_progress_translation")
+  users            users        @relation(fields: [user_id], references: [id], onDelete: Cascade, map: "FK_learning_progress_user")
+
+  @@unique([user_id, translation_id], map: "idx_learning_progress_user_translation_unique")
+  @@index([user_id, next_review_at], map: "idx_learning_progress_next_review")
+}
+
+model user_daily_goals {
+  id                       Int       @id @default(autoincrement())
+  user_id                  Int       @unique
+  daily_add_words_goal     Int       @default(5)
+  words_added_today        Int       @default(0)
+  current_streak           Int       @default(0)
+  longest_streak           Int       @default(0)
+  last_goal_completed_date DateTime? @db.Timestamp(6)
+  last_reset_date          DateTime  @default(dbgenerated("CURRENT_DATE")) @db.Timestamp(6)
+  created_at               DateTime  @default(now()) @db.Timestamp(6)
+  updated_at               DateTime  @default(now()) @db.Timestamp(6)
+  users                    users     @relation(fields: [user_id], references: [id], onDelete: Cascade, map: "FK_user_daily_goals_user")
+
+  @@index([last_reset_date], map: "idx_user_daily_goals_last_reset_date")
 }

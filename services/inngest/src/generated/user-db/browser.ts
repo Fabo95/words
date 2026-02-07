@@ -56,3 +56,13 @@ export type universal_pos_tags = Prisma.universal_pos_tagsModel
  * 
  */
 export type translations_universal_pos_tags = Prisma.translations_universal_pos_tagsModel
+/**
+ * Model learning_progress
+ * 
+ */
+export type learning_progress = Prisma.learning_progressModel
+/**
+ * Model user_daily_goals
+ * 
+ */
+export type user_daily_goals = Prisma.user_daily_goalsModel

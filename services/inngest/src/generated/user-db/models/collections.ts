@@ -39,18 +39,24 @@ export type CollectionsMinAggregateOutputType = {
   id: number | null
   name: string | null
   user_id: number | null
+  created_at: Date | null
+  updated_at: Date | null
 }
 
 export type CollectionsMaxAggregateOutputType = {
   id: number | null
   name: string | null
   user_id: number | null
+  created_at: Date | null
+  updated_at: Date | null
 }
 
 export type CollectionsCountAggregateOutputType = {
   id: number
   name: number
   user_id: number
+  created_at: number
+  updated_at: number
   _all: number
 }
 
@@ -69,18 +75,24 @@ export type CollectionsMinAggregateInputType = {
   id?: true
   name?: true
   user_id?: true
+  created_at?: true
+  updated_at?: true
 }
 
 export type CollectionsMaxAggregateInputType = {
   id?: true
   name?: true
   user_id?: true
+  created_at?: true
+  updated_at?: true
 }
 
 export type CollectionsCountAggregateInputType = {
   id?: true
   name?: true
   user_id?: true
+  created_at?: true
+  updated_at?: true
   _all?: true
 }
 
@@ -174,6 +186,8 @@ export type CollectionsGroupByOutputType = {
   id: number
   name: string
   user_id: number
+  created_at: Date
+  updated_at: Date
   _count: CollectionsCountAggregateOutputType | null
   _avg: CollectionsAvgAggregateOutputType | null
   _sum: CollectionsSumAggregateOutputType | null
@@ -203,6 +217,8 @@ export type collectionsWhereInput = {
   id?: Prisma.IntFilter<"collections"> | number
   name?: Prisma.StringFilter<"collections"> | string
   user_id?: Prisma.IntFilter<"collections"> | number
+  created_at?: Prisma.DateTimeFilter<"collections"> | Date | string
+  updated_at?: Prisma.DateTimeFilter<"collections"> | Date | string
   users?: Prisma.XOR<Prisma.UsersScalarRelationFilter, Prisma.usersWhereInput>
   translations?: Prisma.TranslationsListRelationFilter
 }
@@ -211,6 +227,8 @@ export type collectionsOrderByWithRelationInput = {
   id?: Prisma.SortOrder
   name?: Prisma.SortOrder
   user_id?: Prisma.SortOrder
+  created_at?: Prisma.SortOrder
+  updated_at?: Prisma.SortOrder
   users?: Prisma.usersOrderByWithRelationInput
   translations?: Prisma.translationsOrderByRelationAggregateInput
 }
@@ -222,6 +240,8 @@ export type collectionsWhereUniqueInput = Prisma.AtLeast<{
   NOT?: Prisma.collectionsWhereInput | Prisma.collectionsWhereInput[]
   name?: Prisma.StringFilter<"collections"> | string
   user_id?: Prisma.IntFilter<"collections"> | number
+  created_at?: Prisma.DateTimeFilter<"collections"> | Date | string
+  updated_at?: Prisma.DateTimeFilter<"collections"> | Date | string
   users?: Prisma.XOR<Prisma.UsersScalarRelationFilter, Prisma.usersWhereInput>
   translations?: Prisma.TranslationsListRelationFilter
 }, "id">
@@ -230,6 +250,8 @@ export type collectionsOrderByWithAggregationInput = {
   id?: Prisma.SortOrder
   name?: Prisma.SortOrder
   user_id?: Prisma.SortOrder
+  created_at?: Prisma.SortOrder
+  updated_at?: Prisma.SortOrder
   _count?: Prisma.collectionsCountOrderByAggregateInput
   _avg?: Prisma.collectionsAvgOrderByAggregateInput
   _max?: Prisma.collectionsMaxOrderByAggregateInput
@@ -244,10 +266,14 @@ export type collectionsScalarWhereWithAggregatesInput = {
   id?: Prisma.IntWithAggregatesFilter<"collections"> | number
   name?: Prisma.StringWithAggregatesFilter<"collections"> | string
   user_id?: Prisma.IntWithAggregatesFilter<"collections"> | number
+  created_at?: Prisma.DateTimeWithAggregatesFilter<"collections"> | Date | string
+  updated_at?: Prisma.DateTimeWithAggregatesFilter<"collections"> | Date | string
 }
 
 export type collectionsCreateInput = {
   name: string
+  created_at?: Date | string
+  updated_at?: Date | string
   users: Prisma.usersCreateNestedOneWithoutCollectionsInput
   translations?: Prisma.translationsCreateNestedManyWithoutCollectionsInput
 }
@@ -256,11 +282,15 @@ export type collectionsUncheckedCreateInput = {
   id?: number
   name: string
   user_id: number
+  created_at?: Date | string
+  updated_at?: Date | string
   translations?: Prisma.translationsUncheckedCreateNestedManyWithoutCollectionsInput
 }
 
 export type collectionsUpdateInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   users?: Prisma.usersUpdateOneRequiredWithoutCollectionsNestedInput
   translations?: Prisma.translationsUpdateManyWithoutCollectionsNestedInput
 }
@@ -269,6 +299,8 @@ export type collectionsUncheckedUpdateInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
   user_id?: Prisma.IntFieldUpdateOperationsInput | number
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   translations?: Prisma.translationsUncheckedUpdateManyWithoutCollectionsNestedInput
 }
 
@@ -276,16 +308,22 @@ export type collectionsCreateManyInput = {
   id?: number
   name: string
   user_id: number
+  created_at?: Date | string
+  updated_at?: Date | string
 }
 
 export type collectionsUpdateManyMutationInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type collectionsUncheckedUpdateManyInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
   user_id?: Prisma.IntFieldUpdateOperationsInput | number
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type CollectionsListRelationFilter = {
@@ -302,6 +340,8 @@ export type collectionsCountOrderByAggregateInput = {
   id?: Prisma.SortOrder
   name?: Prisma.SortOrder
   user_id?: Prisma.SortOrder
+  created_at?: Prisma.SortOrder
+  updated_at?: Prisma.SortOrder
 }
 
 export type collectionsAvgOrderByAggregateInput = {
@@ -313,12 +353,16 @@ export type collectionsMaxOrderByAggregateInput = {
   id?: Prisma.SortOrder
   name?: Prisma.SortOrder
   user_id?: Prisma.SortOrder
+  created_at?: Prisma.SortOrder
+  updated_at?: Prisma.SortOrder
 }
 
 export type collectionsMinOrderByAggregateInput = {
   id?: Prisma.SortOrder
   name?: Prisma.SortOrder
   user_id?: Prisma.SortOrder
+  created_at?: Prisma.SortOrder
+  updated_at?: Prisma.SortOrder
 }
 
 export type collectionsSumOrderByAggregateInput = {
@@ -391,12 +435,16 @@ export type collectionsUpdateOneWithoutTranslationsNestedInput = {
 
 export type collectionsCreateWithoutUsersInput = {
   name: string
+  created_at?: Date | string
+  updated_at?: Date | string
   translations?: Prisma.translationsCreateNestedManyWithoutCollectionsInput
 }
 
 export type collectionsUncheckedCreateWithoutUsersInput = {
   id?: number
   name: string
+  created_at?: Date | string
+  updated_at?: Date | string
   translations?: Prisma.translationsUncheckedCreateNestedManyWithoutCollectionsInput
 }
 
@@ -433,10 +481,14 @@ export type collectionsScalarWhereInput = {
   id?: Prisma.IntFilter<"collections"> | number
   name?: Prisma.StringFilter<"collections"> | string
   user_id?: Prisma.IntFilter<"collections"> | number
+  created_at?: Prisma.DateTimeFilter<"collections"> | Date | string
+  updated_at?: Prisma.DateTimeFilter<"collections"> | Date | string
 }
 
 export type collectionsCreateWithoutTranslationsInput = {
   name: string
+  created_at?: Date | string
+  updated_at?: Date | string
   users: Prisma.usersCreateNestedOneWithoutCollectionsInput
 }
 
@@ -444,6 +496,8 @@ export type collectionsUncheckedCreateWithoutTranslationsInput = {
   id?: number
   name: string
   user_id: number
+  created_at?: Date | string
+  updated_at?: Date | string
 }
 
 export type collectionsCreateOrConnectWithoutTranslationsInput = {
@@ -464,6 +518,8 @@ export type collectionsUpdateToOneWithWhereWithoutTranslationsInput = {
 
 export type collectionsUpdateWithoutTranslationsInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   users?: Prisma.usersUpdateOneRequiredWithoutCollectionsNestedInput
 }
 
@@ -471,27 +527,37 @@ export type collectionsUncheckedUpdateWithoutTranslationsInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
   user_id?: Prisma.IntFieldUpdateOperationsInput | number
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 export type collectionsCreateManyUsersInput = {
   id?: number
   name: string
+  created_at?: Date | string
+  updated_at?: Date | string
 }
 
 export type collectionsUpdateWithoutUsersInput = {
   name?: Prisma.StringFieldUpdateOperationsInput | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   translations?: Prisma.translationsUpdateManyWithoutCollectionsNestedInput
 }
 
 export type collectionsUncheckedUpdateWithoutUsersInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   translations?: Prisma.translationsUncheckedUpdateManyWithoutCollectionsNestedInput
 }
 
 export type collectionsUncheckedUpdateManyWithoutUsersInput = {
   id?: Prisma.IntFieldUpdateOperationsInput | number
   name?: Prisma.StringFieldUpdateOperationsInput | string
+  created_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updated_at?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
 }
 
 
@@ -529,6 +595,8 @@ export type collectionsSelect<ExtArgs extends runtime.Types.Extensions.InternalA
   id?: boolean
   name?: boolean
   user_id?: boolean
+  created_at?: boolean
+  updated_at?: boolean
   users?: boolean | Prisma.usersDefaultArgs<ExtArgs>
   translations?: boolean | Prisma.collections$translationsArgs<ExtArgs>
   _count?: boolean | Prisma.CollectionsCountOutputTypeDefaultArgs<ExtArgs>
@@ -538,6 +606,8 @@ export type collectionsSelectCreateManyAndReturn<ExtArgs extends runtime.Types.E
   id?: boolean
   name?: boolean
   user_id?: boolean
+  created_at?: boolean
+  updated_at?: boolean
   users?: boolean | Prisma.usersDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["collections"]>
 
@@ -545,6 +615,8 @@ export type collectionsSelectUpdateManyAndReturn<ExtArgs extends runtime.Types.E
   id?: boolean
   name?: boolean
   user_id?: boolean
+  created_at?: boolean
+  updated_at?: boolean
   users?: boolean | Prisma.usersDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["collections"]>
 
@@ -552,9 +624,11 @@ export type collectionsSelectScalar = {
   id?: boolean
   name?: boolean
   user_id?: boolean
+  created_at?: boolean
+  updated_at?: boolean
 }
 
-export type collectionsOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "user_id", ExtArgs["result"]["collections"]>
+export type collectionsOmit<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetOmit<"id" | "name" | "user_id" | "created_at" | "updated_at", ExtArgs["result"]["collections"]>
 export type collectionsInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   users?: boolean | Prisma.usersDefaultArgs<ExtArgs>
   translations?: boolean | Prisma.collections$translationsArgs<ExtArgs>
@@ -577,6 +651,8 @@ export type $collectionsPayload<ExtArgs extends runtime.Types.Extensions.Interna
     id: number
     name: string
     user_id: number
+    created_at: Date
+    updated_at: Date
   }, ExtArgs["result"]["collections"]>
   composites: {}
 }
@@ -1005,6 +1081,8 @@ export interface collectionsFieldRefs {
   readonly id: Prisma.FieldRef<"collections", 'Int'>
   readonly name: Prisma.FieldRef<"collections", 'String'>
   readonly user_id: Prisma.FieldRef<"collections", 'Int'>
+  readonly created_at: Prisma.FieldRef<"collections", 'DateTime'>
+  readonly updated_at: Prisma.FieldRef<"collections", 'DateTime'>
 }
     
 

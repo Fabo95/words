@@ -55,7 +55,9 @@ export const ModelName = {
   translations: 'translations',
   cefr_levels: 'cefr_levels',
   universal_pos_tags: 'universal_pos_tags',
-  translations_universal_pos_tags: 'translations_universal_pos_tags'
+  translations_universal_pos_tags: 'translations_universal_pos_tags',
+  learning_progress: 'learning_progress',
+  user_daily_goals: 'user_daily_goals'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -80,7 +82,9 @@ export const UsersScalarFieldEnum = {
   password: 'password',
   name: 'name',
   password_salt: 'password_salt',
-  token_salt: 'token_salt'
+  token_salt: 'token_salt',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
 } as const
 
 export type UsersScalarFieldEnum = (typeof UsersScalarFieldEnum)[keyof typeof UsersScalarFieldEnum]
@@ -89,7 +93,9 @@ export type UsersScalarFieldEnum = (typeof UsersScalarFieldEnum)[keyof typeof Us
 export const CollectionsScalarFieldEnum = {
   id: 'id',
   name: 'name',
-  user_id: 'user_id'
+  user_id: 'user_id',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
 } as const
 
 export type CollectionsScalarFieldEnum = (typeof CollectionsScalarFieldEnum)[keyof typeof CollectionsScalarFieldEnum]
@@ -120,6 +126,8 @@ export const TranslationsScalarFieldEnum = {
   target_language: 'target_language',
   target_text: 'target_text',
   user_id: 'user_id',
+  created_at: 'created_at',
+  updated_at: 'updated_at',
   collection_id: 'collection_id',
   cefr_level_id: 'cefr_level_id'
 } as const
@@ -153,6 +161,38 @@ export const Translations_universal_pos_tagsScalarFieldEnum = {
 } as const
 
 export type Translations_universal_pos_tagsScalarFieldEnum = (typeof Translations_universal_pos_tagsScalarFieldEnum)[keyof typeof Translations_universal_pos_tagsScalarFieldEnum]
+
+
+export const Learning_progressScalarFieldEnum = {
+  id: 'id',
+  user_id: 'user_id',
+  translation_id: 'translation_id',
+  ease_factor: 'ease_factor',
+  interval: 'interval',
+  repetition_count: 'repetition_count',
+  next_review_at: 'next_review_at',
+  last_reviewed_at: 'last_reviewed_at',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
+} as const
+
+export type Learning_progressScalarFieldEnum = (typeof Learning_progressScalarFieldEnum)[keyof typeof Learning_progressScalarFieldEnum]
+
+
+export const User_daily_goalsScalarFieldEnum = {
+  id: 'id',
+  user_id: 'user_id',
+  daily_add_words_goal: 'daily_add_words_goal',
+  words_added_today: 'words_added_today',
+  current_streak: 'current_streak',
+  longest_streak: 'longest_streak',
+  last_goal_completed_date: 'last_goal_completed_date',
+  last_reset_date: 'last_reset_date',
+  created_at: 'created_at',
+  updated_at: 'updated_at'
+} as const
+
+export type User_daily_goalsScalarFieldEnum = (typeof User_daily_goalsScalarFieldEnum)[keyof typeof User_daily_goalsScalarFieldEnum]
 
 
 export const SortOrder = {
