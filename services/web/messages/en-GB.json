@@ -190,6 +190,22 @@
             "description": "Please try again."
           }
         }
+      },
+      "dailyGoalsForm": {
+        "settingsTitle": "Settings",
+        "goalLabel": "Daily word goal (1-100)",
+        "goalError": "Please enter a number between 1 and 100",
+        "saveButton": "Save",
+        "toast": {
+          "success": {
+            "title": "Goal updated",
+            "description": "Your daily goal has been saved."
+          },
+          "error": {
+            "title": "Update failed",
+            "description": "Please try again."
+          }
+        }
       }
     },
 	"components": {
@@ -282,21 +298,7 @@
 			"wordsToday": "words today",
 			"streaksTitle": "Streaks",
 			"currentStreak": "Current streak",
-			"longestStreak": "Longest streak",
-			"settingsTitle": "Settings",
-			"goalLabel": "Daily word goal (1-100)",
-			"goalError": "Please enter a number between 1 and 100",
-			"saveButton": "Save",
-			"toast": {
-				"success": {
-					"title": "Goal updated",
-					"description": "Your daily goal has been saved."
-				},
-				"error": {
-					"title": "Update failed",
-					"description": "Please try again."
-				}
-			}
+			"longestStreak": "Longest streak"
 		}
 	},
 	"pages": {

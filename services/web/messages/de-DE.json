@@ -193,6 +193,22 @@
             "description": "Bitte versuche es erneut."
           }
         }
+      },
+      "dailyGoalsForm": {
+        "settingsTitle": "Einstellungen",
+        "goalLabel": "Tägliches Wortziel (1-100)",
+        "goalError": "Bitte gib eine Zahl zwischen 1 und 100 ein",
+        "saveButton": "Speichern",
+        "toast": {
+          "success": {
+            "title": "Ziel aktualisiert",
+            "description": "Dein Tagesziel wurde gespeichert."
+          },
+          "error": {
+            "title": "Aktualisierung fehlgeschlagen",
+            "description": "Bitte versuche es erneut."
+          }
+        }
       }
     },
 	"components": {
@@ -285,21 +301,7 @@
 			"wordsToday": "Wörter heute",
 			"streaksTitle": "Serien",
 			"currentStreak": "Aktuelle Serie",
-			"longestStreak": "Längste Serie",
-			"settingsTitle": "Einstellungen",
-			"goalLabel": "Tägliches Wortziel (1-100)",
-			"goalError": "Bitte gib eine Zahl zwischen 1 und 100 ein",
-			"saveButton": "Speichern",
-			"toast": {
-				"success": {
-					"title": "Ziel aktualisiert",
-					"description": "Dein Tagesziel wurde gespeichert."
-				},
-				"error": {
-					"title": "Aktualisierung fehlgeschlagen",
-					"description": "Bitte versuche es erneut."
-				}
-			}
+			"longestStreak": "Längste Serie"
 		}
 	},
 	"pages": {

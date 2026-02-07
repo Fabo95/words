@@ -36,11 +36,16 @@ async function createRequestCradle(requerstCradleFactories: {
 		),
 
 		cefrLevelsModelService: asFunction(() => requerstCradleFactories.modelServicesFactory.getCefrLevelsModelService()),
-        universalPosTagsModelService: asFunction(() => requerstCradleFactories.modelServicesFactory.getUniversalPosTagsModelService()),
-        translationsUniversalPosTagsModelService: asFunction(() => requerstCradleFactories.modelServicesFactory.getTranslationsUniversalPosTagsModelService()),
-
-
-    }
+		universalPosTagsModelService: asFunction(() =>
+			requerstCradleFactories.modelServicesFactory.getUniversalPosTagsModelService(),
+		),
+		translationsUniversalPosTagsModelService: asFunction(() =>
+			requerstCradleFactories.modelServicesFactory.getTranslationsUniversalPosTagsModelService(),
+		),
+		userDailyGoalsModelService: asFunction(() =>
+			requerstCradleFactories.modelServicesFactory.getUserDailyGoalsModelService(),
+		),
+	}
 }
 
 export { createCradle, createRequestCradle }

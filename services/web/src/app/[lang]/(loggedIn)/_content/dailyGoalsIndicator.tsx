@@ -2,10 +2,7 @@
 
 import { useState } from "react"
 import { useTranslations } from "next-intl"
-import { useQueryClient, useSuspenseQuery } from "@tanstack/react-query"
-import { useForm } from "react-hook-form"
-import { zodResolver } from "@hookform/resolvers/zod"
-import { z } from "zod"
+import { useSuspenseQuery } from "@tanstack/react-query"
 
 import { Button } from "@app/components/ui/button"
 import { ProgressRing } from "@app/components/ui/progress-ring"
@@ -13,63 +10,21 @@ import {
 	DialogOrDrawer,
 	DialogOrDrawerContent,
 	DialogOrDrawerDescription,
+	DialogOrDrawerFooter,
 	DialogOrDrawerHeader,
 	DialogOrDrawerTitle,
-	DialogOrDrawerFooter,
 } from "@app/components/ui/dialogOrDrawer"
 import { Tooltip, TooltipContent, TooltipTrigger } from "@app/components/ui/tooltip"
-import { Input } from "@app/components/ui/input"
-import { Label } from "@app/components/ui/label"
 import { getDailyGoalsQueryOptions } from "@app/utils/reactQuery/queryOptions"
-import { $api } from "@app/utils/api/apiRequests"
-import { useToast } from "@app/components/ui/use-toast"
 import { Flame } from "lucide-react"
-
-const dailyGoalSchema = z.object({
-	daily_add_words_goal: z.coerce.number().min(1).max(100),
-})
-
-type DailyGoalFormValues = z.infer<typeof dailyGoalSchema>
+import { DailyGoalsForm } from "@app/components/forms/dailyGoalsForm/dailyGoalsForm"
 
 export function DailyGoalsIndicator() {
 	const t = useTranslations("components.dailyGoals")
-	const { toast } = useToast()
-	const queryClient = useQueryClient()
 	const [isOpen, setIsOpen] = useState(false)
 
 	const { data } = useSuspenseQuery(getDailyGoalsQueryOptions())
 	const dailyGoals = data.data
-
-	const updateMutation = $api.useMutation("patch", "/daily-goals", {
-		onSuccess: () => {
-			void queryClient.invalidateQueries({ queryKey: getDailyGoalsQueryOptions().queryKey })
-			toast({
-				title: t("toast.success.title"),
-				description: t("toast.success.description"),
-			})
-		},
-		onError: () => {
-			toast({
-				title: t("toast.error.title"),
-				description: t("toast.error.description"),
-			})
-		},
-	})
-
-	const form = useForm<DailyGoalFormValues>({
-		resolver: zodResolver(dailyGoalSchema),
-		defaultValues: {
-			daily_add_words_goal: dailyGoals?.daily_add_words_goal ?? 5,
-		},
-	})
-
-	const onSubmit = (values: DailyGoalFormValues) => {
-		updateMutation.mutate({
-			body: {
-				daily_add_words_goal: values.daily_add_words_goal,
-			},
-		})
-	}
 
 	if (!dailyGoals) return null
 
@@ -125,9 +80,7 @@ export function DailyGoalsIndicator() {
 									style={{ width: `${Math.min(100, progress_percentage)}%` }}
 								/>
 							</div>
-							<p className="text-sm text-muted-foreground text-right">
-								{Math.round(progress_percentage)}%
-							</p>
+							<p className="text-sm text-muted-foreground text-right">{Math.round(progress_percentage)}%</p>
 						</div>
 
 						{/* Streaks Section */}
@@ -151,28 +104,7 @@ export function DailyGoalsIndicator() {
 							</div>
 						</div>
 
-						{/* Settings Section */}
-						<form onSubmit={form.handleSubmit(onSubmit)} className="space-y-3">
-							<h4 className="text-sm font-medium">{t("settingsTitle")}</h4>
-							<div className="space-y-2">
-								<Label htmlFor="daily_add_words_goal">{t("goalLabel")}</Label>
-								<Input
-									id="daily_add_words_goal"
-									type="number"
-									min={1}
-									max={100}
-									{...form.register("daily_add_words_goal")}
-								/>
-								{form.formState.errors.daily_add_words_goal && (
-									<p className="text-sm text-destructive">{t("goalError")}</p>
-								)}
-							</div>
-							<DialogOrDrawerFooter>
-								<Button type="submit" isLoading={updateMutation.isPending}>
-									{t("saveButton")}
-								</Button>
-							</DialogOrDrawerFooter>
-						</form>
+						<DailyGoalsForm defaultValues={{ daily_add_words_goal }} />
 					</div>
 				</DialogOrDrawerContent>
 			</DialogOrDrawer>

@@ -30,6 +30,7 @@ export class InngestFunctionsFactory implements I_InngestFunctionsFactory {
 				universalPosTagsModelService: this.deps.modelServicesFactory.getUniversalPosTagsModelService(),
 				translationsUniversalPosTagsModelService:
 					this.deps.modelServicesFactory.getTranslationsUniversalPosTagsModelService(),
+				userDailyGoalsModelService: this.deps.modelServicesFactory.getUserDailyGoalsModelService(),
 			})
 		}
 

@@ -7,6 +7,7 @@ import { ExampleSentencesModelService } from "@/services/model/exampleSentencesM
 import { CefrLevelsModelService } from "@/services/model/cefrLevelsModelsService.js"
 import { UniversalPosTagsModelService } from "@/services/model/universalPosTagsModelService.js"
 import { TranslationsUniversalPosTagsModelService } from "@/services/model/translationsUniversalPosTagsModelService.js"
+import { UserDailyGoalsModelService } from "@/services/model/userDailyGoalsModelService.js"
 
 export type InngestFunctions = ReturnType<typeof getInngestFunctions>
 
@@ -18,6 +19,7 @@ type InngestFunctionsDeps = {
 	cefrLevelsModelService: CefrLevelsModelService
 	universalPosTagsModelService: UniversalPosTagsModelService
 	translationsUniversalPosTagsModelService: TranslationsUniversalPosTagsModelService
+	userDailyGoalsModelService: UserDailyGoalsModelService
 }
 
 export const getInngestFunctions = ({
@@ -28,6 +30,7 @@ export const getInngestFunctions = ({
 	cefrLevelsModelService,
 	universalPosTagsModelService,
 	translationsUniversalPosTagsModelService,
+	userDailyGoalsModelService,
 }: InngestFunctionsDeps) => [
 	...getInngestEventFunctions({
 		openAi,
@@ -40,5 +43,6 @@ export const getInngestFunctions = ({
 	}),
 	...getInngestCronFunctions({
 		inngest,
+		userDailyGoalsModelService,
 	}),
 ]

@@ -3,8 +3,9 @@ import { FastifyBaseLogger } from "fastify"
 import { TranslationsModelService } from "@/services/model/translationsModelService.js"
 import { ExampleSentencesModelService } from "@/services/model/exampleSentencesModelService.js"
 import { CefrLevelsModelService } from "@/services/model/cefrLevelsModelsService.js"
-import {UniversalPosTagsModelService} from "@/services/model/universalPosTagsModelService.js";
-import {TranslationsUniversalPosTagsModelService} from "@/services/model/translationsUniversalPosTagsModelService.js";
+import { UniversalPosTagsModelService } from "@/services/model/universalPosTagsModelService.js"
+import { TranslationsUniversalPosTagsModelService } from "@/services/model/translationsUniversalPosTagsModelService.js"
+import { UserDailyGoalsModelService } from "@/services/model/userDailyGoalsModelService.js"
 
 interface ModelServicesFactoryDeps {
 	prisma: PrismaClient
@@ -16,8 +17,9 @@ export class ModelServicesFactory {
 		translationsModelService?: TranslationsModelService
 		exampleSentencesModelService?: ExampleSentencesModelService
 		cefrLevelsModelService?: CefrLevelsModelService
-        universalPosTagsModelService?: UniversalPosTagsModelService
-        translationsUniversalPosTagsModelService?: TranslationsUniversalPosTagsModelService
+		universalPosTagsModelService?: UniversalPosTagsModelService
+		translationsUniversalPosTagsModelService?: TranslationsUniversalPosTagsModelService
+		userDailyGoalsModelService?: UserDailyGoalsModelService
 	} = {}
 
 	private deps: ModelServicesFactoryDeps
@@ -54,10 +56,19 @@ export class ModelServicesFactory {
         return this.modelServices.universalPosTagsModelService
     }
 
-    public getTranslationsUniversalPosTagsModelService() {
-        if (!this.modelServices.translationsUniversalPosTagsModelService) {
-            this.modelServices.translationsUniversalPosTagsModelService = new TranslationsUniversalPosTagsModelService({ prisma: this.deps.prisma })
-        }
-        return this.modelServices.translationsUniversalPosTagsModelService
-    }
+	public getTranslationsUniversalPosTagsModelService() {
+		if (!this.modelServices.translationsUniversalPosTagsModelService) {
+			this.modelServices.translationsUniversalPosTagsModelService = new TranslationsUniversalPosTagsModelService({
+				prisma: this.deps.prisma,
+			})
+		}
+		return this.modelServices.translationsUniversalPosTagsModelService
+	}
+
+	public getUserDailyGoalsModelService() {
+		if (!this.modelServices.userDailyGoalsModelService) {
+			this.modelServices.userDailyGoalsModelService = new UserDailyGoalsModelService({ prisma: this.deps.prisma })
+		}
+		return this.modelServices.userDailyGoalsModelService
+	}
 }
