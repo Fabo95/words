@@ -12,9 +12,11 @@ import * as React from "react"
 import {
 	getCefrLevelsQueryOptions,
 	getCollectionsQueryOptions,
+	getDailyGoalsQueryOptions,
 	getUniversalPosTagsQueryOptions,
 	getUserQueryOptions,
 } from "@app/utils/reactQuery/queryOptions"
+import { DailyGoalsIndicator } from "@app/app/[lang]/(loggedIn)/_content/dailyGoalsIndicator"
 
 export default async function Layout({ children }: { children: ReactNode }) {
 	// --- STATE ---
@@ -55,6 +57,8 @@ export default async function Layout({ children }: { children: ReactNode }) {
 
 	void queryClient.prefetchQuery(getUniversalPosTagsQueryOptions(authCookieValue))
 
+	void queryClient.prefetchQuery(getDailyGoalsQueryOptions(authCookieValue))
+
 	// --- RENDER ---
 
 	return (
@@ -66,14 +70,20 @@ export default async function Layout({ children }: { children: ReactNode }) {
 					<nav className="bg-black flex justify-between sticky top-0 p-3 md:p-5 border-b z-50 w-full">
 						<SidebarTrigger className="h-9 w-9 md:h-7 md:w-7" />
 
-						<Suspense fallback={<Skeleton className="h-9 w-9 md:h-7 md:w-7" />}>
-							<AddTranslationTrigger
-								variant="ghost"
-								className="h-9 w-9 md:h-7 md:w-7"
-								size="icon"
-								defaultValues={{ universalPosTagIds: [] }}
-							/>
-						</Suspense>
+						<div className="flex items-center gap-1">
+							<Suspense fallback={<Skeleton className="h-9 w-9 md:h-7 md:w-7" />}>
+								<DailyGoalsIndicator />
+							</Suspense>
+
+							<Suspense fallback={<Skeleton className="h-9 w-9 md:h-7 md:w-7" />}>
+								<AddTranslationTrigger
+									variant="ghost"
+									className="h-9 w-9 md:h-7 md:w-7"
+									size="icon"
+									defaultValues={{ universalPosTagIds: [] }}
+								/>
+							</Suspense>
+						</div>
 					</nav>
 
 					<PageContent>{children}</PageContent>

@@ -111,3 +111,8 @@ export const getLearnStatsQueryOptions = (args?: { collectionId?: number | null;
 		},
 		...(args?.authCookieValue ? { headers: { Cookie: `auth-cookie=${args.authCookieValue}` } } : {}),
 	})
+
+export const getDailyGoalsQueryOptions = (authCookieValue?: string) =>
+	$api.queryOptions("get", "/daily-goals", {
+		...(authCookieValue ? { headers: { Cookie: `auth-cookie=${authCookieValue}` } } : {}),
+	})

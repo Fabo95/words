@@ -17,6 +17,7 @@ import {
 import {
 	getCefrLevelsQueryOptions,
 	getCollectionsQueryOptions,
+	getDailyGoalsQueryOptions,
 	getLatestTranslationsQueryOptions,
 	getLearnStatsQueryOptions,
 	getTranslationByIdQueryOptions,
@@ -90,6 +91,7 @@ export const AddTranslationTrigger = ({
 			queryClient.invalidateQueries({ queryKey: getLatestTranslationsQueryOptions().queryKey }),
 			queryClient.invalidateQueries({ queryKey: getTranslationStatisticsQueryOptions().queryKey }),
 			queryClient.invalidateQueries({ queryKey: getLearnStatsQueryOptions().queryKey }),
+			queryClient.invalidateQueries({ queryKey: getDailyGoalsQueryOptions().queryKey }),
 			createdTranslationId
 				? queryClient.invalidateQueries({ queryKey: getTranslationByIdQueryOptions(createdTranslationId).queryKey })
 				: Promise.resolve(),

@@ -116,6 +116,22 @@ export type paths = {
         patch?: never;
         trace?: never;
     };
+    "/daily-goals": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["get_daily_goals_handler"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch: operations["update_daily_goals_handler"];
+        trace?: never;
+    };
     "/learn": {
         parameters: {
             query?: never;
@@ -339,6 +355,26 @@ export type components = {
             /** @description Collection name: must be 1–100 characters, no control characters */
             name: string;
         };
+        DailyGoalsResponse: {
+            /** Format: int32 */
+            current_streak: number;
+            /** Format: int32 */
+            daily_add_words_goal: number;
+            goal_completed_today: boolean;
+            /** Format: int32 */
+            longest_streak: number;
+            /** Format: double */
+            progress_percentage: number;
+            /** Format: int32 */
+            words_added_today: number;
+        };
+        DailyGoalsUpdate: {
+            /**
+             * Format: int32
+             * @description Daily goal: must be between 1 and 100
+             */
+            daily_add_words_goal: number;
+        };
         EmailForCheck: {
             /** @description Must be a valid email address */
             email: string;
@@ -349,6 +385,24 @@ export type components = {
         HttpResponseBody_AuthenticationResponse: {
             data?: {
                 isAuthenticated: boolean;
+            };
+            message: string;
+            meta?: null | components["schemas"]["PaginatedMeta"];
+            success: boolean;
+        };
+        HttpResponseBody_DailyGoalsResponse: {
+            data?: {
+                /** Format: int32 */
+                current_streak: number;
+                /** Format: int32 */
+                daily_add_words_goal: number;
+                goal_completed_today: boolean;
+                /** Format: int32 */
+                longest_streak: number;
+                /** Format: double */
+                progress_percentage: number;
+                /** Format: int32 */
+                words_added_today: number;
             };
             message: string;
             meta?: null | components["schemas"]["PaginatedMeta"];
@@ -920,6 +974,48 @@ export interface operations {
                 };
                 content: {
                     "application/json": components["schemas"]["HttpResponseBody_Vec_TranslationWithRelations"];
+                };
+            };
+        };
+    };
+    get_daily_goals_handler: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HttpResponseBody_DailyGoalsResponse"];
+                };
+            };
+        };
+    };
+    update_daily_goals_handler: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["DailyGoalsUpdate"];
+            };
+        };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HttpResponseBody_DailyGoalsResponse"];
                 };
             };
         };

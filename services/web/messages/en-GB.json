@@ -272,6 +272,31 @@
 		"userActions": {
 			"account": "Account",
 			"logout": "Logout"
+		},
+		"dailyGoals": {
+			"tooltip": "{current}/{goal} words today",
+			"tooltipStreak": "{days} day streak",
+			"title": "Daily Goals",
+			"description": "Track your daily word learning progress",
+			"progressTitle": "Today's Progress",
+			"wordsToday": "words today",
+			"streaksTitle": "Streaks",
+			"currentStreak": "Current streak",
+			"longestStreak": "Longest streak",
+			"settingsTitle": "Settings",
+			"goalLabel": "Daily word goal (1-100)",
+			"goalError": "Please enter a number between 1 and 100",
+			"saveButton": "Save",
+			"toast": {
+				"success": {
+					"title": "Goal updated",
+					"description": "Your daily goal has been saved."
+				},
+				"error": {
+					"title": "Update failed",
+					"description": "Please try again."
+				}
+			}
 		}
 	},
 	"pages": {
