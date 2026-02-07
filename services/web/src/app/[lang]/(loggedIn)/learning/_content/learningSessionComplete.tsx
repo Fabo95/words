@@ -50,19 +50,19 @@ export function LearningSessionComplete({ results, totalItems, onContinue, onFin
 				<p className="text-sm text-muted-foreground">{t("pages.learning.complete.summary", { total: totalItems })}</p>
 			</div>
 
-			<div className="grid grid-cols-2 gap-2 mb-8">
+			<div className="grid grid-cols-2 gap-2 mb-6 md:mb-8">
 				{grades.map((grade) => {
 					const config = gradeConfig[grade]
 					const Icon = config.icon
 					return (
 						<Card key={grade}>
-							<CardContent className="p-3 text-center">
+							<CardContent className="p-2 md:p-3 text-center">
 								<div
-									className={cn("mx-auto mb-2 flex h-8 w-8 items-center justify-center rounded-full", config.bgClass)}
+									className={cn("mx-auto mb-1.5 md:mb-2 flex h-7 w-7 md:h-8 md:w-8 items-center justify-center rounded-full", config.bgClass)}
 								>
-									<Icon className={cn("h-4 w-4", config.colorClass)} />
+									<Icon className={cn("h-3.5 w-3.5 md:h-4 md:w-4", config.colorClass)} />
 								</div>
-								<p className={cn("text-xl font-semibold tabular-nums", config.colorClass)}>{gradeCounts[grade]}</p>
+								<p className={cn("text-lg md:text-xl font-semibold tabular-nums", config.colorClass)}>{gradeCounts[grade]}</p>
 								<p className="text-xs text-muted-foreground">{t(`pages.learning.session.grades.${grade}`)}</p>
 							</CardContent>
 						</Card>
@@ -70,7 +70,7 @@ export function LearningSessionComplete({ results, totalItems, onContinue, onFin
 				})}
 			</div>
 
-			<div className="flex gap-3">
+			<div className="flex gap-2 md:gap-3">
 				<Button variant="outline" className="flex-1 text-base" onClick={onFinish}>
 					{t("pages.learning.complete.finishButton")}
 				</Button>

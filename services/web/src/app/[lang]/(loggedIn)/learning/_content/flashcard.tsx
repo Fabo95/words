@@ -108,7 +108,7 @@ export function Flashcard({
 			<div
 				className={cn(
 					"w-full h-full rounded-2xl border bg-card shadow-lg",
-					"flex flex-col items-center justify-center p-6",
+					"flex flex-col items-center justify-center p-4 md:p-6",
 				)}
 			>
 				<AnimatePresence>
@@ -144,8 +144,8 @@ export function Flashcard({
 					</Badge>
 				)}
 
-				<p className="text-3xl md:text-2xl font-semibold text-center wrap-break-word mb-2">{sourceText}</p>
-				<p className="text-3xl md:text-2xl font-semibold text-center wrap-break-word">{renderTargetText()}</p>
+				<p className="text-xl md:text-2xl font-semibold text-center wrap-break-word mb-2">{sourceText}</p>
+				<p className="text-xl md:text-2xl font-semibold text-center wrap-break-word">{renderTargetText()}</p>
 
 				{reviewResult && (
 					<motion.p

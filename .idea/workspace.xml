@@ -6,8 +6,25 @@
   <component name="ChangeListManager">
     <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="add learn collection feature">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/messages/de-DE.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/messages/de-DE.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/messages/en-GB.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/messages/en-GB.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/account/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/account/page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collection/collectionEmptyState.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collection/collectionEmptyState.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collection/collectionTranslations.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collection/collectionTranslations.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collection/collectionsTranslationsMobile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collection/collectionsTranslationsMobile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/home/_content/greeting.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/home/_content/greeting.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/home/_content/lastAddedTranslation.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/home/_content/lastAddedTranslation.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/layout.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/learning/_content/flashcard.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/learning/_content/flashcard.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/learning/_content/learningLanding.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/learning/_content/learningLanding.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/learning/_content/learningSession.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/learning/_content/learningSession.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/learning/_content/learningSessionComplete.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/learning/_content/learningSessionComplete.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/translations/_content/translations.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/translations/_content/translations.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/translations/_content/translationsEmptyState.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/translations/_content/translationsEmptyState.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/translations/_content/translationsMobile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/translations/_content/translationsMobile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/components/ui/card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/card.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/components/ui/dialog.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/dialog.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/components/ui/input.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/input.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/components/ui/pageContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/pageContent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/components/ui/select.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/select.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -264,15 +281,7 @@
       <workItem from="1768152455661" duration="5114000" />
       <workItem from="1768686083435" duration="24834000" />
       <workItem from="1769284940233" duration="16174000" />
-      <workItem from="1769809608107" duration="35746000" />
-    </task>
-    <task id="LOCAL-00067" summary="add schema.prisma">
-      <option name="closed" value="true" />
-      <created>1761918770814</created>
-      <option name="number" value="00067" />
-      <option name="presentableId" value="LOCAL-00067" />
-      <option name="project" value="LOCAL" />
-      <updated>1761918770814</updated>
+      <workItem from="1769809608107" duration="37182000" />
     </task>
     <task id="LOCAL-00068" summary="update prisma">
       <option name="closed" value="true" />
@@ -658,7 +667,15 @@
       <option name="project" value="LOCAL" />
       <updated>1770493465760</updated>
     </task>
-    <option name="localTasksCounter" value="116" />
+    <task id="LOCAL-00116" summary="add learn collection feature">
+      <option name="closed" value="true" />
+      <created>1770493633623</created>
+      <option name="number" value="00116" />
+      <option name="presentableId" value="LOCAL-00116" />
+      <option name="project" value="LOCAL" />
+      <updated>1770493633623</updated>
+    </task>
+    <option name="localTasksCounter" value="117" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

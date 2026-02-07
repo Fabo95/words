@@ -15,7 +15,7 @@ export default async function Page({ params }: { params: Promise<Record<"lang", 
 	// --- RENDER ---
 
 	return (
-		<Tabs defaultValue="name" className="max-w-[400px] w-full">
+		<Tabs defaultValue="name" className="w-full max-w-[400px]">
 			<TabsList className="grid w-full grid-cols-2">
 				<TabsTrigger value="name" className="gap-2">
 					<User className="h-4 w-4" />

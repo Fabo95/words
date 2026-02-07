@@ -98,23 +98,23 @@ export function LearningLanding({
 					))}
 				</SelectContent>
 			</Select>
-			<div className="grid grid-cols-2 gap-3 mb-8">
+			<div className="grid grid-cols-2 gap-2 md:gap-3 mb-6 md:mb-8">
 				{statItems.map((item) => {
 					const Icon = item.icon
 					return (
 						<Card key={item.label} className="overflow-hidden">
-							<CardContent className="p-4">
-								<div className="flex items-center gap-3">
+							<CardContent className="p-3 md:p-4">
+								<div className="flex items-center gap-2 md:gap-3">
 									<div
-										className={`flex h-10 w-10 items-center justify-center rounded-full ${
+										className={`flex h-8 w-8 md:h-10 md:w-10 items-center justify-center rounded-full ${
 											item.highlight ? "bg-primary/10" : "bg-muted"
 										}`}
 									>
-										<Icon className={`h-5 w-5 ${item.highlight ? "text-primary" : "text-foreground/60"}`} />
+										<Icon className={`h-4 w-4 md:h-5 md:w-5 ${item.highlight ? "text-primary" : "text-foreground/60"}`} />
 									</div>
 									<div>
 										<p
-											className={`text-2xl font-semibold tabular-nums ${
+											className={`text-xl md:text-2xl font-semibold tabular-nums ${
 												item.highlight ? "text-foreground" : "text-foreground/70"
 											}`}
 										>

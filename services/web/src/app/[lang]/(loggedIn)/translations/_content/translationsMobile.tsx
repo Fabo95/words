@@ -107,18 +107,18 @@ export function TranslationsMobile({ items, isLoading, skeletonRowCount = 5 }: T
 						</CardHeader>
 
 						<CardContent className="pt-0">
-							<div className="space-y-3 flex gap-10">
+							<div className="grid grid-cols-2 gap-3">
 								<div>
 									<p className="text-xs text-muted-foreground">{t("pages.translations.table.columns.word")}</p>
-									<p className="mt-1 font-medium break-words">{item.sourceText}</p>
+									<p className="mt-1 text-sm font-medium break-words">{item.sourceText}</p>
 								</div>
 
 								<div>
 									<p className="text-xs text-muted-foreground">{t("pages.translations.table.columns.translation")}</p>
-									<p className="mt-1 break-words">{item.targetText}</p>
+									<p className="mt-1 text-sm break-words">{item.targetText}</p>
 								</div>
 
-								<div>
+								<div className="col-span-2">
 									<p className="text-xs text-muted-foreground">{t("pages.translations.table.columns.nextReview")}</p>
 									<p className="mt-1 text-sm">{nextReview}</p>
 								</div>

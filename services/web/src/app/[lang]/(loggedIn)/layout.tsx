@@ -63,13 +63,13 @@ export default async function Layout({ children }: { children: ReactNode }) {
 				<AppSidebar />
 
 				<SidebarInset>
-					<nav className="bg-black flex justify-between sticky top-0 p-5 border-b z-50 w-full">
-						<SidebarTrigger />
+					<nav className="bg-black flex justify-between sticky top-0 p-3 md:p-5 border-b z-50 w-full">
+						<SidebarTrigger className="h-9 w-9 md:h-7 md:w-7" />
 
-						<Suspense fallback={<Skeleton className="h-7 w-7" />}>
+						<Suspense fallback={<Skeleton className="h-9 w-9 md:h-7 md:w-7" />}>
 							<AddTranslationTrigger
 								variant="ghost"
-								className="h-7 w-7"
+								className="h-9 w-9 md:h-7 md:w-7"
 								size="icon"
 								defaultValues={{ universalPosTagIds: [] }}
 							/>

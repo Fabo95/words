@@ -32,11 +32,11 @@ export function LastAddedTranslation() {
 
 	console.log("translation", data)
 	return (
-		<section className="mb-20">
+		<section className="mb-12 md:mb-20">
 			<div className="mb-5 text-center">
 				<div className="flex justify-center mb-3">
-					<div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
-						<History className="h-6 w-6 text-primary" />
+					<div className="flex h-10 w-10 md:h-12 md:w-12 items-center justify-center rounded-full bg-primary/10">
+						<History className="h-5 w-5 md:h-6 md:w-6 text-primary" />
 					</div>
 				</div>
 				<h2 className="text-lg md:text-xl font-semibold">{t("pages.home.lastAddedTranslations.title")}</h2>
@@ -68,14 +68,14 @@ export function LastAddedTranslation() {
 										index === data.length - 1 && "rounded-b-xl",
 									)}
 								>
-									<div className="flex items-end justify-between gap-4">
-										<div className="flex flex-col gap-2 justify-end h-full">
+									<div className="flex items-start justify-between gap-3 md:gap-4">
+										<div className="flex flex-col gap-1.5 md:gap-2 justify-end min-w-0">
 											{collectionName && collectionId ? (
 												<div className="flex items-center gap-2">
 													<Badge
 														onClick={() => router.push(getCollectionPage(collectionId))}
 														variant="secondary"
-														className="max-w-55 truncate text-xs cursor-pointer"
+														className="max-w-32 md:max-w-55 truncate text-xs cursor-pointer"
 														title={collectionName}
 													>
 														{collectionName}
@@ -83,14 +83,14 @@ export function LastAddedTranslation() {
 												</div>
 											) : null}
 
-											<div className="flex gap-2">
+											<div className="flex flex-col gap-0.5 md:flex-row md:gap-2">
 												<p className="text-sm font-semibold leading-5 truncate">{translation.source_text}</p>
 
 												<p className="text-sm text-foreground/60 leading-5 truncate">{translation.target_text}</p>
 											</div>
 										</div>
 
-										<div className="shrink-0 flex gap-1 w-18 flex-col items-end justify-between self-stretch">
+										<div className="shrink-0 flex gap-1 flex-col items-end justify-between self-stretch">
 											<TranslationActions
 												translationId={translation.id}
 												sourceText={translation.source_text}

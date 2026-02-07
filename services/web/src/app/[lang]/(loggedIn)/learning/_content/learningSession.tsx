@@ -163,17 +163,17 @@ export function LearningSession({
 			</div>
 
 			{/* Actions */}
-			<div className="h-10">
+			<div className="min-h-10">
 				{showButtons && (
 					<motion.div
-						className="flex gap-2"
+						className="grid grid-cols-2 gap-2 md:flex md:gap-2"
 						initial={{ opacity: 0 }}
 						animate={{ opacity: 1 }}
 						transition={{ duration: 0.3 }}
 					>
 						<Button
 							variant="outline"
-							className="flex-1"
+							className="md:flex-1"
 							onClick={() => handleReview("again")}
 							disabled={isPending}
 						>
@@ -181,7 +181,7 @@ export function LearningSession({
 						</Button>
 						<Button
 							variant="outline"
-							className="flex-1"
+							className="md:flex-1"
 							onClick={() => handleReview("hard")}
 							disabled={isPending}
 						>
@@ -189,7 +189,7 @@ export function LearningSession({
 						</Button>
 						<Button
 							variant="outline"
-							className="flex-1"
+							className="md:flex-1"
 							onClick={() => handleReview("good")}
 							disabled={isPending}
 						>
@@ -197,7 +197,7 @@ export function LearningSession({
 						</Button>
 						<Button
 							variant="outline"
-							className="flex-1"
+							className="md:flex-1"
 							onClick={() => handleReview("easy")}
 							disabled={isPending}
 						>

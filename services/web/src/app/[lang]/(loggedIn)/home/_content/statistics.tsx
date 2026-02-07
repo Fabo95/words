@@ -16,8 +16,8 @@ export function Statistics() {
 		<section className="mb-12">
 			<div className="mb-5 text-center">
 				<div className="flex justify-center mb-3">
-					<div className="flex h-12 w-12 items-center justify-center rounded-full bg-primary/10">
-						<BarChart3 className="h-6 w-6 text-primary" />
+					<div className="flex h-10 w-10 md:h-12 md:w-12 items-center justify-center rounded-full bg-primary/10">
+						<BarChart3 className="h-5 w-5 md:h-6 md:w-6 text-primary" />
 					</div>
 				</div>
 				<h2 className="text-lg md:text-xl font-semibold">{t("pages.home.statistics.title")}</h2>
