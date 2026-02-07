@@ -102,7 +102,12 @@ export const getLearnItemsQueryOptions = (args: {
 		...(args.authCookieValue ? { headers: { Cookie: `auth-cookie=${args.authCookieValue}` } } : {}),
 	})
 
-export const getLearnStatsQueryOptions = (authCookieValue?: string) =>
+export const getLearnStatsQueryOptions = (args?: { collectionId?: number | null; authCookieValue?: string }) =>
 	$api.queryOptions("get", "/learn/stats", {
-		...(authCookieValue ? { headers: { Cookie: `auth-cookie=${authCookieValue}` } } : {}),
+		params: {
+			query: {
+				...(args?.collectionId ? { collection_id: args.collectionId } : {}),
+			},
+		},
+		...(args?.authCookieValue ? { headers: { Cookie: `auth-cookie=${args.authCookieValue}` } } : {}),
 	})

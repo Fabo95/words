@@ -311,7 +311,11 @@
 				"title": "Bereit zu lernen?",
 				"description": "Wiederhole deinen Wortschatz mit Karteikarten",
 				"startButton": "Lernen starten",
-				"directionNormal": "Deutsch → Englisch",
+				"collectionLabel": "Sammlung",
+				"allCollections": "Alle Sammlungen",
+				"collectionHint": "Wähle eine Sammlung aus, um nur deren Vokabeln zu lernen.",
+				"noItemsTooltip": "Keine fälligen oder neuen Vokabeln zum Lernen.",
+				"directionNormal": "Deutsch nach Englisch",
 				"directionNormalHint": "Deutsches Wort sehen, Englisch lernen",
 				"directionReverse": "Englisch nach Deutsch",
 				"directionReverseHint": "Englisches Wort sehen, Deutsch lernen"

@@ -952,7 +952,10 @@ export interface operations {
     };
     get_stats_handler: {
         parameters: {
-            query?: never;
+            query?: {
+                /** @description Filter stats by collection */
+                collection_id?: number;
+            };
             header?: never;
             path?: never;
             cookie?: never;

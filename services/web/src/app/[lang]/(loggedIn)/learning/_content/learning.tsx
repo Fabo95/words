@@ -2,13 +2,12 @@
 
 import * as React from "react"
 import { useCallback, useState } from "react"
-import { useSuspenseQuery, useQueryClient } from "@tanstack/react-query"
-import { getLearnStatsQueryOptions } from "@app/utils/reactQuery/queryOptions"
+import { useSuspenseQuery, useQuery, useQueryClient } from "@tanstack/react-query"
+import { getLearnStatsQueryOptions, getCollectionsQueryOptions } from "@app/utils/reactQuery/queryOptions"
 import { $api } from "@app/utils/api/apiRequests"
 import { LearningLanding } from "./learningLanding"
 import { LearningSession, ReviewGrade } from "./learningSession"
 import { LearningSessionComplete } from "./learningSessionComplete"
-import { LearningEmptyState } from "./learningEmptyState"
 import { useLearningSessionQuery } from "./utils/useLearningSessionQuery"
 
 export function Learning() {
@@ -17,33 +16,41 @@ export function Learning() {
 	const { state, actions } = useLearningSessionQuery()
 	const [isLoading, setIsLoading] = useState(false)
 	const [reverseMode, setReverseMode] = useState(false)
+	const [selectedCollectionId, setSelectedCollectionId] = useState<number | null>(null)
 
 	const {
-		data: { data: stats },
-	} = useSuspenseQuery(getLearnStatsQueryOptions())
+		data: { data: collections },
+	} = useSuspenseQuery(getCollectionsQueryOptions())
 
-	const { refetch: fetchItems } = $api.useQuery("get", "/learn", {
-		params: {
-			query: {
-				limit: 10,
-				include_new: true,
-			},
-		},
-		enabled: false,
-	})
+	const {
+		data: statsResponse,
+		isLoading: isStatsLoading,
+	} = useQuery(getLearnStatsQueryOptions({ collectionId: selectedCollectionId }))
+
+	const stats = statsResponse?.data
+
+	const { mutateAsync: fetchLearnItems } = $api.useMutation("get", "/learn")
 
 	const handleStartLearning = useCallback(async () => {
 		setIsLoading(true)
 		try {
-			const result = await fetchItems()
+			const result = await fetchLearnItems({
+				params: {
+					query: {
+						limit: 10,
+						include_new: true,
+						...(selectedCollectionId ? { collection_id: selectedCollectionId } : {}),
+					},
+				},
+			})
 
-			if (result.data?.data?.items && result.data.data.items.length > 0) {
-				actions.startSession(result.data.data.items)
+			if (result.data?.items && result.data.items.length > 0) {
+				actions.startSession(result.data.items)
 			}
 		} finally {
 			setIsLoading(false)
 		}
-	}, [fetchItems, actions])
+	}, [fetchLearnItems, actions, selectedCollectionId])
 
 	const handleReview = useCallback(
 		(grade: ReviewGrade, translationId: number) => {
@@ -53,36 +60,46 @@ export function Learning() {
 	)
 
 	const handleComplete = useCallback(async () => {
-		await queryClient.invalidateQueries({ queryKey: getLearnStatsQueryOptions().queryKey })
+		await queryClient.invalidateQueries({
+			queryKey: getLearnStatsQueryOptions({ collectionId: selectedCollectionId }).queryKey,
+		})
 		actions.restart()
-	}, [queryClient, actions])
+	}, [queryClient, actions, selectedCollectionId])
 
 	const handleContinue = useCallback(async () => {
-		await queryClient.invalidateQueries({ queryKey: getLearnStatsQueryOptions().queryKey })
+		await queryClient.invalidateQueries({
+			queryKey: getLearnStatsQueryOptions({ collectionId: selectedCollectionId }).queryKey,
+		})
 		setIsLoading(true)
 		try {
-			const result = await fetchItems()
+			const result = await fetchLearnItems({
+				params: {
+					query: {
+						limit: 10,
+						include_new: true,
+						...(selectedCollectionId ? { collection_id: selectedCollectionId } : {}),
+					},
+				},
+			})
 
-			if (result.data?.data?.items && result.data.data.items.length > 0) {
-				actions.startSession(result.data.data.items)
+			if (result.data?.items && result.data.items.length > 0) {
+				actions.startSession(result.data.items)
 			} else {
 				actions.restart()
 			}
 		} finally {
 			setIsLoading(false)
 		}
-	}, [queryClient, fetchItems, actions])
-
-	const hasItemsToLearn = (stats?.due_count ?? 0) + (stats?.new_count ?? 0) > 0
+	}, [queryClient, fetchLearnItems, actions, selectedCollectionId])
 
 	if (state.phase === "landing") {
-		if (!hasItemsToLearn) {
-			return <LearningEmptyState />
-		}
-
 		return (
 			<LearningLanding
 				stats={stats}
+				isStatsLoading={isStatsLoading}
+				collections={collections ?? []}
+				selectedCollectionId={selectedCollectionId}
+				onCollectionChange={setSelectedCollectionId}
 				onStartLearning={handleStartLearning}
 				isLoading={isLoading}
 				reverseMode={reverseMode}
