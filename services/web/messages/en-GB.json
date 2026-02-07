@@ -342,8 +342,8 @@
 			"complete": {
 				"title": "Session Complete!",
 				"summary": "You reviewed {total} cards",
-				"correct": "{count} correct",
-				"incorrect": "{count} incorrect",
+				"correct": "You already know",
+				"incorrect": "You should review",
 				"continueButton": "Continue Learning",
 				"finishButton": "Finish"
 			},

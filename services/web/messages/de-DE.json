@@ -345,8 +345,8 @@
 			"complete": {
 				"title": "Sitzung abgeschlossen!",
 				"summary": "Du hast {total} Karten wiederholt",
-				"correct": "{count} richtig",
-				"incorrect": "{count} falsch",
+				"correct": "Kannst du bereits",
+				"incorrect": "Solltest du wiederholen",
 				"continueButton": "Weiter lernen",
 				"finishButton": "Beenden"
 			},

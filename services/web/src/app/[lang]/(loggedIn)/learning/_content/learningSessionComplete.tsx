@@ -46,7 +46,7 @@ export function LearningSessionComplete({ results, totalItems, onContinue, onFin
 							<div>
 								<p className="text-2xl font-semibold tabular-nums text-green-600">{correctCount}</p>
 								<p className="text-xs text-foreground/50">
-									{t("pages.learning.complete.correct", { count: correctCount })}
+									{t("pages.learning.complete.correct")}
 								</p>
 							</div>
 						</div>
@@ -62,7 +62,7 @@ export function LearningSessionComplete({ results, totalItems, onContinue, onFin
 							<div>
 								<p className="text-2xl font-semibold tabular-nums text-destructive">{incorrectCount}</p>
 								<p className="text-xs text-foreground/50">
-									{t("pages.learning.complete.incorrect", { count: incorrectCount })}
+									{t("pages.learning.complete.incorrect")}
 								</p>
 							</div>
 						</div>
