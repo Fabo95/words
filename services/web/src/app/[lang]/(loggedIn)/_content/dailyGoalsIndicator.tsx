@@ -71,7 +71,7 @@ export function DailyGoalsIndicator() {
 									<p className="text-2xl font-bold">
 										{words_added_today}/{daily_add_words_goal}
 									</p>
-									<p className="text-sm text-muted-foreground">{t("wordsToday")}</p>
+									<p className="text-sm text-muted-foreground">{t("wordsAdded")}</p>
 								</div>
 							</div>
 							<div className="w-full bg-muted rounded-full h-2">

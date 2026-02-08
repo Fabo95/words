@@ -293,12 +293,12 @@
 			"logout": "Ausloggen"
 		},
 		"dailyGoals": {
-			"tooltip": "{current}/{goal} Wörter heute",
+			"tooltip": "{current}/{goal} Wörter heute hinzugefügt",
 			"tooltipStreak": "{days} Tage Serie",
 			"title": "Tagesziele",
-			"description": "Verfolge deinen täglichen Lernfortschritt",
+			"description": "Verfolge deinen täglichen Fortschritt beim Hinzufügen",
 			"progressTitle": "Heutiger Fortschritt",
-			"wordsToday": "Wörter heute",
+			"wordsAdded": "Wörter heute hinzugefügt",
 			"streaksTitle": "Serien",
 			"currentStreak": "Aktuelle Serie",
 			"longestStreak": "Längste Serie"

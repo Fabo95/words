@@ -290,12 +290,12 @@
 			"logout": "Logout"
 		},
 		"dailyGoals": {
-			"tooltip": "{current}/{goal} words today",
+			"tooltip": "{current}/{goal} words added today",
 			"tooltipStreak": "{days} day streak",
 			"title": "Daily Goals",
-			"description": "Track your daily word learning progress",
+			"description": "Track your daily word adding progress",
 			"progressTitle": "Today's Progress",
-			"wordsToday": "words today",
+			"wordsAdded": "words added today",
 			"streaksTitle": "Streaks",
 			"currentStreak": "Current streak",
 			"longestStreak": "Longest streak"
