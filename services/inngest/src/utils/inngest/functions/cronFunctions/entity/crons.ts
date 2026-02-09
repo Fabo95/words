@@ -17,67 +17,45 @@ export const getEntityCronFunctions = ({ inngest, userDailyGoalsModelService }: 
 	 */
 	const dailyGoalsResetJob = inngest.createFunction(
 		{ id: "daily-goals-reset-job" },
-		{ cron: "0 0 * * *", tz: "Europe/Berlin" },
+		{ cron: "0 0 * * *" },
 		async ({ step }) => {
-			const today = new Date()
-			today.setHours(0, 0, 0, 0)
+			const now = new Date()
 
-			const yesterday = new Date(today)
-			yesterday.setDate(yesterday.getDate() - 1)
+			// Yesterday at start of day (UTC) - goals completed before this should reset streak
+			const yesterdayStart = new Date(now)
+			yesterdayStart.setUTCDate(yesterdayStart.getUTCDate() - 1)
+			yesterdayStart.setUTCHours(0, 0, 0, 0)
 
-			// Find all user daily goals that need to be reset
-			const allDailyGoals = await step.run("fetch-daily-goals", async () => {
-				return userDailyGoalsModelService.findMany()
+			// Reset words_added_today for all users
+			const resetCount = await step.run("reset-words-count", async () => {
+				const result = await userDailyGoalsModelService.updateMany({
+					data: {
+						words_added_today: 0,
+						last_reset_date: now,
+						updated_at: now,
+					},
+				})
+				return result.count
 			})
 
-			// Process each user's daily goals
-			const results = await step.run("reset-daily-goals", async () => {
-				const updates = []
-
-				for (const dailyGoal of allDailyGoals) {
-					// Check if we need to reset the streak
-					// Streak resets if the goal wasn't completed yesterday
-					let newStreak = dailyGoal.current_streak
-
-					if (dailyGoal.last_goal_completed_date) {
-						const lastCompletedDate = new Date(dailyGoal.last_goal_completed_date)
-						lastCompletedDate.setHours(0, 0, 0, 0)
-
-						// If the goal was not completed yesterday or later, reset streak
-						if (lastCompletedDate < yesterday) {
-							newStreak = 0
-						}
-					} else {
-						// No goal ever completed, streak should be 0
-						newStreak = 0
-					}
-
-					// Update the daily goal
-					await userDailyGoalsModelService.update(
-						{ id: dailyGoal.id },
-						{
-							words_added_today: 0,
-							last_reset_date: today,
-							current_streak: newStreak,
-							updated_at: new Date(),
-						},
-					)
-
-					updates.push({
-						userId: dailyGoal.user_id,
-						previousStreak: dailyGoal.current_streak,
-						newStreak,
-						wasReset: newStreak !== dailyGoal.current_streak,
-					})
-				}
-
-				return {
-					totalProcessed: allDailyGoals.length,
-					streaksReset: updates.filter((u) => u.wasReset).length,
-				}
+			// Reset streaks for users who didn't complete their goal yesterday
+			const streaksReset = await step.run("reset-stale-streaks", async () => {
+				const result = await userDailyGoalsModelService.updateMany({
+					where: {
+						OR: [
+							{ last_goal_completed_date: null },
+							{ last_goal_completed_date: { lt: yesterdayStart } },
+						],
+					},
+					data: {
+						current_streak: 0,
+						updated_at: now,
+					},
+				})
+				return result.count
 			})
 
-			return results
+			return { totalReset: resetCount, streaksReset }
 		},
 	)
 

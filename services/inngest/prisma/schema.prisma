@@ -16,8 +16,8 @@ model users {
   name              String?             @db.VarChar
   password_salt     String              @db.VarChar
   token_salt        String              @db.VarChar
-  created_at        DateTime            @default(now()) @db.Timestamp(6)
-  updated_at        DateTime            @default(now()) @db.Timestamp(6)
+  created_at        DateTime            @default(now()) @db.Timestamptz(6)
+  updated_at        DateTime            @default(now()) @db.Timestamptz(6)
   collections       collections[]
   learning_progress learning_progress[]
   translations      translations[]
@@ -28,8 +28,8 @@ model collections {
   id           Int            @id @default(autoincrement())
   name         String         @db.VarChar
   user_id      Int
-  created_at   DateTime       @default(now()) @db.Timestamp(6)
-  updated_at   DateTime       @default(now()) @db.Timestamp(6)
+  created_at   DateTime       @default(now()) @db.Timestamptz(6)
+  updated_at   DateTime       @default(now()) @db.Timestamptz(6)
   users        users          @relation(fields: [user_id], references: [id], onDelete: Cascade, map: "FK_one_user_has_many_collections")
   translations translations[]
 }
@@ -54,8 +54,8 @@ model translations {
   target_language                 String                            @db.VarChar
   target_text                     String                            @db.VarChar
   user_id                         Int
-  created_at                      DateTime                          @default(now()) @db.Timestamp(6)
-  updated_at                      DateTime                          @default(now()) @db.Timestamp(6)
+  created_at                      DateTime                          @default(now()) @db.Timestamptz(6)
+  updated_at                      DateTime                          @default(now()) @db.Timestamptz(6)
   collection_id                   Int?
   cefr_level_id                   Int?
   example_sentences               example_sentences[]
@@ -100,10 +100,10 @@ model learning_progress {
   ease_factor      Float        @default(2.5) @db.Real
   interval         Int          @default(0)
   repetition_count Int          @default(0)
-  next_review_at   DateTime?    @db.Timestamp(6)
-  last_reviewed_at DateTime?    @db.Timestamp(6)
-  created_at       DateTime     @default(now()) @db.Timestamp(6)
-  updated_at       DateTime     @default(now()) @db.Timestamp(6)
+  next_review_at   DateTime?    @db.Timestamptz(6)
+  last_reviewed_at DateTime?    @db.Timestamptz(6)
+  created_at       DateTime     @default(now()) @db.Timestamptz(6)
+  updated_at       DateTime     @default(now()) @db.Timestamptz(6)
   translations     translations @relation(fields: [translation_id], references: [id], onDelete: Cascade, map: "FK_learning_progress_translation")
   users            users        @relation(fields: [user_id], references: [id], onDelete: Cascade, map: "FK_learning_progress_user")
 
@@ -118,10 +118,10 @@ model user_daily_goals {
   words_added_today        Int       @default(0)
   current_streak           Int       @default(0)
   longest_streak           Int       @default(0)
-  last_goal_completed_date DateTime? @db.Timestamp(6)
-  last_reset_date          DateTime  @default(dbgenerated("CURRENT_DATE")) @db.Timestamp(6)
-  created_at               DateTime  @default(now()) @db.Timestamp(6)
-  updated_at               DateTime  @default(now()) @db.Timestamp(6)
+  last_goal_completed_date DateTime? @db.Timestamptz(6)
+  last_reset_date          DateTime  @default(now()) @db.Timestamptz(6)
+  created_at               DateTime  @default(now()) @db.Timestamptz(6)
+  updated_at               DateTime  @default(now()) @db.Timestamptz(6)
   users                    users     @relation(fields: [user_id], references: [id], onDelete: Cascade, map: "FK_user_daily_goals_user")
 
   @@index([last_reset_date], map: "idx_user_daily_goals_last_reset_date")

@@ -32,7 +32,7 @@ export class UserDailyGoalsModelService {
 		})
 	}
 
-	async updateMany(args: { where: user_daily_goalsFindManyArgs["where"]; data: user_daily_goalsUpdateArgs["data"] }) {
+	async updateMany(args: { where?: user_daily_goalsFindManyArgs["where"]; data: user_daily_goalsUpdateArgs["data"] }) {
 		return this.deps.prisma.user_daily_goals.updateMany({
 			where: args.where,
 			data: args.data,

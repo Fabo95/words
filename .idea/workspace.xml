@@ -5,9 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="add daily goals">
-      <change beforePath="$PROJECT_DIR$/services/web/messages/de-DE.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/messages/de-DE.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/messages/en-GB.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/messages/en-GB.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/_content/dailyGoalsIndicator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/_content/dailyGoalsIndicator.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/inngest/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/prisma/schema.prisma" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/inngest/src/generated/user-db/internal/class.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/generated/user-db/internal/class.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/inngest/src/services/model/userDailyGoalsModelService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/services/model/userDailyGoalsModelService.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/inngest/src/utils/inngest/functions/cronFunctions/entity/crons.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/utils/inngest/functions/cronFunctions/entity/crons.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/layout.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/layout.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,50 +63,50 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "git-widget-placeholder": "main",
-    "javascript.preferred.runtime.type.id": "node",
-    "last_opened_file_path": "/Users/fabianhinz/repositories/words/services/web/src/app/[lang]/(loggedIn)/translations",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.dev.executor": "Run",
-    "npm.eslint-plugin-words-app-styleguide > build.executor": "Run",
-    "npm.eslint-plugin-words-app-styleguide > build:clean.executor": "Run",
-    "npm.inngest > dev.executor": "Run",
-    "npm.inngest > generate-prisma-schema.executor": "Run",
-    "npm.inngest > prisma:generate.executor": "Run",
-    "npm.inngest > prisma:pull.executor": "Run",
-    "npm.packages:force-node-modules-sync.executor": "Run",
-    "npm.service > dev.executor": "Run",
-    "npm.service > generate_open_api_types.executor": "Run",
-    "npm.user-api > db-generate.executor": "Run",
-    "npm.web > build.executor": "Run",
-    "npm.web > dev.executor": "Run",
-    "npm.web > open_api:generate.executor": "Run",
-    "npm.words > dev.executor": "Run",
-    "prettierjs.PrettierConfiguration.Package": "/Users/fabianhinz/.npm-global/lib/node_modules/prettier",
-    "settings.editor.selected.configurable": "Settings.Biome",
-    "ts.external.directory.path": "/Users/fabianhinz/repositories/words/services/web/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/fabianhinz/repositories/words/services/web/src/app/[lang]/(loggedIn)/translations&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
+    &quot;npm.eslint-plugin-words-app-styleguide &gt; build.executor&quot;: &quot;Run&quot;,
+    &quot;npm.eslint-plugin-words-app-styleguide &gt; build:clean.executor&quot;: &quot;Run&quot;,
+    &quot;npm.inngest &gt; dev.executor&quot;: &quot;Run&quot;,
+    &quot;npm.inngest &gt; generate-prisma-schema.executor&quot;: &quot;Run&quot;,
+    &quot;npm.inngest &gt; prisma:generate.executor&quot;: &quot;Run&quot;,
+    &quot;npm.inngest &gt; prisma:pull.executor&quot;: &quot;Run&quot;,
+    &quot;npm.packages:force-node-modules-sync.executor&quot;: &quot;Run&quot;,
+    &quot;npm.service &gt; dev.executor&quot;: &quot;Run&quot;,
+    &quot;npm.service &gt; generate_open_api_types.executor&quot;: &quot;Run&quot;,
+    &quot;npm.user-api &gt; db-generate.executor&quot;: &quot;Run&quot;,
+    &quot;npm.web &gt; build.executor&quot;: &quot;Run&quot;,
+    &quot;npm.web &gt; dev.executor&quot;: &quot;Run&quot;,
+    &quot;npm.web &gt; open_api:generate.executor&quot;: &quot;Run&quot;,
+    &quot;npm.words &gt; dev.executor&quot;: &quot;Run&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/fabianhinz/.npm-global/lib/node_modules/prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Settings.Biome&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/fabianhinz/repositories/words/services/web/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecapSpentCounter">
     <option name="endsOfQuotaMs" value="1767430816454" />
     <option name="spentUsd" value="0.17932963" />
@@ -264,15 +267,7 @@
       <workItem from="1768152455661" duration="5114000" />
       <workItem from="1768686083435" duration="24834000" />
       <workItem from="1769284940233" duration="16174000" />
-      <workItem from="1769809608107" duration="45420000" />
-    </task>
-    <task id="LOCAL-00073" summary="add check translation">
-      <option name="closed" value="true" />
-      <created>1762094577884</created>
-      <option name="number" value="00073" />
-      <option name="presentableId" value="LOCAL-00073" />
-      <option name="project" value="LOCAL" />
-      <updated>1762094577884</updated>
+      <workItem from="1769809608107" duration="48022000" />
     </task>
     <task id="LOCAL-00074" summary="add universal pos tags">
       <option name="closed" value="true" />
@@ -658,7 +653,15 @@
       <option name="project" value="LOCAL" />
       <updated>1770502774401</updated>
     </task>
-    <option name="localTasksCounter" value="122" />
+    <task id="LOCAL-00122" summary="add daily goals">
+      <option name="closed" value="true" />
+      <created>1770542072387</created>
+      <option name="number" value="00122" />
+      <option name="presentableId" value="LOCAL-00122" />
+      <option name="project" value="LOCAL" />
+      <updated>1770542072387</updated>
+    </task>
+    <option name="localTasksCounter" value="123" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
