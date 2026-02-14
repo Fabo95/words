@@ -1,7 +1,7 @@
 "use client"
 
 import { useState } from "react"
-import { useTranslations } from "next-intl"
+import { useLocale, useTranslations } from "next-intl"
 import { useSuspenseQuery } from "@tanstack/react-query"
 import { getDailyStatisticsQueryOptions } from "@app/utils/reactQuery/queryOptions"
 import { Area, AreaChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts"
@@ -12,6 +12,7 @@ type TimeRange = 7 | 30 | 90
 
 export function ProgressChart() {
 	const t = useTranslations()
+	const locale = useLocale()
 	const [timeRange, setTimeRange] = useState<TimeRange>(7)
 
 	const {
@@ -20,8 +21,6 @@ export function ProgressChart() {
 
 	const entries = data?.entries ?? []
 	const summary = data?.summary
-
-	console.log("summary", summary)
 
 	if (entries.length === 0) {
 		return (
@@ -40,7 +39,7 @@ export function ProgressChart() {
 	}
 
 	const chartData = entries.map((entry) => ({
-		date: new Date(entry.date).toLocaleDateString("de-DE", {
+		date: new Date(entry.date).toLocaleDateString(locale, {
 			month: "short",
 			day: "numeric",
 		}),
@@ -98,7 +97,7 @@ export function ProgressChart() {
 										border: "1px solid hsl(var(--border))",
 										borderRadius: "8px",
 									}}
-									formatter={(value: number) => [value, t("pages.home.progressChart.wordsAdded")]}
+									formatter={(value) => [value, t("pages.home.progressChart.wordsAdded")]}
 								/>
 								<Area
 									type="monotone"

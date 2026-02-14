@@ -22,10 +22,9 @@ export function Learning() {
 		data: { data: collections },
 	} = useSuspenseQuery(getCollectionsQueryOptions())
 
-	const {
-		data: statsResponse,
-		isLoading: isStatsLoading,
-	} = useQuery(getLearnStatsQueryOptions({ collectionId: selectedCollectionId }))
+	const { data: statsResponse, isLoading: isStatsLoading } = useQuery(
+		getLearnStatsQueryOptions({ collectionId: selectedCollectionId }),
+	)
 
 	const stats = statsResponse?.data
 
@@ -53,10 +52,19 @@ export function Learning() {
 	}, [fetchLearnItems, actions, selectedCollectionId])
 
 	const handleReview = useCallback(
-		(grade: ReviewGrade, translationId: number) => {
+		async (grade: ReviewGrade, translationId: number) => {
+			await Promise.all([
+				await queryClient.invalidateQueries({
+					queryKey: getLearnStatsQueryOptions().queryKey,
+				}),
+				await queryClient.invalidateQueries({
+					queryKey: getLearnStatsQueryOptions({ collectionId: selectedCollectionId }).queryKey,
+				}),
+			])
+
 			actions.submitReview(grade, translationId)
 		},
-		[actions],
+		[actions, queryClient, selectedCollectionId],
 	)
 
 	const handleComplete = useCallback(async () => {
