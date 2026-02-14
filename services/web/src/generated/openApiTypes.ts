@@ -132,6 +132,22 @@ export type paths = {
         patch: operations["update_daily_goals_handler"];
         trace?: never;
     };
+    "/daily-statistics": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get: operations["get_daily_statistics_handler"];
+        put?: never;
+        post?: never;
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/learn": {
         parameters: {
             query?: never;
@@ -375,6 +391,26 @@ export type components = {
              */
             daily_add_words_goal: number;
         };
+        DailyStatisticEntry: {
+            /** Format: int32 */
+            daily_goal: number;
+            date: string;
+            goal_completed: boolean;
+            /** Format: int32 */
+            learning_count: number;
+            /** Format: int32 */
+            mature_count: number;
+            /** Format: int32 */
+            streak_at_end_of_day: number;
+            /** Format: int32 */
+            total_translations: number;
+            /** Format: int32 */
+            words_added: number;
+        };
+        DailyStatisticsResponse: {
+            entries: components["schemas"]["DailyStatisticEntry"][];
+            summary: components["schemas"]["StatisticsSummaryResponse"];
+        };
         EmailForCheck: {
             /** @description Must be a valid email address */
             email: string;
@@ -403,6 +439,15 @@ export type components = {
                 progress_percentage: number;
                 /** Format: int32 */
                 words_added_today: number;
+            };
+            message: string;
+            meta?: null | components["schemas"]["PaginatedMeta"];
+            success: boolean;
+        };
+        HttpResponseBody_DailyStatisticsResponse: {
+            data?: {
+                entries: components["schemas"]["DailyStatisticEntry"][];
+                summary: components["schemas"]["StatisticsSummaryResponse"];
             };
             message: string;
             meta?: null | components["schemas"]["PaginatedMeta"];
@@ -633,6 +678,16 @@ export type components = {
         SortBy: "created_at" | "updated_at";
         /** @enum {string} */
         SortOrder: "asc" | "desc";
+        StatisticsSummaryResponse: {
+            /** Format: double */
+            average_words_per_day: number;
+            /** Format: int32 */
+            days_goal_completed: number;
+            /** Format: int32 */
+            longest_streak_in_period: number;
+            /** Format: int32 */
+            total_words_added: number;
+        };
         TranslationForCreate: {
             /** Format: int32 */
             cefr_level_id?: number | null;
@@ -1016,6 +1071,28 @@ export interface operations {
                 };
                 content: {
                     "application/json": components["schemas"]["HttpResponseBody_DailyGoalsResponse"];
+                };
+            };
+        };
+    };
+    get_daily_statistics_handler: {
+        parameters: {
+            query?: {
+                /** @description Number of days to fetch (1-90, defaults to 7) */
+                days?: number;
+            };
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: never;
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HttpResponseBody_DailyStatisticsResponse"];
                 };
             };
         };

@@ -3,6 +3,7 @@ import {
 	translationsCreateArgs,
 	translationsFindFirstArgs,
 	translationsFindUniqueArgs,
+	translationsGroupByArgs,
 	translationsUpdateArgs,
 } from "@/generated/user-db/models/translations.js"
 
@@ -42,5 +43,9 @@ export class TranslationsModelService {
 			where,
 			data,
 		})
+	}
+
+	async groupBy(args: translationsGroupByArgs) {
+		return this.deps.prisma.translations.groupBy(args as Parameters<typeof this.deps.prisma.translations.groupBy>[0])
 	}
 }

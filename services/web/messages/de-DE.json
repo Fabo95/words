@@ -324,6 +324,18 @@
               "description": "Ein Überblick über deine Übersetzungen",
               "totalTranslations": "Übersetzungen insgesamt",
               "wordsByPosTag": "Wörter nach Wortart"
+            },
+            "progressChart": {
+              "title": "Fortschritt",
+              "description": "Deine Lernaktivität im Zeitverlauf",
+              "emptyDescription": "Füge Wörter hinzu, um deinen Fortschritt zu sehen",
+              "last7Days": "7 Tage",
+              "last30Days": "30 Tage",
+              "last90Days": "90 Tage",
+              "wordsAdded": "Wörter hinzugefügt",
+              "totalWords": "Gesamt",
+              "goalsCompleted": "Ziele erreicht",
+              "avgPerDay": "Ø/Tag"
             }
         },
 		"learning": {

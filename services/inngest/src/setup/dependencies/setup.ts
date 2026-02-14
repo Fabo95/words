@@ -45,6 +45,12 @@ async function createRequestCradle(requerstCradleFactories: {
 		userDailyGoalsModelService: asFunction(() =>
 			requerstCradleFactories.modelServicesFactory.getUserDailyGoalsModelService(),
 		),
+		dailyStatisticsModelService: asFunction(() =>
+			requerstCradleFactories.modelServicesFactory.getDailyStatisticsModelService(),
+		),
+		learningProgressModelService: asFunction(() =>
+			requerstCradleFactories.modelServicesFactory.getLearningProgressModelService(),
+		),
 	}
 }
 

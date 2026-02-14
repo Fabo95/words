@@ -321,6 +321,18 @@
               "description": "An overview of your translations",
               "totalTranslations": "Total translations",
               "wordsByPosTag": "Words by type"
+            },
+            "progressChart": {
+              "title": "Progress",
+              "description": "Your learning activity over time",
+              "emptyDescription": "Start adding words to see your progress chart",
+              "last7Days": "7 days",
+              "last30Days": "30 days",
+              "last90Days": "90 days",
+              "wordsAdded": "Words added",
+              "totalWords": "Total words",
+              "goalsCompleted": "Goals met",
+              "avgPerDay": "Avg/day"
             }
         },
 		"learning": {

@@ -398,7 +398,8 @@ export const ModelName = {
   universal_pos_tags: 'universal_pos_tags',
   translations_universal_pos_tags: 'translations_universal_pos_tags',
   learning_progress: 'learning_progress',
-  user_daily_goals: 'user_daily_goals'
+  user_daily_goals: 'user_daily_goals',
+  daily_statistics: 'daily_statistics'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -414,7 +415,7 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
     omit: GlobalOmitOptions
   }
   meta: {
-    modelProps: "users" | "collections" | "example_sentences" | "seaql_migrations" | "translations" | "cefr_levels" | "universal_pos_tags" | "translations_universal_pos_tags" | "learning_progress" | "user_daily_goals"
+    modelProps: "users" | "collections" | "example_sentences" | "seaql_migrations" | "translations" | "cefr_levels" | "universal_pos_tags" | "translations_universal_pos_tags" | "learning_progress" | "user_daily_goals" | "daily_statistics"
     txIsolationLevel: TransactionIsolationLevel
   }
   model: {
@@ -1158,6 +1159,80 @@ export type TypeMap<ExtArgs extends runtime.Types.Extensions.InternalArgs = runt
         }
       }
     }
+    daily_statistics: {
+      payload: Prisma.$daily_statisticsPayload<ExtArgs>
+      fields: Prisma.daily_statisticsFieldRefs
+      operations: {
+        findUnique: {
+          args: Prisma.daily_statisticsFindUniqueArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$daily_statisticsPayload> | null
+        }
+        findUniqueOrThrow: {
+          args: Prisma.daily_statisticsFindUniqueOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$daily_statisticsPayload>
+        }
+        findFirst: {
+          args: Prisma.daily_statisticsFindFirstArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$daily_statisticsPayload> | null
+        }
+        findFirstOrThrow: {
+          args: Prisma.daily_statisticsFindFirstOrThrowArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$daily_statisticsPayload>
+        }
+        findMany: {
+          args: Prisma.daily_statisticsFindManyArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$daily_statisticsPayload>[]
+        }
+        create: {
+          args: Prisma.daily_statisticsCreateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$daily_statisticsPayload>
+        }
+        createMany: {
+          args: Prisma.daily_statisticsCreateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        createManyAndReturn: {
+          args: Prisma.daily_statisticsCreateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$daily_statisticsPayload>[]
+        }
+        delete: {
+          args: Prisma.daily_statisticsDeleteArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$daily_statisticsPayload>
+        }
+        update: {
+          args: Prisma.daily_statisticsUpdateArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$daily_statisticsPayload>
+        }
+        deleteMany: {
+          args: Prisma.daily_statisticsDeleteManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateMany: {
+          args: Prisma.daily_statisticsUpdateManyArgs<ExtArgs>
+          result: BatchPayload
+        }
+        updateManyAndReturn: {
+          args: Prisma.daily_statisticsUpdateManyAndReturnArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$daily_statisticsPayload>[]
+        }
+        upsert: {
+          args: Prisma.daily_statisticsUpsertArgs<ExtArgs>
+          result: runtime.Types.Utils.PayloadToResult<Prisma.$daily_statisticsPayload>
+        }
+        aggregate: {
+          args: Prisma.Daily_statisticsAggregateArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.AggregateDaily_statistics>
+        }
+        groupBy: {
+          args: Prisma.daily_statisticsGroupByArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.Daily_statisticsGroupByOutputType>[]
+        }
+        count: {
+          args: Prisma.daily_statisticsCountArgs<ExtArgs>
+          result: runtime.Types.Utils.Optional<Prisma.Daily_statisticsCountAggregateOutputType> | number
+        }
+      }
+    }
   }
 } & {
   other: {
@@ -1316,6 +1391,23 @@ export const User_daily_goalsScalarFieldEnum = {
 export type User_daily_goalsScalarFieldEnum = (typeof User_daily_goalsScalarFieldEnum)[keyof typeof User_daily_goalsScalarFieldEnum]
 
 
+export const Daily_statisticsScalarFieldEnum = {
+  id: 'id',
+  user_id: 'user_id',
+  date: 'date',
+  words_added: 'words_added',
+  daily_goal: 'daily_goal',
+  goal_completed: 'goal_completed',
+  streak_at_end_of_day: 'streak_at_end_of_day',
+  total_translations: 'total_translations',
+  learning_count: 'learning_count',
+  mature_count: 'mature_count',
+  created_at: 'created_at'
+} as const
+
+export type Daily_statisticsScalarFieldEnum = (typeof Daily_statisticsScalarFieldEnum)[keyof typeof Daily_statisticsScalarFieldEnum]
+
+
 export const SortOrder = {
   asc: 'asc',
   desc: 'desc'
@@ -1415,6 +1507,13 @@ export type FloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, '
 export type ListFloatFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Float[]'>
     
 
+
+/**
+ * Reference to a field of type 'Boolean'
+ */
+export type BooleanFieldRefInput<$PrismaModel> = FieldRefInputType<$PrismaModel, 'Boolean'>
+    
+
 /**
  * Batch Payload for updateMany & deleteMany & createMany
  */
@@ -1512,6 +1611,7 @@ export type GlobalOmitConfig = {
   translations_universal_pos_tags?: Prisma.translations_universal_pos_tagsOmit
   learning_progress?: Prisma.learning_progressOmit
   user_daily_goals?: Prisma.user_daily_goalsOmit
+  daily_statistics?: Prisma.daily_statisticsOmit
 }
 
 /* Types for Logging */

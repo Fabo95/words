@@ -66,3 +66,8 @@ export type learning_progress = Prisma.learning_progressModel
  * 
  */
 export type user_daily_goals = Prisma.user_daily_goalsModel
+/**
+ * Model daily_statistics
+ * 
+ */
+export type daily_statistics = Prisma.daily_statisticsModel

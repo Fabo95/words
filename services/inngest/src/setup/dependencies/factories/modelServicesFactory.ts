@@ -6,6 +6,8 @@ import { CefrLevelsModelService } from "@/services/model/cefrLevelsModelsService
 import { UniversalPosTagsModelService } from "@/services/model/universalPosTagsModelService.js"
 import { TranslationsUniversalPosTagsModelService } from "@/services/model/translationsUniversalPosTagsModelService.js"
 import { UserDailyGoalsModelService } from "@/services/model/userDailyGoalsModelService.js"
+import { DailyStatisticsModelService } from "@/services/model/dailyStatisticsModelService.js"
+import { LearningProgressModelService } from "@/services/model/learningProgressModelService.js"
 
 interface ModelServicesFactoryDeps {
 	prisma: PrismaClient
@@ -20,6 +22,8 @@ export class ModelServicesFactory {
 		universalPosTagsModelService?: UniversalPosTagsModelService
 		translationsUniversalPosTagsModelService?: TranslationsUniversalPosTagsModelService
 		userDailyGoalsModelService?: UserDailyGoalsModelService
+		dailyStatisticsModelService?: DailyStatisticsModelService
+		learningProgressModelService?: LearningProgressModelService
 	} = {}
 
 	private deps: ModelServicesFactoryDeps
@@ -70,5 +74,19 @@ export class ModelServicesFactory {
 			this.modelServices.userDailyGoalsModelService = new UserDailyGoalsModelService({ prisma: this.deps.prisma })
 		}
 		return this.modelServices.userDailyGoalsModelService
+	}
+
+	public getDailyStatisticsModelService() {
+		if (!this.modelServices.dailyStatisticsModelService) {
+			this.modelServices.dailyStatisticsModelService = new DailyStatisticsModelService({ prisma: this.deps.prisma })
+		}
+		return this.modelServices.dailyStatisticsModelService
+	}
+
+	public getLearningProgressModelService() {
+		if (!this.modelServices.learningProgressModelService) {
+			this.modelServices.learningProgressModelService = new LearningProgressModelService({ prisma: this.deps.prisma })
+		}
+		return this.modelServices.learningProgressModelService
 	}
 }

@@ -12,6 +12,8 @@ import { CefrLevelsModelService } from "@/services/model/cefrLevelsModelsService
 import { UniversalPosTagsModelService } from "@/services/model/universalPosTagsModelService.js"
 import { TranslationsUniversalPosTagsModelService } from "@/services/model/translationsUniversalPosTagsModelService.js"
 import { UserDailyGoalsModelService } from "@/services/model/userDailyGoalsModelService.js"
+import { DailyStatisticsModelService } from "@/services/model/dailyStatisticsModelService.js"
+import { LearningProgressModelService } from "@/services/model/learningProgressModelService.js"
 
 declare module "@fastify/awilix" {
 	// get initialized when app starts
@@ -34,6 +36,8 @@ declare module "@fastify/awilix" {
 		universalPosTagsModelService: UniversalPosTagsModelService
 		translationsUniversalPosTagsModelService: TranslationsUniversalPosTagsModelService
 		userDailyGoalsModelService: UserDailyGoalsModelService
+		dailyStatisticsModelService: DailyStatisticsModelService
+		learningProgressModelService: LearningProgressModelService
 	}
 }
 

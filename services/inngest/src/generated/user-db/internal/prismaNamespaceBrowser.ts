@@ -57,7 +57,8 @@ export const ModelName = {
   universal_pos_tags: 'universal_pos_tags',
   translations_universal_pos_tags: 'translations_universal_pos_tags',
   learning_progress: 'learning_progress',
-  user_daily_goals: 'user_daily_goals'
+  user_daily_goals: 'user_daily_goals',
+  daily_statistics: 'daily_statistics'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -193,6 +194,23 @@ export const User_daily_goalsScalarFieldEnum = {
 } as const
 
 export type User_daily_goalsScalarFieldEnum = (typeof User_daily_goalsScalarFieldEnum)[keyof typeof User_daily_goalsScalarFieldEnum]
+
+
+export const Daily_statisticsScalarFieldEnum = {
+  id: 'id',
+  user_id: 'user_id',
+  date: 'date',
+  words_added: 'words_added',
+  daily_goal: 'daily_goal',
+  goal_completed: 'goal_completed',
+  streak_at_end_of_day: 'streak_at_end_of_day',
+  total_translations: 'total_translations',
+  learning_count: 'learning_count',
+  mature_count: 'mature_count',
+  created_at: 'created_at'
+} as const
+
+export type Daily_statisticsScalarFieldEnum = (typeof Daily_statisticsScalarFieldEnum)[keyof typeof Daily_statisticsScalarFieldEnum]
 
 
 export const SortOrder = {

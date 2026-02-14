@@ -116,3 +116,13 @@ export const getDailyGoalsQueryOptions = (authCookieValue?: string) =>
 	$api.queryOptions("get", "/daily-goals", {
 		...(authCookieValue ? { headers: { Cookie: `auth-cookie=${authCookieValue}` } } : {}),
 	})
+
+export const getDailyStatisticsQueryOptions = (args: { days?: number; authCookieValue?: string }) =>
+	$api.queryOptions("get", "/daily-statistics", {
+		params: {
+			query: {
+				days: args.days ?? 7,
+			},
+		},
+		...(args.authCookieValue ? { headers: { Cookie: `auth-cookie=${args.authCookieValue}` } } : {}),
+	})
