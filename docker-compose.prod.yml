@@ -94,7 +94,7 @@ services:
       SERVICE_PORT: "8080"
       SERVICE_WEB_FOLDER: "/app/web-folder/"
     healthcheck:
-      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:8080/health"]
       interval: 30s
       timeout: 10s
       retries: 3
@@ -110,7 +110,6 @@ services:
       options:
         max-size: "10m"
         max-file: "3"
-
   words-web:
     image: ${WORDS_WEB_IMAGE:?required}
     container_name: words-web
@@ -134,16 +133,17 @@ services:
       options:
         max-size: "10m"
         max-file: "3"
-
   words-inngest:
     image: ${WORDS_INNGEST_IMAGE:?required}
     container_name: words-inngest
     restart: unless-stopped
     environment:
       NODE_ENV: production
-      DATABASE_URL: postgres://${WORDS_POSTGRES_USER:-words}:${WORDS_POSTGRES_PASSWORD}@words-postgres:5432/${WORDS_POSTGRES_DB:-words}
+      DATABASE_URL: postgres://${WORDS_POSTGRES_USER:-words}:${WORDS_POSTGRES_PASSWORD}@words-postgres:5432/${WORDS_POSTGRES_DB:->
       INNGEST_EVENT_KEY: ${INNGEST_EVENT_KEY:?required}
       INNGEST_SIGNING_KEY: ${INNGEST_SIGNING_KEY:?required}
+      INNGEST_DEV: ${INNGEST_DEV:?required}
+      INNGEST_SIGNING_KEY_FALLBACK: ${INNGEST_SIGNING_KEY_FALLBACK:?required}
       INNGEST_SERVE_HOST: ${INNGEST_SERVE_HOST}
       OPENAI_API_KEY: ${OPENAI_API_KEY:?required}
       PORT: 8086
@@ -176,3 +176,5 @@ volumes:
   n8n_data:
     external: true
   words_postgres_data:
+
+
