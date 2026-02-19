@@ -81,6 +81,8 @@ RUN --mount=type=cache,id=pnpm,target=/pnpm/store \
 # ============================================================================
 FROM node:22-alpine AS runner
 
+RUN apk add --no-cache wget
+
 WORKDIR /app/services/inngest
 
 # Set production environment
