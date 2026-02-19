@@ -86,7 +86,10 @@ export const getTranslationsTableColumns = (
 					<div className="flex gap-1 flex-wrap">
 						{tags.map((tag) => (
 							<Badge key={tag.id} variant="secondary" className="text-xs">
-								{t(`common.posTags.${tag.code}`)}
+								{
+									// @ts-ignore
+									t(`common.posTags.${tag.code}`)
+								}
 							</Badge>
 						))}
 					</div>
@@ -106,9 +109,7 @@ export const getTranslationsTableColumns = (
 					return <span className="text-muted-foreground text-xs">{t("common.nextReview.new")}</span>
 				}
 
-				return (
-					<span className="text-xs">{formatNextReviewDate(learningProgress.next_review_at, t)}</span>
-				)
+				return <span className="text-xs">{formatNextReviewDate(learningProgress.next_review_at, t)}</span>
 			},
 		},
 

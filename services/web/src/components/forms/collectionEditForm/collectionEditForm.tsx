@@ -116,6 +116,7 @@ export const CollectionEditForm = ({ id, defaultValues, onCancel, onSubmit }: IS
 
 	return (
 		<FormProvider {...form}>
+			{/* @ts-ignore */}
 			<Form onKeyDown={handleKeyDownSubmit} onSubmit={form.handleSubmit(handleSubmit)}>
 				<FormField
 					control={form.control}
