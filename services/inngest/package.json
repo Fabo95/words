@@ -8,7 +8,7 @@
     "rootDir": "src",
     "scripts": {
         "start:api": "node ./dist/src/index.js",
-        "build": "rm -rf ./dist/* && pnpm db-generate && pnpm lint && tsc -p tsconfig.json && tsc-alias -p tsconfig.json",
+        "build": "rm -rf ./dist/* && pnpm prisma:generate && pnpm lint && tsc -p tsconfig.json && tsc-alias -p tsconfig.json",
         "lint": "biome lint",
         "dev": "tsx watch src/index.ts",
         "prisma:pull": "npx prisma db pull",
