@@ -89,6 +89,9 @@ importers:
       tsc-alias:
         specifier: ^1.8.8
         version: 1.8.16
+      typescript:
+        specifier: ^5.7.2
+        version: 5.9.3
 
   services/web:
     dependencies:

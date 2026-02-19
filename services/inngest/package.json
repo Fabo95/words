@@ -37,10 +37,11 @@
     },
     "devDependencies": {
         "@types/node": "^20.0.0",
-        "pino-pretty": "^13.0.0",
         "@biomejs/biome": "1.9.4",
+        "@words/biome-config": "file:../../packages/biome-config",
+        "pino-pretty": "^13.0.0",
         "prisma": "^6.7.0",
         "tsc-alias": "^1.8.8",
-        "@words/biome-config": "file:../../packages/biome-config"
+        "typescript": "^5.7.2"
       }
 }
