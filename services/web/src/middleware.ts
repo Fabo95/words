@@ -37,7 +37,7 @@ async function authMiddleware(request: NextRequest, response: NextResponse) {
 
 	try {
 		// PARSE ACCESS TOKEN
-		const isLoggedInRoute = getIsLoggedInRoute(routeUrl)
+		const isLoggedInRoute = getIsLoggedInRoute(pathname)
 
 		if (isLoggedInRoute) {
 			return response
