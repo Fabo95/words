@@ -43,8 +43,9 @@ ENV NEXT_PUBLIC_DEPLOYMENT_URL=$NEXT_PUBLIC_DEPLOYMENT_URL
 # Disable Next.js telemetry during build
 ENV NEXT_TELEMETRY_DISABLED=1
 
-# Build the application using pnpm filter
-RUN pnpm --filter @words/web build
+# Build from the web service directory so Turbopack can find the lockfile
+WORKDIR /app/services/web
+RUN pnpm build
 
 # ============================================================================
 # Runner stage - production image
