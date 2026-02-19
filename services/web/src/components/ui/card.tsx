@@ -1,12 +1,15 @@
 import * as React from "react"
 
-import { cn } from "@app/lib/utils"
+import { cn } from "@app/utils/shadcn/shadcnHelpers"
 
 function Card({ className, ...props }: React.ComponentProps<"div">) {
 	return (
 		<div
 			data-slot="card"
-			className={cn("bg-card text-card-foreground flex flex-col gap-4 md:gap-6 rounded-xl border py-4 md:py-6 shadow-sm", className)}
+			className={cn(
+				"bg-card text-card-foreground flex flex-col gap-4 md:gap-6 rounded-xl border py-4 md:py-6 shadow-sm",
+				className,
+			)}
 			{...props}
 		/>
 	)
@@ -48,7 +51,13 @@ function CardContent({ className, ...props }: React.ComponentProps<"div">) {
 }
 
 function CardFooter({ className, ...props }: React.ComponentProps<"div">) {
-	return <div data-slot="card-footer" className={cn("flex items-center px-4 md:px-6 [.border-t]:pt-4 md:[.border-t]:pt-6", className)} {...props} />
+	return (
+		<div
+			data-slot="card-footer"
+			className={cn("flex items-center px-4 md:px-6 [.border-t]:pt-4 md:[.border-t]:pt-6", className)}
+			{...props}
+		/>
+	)
 }
 
 export { Card, CardHeader, CardFooter, CardTitle, CardAction, CardDescription, CardContent }

@@ -4,8 +4,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="add turbo repo">
+    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="add turbo repo1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/components/ui/badge.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/badge.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/components/ui/button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/button.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/components/ui/card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/card.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/components/ui/pageContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/pageContent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/components/ui/scroll-area.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/scroll-area.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/components/ui/spinner.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/spinner.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/components/ui/switch.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/switch.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -264,31 +271,7 @@
       <workItem from="1769284940233" duration="16174000" />
       <workItem from="1769809608107" duration="54226000" />
       <workItem from="1771107369084" duration="5879000" />
-      <workItem from="1771506192993" duration="5601000" />
-    </task>
-    <task id="LOCAL-00089" summary="add collection empty state">
-      <option name="closed" value="true" />
-      <created>1767563920924</created>
-      <option name="number" value="00089" />
-      <option name="presentableId" value="LOCAL-00089" />
-      <option name="project" value="LOCAL" />
-      <updated>1767563920924</updated>
-    </task>
-    <task id="LOCAL-00090" summary="add greeting to home page">
-      <option name="closed" value="true" />
-      <created>1767722773528</created>
-      <option name="number" value="00090" />
-      <option name="presentableId" value="LOCAL-00090" />
-      <option name="project" value="LOCAL" />
-      <updated>1767722773528</updated>
-    </task>
-    <task id="LOCAL-00091" summary="add drawer.tsx components and refactor">
-      <option name="closed" value="true" />
-      <created>1767725751216</created>
-      <option name="number" value="00091" />
-      <option name="presentableId" value="LOCAL-00091" />
-      <option name="project" value="LOCAL" />
-      <updated>1767725751216</updated>
+      <workItem from="1771506192993" duration="5954000" />
     </task>
     <task id="LOCAL-00092" summary="add last added translation section">
       <option name="closed" value="true" />
@@ -658,7 +641,31 @@
       <option name="project" value="LOCAL" />
       <updated>1771513149785</updated>
     </task>
-    <option name="localTasksCounter" value="138" />
+    <task id="LOCAL-00138" summary="add turbo repo">
+      <option name="closed" value="true" />
+      <created>1771513258791</created>
+      <option name="number" value="00138" />
+      <option name="presentableId" value="LOCAL-00138" />
+      <option name="project" value="LOCAL" />
+      <updated>1771513258791</updated>
+    </task>
+    <task id="LOCAL-00139" summary="add turbo repo1">
+      <option name="closed" value="true" />
+      <created>1771513304426</created>
+      <option name="number" value="00139" />
+      <option name="presentableId" value="LOCAL-00139" />
+      <option name="project" value="LOCAL" />
+      <updated>1771513304426</updated>
+    </task>
+    <task id="LOCAL-00140" summary="add turbo repo1">
+      <option name="closed" value="true" />
+      <created>1771513380805</created>
+      <option name="number" value="00140" />
+      <option name="presentableId" value="LOCAL-00140" />
+      <option name="project" value="LOCAL" />
+      <updated>1771513380805</updated>
+    </task>
+    <option name="localTasksCounter" value="141" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -679,7 +686,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add greeting to home page" />
     <MESSAGE value="add drawer.tsx components and refactor" />
     <MESSAGE value="add last added translation section" />
     <MESSAGE value="adjust query invalidation" />
@@ -704,7 +710,8 @@
     <MESSAGE value="add design review.md" />
     <MESSAGE value="add github action to push docker file of web" />
     <MESSAGE value="add turbo repo" />
-    <option name="LAST_COMMIT_MESSAGE" value="add turbo repo" />
+    <MESSAGE value="add turbo repo1" />
+    <option name="LAST_COMMIT_MESSAGE" value="add turbo repo1" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

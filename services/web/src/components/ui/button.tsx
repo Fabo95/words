@@ -4,7 +4,6 @@ import { Slot } from "@radix-ui/react-slot"
 import { cva, type VariantProps } from "class-variance-authority"
 
 import { cn } from "@app/utils/shadcn/shadcnHelpers"
-import { omit } from "lodash"
 import { Spinner } from "@app/components/ui/spinner"
 
 const buttonVariants = cva(

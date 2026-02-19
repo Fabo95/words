@@ -1,7 +1,7 @@
 "use client"
 
 import { ReactNode } from "react"
-import { cn } from "@app/lib/utils"
+import { cn } from "@app/utils/shadcn/shadcnHelpers"
 import { getMotion } from "@app/utils/motion/helpers"
 import { motion } from "motion/react"
 import { usePathname } from "@app/i18n/navigation"
