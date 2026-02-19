@@ -878,6 +878,7 @@ export interface operations {
 			}
 		}
 	}
+	// @ts-ignore
 	get_cefr_levels: {
 		parameters: {
 			query?: never
@@ -1305,6 +1306,7 @@ export interface operations {
 			}
 		}
 	}
+	// @ts-ignore
 	get_cefr_levels: {
 		parameters: {
 			query?: never
