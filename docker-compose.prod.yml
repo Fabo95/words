@@ -1,0 +1,178 @@
+services:
+  caddy:
+    image: caddy:latest
+    container_name: caddy
+    restart: unless-stopped
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - caddy_data:/data
+      - ${DATA_FOLDER}/caddy_config:/config
+      - ${DATA_FOLDER}/caddy_config/Caddyfile:/etc/caddy/Caddyfile
+    networks:
+      - web
+    depends_on:
+      words-web:
+        condition: service_healthy
+      words-backend:
+        condition: service_healthy
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  n8n:
+    image: docker.n8n.io/n8nio/n8n
+    container_name: n8n
+    restart: unless-stopped
+    environment:
+      N8N_HOST: ${SUBDOMAIN}.${DOMAIN_NAME}
+      N8N_PORT: 5678
+      N8N_PROTOCOL: https
+      NODE_ENV: production
+      WEBHOOK_URL: https://${SUBDOMAIN}.${DOMAIN_NAME}/
+      GENERIC_TIMEZONE: ${GENERIC_TIMEZONE}
+    volumes:
+      - n8n_data:/home/node/.n8n
+      - ${DATA_FOLDER}/local_files:/files
+    networks:
+      - web
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  # ==========================================================================
+  # Words Application Services
+  # ==========================================================================
+
+  words-postgres:
+    image: postgres:18
+    container_name: words-postgres
+    restart: unless-stopped
+    environment:
+      POSTGRES_PASSWORD: ${WORDS_POSTGRES_PASSWORD:?required}
+      POSTGRES_USER: ${WORDS_POSTGRES_USER:-words}
+      POSTGRES_DB: ${WORDS_POSTGRES_DB:-words}
+    command:
+      - "postgres"
+      - "-c"
+      - "wal_level=logical"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -d $${POSTGRES_DB} -U $${POSTGRES_USER}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+      start_period: 10s
+    volumes:
+      - words_postgres_data:/var/lib/postgresql
+    networks:
+      - words-internal
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  words-backend:
+    image: ${WORDS_BACKEND_IMAGE:?required}
+    container_name: words-backend
+    restart: unless-stopped
+    environment:
+      RUST_LOG: ${RUST_LOG:-rust_web_app=info}
+      SERVICE_DB_URL: postgres://${WORDS_POSTGRES_USER:-words}:${WORDS_POSTGRES_PASSWORD}@words-postgres:5432
+      SERVICE_DB_NAME: ${WORDS_POSTGRES_DB:-words}
+      DATABASE_URL: postgres://${WORDS_POSTGRES_USER:-words}:${WORDS_POSTGRES_PASSWORD}@words-postgres:5432/${WORDS_POSTGRES_DB:-words}
+      INNGEST_DEV: "0"
+      INNGEST_EVENT_KEY: ${INNGEST_EVENT_KEY:?required}
+      SERVICE_TOKEN_SECRET_KEY: ${SERVICE_TOKEN_SECRET_KEY:?required}
+      SERVICE_TOKEN_DURATION_SEC: ${SERVICE_TOKEN_DURATION_SEC:-1800}
+      SERVICE_ALLOW_ORIGIN: ${SERVICE_ALLOW_ORIGIN:?required}
+      SERVICE_PORT: "8080"
+      SERVICE_WEB_FOLDER: "/app/web-folder/"
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 15s
+    depends_on:
+      words-postgres:
+        condition: service_healthy
+    networks:
+      - words-internal
+      - web
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  words-web:
+    image: ${WORDS_WEB_IMAGE:?required}
+    container_name: words-web
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    depends_on:
+      words-backend:
+        condition: service_healthy
+    networks:
+      - words-internal
+      - web
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+  words-inngest:
+    image: ${WORDS_INNGEST_IMAGE:?required}
+    container_name: words-inngest
+    restart: unless-stopped
+    environment:
+      NODE_ENV: production
+      DATABASE_URL: postgres://${WORDS_POSTGRES_USER:-words}:${WORDS_POSTGRES_PASSWORD}@words-postgres:5432/${WORDS_POSTGRES_DB:-words}
+      INNGEST_EVENT_KEY: ${INNGEST_EVENT_KEY:?required}
+      INNGEST_SIGNING_KEY: ${INNGEST_SIGNING_KEY:?required}
+      INNGEST_SERVE_HOST: ${INNGEST_SERVE_HOST}
+      OPENAI_API_KEY: ${OPENAI_API_KEY:?required}
+      PORT: 8086
+    healthcheck:
+      test: ["CMD", "wget", "-q", "--spider", "http://localhost:8086/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 10s
+    depends_on:
+      words-postgres:
+        condition: service_healthy
+    networks:
+      - words-internal
+    logging:
+      driver: "json-file"
+      options:
+        max-size: "10m"
+        max-file: "3"
+
+networks:
+  web:
+    driver: bridge
+  words-internal:
+    driver: bridge
+
+volumes:
+  caddy_data:
+    external: true
+  n8n_data:
+    external: true
+  words_postgres_data:
