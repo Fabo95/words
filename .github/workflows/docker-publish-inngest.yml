@@ -1,15 +1,15 @@
-name: Build and Push Web
+name: Build and Push Inngest
 
 on:
   push:
     branches:
       - main
     paths:
-      - 'services/web/**'
+      - 'services/inngest/**'
       - 'packages/**'
       - 'pnpm-lock.yaml'
       - 'turbo.json'
-      - '.github/workflows/docker-publish.yml'
+      - '.github/workflows/docker-publish-inngest.yml'
       - '.github/workflows/docker-build-template.yml'
   workflow_dispatch:
     inputs:
@@ -22,12 +22,10 @@ jobs:
   build:
     uses: ./.github/workflows/docker-build-template.yml
     with:
-      service: web
-      dockerfile: services/web/Dockerfile
+      service: inngest
+      dockerfile: services/inngest/Dockerfile
+      image-suffix: -inngest
       tag: ${{ inputs.tag }}
-      build-args: |
-        NEXT_PUBLIC_API_BASE_URL=${{ vars.NEXT_PUBLIC_API_BASE_URL }}
-        NEXT_PUBLIC_DEPLOYMENT_URL=${{ vars.NEXT_PUBLIC_DEPLOYMENT_URL }}
     secrets:
       DOCKERHUB_USERNAME: ${{ secrets.DOCKERHUB_USERNAME }}
       DOCKERHUB_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
