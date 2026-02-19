@@ -1,6 +1,7 @@
-# Dependencies
+# Dependencies (exclude from build context)
 node_modules
 **/node_modules
+.pnpm-store
 
 # Build outputs
 .next

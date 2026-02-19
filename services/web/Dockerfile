@@ -5,34 +5,55 @@
 # ============================================================================
 FROM node:22-alpine AS base
 
+RUN apk update && apk add --no-cache libc6-compat
+
 ENV PNPM_HOME="/pnpm"
 ENV PATH="$PNPM_HOME:$PATH"
 
 RUN corepack enable && corepack prepare pnpm@latest --activate
+RUN pnpm add -g turbo@^2
 
 # ============================================================================
-# Builder stage - install deps and build
+# Prune stage - create a pruned monorepo for just the web service
+# ============================================================================
+FROM base AS pruner
+
+WORKDIR /app
+
+COPY . .
+
+RUN turbo prune @words/web --docker
+
+# ============================================================================
+# Installer stage - install dependencies
+# ============================================================================
+FROM base AS installer
+
+WORKDIR /app
+
+# Copy pruned lockfile and package.jsons
+COPY --from=pruner /app/out/json/ .
+COPY --from=pruner /app/out/pnpm-lock.yaml ./pnpm-lock.yaml
+
+# Install dependencies
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store \
+    pnpm install --frozen-lockfile
+
+# ============================================================================
+# Builder stage - build the application
 # ============================================================================
 FROM base AS builder
 
 WORKDIR /app
 
-# Copy workspace configuration files
-COPY pnpm-lock.yaml pnpm-workspace.yaml package.json ./
+# Copy installed dependencies
+COPY --from=installer /app .
 
-# Copy package.json files for all workspace packages
-COPY services/web/package.json ./services/web/
-COPY packages/biome-config/package.json ./packages/biome-config/
+# Copy source code
+COPY --from=pruner /app/out/full/ .
 
-# Install all dependencies
-RUN --mount=type=cache,id=pnpm,target=/pnpm/store \
-    pnpm install --frozen-lockfile
-
-# Copy workspace packages
-COPY packages/biome-config ./packages/biome-config
-
-# Copy web service source code
-COPY services/web ./services/web
+# Copy turbo config
+COPY turbo.json turbo.json
 
 # Build arguments for environment variables needed at build time
 ARG NEXT_PUBLIC_API_BASE_URL
@@ -43,9 +64,8 @@ ENV NEXT_PUBLIC_DEPLOYMENT_URL=$NEXT_PUBLIC_DEPLOYMENT_URL
 # Disable Next.js telemetry during build
 ENV NEXT_TELEMETRY_DISABLED=1
 
-# Build from the web service directory so Turbopack can find the lockfile
-WORKDIR /app/services/web
-RUN pnpm build
+# Build the application
+RUN turbo build --filter=@words/web
 
 # ============================================================================
 # Runner stage - production image
