@@ -81,7 +81,10 @@ export const getCollectionTableColumns: (t: TFunction) => ColumnDef<CollectionTr
 				<div className="flex gap-1 flex-wrap">
 					{tags.map((tag) => (
 						<Badge key={tag.id} variant="secondary" className="text-xs">
-							{t(`common.posTags.${tag.code}`)}
+							{
+								// @ts-ignore
+								t(`common.posTags.${tag.code}`)
+							}
 						</Badge>
 					))}
 				</div>
