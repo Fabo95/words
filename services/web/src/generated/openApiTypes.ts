@@ -4,1475 +4,1475 @@
  */
 
 export type paths = {
-    "/authenticate": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        post: operations["authentication_handler"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/cefr-levels": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["get_cefr_levels"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/collection": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        post: operations["create_collection_handler"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/collection/wip1": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["get_collections_handler"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/collection/wip2/{id}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["get_collection_handler"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/collection/{id}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        post?: never;
-        delete: operations["delete_collection_handler"];
-        options?: never;
-        head?: never;
-        patch: operations["update_collection_handler"];
-        trace?: never;
-    };
-    "/collection/{id}/translations": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["get_collection_translations"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/daily-goals": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["get_daily_goals_handler"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch: operations["update_daily_goals_handler"];
-        trace?: never;
-    };
-    "/daily-statistics": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["get_daily_statistics_handler"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/learn": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["get_learn_items_handler"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/learn/stats": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["get_stats_handler"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/learn/{translation_id}/review": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch: operations["record_review_handler"];
-        trace?: never;
-    };
-    "/translation": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["get_translations_handler"];
-        put?: never;
-        post: operations["create_translation_handler"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/translation/statistics": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["get_statistics_handler"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/translation/wip2/{id}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["get_translation"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/translation/{id}": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        post?: never;
-        delete: operations["delete_translation_handler"];
-        options?: never;
-        head?: never;
-        patch: operations["update_translation_handler"];
-        trace?: never;
-    };
-    "/universal-pos-tags": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["get_cefr_levels"];
-        put?: never;
-        post?: never;
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/user": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get: operations["get_user_by_id_handler"];
-        put?: never;
-        post: operations["create_user_handler"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch: operations["update_user_handler"];
-        trace?: never;
-    };
-    "/user/check": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        post: operations["check_email_handler"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/user/login": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        post: operations["login_handler"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/user/logout": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        post: operations["logout_handler"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-    "/webhooks": {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        get?: never;
-        put?: never;
-        post: operations["webhook_create_translation_handler"];
-        delete?: never;
-        options?: never;
-        head?: never;
-        patch?: never;
-        trace?: never;
-    };
-};
-export type webhooks = Record<string, never>;
+	"/authenticate": {
+		parameters: {
+			query?: never
+			header?: never
+			path?: never
+			cookie?: never
+		}
+		get?: never
+		put?: never
+		post: operations["authentication_handler"]
+		delete?: never
+		options?: never
+		head?: never
+		patch?: never
+		trace?: never
+	}
+	"/cefr-levels": {
+		parameters: {
+			query?: never
+			header?: never
+			path?: never
+			cookie?: never
+		}
+		get: operations["get_cefr_levels"]
+		put?: never
+		post?: never
+		delete?: never
+		options?: never
+		head?: never
+		patch?: never
+		trace?: never
+	}
+	"/collection": {
+		parameters: {
+			query?: never
+			header?: never
+			path?: never
+			cookie?: never
+		}
+		get?: never
+		put?: never
+		post: operations["create_collection_handler"]
+		delete?: never
+		options?: never
+		head?: never
+		patch?: never
+		trace?: never
+	}
+	"/collection/wip1": {
+		parameters: {
+			query?: never
+			header?: never
+			path?: never
+			cookie?: never
+		}
+		get: operations["get_collections_handler"]
+		put?: never
+		post?: never
+		delete?: never
+		options?: never
+		head?: never
+		patch?: never
+		trace?: never
+	}
+	"/collection/wip2/{id}": {
+		parameters: {
+			query?: never
+			header?: never
+			path?: never
+			cookie?: never
+		}
+		get: operations["get_collection_handler"]
+		put?: never
+		post?: never
+		delete?: never
+		options?: never
+		head?: never
+		patch?: never
+		trace?: never
+	}
+	"/collection/{id}": {
+		parameters: {
+			query?: never
+			header?: never
+			path?: never
+			cookie?: never
+		}
+		get?: never
+		put?: never
+		post?: never
+		delete: operations["delete_collection_handler"]
+		options?: never
+		head?: never
+		patch: operations["update_collection_handler"]
+		trace?: never
+	}
+	"/collection/{id}/translations": {
+		parameters: {
+			query?: never
+			header?: never
+			path?: never
+			cookie?: never
+		}
+		get: operations["get_collection_translations"]
+		put?: never
+		post?: never
+		delete?: never
+		options?: never
+		head?: never
+		patch?: never
+		trace?: never
+	}
+	"/daily-goals": {
+		parameters: {
+			query?: never
+			header?: never
+			path?: never
+			cookie?: never
+		}
+		get: operations["get_daily_goals_handler"]
+		put?: never
+		post?: never
+		delete?: never
+		options?: never
+		head?: never
+		patch: operations["update_daily_goals_handler"]
+		trace?: never
+	}
+	"/daily-statistics": {
+		parameters: {
+			query?: never
+			header?: never
+			path?: never
+			cookie?: never
+		}
+		get: operations["get_daily_statistics_handler"]
+		put?: never
+		post?: never
+		delete?: never
+		options?: never
+		head?: never
+		patch?: never
+		trace?: never
+	}
+	"/learn": {
+		parameters: {
+			query?: never
+			header?: never
+			path?: never
+			cookie?: never
+		}
+		get: operations["get_learn_items_handler"]
+		put?: never
+		post?: never
+		delete?: never
+		options?: never
+		head?: never
+		patch?: never
+		trace?: never
+	}
+	"/learn/stats": {
+		parameters: {
+			query?: never
+			header?: never
+			path?: never
+			cookie?: never
+		}
+		get: operations["get_stats_handler"]
+		put?: never
+		post?: never
+		delete?: never
+		options?: never
+		head?: never
+		patch?: never
+		trace?: never
+	}
+	"/learn/{translation_id}/review": {
+		parameters: {
+			query?: never
+			header?: never
+			path?: never
+			cookie?: never
+		}
+		get?: never
+		put?: never
+		post?: never
+		delete?: never
+		options?: never
+		head?: never
+		patch: operations["record_review_handler"]
+		trace?: never
+	}
+	"/translation": {
+		parameters: {
+			query?: never
+			header?: never
+			path?: never
+			cookie?: never
+		}
+		get: operations["get_translations_handler"]
+		put?: never
+		post: operations["create_translation_handler"]
+		delete?: never
+		options?: never
+		head?: never
+		patch?: never
+		trace?: never
+	}
+	"/translation/statistics": {
+		parameters: {
+			query?: never
+			header?: never
+			path?: never
+			cookie?: never
+		}
+		get: operations["get_statistics_handler"]
+		put?: never
+		post?: never
+		delete?: never
+		options?: never
+		head?: never
+		patch?: never
+		trace?: never
+	}
+	"/translation/wip2/{id}": {
+		parameters: {
+			query?: never
+			header?: never
+			path?: never
+			cookie?: never
+		}
+		get: operations["get_translation"]
+		put?: never
+		post?: never
+		delete?: never
+		options?: never
+		head?: never
+		patch?: never
+		trace?: never
+	}
+	"/translation/{id}": {
+		parameters: {
+			query?: never
+			header?: never
+			path?: never
+			cookie?: never
+		}
+		get?: never
+		put?: never
+		post?: never
+		delete: operations["delete_translation_handler"]
+		options?: never
+		head?: never
+		patch: operations["update_translation_handler"]
+		trace?: never
+	}
+	"/universal-pos-tags": {
+		parameters: {
+			query?: never
+			header?: never
+			path?: never
+			cookie?: never
+		}
+		get: operations["get_cefr_levels"]
+		put?: never
+		post?: never
+		delete?: never
+		options?: never
+		head?: never
+		patch?: never
+		trace?: never
+	}
+	"/user": {
+		parameters: {
+			query?: never
+			header?: never
+			path?: never
+			cookie?: never
+		}
+		get: operations["get_user_by_id_handler"]
+		put?: never
+		post: operations["create_user_handler"]
+		delete?: never
+		options?: never
+		head?: never
+		patch: operations["update_user_handler"]
+		trace?: never
+	}
+	"/user/check": {
+		parameters: {
+			query?: never
+			header?: never
+			path?: never
+			cookie?: never
+		}
+		get?: never
+		put?: never
+		post: operations["check_email_handler"]
+		delete?: never
+		options?: never
+		head?: never
+		patch?: never
+		trace?: never
+	}
+	"/user/login": {
+		parameters: {
+			query?: never
+			header?: never
+			path?: never
+			cookie?: never
+		}
+		get?: never
+		put?: never
+		post: operations["login_handler"]
+		delete?: never
+		options?: never
+		head?: never
+		patch?: never
+		trace?: never
+	}
+	"/user/logout": {
+		parameters: {
+			query?: never
+			header?: never
+			path?: never
+			cookie?: never
+		}
+		get?: never
+		put?: never
+		post: operations["logout_handler"]
+		delete?: never
+		options?: never
+		head?: never
+		patch?: never
+		trace?: never
+	}
+	"/webhooks": {
+		parameters: {
+			query?: never
+			header?: never
+			path?: never
+			cookie?: never
+		}
+		get?: never
+		put?: never
+		post: operations["webhook_create_translation_handler"]
+		delete?: never
+		options?: never
+		head?: never
+		patch?: never
+		trace?: never
+	}
+}
+export type webhooks = Record<string, never>
 export type components = {
-    schemas: {
-        AuthenticationResponse: {
-            isAuthenticated: boolean;
-        };
-        CollectionForCreate: {
-            /** @description Collection name: must be 1–100 characters, no control characters */
-            name: string;
-        };
-        CollectionForUpdate: {
-            /** @description Collection name: must be 1–100 characters, no control characters */
-            name: string;
-        };
-        DailyGoalsResponse: {
-            /** Format: int32 */
-            current_streak: number;
-            /** Format: int32 */
-            daily_add_words_goal: number;
-            goal_completed_today: boolean;
-            /** Format: int32 */
-            longest_streak: number;
-            /** Format: double */
-            progress_percentage: number;
-            /** Format: int32 */
-            words_added_today: number;
-        };
-        DailyGoalsUpdate: {
-            /**
-             * Format: int32
-             * @description Daily goal: must be between 1 and 100
-             */
-            daily_add_words_goal: number;
-        };
-        DailyStatisticEntry: {
-            /** Format: int32 */
-            daily_goal: number;
-            date: string;
-            goal_completed: boolean;
-            /** Format: int32 */
-            learning_count: number;
-            /** Format: int32 */
-            mature_count: number;
-            /** Format: int32 */
-            streak_at_end_of_day: number;
-            /** Format: int32 */
-            total_translations: number;
-            /** Format: int32 */
-            words_added: number;
-        };
-        DailyStatisticsResponse: {
-            entries: components["schemas"]["DailyStatisticEntry"][];
-            summary: components["schemas"]["StatisticsSummaryResponse"];
-        };
-        EmailForCheck: {
-            /** @description Must be a valid email address */
-            email: string;
-        };
-        EmailForCheckResponse: {
-            isEmailValid: boolean;
-        };
-        HttpResponseBody_AuthenticationResponse: {
-            data?: {
-                isAuthenticated: boolean;
-            };
-            message: string;
-            meta?: null | components["schemas"]["PaginatedMeta"];
-            success: boolean;
-        };
-        HttpResponseBody_DailyGoalsResponse: {
-            data?: {
-                /** Format: int32 */
-                current_streak: number;
-                /** Format: int32 */
-                daily_add_words_goal: number;
-                goal_completed_today: boolean;
-                /** Format: int32 */
-                longest_streak: number;
-                /** Format: double */
-                progress_percentage: number;
-                /** Format: int32 */
-                words_added_today: number;
-            };
-            message: string;
-            meta?: null | components["schemas"]["PaginatedMeta"];
-            success: boolean;
-        };
-        HttpResponseBody_DailyStatisticsResponse: {
-            data?: {
-                entries: components["schemas"]["DailyStatisticEntry"][];
-                summary: components["schemas"]["StatisticsSummaryResponse"];
-            };
-            message: string;
-            meta?: null | components["schemas"]["PaginatedMeta"];
-            success: boolean;
-        };
-        HttpResponseBody_EmailForCheckResponse: {
-            data?: {
-                isEmailValid: boolean;
-            };
-            message: string;
-            meta?: null | components["schemas"]["PaginatedMeta"];
-            success: boolean;
-        };
-        HttpResponseBody_LearnResponse: {
-            data?: {
-                items: components["schemas"]["LearnItem"][];
-            };
-            message: string;
-            meta?: null | components["schemas"]["PaginatedMeta"];
-            success: boolean;
-        };
-        HttpResponseBody_LearnStats: {
-            data?: {
-                /** Format: int64 */
-                due_count: number;
-                /** Format: int64 */
-                learning_count: number;
-                /** Format: int64 */
-                mature_count: number;
-                /** Format: int64 */
-                new_count: number;
-            };
-            message: string;
-            meta?: null | components["schemas"]["PaginatedMeta"];
-            success: boolean;
-        };
-        HttpResponseBody_ReviewResponse: {
-            data?: {
-                learning_progress: components["schemas"]["entity.learning_progressModel"];
-                /** Format: int32 */
-                new_interval: number;
-                /** Format: int32 */
-                previous_interval: number;
-            };
-            message: string;
-            meta?: null | components["schemas"]["PaginatedMeta"];
-            success: boolean;
-        };
-        HttpResponseBody_TranslationStatistics: {
-            data?: {
-                /** Format: int64 */
-                total_translations: number;
-                words_per_pos_tag: components["schemas"]["PosTagCount"][];
-            };
-            message: string;
-            meta?: null | components["schemas"]["PaginatedMeta"];
-            success: boolean;
-        };
-        HttpResponseBody_TranslationWithRelations: {
-            data?: components["schemas"]["entity.translationsModel"] & {
-                cefr_level?: null | components["schemas"]["entity.cefr_levelsModel"];
-                example_sentences: components["schemas"]["entity.example_sentencesModel"][];
-                learning_progress?: null | components["schemas"]["entity.learning_progressModel"];
-                universal_pos_tags: components["schemas"]["entity.universal_pos_tagsModel"][];
-            };
-            message: string;
-            meta?: null | components["schemas"]["PaginatedMeta"];
-            success: boolean;
-        };
-        HttpResponseBody_UserForResponse: {
-            data?: {
-                email: string;
-                /** Format: int32 */
-                id: number;
-                name?: string | null;
-            };
-            message: string;
-            meta?: null | components["schemas"]["PaginatedMeta"];
-            success: boolean;
-        };
-        HttpResponseBody_Vec_TranslationWithRelations: {
-            data?: (components["schemas"]["entity.translationsModel"] & {
-                cefr_level?: null | components["schemas"]["entity.cefr_levelsModel"];
-                example_sentences: components["schemas"]["entity.example_sentencesModel"][];
-                learning_progress?: null | components["schemas"]["entity.learning_progressModel"];
-                universal_pos_tags: components["schemas"]["entity.universal_pos_tagsModel"][];
-            })[];
-            message: string;
-            meta?: null | components["schemas"]["PaginatedMeta"];
-            success: boolean;
-        };
-        "HttpResponseBody_Vec_entity.cefr_levelsModel": {
-            data?: {
-                code: string;
-                description?: string | null;
-                /** Format: int32 */
-                id: number;
-                name: string;
-            }[];
-            message: string;
-            meta?: null | components["schemas"]["PaginatedMeta"];
-            success: boolean;
-        };
-        "HttpResponseBody_Vec_entity.collectionsModel": {
-            data?: {
-                /** Format: date-time */
-                created_at: string;
-                /** Format: int32 */
-                id: number;
-                name: string;
-                /** Format: date-time */
-                updated_at: string;
-                /** Format: int32 */
-                user_id: number;
-            }[];
-            message: string;
-            meta?: null | components["schemas"]["PaginatedMeta"];
-            success: boolean;
-        };
-        "HttpResponseBody_Vec_entity.universal_pos_tagsModel": {
-            data?: {
-                code: string;
-                description?: string | null;
-                /** Format: int32 */
-                id: number;
-                name: string;
-            }[];
-            message: string;
-            meta?: null | components["schemas"]["PaginatedMeta"];
-            success: boolean;
-        };
-        "HttpResponseBody_entity.collectionsModel": {
-            data?: {
-                /** Format: date-time */
-                created_at: string;
-                /** Format: int32 */
-                id: number;
-                name: string;
-                /** Format: date-time */
-                updated_at: string;
-                /** Format: int32 */
-                user_id: number;
-            };
-            message: string;
-            meta?: null | components["schemas"]["PaginatedMeta"];
-            success: boolean;
-        };
-        "HttpResponseBody_entity.translationsModel": {
-            data?: {
-                /** Format: int32 */
-                cefr_level_id?: number | null;
-                /** Format: int32 */
-                collection_id?: number | null;
-                /** Format: date-time */
-                created_at: string;
-                /** Format: int32 */
-                id: number;
-                source_language: string;
-                source_text: string;
-                target_language: string;
-                target_text: string;
-                /** Format: date-time */
-                updated_at: string;
-                /** Format: int32 */
-                user_id: number;
-            };
-            message: string;
-            meta?: null | components["schemas"]["PaginatedMeta"];
-            success: boolean;
-        };
-        HttpResponseBody_u64: {
-            /** Format: int64 */
-            data?: number;
-            message: string;
-            meta?: null | components["schemas"]["PaginatedMeta"];
-            success: boolean;
-        };
-        LearnItem: components["schemas"]["TranslationWithRelations"] & {
-            is_due: boolean;
-            is_new: boolean;
-            learning_progress?: null | components["schemas"]["entity.learning_progressModel"];
-        };
-        LearnResponse: {
-            items: components["schemas"]["LearnItem"][];
-        };
-        LearnStats: {
-            /** Format: int64 */
-            due_count: number;
-            /** Format: int64 */
-            learning_count: number;
-            /** Format: int64 */
-            mature_count: number;
-            /** Format: int64 */
-            new_count: number;
-        };
-        PaginatedMeta: {
-            /** Format: int64 */
-            page: number;
-            /** Format: int64 */
-            page_size: number;
-            /** Format: int64 */
-            total_items: number;
-            /** Format: int64 */
-            total_pages: number;
-        };
-        PosTagCount: {
-            code: string;
-            /** Format: int64 */
-            count: number;
-            name: string;
-            /** Format: int32 */
-            universal_pos_tag_id: number;
-        };
-        /** @enum {string} */
-        ReviewGrade: "again" | "hard" | "good" | "easy";
-        ReviewRequest: {
-            /** @description Quality of recall: again, hard, good, or easy */
-            grade: components["schemas"]["ReviewGrade"];
-        };
-        ReviewResponse: {
-            learning_progress: components["schemas"]["entity.learning_progressModel"];
-            /** Format: int32 */
-            new_interval: number;
-            /** Format: int32 */
-            previous_interval: number;
-        };
-        /** @enum {string} */
-        SortBy: "created_at" | "updated_at";
-        /** @enum {string} */
-        SortOrder: "asc" | "desc";
-        StatisticsSummaryResponse: {
-            /** Format: double */
-            average_words_per_day: number;
-            /** Format: int32 */
-            days_goal_completed: number;
-            /** Format: int32 */
-            longest_streak_in_period: number;
-            /** Format: int32 */
-            total_words_added: number;
-        };
-        TranslationForCreate: {
-            /** Format: int32 */
-            cefr_level_id?: number | null;
-            /** Format: int32 */
-            collection_id?: number | null;
-            /** @description Must be one of: "en-GB", "de-DE" */
-            source_language: string;
-            /** @description Cannot be empty, must be reasonable length */
-            source_text: string;
-            /** @description Must be one of: "en-GB", "de-DE" */
-            target_language: string;
-            /** @description Cannot be empty, must be reasonable length */
-            target_text: string;
-        };
-        TranslationForUpdate: {
-            /** Format: int32 */
-            cefr_level_id?: number | null;
-            /** Format: int32 */
-            collection_id?: number | null;
-            /** @description Optional, but must be 2–5 chars (e.g. "en-GB", "de-DE") if provided. */
-            source_language?: string | null;
-            /** @description Optional, but cannot be empty or exceed 4000 chars if provided. */
-            source_text?: string | null;
-            /** @description Optional, but must be 2–5 chars (e.g. "en-GB", "de-DE") if provided. */
-            target_language?: string | null;
-            /** @description Optional, but cannot be empty or exceed 4000 chars if provided. */
-            target_text?: string | null;
-        };
-        TranslationStatistics: {
-            /** Format: int64 */
-            total_translations: number;
-            words_per_pos_tag: components["schemas"]["PosTagCount"][];
-        };
-        TranslationWithRelations: components["schemas"]["entity.translationsModel"] & {
-            cefr_level?: null | components["schemas"]["entity.cefr_levelsModel"];
-            example_sentences: components["schemas"]["entity.example_sentencesModel"][];
-            learning_progress?: null | components["schemas"]["entity.learning_progressModel"];
-            universal_pos_tags: components["schemas"]["entity.universal_pos_tagsModel"][];
-        };
-        UserForCreate: {
-            /** @description Must match `password` */
-            confirmPassword: string;
-            /** @description Must be a valid email address */
-            email: string;
-            /** @description Password: min length 8, reasonable max, no control characters */
-            password: string;
-        };
-        UserForLogin: {
-            /** @description Must be a valid email address */
-            email: string;
-            /** @description Password: min 8, max 128, no control characters */
-            password: string;
-        };
-        UserForResponse: {
-            email: string;
-            /** Format: int32 */
-            id: number;
-            name?: string | null;
-        };
-        UserForUpdate: {
-            /** @description Optional; if provided, must match `password` */
-            confirmPassword?: string | null;
-            /** @description Optional; if provided: 2–100 chars, no control characters */
-            name?: string | null;
-            /** @description Optional; if provided: min 8, max 128, no control characters */
-            password?: string | null;
-        };
-        WebhooksTranslationForCreate: {
-            /** Format: int32 */
-            cefr_level_id?: number | null;
-            /**
-             * Format: int32
-             * @description Optional ID of the collection (must be > 0 if provided)
-             */
-            collection_id?: number | null;
-            /**
-             * Format: int32
-             * @description Must be greater than 0 (ID of the original translation)
-             */
-            id: number;
-            /** @description Must be one of: "en-GB", "de-DE" */
-            source_language: string;
-            /** @description Cannot be empty, must be reasonable length */
-            source_text: string;
-            /** @description Must be one of: "en-GB", "de-DE" */
-            target_language: string;
-            /** @description Cannot be empty, must be reasonable length */
-            target_text: string;
-        };
-        "entity.cefr_levelsModel": {
-            code: string;
-            description?: string | null;
-            /** Format: int32 */
-            id: number;
-            name: string;
-        };
-        "entity.collectionsModel": {
-            /** Format: date-time */
-            created_at: string;
-            /** Format: int32 */
-            id: number;
-            name: string;
-            /** Format: date-time */
-            updated_at: string;
-            /** Format: int32 */
-            user_id: number;
-        };
-        "entity.example_sentencesModel": {
-            /** Format: int32 */
-            id: number;
-            language: string;
-            sentence: string;
-            /** Format: int32 */
-            translation_id: number;
-        };
-        "entity.learning_progressModel": {
-            /** Format: date-time */
-            created_at: string;
-            /** Format: float */
-            ease_factor: number;
-            /** Format: int32 */
-            id: number;
-            /** Format: int32 */
-            interval: number;
-            /** Format: date-time */
-            last_reviewed_at: string;
-            /** Format: date-time */
-            next_review_at: string;
-            /** Format: int32 */
-            repetition_count: number;
-            /** Format: int32 */
-            translation_id: number;
-            /** Format: date-time */
-            updated_at: string;
-            /** Format: int32 */
-            user_id: number;
-        };
-        "entity.translationsModel": {
-            /** Format: int32 */
-            cefr_level_id?: number | null;
-            /** Format: int32 */
-            collection_id?: number | null;
-            /** Format: date-time */
-            created_at: string;
-            /** Format: int32 */
-            id: number;
-            source_language: string;
-            source_text: string;
-            target_language: string;
-            target_text: string;
-            /** Format: date-time */
-            updated_at: string;
-            /** Format: int32 */
-            user_id: number;
-        };
-        "entity.universal_pos_tagsModel": {
-            code: string;
-            description?: string | null;
-            /** Format: int32 */
-            id: number;
-            name: string;
-        };
-    };
-    responses: never;
-    parameters: never;
-    requestBodies: never;
-    headers: never;
-    pathItems: never;
-};
-export type $defs = Record<string, never>;
+	schemas: {
+		AuthenticationResponse: {
+			isAuthenticated: boolean
+		}
+		CollectionForCreate: {
+			/** @description Collection name: must be 1–100 characters, no control characters */
+			name: string
+		}
+		CollectionForUpdate: {
+			/** @description Collection name: must be 1–100 characters, no control characters */
+			name: string
+		}
+		DailyGoalsResponse: {
+			/** Format: int32 */
+			current_streak: number
+			/** Format: int32 */
+			daily_add_words_goal: number
+			goal_completed_today: boolean
+			/** Format: int32 */
+			longest_streak: number
+			/** Format: double */
+			progress_percentage: number
+			/** Format: int32 */
+			words_added_today: number
+		}
+		DailyGoalsUpdate: {
+			/**
+			 * Format: int32
+			 * @description Daily goal: must be between 1 and 100
+			 */
+			daily_add_words_goal: number
+		}
+		DailyStatisticEntry: {
+			/** Format: int32 */
+			daily_goal: number
+			date: string
+			goal_completed: boolean
+			/** Format: int32 */
+			learning_count: number
+			/** Format: int32 */
+			mature_count: number
+			/** Format: int32 */
+			streak_at_end_of_day: number
+			/** Format: int32 */
+			total_translations: number
+			/** Format: int32 */
+			words_added: number
+		}
+		DailyStatisticsResponse: {
+			entries: components["schemas"]["DailyStatisticEntry"][]
+			summary: components["schemas"]["StatisticsSummaryResponse"]
+		}
+		EmailForCheck: {
+			/** @description Must be a valid email address */
+			email: string
+		}
+		EmailForCheckResponse: {
+			isEmailValid: boolean
+		}
+		HttpResponseBody_AuthenticationResponse: {
+			data?: {
+				isAuthenticated: boolean
+			}
+			message: string
+			meta?: null | components["schemas"]["PaginatedMeta"]
+			success: boolean
+		}
+		HttpResponseBody_DailyGoalsResponse: {
+			data?: {
+				/** Format: int32 */
+				current_streak: number
+				/** Format: int32 */
+				daily_add_words_goal: number
+				goal_completed_today: boolean
+				/** Format: int32 */
+				longest_streak: number
+				/** Format: double */
+				progress_percentage: number
+				/** Format: int32 */
+				words_added_today: number
+			}
+			message: string
+			meta?: null | components["schemas"]["PaginatedMeta"]
+			success: boolean
+		}
+		HttpResponseBody_DailyStatisticsResponse: {
+			data?: {
+				entries: components["schemas"]["DailyStatisticEntry"][]
+				summary: components["schemas"]["StatisticsSummaryResponse"]
+			}
+			message: string
+			meta?: null | components["schemas"]["PaginatedMeta"]
+			success: boolean
+		}
+		HttpResponseBody_EmailForCheckResponse: {
+			data?: {
+				isEmailValid: boolean
+			}
+			message: string
+			meta?: null | components["schemas"]["PaginatedMeta"]
+			success: boolean
+		}
+		HttpResponseBody_LearnResponse: {
+			data?: {
+				items: components["schemas"]["LearnItem"][]
+			}
+			message: string
+			meta?: null | components["schemas"]["PaginatedMeta"]
+			success: boolean
+		}
+		HttpResponseBody_LearnStats: {
+			data?: {
+				/** Format: int64 */
+				due_count: number
+				/** Format: int64 */
+				learning_count: number
+				/** Format: int64 */
+				mature_count: number
+				/** Format: int64 */
+				new_count: number
+			}
+			message: string
+			meta?: null | components["schemas"]["PaginatedMeta"]
+			success: boolean
+		}
+		HttpResponseBody_ReviewResponse: {
+			data?: {
+				learning_progress: components["schemas"]["entity.learning_progressModel"]
+				/** Format: int32 */
+				new_interval: number
+				/** Format: int32 */
+				previous_interval: number
+			}
+			message: string
+			meta?: null | components["schemas"]["PaginatedMeta"]
+			success: boolean
+		}
+		HttpResponseBody_TranslationStatistics: {
+			data?: {
+				/** Format: int64 */
+				total_translations: number
+				words_per_pos_tag: components["schemas"]["PosTagCount"][]
+			}
+			message: string
+			meta?: null | components["schemas"]["PaginatedMeta"]
+			success: boolean
+		}
+		HttpResponseBody_TranslationWithRelations: {
+			data?: components["schemas"]["entity.translationsModel"] & {
+				cefr_level?: null | components["schemas"]["entity.cefr_levelsModel"]
+				example_sentences: components["schemas"]["entity.example_sentencesModel"][]
+				learning_progress?: null | components["schemas"]["entity.learning_progressModel"]
+				universal_pos_tags: components["schemas"]["entity.universal_pos_tagsModel"][]
+			}
+			message: string
+			meta?: null | components["schemas"]["PaginatedMeta"]
+			success: boolean
+		}
+		HttpResponseBody_UserForResponse: {
+			data?: {
+				email: string
+				/** Format: int32 */
+				id: number
+				name?: string | null
+			}
+			message: string
+			meta?: null | components["schemas"]["PaginatedMeta"]
+			success: boolean
+		}
+		HttpResponseBody_Vec_TranslationWithRelations: {
+			data?: (components["schemas"]["entity.translationsModel"] & {
+				cefr_level?: null | components["schemas"]["entity.cefr_levelsModel"]
+				example_sentences: components["schemas"]["entity.example_sentencesModel"][]
+				learning_progress?: null | components["schemas"]["entity.learning_progressModel"]
+				universal_pos_tags: components["schemas"]["entity.universal_pos_tagsModel"][]
+			})[]
+			message: string
+			meta?: null | components["schemas"]["PaginatedMeta"]
+			success: boolean
+		}
+		"HttpResponseBody_Vec_entity.cefr_levelsModel": {
+			data?: {
+				code: string
+				description?: string | null
+				/** Format: int32 */
+				id: number
+				name: string
+			}[]
+			message: string
+			meta?: null | components["schemas"]["PaginatedMeta"]
+			success: boolean
+		}
+		"HttpResponseBody_Vec_entity.collectionsModel": {
+			data?: {
+				/** Format: date-time */
+				created_at: string
+				/** Format: int32 */
+				id: number
+				name: string
+				/** Format: date-time */
+				updated_at: string
+				/** Format: int32 */
+				user_id: number
+			}[]
+			message: string
+			meta?: null | components["schemas"]["PaginatedMeta"]
+			success: boolean
+		}
+		"HttpResponseBody_Vec_entity.universal_pos_tagsModel": {
+			data?: {
+				code: string
+				description?: string | null
+				/** Format: int32 */
+				id: number
+				name: string
+			}[]
+			message: string
+			meta?: null | components["schemas"]["PaginatedMeta"]
+			success: boolean
+		}
+		"HttpResponseBody_entity.collectionsModel": {
+			data?: {
+				/** Format: date-time */
+				created_at: string
+				/** Format: int32 */
+				id: number
+				name: string
+				/** Format: date-time */
+				updated_at: string
+				/** Format: int32 */
+				user_id: number
+			}
+			message: string
+			meta?: null | components["schemas"]["PaginatedMeta"]
+			success: boolean
+		}
+		"HttpResponseBody_entity.translationsModel": {
+			data?: {
+				/** Format: int32 */
+				cefr_level_id?: number | null
+				/** Format: int32 */
+				collection_id?: number | null
+				/** Format: date-time */
+				created_at: string
+				/** Format: int32 */
+				id: number
+				source_language: string
+				source_text: string
+				target_language: string
+				target_text: string
+				/** Format: date-time */
+				updated_at: string
+				/** Format: int32 */
+				user_id: number
+			}
+			message: string
+			meta?: null | components["schemas"]["PaginatedMeta"]
+			success: boolean
+		}
+		HttpResponseBody_u64: {
+			/** Format: int64 */
+			data?: number
+			message: string
+			meta?: null | components["schemas"]["PaginatedMeta"]
+			success: boolean
+		}
+		LearnItem: components["schemas"]["TranslationWithRelations"] & {
+			is_due: boolean
+			is_new: boolean
+			learning_progress?: null | components["schemas"]["entity.learning_progressModel"]
+		}
+		LearnResponse: {
+			items: components["schemas"]["LearnItem"][]
+		}
+		LearnStats: {
+			/** Format: int64 */
+			due_count: number
+			/** Format: int64 */
+			learning_count: number
+			/** Format: int64 */
+			mature_count: number
+			/** Format: int64 */
+			new_count: number
+		}
+		PaginatedMeta: {
+			/** Format: int64 */
+			page: number
+			/** Format: int64 */
+			page_size: number
+			/** Format: int64 */
+			total_items: number
+			/** Format: int64 */
+			total_pages: number
+		}
+		PosTagCount: {
+			code: string
+			/** Format: int64 */
+			count: number
+			name: string
+			/** Format: int32 */
+			universal_pos_tag_id: number
+		}
+		/** @enum {string} */
+		ReviewGrade: "again" | "hard" | "good" | "easy"
+		ReviewRequest: {
+			/** @description Quality of recall: again, hard, good, or easy */
+			grade: components["schemas"]["ReviewGrade"]
+		}
+		ReviewResponse: {
+			learning_progress: components["schemas"]["entity.learning_progressModel"]
+			/** Format: int32 */
+			new_interval: number
+			/** Format: int32 */
+			previous_interval: number
+		}
+		/** @enum {string} */
+		SortBy: "created_at" | "updated_at"
+		/** @enum {string} */
+		SortOrder: "asc" | "desc"
+		StatisticsSummaryResponse: {
+			/** Format: double */
+			average_words_per_day: number
+			/** Format: int32 */
+			days_goal_completed: number
+			/** Format: int32 */
+			longest_streak_in_period: number
+			/** Format: int32 */
+			total_words_added: number
+		}
+		TranslationForCreate: {
+			/** Format: int32 */
+			cefr_level_id?: number | null
+			/** Format: int32 */
+			collection_id?: number | null
+			/** @description Must be one of: "en-GB", "de-DE" */
+			source_language: string
+			/** @description Cannot be empty, must be reasonable length */
+			source_text: string
+			/** @description Must be one of: "en-GB", "de-DE" */
+			target_language: string
+			/** @description Cannot be empty, must be reasonable length */
+			target_text: string
+		}
+		TranslationForUpdate: {
+			/** Format: int32 */
+			cefr_level_id?: number | null
+			/** Format: int32 */
+			collection_id?: number | null
+			/** @description Optional, but must be 2–5 chars (e.g. "en-GB", "de-DE") if provided. */
+			source_language?: string | null
+			/** @description Optional, but cannot be empty or exceed 4000 chars if provided. */
+			source_text?: string | null
+			/** @description Optional, but must be 2–5 chars (e.g. "en-GB", "de-DE") if provided. */
+			target_language?: string | null
+			/** @description Optional, but cannot be empty or exceed 4000 chars if provided. */
+			target_text?: string | null
+		}
+		TranslationStatistics: {
+			/** Format: int64 */
+			total_translations: number
+			words_per_pos_tag: components["schemas"]["PosTagCount"][]
+		}
+		TranslationWithRelations: components["schemas"]["entity.translationsModel"] & {
+			cefr_level?: null | components["schemas"]["entity.cefr_levelsModel"]
+			example_sentences: components["schemas"]["entity.example_sentencesModel"][]
+			learning_progress?: null | components["schemas"]["entity.learning_progressModel"]
+			universal_pos_tags: components["schemas"]["entity.universal_pos_tagsModel"][]
+		}
+		UserForCreate: {
+			/** @description Must match `password` */
+			confirmPassword: string
+			/** @description Must be a valid email address */
+			email: string
+			/** @description Password: min length 8, reasonable max, no control characters */
+			password: string
+		}
+		UserForLogin: {
+			/** @description Must be a valid email address */
+			email: string
+			/** @description Password: min 8, max 128, no control characters */
+			password: string
+		}
+		UserForResponse: {
+			email: string
+			/** Format: int32 */
+			id: number
+			name?: string | null
+		}
+		UserForUpdate: {
+			/** @description Optional; if provided, must match `password` */
+			confirmPassword?: string | null
+			/** @description Optional; if provided: 2–100 chars, no control characters */
+			name?: string | null
+			/** @description Optional; if provided: min 8, max 128, no control characters */
+			password?: string | null
+		}
+		WebhooksTranslationForCreate: {
+			/** Format: int32 */
+			cefr_level_id?: number | null
+			/**
+			 * Format: int32
+			 * @description Optional ID of the collection (must be > 0 if provided)
+			 */
+			collection_id?: number | null
+			/**
+			 * Format: int32
+			 * @description Must be greater than 0 (ID of the original translation)
+			 */
+			id: number
+			/** @description Must be one of: "en-GB", "de-DE" */
+			source_language: string
+			/** @description Cannot be empty, must be reasonable length */
+			source_text: string
+			/** @description Must be one of: "en-GB", "de-DE" */
+			target_language: string
+			/** @description Cannot be empty, must be reasonable length */
+			target_text: string
+		}
+		"entity.cefr_levelsModel": {
+			code: string
+			description?: string | null
+			/** Format: int32 */
+			id: number
+			name: string
+		}
+		"entity.collectionsModel": {
+			/** Format: date-time */
+			created_at: string
+			/** Format: int32 */
+			id: number
+			name: string
+			/** Format: date-time */
+			updated_at: string
+			/** Format: int32 */
+			user_id: number
+		}
+		"entity.example_sentencesModel": {
+			/** Format: int32 */
+			id: number
+			language: string
+			sentence: string
+			/** Format: int32 */
+			translation_id: number
+		}
+		"entity.learning_progressModel": {
+			/** Format: date-time */
+			created_at: string
+			/** Format: float */
+			ease_factor: number
+			/** Format: int32 */
+			id: number
+			/** Format: int32 */
+			interval: number
+			/** Format: date-time */
+			last_reviewed_at: string
+			/** Format: date-time */
+			next_review_at: string
+			/** Format: int32 */
+			repetition_count: number
+			/** Format: int32 */
+			translation_id: number
+			/** Format: date-time */
+			updated_at: string
+			/** Format: int32 */
+			user_id: number
+		}
+		"entity.translationsModel": {
+			/** Format: int32 */
+			cefr_level_id?: number | null
+			/** Format: int32 */
+			collection_id?: number | null
+			/** Format: date-time */
+			created_at: string
+			/** Format: int32 */
+			id: number
+			source_language: string
+			source_text: string
+			target_language: string
+			target_text: string
+			/** Format: date-time */
+			updated_at: string
+			/** Format: int32 */
+			user_id: number
+		}
+		"entity.universal_pos_tagsModel": {
+			code: string
+			description?: string | null
+			/** Format: int32 */
+			id: number
+			name: string
+		}
+	}
+	responses: never
+	parameters: never
+	requestBodies: never
+	headers: never
+	pathItems: never
+}
+export type $defs = Record<string, never>
 export interface operations {
-    authentication_handler: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HttpResponseBody_AuthenticationResponse"];
-                };
-            };
-        };
-    };
-    get_cefr_levels: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HttpResponseBody_Vec_entity.cefr_levelsModel"];
-                };
-            };
-        };
-    };
-    create_collection_handler: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["CollectionForCreate"];
-            };
-        };
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HttpResponseBody_entity.collectionsModel"];
-                };
-            };
-        };
-    };
-    get_collections_handler: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HttpResponseBody_Vec_entity.collectionsModel"];
-                };
-            };
-        };
-    };
-    get_collection_handler: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                id: number;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HttpResponseBody_entity.collectionsModel"];
-                };
-            };
-        };
-    };
-    delete_collection_handler: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                id: number;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HttpResponseBody_u64"];
-                };
-            };
-        };
-    };
-    update_collection_handler: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                id: number;
-            };
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["CollectionForUpdate"];
-            };
-        };
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HttpResponseBody_entity.collectionsModel"];
-                };
-            };
-        };
-    };
-    get_collection_translations: {
-        parameters: {
-            query?: {
-                page?: number;
-                page_size?: number;
-                search?: string;
-                sort_by?: components["schemas"]["SortBy"];
-                sort_order?: components["schemas"]["SortOrder"];
-            };
-            header?: never;
-            path: {
-                id: number;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HttpResponseBody_Vec_TranslationWithRelations"];
-                };
-            };
-        };
-    };
-    get_daily_goals_handler: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HttpResponseBody_DailyGoalsResponse"];
-                };
-            };
-        };
-    };
-    update_daily_goals_handler: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["DailyGoalsUpdate"];
-            };
-        };
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HttpResponseBody_DailyGoalsResponse"];
-                };
-            };
-        };
-    };
-    get_daily_statistics_handler: {
-        parameters: {
-            query?: {
-                /** @description Number of days to fetch (1-90, defaults to 7) */
-                days?: number;
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HttpResponseBody_DailyStatisticsResponse"];
-                };
-            };
-        };
-    };
-    get_learn_items_handler: {
-        parameters: {
-            query?: {
-                /** @description Number of items to return (default: 10, max: 50) */
-                limit?: number;
-                /** @description Filter by collection */
-                collection_id?: number;
-                /** @description Include new (never reviewed) translations (default: true) */
-                include_new?: boolean;
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HttpResponseBody_LearnResponse"];
-                };
-            };
-        };
-    };
-    get_stats_handler: {
-        parameters: {
-            query?: {
-                /** @description Filter stats by collection */
-                collection_id?: number;
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HttpResponseBody_LearnStats"];
-                };
-            };
-        };
-    };
-    record_review_handler: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                /** @description Translation ID to review */
-                translation_id: number;
-            };
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["ReviewRequest"];
-            };
-        };
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HttpResponseBody_ReviewResponse"];
-                };
-            };
-        };
-    };
-    get_translations_handler: {
-        parameters: {
-            query?: {
-                page?: number;
-                page_size?: number;
-                search?: string;
-                sort_by?: components["schemas"]["SortBy"];
-                sort_order?: components["schemas"]["SortOrder"];
-            };
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HttpResponseBody_Vec_TranslationWithRelations"];
-                };
-            };
-        };
-    };
-    create_translation_handler: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["TranslationForCreate"];
-            };
-        };
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HttpResponseBody_entity.translationsModel"];
-                };
-            };
-        };
-    };
-    get_statistics_handler: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HttpResponseBody_TranslationStatistics"];
-                };
-            };
-        };
-    };
-    get_translation: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                id: number;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HttpResponseBody_TranslationWithRelations"];
-                };
-            };
-        };
-    };
-    delete_translation_handler: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                id: number;
-            };
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HttpResponseBody_u64"];
-                };
-            };
-        };
-    };
-    update_translation_handler: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path: {
-                id: number;
-            };
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["TranslationForUpdate"];
-            };
-        };
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HttpResponseBody_entity.translationsModel"];
-                };
-            };
-        };
-    };
-    get_cefr_levels: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HttpResponseBody_Vec_entity.universal_pos_tagsModel"];
-                };
-            };
-        };
-    };
-    get_user_by_id_handler: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HttpResponseBody_UserForResponse"];
-                };
-            };
-        };
-    };
-    create_user_handler: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["UserForCreate"];
-            };
-        };
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HttpResponseBody_UserForResponse"];
-                };
-            };
-        };
-    };
-    update_user_handler: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["UserForUpdate"];
-            };
-        };
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HttpResponseBody_UserForResponse"];
-                };
-            };
-        };
-    };
-    check_email_handler: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["EmailForCheck"];
-            };
-        };
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HttpResponseBody_EmailForCheckResponse"];
-                };
-            };
-        };
-    };
-    login_handler: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["UserForLogin"];
-            };
-        };
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HttpResponseBody_UserForResponse"];
-                };
-            };
-        };
-    };
-    logout_handler: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody?: never;
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content?: never;
-            };
-        };
-    };
-    webhook_create_translation_handler: {
-        parameters: {
-            query?: never;
-            header?: never;
-            path?: never;
-            cookie?: never;
-        };
-        requestBody: {
-            content: {
-                "application/json": components["schemas"]["WebhooksTranslationForCreate"];
-            };
-        };
-        responses: {
-            200: {
-                headers: {
-                    [name: string]: unknown;
-                };
-                content: {
-                    "application/json": components["schemas"]["HttpResponseBody_entity.translationsModel"];
-                };
-            };
-        };
-    };
+	authentication_handler: {
+		parameters: {
+			query?: never
+			header?: never
+			path?: never
+			cookie?: never
+		}
+		requestBody?: never
+		responses: {
+			200: {
+				headers: {
+					[name: string]: unknown
+				}
+				content: {
+					"application/json": components["schemas"]["HttpResponseBody_AuthenticationResponse"]
+				}
+			}
+		}
+	}
+	get_cefr_levels: {
+		parameters: {
+			query?: never
+			header?: never
+			path?: never
+			cookie?: never
+		}
+		requestBody?: never
+		responses: {
+			200: {
+				headers: {
+					[name: string]: unknown
+				}
+				content: {
+					"application/json": components["schemas"]["HttpResponseBody_Vec_entity.cefr_levelsModel"]
+				}
+			}
+		}
+	}
+	create_collection_handler: {
+		parameters: {
+			query?: never
+			header?: never
+			path?: never
+			cookie?: never
+		}
+		requestBody: {
+			content: {
+				"application/json": components["schemas"]["CollectionForCreate"]
+			}
+		}
+		responses: {
+			200: {
+				headers: {
+					[name: string]: unknown
+				}
+				content: {
+					"application/json": components["schemas"]["HttpResponseBody_entity.collectionsModel"]
+				}
+			}
+		}
+	}
+	get_collections_handler: {
+		parameters: {
+			query?: never
+			header?: never
+			path?: never
+			cookie?: never
+		}
+		requestBody?: never
+		responses: {
+			200: {
+				headers: {
+					[name: string]: unknown
+				}
+				content: {
+					"application/json": components["schemas"]["HttpResponseBody_Vec_entity.collectionsModel"]
+				}
+			}
+		}
+	}
+	get_collection_handler: {
+		parameters: {
+			query?: never
+			header?: never
+			path: {
+				id: number
+			}
+			cookie?: never
+		}
+		requestBody?: never
+		responses: {
+			200: {
+				headers: {
+					[name: string]: unknown
+				}
+				content: {
+					"application/json": components["schemas"]["HttpResponseBody_entity.collectionsModel"]
+				}
+			}
+		}
+	}
+	delete_collection_handler: {
+		parameters: {
+			query?: never
+			header?: never
+			path: {
+				id: number
+			}
+			cookie?: never
+		}
+		requestBody?: never
+		responses: {
+			200: {
+				headers: {
+					[name: string]: unknown
+				}
+				content: {
+					"application/json": components["schemas"]["HttpResponseBody_u64"]
+				}
+			}
+		}
+	}
+	update_collection_handler: {
+		parameters: {
+			query?: never
+			header?: never
+			path: {
+				id: number
+			}
+			cookie?: never
+		}
+		requestBody: {
+			content: {
+				"application/json": components["schemas"]["CollectionForUpdate"]
+			}
+		}
+		responses: {
+			200: {
+				headers: {
+					[name: string]: unknown
+				}
+				content: {
+					"application/json": components["schemas"]["HttpResponseBody_entity.collectionsModel"]
+				}
+			}
+		}
+	}
+	get_collection_translations: {
+		parameters: {
+			query?: {
+				page?: number
+				page_size?: number
+				search?: string
+				sort_by?: components["schemas"]["SortBy"]
+				sort_order?: components["schemas"]["SortOrder"]
+			}
+			header?: never
+			path: {
+				id: number
+			}
+			cookie?: never
+		}
+		requestBody?: never
+		responses: {
+			200: {
+				headers: {
+					[name: string]: unknown
+				}
+				content: {
+					"application/json": components["schemas"]["HttpResponseBody_Vec_TranslationWithRelations"]
+				}
+			}
+		}
+	}
+	get_daily_goals_handler: {
+		parameters: {
+			query?: never
+			header?: never
+			path?: never
+			cookie?: never
+		}
+		requestBody?: never
+		responses: {
+			200: {
+				headers: {
+					[name: string]: unknown
+				}
+				content: {
+					"application/json": components["schemas"]["HttpResponseBody_DailyGoalsResponse"]
+				}
+			}
+		}
+	}
+	update_daily_goals_handler: {
+		parameters: {
+			query?: never
+			header?: never
+			path?: never
+			cookie?: never
+		}
+		requestBody: {
+			content: {
+				"application/json": components["schemas"]["DailyGoalsUpdate"]
+			}
+		}
+		responses: {
+			200: {
+				headers: {
+					[name: string]: unknown
+				}
+				content: {
+					"application/json": components["schemas"]["HttpResponseBody_DailyGoalsResponse"]
+				}
+			}
+		}
+	}
+	get_daily_statistics_handler: {
+		parameters: {
+			query?: {
+				/** @description Number of days to fetch (1-90, defaults to 7) */
+				days?: number
+			}
+			header?: never
+			path?: never
+			cookie?: never
+		}
+		requestBody?: never
+		responses: {
+			200: {
+				headers: {
+					[name: string]: unknown
+				}
+				content: {
+					"application/json": components["schemas"]["HttpResponseBody_DailyStatisticsResponse"]
+				}
+			}
+		}
+	}
+	get_learn_items_handler: {
+		parameters: {
+			query?: {
+				/** @description Number of items to return (default: 10, max: 50) */
+				limit?: number
+				/** @description Filter by collection */
+				collection_id?: number
+				/** @description Include new (never reviewed) translations (default: true) */
+				include_new?: boolean
+			}
+			header?: never
+			path?: never
+			cookie?: never
+		}
+		requestBody?: never
+		responses: {
+			200: {
+				headers: {
+					[name: string]: unknown
+				}
+				content: {
+					"application/json": components["schemas"]["HttpResponseBody_LearnResponse"]
+				}
+			}
+		}
+	}
+	get_stats_handler: {
+		parameters: {
+			query?: {
+				/** @description Filter stats by collection */
+				collection_id?: number
+			}
+			header?: never
+			path?: never
+			cookie?: never
+		}
+		requestBody?: never
+		responses: {
+			200: {
+				headers: {
+					[name: string]: unknown
+				}
+				content: {
+					"application/json": components["schemas"]["HttpResponseBody_LearnStats"]
+				}
+			}
+		}
+	}
+	record_review_handler: {
+		parameters: {
+			query?: never
+			header?: never
+			path: {
+				/** @description Translation ID to review */
+				translation_id: number
+			}
+			cookie?: never
+		}
+		requestBody: {
+			content: {
+				"application/json": components["schemas"]["ReviewRequest"]
+			}
+		}
+		responses: {
+			200: {
+				headers: {
+					[name: string]: unknown
+				}
+				content: {
+					"application/json": components["schemas"]["HttpResponseBody_ReviewResponse"]
+				}
+			}
+		}
+	}
+	get_translations_handler: {
+		parameters: {
+			query?: {
+				page?: number
+				page_size?: number
+				search?: string
+				sort_by?: components["schemas"]["SortBy"]
+				sort_order?: components["schemas"]["SortOrder"]
+			}
+			header?: never
+			path?: never
+			cookie?: never
+		}
+		requestBody?: never
+		responses: {
+			200: {
+				headers: {
+					[name: string]: unknown
+				}
+				content: {
+					"application/json": components["schemas"]["HttpResponseBody_Vec_TranslationWithRelations"]
+				}
+			}
+		}
+	}
+	create_translation_handler: {
+		parameters: {
+			query?: never
+			header?: never
+			path?: never
+			cookie?: never
+		}
+		requestBody: {
+			content: {
+				"application/json": components["schemas"]["TranslationForCreate"]
+			}
+		}
+		responses: {
+			200: {
+				headers: {
+					[name: string]: unknown
+				}
+				content: {
+					"application/json": components["schemas"]["HttpResponseBody_entity.translationsModel"]
+				}
+			}
+		}
+	}
+	get_statistics_handler: {
+		parameters: {
+			query?: never
+			header?: never
+			path?: never
+			cookie?: never
+		}
+		requestBody?: never
+		responses: {
+			200: {
+				headers: {
+					[name: string]: unknown
+				}
+				content: {
+					"application/json": components["schemas"]["HttpResponseBody_TranslationStatistics"]
+				}
+			}
+		}
+	}
+	get_translation: {
+		parameters: {
+			query?: never
+			header?: never
+			path: {
+				id: number
+			}
+			cookie?: never
+		}
+		requestBody?: never
+		responses: {
+			200: {
+				headers: {
+					[name: string]: unknown
+				}
+				content: {
+					"application/json": components["schemas"]["HttpResponseBody_TranslationWithRelations"]
+				}
+			}
+		}
+	}
+	delete_translation_handler: {
+		parameters: {
+			query?: never
+			header?: never
+			path: {
+				id: number
+			}
+			cookie?: never
+		}
+		requestBody?: never
+		responses: {
+			200: {
+				headers: {
+					[name: string]: unknown
+				}
+				content: {
+					"application/json": components["schemas"]["HttpResponseBody_u64"]
+				}
+			}
+		}
+	}
+	update_translation_handler: {
+		parameters: {
+			query?: never
+			header?: never
+			path: {
+				id: number
+			}
+			cookie?: never
+		}
+		requestBody: {
+			content: {
+				"application/json": components["schemas"]["TranslationForUpdate"]
+			}
+		}
+		responses: {
+			200: {
+				headers: {
+					[name: string]: unknown
+				}
+				content: {
+					"application/json": components["schemas"]["HttpResponseBody_entity.translationsModel"]
+				}
+			}
+		}
+	}
+	get_cefr_levels: {
+		parameters: {
+			query?: never
+			header?: never
+			path?: never
+			cookie?: never
+		}
+		requestBody?: never
+		responses: {
+			200: {
+				headers: {
+					[name: string]: unknown
+				}
+				content: {
+					"application/json": components["schemas"]["HttpResponseBody_Vec_entity.universal_pos_tagsModel"]
+				}
+			}
+		}
+	}
+	get_user_by_id_handler: {
+		parameters: {
+			query?: never
+			header?: never
+			path?: never
+			cookie?: never
+		}
+		requestBody?: never
+		responses: {
+			200: {
+				headers: {
+					[name: string]: unknown
+				}
+				content: {
+					"application/json": components["schemas"]["HttpResponseBody_UserForResponse"]
+				}
+			}
+		}
+	}
+	create_user_handler: {
+		parameters: {
+			query?: never
+			header?: never
+			path?: never
+			cookie?: never
+		}
+		requestBody: {
+			content: {
+				"application/json": components["schemas"]["UserForCreate"]
+			}
+		}
+		responses: {
+			200: {
+				headers: {
+					[name: string]: unknown
+				}
+				content: {
+					"application/json": components["schemas"]["HttpResponseBody_UserForResponse"]
+				}
+			}
+		}
+	}
+	update_user_handler: {
+		parameters: {
+			query?: never
+			header?: never
+			path?: never
+			cookie?: never
+		}
+		requestBody: {
+			content: {
+				"application/json": components["schemas"]["UserForUpdate"]
+			}
+		}
+		responses: {
+			200: {
+				headers: {
+					[name: string]: unknown
+				}
+				content: {
+					"application/json": components["schemas"]["HttpResponseBody_UserForResponse"]
+				}
+			}
+		}
+	}
+	check_email_handler: {
+		parameters: {
+			query?: never
+			header?: never
+			path?: never
+			cookie?: never
+		}
+		requestBody: {
+			content: {
+				"application/json": components["schemas"]["EmailForCheck"]
+			}
+		}
+		responses: {
+			200: {
+				headers: {
+					[name: string]: unknown
+				}
+				content: {
+					"application/json": components["schemas"]["HttpResponseBody_EmailForCheckResponse"]
+				}
+			}
+		}
+	}
+	login_handler: {
+		parameters: {
+			query?: never
+			header?: never
+			path?: never
+			cookie?: never
+		}
+		requestBody: {
+			content: {
+				"application/json": components["schemas"]["UserForLogin"]
+			}
+		}
+		responses: {
+			200: {
+				headers: {
+					[name: string]: unknown
+				}
+				content: {
+					"application/json": components["schemas"]["HttpResponseBody_UserForResponse"]
+				}
+			}
+		}
+	}
+	logout_handler: {
+		parameters: {
+			query?: never
+			header?: never
+			path?: never
+			cookie?: never
+		}
+		requestBody?: never
+		responses: {
+			200: {
+				headers: {
+					[name: string]: unknown
+				}
+				content?: never
+			}
+		}
+	}
+	webhook_create_translation_handler: {
+		parameters: {
+			query?: never
+			header?: never
+			path?: never
+			cookie?: never
+		}
+		requestBody: {
+			content: {
+				"application/json": components["schemas"]["WebhooksTranslationForCreate"]
+			}
+		}
+		responses: {
+			200: {
+				headers: {
+					[name: string]: unknown
+				}
+				content: {
+					"application/json": components["schemas"]["HttpResponseBody_entity.translationsModel"]
+				}
+			}
+		}
+	}
 }
