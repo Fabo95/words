@@ -12,7 +12,7 @@ import {
 	DropdownMenuTrigger,
 } from "@app/components/ui/dropdown-menu"
 import { useSidebar } from "@app/components/ui/sidebar"
-import { useState } from "react"
+import { SyntheticEvent, useState } from "react"
 import { useTranslations } from "next-intl"
 import * as React from "react"
 
@@ -108,7 +108,7 @@ export const TranslationActions = ({
 			</DropdownMenu>
 
 			<DialogOrDrawer open={isEditFormOpen} onOpenChange={setIsEditFormOpen}>
-				<DialogOrDrawerContent onClick={(e) => e.stopPropagation()}>
+				<DialogOrDrawerContent onClick={(e: SyntheticEvent) => e.stopPropagation()}>
 					<DialogOrDrawerHeader>
 						<DialogOrDrawerTitle>{t("forms.translationForm.title")}</DialogOrDrawerTitle>
 
