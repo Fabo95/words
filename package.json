@@ -9,8 +9,5 @@
     "dev": "docker compose down && docker compose up -d && turbo dev",
     "build": "turbo build",
     "lint": "turbo lint"
-  },
-  "devDependencies": {
-    "turbo": "^2"
   }
 }
