@@ -9,7 +9,7 @@ on:
       - 'packages/**'
       - 'pnpm-lock.yaml'
       - 'turbo.json'
-      - '.github/workflows/docker-publish.yml'
+      - 'docker-publish-words.yml'
       - '.github/workflows/docker-build-template.yml'
   workflow_dispatch:
     inputs:
