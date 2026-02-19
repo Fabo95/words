@@ -55,6 +55,9 @@ COPY --from=pruner /app/out/full/ .
 # Copy turbo config
 COPY turbo.json turbo.json
 
+# Generate Prisma client for Linux Alpine
+RUN cd services/inngest && npx prisma generate
+
 # Build the application
 RUN turbo build --filter=@words/inngest
 
