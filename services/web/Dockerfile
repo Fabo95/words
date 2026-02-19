@@ -72,6 +72,7 @@ RUN turbo build --filter=@words/web
 # ============================================================================
 FROM node:22-alpine AS runner
 
+
 WORKDIR /app
 
 # Set production environment
