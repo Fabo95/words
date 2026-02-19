@@ -19,9 +19,9 @@ export const LOGGED_IN_URL_PATTERNS = buildPatterns(LOGGED_IN_PATHNAME)
 
 export const URL_PATTERNS = [...LOGGED_OUT_URL_PATTERNS, ...LOGGED_IN_URL_PATTERNS]
 
-export const getIsLoggedOutRoute = (url: string) => {
+export const getIsLoggedOutRoute = (pathname: string) => {
 	return LOGGED_OUT_URL_PATTERNS.some((pattern) => {
-		return pattern.test(url)
+		return pattern.test({ pathname })
 	})
 }
 

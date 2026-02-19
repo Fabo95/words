@@ -20,14 +20,12 @@ export default async function middleware(request: NextRequest) {
 }
 
 async function authMiddleware(request: NextRequest, response: NextResponse) {
-	const { pathname, origin } = request.nextUrl
+	const { pathname } = request.nextUrl
 
 	const accessToken = request.cookies.get(Cookies.AUTH_COOKIE)
 
-	const routeUrl = `${origin}${pathname}`
-
 	// Public routes that don't require authentication
-	const isLoggedOutRoute = getIsLoggedOutRoute(routeUrl)
+	const isLoggedOutRoute = getIsLoggedOutRoute(pathname)
 
 	if (!accessToken) {
 		if (isLoggedOutRoute) {
