@@ -11,9 +11,9 @@ ENV PATH="$PNPM_HOME:$PATH"
 RUN corepack enable && corepack prepare pnpm@latest --activate
 
 # ============================================================================
-# Dependencies stage - install all dependencies
+# Builder stage - install deps and build
 # ============================================================================
-FROM base AS deps
+FROM base AS builder
 
 WORKDIR /app
 
@@ -24,33 +24,15 @@ COPY pnpm-lock.yaml pnpm-workspace.yaml package.json ./
 COPY services/web/package.json ./services/web/
 COPY packages/biome-config/package.json ./packages/biome-config/
 
-# Install dependencies
+# Install all dependencies
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store \
     pnpm install --frozen-lockfile
-
-# ============================================================================
-# Builder stage - build the application
-# ============================================================================
-FROM base AS builder
-
-WORKDIR /app
-
-# Copy dependencies from deps stage
-COPY --from=deps /app/node_modules ./node_modules
-COPY --from=deps /app/services/web/node_modules ./services/web/node_modules
-COPY --from=deps /app/packages/biome-config/node_modules ./packages/biome-config/node_modules
-
-# Copy workspace configuration
-COPY pnpm-lock.yaml pnpm-workspace.yaml package.json ./
 
 # Copy workspace packages
 COPY packages/biome-config ./packages/biome-config
 
 # Copy web service source code
 COPY services/web ./services/web
-
-# Set working directory to the web service
-WORKDIR /app/services/web
 
 # Build arguments for environment variables needed at build time
 ARG NEXT_PUBLIC_API_BASE_URL
@@ -61,8 +43,8 @@ ENV NEXT_PUBLIC_DEPLOYMENT_URL=$NEXT_PUBLIC_DEPLOYMENT_URL
 # Disable Next.js telemetry during build
 ENV NEXT_TELEMETRY_DISABLED=1
 
-# Build the application
-RUN pnpm build
+# Build the application using pnpm filter
+RUN pnpm --filter @words/web build
 
 # ============================================================================
 # Runner stage - production image
