@@ -113,4 +113,4 @@ EXPOSE 8086
 ENV PORT=8086
 
 # Start the application
-CMD ["node", "./dist/src/index.js"]
+CMD ["node", "./dist/index.js"]
