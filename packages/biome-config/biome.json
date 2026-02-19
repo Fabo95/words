@@ -3,6 +3,9 @@
 	"files": {
 		"include": [
 			"src/**/*"
+		],
+		"ignore": [
+			"**/generated/**"
 		]
 	},
 	"formatter": {
