@@ -5,9 +5,7 @@ const nextConfig: NextConfig = {
     reactStrictMode: false,
     output: 'standalone',
     turbopack: {
-        resolveAlias: {
-            '@app/*': './src/*',
-        },
+        root: '../..',
     },
 };
 
