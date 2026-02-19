@@ -4,33 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="add design review.md">
+    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="add turbo repo">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pnpm-lock.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/pnpm-lock.yaml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/prisma/schema.prisma" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/prisma/schema.prisma" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/generated/user-db/browser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/generated/user-db/browser.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/generated/user-db/client.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/generated/user-db/client.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/generated/user-db/commonInputTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/generated/user-db/commonInputTypes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/generated/user-db/internal/class.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/generated/user-db/internal/class.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/generated/user-db/internal/prismaNamespace.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/generated/user-db/internal/prismaNamespace.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/generated/user-db/internal/prismaNamespaceBrowser.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/generated/user-db/internal/prismaNamespaceBrowser.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/generated/user-db/models.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/generated/user-db/models.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/generated/user-db/models/users.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/generated/user-db/models/users.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/services/model/translationsModelService.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/services/model/translationsModelService.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/setup/dependencies/factories/inngestFunctionsFactory.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/setup/dependencies/factories/inngestFunctionsFactory.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/setup/dependencies/factories/modelServicesFactory.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/setup/dependencies/factories/modelServicesFactory.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/setup/dependencies/setup.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/setup/dependencies/setup.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/setup/dependencies/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/setup/dependencies/types.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/utils/inngest/functions/cronFunctions/entity/crons.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/utils/inngest/functions/cronFunctions/entity/crons.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/utils/inngest/functions/cronFunctions/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/utils/inngest/functions/cronFunctions/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/inngest/src/utils/inngest/functions/index.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/inngest/src/utils/inngest/functions/index.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/messages/de-DE.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/messages/de-DE.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/messages/en-GB.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/messages/en-GB.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/home/page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/home/page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/generated/openApiTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/generated/openApiTypes.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/utils/reactQuery/queryOptions.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/utils/reactQuery/queryOptions.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -288,111 +263,8 @@
       <workItem from="1768686083435" duration="24834000" />
       <workItem from="1769284940233" duration="16174000" />
       <workItem from="1769809608107" duration="54226000" />
-      <workItem from="1771107369084" duration="1182000" />
-    </task>
-    <task id="LOCAL-00076" summary="moved form component top level">
-      <option name="closed" value="true" />
-      <created>1762628487402</created>
-      <option name="number" value="00076" />
-      <option name="presentableId" value="LOCAL-00076" />
-      <option name="project" value="LOCAL" />
-      <updated>1762628487402</updated>
-    </task>
-    <task id="LOCAL-00077" summary="add tfunction type">
-      <option name="closed" value="true" />
-      <created>1762629892678</created>
-      <option name="number" value="00077" />
-      <option name="presentableId" value="LOCAL-00077" />
-      <option name="project" value="LOCAL" />
-      <updated>1762629892678</updated>
-    </task>
-    <task id="LOCAL-00078" summary="fetch latest openAPi types">
-      <option name="closed" value="true" />
-      <created>1762701805248</created>
-      <option name="number" value="00078" />
-      <option name="presentableId" value="LOCAL-00078" />
-      <option name="project" value="LOCAL" />
-      <updated>1762701805248</updated>
-    </task>
-    <task id="LOCAL-00079" summary="add translation details dialog">
-      <option name="closed" value="true" />
-      <created>1762705589426</created>
-      <option name="number" value="00079" />
-      <option name="presentableId" value="LOCAL-00079" />
-      <option name="project" value="LOCAL" />
-      <updated>1762705589426</updated>
-    </task>
-    <task id="LOCAL-00080" summary="add translation details dialog">
-      <option name="closed" value="true" />
-      <created>1762705640057</created>
-      <option name="number" value="00080" />
-      <option name="presentableId" value="LOCAL-00080" />
-      <option name="project" value="LOCAL" />
-      <updated>1762705640057</updated>
-    </task>
-    <task id="LOCAL-00081" summary="add translation details dialog">
-      <option name="closed" value="true" />
-      <created>1762705774226</created>
-      <option name="number" value="00081" />
-      <option name="presentableId" value="LOCAL-00081" />
-      <option name="project" value="LOCAL" />
-      <updated>1762705774226</updated>
-    </task>
-    <task id="LOCAL-00082" summary="add translation details dialog">
-      <option name="closed" value="true" />
-      <created>1766345754949</created>
-      <option name="number" value="00082" />
-      <option name="presentableId" value="LOCAL-00082" />
-      <option name="project" value="LOCAL" />
-      <updated>1766345754949</updated>
-    </task>
-    <task id="LOCAL-00083" summary="add cefr to translation creation">
-      <option name="closed" value="true" />
-      <created>1766348383088</created>
-      <option name="number" value="00083" />
-      <option name="presentableId" value="LOCAL-00083" />
-      <option name="project" value="LOCAL" />
-      <updated>1766348383088</updated>
-    </task>
-    <task id="LOCAL-00084" summary="add pagination">
-      <option name="closed" value="true" />
-      <created>1766599916621</created>
-      <option name="number" value="00084" />
-      <option name="presentableId" value="LOCAL-00084" />
-      <option name="project" value="LOCAL" />
-      <updated>1766599916621</updated>
-    </task>
-    <task id="LOCAL-00085" summary="add pagination">
-      <option name="closed" value="true" />
-      <created>1767033004227</created>
-      <option name="number" value="00085" />
-      <option name="presentableId" value="LOCAL-00085" />
-      <option name="project" value="LOCAL" />
-      <updated>1767033004227</updated>
-    </task>
-    <task id="LOCAL-00086" summary="fix ui">
-      <option name="closed" value="true" />
-      <created>1767272685344</created>
-      <option name="number" value="00086" />
-      <option name="presentableId" value="LOCAL-00086" />
-      <option name="project" value="LOCAL" />
-      <updated>1767272685344</updated>
-    </task>
-    <task id="LOCAL-00087" summary="add loading ui">
-      <option name="closed" value="true" />
-      <created>1767380858894</created>
-      <option name="number" value="00087" />
-      <option name="presentableId" value="LOCAL-00087" />
-      <option name="project" value="LOCAL" />
-      <updated>1767380858894</updated>
-    </task>
-    <task id="LOCAL-00088" summary="add mobile view for collection">
-      <option name="closed" value="true" />
-      <created>1767561624518</created>
-      <option name="number" value="00088" />
-      <option name="presentableId" value="LOCAL-00088" />
-      <option name="project" value="LOCAL" />
-      <updated>1767561624518</updated>
+      <workItem from="1771107369084" duration="5879000" />
+      <workItem from="1771506192993" duration="5601000" />
     </task>
     <task id="LOCAL-00089" summary="add collection empty state">
       <option name="closed" value="true" />
@@ -682,7 +554,111 @@
       <option name="project" value="LOCAL" />
       <updated>1771024695277</updated>
     </task>
-    <option name="localTasksCounter" value="125" />
+    <task id="LOCAL-00125" summary="add design review.md">
+      <option name="closed" value="true" />
+      <created>1771108902674</created>
+      <option name="number" value="00125" />
+      <option name="presentableId" value="LOCAL-00125" />
+      <option name="project" value="LOCAL" />
+      <updated>1771108902674</updated>
+    </task>
+    <task id="LOCAL-00126" summary="add design review.md">
+      <option name="closed" value="true" />
+      <created>1771110729878</created>
+      <option name="number" value="00126" />
+      <option name="presentableId" value="LOCAL-00126" />
+      <option name="project" value="LOCAL" />
+      <updated>1771110729879</updated>
+    </task>
+    <task id="LOCAL-00127" summary="add github action to push docker file of web">
+      <option name="closed" value="true" />
+      <created>1771510215190</created>
+      <option name="number" value="00127" />
+      <option name="presentableId" value="LOCAL-00127" />
+      <option name="project" value="LOCAL" />
+      <updated>1771510215190</updated>
+    </task>
+    <task id="LOCAL-00128" summary="add github action to push docker file of web">
+      <option name="closed" value="true" />
+      <created>1771510773593</created>
+      <option name="number" value="00128" />
+      <option name="presentableId" value="LOCAL-00128" />
+      <option name="project" value="LOCAL" />
+      <updated>1771510773593</updated>
+    </task>
+    <task id="LOCAL-00129" summary="add github action to push docker file of web">
+      <option name="closed" value="true" />
+      <created>1771511216147</created>
+      <option name="number" value="00129" />
+      <option name="presentableId" value="LOCAL-00129" />
+      <option name="project" value="LOCAL" />
+      <updated>1771511216147</updated>
+    </task>
+    <task id="LOCAL-00130" summary="add github action to push docker file of web">
+      <option name="closed" value="true" />
+      <created>1771511499171</created>
+      <option name="number" value="00130" />
+      <option name="presentableId" value="LOCAL-00130" />
+      <option name="project" value="LOCAL" />
+      <updated>1771511499171</updated>
+    </task>
+    <task id="LOCAL-00131" summary="add github action to push docker file of web">
+      <option name="closed" value="true" />
+      <created>1771511628547</created>
+      <option name="number" value="00131" />
+      <option name="presentableId" value="LOCAL-00131" />
+      <option name="project" value="LOCAL" />
+      <updated>1771511628547</updated>
+    </task>
+    <task id="LOCAL-00132" summary="add github action to push docker file of web">
+      <option name="closed" value="true" />
+      <created>1771511985638</created>
+      <option name="number" value="00132" />
+      <option name="presentableId" value="LOCAL-00132" />
+      <option name="project" value="LOCAL" />
+      <updated>1771511985638</updated>
+    </task>
+    <task id="LOCAL-00133" summary="add github action to push docker file of web">
+      <option name="closed" value="true" />
+      <created>1771512289628</created>
+      <option name="number" value="00133" />
+      <option name="presentableId" value="LOCAL-00133" />
+      <option name="project" value="LOCAL" />
+      <updated>1771512289628</updated>
+    </task>
+    <task id="LOCAL-00134" summary="add github action to push docker file of web">
+      <option name="closed" value="true" />
+      <created>1771512612148</created>
+      <option name="number" value="00134" />
+      <option name="presentableId" value="LOCAL-00134" />
+      <option name="project" value="LOCAL" />
+      <updated>1771512612148</updated>
+    </task>
+    <task id="LOCAL-00135" summary="add github action to push docker file of web">
+      <option name="closed" value="true" />
+      <created>1771512797397</created>
+      <option name="number" value="00135" />
+      <option name="presentableId" value="LOCAL-00135" />
+      <option name="project" value="LOCAL" />
+      <updated>1771512797397</updated>
+    </task>
+    <task id="LOCAL-00136" summary="add turbo repo">
+      <option name="closed" value="true" />
+      <created>1771513047440</created>
+      <option name="number" value="00136" />
+      <option name="presentableId" value="LOCAL-00136" />
+      <option name="project" value="LOCAL" />
+      <updated>1771513047440</updated>
+    </task>
+    <task id="LOCAL-00137" summary="add turbo repo">
+      <option name="closed" value="true" />
+      <created>1771513149785</created>
+      <option name="number" value="00137" />
+      <option name="presentableId" value="LOCAL-00137" />
+      <option name="project" value="LOCAL" />
+      <updated>1771513149785</updated>
+    </task>
+    <option name="localTasksCounter" value="138" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -703,8 +679,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add mobile view for collection" />
-    <MESSAGE value="add collection empty state" />
     <MESSAGE value="add greeting to home page" />
     <MESSAGE value="add drawer.tsx components and refactor" />
     <MESSAGE value="add last added translation section" />
@@ -728,7 +702,9 @@
     <MESSAGE value="update schema.prisma" />
     <MESSAGE value="add daily goals" />
     <MESSAGE value="add design review.md" />
-    <option name="LAST_COMMIT_MESSAGE" value="add design review.md" />
+    <MESSAGE value="add github action to push docker file of web" />
+    <MESSAGE value="add turbo repo" />
+    <option name="LAST_COMMIT_MESSAGE" value="add turbo repo" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
