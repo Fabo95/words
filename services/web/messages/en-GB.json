@@ -319,6 +319,7 @@
             "statistics": {
               "title": "Statistics",
               "description": "An overview of your translations",
+              "empty": "Add translations to see your statistics",
               "totalTranslations": "Total translations",
               "wordsByPosTag": "Words by type"
             },

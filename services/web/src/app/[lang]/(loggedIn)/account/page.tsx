@@ -1,4 +1,9 @@
+import type { Metadata } from "next"
 import { AccountNameForm } from "@app/components/forms/accountNameForm/accountNameForm"
+
+export const metadata: Metadata = {
+	title: "Account",
+}
 import { AccountPasswordForm } from "@app/components/forms/accountPasswordForm/accountPasswordForm"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@app/components/ui/tabs"
 import { getTranslations } from "next-intl/server"

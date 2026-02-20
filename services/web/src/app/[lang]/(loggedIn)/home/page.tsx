@@ -1,4 +1,9 @@
+import type { Metadata } from "next"
 import { Greeting } from "@app/app/[lang]/(loggedIn)/home/_content/greeting"
+
+export const metadata: Metadata = {
+	title: "Home",
+}
 import { Suspense } from "react"
 import { GreetingFallback } from "@app/app/[lang]/(loggedIn)/home/_content/greetingFallback"
 import { getQueryClient } from "@app/utils/reactQuery/reactQueryHelpers"

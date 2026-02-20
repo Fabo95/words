@@ -17,10 +17,10 @@ export function TranslationsEmptyState() {
 		>
 			<AddTranslationTrigger
 				defaultValues={{ universalPosTagIds: [] }}
-				variant="outline"
-				className="gap-2"
+				variant="default"
+				className="gap-2 px-6"
 				title={t("pages.translations.empty.cta")}
-				size="sm"
+				size="default"
 			/>
 		</EmptyState>
 	)

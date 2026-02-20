@@ -1,4 +1,9 @@
+import type { Metadata } from "next"
 import { Translations } from "@app/app/[lang]/(loggedIn)/translations/_content/translations"
+
+export const metadata: Metadata = {
+	title: "Translations",
+}
 import { Locale } from "@app/utils/locale/localeTypes"
 import { getQueryClient } from "@app/utils/reactQuery/reactQueryHelpers"
 import { HydrationBoundary, dehydrate } from "@tanstack/react-query"

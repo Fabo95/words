@@ -46,10 +46,10 @@ export function Greeting() {
 	const dateText = formatDate(now, locale as Locale)
 
 	return (
-		<section className="mb-12 md:mb-20">
-			<p className="text-center text-xs font-medium text-foreground/40 mb-2">{dateText}</p>
+		<section className="mb-6">
+			<p className="text-center text-xs font-medium text-muted-foreground mb-1">{dateText}</p>
 
-			<h1 className="text-center text-2xl md:text-4xl font-semibold tracking-tight">
+			<h1 className="text-center text-xl md:text-3xl font-semibold tracking-tight">
 				{greeting}
 				{data?.name ? `, ${data.name}` : ""}
 			</h1>

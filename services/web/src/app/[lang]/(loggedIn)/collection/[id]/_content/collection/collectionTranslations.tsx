@@ -146,31 +146,33 @@ export const CollectionTranslations = () => {
 					<TranslationsMobile items={collectionTranslations} isLoading={isFetching} skeletonRowCount={pageSize} />
 				)}
 
-				<div className="flex items-center justify-between space-x-2 py-4">
-					<div>
-						<p className="text-[12px] text-foreground/40 font-normal">{pagination}</p>
-					</div>
+				{!isEmpty && (
+					<div className="flex items-center justify-between space-x-2 py-4">
+						<div>
+							<p className="text-[12px] text-foreground/40 font-normal">{pagination}</p>
+						</div>
 
-					<div className="flex gap-1">
-						<Button
-							variant="outline"
-							size="sm"
-							disabled={(query.page ?? 1) <= 1}
-							onClick={makeOnPaginationChange("prev")}
-						>
-							{t("pagination.previous")}
-						</Button>
+						<div className="flex gap-1">
+							<Button
+								variant="outline"
+								size="sm"
+								disabled={(query.page ?? 1) <= 1}
+								onClick={makeOnPaginationChange("prev")}
+							>
+								{t("pagination.previous")}
+							</Button>
 
-						<Button
-							variant="outline"
-							size="sm"
-							disabled={(translationsData?.meta?.total_items ?? 0) <= (translationsData?.meta?.page ?? 1) * pageSize}
-							onClick={makeOnPaginationChange("next")}
-						>
-							{t("pagination.next")}
-						</Button>
+							<Button
+								variant="outline"
+								size="sm"
+								disabled={(translationsData?.meta?.total_items ?? 0) <= (translationsData?.meta?.page ?? 1) * pageSize}
+								onClick={makeOnPaginationChange("next")}
+							>
+								{t("pagination.next")}
+							</Button>
+						</div>
 					</div>
-				</div>
+				)}
 			</div>
 		</>
 	)

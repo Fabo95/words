@@ -5,7 +5,7 @@ import { useTranslations } from "next-intl"
 import { formatRelativeTime } from "@app/utils/time"
 import { TranslationActions } from "@app/components/translationActions/translationActions"
 import { Badge } from "@app/components/ui/badge"
-import { cn } from "@app/utils/shadcn/shadcnHelpers"
+import { Card } from "@app/components/ui/card"
 import { getCollectionsQueryOptions, getLatestTranslationsQueryOptions } from "@app/utils/reactQuery/queryOptions"
 import { useSuspenseQuery } from "@tanstack/react-query"
 import { getCollectionPage } from "@app/utils/urls/urls"
@@ -30,84 +30,83 @@ export function LastAddedTranslation() {
 		return map
 	}, [collections])
 
-	return (
-		<section className="mb-12 md:mb-20">
-			<div className="mb-5 text-center">
-				<div className="flex justify-center mb-3">
-					<div className="flex h-10 w-10 md:h-12 md:w-12 items-center justify-center rounded-full bg-primary/10">
-						<History className="h-5 w-5 md:h-6 md:w-6 text-primary" />
+	if (!data || data.length === 0) {
+		return (
+			<section className="mb-8">
+				<Card className="p-4 gap-0">
+					<div className="flex items-center gap-2 mb-2">
+						<div className="flex h-7 w-7 items-center justify-center rounded-lg bg-primary/10">
+							<History className="h-3.5 w-3.5 text-primary" />
+						</div>
+						<h2 className="text-base font-semibold">{t("pages.home.lastAddedTranslations.title")}</h2>
 					</div>
+					<p className="text-sm text-muted-foreground">{t("pages.home.lastAddedTranslations.empty")}</p>
+				</Card>
+			</section>
+		)
+	}
+
+	return (
+		<section className="mb-8">
+			<Card className="p-4 gap-0">
+				<div className="flex items-center gap-2 mb-2">
+					<div className="flex h-7 w-7 items-center justify-center rounded-lg bg-primary/10">
+						<History className="h-3.5 w-3.5 text-primary" />
+					</div>
+					<h2 className="text-base font-semibold">{t("pages.home.lastAddedTranslations.title")}</h2>
 				</div>
-				<h2 className="text-lg md:text-xl font-semibold">{t("pages.home.lastAddedTranslations.title")}</h2>
-				<p className="mt-1 text-sm text-foreground/40">{t("pages.home.lastAddedTranslations.description")}</p>
-			</div>
+				<ul className="divide-y divide-border/50 -mx-4 border-t border-border/50">
+					{data.map((translation) => {
+						const relative = formatRelativeTime(translation.created_at, t)
 
-			{data?.length === 0 ? (
-				<div className="mx-auto max-w-md rounded-xl border bg-background/40 px-4 py-6 text-center">
-					<p className="text-sm text-foreground/60">{t("pages.home.lastAddedTranslations.empty")}</p>
-					<p className="mt-1 text-xs text-foreground/40">{t("pages.home.lastAddedTranslations.emptyHint")}</p>
-				</div>
-			) : (
-				<div className="mx-auto max-w-2xl overflow-hidden rounded-xl border bg-background/40">
-					<ul className="divide-y">
-						{data?.map((translation, index) => {
-							const relative = formatRelativeTime(translation.created_at, t)
+						const collectionId = translation.collection_id ?? undefined
+						const collectionName = typeof collectionId === "number" ? collectionNameById.get(collectionId) : undefined
 
-							const collectionId = translation.collection_id ?? undefined
-							const collectionName = typeof collectionId === "number" ? collectionNameById.get(collectionId) : undefined
-
-							return (
-								<li
-									key={translation.id}
-									className={cn(
-										"group px-4 py-3 transition-colors",
-										"hover:bg-muted/30",
-										"focus-within:bg-muted/30",
-										index === 0 && "rounded-t-xl",
-										index === data.length - 1 && "rounded-b-xl",
-									)}
-								>
-									<div className="flex items-start justify-between gap-3 md:gap-4">
-										<div className="flex flex-col gap-1.5 md:gap-2 justify-end min-w-0">
-											{collectionName && collectionId ? (
-												<div className="flex items-center gap-2">
-													<Badge
-														onClick={() => router.push(getCollectionPage(collectionId))}
-														variant="secondary"
-														className="max-w-32 md:max-w-55 truncate text-xs cursor-pointer"
-														title={collectionName}
-													>
-														{collectionName}
-													</Badge>
-												</div>
-											) : null}
-
-											<div className="flex flex-col gap-0.5 md:flex-row md:gap-2">
-												<p className="text-sm font-semibold leading-5 truncate">{translation.source_text}</p>
-
-												<p className="text-sm text-foreground/60 leading-5 truncate">{translation.target_text}</p>
+						return (
+							<li
+								key={translation.id}
+								className="group px-4 py-3 transition-colors hover:bg-muted/30 focus-within:bg-muted/30"
+							>
+								<div className="flex items-start justify-between gap-3 md:gap-4">
+									<div className="flex flex-col gap-1.5 md:gap-2 justify-end min-w-0">
+										{collectionName && collectionId ? (
+											<div className="flex items-center gap-2">
+												<Badge
+													onClick={() => router.push(getCollectionPage(collectionId))}
+													variant="secondary"
+													className="max-w-32 md:max-w-55 truncate text-xs cursor-pointer"
+													title={collectionName}
+												>
+													{collectionName}
+												</Badge>
 											</div>
-										</div>
+										) : null}
 
-										<div className="shrink-0 flex gap-1 flex-col items-end justify-between self-stretch">
-											<TranslationActions
-												translationId={translation.id}
-												sourceText={translation.source_text}
-												targetText={translation.target_text}
-												cefrLevelId={translation.cefr_level?.id}
-												collectionId={collectionId}
-												universalPosTagIds={translation.universal_pos_tags.map((universalPosTag) => universalPosTag.id)}
-											/>
+										<div className="flex flex-col gap-0.5 md:flex-row md:gap-2">
+											<p className="text-sm font-semibold leading-5 truncate">{translation.source_text}</p>
 
-											<p className="text-xs text-foreground/40 tabular-nums">{relative}</p>
+											<p className="text-sm text-foreground/60 leading-5 truncate">{translation.target_text}</p>
 										</div>
 									</div>
-								</li>
-							)
-						})}
-					</ul>
-				</div>
-			)}
+
+									<div className="shrink-0 flex gap-1 flex-col items-end justify-between self-stretch">
+										<TranslationActions
+											translationId={translation.id}
+											sourceText={translation.source_text}
+											targetText={translation.target_text}
+											cefrLevelId={translation.cefr_level?.id}
+											collectionId={collectionId}
+											universalPosTagIds={translation.universal_pos_tags.map((universalPosTag) => universalPosTag.id)}
+										/>
+
+										<p className="text-xs text-foreground/40 tabular-nums">{relative}</p>
+									</div>
+								</div>
+							</li>
+						)
+					})}
+				</ul>
+			</Card>
 		</section>
 	)
 }

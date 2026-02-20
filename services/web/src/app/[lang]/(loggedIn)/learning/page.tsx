@@ -1,4 +1,9 @@
+import type { Metadata } from "next"
 import { Learning } from "@app/app/[lang]/(loggedIn)/learning/_content/learning"
+
+export const metadata: Metadata = {
+	title: "Learn",
+}
 import { getQueryClient } from "@app/utils/reactQuery/reactQueryHelpers"
 import { HydrationBoundary, dehydrate } from "@tanstack/react-query"
 import { cookies } from "next/headers"

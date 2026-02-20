@@ -6,7 +6,7 @@ import { VariantProps, cva } from "class-variance-authority"
 import { Button } from "@app/components/ui/button"
 import { Input } from "@app/components/ui/input"
 import { Separator } from "@app/components/ui/separator"
-import { Sheet, SheetContent } from "@app/components/ui/sheet"
+import { Sheet, SheetContent, SheetDescription, SheetTitle } from "@app/components/ui/sheet"
 import { Skeleton } from "@app/components/ui/skeleton"
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@app/components/ui/tooltip"
 import { ViewVerticalIcon } from "@radix-ui/react-icons"
@@ -164,7 +164,9 @@ const Sidebar = React.forwardRef<
 						} as React.CSSProperties
 					}
 					side={side}
+					aria-describedby={undefined}
 				>
+					<SheetTitle className="sr-only">Navigation</SheetTitle>
 					<div className="flex h-full w-full flex-col">{children}</div>
 				</SheetContent>
 			</Sheet>

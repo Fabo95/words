@@ -322,6 +322,7 @@
             "statistics": {
               "title": "Statistik",
               "description": "Ein Überblick über deine Übersetzungen",
+              "empty": "Füge Übersetzungen hinzu, um deine Statistik zu sehen",
               "totalTranslations": "Übersetzungen insgesamt",
               "wordsByPosTag": "Wörter nach Wortart"
             },

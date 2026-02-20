@@ -1,18 +1,55 @@
 "use client"
 
 import { useState } from "react"
-import { useLocale, useTranslations } from "next-intl"
+import { useTranslations } from "next-intl"
 import { useSuspenseQuery } from "@tanstack/react-query"
 import { getDailyStatisticsQueryOptions } from "@app/utils/reactQuery/queryOptions"
-import { Area, AreaChart, ResponsiveContainer, Tooltip, XAxis, YAxis } from "recharts"
 import { TrendingUp } from "lucide-react"
+import { Card } from "@app/components/ui/card"
 import { Tabs, TabsList, TabsTrigger } from "@app/components/ui/tabs"
 
 type TimeRange = 7 | 30 | 90
 
+function ProgressRing({ percentage, size = 80 }: { percentage: number; size?: number }) {
+	const strokeWidth = 8
+	const radius = (size - strokeWidth) / 2
+	const circumference = radius * 2 * Math.PI
+	const offset = circumference - (percentage / 100) * circumference
+
+	return (
+		<div className="relative flex-shrink-0" style={{ width: size, height: size }}>
+			{/* biome-ignore lint/a11y/noSvgWithoutTitle: decorative element */}
+			<svg width={size} height={size} className="-rotate-90">
+				<circle
+					cx={size / 2}
+					cy={size / 2}
+					r={radius}
+					fill="none"
+					strokeWidth={strokeWidth}
+					style={{ stroke: "var(--border)" }}
+				/>
+				<circle
+					cx={size / 2}
+					cy={size / 2}
+					r={radius}
+					fill="none"
+					strokeWidth={strokeWidth}
+					strokeDasharray={circumference}
+					strokeDashoffset={offset}
+					strokeLinecap="round"
+					className="transition-all duration-500"
+					style={{ stroke: "var(--primary)" }}
+				/>
+			</svg>
+			<div className="absolute inset-0 flex items-center justify-center">
+				<span className="text-lg font-bold tabular-nums">{Math.round(percentage)}%</span>
+			</div>
+		</div>
+	)
+}
+
 export function ProgressChart() {
 	const t = useTranslations()
-	const locale = useLocale()
 	const [timeRange, setTimeRange] = useState<TimeRange>(7)
 
 	const {
@@ -24,110 +61,66 @@ export function ProgressChart() {
 
 	if (entries.length === 0) {
 		return (
-			<section className="mb-12">
-				<div className="mb-5 text-center">
-					<div className="flex justify-center mb-3">
-						<div className="flex h-10 w-10 md:h-12 md:w-12 items-center justify-center rounded-full bg-primary/10">
-							<TrendingUp className="h-5 w-5 md:h-6 md:w-6 text-primary" />
+			<section className="mb-8">
+				<Card className="p-4 gap-0">
+					<div className="flex items-center gap-2 mb-2">
+						<div className="flex h-7 w-7 items-center justify-center rounded-lg bg-primary/10">
+							<TrendingUp className="h-3.5 w-3.5 text-primary" />
 						</div>
+						<h2 className="text-base font-semibold">{t("pages.home.progressChart.title")}</h2>
 					</div>
-					<h2 className="text-lg md:text-xl font-semibold">{t("pages.home.progressChart.title")}</h2>
-					<p className="mt-1 text-sm text-foreground/40">{t("pages.home.progressChart.emptyDescription")}</p>
-				</div>
+					<p className="text-sm text-muted-foreground">{t("pages.home.progressChart.emptyDescription")}</p>
+				</Card>
 			</section>
 		)
 	}
 
-	const chartData = entries.map((entry) => ({
-		date: new Date(entry.date).toLocaleDateString(locale, {
-			month: "short",
-			day: "numeric",
-		}),
-		wordsAdded: entry.words_added,
-		goal: entry.daily_goal,
-		goalCompleted: entry.goal_completed,
-	}))
+	const goalCompletionPercentage = summary ? (summary.days_goal_completed / timeRange) * 100 : 0
 
 	return (
-		<section className="mb-12">
-			<div className="mb-5 text-center">
-				<div className="flex justify-center mb-3">
-					<div className="flex h-10 w-10 md:h-12 md:w-12 items-center justify-center rounded-full bg-primary/10">
-						<TrendingUp className="h-5 w-5 md:h-6 md:w-6 text-primary" />
+		<section className="mb-8">
+			<Card className="p-4 gap-0">
+				<div className="flex items-center gap-2 mb-3">
+					<div className="flex h-7 w-7 items-center justify-center rounded-lg bg-primary/10">
+						<TrendingUp className="h-3.5 w-3.5 text-primary" />
 					</div>
+					<h2 className="text-base font-semibold">{t("pages.home.progressChart.title")}</h2>
 				</div>
-				<h2 className="text-lg md:text-xl font-semibold">{t("pages.home.progressChart.title")}</h2>
-				<p className="mt-1 text-sm text-foreground/40">{t("pages.home.progressChart.description")}</p>
-			</div>
 
-			<div className="mx-auto max-w-2xl overflow-hidden rounded-xl border bg-background/40">
-				<div className="px-4 py-4">
-					<Tabs
-						value={timeRange.toString()}
-						onValueChange={(v) => setTimeRange(Number(v) as TimeRange)}
-						className="mb-4"
-					>
-						<TabsList className="grid w-full grid-cols-3">
-							<TabsTrigger value="7">{t("pages.home.progressChart.last7Days")}</TabsTrigger>
-							<TabsTrigger value="30">{t("pages.home.progressChart.last30Days")}</TabsTrigger>
-							<TabsTrigger value="90">{t("pages.home.progressChart.last90Days")}</TabsTrigger>
-						</TabsList>
-					</Tabs>
+				<Tabs
+					value={timeRange.toString()}
+					onValueChange={(v) => setTimeRange(Number(v) as TimeRange)}
+					className="mb-4"
+				>
+					<TabsList className="grid w-full grid-cols-3">
+						<TabsTrigger value="7">{t("pages.home.progressChart.last7Days")}</TabsTrigger>
+						<TabsTrigger value="30">{t("pages.home.progressChart.last30Days")}</TabsTrigger>
+						<TabsTrigger value="90">{t("pages.home.progressChart.last90Days")}</TabsTrigger>
+					</TabsList>
+				</Tabs>
 
-					<div className="h-48 w-full">
-						<ResponsiveContainer width="100%" height="100%">
-							<AreaChart data={chartData}>
-								<defs>
-									<linearGradient id="colorWords" x1="0" y1="0" x2="0" y2="1">
-										<stop offset="5%" stopColor="hsl(var(--primary))" stopOpacity={0.3} />
-										<stop offset="95%" stopColor="hsl(var(--primary))" stopOpacity={0} />
-									</linearGradient>
-								</defs>
-								<XAxis
-									dataKey="date"
-									tick={{ fontSize: 12 }}
-									tickLine={false}
-									axisLine={false}
-									interval="preserveStartEnd"
-								/>
-								<YAxis tick={{ fontSize: 12 }} tickLine={false} axisLine={false} width={30} />
-								<Tooltip
-									contentStyle={{
-										backgroundColor: "hsl(var(--background))",
-										border: "1px solid hsl(var(--border))",
-										borderRadius: "8px",
-									}}
-									formatter={(value) => [value, t("pages.home.progressChart.wordsAdded")]}
-								/>
-								<Area
-									type="monotone"
-									dataKey="wordsAdded"
-									stroke="hsl(var(--primary))"
-									fillOpacity={1}
-									fill="url(#colorWords)"
-								/>
-							</AreaChart>
-						</ResponsiveContainer>
-					</div>
-
-					{summary && (
-						<div className="grid grid-cols-3 gap-4 mt-4 pt-4 border-t">
-							<div className="text-center">
-								<p className="text-2xl font-bold tabular-nums">{summary.total_words_added}</p>
-								<p className="text-xs text-muted-foreground">{t("pages.home.progressChart.totalWords")}</p>
+				{summary && (
+					<div className="flex items-center gap-4">
+						<ProgressRing percentage={goalCompletionPercentage} size={80} />
+						<div className="flex-1 space-y-2">
+							<div className="flex justify-between items-baseline">
+								<span className="text-sm text-muted-foreground">{t("pages.home.progressChart.totalWords")}</span>
+								<span className="text-lg font-bold tabular-nums">{summary.total_words_added}</span>
 							</div>
-							<div className="text-center">
-								<p className="text-2xl font-bold tabular-nums">{summary.days_goal_completed}</p>
-								<p className="text-xs text-muted-foreground">{t("pages.home.progressChart.goalsCompleted")}</p>
+							<div className="flex justify-between items-baseline">
+								<span className="text-sm text-muted-foreground">{t("pages.home.progressChart.goalsCompleted")}</span>
+								<span className="text-lg font-bold tabular-nums">
+									{summary.days_goal_completed}/{timeRange}
+								</span>
 							</div>
-							<div className="text-center">
-								<p className="text-2xl font-bold tabular-nums">{summary.average_words_per_day.toFixed(1)}</p>
-								<p className="text-xs text-muted-foreground">{t("pages.home.progressChart.avgPerDay")}</p>
+							<div className="flex justify-between items-baseline">
+								<span className="text-sm text-muted-foreground">{t("pages.home.progressChart.avgPerDay")}</span>
+								<span className="text-lg font-bold tabular-nums">{summary.average_words_per_day.toFixed(1)}</span>
 							</div>
 						</div>
-					)}
-				</div>
-			</div>
+					</div>
+				)}
+			</Card>
 		</section>
 	)
 }

@@ -33,8 +33,8 @@ type AddTranslationTriggerProps = {
 	defaultValues?: Partial<TranslationFormState>
 	title?: string
 	className?: string
-	size: "sm" | "icon"
-	variant: "ghost" | "outline"
+	size: "sm" | "icon" | "default"
+	variant: "ghost" | "outline" | "default"
 }
 
 export const AddTranslationTrigger = ({

@@ -7,6 +7,7 @@ import { getQueryClient } from "@app/utils/reactQuery/reactQueryHelpers"
 import { HydrationBoundary, dehydrate } from "@tanstack/react-query"
 import { AddTranslationTrigger } from "@app/app/[lang]/(loggedIn)/_content/addTranslationTrigger"
 import { PageContent } from "@app/components/ui/pageContent"
+import { BottomNavigation } from "@app/components/ui/bottom-navigation"
 import { Skeleton } from "@app/components/ui/skeleton"
 import * as React from "react"
 import {
@@ -17,6 +18,7 @@ import {
 	getUserQueryOptions,
 } from "@app/utils/reactQuery/queryOptions"
 import { DailyGoalsIndicator } from "@app/app/[lang]/(loggedIn)/_content/dailyGoalsIndicator"
+import { MobileHeaderTitle } from "@app/components/ui/mobile-header-title"
 
 export default async function Layout({ children }: { children: ReactNode }) {
 	// --- STATE ---
@@ -67,24 +69,37 @@ export default async function Layout({ children }: { children: ReactNode }) {
 				<AppSidebar />
 
 				<SidebarInset>
-					<nav className="bg-black flex justify-between sticky top-0 p-3 md:p-5 border-b z-50 w-full">
-						<SidebarTrigger className="h-9 w-9 md:h-7 md:w-7" />
+					<header className="bg-background/95 backdrop-blur-lg supports-[backdrop-filter]:bg-background/80 flex items-center justify-between sticky top-0 px-4 py-3 md:p-5 border-b z-50 w-full relative">
+						<div className="flex items-center gap-2">
+							<SidebarTrigger className="h-9 w-9 md:h-7 md:w-7" />
+							<Suspense fallback={<Skeleton className="h-9 w-9 md:h-7 md:w-7 rounded-full hidden md:block" />}>
+								<div className="hidden md:block">
+									<DailyGoalsIndicator />
+								</div>
+							</Suspense>
+						</div>
 
-						<Suspense fallback={<Skeleton className="h-9 w-9 md:h-7 md:w-7" />}>
-							<DailyGoalsIndicator />
-						</Suspense>
+						<MobileHeaderTitle />
 
-						<Suspense fallback={<Skeleton className="h-9 w-9 md:h-7 md:w-7" />}>
-							<AddTranslationTrigger
-								variant="ghost"
-								className="h-9 w-9 md:h-7 md:w-7"
-								size="icon"
-								defaultValues={{ universalPosTagIds: [] }}
-							/>
-						</Suspense>
-					</nav>
+						<div className="flex items-center gap-2">
+							<Suspense fallback={<Skeleton className="h-9 w-9 md:h-7 md:w-7 rounded-full md:hidden" />}>
+								<div className="md:hidden">
+									<DailyGoalsIndicator />
+								</div>
+							</Suspense>
+							<Suspense fallback={<Skeleton className="h-9 w-9 md:h-7 md:w-7 rounded-full" />}>
+								<AddTranslationTrigger
+									variant="ghost"
+									className="h-9 w-9 md:h-7 md:w-7"
+									size="icon"
+									defaultValues={{ universalPosTagIds: [] }}
+								/>
+							</Suspense>
+						</div>
+					</header>
 
 					<PageContent>{children}</PageContent>
+					<BottomNavigation />
 				</SidebarInset>
 			</SidebarProvider>
 		</HydrationBoundary>
