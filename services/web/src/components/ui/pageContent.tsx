@@ -17,12 +17,9 @@ export const PageContent = ({ children, className }: PageContentProps) => {
 		<motion.div
 			key={pathname}
 			{...getMotion(0)}
-			className={cn(
-				"flex flex-1 flex-col justify-center pt-6 pb-24 px-4 md:pt-16 md:pb-16 md:px-5 items-center",
-				className,
-			)}
+			className={cn("flex flex-1 flex-col pt-6 pb-24 px-4 md:pt-16 md:pb-16 md:px-5 items-center", className)}
 		>
-			{children}
+			<div className="my-auto w-full flex flex-col items-center">{children}</div>
 		</motion.div>
 	)
 }
