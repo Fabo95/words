@@ -1,6 +1,6 @@
 "use client"
 
-import { ReactNode } from "react"
+import { ReactNode, useLayoutEffect } from "react"
 import { cn } from "@app/utils/shadcn/shadcnHelpers"
 import { getMotion } from "@app/utils/motion/helpers"
 import { motion } from "motion/react"
@@ -10,6 +10,14 @@ type PageContentProps = { children: ReactNode; className?: string }
 
 export const PageContent = ({ children, className }: PageContentProps) => {
 	const pathname = usePathname()
+
+	useLayoutEffect(() => {
+		if (typeof window === "undefined") {
+			return
+		}
+
+		window.scrollTo({ top: 0, behavior: "instant" })
+	}, [])
 
 	return (
 		<motion.div
