@@ -13,7 +13,7 @@ export default async function Layout({ children }: { children: ReactNode }) {
 
 	return (
 		<HydrationBoundary state={dehydrate(queryClient)}>
-			<PageContent>{children}</PageContent>
+			<PageContent className="min-h-svh">{children}</PageContent>
 		</HydrationBoundary>
 	)
 }
