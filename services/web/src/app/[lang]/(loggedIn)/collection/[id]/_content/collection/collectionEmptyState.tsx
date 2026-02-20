@@ -1,34 +1,29 @@
 "use client"
 
-import * as React from "react"
 import { FolderOpen } from "lucide-react"
-
-import { AddTranslationTrigger } from "@app/app/[lang]/(loggedIn)/_content/addTranslationTrigger"
 import { useTranslations } from "next-intl"
 import { useParams } from "next/navigation"
 
+import { AddTranslationTrigger } from "@app/app/[lang]/(loggedIn)/_content/addTranslationTrigger"
+import { EmptyState } from "@app/components/ui/empty-state"
+
 export function CollectionEmptyState() {
 	const t = useTranslations()
-
 	const params = useParams<{ id: string }>()
 
 	return (
-		<div className="mt-10 md:mt-20 mb-6 md:mb-10 mx-auto flex max-w-sm flex-col items-center text-center">
-			<div className="flex h-12 w-12 md:h-16 md:w-16 items-center justify-center rounded-full bg-primary/10 mb-4">
-				<FolderOpen className="h-6 w-6 md:h-8 md:w-8 text-primary" />
-			</div>
-			<h3 className="text-base font-semibold leading-tight mb-2">{t("pages.collection.empty.title")}</h3>
-			<p className=" text-sm text-muted-foreground">{t("pages.collection.empty.description")}</p>
-
-			<div className="mt-6 w-full">
-				<AddTranslationTrigger
-					defaultValues={{ collectionId: Number(params.id), universalPosTagIds: [] }}
-					variant="outline"
-					className="gap-2"
-					title={t("pages.collection.empty.cta")}
-					size="sm"
-				/>
-			</div>
-		</div>
+		<EmptyState
+			icon={FolderOpen}
+			title={t("pages.collection.empty.title")}
+			description={t("pages.collection.empty.description")}
+		>
+			<AddTranslationTrigger
+				defaultValues={{ collectionId: Number(params.id), universalPosTagIds: [] }}
+				variant="outline"
+				className="gap-2"
+				title={t("pages.collection.empty.cta")}
+				size="sm"
+			/>
+		</EmptyState>
 	)
 }

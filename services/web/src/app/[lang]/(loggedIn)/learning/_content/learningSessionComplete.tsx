@@ -42,8 +42,8 @@ export function LearningSessionComplete({ results, totalItems, onContinue, onFin
 		<div className="mx-auto w-full max-w-lg">
 			<div className="text-center mb-8">
 				<div className="flex justify-center mb-4">
-					<div className="flex h-14 w-14 items-center justify-center rounded-full bg-primary/10">
-						<Trophy className="h-6 w-6 text-primary" />
+					<div className="flex h-14 w-14 md:h-16 md:w-16 items-center justify-center rounded-full bg-primary/10">
+						<Trophy className="h-7 w-7 md:h-8 md:w-8 text-primary" />
 					</div>
 				</div>
 				<h1 className="text-lg md:text-xl font-semibold">{t("pages.learning.complete.title")}</h1>

@@ -1,31 +1,27 @@
 "use client"
 
-import * as React from "react"
+import { BookOpen } from "lucide-react"
+import { useTranslations } from "next-intl"
 
 import { AddTranslationTrigger } from "@app/app/[lang]/(loggedIn)/_content/addTranslationTrigger"
-import { useTranslations } from "next-intl"
-import { BookOpen } from "lucide-react"
+import { EmptyState } from "@app/components/ui/empty-state"
 
 export function TranslationsEmptyState() {
 	const t = useTranslations()
 
 	return (
-		<div className="mt-10 md:mt-20 mb-6 md:mb-10 mx-auto flex max-w-sm flex-col items-center text-center">
-			<div className="flex h-12 w-12 md:h-16 md:w-16 items-center justify-center rounded-full bg-primary/10 mb-4">
-				<BookOpen className="h-6 w-6 md:h-8 md:w-8 text-primary" />
-			</div>
-			<h3 className="text-base font-semibold leading-tight mb-2">{t("pages.translations.empty.title")}</h3>
-			<p className=" text-sm text-muted-foreground">{t("pages.translations.empty.description")}</p>
-
-			<div className="mt-6 w-full">
-				<AddTranslationTrigger
-					defaultValues={{ universalPosTagIds: [] }}
-					variant="outline"
-					className="gap-2"
-					title={t("pages.translations.empty.cta")}
-					size="sm"
-				/>
-			</div>
-		</div>
+		<EmptyState
+			icon={BookOpen}
+			title={t("pages.translations.empty.title")}
+			description={t("pages.translations.empty.description")}
+		>
+			<AddTranslationTrigger
+				defaultValues={{ universalPosTagIds: [] }}
+				variant="outline"
+				className="gap-2"
+				title={t("pages.translations.empty.cta")}
+				size="sm"
+			/>
+		</EmptyState>
 	)
 }

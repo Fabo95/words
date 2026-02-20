@@ -1,14 +1,12 @@
 "use client"
 
-import * as React from "react"
 import { Skeleton } from "@app/components/ui/skeleton"
 
 export function GreetingFallback() {
 	return (
-		<section className="flex flex-col items-center w-full mb-20">
-			<Skeleton className="mb-1 h-5 w-40" />
-
-			<Skeleton className="mb-1 h-7 w-48.75" />
+		<section className="flex flex-col items-center w-full mb-12 md:mb-20">
+			<Skeleton className="mb-2 h-4 w-40" />
+			<Skeleton className="h-8 md:h-10 w-56 md:w-72" />
 		</section>
 	)
 }

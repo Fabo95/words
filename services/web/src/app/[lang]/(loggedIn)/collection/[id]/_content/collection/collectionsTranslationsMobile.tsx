@@ -5,21 +5,59 @@ import { useTranslations } from "next-intl"
 
 import { Badge } from "@app/components/ui/badge"
 import { Card, CardContent, CardHeader } from "@app/components/ui/card"
+import { Skeleton } from "@app/components/ui/skeleton"
 
 import { CollectionTranslation } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collection/utils/collectionTableTypes"
 import { TranslationActions } from "@app/components/translationActions/translationActions"
 
 type CollectionsTranslationsMobileProps = {
 	items: CollectionTranslation[]
+	isLoading?: boolean
+	skeletonRowCount?: number
 }
 
-export function CollectionsTranslationsMobile({ items }: CollectionsTranslationsMobileProps) {
+export function CollectionsTranslationsMobile({
+	items,
+	isLoading,
+	skeletonRowCount = 5,
+}: CollectionsTranslationsMobileProps) {
 	const t = useTranslations()
+
+	if (isLoading) {
+		return (
+			<div className="space-y-3">
+				{Array.from({ length: skeletonRowCount }).map((_, index) => (
+					// biome-ignore lint/suspicious/noArrayIndexKey: skeleton cards are static
+					<Card key={`skeleton-${index}`} className="rounded-xl gap-3">
+						<CardHeader className="flex flex-row items-center justify-between gap-3 space-y-0">
+							<div className="flex flex-wrap items-center gap-2">
+								<Skeleton className="h-5 w-12" />
+								<Skeleton className="h-5 w-16" />
+							</div>
+							<Skeleton className="h-8 w-8 rounded" />
+						</CardHeader>
+						<CardContent className="pt-0">
+							<div className="grid grid-cols-2 gap-3">
+								<div>
+									<Skeleton className="h-3 w-10 mb-2" />
+									<Skeleton className="h-5 w-24" />
+								</div>
+								<div>
+									<Skeleton className="h-3 w-16 mb-2" />
+									<Skeleton className="h-5 w-28" />
+								</div>
+							</div>
+						</CardContent>
+					</Card>
+				))}
+			</div>
+		)
+	}
 
 	if (!items?.length) {
 		return (
 			<Card className="rounded-xl">
-				<CardContent className="py-8 text-sm text-muted-foreground">
+				<CardContent className="py-8 text-center text-sm text-muted-foreground">
 					{t("pages.collection.table.emptyState", { default: "No results." })}
 				</CardContent>
 			</Card>

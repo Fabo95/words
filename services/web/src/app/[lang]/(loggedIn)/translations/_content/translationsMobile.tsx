@@ -54,7 +54,7 @@ export function TranslationsMobile({ items, isLoading, skeletonRowCount = 5 }: T
 	if (!items?.length) {
 		return (
 			<Card className="rounded-xl">
-				<CardContent className="py-8 text-sm text-muted-foreground">
+				<CardContent className="py-8 text-center text-sm text-muted-foreground">
 					{t("pages.translations.table.emptyState")}
 				</CardContent>
 			</Card>

@@ -30,7 +30,6 @@ export function LastAddedTranslation() {
 		return map
 	}, [collections])
 
-	console.log("translation", data)
 	return (
 		<section className="mb-12 md:mb-20">
 			<div className="mb-5 text-center">

@@ -4,15 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="add turbo repo1">
+    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="fix middleware.ts">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/components/ui/badge.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/badge.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/components/ui/button.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/button.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/components/ui/card.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/card.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/components/ui/pageContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/pageContent.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/components/ui/scroll-area.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/scroll-area.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/components/ui/spinner.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/spinner.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/components/ui/switch.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/switch.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collection/collectionEmptyState.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collection/collectionEmptyState.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/components/ui/form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/form.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,50 +61,52 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
-    &quot;last_opened_file_path&quot;: &quot;/Users/fabianhinz/repositories/words&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
-    &quot;npm.eslint-plugin-words-app-styleguide &gt; build.executor&quot;: &quot;Run&quot;,
-    &quot;npm.eslint-plugin-words-app-styleguide &gt; build:clean.executor&quot;: &quot;Run&quot;,
-    &quot;npm.inngest &gt; dev.executor&quot;: &quot;Run&quot;,
-    &quot;npm.inngest &gt; generate-prisma-schema.executor&quot;: &quot;Run&quot;,
-    &quot;npm.inngest &gt; prisma:generate.executor&quot;: &quot;Run&quot;,
-    &quot;npm.inngest &gt; prisma:pull.executor&quot;: &quot;Run&quot;,
-    &quot;npm.packages:force-node-modules-sync.executor&quot;: &quot;Run&quot;,
-    &quot;npm.service &gt; dev.executor&quot;: &quot;Run&quot;,
-    &quot;npm.service &gt; generate_open_api_types.executor&quot;: &quot;Run&quot;,
-    &quot;npm.user-api &gt; db-generate.executor&quot;: &quot;Run&quot;,
-    &quot;npm.web &gt; build.executor&quot;: &quot;Run&quot;,
-    &quot;npm.web &gt; dev.executor&quot;: &quot;Run&quot;,
-    &quot;npm.web &gt; open_api:generate.executor&quot;: &quot;Run&quot;,
-    &quot;npm.words &gt; dev.executor&quot;: &quot;Run&quot;,
-    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/fabianhinz/.npm-global/lib/node_modules/prettier&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;Settings.Biome&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;/Users/fabianhinz/repositories/words/services/web/node_modules/typescript/lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.MCP Project settings loaded": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
+    "git-widget-placeholder": "main",
+    "javascript.preferred.runtime.type.id": "node",
+    "last_opened_file_path": "/Users/fabianhinz/repositories/words",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.standard": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.standard": "",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "npm.build.executor": "Run",
+    "npm.dev.executor": "Run",
+    "npm.eslint-plugin-words-app-styleguide > build.executor": "Run",
+    "npm.eslint-plugin-words-app-styleguide > build:clean.executor": "Run",
+    "npm.inngest > build.executor": "Run",
+    "npm.inngest > dev.executor": "Run",
+    "npm.inngest > generate-prisma-schema.executor": "Run",
+    "npm.inngest > prisma:generate.executor": "Run",
+    "npm.inngest > prisma:pull.executor": "Run",
+    "npm.packages:force-node-modules-sync.executor": "Run",
+    "npm.service > dev.executor": "Run",
+    "npm.service > generate_open_api_types.executor": "Run",
+    "npm.user-api > db-generate.executor": "Run",
+    "npm.web > build.executor": "Run",
+    "npm.web > dev.executor": "Run",
+    "npm.web > open_api:generate.executor": "Run",
+    "npm.words > dev.executor": "Run",
+    "prettierjs.PrettierConfiguration.Package": "/Users/fabianhinz/.npm-global/lib/node_modules/prettier",
+    "settings.editor.selected.configurable": "Settings.Biome",
+    "ts.external.directory.path": "/Users/fabianhinz/repositories/words/services/inngest/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;postgresql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "postgresql"
     ]
   }
-}</component>
+}]]></component>
   <component name="RecapSpentCounter">
     <option name="endsOfQuotaMs" value="1767430816454" />
     <option name="spentUsd" value="0.17932963" />
@@ -133,6 +131,16 @@
     </key>
   </component>
   <component name="RunManager" selected="npm.dev">
+    <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="build" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <configuration name="dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -143,21 +151,11 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="inngest &gt; prisma:generate" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+    <configuration name="inngest &gt; build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/services/inngest/package.json" />
       <command value="run" />
       <scripts>
-        <script value="prisma:generate" />
-      </scripts>
-      <node-interpreter value="project" />
-      <envs />
-      <method v="2" />
-    </configuration>
-    <configuration name="inngest &gt; prisma:pull" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/services/inngest/package.json" />
-      <command value="run" />
-      <scripts>
-        <script value="prisma:pull" />
+        <script value="build" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -173,11 +171,11 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="web &gt; open_api:generate" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+    <configuration name="web &gt; dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/services/web/package.json" />
       <command value="run" />
       <scripts>
-        <script value="open_api:generate" />
+        <script value="dev" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -186,10 +184,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="npm.dev" />
-        <item itemvalue="npm.web &gt; open_api:generate" />
-        <item itemvalue="npm.inngest &gt; prisma:generate" />
-        <item itemvalue="npm.inngest &gt; prisma:pull" />
+        <item itemvalue="npm.build" />
         <item itemvalue="npm.web &gt; build" />
+        <item itemvalue="npm.inngest &gt; build" />
+        <item itemvalue="npm.web &gt; dev" />
       </list>
     </recent_temporary>
   </component>
@@ -271,199 +269,7 @@
       <workItem from="1769284940233" duration="16174000" />
       <workItem from="1769809608107" duration="54226000" />
       <workItem from="1771107369084" duration="5879000" />
-      <workItem from="1771506192993" duration="5954000" />
-    </task>
-    <task id="LOCAL-00092" summary="add last added translation section">
-      <option name="closed" value="true" />
-      <created>1768158525613</created>
-      <option name="number" value="00092" />
-      <option name="presentableId" value="LOCAL-00092" />
-      <option name="project" value="LOCAL" />
-      <updated>1768158525613</updated>
-    </task>
-    <task id="LOCAL-00093" summary="adjust query invalidation">
-      <option name="closed" value="true" />
-      <created>1768695848803</created>
-      <option name="number" value="00093" />
-      <option name="presentableId" value="LOCAL-00093" />
-      <option name="project" value="LOCAL" />
-      <updated>1768695848803</updated>
-    </task>
-    <task id="LOCAL-00094" summary="adjust query invalidation">
-      <option name="closed" value="true" />
-      <created>1768763964812</created>
-      <option name="number" value="00094" />
-      <option name="presentableId" value="LOCAL-00094" />
-      <option name="project" value="LOCAL" />
-      <updated>1768763964812</updated>
-    </task>
-    <task id="LOCAL-00095" summary="adjust query invalidation">
-      <option name="closed" value="true" />
-      <created>1768763968497</created>
-      <option name="number" value="00095" />
-      <option name="presentableId" value="LOCAL-00095" />
-      <option name="project" value="LOCAL" />
-      <updated>1768763968498</updated>
-    </task>
-    <task id="LOCAL-00096" summary="add translation enrichment status">
-      <option name="closed" value="true" />
-      <created>1768768183637</created>
-      <option name="number" value="00096" />
-      <option name="presentableId" value="LOCAL-00096" />
-      <option name="project" value="LOCAL" />
-      <updated>1768768183637</updated>
-    </task>
-    <task id="LOCAL-00097" summary="add translation enrichment status">
-      <option name="closed" value="true" />
-      <created>1769288795510</created>
-      <option name="number" value="00097" />
-      <option name="presentableId" value="LOCAL-00097" />
-      <option name="project" value="LOCAL" />
-      <updated>1769288795510</updated>
-    </task>
-    <task id="LOCAL-00098" summary="add translation enrichment status">
-      <option name="closed" value="true" />
-      <created>1769295461149</created>
-      <option name="number" value="00098" />
-      <option name="presentableId" value="LOCAL-00098" />
-      <option name="project" value="LOCAL" />
-      <updated>1769295461149</updated>
-    </task>
-    <task id="LOCAL-00099" summary="add translations page">
-      <option name="closed" value="true" />
-      <created>1769374370880</created>
-      <option name="number" value="00099" />
-      <option name="presentableId" value="LOCAL-00099" />
-      <option name="project" value="LOCAL" />
-      <updated>1769374370880</updated>
-    </task>
-    <task id="LOCAL-00100" summary="add loading for transaltionsMobile">
-      <option name="closed" value="true" />
-      <created>1769374616905</created>
-      <option name="number" value="00100" />
-      <option name="presentableId" value="LOCAL-00100" />
-      <option name="project" value="LOCAL" />
-      <updated>1769374616905</updated>
-    </task>
-    <task id="LOCAL-00101" summary="add loading to translationsMobile">
-      <option name="closed" value="true" />
-      <created>1769375374999</created>
-      <option name="number" value="00101" />
-      <option name="presentableId" value="LOCAL-00101" />
-      <option name="project" value="LOCAL" />
-      <updated>1769375374999</updated>
-    </task>
-    <task id="LOCAL-00102" summary="add learn page">
-      <option name="closed" value="true" />
-      <created>1769950753643</created>
-      <option name="number" value="00102" />
-      <option name="presentableId" value="LOCAL-00102" />
-      <option name="project" value="LOCAL" />
-      <updated>1769950753643</updated>
-    </task>
-    <task id="LOCAL-00103" summary="add learn page">
-      <option name="closed" value="true" />
-      <created>1769951188076</created>
-      <option name="number" value="00103" />
-      <option name="presentableId" value="LOCAL-00103" />
-      <option name="project" value="LOCAL" />
-      <updated>1769951188076</updated>
-    </task>
-    <task id="LOCAL-00104" summary="organize helpers">
-      <option name="closed" value="true" />
-      <created>1769951395566</created>
-      <option name="number" value="00104" />
-      <option name="presentableId" value="LOCAL-00104" />
-      <option name="project" value="LOCAL" />
-      <updated>1769951395566</updated>
-    </task>
-    <task id="LOCAL-00105" summary="add icons">
-      <option name="closed" value="true" />
-      <created>1769984669346</created>
-      <option name="number" value="00105" />
-      <option name="presentableId" value="LOCAL-00105" />
-      <option name="project" value="LOCAL" />
-      <updated>1769984669346</updated>
-    </task>
-    <task id="LOCAL-00106" summary="add reveal animation">
-      <option name="closed" value="true" />
-      <created>1769985858806</created>
-      <option name="number" value="00106" />
-      <option name="presentableId" value="LOCAL-00106" />
-      <option name="project" value="LOCAL" />
-      <updated>1769985858806</updated>
-    </task>
-    <task id="LOCAL-00107" summary="change animation">
-      <option name="closed" value="true" />
-      <created>1770245411559</created>
-      <option name="number" value="00107" />
-      <option name="presentableId" value="LOCAL-00107" />
-      <option name="project" value="LOCAL" />
-      <updated>1770245411559</updated>
-    </task>
-    <task id="LOCAL-00108" summary="add keyboard support in learn page">
-      <option name="closed" value="true" />
-      <created>1770331091737</created>
-      <option name="number" value="00108" />
-      <option name="presentableId" value="LOCAL-00108" />
-      <option name="project" value="LOCAL" />
-      <updated>1770331091737</updated>
-    </task>
-    <task id="LOCAL-00109" summary="add keyboard support in learn page">
-      <option name="closed" value="true" />
-      <created>1770376190007</created>
-      <option name="number" value="00109" />
-      <option name="presentableId" value="LOCAL-00109" />
-      <option name="project" value="LOCAL" />
-      <updated>1770376190007</updated>
-    </task>
-    <task id="LOCAL-00110" summary="add reverse mode">
-      <option name="closed" value="true" />
-      <created>1770376949233</created>
-      <option name="number" value="00110" />
-      <option name="presentableId" value="LOCAL-00110" />
-      <option name="project" value="LOCAL" />
-      <updated>1770376949233</updated>
-    </task>
-    <task id="LOCAL-00111" summary="add reverse mode">
-      <option name="closed" value="true" />
-      <created>1770415472085</created>
-      <option name="number" value="00111" />
-      <option name="presentableId" value="LOCAL-00111" />
-      <option name="project" value="LOCAL" />
-      <updated>1770415472085</updated>
-    </task>
-    <task id="LOCAL-00112" summary="add next review data + improve learning page">
-      <option name="closed" value="true" />
-      <created>1770419883821</created>
-      <option name="number" value="00112" />
-      <option name="presentableId" value="LOCAL-00112" />
-      <option name="project" value="LOCAL" />
-      <updated>1770419883821</updated>
-    </task>
-    <task id="LOCAL-00113" summary="add grade">
-      <option name="closed" value="true" />
-      <created>1770487989795</created>
-      <option name="number" value="00113" />
-      <option name="presentableId" value="LOCAL-00113" />
-      <option name="project" value="LOCAL" />
-      <updated>1770487989795</updated>
-    </task>
-    <task id="LOCAL-00114" summary="add grade summary">
-      <option name="closed" value="true" />
-      <created>1770489054080</created>
-      <option name="number" value="00114" />
-      <option name="presentableId" value="LOCAL-00114" />
-      <option name="project" value="LOCAL" />
-      <updated>1770489054080</updated>
-    </task>
-    <task id="LOCAL-00115" summary="add learn collection feature">
-      <option name="closed" value="true" />
-      <created>1770493465760</created>
-      <option name="number" value="00115" />
-      <option name="presentableId" value="LOCAL-00115" />
-      <option name="project" value="LOCAL" />
-      <updated>1770493465760</updated>
+      <workItem from="1771506192993" duration="32066000" />
     </task>
     <task id="LOCAL-00116" summary="add learn collection feature">
       <option name="closed" value="true" />
@@ -665,7 +471,199 @@
       <option name="project" value="LOCAL" />
       <updated>1771513380805</updated>
     </task>
-    <option name="localTasksCounter" value="141" />
+    <task id="LOCAL-00141" summary="remove deprecated cn">
+      <option name="closed" value="true" />
+      <created>1771513604645</created>
+      <option name="number" value="00141" />
+      <option name="presentableId" value="LOCAL-00141" />
+      <option name="project" value="LOCAL" />
+      <updated>1771513604645</updated>
+    </task>
+    <task id="LOCAL-00142" summary="remove deprecated cn">
+      <option name="closed" value="true" />
+      <created>1771513742392</created>
+      <option name="number" value="00142" />
+      <option name="presentableId" value="LOCAL-00142" />
+      <option name="project" value="LOCAL" />
+      <updated>1771513742392</updated>
+    </task>
+    <task id="LOCAL-00143" summary="remove deprecated cn">
+      <option name="closed" value="true" />
+      <created>1771513894828</created>
+      <option name="number" value="00143" />
+      <option name="presentableId" value="LOCAL-00143" />
+      <option name="project" value="LOCAL" />
+      <updated>1771513894829</updated>
+    </task>
+    <task id="LOCAL-00144" summary="remove deprecated cn">
+      <option name="closed" value="true" />
+      <created>1771514000582</created>
+      <option name="number" value="00144" />
+      <option name="presentableId" value="LOCAL-00144" />
+      <option name="project" value="LOCAL" />
+      <updated>1771514000582</updated>
+    </task>
+    <task id="LOCAL-00145" summary="remove turbo dev dependency">
+      <option name="closed" value="true" />
+      <created>1771514237573</created>
+      <option name="number" value="00145" />
+      <option name="presentableId" value="LOCAL-00145" />
+      <option name="project" value="LOCAL" />
+      <updated>1771514237573</updated>
+    </task>
+    <task id="LOCAL-00146" summary="remove turbo dev dependency">
+      <option name="closed" value="true" />
+      <created>1771514377250</created>
+      <option name="number" value="00146" />
+      <option name="presentableId" value="LOCAL-00146" />
+      <option name="project" value="LOCAL" />
+      <updated>1771514377250</updated>
+    </task>
+    <task id="LOCAL-00147" summary="remove turbo dev dependency">
+      <option name="closed" value="true" />
+      <created>1771514417634</created>
+      <option name="number" value="00147" />
+      <option name="presentableId" value="LOCAL-00147" />
+      <option name="project" value="LOCAL" />
+      <updated>1771514417634</updated>
+    </task>
+    <task id="LOCAL-00148" summary="remove turbo dev dependency">
+      <option name="closed" value="true" />
+      <created>1771514898183</created>
+      <option name="number" value="00148" />
+      <option name="presentableId" value="LOCAL-00148" />
+      <option name="project" value="LOCAL" />
+      <updated>1771514898183</updated>
+    </task>
+    <task id="LOCAL-00149" summary="remove turbo dev dependency">
+      <option name="closed" value="true" />
+      <created>1771515149813</created>
+      <option name="number" value="00149" />
+      <option name="presentableId" value="LOCAL-00149" />
+      <option name="project" value="LOCAL" />
+      <updated>1771515149814</updated>
+    </task>
+    <task id="LOCAL-00150" summary="remove turbo dev dependency">
+      <option name="closed" value="true" />
+      <created>1771515470338</created>
+      <option name="number" value="00150" />
+      <option name="presentableId" value="LOCAL-00150" />
+      <option name="project" value="LOCAL" />
+      <updated>1771515470338</updated>
+    </task>
+    <task id="LOCAL-00151" summary="build inngest service to dockerhub">
+      <option name="closed" value="true" />
+      <created>1771516244118</created>
+      <option name="number" value="00151" />
+      <option name="presentableId" value="LOCAL-00151" />
+      <option name="project" value="LOCAL" />
+      <updated>1771516244118</updated>
+    </task>
+    <task id="LOCAL-00152" summary="build inngest service to dockerhub">
+      <option name="closed" value="true" />
+      <created>1771516284920</created>
+      <option name="number" value="00152" />
+      <option name="presentableId" value="LOCAL-00152" />
+      <option name="project" value="LOCAL" />
+      <updated>1771516284920</updated>
+    </task>
+    <task id="LOCAL-00153" summary="add biome">
+      <option name="closed" value="true" />
+      <created>1771516803967</created>
+      <option name="number" value="00153" />
+      <option name="presentableId" value="LOCAL-00153" />
+      <option name="project" value="LOCAL" />
+      <updated>1771516803967</updated>
+    </task>
+    <task id="LOCAL-00154" summary="add biome">
+      <option name="closed" value="true" />
+      <created>1771517123907</created>
+      <option name="number" value="00154" />
+      <option name="presentableId" value="LOCAL-00154" />
+      <option name="project" value="LOCAL" />
+      <updated>1771517123907</updated>
+    </task>
+    <task id="LOCAL-00155" summary="add biome">
+      <option name="closed" value="true" />
+      <created>1771517372139</created>
+      <option name="number" value="00155" />
+      <option name="presentableId" value="LOCAL-00155" />
+      <option name="project" value="LOCAL" />
+      <updated>1771517372139</updated>
+    </task>
+    <task id="LOCAL-00156" summary="install ts in inngest service">
+      <option name="closed" value="true" />
+      <created>1771517550301</created>
+      <option name="number" value="00156" />
+      <option name="presentableId" value="LOCAL-00156" />
+      <option name="project" value="LOCAL" />
+      <updated>1771517550301</updated>
+    </task>
+    <task id="LOCAL-00157" summary="fix dockerfile for inngest">
+      <option name="closed" value="true" />
+      <created>1771524035953</created>
+      <option name="number" value="00157" />
+      <option name="presentableId" value="LOCAL-00157" />
+      <option name="project" value="LOCAL" />
+      <updated>1771524035953</updated>
+    </task>
+    <task id="LOCAL-00158" summary="run prisma generate">
+      <option name="closed" value="true" />
+      <created>1771534284955</created>
+      <option name="number" value="00158" />
+      <option name="presentableId" value="LOCAL-00158" />
+      <option name="project" value="LOCAL" />
+      <updated>1771534284955</updated>
+    </task>
+    <task id="LOCAL-00159" summary="run prisma generate">
+      <option name="closed" value="true" />
+      <created>1771535519727</created>
+      <option name="number" value="00159" />
+      <option name="presentableId" value="LOCAL-00159" />
+      <option name="project" value="LOCAL" />
+      <updated>1771535519727</updated>
+    </task>
+    <task id="LOCAL-00160" summary="add health route">
+      <option name="closed" value="true" />
+      <created>1771537094334</created>
+      <option name="number" value="00160" />
+      <option name="presentableId" value="LOCAL-00160" />
+      <option name="project" value="LOCAL" />
+      <updated>1771537094334</updated>
+    </task>
+    <task id="LOCAL-00161" summary="add health route">
+      <option name="closed" value="true" />
+      <created>1771539514295</created>
+      <option name="number" value="00161" />
+      <option name="presentableId" value="LOCAL-00161" />
+      <option name="project" value="LOCAL" />
+      <updated>1771539514295</updated>
+    </task>
+    <task id="LOCAL-00162" summary="fix middleware.ts">
+      <option name="closed" value="true" />
+      <created>1771539563338</created>
+      <option name="number" value="00162" />
+      <option name="presentableId" value="LOCAL-00162" />
+      <option name="project" value="LOCAL" />
+      <updated>1771539563338</updated>
+    </task>
+    <task id="LOCAL-00163" summary="fix middleware.ts">
+      <option name="closed" value="true" />
+      <created>1771539733928</created>
+      <option name="number" value="00163" />
+      <option name="presentableId" value="LOCAL-00163" />
+      <option name="project" value="LOCAL" />
+      <updated>1771539733928</updated>
+    </task>
+    <task id="LOCAL-00164" summary="fix middleware.ts">
+      <option name="closed" value="true" />
+      <created>1771588768571</created>
+      <option name="number" value="00164" />
+      <option name="presentableId" value="LOCAL-00164" />
+      <option name="project" value="LOCAL" />
+      <updated>1771588768571</updated>
+    </task>
+    <option name="localTasksCounter" value="165" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -686,15 +684,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add drawer.tsx components and refactor" />
-    <MESSAGE value="add last added translation section" />
-    <MESSAGE value="adjust query invalidation" />
-    <MESSAGE value="add translation enrichment status" />
-    <MESSAGE value="add translations page" />
-    <MESSAGE value="add loading for transaltionsMobile" />
-    <MESSAGE value="add loading to translationsMobile" />
-    <MESSAGE value="add learn page" />
-    <MESSAGE value="organize helpers" />
     <MESSAGE value="add icons" />
     <MESSAGE value="add reveal animation" />
     <MESSAGE value="change animation" />
@@ -711,7 +700,16 @@
     <MESSAGE value="add github action to push docker file of web" />
     <MESSAGE value="add turbo repo" />
     <MESSAGE value="add turbo repo1" />
-    <option name="LAST_COMMIT_MESSAGE" value="add turbo repo1" />
+    <MESSAGE value="remove deprecated cn" />
+    <MESSAGE value="remove turbo dev dependency" />
+    <MESSAGE value="build inngest service to dockerhub" />
+    <MESSAGE value="add biome" />
+    <MESSAGE value="install ts in inngest service" />
+    <MESSAGE value="fix dockerfile for inngest" />
+    <MESSAGE value="run prisma generate" />
+    <MESSAGE value="add health route" />
+    <MESSAGE value="fix middleware.ts" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix middleware.ts" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
