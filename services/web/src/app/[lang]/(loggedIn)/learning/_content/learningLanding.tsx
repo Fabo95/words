@@ -114,7 +114,7 @@ export function LearningLanding({
 									</div>
 									<div>
 										<p
-											className={`text-xl md:text-2xl font-semibold tabular-nums ${
+											className={`text-lg md:text-xl font-semibold tabular-nums ${
 												item.highlight ? "text-foreground" : "text-foreground/70"
 											}`}
 										>

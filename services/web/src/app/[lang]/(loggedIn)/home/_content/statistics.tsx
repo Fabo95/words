@@ -19,9 +19,9 @@ export function Statistics() {
 				<Card className="p-4 gap-0">
 					<div className="flex items-center gap-2 mb-2">
 						<div className="flex h-7 w-7 items-center justify-center rounded-lg bg-primary/10">
-							<BarChart3 className="h-3.5 w-3.5 text-primary" />
+							<BarChart3 className="h-4 w-4 text-primary" />
 						</div>
-						<h2 className="text-base font-semibold">{t("pages.home.statistics.title")}</h2>
+						<h2 className="text-sm font-semibold">{t("pages.home.statistics.title")}</h2>
 					</div>
 					<p className="text-sm text-muted-foreground">{t("pages.home.statistics.empty")}</p>
 				</Card>
@@ -34,9 +34,9 @@ export function Statistics() {
 			<Card className="p-4 gap-0">
 				<div className="flex items-center gap-2 mb-2">
 					<div className="flex h-7 w-7 items-center justify-center rounded-lg bg-primary/10">
-						<BarChart3 className="h-3.5 w-3.5 text-primary" />
+						<BarChart3 className="h-4 w-4 text-primary" />
 					</div>
-					<h2 className="text-base font-semibold">{t("pages.home.statistics.title")}</h2>
+					<h2 className="text-sm font-semibold">{t("pages.home.statistics.title")}</h2>
 				</div>
 
 				<div className="flex items-center justify-between pb-2 mb-2 border-b border-border/50">
@@ -44,7 +44,7 @@ export function Statistics() {
 						<BookOpen className="h-4 w-4 text-muted-foreground" />
 						<span className="text-sm text-muted-foreground">{t("pages.home.statistics.totalTranslations")}</span>
 					</div>
-					<span className="text-lg font-semibold tabular-nums">{data.total_translations}</span>
+					<span className="text-base font-semibold tabular-nums">{data.total_translations}</span>
 				</div>
 
 				{data.words_per_pos_tag && data.words_per_pos_tag.length > 0 && (

@@ -263,6 +263,7 @@
 				"title": "Add a collection",
 				"description": "Specify the name of the collection.",
 				"button": "Add",
+                "cancel": "Cancel",
 				"label": "Name",
 				"placeholder": "Name of the collection",
 				"nameError": "Please enter at least one character.",

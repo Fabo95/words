@@ -49,7 +49,7 @@ export function Greeting() {
 		<section className="mb-6">
 			<p className="text-center text-xs font-medium text-muted-foreground mb-1">{dateText}</p>
 
-			<h1 className="text-center text-xl md:text-3xl font-semibold tracking-tight">
+			<h1 className="text-center text-lg md:text-xl font-semibold tracking-tight">
 				{greeting}
 				{data?.name ? `, ${data.name}` : ""}
 			</h1>

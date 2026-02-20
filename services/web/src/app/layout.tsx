@@ -1,7 +1,7 @@
 import { ReactNode } from "react"
 import "@app/styles/globals.css"
 
-import type { Metadata } from "next"
+import type { Metadata, Viewport } from "next"
 import { Inter } from "next/font/google"
 
 import { Toaster } from "@app/components/ui/toaster"
@@ -22,6 +22,14 @@ export const metadata: Metadata = {
 		default: "Words",
 		template: "%s | Words",
 	},
+}
+
+export const viewport: Viewport = {
+	width: "device-width",
+	initialScale: 1,
+	maximumScale: 1,
+	userScalable: false,
+	interactiveWidget: "resizes-content",
 }
 
 type RootLayoutProps = { children: ReactNode }

@@ -266,6 +266,7 @@
 				"title": "Füge eine Sammlung hinzu",
 				"description": "Gib dazu den Namen deiner Sammlung an.",
 				"button": "Hinzufügen",
+                "cancel": "Abbrechen",
 				"label": "Name",
 				"placeholder": "Name der Sammlung",
 				"nameError": "Bitte gib mindestens 1 Zeichen an.",

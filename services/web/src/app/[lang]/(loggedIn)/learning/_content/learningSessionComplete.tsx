@@ -62,7 +62,7 @@ export function LearningSessionComplete({ results, totalItems, onContinue, onFin
 								>
 									<Icon className={cn("h-3.5 w-3.5 md:h-4 md:w-4", config.colorClass)} />
 								</div>
-								<p className={cn("text-lg md:text-xl font-semibold tabular-nums", config.colorClass)}>{gradeCounts[grade]}</p>
+								<p className={cn("text-base md:text-lg font-semibold tabular-nums", config.colorClass)}>{gradeCounts[grade]}</p>
 								<p className="text-xs text-muted-foreground">{t(`pages.learning.session.grades.${grade}`)}</p>
 							</CardContent>
 						</Card>

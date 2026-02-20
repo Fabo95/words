@@ -68,7 +68,7 @@ export function DailyGoalsIndicator() {
 							<div className="flex items-center gap-4">
 								<ProgressRing value={progress_percentage} size={48} strokeWidth={4} />
 								<div>
-									<p className="text-2xl font-bold">
+									<p className="text-xl font-semibold">
 										{words_added_today}/{daily_add_words_goal}
 									</p>
 									<p className="text-sm text-muted-foreground">{t("wordsAdded")}</p>
@@ -90,14 +90,14 @@ export function DailyGoalsIndicator() {
 								<div className="flex items-center gap-2 p-3 bg-muted rounded-lg">
 									<Flame className="h-5 w-5 text-orange-500 fill-orange-500" />
 									<div>
-										<p className="text-lg font-bold">{current_streak}</p>
+										<p className="text-base font-semibold">{current_streak}</p>
 										<p className="text-xs text-muted-foreground">{t("currentStreak")}</p>
 									</div>
 								</div>
 								<div className="flex items-center gap-2 p-3 bg-muted rounded-lg">
 									<Flame className="h-5 w-5 text-muted-foreground" />
 									<div>
-										<p className="text-lg font-bold">{longest_streak}</p>
+										<p className="text-base font-semibold">{longest_streak}</p>
 										<p className="text-xs text-muted-foreground">{t("longestStreak")}</p>
 									</div>
 								</div>

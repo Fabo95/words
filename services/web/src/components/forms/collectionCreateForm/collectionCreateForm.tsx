@@ -120,8 +120,8 @@ export const CollectionCreateForm = ({ onSubmit, onCancel }: ISidebarCollectionC
 						isMobile ? "mt-auto flex flex-col gap-2" : "flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2"
 					}
 				>
-					<Button type="button" variant="destructive" onClick={handleCancel}>
-						{t("components.navCollection")}
+					<Button type="button" variant="secondary" onClick={handleCancel}>
+						{t("components.navCollections.createForm.cancel")}
 					</Button>
 
 					<Button type="submit" disabled={!isFormStateValid}>

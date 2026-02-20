@@ -62,7 +62,7 @@ export const DailyGoalsForm = ({ defaultValues }: DailyGoalsFormProps) => {
 					<p className="text-sm text-destructive">{t("forms.dailyGoalsForm.goalError")}</p>
 				)}
 			</div>
-			<Button type="submit" isLoading={updateMutation.isPending}>
+			<Button className="w-full" type="submit" isLoading={updateMutation.isPending}>
 				{t("forms.dailyGoalsForm.saveButton")}
 			</Button>
 		</form>

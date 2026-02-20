@@ -31,7 +31,7 @@ export function MobileHeaderTitle() {
 	if (!titleKey) return null
 
 	return (
-		<span className="md:hidden text-base font-semibold tracking-tight absolute left-1/2 -translate-x-1/2">
+		<span className="md:hidden text-sm font-semibold tracking-tight absolute left-1/2 -translate-x-1/2">
 			{t(titleKey)}
 		</span>
 	)

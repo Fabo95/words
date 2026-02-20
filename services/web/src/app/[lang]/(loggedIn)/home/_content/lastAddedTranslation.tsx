@@ -36,9 +36,9 @@ export function LastAddedTranslation() {
 				<Card className="p-4 gap-0">
 					<div className="flex items-center gap-2 mb-2">
 						<div className="flex h-7 w-7 items-center justify-center rounded-lg bg-primary/10">
-							<History className="h-3.5 w-3.5 text-primary" />
+							<History className="h-4 w-4 text-primary" />
 						</div>
-						<h2 className="text-base font-semibold">{t("pages.home.lastAddedTranslations.title")}</h2>
+						<h2 className="text-sm font-semibold">{t("pages.home.lastAddedTranslations.title")}</h2>
 					</div>
 					<p className="text-sm text-muted-foreground">{t("pages.home.lastAddedTranslations.empty")}</p>
 				</Card>
@@ -51,9 +51,9 @@ export function LastAddedTranslation() {
 			<Card className="p-4 gap-0">
 				<div className="flex items-center gap-2 mb-2">
 					<div className="flex h-7 w-7 items-center justify-center rounded-lg bg-primary/10">
-						<History className="h-3.5 w-3.5 text-primary" />
+						<History className="h-4 w-4 text-primary" />
 					</div>
-					<h2 className="text-base font-semibold">{t("pages.home.lastAddedTranslations.title")}</h2>
+					<h2 className="text-sm font-semibold">{t("pages.home.lastAddedTranslations.title")}</h2>
 				</div>
 				<ul className="divide-y divide-border/50 -mx-4 border-t border-border/50">
 					{data.map((translation) => {

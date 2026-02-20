@@ -45,7 +45,7 @@ export function BottomNavigation() {
 									strokeWidth={active ? 2.5 : 2}
 								/>
 							</div>
-							<span className={cn("text-[10px] font-medium transition-all duration-200", active && "font-semibold")}>
+							<span className={cn("text-xs font-medium transition-all duration-200", active && "font-semibold")}>
 								{t(labelKey)}
 							</span>
 						</Link>

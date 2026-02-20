@@ -123,7 +123,7 @@ export const CollectionTranslations = () => {
 	return (
 		<>
 			<div className="w-full md:w-4/5 overflow-hidden">
-				<h1 className="text-2xl mb-6 md:text-4xl md:mb-8 font-semibold tracking-tight">{collectionData.data?.name}</h1>
+				<h1 className="text-xl md:text-2xl mb-4 font-semibold tracking-tight">{collectionData.data?.name}</h1>
 
 				<CollectionStringFilter
 					isDisabled={!collectionTranslations.length && !query.search}
