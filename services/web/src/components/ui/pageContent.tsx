@@ -16,7 +16,7 @@ export const PageContent = ({ children, className }: PageContentProps) => {
 			key={pathname}
 			{...getMotion(0)}
 			className={cn(
-				"flex flex-col flex-1 overflow-y-auto items-center justify-center pt-6 pb-24 px-4 md:pt-16 md:pb-16 md:px-5",
+				"flex flex-col h-full items-center justify-center pt-6 pb-24 px-4 md:pt-16 md:pb-16 md:px-5",
 				className,
 			)}
 		>
