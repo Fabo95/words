@@ -18,15 +18,19 @@ export const getCollectionsQueryOptions = (authCookieValue?: string) =>
 		...(authCookieValue ? { headers: { Cookie: `auth-cookie=${authCookieValue}` } } : {}),
 	})
 
-export const getCefrLevelsQueryOptions = (authCookieValue?: string) =>
-	$api.queryOptions("get", "/cefr-levels", {
+export const getCefrLevelsQueryOptions = (authCookieValue?: string) => ({
+	...$api.queryOptions("get", "/cefr-levels", {
 		...(authCookieValue ? { headers: { Cookie: `auth-cookie=${authCookieValue}` } } : {}),
-	})
+	}),
+	staleTime: Number.POSITIVE_INFINITY, // Reference data never changes
+})
 
-export const getUniversalPosTagsQueryOptions = (authCookieValue?: string) =>
-	$api.queryOptions("get", "/universal-pos-tags", {
+export const getUniversalPosTagsQueryOptions = (authCookieValue?: string) => ({
+	...$api.queryOptions("get", "/universal-pos-tags", {
 		...(authCookieValue ? { headers: { Cookie: `auth-cookie=${authCookieValue}` } } : {}),
-	})
+	}),
+	staleTime: Number.POSITIVE_INFINITY, // Reference data never changes
+})
 
 export const getUserQueryOptions = (authCookieValue?: string) =>
 	$api.queryOptions("get", "/user", {

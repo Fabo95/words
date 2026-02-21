@@ -12,7 +12,6 @@ import {
 	DialogOrDrawerHeader,
 	DialogOrDrawerTitle,
 } from "@app/components/ui/dialogOrDrawer"
-import { getLatestTranslationsQueryOptions } from "@app/utils/reactQuery/queryOptions"
 
 type DeleteTranslationDialogContentProps = {
 	translationId: number
@@ -34,10 +33,8 @@ export const DeleteTranslationContent = ({
 	const { mutateAsync: mutateTranslationDelete } = $api.useMutation("delete", "/translation/{id}", {
 		onSuccess: async () => {
 			await Promise.all([
-				queryClient.invalidateQueries({
-					queryKey: ["get", "/collection/{id}/translations"],
-				}),
-				queryClient.invalidateQueries({ queryKey: getLatestTranslationsQueryOptions().queryKey }),
+				queryClient.invalidateQueries({ queryKey: ["get", "/translation"] }),
+				queryClient.invalidateQueries({ queryKey: ["get", "/collection/{id}/translations"] }),
 			])
 
 			toast({
@@ -57,16 +54,8 @@ export const DeleteTranslationContent = ({
 
 	const handleDeleteCollection = useCallback(async () => {
 		await mutateTranslationDelete({ params: { path: { id: translationId } } })
-
-		await Promise.all([
-			queryClient.invalidateQueries({
-				queryKey: ["get", "/collection/{id}/translations"],
-			}),
-			queryClient.invalidateQueries({ queryKey: getLatestTranslationsQueryOptions().queryKey }),
-		])
-
 		handleIsDialogOpen(false)
-	}, [translationId, mutateTranslationDelete, handleIsDialogOpen, queryClient.invalidateQueries])
+	}, [translationId, mutateTranslationDelete, handleIsDialogOpen])
 
 	// --- RENDER ---
 

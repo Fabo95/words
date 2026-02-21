@@ -53,31 +53,21 @@ export function Learning() {
 
 	const handleReview = useCallback(
 		async (grade: ReviewGrade, translationId: number) => {
-			await Promise.all([
-				await queryClient.invalidateQueries({
-					queryKey: getLearnStatsQueryOptions().queryKey,
-				}),
-				await queryClient.invalidateQueries({
-					queryKey: getLearnStatsQueryOptions({ collectionId: selectedCollectionId }).queryKey,
-				}),
-			])
+			// Invalidate all learn stats queries (global and collection-specific)
+			await queryClient.invalidateQueries({ queryKey: ["get", "/learn/stats"] })
 
 			actions.submitReview(grade, translationId)
 		},
-		[actions, queryClient, selectedCollectionId],
+		[actions, queryClient],
 	)
 
 	const handleComplete = useCallback(async () => {
-		await queryClient.invalidateQueries({
-			queryKey: getLearnStatsQueryOptions({ collectionId: selectedCollectionId }).queryKey,
-		})
+		await queryClient.invalidateQueries({ queryKey: ["get", "/learn/stats"] })
 		actions.restart()
-	}, [queryClient, actions, selectedCollectionId])
+	}, [queryClient, actions])
 
 	const handleContinue = useCallback(async () => {
-		await queryClient.invalidateQueries({
-			queryKey: getLearnStatsQueryOptions({ collectionId: selectedCollectionId }).queryKey,
-		})
+		await queryClient.invalidateQueries({ queryKey: ["get", "/learn/stats"] })
 		setIsLoading(true)
 		try {
 			const result = await fetchLearnItems({

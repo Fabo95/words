@@ -70,8 +70,8 @@ export const AddTranslationTrigger = ({
 		enabled: isEnriching && typeof createdTranslationId === "number",
 		refetchInterval: (q) => {
 			const translation = q.state.data?.data
-			if (!translation) return 1200
-			return isTranslationEnriched(mapTranslationResponseToTranslation(translation)) ? false : 1200
+			if (!translation) return 3000 // Poll every 3 seconds
+			return isTranslationEnriched(mapTranslationResponseToTranslation(translation)) ? false : 3000
 		},
 		select: (data) => (data.data ? mapTranslationResponseToTranslation(data.data) : undefined),
 	})
@@ -85,6 +85,7 @@ export const AddTranslationTrigger = ({
 
 		hasShownEnrichmentToast.current = true
 
+		// Invalidate translation lists (includes latest translations) and stats
 		void Promise.all([
 			queryClient.invalidateQueries({ queryKey: ["get", "/translation"] }),
 			queryClient.invalidateQueries({ queryKey: ["get", "/collection/{id}/translations"] }),
