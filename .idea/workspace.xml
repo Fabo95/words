@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="fix middleware.ts">
+    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="update react query">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collection/collectionEmptyState.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collection/collectionEmptyState.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/components/ui/form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/form.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/messages/de-DE.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/messages/de-DE.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/messages/en-GB.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/messages/en-GB.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/components/dialogsOrDrawers/deleteTranslationFromCollectionContent.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/dialogsOrDrawers/deleteTranslationFromCollectionContent.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/generated/openApiTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/generated/openApiTypes.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -61,52 +62,52 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "RunOnceActivity.MCP Project settings loaded": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.git.unshallow": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "git-widget-placeholder": "main",
-    "javascript.preferred.runtime.type.id": "node",
-    "last_opened_file_path": "/Users/fabianhinz/repositories/words",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.standard": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.standard": "",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "npm.build.executor": "Run",
-    "npm.dev.executor": "Run",
-    "npm.eslint-plugin-words-app-styleguide > build.executor": "Run",
-    "npm.eslint-plugin-words-app-styleguide > build:clean.executor": "Run",
-    "npm.inngest > build.executor": "Run",
-    "npm.inngest > dev.executor": "Run",
-    "npm.inngest > generate-prisma-schema.executor": "Run",
-    "npm.inngest > prisma:generate.executor": "Run",
-    "npm.inngest > prisma:pull.executor": "Run",
-    "npm.packages:force-node-modules-sync.executor": "Run",
-    "npm.service > dev.executor": "Run",
-    "npm.service > generate_open_api_types.executor": "Run",
-    "npm.user-api > db-generate.executor": "Run",
-    "npm.web > build.executor": "Run",
-    "npm.web > dev.executor": "Run",
-    "npm.web > open_api:generate.executor": "Run",
-    "npm.words > dev.executor": "Run",
-    "prettierjs.PrettierConfiguration.Package": "/Users/fabianhinz/.npm-global/lib/node_modules/prettier",
-    "settings.editor.selected.configurable": "Settings.Biome",
-    "ts.external.directory.path": "/Users/fabianhinz/repositories/words/services/inngest/node_modules/typescript/lib",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.MCP Project settings loaded&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;javascript.preferred.runtime.type.id&quot;: &quot;node&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Users/fabianhinz/repositories/words&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.standard&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.standard&quot;: &quot;&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;npm.build.executor&quot;: &quot;Run&quot;,
+    &quot;npm.dev.executor&quot;: &quot;Run&quot;,
+    &quot;npm.eslint-plugin-words-app-styleguide &gt; build.executor&quot;: &quot;Run&quot;,
+    &quot;npm.eslint-plugin-words-app-styleguide &gt; build:clean.executor&quot;: &quot;Run&quot;,
+    &quot;npm.inngest &gt; build.executor&quot;: &quot;Run&quot;,
+    &quot;npm.inngest &gt; dev.executor&quot;: &quot;Run&quot;,
+    &quot;npm.inngest &gt; generate-prisma-schema.executor&quot;: &quot;Run&quot;,
+    &quot;npm.inngest &gt; prisma:generate.executor&quot;: &quot;Run&quot;,
+    &quot;npm.inngest &gt; prisma:pull.executor&quot;: &quot;Run&quot;,
+    &quot;npm.packages:force-node-modules-sync.executor&quot;: &quot;Run&quot;,
+    &quot;npm.service &gt; dev.executor&quot;: &quot;Run&quot;,
+    &quot;npm.service &gt; generate_open_api_types.executor&quot;: &quot;Run&quot;,
+    &quot;npm.user-api &gt; db-generate.executor&quot;: &quot;Run&quot;,
+    &quot;npm.web &gt; build.executor&quot;: &quot;Run&quot;,
+    &quot;npm.web &gt; dev.executor&quot;: &quot;Run&quot;,
+    &quot;npm.web &gt; open_api:generate.executor&quot;: &quot;Run&quot;,
+    &quot;npm.words &gt; dev.executor&quot;: &quot;Run&quot;,
+    &quot;prettierjs.PrettierConfiguration.Package&quot;: &quot;/Users/fabianhinz/.npm-global/lib/node_modules/prettier&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;Settings.Biome&quot;,
+    &quot;ts.external.directory.path&quot;: &quot;/Users/fabianhinz/repositories/words/services/inngest/node_modules/typescript/lib&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "postgresql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;postgresql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="RecapSpentCounter">
     <option name="endsOfQuotaMs" value="1767430816454" />
     <option name="spentUsd" value="0.17932963" />
@@ -130,7 +131,7 @@
       <recent name="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.dev">
+  <component name="RunManager" selected="npm.web &gt; open_api:generate">
     <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -171,11 +172,11 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="web &gt; dev" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+    <configuration name="web &gt; open_api:generate" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/services/web/package.json" />
       <command value="run" />
       <scripts>
-        <script value="dev" />
+        <script value="open_api:generate" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -183,11 +184,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.web &gt; open_api:generate" />
         <item itemvalue="npm.dev" />
         <item itemvalue="npm.build" />
         <item itemvalue="npm.web &gt; build" />
         <item itemvalue="npm.inngest &gt; build" />
-        <item itemvalue="npm.web &gt; dev" />
       </list>
     </recent_temporary>
   </component>
@@ -270,46 +271,6 @@
       <workItem from="1769809608107" duration="54226000" />
       <workItem from="1771107369084" duration="5879000" />
       <workItem from="1771506192993" duration="32066000" />
-    </task>
-    <task id="LOCAL-00116" summary="add learn collection feature">
-      <option name="closed" value="true" />
-      <created>1770493633623</created>
-      <option name="number" value="00116" />
-      <option name="presentableId" value="LOCAL-00116" />
-      <option name="project" value="LOCAL" />
-      <updated>1770493633623</updated>
-    </task>
-    <task id="LOCAL-00117" summary="improve mobile css">
-      <option name="closed" value="true" />
-      <created>1770495224385</created>
-      <option name="number" value="00117" />
-      <option name="presentableId" value="LOCAL-00117" />
-      <option name="project" value="LOCAL" />
-      <updated>1770495224385</updated>
-    </task>
-    <task id="LOCAL-00118" summary="update schema.prisma">
-      <option name="closed" value="true" />
-      <created>1770500331390</created>
-      <option name="number" value="00118" />
-      <option name="presentableId" value="LOCAL-00118" />
-      <option name="project" value="LOCAL" />
-      <updated>1770500331390</updated>
-    </task>
-    <task id="LOCAL-00119" summary="update schema.prisma">
-      <option name="closed" value="true" />
-      <created>1770500338157</created>
-      <option name="number" value="00119" />
-      <option name="presentableId" value="LOCAL-00119" />
-      <option name="project" value="LOCAL" />
-      <updated>1770500338157</updated>
-    </task>
-    <task id="LOCAL-00120" summary="add daily goals">
-      <option name="closed" value="true" />
-      <created>1770500851192</created>
-      <option name="number" value="00120" />
-      <option name="presentableId" value="LOCAL-00120" />
-      <option name="project" value="LOCAL" />
-      <updated>1770500851192</updated>
     </task>
     <task id="LOCAL-00121" summary="add daily goals">
       <option name="closed" value="true" />
@@ -663,7 +624,47 @@
       <option name="project" value="LOCAL" />
       <updated>1771588768571</updated>
     </task>
-    <option name="localTasksCounter" value="165" />
+    <task id="LOCAL-00165" summary="fix pageContent alignment">
+      <option name="closed" value="true" />
+      <created>1771621416330</created>
+      <option name="number" value="00165" />
+      <option name="presentableId" value="LOCAL-00165" />
+      <option name="project" value="LOCAL" />
+      <updated>1771621416330</updated>
+    </task>
+    <task id="LOCAL-00166" summary="fix pageContent alignment">
+      <option name="closed" value="true" />
+      <created>1771621518068</created>
+      <option name="number" value="00166" />
+      <option name="presentableId" value="LOCAL-00166" />
+      <option name="project" value="LOCAL" />
+      <updated>1771621518068</updated>
+    </task>
+    <task id="LOCAL-00167" summary="fix pageContent alignment">
+      <option name="closed" value="true" />
+      <created>1771621695309</created>
+      <option name="number" value="00167" />
+      <option name="presentableId" value="LOCAL-00167" />
+      <option name="project" value="LOCAL" />
+      <updated>1771621695309</updated>
+    </task>
+    <task id="LOCAL-00168" summary="fix pageContent alignment">
+      <option name="closed" value="true" />
+      <created>1771622524850</created>
+      <option name="number" value="00168" />
+      <option name="presentableId" value="LOCAL-00168" />
+      <option name="project" value="LOCAL" />
+      <updated>1771622524850</updated>
+    </task>
+    <task id="LOCAL-00169" summary="update react query">
+      <option name="closed" value="true" />
+      <created>1771711129615</created>
+      <option name="number" value="00169" />
+      <option name="presentableId" value="LOCAL-00169" />
+      <option name="project" value="LOCAL" />
+      <updated>1771711129615</updated>
+    </task>
+    <option name="localTasksCounter" value="170" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -684,8 +685,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add icons" />
-    <MESSAGE value="add reveal animation" />
     <MESSAGE value="change animation" />
     <MESSAGE value="add keyboard support in learn page" />
     <MESSAGE value="add reverse mode" />
@@ -709,7 +708,9 @@
     <MESSAGE value="run prisma generate" />
     <MESSAGE value="add health route" />
     <MESSAGE value="fix middleware.ts" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix middleware.ts" />
+    <MESSAGE value="fix pageContent alignment" />
+    <MESSAGE value="update react query" />
+    <option name="LAST_COMMIT_MESSAGE" value="update react query" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

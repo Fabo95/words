@@ -60,6 +60,22 @@
             "description": "Bitte versuche es erneut."
           }
         }
+      },
+      "removeTranslationFromCollectionDialog": {
+        "title": "Aus Sammlung entfernen",
+        "description": "Die Übersetzung wird aus dieser Sammlung entfernt, bleibt aber in deinem Vokabular erhalten.",
+        "cancelButton": "Abbrechen",
+        "removeButton": "Entfernen",
+        "toast": {
+          "success": {
+            "title": "Aus Sammlung entfernt",
+            "description": "Die Übersetzung wurde aus der Sammlung entfernt."
+          },
+          "error": {
+            "title": "Entfernen fehlgeschlagen",
+            "description": "Bitte versuche es erneut."
+          }
+        }
       }
     },
     "forms": {

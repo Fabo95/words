@@ -12,10 +12,6 @@ import {
 	DialogOrDrawerHeader,
 	DialogOrDrawerTitle,
 } from "@app/components/ui/dialogOrDrawer"
-import {
-	getCollectionTranslationsQueryOptions,
-	getLatestTranslationsQueryOptions,
-} from "@app/utils/reactQuery/queryOptions"
 
 type DeleteTranslationFromCollectionDialogContentProps = {
 	id: number
@@ -36,55 +32,58 @@ export const DeleteTranslationFromCollectionContent = ({
 
 	const queryClient = useQueryClient()
 
-	const { mutateAsync: mutateTranslationDelete } = $api.useMutation("delete", "/translation/{id}", {
-		onSuccess: async () => {
-			await Promise.all([
-				queryClient.invalidateQueries({
-					queryKey: ["get", "/translation"],
-				}),
-				queryClient.invalidateQueries({
-					queryKey: ["get", "/collection/{id}/translations"],
-				}),
-				queryClient.invalidateQueries({ queryKey: getLatestTranslationsQueryOptions().queryKey }),
-			])
+	const { mutateAsync: removeFromCollection } = $api.useMutation(
+		"delete",
+		"/collection/{id}/translations/{translation_id}/wip3",
+		{
+			onSuccess: async () => {
+				await Promise.all([
+					queryClient.invalidateQueries({ queryKey: ["get", "/translation"] }),
+					queryClient.invalidateQueries({ queryKey: ["get", "/collection/{id}/translations"] }),
+				])
 
-			toast({
-				title: t("dialogs.deleteTranslationDialog.toast.success.title"),
-				description: t("dialogs.deleteTranslationDialog.toast.success.description"),
-			})
+				toast({
+					title: t("dialogs.removeTranslationFromCollectionDialog.toast.success.title"),
+					description: t("dialogs.removeTranslationFromCollectionDialog.toast.success.description"),
+				})
+			},
+			onError: () => {
+				toast({
+					title: t("dialogs.removeTranslationFromCollectionDialog.toast.error.title"),
+					description: t("dialogs.removeTranslationFromCollectionDialog.toast.error.description"),
+				})
+			},
 		},
-		onError: () => {
-			toast({
-				title: t("dialogs.deleteTranslationDialog.toast.error.title"),
-				description: t("dialogs.deleteTranslationDialog.toast.success.description"),
-			})
-		},
-	})
+	)
 
 	// --- CALLBACKS ---
 
-	const handleDeleteCollection = useCallback(async () => {
-		await mutateTranslationDelete({ params: { path: { id: translationId } } })
+	const handleRemoveFromCollection = useCallback(async () => {
+		await removeFromCollection({ params: { path: { id, translation_id: translationId } } })
 
 		handleIsDialogOpen(false)
-	}, [translationId, mutateTranslationDelete, handleIsDialogOpen])
+	}, [id, translationId, removeFromCollection, handleIsDialogOpen])
 
 	// --- RENDER ---
 
 	return (
 		<DialogOrDrawerContent onClick={(e: SyntheticEvent) => e.stopPropagation()}>
 			<DialogOrDrawerHeader>
-				<DialogOrDrawerTitle>{t("dialogs.deleteTranslationDialog.title")}</DialogOrDrawerTitle>
+				<DialogOrDrawerTitle>{t("dialogs.removeTranslationFromCollectionDialog.title")}</DialogOrDrawerTitle>
 
-				<DialogOrDrawerDescription>{t("dialogs.deleteTranslationDialog.description")}</DialogOrDrawerDescription>
+				<DialogOrDrawerDescription>
+					{t("dialogs.removeTranslationFromCollectionDialog.description")}
+				</DialogOrDrawerDescription>
 			</DialogOrDrawerHeader>
 
 			<DialogOrDrawerFooter>
 				<Button variant="secondary" onClick={() => handleIsDialogOpen(false)}>
-					{t("dialogs.deleteTranslationDialog.cancelButton")}
+					{t("dialogs.removeTranslationFromCollectionDialog.cancelButton")}
 				</Button>
 
-				<Button onClick={handleDeleteCollection}>{t("dialogs.deleteTranslationDialog.deleteButton")}</Button>
+				<Button onClick={handleRemoveFromCollection}>
+					{t("dialogs.removeTranslationFromCollectionDialog.removeButton")}
+				</Button>
 			</DialogOrDrawerFooter>
 		</DialogOrDrawerContent>
 	)

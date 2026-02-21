@@ -60,6 +60,22 @@
             "description": "Please try again."
           }
         }
+      },
+      "removeTranslationFromCollectionDialog": {
+        "title": "Remove from collection",
+        "description": "The translation will be removed from this collection but will remain in your vocabulary.",
+        "cancelButton": "Cancel",
+        "removeButton": "Remove",
+        "toast": {
+          "success": {
+            "title": "Removed from collection",
+            "description": "The translation was removed from the collection."
+          },
+          "error": {
+            "title": "Removal failed",
+            "description": "Please try again."
+          }
+        }
       }
     },
     "forms": {
