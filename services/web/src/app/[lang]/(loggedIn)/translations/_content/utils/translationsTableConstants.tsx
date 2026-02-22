@@ -4,9 +4,9 @@ import { TranslationActions } from "@app/components/translationActions/translati
 import { TranslationsTableItem } from "@app/app/[lang]/(loggedIn)/translations/_content/utils/translationsTableTypes"
 import { DataTableColumnHeader } from "@app/components/ui/dataTable/dataTableColumnHeader"
 import { Badge } from "@app/components/ui/badge"
+import { NextReviewBadge } from "@app/components/nextReviewBadge/nextReviewBadge"
 import { TFunction } from "@app/utils/types/tFunction"
 import { getCollectionPage } from "@app/utils/urls/urls"
-import { formatNextReviewDate } from "@app/utils/helpers/formatNextReviewDate"
 import * as React from "react"
 import { AppRouterInstance } from "next/dist/shared/lib/app-router-context.shared-runtime"
 
@@ -105,11 +105,7 @@ export const getTranslationsTableColumns = (
 			cell: ({ row }) => {
 				const learningProgress = row.original.learningProgress
 
-				if (!learningProgress) {
-					return <span className="text-muted-foreground text-xs">{t("common.nextReview.new")}</span>
-				}
-
-				return <span className="text-xs">{formatNextReviewDate(learningProgress.next_review_at, t)}</span>
+				return <NextReviewBadge nextReviewAt={learningProgress?.next_review_at} />
 			},
 		},
 

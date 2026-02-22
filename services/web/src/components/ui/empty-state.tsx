@@ -1,6 +1,7 @@
 import type { LucideIcon } from "lucide-react"
 import type { ReactNode } from "react"
 import { cn } from "@app/utils/shadcn/shadcnHelpers"
+import { Card } from "@app/components/ui/card"
 
 interface EmptyStateProps {
 	icon: LucideIcon
@@ -12,24 +13,19 @@ interface EmptyStateProps {
 
 export function EmptyState({ icon: Icon, title, description, children, className }: EmptyStateProps) {
 	return (
-		<div
-			className={cn(
-				"mx-auto max-w-md rounded-2xl border border-border/50 bg-gradient-to-b from-background/80 to-background/40 px-6 py-10 md:py-14 text-center shadow-sm",
-				className
-			)}
-		>
+		<Card className={cn("mx-auto rounded-2xl px-6 py-8 text-center shadow-sm", className)}>
 			<div className="flex justify-center mb-5">
 				<div className="relative">
 					<div className="absolute inset-0 rounded-full bg-primary/20 blur-xl" />
-					<div className="relative flex h-16 w-16 md:h-18 md:w-18 items-center justify-center rounded-full bg-gradient-to-br from-primary/20 to-primary/5 ring-1 ring-primary/20">
-						<Icon className="h-7 w-7 md:h-8 md:w-8 text-primary" />
+					<div className="relative flex h-12 w-12 md:h-14 md:w-14 items-center justify-center rounded-full bg-gradient-to-br from-primary/20 to-primary/5 ring-1 ring-primary/20">
+						<Icon className="h-5 w-5 md:h-6 md:w-6 text-primary" />
 					</div>
 				</div>
 			</div>
 			<h3 className="text-lg md:text-xl font-semibold mb-2 tracking-tight">{title}</h3>
 			<p className="text-sm text-muted-foreground leading-relaxed max-w-xs mx-auto">{description}</p>
 			{children && <div className="mt-8">{children}</div>}
-		</div>
+		</Card>
 	)
 }
 
@@ -44,7 +40,7 @@ export function EmptyStateMessage({ message, hint, className }: EmptyStateMessag
 		<div
 			className={cn(
 				"mx-auto max-w-md rounded-2xl border border-border/50 bg-gradient-to-b from-background/80 to-background/40 px-6 py-10 md:py-14 text-center shadow-sm",
-				className
+				className,
 			)}
 		>
 			<p className="text-sm text-muted-foreground leading-relaxed">{message}</p>

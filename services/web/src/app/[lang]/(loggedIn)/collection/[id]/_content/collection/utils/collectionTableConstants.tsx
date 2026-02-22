@@ -9,8 +9,8 @@ import { Input } from "@app/components/ui/input"
 import { Tooltip, TooltipContent, TooltipTrigger } from "@app/components/ui/tooltip"
 import * as React from "react"
 import { Badge } from "@app/components/ui/badge"
+import { NextReviewBadge } from "@app/components/nextReviewBadge/nextReviewBadge"
 import { TFunction } from "@app/utils/types/tFunction"
-import { formatNextReviewDate } from "@app/utils/helpers/formatNextReviewDate"
 
 export const getCollectionTableColumns: (t: TFunction) => ColumnDef<CollectionTranslation>[] = (t) => [
 	// https://ui.shadcn.com/docs/components/data-table#row-selection
@@ -100,11 +100,7 @@ export const getCollectionTableColumns: (t: TFunction) => ColumnDef<CollectionTr
 		cell: ({ row }) => {
 			const learningProgress = row.original.learningProgress
 
-			if (!learningProgress) {
-				return <span className="text-muted-foreground text-xs">{t("common.nextReview.new")}</span>
-			}
-
-			return <span className="text-xs">{formatNextReviewDate(learningProgress.next_review_at, t)}</span>
+			return <NextReviewBadge nextReviewAt={learningProgress?.next_review_at} />
 		},
 	},
 

@@ -36,7 +36,8 @@
         "inHours": "In {hours} hours",
         "tomorrow": "Tomorrow",
         "inDays": "In {days} days",
-        "overdue": "Overdue"
+        "overdue": "Overdue",
+        "tooltip": "Shows when this word is due for review. New words haven't been reviewed yet. Overdue words should be reviewed soon to maintain your memory."
       }
     },
     "pagination": {

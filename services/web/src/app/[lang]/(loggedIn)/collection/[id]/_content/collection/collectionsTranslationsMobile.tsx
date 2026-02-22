@@ -9,6 +9,7 @@ import { Skeleton } from "@app/components/ui/skeleton"
 
 import { CollectionTranslation } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collection/utils/collectionTableTypes"
 import { TranslationActions } from "@app/components/translationActions/translationActions"
+import { NextReviewBadge } from "@app/components/nextReviewBadge/nextReviewBadge"
 
 type CollectionsTranslationsMobileProps = {
 	items: CollectionTranslation[]
@@ -87,6 +88,8 @@ export function CollectionsTranslationsMobile({
 										{posTags.length > 1 ? ` +${posTags.length - 1}` : ""}
 									</Badge>
 								) : null}
+
+								<NextReviewBadge nextReviewAt={item.learningProgress?.next_review_at} />
 							</div>
 
 							<div className="shrink-0">

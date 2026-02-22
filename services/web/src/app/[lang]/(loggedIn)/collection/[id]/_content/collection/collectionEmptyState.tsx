@@ -19,7 +19,7 @@ export function CollectionEmptyState() {
 		>
 			<AddTranslationTrigger
 				defaultValues={{ collectionId: Number(params.id), universalPosTagIds: [] }}
-				variant="outline"
+				variant="default"
 				className="gap-2"
 				title={t("pages.collection.empty.cta")}
 				size="sm"

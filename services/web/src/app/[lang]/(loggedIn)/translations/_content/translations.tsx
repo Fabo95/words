@@ -130,51 +130,53 @@ export const Translations = () => {
 			<div className="w-full md:w-4/5 overflow-hidden">
 				<h1 className="text-xl md:text-2xl mb-4 font-semibold tracking-tight">{t("pages.translations.title")}</h1>
 
-				<CollectionStringFilter
-					isDisabled={!translations.length && !query.search}
-					value={query.search ?? undefined}
-					setValue={setters.setSearch}
-				/>
+				{isEmpty ? (
+					<TranslationsEmptyState />
+				) : (
+					<>
+						<CollectionStringFilter
+							isDisabled={!translations.length && !query.search}
+							value={query.search ?? undefined}
+							setValue={setters.setSearch}
+						/>
 
-				{isEmpty && <TranslationsEmptyState />}
+						{isMobile ? (
+							<TranslationsMobile items={translations} isLoading={isFetching} skeletonRowCount={pageSize} />
+						) : (
+							<DataTable
+								columns={getTranslationsTableColumns(t, router)}
+								data={translations}
+								isLoading={isFetching}
+								skeletonRowCount={pageSize}
+							/>
+						)}
 
-				{!isMobile && !isEmpty && (
-					<DataTable
-						columns={getTranslationsTableColumns(t, router)}
-						data={translations}
-						isLoading={isFetching}
-						skeletonRowCount={pageSize}
-					/>
-				)}
+						<div className="flex items-center justify-between space-x-2 py-4">
+							<div>
+								<p className="text-[12px] text-foreground/40 font-normal">{pagination}</p>
+							</div>
 
-				{isMobile && !isEmpty && <TranslationsMobile items={translations} isLoading={isFetching} skeletonRowCount={pageSize} />}
+							<div className="flex gap-1">
+								<Button
+									variant="outline"
+									size="sm"
+									disabled={(query.page ?? 1) <= 1}
+									onClick={makeOnPaginationChange("prev")}
+								>
+									{t("pagination.previous")}
+								</Button>
 
-				{!isEmpty && (
-					<div className="flex items-center justify-between space-x-2 py-4">
-						<div>
-							<p className="text-[12px] text-foreground/40 font-normal">{pagination}</p>
+								<Button
+									variant="outline"
+									size="sm"
+									disabled={(translationsData?.meta?.total_items ?? 0) <= (translationsData?.meta?.page ?? 1) * pageSize}
+									onClick={makeOnPaginationChange("next")}
+								>
+									{t("pagination.next")}
+								</Button>
+							</div>
 						</div>
-
-						<div className="flex gap-1">
-							<Button
-								variant="outline"
-								size="sm"
-								disabled={(query.page ?? 1) <= 1}
-								onClick={makeOnPaginationChange("prev")}
-							>
-								{t("pagination.previous")}
-							</Button>
-
-							<Button
-								variant="outline"
-								size="sm"
-								disabled={(translationsData?.meta?.total_items ?? 0) <= (translationsData?.meta?.page ?? 1) * pageSize}
-								onClick={makeOnPaginationChange("next")}
-							>
-								{t("pagination.next")}
-							</Button>
-						</div>
-					</div>
+					</>
 				)}
 			</div>
 		</>
