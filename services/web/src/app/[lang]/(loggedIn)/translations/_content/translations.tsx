@@ -3,7 +3,7 @@
 import { getTranslationsTableColumns } from "@app/app/[lang]/(loggedIn)/translations/_content/utils/translationsTableConstants"
 import { TranslationsTableItem } from "@app/app/[lang]/(loggedIn)/translations/_content/utils/translationsTableTypes"
 import { DataTable } from "@app/components/ui/dataTable/dataTable"
-import { useCallback, useMemo } from "react"
+import { useCallback, useMemo, useState } from "react"
 import * as React from "react"
 import { useTranslations } from "next-intl"
 import { useTranslationsTableQuery } from "@app/app/[lang]/(loggedIn)/translations/_content/utils/translationsTableQuery"
@@ -12,10 +12,12 @@ import { Button } from "@app/components/ui/button"
 import { useIsMobile } from "@app/hooks/use-mobile"
 import { TranslationsMobile } from "@app/app/[lang]/(loggedIn)/translations/_content/translationsMobile"
 import { TranslationsEmptyState } from "@app/app/[lang]/(loggedIn)/translations/_content/translationsEmptyState"
+import { BulkActionsToolbar } from "@app/components/bulkActions/bulkActionsToolbar"
 import { useQuery, useSuspenseQuery } from "@tanstack/react-query"
 import { getCollectionsQueryOptions, getTranslationsQueryOptions } from "@app/utils/reactQuery/queryOptions"
 import { useRouter } from "next/navigation"
 import { useTranslationsPageSize } from "@app/app/[lang]/(loggedIn)/translations/_content/utils/useTranslationsPageSize"
+import { RowSelectionState } from "@tanstack/react-table"
 
 export const Translations = () => {
 	// --- STATE ---
@@ -29,6 +31,8 @@ export const Translations = () => {
 	const isMobile = useIsMobile()
 
 	const pageSize = useTranslationsPageSize()
+
+	const [rowSelection, setRowSelection] = useState<RowSelectionState>({})
 
 	const { data: isEmpty } = useSuspenseQuery({
 		...getTranslationsQueryOptions({
@@ -100,6 +104,17 @@ export const Translations = () => {
 		})
 	}, [translationsData, collectionNameById])
 
+	const selectedItems = useMemo(() => {
+		return Object.keys(rowSelection)
+			.filter((id) => rowSelection[id])
+			.map((id) => translations.find((t) => t.translationId.toString() === id))
+			.filter((item): item is TranslationsTableItem => item !== undefined)
+	}, [rowSelection, translations])
+
+	const handleClearSelection = useCallback(() => {
+		setRowSelection({})
+	}, [])
+
 	const pagination = useMemo(() => {
 		if (!translationsData || !translationsData.meta?.page_size) {
 			return null
@@ -140,14 +155,29 @@ export const Translations = () => {
 							setValue={setters.setSearch}
 						/>
 
+						<BulkActionsToolbar
+							selectedItems={selectedItems}
+							collections={collections ?? []}
+							onClearSelection={handleClearSelection}
+						/>
+
 						{isMobile ? (
-							<TranslationsMobile items={translations} isLoading={isFetching} skeletonRowCount={pageSize} />
+							<TranslationsMobile
+								items={translations}
+								isLoading={isFetching}
+								skeletonRowCount={pageSize}
+								rowSelection={rowSelection}
+								onRowSelectionChange={setRowSelection}
+							/>
 						) : (
 							<DataTable
 								columns={getTranslationsTableColumns(t, router)}
 								data={translations}
 								isLoading={isFetching}
 								skeletonRowCount={pageSize}
+								rowSelection={rowSelection}
+								onRowSelectionChange={setRowSelection}
+								getRowId={(row) => row.translationId.toString()}
 							/>
 						)}
 

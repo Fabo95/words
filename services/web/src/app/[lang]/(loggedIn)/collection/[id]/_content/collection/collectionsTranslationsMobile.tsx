@@ -5,24 +5,48 @@ import { useTranslations } from "next-intl"
 
 import { Badge } from "@app/components/ui/badge"
 import { Card, CardContent, CardHeader } from "@app/components/ui/card"
+import { Checkbox } from "@app/components/ui/checkbox"
 import { Skeleton } from "@app/components/ui/skeleton"
 
 import { CollectionTranslation } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collection/utils/collectionTableTypes"
 import { TranslationActions } from "@app/components/translationActions/translationActions"
 import { NextReviewBadge } from "@app/components/nextReviewBadge/nextReviewBadge"
+import { RowSelectionState } from "@tanstack/react-table"
+import { cn } from "@app/utils/shadcn/shadcnHelpers"
 
 type CollectionsTranslationsMobileProps = {
 	items: CollectionTranslation[]
 	isLoading?: boolean
 	skeletonRowCount?: number
+	rowSelection?: RowSelectionState
+	onRowSelectionChange?: (selection: RowSelectionState) => void
 }
 
 export function CollectionsTranslationsMobile({
 	items,
 	isLoading,
 	skeletonRowCount = 5,
+	rowSelection,
+	onRowSelectionChange,
 }: CollectionsTranslationsMobileProps) {
 	const t = useTranslations()
+	const isSelectable = rowSelection !== undefined && onRowSelectionChange !== undefined
+
+	const toggleSelection = (translationId: number) => {
+		if (!onRowSelectionChange || !rowSelection) return
+		const id = translationId.toString()
+		const newSelection = { ...rowSelection }
+		if (newSelection[id]) {
+			delete newSelection[id]
+		} else {
+			newSelection[id] = true
+		}
+		onRowSelectionChange(newSelection)
+	}
+
+	const isSelected = (translationId: number) => {
+		return rowSelection?.[translationId.toString()] ?? false
+	}
 
 	if (isLoading) {
 		return (
@@ -71,11 +95,25 @@ export function CollectionsTranslationsMobile({
 				const cefrCode = item.cefrLevel?.code
 				const posTags = item.universalPosTags ?? []
 				const posPrimary = posTags[0]
+				const selected = isSelected(item.translationId)
 
 				return (
-					<Card key={item.translationId} className="rounded-xl gap-3">
+					<Card
+						key={item.translationId}
+						className={cn("rounded-xl gap-3", selected && "border border-primary")}
+						onClick={isSelectable ? () => toggleSelection(item.translationId) : undefined}
+					>
 						<CardHeader className="flex flex-row items-center justify-between gap-3 space-y-0">
 							<div className="flex flex-wrap items-center gap-2">
+								{isSelectable && (
+									<Checkbox
+										checked={selected}
+										onCheckedChange={() => toggleSelection(item.translationId)}
+										onClick={(e) => e.stopPropagation()}
+										aria-label="Select row"
+									/>
+								)}
+
 								{cefrCode ? (
 									<Badge variant="secondary" className="text-xs">
 										{cefrCode}

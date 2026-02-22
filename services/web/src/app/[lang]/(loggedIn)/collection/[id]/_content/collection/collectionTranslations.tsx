@@ -4,7 +4,7 @@ import { getCollectionTableColumns } from "@app/app/[lang]/(loggedIn)/collection
 import { CollectionTranslation } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collection/utils/collectionTableTypes"
 import { DataTable } from "@app/components/ui/dataTable/dataTable"
 import { useParams } from "next/navigation"
-import { useCallback, useMemo } from "react"
+import { useCallback, useMemo, useState } from "react"
 import * as React from "react"
 import { useTranslations } from "next-intl"
 import { useCollectionTableQuery } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collection/utils/collectionTableQuery"
@@ -13,14 +13,15 @@ import { Button } from "@app/components/ui/button"
 import { useIsMobile } from "@app/hooks/use-mobile"
 import { CollectionsTranslationsMobile } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collection/collectionsTranslationsMobile"
 import { CollectionEmptyState } from "@app/app/[lang]/(loggedIn)/collection/[id]/_content/collection/collectionEmptyState"
+import { BulkActionsToolbar } from "@app/components/bulkActions/bulkActionsToolbar"
 import { useQuery, useSuspenseQuery } from "@tanstack/react-query"
 import {
 	getCollectionByIdQueryOptions,
 	getCollectionTranslationsQueryOptions,
-	getTranslationsQueryOptions,
+	getCollectionsQueryOptions,
 } from "@app/utils/reactQuery/queryOptions"
 import { useTranslationsPageSize } from "@app/app/[lang]/(loggedIn)/translations/_content/utils/useTranslationsPageSize"
-import { TranslationsMobile } from "@app/app/[lang]/(loggedIn)/translations/_content/translationsMobile"
+import { RowSelectionState } from "@tanstack/react-table"
 
 export const CollectionTranslations = () => {
 	// --- STATE ---
@@ -35,7 +36,13 @@ export const CollectionTranslations = () => {
 
 	const pageSize = useTranslationsPageSize()
 
+	const [rowSelection, setRowSelection] = useState<RowSelectionState>({})
+
 	const { data: collectionData } = useSuspenseQuery(getCollectionByIdQueryOptions(Number(params.id)))
+
+	const {
+		data: { data: collections },
+	} = useSuspenseQuery(getCollectionsQueryOptions())
 
 	const { data: isEmpty } = useSuspenseQuery({
 		...getCollectionTranslationsQueryOptions({
@@ -95,6 +102,17 @@ export const CollectionTranslations = () => {
 		}))
 	}, [translationsData, params.id])
 
+	const selectedItems = useMemo(() => {
+		return Object.keys(rowSelection)
+			.filter((id) => rowSelection[id])
+			.map((id) => collectionTranslations.find((t) => t.translationId.toString() === id))
+			.filter((item): item is CollectionTranslation => item !== undefined)
+	}, [rowSelection, collectionTranslations])
+
+	const handleClearSelection = useCallback(() => {
+		setRowSelection({})
+	}, [])
+
 	const pagination = useMemo(() => {
 		if (!translationsData || !translationsData.meta?.page_size) {
 			return null
@@ -135,14 +153,30 @@ export const CollectionTranslations = () => {
 							setValue={setters.setSearch}
 						/>
 
+						<BulkActionsToolbar
+							selectedItems={selectedItems}
+							collections={collections ?? []}
+							onClearSelection={handleClearSelection}
+							currentCollectionId={Number(params.id)}
+						/>
+
 						{isMobile ? (
-							<TranslationsMobile items={collectionTranslations} isLoading={isFetching} skeletonRowCount={pageSize} />
+							<CollectionsTranslationsMobile
+								items={collectionTranslations}
+								isLoading={isFetching}
+								skeletonRowCount={pageSize}
+								rowSelection={rowSelection}
+								onRowSelectionChange={setRowSelection}
+							/>
 						) : (
 							<DataTable
 								columns={getCollectionTableColumns(t)}
 								data={collectionTranslations}
 								isLoading={isFetching}
 								skeletonRowCount={pageSize}
+								rowSelection={rowSelection}
+								onRowSelectionChange={setRowSelection}
+								getRowId={(row) => row.translationId.toString()}
 							/>
 						)}
 

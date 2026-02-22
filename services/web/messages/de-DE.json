@@ -236,6 +236,77 @@
           "dropdownDeleteTranslationButton": "Übersetzung löschen",
           "dropdownDeleteFromCollectionButton": "Übersetzung aus Sammlung löschen"
         },
+		"bulkActions": {
+			"selected": "{count, plural, one {# Eintrag ausgewählt} other {# Einträge ausgewählt}}",
+			"move": {
+				"button": "Verschieben",
+				"dialog": {
+					"title": "In Sammlung verschieben",
+					"description": "{count, plural, one {# Übersetzung} other {# Übersetzungen}} in eine Sammlung verschieben.",
+					"placeholder": "Sammlung auswählen",
+					"noCollection": "Keine Sammlung",
+					"cancel": "Abbrechen",
+					"confirm": "Verschieben"
+				},
+				"toast": {
+					"success": {
+						"title": "Erfolgreich verschoben",
+						"description": "{count, plural, one {# Übersetzung} other {# Übersetzungen}} verschoben."
+					},
+					"error": {
+						"title": "Verschieben fehlgeschlagen",
+						"description": "Bitte versuche es erneut."
+					}
+				}
+			},
+			"remove": {
+				"button": "Entfernen",
+				"dialog": {
+					"title": "Aus Sammlung entfernen",
+					"description": "{count, plural, one {# Übersetzung} other {# Übersetzungen}} aus dieser Sammlung entfernen? Sie bleiben in deinem Vokabular.",
+					"cancel": "Abbrechen",
+					"confirm": "Entfernen"
+				},
+				"toast": {
+					"success": {
+						"title": "Erfolgreich entfernt",
+						"description": "{count, plural, one {# Übersetzung} other {# Übersetzungen}} aus Sammlung entfernt."
+					},
+					"error": {
+						"title": "Entfernen fehlgeschlagen",
+						"description": "Bitte versuche es erneut."
+					}
+				}
+			},
+			"delete": {
+				"button": "Löschen",
+				"dialog": {
+					"title": "Übersetzungen löschen",
+					"description": "{count, plural, one {# Übersetzung} other {# Übersetzungen}} dauerhaft löschen? Dies kann nicht rückgängig gemacht werden.",
+					"cancel": "Abbrechen",
+					"confirm": "Löschen"
+				},
+				"toast": {
+					"success": {
+						"title": "Erfolgreich gelöscht",
+						"description": "{count, plural, one {# Übersetzung} other {# Übersetzungen}} gelöscht."
+					},
+					"error": {
+						"title": "Löschen fehlgeschlagen",
+						"description": "Bitte versuche es erneut."
+					}
+				}
+			},
+			"export": {
+				"button": "Exportieren",
+				"toast": {
+					"success": {
+						"title": "Export erfolgreich",
+						"description": "{count, plural, one {# Übersetzung} other {# Übersetzungen}} als CSV exportiert."
+					}
+				}
+			}
+		},
 		"pageNavigation": {
 			"title": "Seiten"
 		},
@@ -465,6 +536,58 @@
 					"cefrLevel": "Sprachniveau",
 					"universalPosTags": "Wortart",
 					"nextReview": "Nächste Wiederholung"
+				}
+			},
+			"bulk": {
+				"selected": "{count} ausgewählt",
+				"move": {
+					"button": "Verschieben",
+					"dialog": {
+						"title": "In Sammlung verschieben",
+						"description": "{count} Übersetzungen in eine Sammlung verschieben",
+						"placeholder": "Sammlung auswählen",
+						"noCollection": "Keine Sammlung",
+						"cancel": "Abbrechen",
+						"confirm": "Verschieben"
+					},
+					"toast": {
+						"success": {
+							"title": "Erfolgreich verschoben",
+							"description": "{count} Übersetzungen wurden verschoben"
+						},
+						"error": {
+							"title": "Verschieben fehlgeschlagen",
+							"description": "Bitte versuche es erneut"
+						}
+					}
+				},
+				"delete": {
+					"button": "Löschen",
+					"dialog": {
+						"title": "Übersetzungen löschen",
+						"description": "Möchtest du wirklich {count} Übersetzungen löschen? Diese Aktion kann nicht rückgängig gemacht werden.",
+						"cancel": "Abbrechen",
+						"confirm": "Löschen"
+					},
+					"toast": {
+						"success": {
+							"title": "Erfolgreich gelöscht",
+							"description": "{count} Übersetzungen wurden gelöscht"
+						},
+						"error": {
+							"title": "Löschen fehlgeschlagen",
+							"description": "Bitte versuche es erneut"
+						}
+					}
+				},
+				"export": {
+					"button": "Exportieren",
+					"toast": {
+						"success": {
+							"title": "Export abgeschlossen",
+							"description": "{count} Übersetzungen als CSV exportiert"
+						}
+					}
 				}
 			}
 		}

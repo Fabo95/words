@@ -3,6 +3,7 @@
 import {
 	ColumnDef,
 	ColumnFiltersState,
+	RowSelectionState,
 	SortingState,
 	flexRender,
 	getCoreRowModel,
@@ -11,7 +12,7 @@ import {
 	getSortedRowModel,
 	useReactTable,
 } from "@tanstack/react-table"
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from "@app/components/ui/table"
 import { Skeleton } from "@app/components/ui/skeleton"
@@ -23,6 +24,9 @@ interface DataTableProps<TData, TValue> {
 	data: TData[]
 	isLoading?: boolean
 	skeletonRowCount?: number
+	rowSelection?: RowSelectionState
+	onRowSelectionChange?: (selection: RowSelectionState) => void
+	getRowId?: (row: TData) => string
 }
 
 export function DataTable<TData, TValue>({
@@ -31,12 +35,19 @@ export function DataTable<TData, TValue>({
 	data,
 	isLoading,
 	skeletonRowCount = 5,
+	rowSelection: controlledRowSelection,
+	onRowSelectionChange,
+	getRowId,
 }: DataTableProps<TData, TValue>) {
 	// --- STATE ---
 
 	const [sorting, setSorting] = useState<SortingState>([])
 	const [columnFilters, setColumnFilters] = useState<ColumnFiltersState>([])
-	const [rowSelection, setRowSelection] = useState({})
+	const [internalRowSelection, setInternalRowSelection] = useState<RowSelectionState>({})
+
+	// Use controlled or internal state
+	const rowSelection = controlledRowSelection ?? internalRowSelection
+	const setRowSelection = onRowSelectionChange ?? setInternalRowSelection
 
 	const table = useReactTable({
 		data,
@@ -47,7 +58,11 @@ export function DataTable<TData, TValue>({
 		getSortedRowModel: getSortedRowModel(),
 		onColumnFiltersChange: setColumnFilters,
 		getFilteredRowModel: getFilteredRowModel(),
-		onRowSelectionChange: setRowSelection,
+		onRowSelectionChange: (updater) => {
+			const newSelection = typeof updater === "function" ? updater(rowSelection) : updater
+			setRowSelection(newSelection)
+		},
+		getRowId,
 		state: {
 			sorting,
 			columnFilters,

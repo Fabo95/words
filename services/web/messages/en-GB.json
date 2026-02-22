@@ -233,6 +233,77 @@
           "dropdownDeleteTranslationButton": "Delete translation",
           "dropdownDeleteFromCollectionButton": "Delete translation from collection"
         },
+		"bulkActions": {
+			"selected": "{count, plural, one {# item selected} other {# items selected}}",
+			"move": {
+				"button": "Move",
+				"dialog": {
+					"title": "Move to collection",
+					"description": "Move {count, plural, one {# translation} other {# translations}} to a collection.",
+					"placeholder": "Select a collection",
+					"noCollection": "No collection",
+					"cancel": "Cancel",
+					"confirm": "Move"
+				},
+				"toast": {
+					"success": {
+						"title": "Moved successfully",
+						"description": "{count, plural, one {# translation} other {# translations}} moved."
+					},
+					"error": {
+						"title": "Move failed",
+						"description": "Please try again."
+					}
+				}
+			},
+			"remove": {
+				"button": "Remove",
+				"dialog": {
+					"title": "Remove from collection",
+					"description": "Remove {count, plural, one {# translation} other {# translations}} from this collection? They will remain in your vocabulary.",
+					"cancel": "Cancel",
+					"confirm": "Remove"
+				},
+				"toast": {
+					"success": {
+						"title": "Removed successfully",
+						"description": "{count, plural, one {# translation} other {# translations}} removed from collection."
+					},
+					"error": {
+						"title": "Remove failed",
+						"description": "Please try again."
+					}
+				}
+			},
+			"delete": {
+				"button": "Delete",
+				"dialog": {
+					"title": "Delete translations",
+					"description": "Permanently delete {count, plural, one {# translation} other {# translations}}? This cannot be undone.",
+					"cancel": "Cancel",
+					"confirm": "Delete"
+				},
+				"toast": {
+					"success": {
+						"title": "Deleted successfully",
+						"description": "{count, plural, one {# translation} other {# translations}} deleted."
+					},
+					"error": {
+						"title": "Delete failed",
+						"description": "Please try again."
+					}
+				}
+			},
+			"export": {
+				"button": "Export",
+				"toast": {
+					"success": {
+						"title": "Export successful",
+						"description": "{count, plural, one {# translation} other {# translations}} exported as CSV."
+					}
+				}
+			}
+		},
 		"pageNavigation": {
 			"title": "Pages"
 		},
@@ -464,6 +535,58 @@
 					"cefrLevel": "Language level",
 					"universalPosTags": "Word type",
 					"nextReview": "Next review"
+				}
+			},
+			"bulk": {
+				"selected": "{count} selected",
+				"move": {
+					"button": "Move",
+					"dialog": {
+						"title": "Move to collection",
+						"description": "Move {count} translations to a collection",
+						"placeholder": "Select a collection",
+						"noCollection": "No collection",
+						"cancel": "Cancel",
+						"confirm": "Move"
+					},
+					"toast": {
+						"success": {
+							"title": "Moved successfully",
+							"description": "{count} translations were moved"
+						},
+						"error": {
+							"title": "Move failed",
+							"description": "Please try again"
+						}
+					}
+				},
+				"delete": {
+					"button": "Delete",
+					"dialog": {
+						"title": "Delete translations",
+						"description": "Are you sure you want to delete {count} translations? This action cannot be undone.",
+						"cancel": "Cancel",
+						"confirm": "Delete"
+					},
+					"toast": {
+						"success": {
+							"title": "Deleted successfully",
+							"description": "{count} translations were deleted"
+						},
+						"error": {
+							"title": "Delete failed",
+							"description": "Please try again"
+						}
+					}
+				},
+				"export": {
+					"button": "Export",
+					"toast": {
+						"success": {
+							"title": "Export complete",
+							"description": "{count} translations exported to CSV"
+						}
+					}
 				}
 			}
 		}

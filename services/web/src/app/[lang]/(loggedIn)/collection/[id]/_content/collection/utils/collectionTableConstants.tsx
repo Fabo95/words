@@ -12,14 +12,14 @@ import { NextReviewBadge } from "@app/components/nextReviewBadge/nextReviewBadge
 import { TFunction } from "@app/utils/types/tFunction"
 
 export const getCollectionTableColumns: (t: TFunction) => ColumnDef<CollectionTranslation>[] = (t) => [
-	// https://ui.shadcn.com/docs/components/data-table#row-selection
-	/* {
+	{
 		id: "select",
 		header: ({ table }) => (
 			<Checkbox
 				checked={table.getIsAllPageRowsSelected() || (table.getIsSomePageRowsSelected() && "indeterminate")}
 				onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
 				aria-label="Select all"
+				className="ml-3"
 			/>
 		),
 		cell: ({ row }) => (
@@ -27,13 +27,13 @@ export const getCollectionTableColumns: (t: TFunction) => ColumnDef<CollectionTr
 				checked={row.getIsSelected()}
 				onCheckedChange={(value) => row.toggleSelected(!!value)}
 				aria-label="Select row"
+				className="ml-3"
+				onClick={(e) => e.stopPropagation()}
 			/>
 		),
 		enableSorting: false,
 		enableHiding: false,
-		},
-	 */
-
+	},
 	{
 		accessorKey: "sourceText",
 		header: ({ column }) => <DataTableColumnHeader column={column} title={t("pages.collection.table.columns.word")} />,

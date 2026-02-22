@@ -4,6 +4,7 @@ import { TranslationActions } from "@app/components/translationActions/translati
 import { TranslationsTableItem } from "@app/app/[lang]/(loggedIn)/translations/_content/utils/translationsTableTypes"
 import { DataTableColumnHeader } from "@app/components/ui/dataTable/dataTableColumnHeader"
 import { Badge } from "@app/components/ui/badge"
+import { Checkbox } from "@app/components/ui/checkbox"
 import { NextReviewBadge } from "@app/components/nextReviewBadge/nextReviewBadge"
 import { TFunction } from "@app/utils/types/tFunction"
 import { getCollectionPage } from "@app/utils/urls/urls"
@@ -15,6 +16,28 @@ export const getTranslationsTableColumns = (
 	router: AppRouterInstance,
 ): ColumnDef<TranslationsTableItem>[] => {
 	return [
+		{
+			id: "select",
+			header: ({ table }) => (
+				<Checkbox
+					checked={table.getIsAllPageRowsSelected() || (table.getIsSomePageRowsSelected() && "indeterminate")}
+					onCheckedChange={(value) => table.toggleAllPageRowsSelected(!!value)}
+					aria-label="Select all"
+					className="ml-3"
+				/>
+			),
+			cell: ({ row }) => (
+				<Checkbox
+					checked={row.getIsSelected()}
+					onCheckedChange={(value) => row.toggleSelected(!!value)}
+					aria-label="Select row"
+					className="ml-3"
+					onClick={(e) => e.stopPropagation()}
+				/>
+			),
+			enableSorting: false,
+			enableHiding: false,
+		},
 		{
 			accessorKey: "sourceText",
 			header: ({ column }) => (
