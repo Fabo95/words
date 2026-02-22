@@ -33,7 +33,7 @@ export const RegistrationForm = () => {
 			password: "",
 			confirmPassword: "",
 		},
-		mode: "onBlur",
+		mode: "onChange",
 		resolver: zodResolver(getRegistrationFormSchema(t)),
 	})
 

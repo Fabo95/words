@@ -41,7 +41,7 @@ export const CollectionEditForm = ({ id, defaultValues, onCancel, onSubmit }: IS
 
 	const form = useForm<CollectionEditFormState>({
 		defaultValues,
-		mode: "onBlur",
+		mode: "onChange",
 		resolver: zodResolver(getCollectionEditFormSchema(t)),
 	})
 

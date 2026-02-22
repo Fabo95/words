@@ -111,7 +111,7 @@ export const TranslationForm = (props: TranslationFormProps) => {
 
 	const form = useForm<TranslationFormState>({
 		defaultValues: props.defaultValues,
-		mode: "onBlur",
+		mode: "onChange",
 		resolver: zodResolver(getTranslationFormSchema(t)),
 	})
 

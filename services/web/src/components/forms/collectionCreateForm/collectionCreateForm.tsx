@@ -32,7 +32,7 @@ export const CollectionCreateForm = ({ onSubmit, onCancel }: ISidebarCollectionC
 		defaultValues: {
 			name: "",
 		},
-		mode: "onBlur",
+		mode: "onChange",
 		resolver: zodResolver(getCollectionCreateFormSchema(t)),
 	})
 

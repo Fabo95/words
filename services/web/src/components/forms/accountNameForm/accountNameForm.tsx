@@ -52,7 +52,7 @@ export const AccountNameForm = () => {
 			email: data?.data?.email ?? "",
 			name: data?.data?.name || "",
 		},
-		mode: "onBlur",
+		mode: "onChange",
 		resolver: zodResolver(getAccountNameFormSchema(t)),
 	})
 

@@ -31,7 +31,7 @@ export const LoginForm = () => {
 			email: "",
 			password: "",
 		},
-		mode: "onBlur",
+		mode: "onChange",
 		resolver: zodResolver(getLoginFormSchema(t)),
 	})
 

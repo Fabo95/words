@@ -43,7 +43,7 @@ export const AccountPasswordForm = () => {
 			password: "",
 			confirmPassword: "",
 		},
-		mode: "onBlur",
+		mode: "onChange",
 		resolver: zodResolver(getAccountPasswordFormSchema(t)),
 	})
 
