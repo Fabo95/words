@@ -283,7 +283,7 @@ export type paths = {
             path?: never;
             cookie?: never;
         };
-        get: operations["get_cefr_levels"];
+        get: operations["get_universal_pos_tags"];
         put?: never;
         post?: never;
         delete?: never;
@@ -1345,7 +1345,7 @@ export interface operations {
             };
         };
     };
-    get_cefr_levels: {
+    get_universal_pos_tags: {
         parameters: {
             query?: never;
             header?: never;
