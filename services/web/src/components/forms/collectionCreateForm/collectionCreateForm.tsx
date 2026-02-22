@@ -36,6 +36,8 @@ export const CollectionCreateForm = ({ onSubmit, onCancel }: ISidebarCollectionC
 		resolver: zodResolver(getCollectionCreateFormSchema(t)),
 	})
 
+	console.log("")
+
 	const { mutateAsync: mutateCollectionCreate } = $api.useMutation("post", "/collection", {
 		onSuccess: async () => {
 			await queryClient.invalidateQueries({ queryKey: getCollectionsQueryOptions().queryKey })
