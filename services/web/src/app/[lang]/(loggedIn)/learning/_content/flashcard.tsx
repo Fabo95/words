@@ -3,8 +3,10 @@
 import { useMemo } from "react"
 import { motion, AnimatePresence } from "motion/react"
 import { useTranslations } from "next-intl"
-import { Keyboard, Check, X, Minus } from "lucide-react"
+import { Keyboard, Check, X, Minus, Lightbulb } from "lucide-react"
 import { Badge } from "@app/components/ui/badge"
+import { Button } from "@app/components/ui/button"
+import { ResponsiveTooltip } from "@app/components/ui/responsive-tooltip"
 import { cn } from "@app/utils/shadcn/shadcnHelpers"
 import { TFunction } from "@app/utils/types/tFunction"
 import type { ReviewGrade } from "./utils/useLearningSessionQuery"
@@ -15,6 +17,12 @@ type ReviewResult = {
 	newInterval: number
 }
 
+type ExampleSentence = {
+	id: number
+	language: string
+	sentence: string
+}
+
 type FlashcardProps = {
 	sourceText: string
 	targetText: string
@@ -23,6 +31,16 @@ type FlashcardProps = {
 	onFlip: () => void
 	onRevealComplete?: () => void
 	reviewResult?: ReviewResult | null
+	exampleSentences?: ExampleSentence[]
+}
+
+function createClozeText(sentence: string, wordToHide: string): string {
+	// Create a regex that matches the word (case-insensitive, word boundaries)
+	const escapedWord = wordToHide.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")
+	const regex = new RegExp(`\\b${escapedWord}\\b`, "gi")
+
+	// Replace with underscores of same length
+	return sentence.replace(regex, (match) => "_".repeat(match.length))
 }
 
 function formatNextReview(intervalDays: number, t: TFunction): string {
@@ -53,8 +71,19 @@ export function Flashcard({
 	onFlip,
 	onRevealComplete,
 	reviewResult,
+	exampleSentences = [],
 }: FlashcardProps) {
 	const t = useTranslations()
+
+	// Create cloze-deleted example sentences (hide the target word)
+	const clozeExamples = useMemo(() => {
+		return exampleSentences.map((ex) => ({
+			...ex,
+			clozeSentence: createClozeText(ex.sentence, targetText),
+		}))
+	}, [exampleSentences, targetText])
+
+	const hasHint = clozeExamples.length > 0
 
 	const { charDelays, lastCharIndex } = useMemo(() => {
 		const indices: number[] = []
@@ -138,11 +167,31 @@ export function Flashcard({
 					)}
 				</AnimatePresence>
 
-				{isNew && (
-					<Badge variant="secondary" className="absolute top-4 right-4 text-xs">
-						{t("pages.learning.session.newBadge")}
-					</Badge>
-				)}
+				<div className="absolute top-4 right-4 flex items-center gap-2">
+					{hasHint && !isRevealed && (
+						<ResponsiveTooltip
+							title={t("pages.learning.session.hint.title")}
+							content={
+								<div className="space-y-2">
+									{clozeExamples.map((ex) => (
+										<p key={ex.id} className="text-sm italic">
+											"{ex.clozeSentence}"
+										</p>
+									))}
+								</div>
+							}
+						>
+							<Button variant="ghost" size="icon" className="h-7 w-7">
+								<Lightbulb className="h-4 w-4" />
+							</Button>
+						</ResponsiveTooltip>
+					)}
+					{isNew && (
+						<Badge variant="secondary" className="text-xs">
+							{t("pages.learning.session.newBadge")}
+						</Badge>
+					)}
+				</div>
 
 				<p className="text-xl md:text-2xl font-semibold text-center wrap-break-word mb-2">{sourceText}</p>
 				<p className="text-xl md:text-2xl font-semibold text-center wrap-break-word">{renderTargetText()}</p>

@@ -10,14 +10,13 @@ import {
 	DialogOrDrawer,
 	DialogOrDrawerContent,
 	DialogOrDrawerDescription,
-	DialogOrDrawerFooter,
 	DialogOrDrawerHeader,
 	DialogOrDrawerTitle,
 } from "@app/components/ui/dialogOrDrawer"
-import { ResponsiveTooltip } from "@app/components/ui/responsive-tooltip"
 import { getDailyGoalsQueryOptions } from "@app/utils/reactQuery/queryOptions"
 import { Flame } from "lucide-react"
 import { DailyGoalsForm } from "@app/components/forms/dailyGoalsForm/dailyGoalsForm"
+import { Tooltip, TooltipContent, TooltipTrigger } from "@app/components/ui/tooltip"
 
 export function DailyGoalsIndicator() {
 	const t = useTranslations("components.dailyGoals")
@@ -32,27 +31,27 @@ export function DailyGoalsIndicator() {
 
 	return (
 		<>
-			<ResponsiveTooltip
-				content={
+			<Tooltip>
+				<TooltipTrigger asChild>
+					<Button
+						variant="ghost"
+						size="icon"
+						className="h-9 w-9 md:h-7 md:w-7 relative"
+						onClick={() => setIsOpen(true)}
+					>
+						<ProgressRing value={progress_percentage} size={20} strokeWidth={2.5} />
+						{current_streak > 0 && (
+							<Flame className="h-2.5 w-2.5 absolute -top-0.5 -right-0.5 text-orange-500 fill-orange-500" />
+						)}
+					</Button>
+				</TooltipTrigger>
+				<TooltipContent>
 					<p>
 						{t("tooltip", { current: words_added_today, goal: daily_add_words_goal })}
 						{current_streak > 0 && ` | ${t("tooltipStreak", { days: current_streak })}`}
 					</p>
-				}
-				title={t("title")}
-			>
-				<Button
-					variant="ghost"
-					size="icon"
-					className="h-9 w-9 md:h-7 md:w-7 relative"
-					onClick={() => setIsOpen(true)}
-				>
-					<ProgressRing value={progress_percentage} size={20} strokeWidth={2.5} />
-					{current_streak > 0 && (
-						<Flame className="h-2.5 w-2.5 absolute -top-0.5 -right-0.5 text-orange-500 fill-orange-500" />
-					)}
-				</Button>
-			</ResponsiveTooltip>
+				</TooltipContent>
+			</Tooltip>
 
 			<DialogOrDrawer open={isOpen} onOpenChange={setIsOpen}>
 				<DialogOrDrawerContent>

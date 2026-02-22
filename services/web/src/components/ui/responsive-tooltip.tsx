@@ -1,7 +1,6 @@
 "use client"
 
 import * as React from "react"
-import { Info } from "lucide-react"
 
 import { useIsMobile } from "@app/hooks/use-mobile"
 import { Tooltip, TooltipContent, TooltipTrigger } from "@app/components/ui/tooltip"
@@ -9,7 +8,7 @@ import { Drawer, DrawerContent, DrawerHeader, DrawerTitle, DrawerDescription } f
 import { cn } from "@app/utils/shadcn/shadcnHelpers"
 
 type ResponsiveTooltipProps = {
-	children: React.ReactNode
+	children: React.ReactElement
 	content: React.ReactNode
 	title?: string
 	side?: "top" | "right" | "bottom" | "left"
@@ -21,16 +20,22 @@ export function ResponsiveTooltip({ children, content, title, side = "top", clas
 	const [open, setOpen] = React.useState(false)
 
 	if (isMobile) {
+		// Clone the child element and add onClick handler to open the drawer
+		const childWithHandler = React.cloneElement(children, {
+			onClick: (e: React.MouseEvent) => {
+				e.stopPropagation()
+				setOpen(true)
+				// Call original onClick if it exists
+				if (children.props.onClick) {
+					children.props.onClick(e)
+				}
+			},
+			className: cn(children.props.className, className),
+		})
+
 		return (
 			<>
-				<button
-					type="button"
-					onClick={() => setOpen(true)}
-					className={cn("text-muted-foreground hover:text-foreground transition-colors", className)}
-					aria-label="More info"
-				>
-					{children}
-				</button>
+				{childWithHandler}
 
 				<Drawer open={open} onOpenChange={setOpen}>
 					<DrawerContent>
@@ -48,7 +53,7 @@ export function ResponsiveTooltip({ children, content, title, side = "top", clas
 
 	return (
 		<Tooltip>
-			<TooltipTrigger asChild>{children}</TooltipTrigger>
+			<TooltipTrigger asChild>{React.cloneElement(children, { className: cn(children.props.className, className) })}</TooltipTrigger>
 			<TooltipContent side={side} className="max-w-xs">
 				{content}
 			</TooltipContent>

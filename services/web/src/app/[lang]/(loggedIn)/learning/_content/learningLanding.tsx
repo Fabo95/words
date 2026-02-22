@@ -110,7 +110,9 @@ export function LearningLanding({
 											item.highlight ? "bg-primary/10" : "bg-muted"
 										}`}
 									>
-										<Icon className={`h-4 w-4 md:h-5 md:w-5 ${item.highlight ? "text-primary" : "text-foreground/60"}`} />
+										<Icon
+											className={`h-4 w-4 md:h-5 md:w-5 ${item.highlight ? "text-primary" : "text-foreground/60"}`}
+										/>
 									</div>
 									<div>
 										<p
@@ -150,6 +152,7 @@ export function LearningLanding({
 
 			{hasNoItemsToLearn ? (
 				<ResponsiveTooltip
+					className="w-full"
 					content={t("pages.learning.landing.noItemsTooltip")}
 					title={t("pages.learning.landing.startButton")}
 				>

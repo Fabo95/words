@@ -400,6 +400,10 @@
 					"hard": "Hard",
 					"good": "Good",
 					"easy": "Easy"
+				},
+				"hint": {
+					"title": "Example Sentence",
+					"tooltip": "See an example sentence with the word blanked out"
 				}
 			},
 			"complete": {

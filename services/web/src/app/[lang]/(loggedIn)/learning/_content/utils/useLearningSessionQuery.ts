@@ -86,6 +86,11 @@ function toLearnItem(item: LearnItemApiResponse): LearnItem {
 		sourceText: item.source_text,
 		targetText: item.target_text,
 		isNew: item.is_new,
+		exampleSentences: item.example_sentences.map((ex) => ({
+			id: ex.id,
+			language: ex.language,
+			sentence: ex.sentence,
+		})),
 	}
 }
 

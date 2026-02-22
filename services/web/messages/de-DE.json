@@ -403,6 +403,10 @@
 					"hard": "Schwer",
 					"good": "Gut",
 					"easy": "Einfach"
+				},
+				"hint": {
+					"title": "Beispielsatz",
+					"tooltip": "Zeigt einen Beispielsatz mit dem Wort als Lücke"
 				}
 			},
 			"complete": {

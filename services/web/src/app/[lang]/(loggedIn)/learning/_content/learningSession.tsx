@@ -159,6 +159,7 @@ export function LearningSession({
 					onFlip={handleFlip}
 					onRevealComplete={handleRevealComplete}
 					reviewResult={reviewResult}
+					exampleSentences={currentItem.exampleSentences}
 				/>
 			</div>
 

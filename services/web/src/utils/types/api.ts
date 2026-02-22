@@ -23,11 +23,18 @@ export type CefrLevel = {
 	name: string
 }
 
+const exampleSentenceSchema = z.object({
+	id: z.number(),
+	language: z.string(),
+	sentence: z.string(),
+})
+
 export const learnItemSchema = z.object({
 	id: z.number(),
 	sourceText: z.string(),
 	targetText: z.string(),
 	isNew: z.boolean(),
+	exampleSentences: z.array(exampleSentenceSchema),
 })
 
 export type LearnItem = z.infer<typeof learnItemSchema>

@@ -14,10 +14,10 @@ import { useToast } from "@app/components/ui/use-toast"
 import { $api } from "@app/utils/api/apiRequests"
 import { useTranslations } from "next-intl"
 import { zodResolver } from "@hookform/resolvers/zod"
-import {useQueryClient, useSuspenseQuery} from "@tanstack/react-query"
+import { useQueryClient, useSuspenseQuery } from "@tanstack/react-query"
 import { useCallback } from "react"
 import { useForm } from "react-hook-form"
-import {getUserQueryOptions} from "@app/utils/reactQuery/queryOptions";
+import { getUserQueryOptions } from "@app/utils/reactQuery/queryOptions"
 
 export const AccountNameForm = () => {
 	// --- STATE ---
@@ -79,11 +79,12 @@ export const AccountNameForm = () => {
 				<FormProvider {...form}>
 					<Form onSubmit={form.handleSubmit(onSubmit)}>
 						<ResponsiveTooltip
+							className="w-full text-left"
 							content={t("forms.accountNameForm.emailTooltip")}
 							title={t("forms.accountNameForm.emailLabel")}
 						>
 							<FormField
-								className="mb-5"
+								className="mb-5 w-full"
 								control={form.control}
 								label={t("forms.accountNameForm.emailLabel")}
 								name="email"
