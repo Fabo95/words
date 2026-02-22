@@ -4,18 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="fix form validation">
+    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="add next review badge">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/web/messages/de-DE.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/messages/de-DE.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/web/messages/en-GB.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/messages/en-GB.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collection/collectionEmptyState.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collection/collectionEmptyState.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collection/collectionTranslations.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collection/collectionTranslations.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collection/collectionsTranslationsMobile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collection/collectionsTranslationsMobile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/_content/dailyGoalsIndicator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/_content/dailyGoalsIndicator.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collection/utils/collectionTableConstants.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collection/utils/collectionTableConstants.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/translations/_content/translations.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/translations/_content/translations.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/translations/_content/translationsMobile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/translations/_content/translationsMobile.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/translations/_content/utils/translationsTableConstants.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/translations/_content/utils/translationsTableConstants.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/components/ui/empty-state.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/empty-state.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/learning/_content/learningLanding.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/learning/_content/learningLanding.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/components/appSidebar/components/sidebarLanguageSwitch.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/appSidebar/components/sidebarLanguageSwitch.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/components/forms/accountNameForm/accountNameForm.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/forms/accountNameForm/accountNameForm.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/components/nextReviewBadge/nextReviewBadge.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/nextReviewBadge/nextReviewBadge.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -277,14 +275,6 @@
       <workItem from="1769809608107" duration="54226000" />
       <workItem from="1771107369084" duration="5879000" />
       <workItem from="1771506192993" duration="32066000" />
-    </task>
-    <task id="LOCAL-00125" summary="add design review.md">
-      <option name="closed" value="true" />
-      <created>1771108902674</created>
-      <option name="number" value="00125" />
-      <option name="presentableId" value="LOCAL-00125" />
-      <option name="project" value="LOCAL" />
-      <updated>1771108902674</updated>
     </task>
     <task id="LOCAL-00126" summary="add design review.md">
       <option name="closed" value="true" />
@@ -670,7 +660,15 @@
       <option name="project" value="LOCAL" />
       <updated>1771749755263</updated>
     </task>
-    <option name="localTasksCounter" value="174" />
+    <task id="LOCAL-00174" summary="add next review badge">
+      <option name="closed" value="true" />
+      <created>1771792224534</created>
+      <option name="number" value="00174" />
+      <option name="presentableId" value="LOCAL-00174" />
+      <option name="project" value="LOCAL" />
+      <updated>1771792224534</updated>
+    </task>
+    <option name="localTasksCounter" value="175" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -691,7 +689,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add reverse mode" />
     <MESSAGE value="add next review data + improve learning page" />
     <MESSAGE value="add grade" />
     <MESSAGE value="add grade summary" />
@@ -716,7 +713,8 @@
     <MESSAGE value="update react query" />
     <MESSAGE value="fix delete from collection" />
     <MESSAGE value="fix form validation" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix form validation" />
+    <MESSAGE value="add next review badge" />
+    <option name="LAST_COMMIT_MESSAGE" value="add next review badge" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

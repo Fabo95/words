@@ -6,7 +6,7 @@ import { Card, CardContent } from "@app/components/ui/card"
 import { Switch } from "@app/components/ui/switch"
 import { Label } from "@app/components/ui/label"
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@app/components/ui/select"
-import { Tooltip, TooltipContent, TooltipTrigger } from "@app/components/ui/tooltip"
+import { ResponsiveTooltip } from "@app/components/ui/responsive-tooltip"
 import { Clock, Sparkles, BookOpen, Award } from "lucide-react"
 
 type LearnStats = {
@@ -148,26 +148,20 @@ export function LearningLanding({
 				</div>
 			</div>
 
-			<Tooltip>
-				<TooltipTrigger asChild>
-					<span className="w-full">
-						<Button
-							className="w-full text-base"
-							onClick={onStartLearning}
-							isLoading={isLoading}
-							disabled={hasNoItemsToLearn}
-						>
-							{t("pages.learning.landing.startButton")}
-						</Button>
-					</span>
-				</TooltipTrigger>
-
-				{hasNoItemsToLearn && (
-					<TooltipContent>
-						<p>{t("pages.learning.landing.noItemsTooltip")}</p>
-					</TooltipContent>
-				)}
-			</Tooltip>
+			{hasNoItemsToLearn ? (
+				<ResponsiveTooltip
+					content={t("pages.learning.landing.noItemsTooltip")}
+					title={t("pages.learning.landing.startButton")}
+				>
+					<Button className="w-full text-base" disabled>
+						{t("pages.learning.landing.startButton")}
+					</Button>
+				</ResponsiveTooltip>
+			) : (
+				<Button className="w-full text-base" onClick={onStartLearning} isLoading={isLoading}>
+					{t("pages.learning.landing.startButton")}
+				</Button>
+			)}
 		</div>
 	)
 }

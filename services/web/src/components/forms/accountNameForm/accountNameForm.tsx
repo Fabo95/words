@@ -9,7 +9,7 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@app/
 import { Form, FormProvider } from "@app/components/ui/form"
 import { FormField } from "@app/components/ui/formField"
 import { Input } from "@app/components/ui/input"
-import { Tooltip, TooltipContent, TooltipTrigger } from "@app/components/ui/tooltip"
+import { ResponsiveTooltip } from "@app/components/ui/responsive-tooltip"
 import { useToast } from "@app/components/ui/use-toast"
 import { $api } from "@app/utils/api/apiRequests"
 import { useTranslations } from "next-intl"
@@ -78,19 +78,18 @@ export const AccountNameForm = () => {
 			<CardContent className="space-y-2">
 				<FormProvider {...form}>
 					<Form onSubmit={form.handleSubmit(onSubmit)}>
-						<Tooltip>
-							<TooltipContent>{t("forms.accountNameForm.emailTooltip")}</TooltipContent>
-
-							<TooltipTrigger className="w-full text-left">
-								<FormField
-									className="mb-5"
-									control={form.control}
-									label={t("forms.accountNameForm.emailLabel")}
-									name="email"
-									render={(fieldProps) => <Input disabled={true} type="email" {...fieldProps.field} />}
-								/>
-							</TooltipTrigger>
-						</Tooltip>
+						<ResponsiveTooltip
+							content={t("forms.accountNameForm.emailTooltip")}
+							title={t("forms.accountNameForm.emailLabel")}
+						>
+							<FormField
+								className="mb-5"
+								control={form.control}
+								label={t("forms.accountNameForm.emailLabel")}
+								name="email"
+								render={(fieldProps) => <Input disabled={true} type="email" {...fieldProps.field} />}
+							/>
+						</ResponsiveTooltip>
 
 						<FormField
 							control={form.control}

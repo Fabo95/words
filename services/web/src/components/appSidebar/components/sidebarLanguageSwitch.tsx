@@ -11,7 +11,7 @@ import {
 	DropdownMenuTrigger,
 } from "@app/components/ui/dropdown-menu"
 import { SidebarMenu, SidebarMenuButton, SidebarMenuItem } from "@app/components/ui/sidebar"
-import { Tooltip, TooltipContent, TooltipTrigger } from "@app/components/ui/tooltip"
+import { ResponsiveTooltip } from "@app/components/ui/responsive-tooltip"
 import { useTranslations } from "next-intl"
 import { CaretSortIcon, PlusIcon } from "@radix-ui/react-icons"
 
@@ -69,20 +69,19 @@ export function SidebarLanguageSwitch({ languages }: SidebarLanguageSwitchProps)
 							</DropdownMenuItem>
 						))}
 						<DropdownMenuSeparator />
-						<Tooltip>
-							<TooltipContent>{t("components.languageSwitcher.dropdownTooltipFeature")}</TooltipContent>
-
-							<TooltipTrigger>
-								<DropdownMenuItem disabled={true} className="gap-2 p-2">
-									<div className="flex size-6 items-center justify-center rounded-md border bg-background">
-										<PlusIcon className="size-4" />
-									</div>
-									<div className="font-medium text-muted-foreground">
-										{t("components.languageSwitcher.dropdownAddButton")}
-									</div>
-								</DropdownMenuItem>
-							</TooltipTrigger>
-						</Tooltip>
+						<ResponsiveTooltip
+							content={t("components.languageSwitcher.dropdownTooltipFeature")}
+							title={t("components.languageSwitcher.dropdownAddButton")}
+						>
+							<DropdownMenuItem disabled={true} className="gap-2 p-2">
+								<div className="flex size-6 items-center justify-center rounded-md border bg-background">
+									<PlusIcon className="size-4" />
+								</div>
+								<div className="font-medium text-muted-foreground">
+									{t("components.languageSwitcher.dropdownAddButton")}
+								</div>
+							</DropdownMenuItem>
+						</ResponsiveTooltip>
 					</DropdownMenuContent>
 				</DropdownMenu>
 			</SidebarMenuItem>

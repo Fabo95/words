@@ -37,6 +37,7 @@
         "tomorrow": "Morgen",
         "inDays": "In {days} Tagen",
         "overdue": "Fällig",
+        "title": "Nächste Wiederholung",
         "tooltip": "Zeigt an, wann dieses Wort zur Wiederholung fällig ist. Neue Wörter wurden noch nicht wiederholt. Fällige Wörter sollten bald wiederholt werden, um das Gelernte zu behalten."
       }
     },
