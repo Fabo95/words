@@ -1,42 +1,31 @@
 import { QueryClient, defaultShouldDehydrateQuery, isServer } from "@tanstack/react-query"
+import { cache } from "react"
 
 function makeQueryClient() {
 	return new QueryClient({
 		defaultOptions: {
 			queries: {
-				// With SSR, we usually want to set some default staleTime
-				// above 0 to avoid refetching immediately on the client
-				staleTime: 5 * 60 * 1000, // 5 minutes
+				staleTime: 5 * 60 * 1000,
 				refetchOnWindowFocus: false,
 			},
 			dehydrate: {
-				// include pending queries in dehydration
 				shouldDehydrateQuery: (query) => defaultShouldDehydrateQuery(query) || query.state.status === "pending",
-				shouldRedactErrors: (error) => {
-					// We should not catch Next.js server errors
-					// as that's how Next.js detects dynamic pages
-					// so we cannot redact them.
-					// Next.js also automatically redacts errors for us
-					// with better digests.
-					return false
-				},
+				shouldRedactErrors: () => false,
 			},
 		},
 	})
 }
 
+// Use React cache() to share queryClient per server request
+// This ensures layout and page prefetches go into the same client
+const getServerQueryClient = cache(makeQueryClient)
+
 let browserQueryClient: QueryClient | undefined = undefined
 
 export function getQueryClient() {
 	if (isServer) {
-		// Server: always make a new query client
-		return makeQueryClient()
+		return getServerQueryClient()
 	}
-
-	// Browser: make a new query client if we don't already have one
-	// This is very important, so we don't re-make a new client if React
-	// suspends during the initial render. This may not be needed if we
-	// have a suspense boundary BELOW the creation of the query client
 	if (!browserQueryClient) browserQueryClient = makeQueryClient()
 	return browserQueryClient
 }

@@ -19,13 +19,14 @@ import {
 } from "@app/utils/reactQuery/queryOptions"
 import { DailyGoalsIndicator } from "@app/app/[lang]/(loggedIn)/_content/dailyGoalsIndicator"
 import { MobileHeaderTitle } from "@app/components/ui/mobile-header-title"
+import { setSSRAuthCookie } from "@app/utils/api/apiRequests"
 
 export default async function Layout({ children }: { children: ReactNode }) {
-	// --- STATE ---
-
 	const cookieStore = await cookies()
 	const defaultOpen = cookieStore.get("sidebar:state")?.value === "true"
-	const authCookieValue = cookieStore.get("auth-cookie")?.value
+
+	// Set auth cookie for SSR middleware - must be before any prefetch calls
+	setSSRAuthCookie(cookieStore.get("auth-cookie")?.value)
 
 	const queryClient = getQueryClient()
 
@@ -51,15 +52,11 @@ export default async function Layout({ children }: { children: ReactNode }) {
 	//       you could also useQuery instead of useSuspenseQuery, and the Promise would still be picked up correctly.
 	//       However, NextJs won't suspend in that case and the component will render in the pending status, which also opts out of server rendering the content.
 	// See: https://tanstack.com/query/v5/docs/framework/react/guides/advanced-ssr#streaming-with-server-components
-	void queryClient.prefetchQuery(getUserQueryOptions(authCookieValue))
-
-	void queryClient.prefetchQuery(getCollectionsQueryOptions(authCookieValue))
-
-	void queryClient.prefetchQuery(getCefrLevelsQueryOptions(authCookieValue))
-
-	void queryClient.prefetchQuery(getUniversalPosTagsQueryOptions(authCookieValue))
-
-	void queryClient.prefetchQuery(getDailyGoalsQueryOptions(authCookieValue))
+	void queryClient.prefetchQuery(getUserQueryOptions())
+	void queryClient.prefetchQuery(getCollectionsQueryOptions())
+	void queryClient.prefetchQuery(getCefrLevelsQueryOptions())
+	void queryClient.prefetchQuery(getUniversalPosTagsQueryOptions())
+	void queryClient.prefetchQuery(getDailyGoalsQueryOptions())
 
 	// --- RENDER ---
 

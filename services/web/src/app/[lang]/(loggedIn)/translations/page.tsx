@@ -4,28 +4,22 @@ import { Translations } from "@app/app/[lang]/(loggedIn)/translations/_content/t
 export const metadata: Metadata = {
 	title: "Translations",
 }
-import { Locale } from "@app/utils/locale/localeTypes"
 import { getQueryClient } from "@app/utils/reactQuery/reactQueryHelpers"
 import { HydrationBoundary, dehydrate } from "@tanstack/react-query"
 import { cookies } from "next/headers"
+import { setSSRAuthCookie } from "@app/utils/api/apiRequests"
 import { getTranslationsQueryOptions } from "@app/utils/reactQuery/queryOptions"
 
-export default async function Page({
-	searchParams,
-}: { params: Promise<{ lang: Locale }>; searchParams: Promise<{ page?: string; search?: string }> }) {
-	// --- STATE ---
-
+export default async function Page() {
 	const cookieStore = await cookies()
-	const authCookieValue = cookieStore.get("auth-cookie")?.value
+	setSSRAuthCookie(cookieStore.get("auth-cookie")?.value)
 
 	const queryClient = getQueryClient()
 
-	// This is to check if translations exist.
 	void queryClient.prefetchQuery(
 		getTranslationsQueryOptions({
 			page: 1,
 			pageSize: 1,
-			authCookieValue,
 		}),
 	)
 
