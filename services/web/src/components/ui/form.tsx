@@ -8,7 +8,7 @@ import { Controller, ControllerProps, FieldPath, FieldValues, FormProvider, useF
 import { AnimatedContainer } from "@app/components/ui/animated-container"
 import { Label } from "@app/components/ui/label"
 import { cn } from "@app/utils/shadcn/shadcnHelpers"
-import { ReactNode } from "react"
+import { JSX, ReactNode } from "react"
 
 import IntrinsicElements = JSX.IntrinsicElements
 
@@ -139,12 +139,7 @@ const FormMessage = React.forwardRef<HTMLParagraphElement, React.HTMLAttributes<
 
 		return (
 			<AnimatedContainer show={!!body}>
-				<p
-					ref={ref}
-					id={formMessageId}
-					className={cn("text-sm font-medium text-destructive", className)}
-					{...props}
-				>
+				<p ref={ref} id={formMessageId} className={cn("text-sm font-medium text-destructive", className)} {...props}>
 					{body}
 				</p>
 			</AnimatedContainer>
