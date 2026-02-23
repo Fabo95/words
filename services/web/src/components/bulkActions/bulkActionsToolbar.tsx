@@ -6,6 +6,7 @@ import { useTranslations } from "next-intl"
 import { useQueryClient } from "@tanstack/react-query"
 import { Trash2, FolderInput, FolderMinus, Download, X } from "lucide-react"
 
+import { AnimatedContainer } from "@app/components/ui/animated-container"
 import { Button } from "@app/components/ui/button"
 import {
 	DialogOrDrawer,
@@ -200,11 +201,10 @@ export function BulkActionsToolbar({
 		})
 	}
 
-	if (selectedCount === 0) return null
-
 	return (
 		<>
-			<div className="flex flex-wrap items-center gap-2 p-3 mb-3 bg-muted/50 rounded-lg border">
+			<AnimatedContainer show={selectedCount > 0}>
+				<div className="flex flex-wrap items-center gap-2 p-3 mb-3 bg-muted/50 rounded-lg border">
 				<span className="text-sm font-medium">{t("components.bulkActions.selected", { count: selectedCount })}</span>
 
 				<div className="flex-1" />
@@ -237,6 +237,7 @@ export function BulkActionsToolbar({
 					</Button>
 				</div>
 			</div>
+			</AnimatedContainer>
 
 			{/* Move to Collection Dialog */}
 			<DialogOrDrawer open={isMoveDialogOpen} onOpenChange={setIsMoveDialogOpen}>

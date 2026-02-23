@@ -5,6 +5,7 @@ import * as LabelPrimitive from "@radix-ui/react-label"
 import { Slot } from "@radix-ui/react-slot"
 import { Controller, ControllerProps, FieldPath, FieldValues, FormProvider, useFormContext } from "react-hook-form"
 
+import { AnimatedContainer } from "@app/components/ui/animated-container"
 import { Label } from "@app/components/ui/label"
 import { cn } from "@app/utils/shadcn/shadcnHelpers"
 import { ReactNode } from "react"
@@ -136,19 +137,17 @@ const FormMessage = React.forwardRef<HTMLParagraphElement, React.HTMLAttributes<
 		const { error, formMessageId } = useFormField()
 		const body = error ? String(error?.message) : children
 
-		if (!body) {
-			return null
-		}
-
 		return (
-			<p
-				ref={ref}
-				id={formMessageId}
-				className={cn("text-sm font-medium text-destructive", className)}
-				{...props}
-			>
-				{body}
-			</p>
+			<AnimatedContainer show={!!body}>
+				<p
+					ref={ref}
+					id={formMessageId}
+					className={cn("text-sm font-medium text-destructive", className)}
+					{...props}
+				>
+					{body}
+				</p>
+			</AnimatedContainer>
 		)
 	},
 )

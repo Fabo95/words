@@ -4,17 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="add example sentence hint">
+    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="add bulk actions for words">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/messages/de-DE.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/messages/de-DE.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/messages/en-GB.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/messages/en-GB.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collection/collectionTranslations.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collection/collectionTranslations.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collection/collectionsTranslationsMobile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collection/collectionsTranslationsMobile.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collection/utils/collectionTableConstants.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]/_content/collection/utils/collectionTableConstants.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/translations/_content/translations.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/translations/_content/translations.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/translations/_content/translationsMobile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/translations/_content/translationsMobile.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/translations/_content/utils/translationsTableConstants.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/translations/_content/utils/translationsTableConstants.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/components/ui/dataTable/dataTable.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/dataTable/dataTable.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/components/bulkActions/bulkActionsToolbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/bulkActions/bulkActionsToolbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/components/ui/form.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/ui/form.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -276,14 +269,6 @@
       <workItem from="1769809608107" duration="54226000" />
       <workItem from="1771107369084" duration="5879000" />
       <workItem from="1771506192993" duration="32066000" />
-    </task>
-    <task id="LOCAL-00128" summary="add github action to push docker file of web">
-      <option name="closed" value="true" />
-      <created>1771510773593</created>
-      <option name="number" value="00128" />
-      <option name="presentableId" value="LOCAL-00128" />
-      <option name="project" value="LOCAL" />
-      <updated>1771510773593</updated>
     </task>
     <task id="LOCAL-00129" summary="add github action to push docker file of web">
       <option name="closed" value="true" />
@@ -669,7 +654,15 @@
       <option name="project" value="LOCAL" />
       <updated>1771794010531</updated>
     </task>
-    <option name="localTasksCounter" value="177" />
+    <task id="LOCAL-00177" summary="add bulk actions for words">
+      <option name="closed" value="true" />
+      <created>1771795447275</created>
+      <option name="number" value="00177" />
+      <option name="presentableId" value="LOCAL-00177" />
+      <option name="project" value="LOCAL" />
+      <updated>1771795447276</updated>
+    </task>
+    <option name="localTasksCounter" value="178" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -690,7 +683,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add grade summary" />
     <MESSAGE value="add learn collection feature" />
     <MESSAGE value="improve mobile css" />
     <MESSAGE value="update schema.prisma" />
@@ -715,7 +707,8 @@
     <MESSAGE value="add next review badge" />
     <MESSAGE value="add responsive tooltip" />
     <MESSAGE value="add example sentence hint" />
-    <option name="LAST_COMMIT_MESSAGE" value="add example sentence hint" />
+    <MESSAGE value="add bulk actions for words" />
+    <option name="LAST_COMMIT_MESSAGE" value="add bulk actions for words" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
