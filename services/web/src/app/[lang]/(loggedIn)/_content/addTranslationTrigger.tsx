@@ -1,7 +1,6 @@
 "use client"
 
 import { useState, useEffect, useRef } from "react"
-import * as React from "react"
 import { useTranslations } from "next-intl"
 import { Button } from "@app/components/ui/button"
 import { PlusIcon } from "@radix-ui/react-icons"
@@ -140,15 +139,17 @@ export const AddTranslationTrigger = ({
 				<DialogOrDrawerContent>
 					<DialogOrDrawerHeader>
 						{isEnriching ? (
-							<DialogOrDrawerTitle>{t("forms.translationForm.enriching.title")}</DialogOrDrawerTitle>
+							<>
+								<DialogOrDrawerTitle>{t("forms.translationForm.enriching.title")}</DialogOrDrawerTitle>
+								<DialogOrDrawerDescription>
+									{t("forms.translationForm.enriching.description")}
+								</DialogOrDrawerDescription>
+							</>
 						) : (
-							<DialogOrDrawerTitle>{t("forms.translationForm.title")}</DialogOrDrawerTitle>
-						)}
-
-						{isEnriching ? (
-							<DialogOrDrawerDescription>{t("forms.translationForm.enriching.description")}</DialogOrDrawerDescription>
-						) : (
-							<DialogOrDrawerDescription>{t("forms.translationForm.description")}</DialogOrDrawerDescription>
+							<>
+								<DialogOrDrawerTitle>{t("forms.translationForm.createTitle")}</DialogOrDrawerTitle>
+								<DialogOrDrawerDescription>{t("forms.translationForm.createDescription")}</DialogOrDrawerDescription>
+							</>
 						)}
 					</DialogOrDrawerHeader>
 

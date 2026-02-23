@@ -14,7 +14,6 @@ import {
 import { useSidebar } from "@app/components/ui/sidebar"
 import { SyntheticEvent, useState } from "react"
 import { useTranslations } from "next-intl"
-import * as React from "react"
 
 import {
 	DialogOrDrawer,

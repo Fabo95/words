@@ -36,8 +36,6 @@ export const CollectionCreateForm = ({ onSubmit, onCancel }: ISidebarCollectionC
 		resolver: zodResolver(getCollectionCreateFormSchema(t)),
 	})
 
-	console.log("")
-
 	const { mutateAsync: mutateCollectionCreate } = $api.useMutation("post", "/collection", {
 		onSuccess: async () => {
 			await queryClient.invalidateQueries({ queryKey: getCollectionsQueryOptions().queryKey })
@@ -83,14 +81,10 @@ export const CollectionCreateForm = ({ onSubmit, onCancel }: ISidebarCollectionC
 			event.stopPropagation()
 
 			if (event.key === "Enter" && !isFormStateValid) {
-				console.log("1")
-
 				await form.trigger()
 			}
 
 			if (event.key === "Enter" && isFormStateValid) {
-				console.log("2")
-
 				await handleSubmit(form.getValues())
 			}
 		},

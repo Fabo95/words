@@ -31,8 +31,6 @@ export const CollectionEditForm = ({ id, defaultValues, onCancel, onSubmit }: IS
 
 	const { toast } = useToast()
 
-	console.log("id", id)
-
 	const isMobile = useIsMobile()
 
 	const t = useTranslations()
@@ -98,14 +96,10 @@ export const CollectionEditForm = ({ id, defaultValues, onCancel, onSubmit }: IS
 			event.stopPropagation()
 
 			if (event.key === "Enter" && !isFormStateValid) {
-				console.log("1")
-
 				await form.trigger()
 			}
 
 			if (event.key === "Enter" && isFormStateValid) {
-				console.log("2")
-
 				await handleSubmit(form.getValues())
 			}
 		},
@@ -137,8 +131,8 @@ export const CollectionEditForm = ({ id, defaultValues, onCancel, onSubmit }: IS
 						isMobile ? "mt-auto flex flex-col gap-2" : "flex flex-col-reverse sm:flex-row sm:justify-end sm:space-x-2"
 					}
 				>
-					<Button type="button" variant="destructive" onClick={handleCancel}>
-						{t("components.navCollection")}
+					<Button type="button" variant="secondary" onClick={handleCancel}>
+						{t("components.navCollections.editForm.cancel")}
 					</Button>
 
 					<Button type="submit" disabled={!isFormStateValid}>

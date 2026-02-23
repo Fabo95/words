@@ -1,5 +1,12 @@
 import { $api } from "@app/utils/api/apiRequests"
 
+/**
+ * Creates headers object with auth cookie for server-side requests.
+ * Returns empty object for client-side requests where cookies are sent automatically.
+ */
+const withAuthCookie = (authCookieValue?: string) =>
+	authCookieValue ? { headers: { Cookie: `auth-cookie=${authCookieValue}` } } : {}
+
 export const getLatestTranslationsQueryOptions = (authCookieValue?: string) =>
 	$api.queryOptions("get", "/translation", {
 		params: {
@@ -9,32 +16,31 @@ export const getLatestTranslationsQueryOptions = (authCookieValue?: string) =>
 				sort_order: "desc",
 			},
 		},
-		// only attach Cookie header when we have it (server)
-		...(authCookieValue ? { headers: { Cookie: `auth-cookie=${authCookieValue}` } } : {}),
+		...withAuthCookie(authCookieValue),
 	})
 
 export const getCollectionsQueryOptions = (authCookieValue?: string) =>
 	$api.queryOptions("get", "/collection/wip1", {
-		...(authCookieValue ? { headers: { Cookie: `auth-cookie=${authCookieValue}` } } : {}),
+		...withAuthCookie(authCookieValue),
 	})
 
 export const getCefrLevelsQueryOptions = (authCookieValue?: string) => ({
 	...$api.queryOptions("get", "/cefr-levels", {
-		...(authCookieValue ? { headers: { Cookie: `auth-cookie=${authCookieValue}` } } : {}),
+		...withAuthCookie(authCookieValue),
 	}),
 	staleTime: Number.POSITIVE_INFINITY, // Reference data never changes
 })
 
 export const getUniversalPosTagsQueryOptions = (authCookieValue?: string) => ({
 	...$api.queryOptions("get", "/universal-pos-tags", {
-		...(authCookieValue ? { headers: { Cookie: `auth-cookie=${authCookieValue}` } } : {}),
+		...withAuthCookie(authCookieValue),
 	}),
 	staleTime: Number.POSITIVE_INFINITY, // Reference data never changes
 })
 
 export const getUserQueryOptions = (authCookieValue?: string) =>
 	$api.queryOptions("get", "/user", {
-		...(authCookieValue ? { headers: { Cookie: `auth-cookie=${authCookieValue}` } } : {}),
+		...withAuthCookie(authCookieValue),
 	})
 
 export const getTranslationsQueryOptions = (args: {
@@ -51,7 +57,7 @@ export const getTranslationsQueryOptions = (args: {
 				search: args.search,
 			},
 		},
-		...(args.authCookieValue ? { headers: { Cookie: `auth-cookie=${args.authCookieValue}` } } : {}),
+		...withAuthCookie(args.authCookieValue),
 	})
 
 export const getCollectionTranslationsQueryOptions = (args: {
@@ -70,13 +76,13 @@ export const getCollectionTranslationsQueryOptions = (args: {
 				search: args.search,
 			},
 		},
-		...(args.authCookieValue ? { headers: { Cookie: `auth-cookie=${args.authCookieValue}` } } : {}),
+		...withAuthCookie(args.authCookieValue),
 	})
 
 export const getCollectionByIdQueryOptions = (id: number, authCookieValue?: string) =>
 	$api.queryOptions("get", "/collection/wip2/{id}", {
 		params: { path: { id } },
-		...(authCookieValue ? { headers: { Cookie: `auth-cookie=${authCookieValue}` } } : {}),
+		...withAuthCookie(authCookieValue),
 	})
 
 export const getTranslationByIdQueryOptions = (id: number) =>
@@ -86,7 +92,7 @@ export const getTranslationByIdQueryOptions = (id: number) =>
 
 export const getTranslationStatisticsQueryOptions = (authCookieValue?: string) =>
 	$api.queryOptions("get", "/translation/statistics", {
-		...(authCookieValue ? { headers: { Cookie: `auth-cookie=${authCookieValue}` } } : {}),
+		...withAuthCookie(authCookieValue),
 	})
 
 export const getLearnItemsQueryOptions = (args: {
@@ -103,7 +109,7 @@ export const getLearnItemsQueryOptions = (args: {
 				include_new: args.include_new,
 			},
 		},
-		...(args.authCookieValue ? { headers: { Cookie: `auth-cookie=${args.authCookieValue}` } } : {}),
+		...withAuthCookie(args.authCookieValue),
 	})
 
 export const getLearnStatsQueryOptions = (args?: { collectionId?: number | null; authCookieValue?: string }) =>
@@ -113,12 +119,12 @@ export const getLearnStatsQueryOptions = (args?: { collectionId?: number | null;
 				...(args?.collectionId ? { collection_id: args.collectionId } : {}),
 			},
 		},
-		...(args?.authCookieValue ? { headers: { Cookie: `auth-cookie=${args.authCookieValue}` } } : {}),
+		...withAuthCookie(args?.authCookieValue),
 	})
 
 export const getDailyGoalsQueryOptions = (authCookieValue?: string) =>
 	$api.queryOptions("get", "/daily-goals", {
-		...(authCookieValue ? { headers: { Cookie: `auth-cookie=${authCookieValue}` } } : {}),
+		...withAuthCookie(authCookieValue),
 	})
 
 export const getDailyStatisticsQueryOptions = (args: { days?: number; authCookieValue?: string }) =>
@@ -128,5 +134,5 @@ export const getDailyStatisticsQueryOptions = (args: { days?: number; authCookie
 				days: args.days ?? 7,
 			},
 		},
-		...(args.authCookieValue ? { headers: { Cookie: `auth-cookie=${args.authCookieValue}` } } : {}),
+		...withAuthCookie(args.authCookieValue),
 	})
