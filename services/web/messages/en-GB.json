@@ -207,6 +207,14 @@
             "title": "Saving failed",
             "description": "Please try again."
           }
+        },
+        "translate": {
+          "toEnglish": "Translate to English",
+          "toGerman": "Translate to German",
+          "error": {
+            "title": "Translation failed",
+            "description": "Could not translate the text. Please try again."
+          }
         }
       },
       "dailyGoalsForm": {

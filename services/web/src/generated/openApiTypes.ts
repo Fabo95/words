@@ -212,6 +212,22 @@ export type paths = {
         patch: operations["record_review_handler"];
         trace?: never;
     };
+    "/translate": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        post: operations["translate_text"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/translation": {
         parameters: {
             query?: never;
@@ -512,6 +528,15 @@ export type components = {
             meta?: null | components["schemas"]["PaginatedMeta"];
             success: boolean;
         };
+        HttpResponseBody_TranslateResponse: {
+            data?: {
+                detected_source_lang: string;
+                translated_text: string;
+            };
+            message: string;
+            meta?: null | components["schemas"]["PaginatedMeta"];
+            success: boolean;
+        };
         HttpResponseBody_TranslationStatistics: {
             data?: {
                 /** Format: int64 */
@@ -703,6 +728,18 @@ export type components = {
             longest_streak_in_period: number;
             /** Format: int32 */
             total_words_added: number;
+        };
+        TranslateRequest: {
+            /** @description Source language code (e.g., "DE", "EN"). If not provided, DeepL will auto-detect. */
+            source_lang?: string | null;
+            /** @description Target language code (e.g., "DE", "EN") */
+            target_lang: string;
+            /** @description The text to translate */
+            text: string;
+        };
+        TranslateResponse: {
+            detected_source_lang: string;
+            translated_text: string;
         };
         TranslationForCreate: {
             /** Format: int32 */
@@ -1207,6 +1244,29 @@ export interface operations {
                 };
                 content: {
                     "application/json": components["schemas"]["HttpResponseBody_ReviewResponse"];
+                };
+            };
+        };
+    };
+    translate_text: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["TranslateRequest"];
+            };
+        };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HttpResponseBody_TranslateResponse"];
                 };
             };
         };

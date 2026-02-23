@@ -210,6 +210,14 @@
             "title": "Speichern fehlgeschlagen",
             "description": "Bitte versuche es erneut."
           }
+        },
+        "translate": {
+          "toEnglish": "Ins Englische übersetzen",
+          "toGerman": "Ins Deutsche übersetzen",
+          "error": {
+            "title": "Übersetzung fehlgeschlagen",
+            "description": "Der Text konnte nicht übersetzt werden. Bitte versuche es erneut."
+          }
         }
       },
       "dailyGoalsForm": {

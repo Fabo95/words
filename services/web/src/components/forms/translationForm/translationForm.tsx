@@ -26,6 +26,7 @@ import {
 	getTranslationsQueryOptions,
 } from "@app/utils/reactQuery/queryOptions"
 import { Cross2Icon } from "@radix-ui/react-icons"
+import { Languages } from "lucide-react"
 import { TranslationEnrich } from "@app/components/forms/translationForm/translationEnrich"
 
 type TranslationFormProps = {
@@ -109,6 +110,8 @@ export const TranslationForm = (props: TranslationFormProps) => {
 		},
 	})
 
+	const { mutateAsync: translateText, isPending: isTranslating } = $api.useMutation("post", "/translate")
+
 	const form = useForm<TranslationFormState>({
 		defaultValues: props.defaultValues,
 		mode: "onChange",
@@ -119,6 +122,56 @@ export const TranslationForm = (props: TranslationFormProps) => {
 		props.onSubmit()
 		form.reset()
 	}, [props, form])
+
+	const handleTranslateToEnglish = useCallback(async () => {
+		const sourceText = form.getValues("sourceText")
+		if (!sourceText?.trim()) return
+
+		try {
+			const result = await translateText({
+				body: {
+					text: sourceText,
+					source_lang: "DE",
+					target_lang: "EN",
+				},
+			})
+
+			if (result.data?.translated_text) {
+				form.setValue("targetText", result.data.translated_text, { shouldDirty: true, shouldValidate: true })
+			}
+		} catch {
+			toast({
+				title: t("forms.translationForm.translate.error.title"),
+				description: t("forms.translationForm.translate.error.description"),
+				variant: "destructive",
+			})
+		}
+	}, [form, translateText, toast, t])
+
+	const handleTranslateToGerman = useCallback(async () => {
+		const targetText = form.getValues("targetText")
+		if (!targetText?.trim()) return
+
+		try {
+			const result = await translateText({
+				body: {
+					text: targetText,
+					source_lang: "EN",
+					target_lang: "DE",
+				},
+			})
+
+			if (result.data?.translated_text) {
+				form.setValue("sourceText", result.data.translated_text, { shouldDirty: true, shouldValidate: true })
+			}
+		} catch {
+			toast({
+				title: t("forms.translationForm.translate.error.title"),
+				description: t("forms.translationForm.translate.error.description"),
+				variant: "destructive",
+			})
+		}
+	}, [form, translateText, toast, t])
 
 	// --- CALLBACKS ---
 
@@ -162,7 +215,20 @@ export const TranslationForm = (props: TranslationFormProps) => {
 					label={t("forms.translationForm.wordLabel")}
 					name="sourceText"
 					render={(fieldProps) => (
-						<Input placeholder={t("forms.translationForm.wordPlaceholder")} type="text" {...fieldProps.field} />
+						<div className="flex gap-2">
+							<Input placeholder={t("forms.translationForm.wordPlaceholder")} type="text" {...fieldProps.field} />
+							<Button
+								type="button"
+								variant="outline"
+								size="icon"
+								className="shrink-0"
+								disabled={isTranslating || !form.watch("sourceText")?.trim()}
+								onClick={handleTranslateToEnglish}
+								title={t("forms.translationForm.translate.toEnglish")}
+							>
+								<Languages className="h-4 w-4" />
+							</Button>
+						</div>
 					)}
 				/>
 
@@ -172,7 +238,20 @@ export const TranslationForm = (props: TranslationFormProps) => {
 					label={t("forms.translationForm.translationLabel")}
 					name="targetText"
 					render={(fieldProps) => (
-						<Input placeholder={t("forms.translationForm.translationPlaceholder")} type="text" {...fieldProps.field} />
+						<div className="flex gap-2">
+							<Input placeholder={t("forms.translationForm.translationPlaceholder")} type="text" {...fieldProps.field} />
+							<Button
+								type="button"
+								variant="outline"
+								size="icon"
+								className="shrink-0"
+								disabled={isTranslating || !form.watch("targetText")?.trim()}
+								onClick={handleTranslateToGerman}
+								title={t("forms.translationForm.translate.toGerman")}
+							>
+								<Languages className="h-4 w-4" />
+							</Button>
+						</div>
 					)}
 				/>
 
