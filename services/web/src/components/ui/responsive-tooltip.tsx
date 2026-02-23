@@ -22,14 +22,18 @@ export function ResponsiveTooltip({ children, content, title, side = "top", clas
 	if (isMobile) {
 		// Clone the child element and add onClick handler to open the drawer
 		const childWithHandler = React.cloneElement(children, {
+			// @ts-ignore
 			onClick: (e: React.MouseEvent) => {
 				e.stopPropagation()
 				setOpen(true)
 				// Call original onClick if it exists
+				// @ts-ignore
 				if (children.props.onClick) {
+					// @ts-ignore
 					children.props.onClick(e)
 				}
 			},
+			// @ts-ignore
 			className: cn(children.props.className, className),
 		})
 
@@ -53,7 +57,10 @@ export function ResponsiveTooltip({ children, content, title, side = "top", clas
 
 	return (
 		<Tooltip>
-			<TooltipTrigger asChild>{React.cloneElement(children, { className: cn(children.props.className, className) })}</TooltipTrigger>
+			<TooltipTrigger asChild>
+				{/* @ts-ignore */}
+				{React.cloneElement(children, { className: cn(children.props.className, className) })}
+			</TooltipTrigger>
 			<TooltipContent side={side} className="max-w-xs">
 				{content}
 			</TooltipContent>
