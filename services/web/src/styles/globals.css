@@ -46,38 +46,62 @@
 }
 
 :root {
-	--radius: 0.625rem;
-	--background: oklch(0.145 0 0);
-	--foreground: oklch(0.985 0 0);
-	--card: oklch(0.205 0 0);
-	--card-foreground: oklch(0.985 0 0);
-	--popover: oklch(0.205 0 0);
-	--popover-foreground: oklch(0.985 0 0);
-	--primary: oklch(0.77 0.16 70);
-	--primary-foreground: oklch(0.28 0.07 46);
-	--secondary: oklch(0.274 0.006 286.033);
-	--secondary-foreground: oklch(0.985 0 0);
-	--muted: oklch(0.269 0 0);
-	--muted-foreground: oklch(0.708 0 0);
-	--accent: oklch(0.371 0 0);
-	--accent-foreground: oklch(0.985 0 0);
-	--destructive: oklch(0.704 0.191 22.216);
-	--border: oklch(1 0 0 / 10%);
-	--input: oklch(1 0 0 / 15%);
-	--ring: oklch(0.556 0 0);
-	--chart-1: oklch(0.88 0.15 92);
-	--chart-2: oklch(0.77 0.16 70);
-	--chart-3: oklch(0.67 0.16 58);
-	--chart-4: oklch(0.56 0.15 49);
-	--chart-5: oklch(0.47 0.12 46);
-	--sidebar: oklch(0.205 0 0);
-	--sidebar-foreground: oklch(0.985 0 0);
-	--sidebar-primary: oklch(0.77 0.16 70);
-	--sidebar-primary-foreground: oklch(0.28 0.07 46);
-	--sidebar-accent: oklch(0.269 0 0);
-	--sidebar-accent-foreground: oklch(0.985 0 0);
-	--sidebar-border: oklch(1 0 0 / 10%);
-	--sidebar-ring: oklch(0.556 0 0);
+	--radius: 0.75rem;
+
+	/* Background with subtle warm undertone */
+	--background: oklch(0.14 0.008 65);
+	--foreground: oklch(0.93 0.01 80);
+
+	/* Cards slightly elevated with warmth */
+	--card: oklch(0.18 0.012 60);
+	--card-foreground: oklch(0.93 0.01 80);
+
+	/* Popovers */
+	--popover: oklch(0.19 0.014 58);
+	--popover-foreground: oklch(0.93 0.01 80);
+
+	/* Primary - rich amber/gold */
+	--primary: oklch(0.75 0.14 75);
+	--primary-foreground: oklch(0.18 0.04 55);
+
+	/* Secondary - warm neutral */
+	--secondary: oklch(0.24 0.015 60);
+	--secondary-foreground: oklch(0.90 0.01 75);
+
+	/* Muted with warmth */
+	--muted: oklch(0.22 0.01 58);
+	--muted-foreground: oklch(0.62 0.015 65);
+
+	/* Accent - subtle warm highlight */
+	--accent: oklch(0.28 0.025 60);
+	--accent-foreground: oklch(0.93 0.01 80);
+
+	/* Destructive - softer coral */
+	--destructive: oklch(0.62 0.2 25);
+
+	/* Borders with warm tint */
+	--border: oklch(0.95 0.015 70 / 12%);
+	--input: oklch(0.95 0.015 70 / 16%);
+
+	/* Ring - amber glow */
+	--ring: oklch(0.75 0.14 75);
+
+	/* Charts - warm gradient */
+	--chart-1: oklch(0.85 0.1 90);
+	--chart-2: oklch(0.75 0.14 75);
+	--chart-3: oklch(0.65 0.15 60);
+	--chart-4: oklch(0.55 0.13 50);
+	--chart-5: oklch(0.45 0.1 45);
+
+	/* Sidebar */
+	--sidebar: oklch(0.16 0.01 58);
+	--sidebar-foreground: oklch(0.90 0.01 75);
+	--sidebar-primary: oklch(0.75 0.14 75);
+	--sidebar-primary-foreground: oklch(0.18 0.04 55);
+	--sidebar-accent: oklch(0.24 0.02 58);
+	--sidebar-accent-foreground: oklch(0.93 0.01 80);
+	--sidebar-border: oklch(0.95 0.015 70 / 10%);
+	--sidebar-ring: oklch(0.75 0.14 75);
 }
 
 @layer base {
