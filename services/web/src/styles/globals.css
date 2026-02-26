@@ -60,8 +60,8 @@
 	--popover: oklch(0.20 0.028 48);
 	--popover-foreground: oklch(0.92 0.025 75);
 
-	/* Primary - rich golden amber */
-	--primary: oklch(0.76 0.145 70);
+	/* Primary - vibrant golden amber */
+	--primary: oklch(0.78 0.18 65);
 	--primary-foreground: oklch(0.16 0.03 55);
 
 	/* Secondary - warm brown */
@@ -84,24 +84,24 @@
 	--input: oklch(0.90 0.03 65 / 15%);
 
 	/* Ring - golden */
-	--ring: oklch(0.76 0.145 70);
+	--ring: oklch(0.78 0.18 65);
 
 	/* Charts - warm gradient */
-	--chart-1: oklch(0.82 0.12 80);
-	--chart-2: oklch(0.76 0.145 70);
-	--chart-3: oklch(0.68 0.13 60);
-	--chart-4: oklch(0.58 0.10 50);
-	--chart-5: oklch(0.48 0.08 45);
+	--chart-1: oklch(0.84 0.14 75);
+	--chart-2: oklch(0.78 0.18 65);
+	--chart-3: oklch(0.68 0.15 55);
+	--chart-4: oklch(0.58 0.12 48);
+	--chart-5: oklch(0.48 0.08 42);
 
 	/* Sidebar - rich warm */
 	--sidebar: oklch(0.16 0.022 53);
 	--sidebar-foreground: oklch(0.90 0.02 70);
-	--sidebar-primary: oklch(0.76 0.145 70);
+	--sidebar-primary: oklch(0.78 0.18 65);
 	--sidebar-primary-foreground: oklch(0.16 0.03 55);
 	--sidebar-accent: oklch(0.26 0.03 52);
 	--sidebar-accent-foreground: oklch(0.92 0.025 75);
 	--sidebar-border: oklch(0.90 0.03 65 / 10%);
-	--sidebar-ring: oklch(0.76 0.145 70);
+	--sidebar-ring: oklch(0.78 0.18 65);
 }
 
 @layer base {
@@ -112,7 +112,7 @@
 	body {
 		@apply bg-background text-foreground antialiased;
 		background-image:
-			radial-gradient(ellipse 60% 40% at 0% 0%, oklch(0.76 0.145 70 / 6%), transparent),
+			radial-gradient(ellipse 60% 40% at 0% 0%, oklch(0.78 0.18 65 / 7%), transparent),
 			radial-gradient(ellipse 50% 35% at 100% 0%, oklch(0.50 0.08 50 / 5%), transparent),
 			radial-gradient(ellipse 45% 40% at 90% 100%, oklch(0.40 0.06 55 / 4%), transparent);
 		background-attachment: fixed;
@@ -120,14 +120,14 @@
 
 	/* Golden text selection */
 	::selection {
-		background: oklch(0.76 0.145 70 / 30%);
+		background: oklch(0.78 0.18 65 / 35%);
 		color: oklch(0.16 0.03 55);
 	}
 
 	/* Golden glow on focus */
 	:focus-visible {
 		outline: none;
-		box-shadow: 0 0 0 2px oklch(0.14 0.02 55), 0 0 0 4px oklch(0.76 0.145 70 / 45%);
+		box-shadow: 0 0 0 2px oklch(0.14 0.02 55), 0 0 0 4px oklch(0.78 0.18 65 / 50%);
 	}
 
 	/* Smooth transitions on interactive elements */
