@@ -531,6 +531,43 @@
 		"account": {
 			"title": "Account"
 		},
+		"bulkImport": {
+			"title": "Vokabeln importieren",
+			"uploadTitle": "Dokument hochladen",
+			"uploadDescription": "Lade eine PDF-, DOCX-, TXT- oder CSV-Datei mit Vokabeln hoch",
+			"dragDrop": "Ziehen und ablegen oder klicken zum Auswählen",
+			"supportedFormats": "Unterstützte Formate: PDF, DOCX, TXT, CSV",
+			"processing": "Übersetzungen werden extrahiert...",
+			"reviewTitle": "Übersetzungen prüfen",
+			"reviewDescription": "Bearbeite oder entferne Übersetzungen vor dem Import",
+			"noTranslations": "Keine Übersetzungen im Dokument gefunden",
+			"importButton": "{count, plural, one {# Übersetzung} other {# Übersetzungen}} importieren",
+			"sourceLanguage": "Ausgangssprache",
+			"targetLanguage": "Zielsprache",
+			"collection": "Sammlung",
+			"collectionPlaceholder": "Sammlung auswählen (optional)",
+			"confidence": "Konfidenz",
+			"table": {
+				"sourceText": "Wort",
+				"targetText": "Übersetzung",
+				"confidence": "Konfidenz",
+				"actions": "Aktionen"
+			},
+			"toast": {
+				"extractError": {
+					"title": "Extraktion fehlgeschlagen",
+					"description": "Übersetzungen konnten nicht aus dem Dokument extrahiert werden. Bitte versuche es erneut."
+				},
+				"importSuccess": {
+					"title": "Import erfolgreich",
+					"description": "{count, plural, one {# Übersetzung} other {# Übersetzungen}} importiert."
+				},
+				"importError": {
+					"title": "Import fehlgeschlagen",
+					"description": "Übersetzungen konnten nicht importiert werden. Bitte versuche es erneut."
+				}
+			}
+		},
 		"translations": {
 			"title": "Übersetzungen",
 			"empty": {

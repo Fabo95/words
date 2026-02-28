@@ -20,6 +20,40 @@ export type paths = {
         patch?: never;
         trace?: never;
     };
+    "/bulk-import/create": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Create multiple translations in bulk */
+        post: operations["create_bulk_handler"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
+    "/bulk-import/extract": {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        get?: never;
+        put?: never;
+        /** Extract translations from uploaded document */
+        post: operations["extract_handler"];
+        delete?: never;
+        options?: never;
+        head?: never;
+        patch?: never;
+        trace?: never;
+    };
     "/cefr-levels": {
         parameters: {
             query?: never;
@@ -395,6 +429,21 @@ export type components = {
         AuthenticationResponse: {
             isAuthenticated: boolean;
         };
+        BulkCreateRequest: {
+            translations: components["schemas"]["BulkTranslationForCreate"][];
+        };
+        BulkCreateResponse: {
+            created_count: number;
+            translation_ids: number[];
+        };
+        BulkTranslationForCreate: {
+            /** Format: int32 */
+            collection_id?: number | null;
+            source_language: string;
+            source_text: string;
+            target_language: string;
+            target_text: string;
+        };
         CollectionForCreate: {
             /** @description Collection name: must be 1–100 characters, no control characters */
             name: string;
@@ -443,6 +492,11 @@ export type components = {
             entries: components["schemas"]["DailyStatisticEntry"][];
             summary: components["schemas"]["StatisticsSummaryResponse"];
         };
+        DocumentInfo: {
+            file_type: string;
+            filename: string;
+            text_length: number;
+        };
         EmailForCheck: {
             /** @description Must be a valid email address */
             email: string;
@@ -450,9 +504,28 @@ export type components = {
         EmailForCheckResponse: {
             isEmailValid: boolean;
         };
+        ExtractResponse: {
+            document_info: components["schemas"]["DocumentInfo"];
+            extracted_translations: components["schemas"]["ExtractedTranslationResponse"][];
+        };
+        ExtractedTranslationResponse: {
+            /** Format: float */
+            confidence: number;
+            source_text: string;
+            target_text: string;
+        };
         HttpResponseBody_AuthenticationResponse: {
             data?: {
                 isAuthenticated: boolean;
+            };
+            message: string;
+            meta?: null | components["schemas"]["PaginatedMeta"];
+            success: boolean;
+        };
+        HttpResponseBody_BulkCreateResponse: {
+            data?: {
+                created_count: number;
+                translation_ids: number[];
             };
             message: string;
             meta?: null | components["schemas"]["PaginatedMeta"];
@@ -488,6 +561,15 @@ export type components = {
         HttpResponseBody_EmailForCheckResponse: {
             data?: {
                 isEmailValid: boolean;
+            };
+            message: string;
+            meta?: null | components["schemas"]["PaginatedMeta"];
+            success: boolean;
+        };
+        HttpResponseBody_ExtractResponse: {
+            data?: {
+                document_info: components["schemas"]["DocumentInfo"];
+                extracted_translations: components["schemas"]["ExtractedTranslationResponse"][];
             };
             message: string;
             meta?: null | components["schemas"]["PaginatedMeta"];
@@ -734,7 +816,7 @@ export type components = {
             source_lang?: string | null;
             /** @description Target language code (e.g., "DE", "EN") */
             target_lang: string;
-            /** @description The text to translate */
+            /** @description The text to translate (1-1000 characters) */
             text: string;
         };
         TranslateResponse: {
@@ -927,6 +1009,52 @@ export interface operations {
                 };
                 content: {
                     "application/json": components["schemas"]["HttpResponseBody_AuthenticationResponse"];
+                };
+            };
+        };
+    };
+    create_bulk_handler: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody: {
+            content: {
+                "application/json": components["schemas"]["BulkCreateRequest"];
+            };
+        };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HttpResponseBody_BulkCreateResponse"];
+                };
+            };
+        };
+    };
+    extract_handler: {
+        parameters: {
+            query?: never;
+            header?: never;
+            path?: never;
+            cookie?: never;
+        };
+        requestBody?: {
+            content: {
+                "multipart/form-data": unknown;
+            };
+        };
+        responses: {
+            200: {
+                headers: {
+                    [name: string]: unknown;
+                };
+                content: {
+                    "application/json": components["schemas"]["HttpResponseBody_ExtractResponse"];
                 };
             };
         };

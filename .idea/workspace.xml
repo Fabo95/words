@@ -4,8 +4,13 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="refactor + reduced complexity">
+    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="change colors">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/messages/de-DE.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/messages/de-DE.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/messages/en-GB.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/messages/en-GB.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/translations/_content/translations.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/translations/_content/translations.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/components/appSidebar/appSidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/appSidebar/appSidebar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/generated/openApiTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/generated/openApiTypes.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +132,7 @@
       <recent name="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/collection/[id]" />
     </key>
   </component>
-  <component name="RunManager" selected="npm.web &gt; open_api:generate">
+  <component name="RunManager" selected="npm.inngest &gt; prisma:generate">
     <configuration name="build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/package.json" />
       <command value="run" />
@@ -148,21 +153,21 @@
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="inngest &gt; build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+    <configuration name="inngest &gt; prisma:generate" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/services/inngest/package.json" />
       <command value="run" />
       <scripts>
-        <script value="build" />
+        <script value="prisma:generate" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
       <method v="2" />
     </configuration>
-    <configuration name="web &gt; build" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
-      <package-json value="$PROJECT_DIR$/services/web/package.json" />
+    <configuration name="inngest &gt; prisma:pull" type="js.build_tools.npm" temporary="true" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/services/inngest/package.json" />
       <command value="run" />
       <scripts>
-        <script value="build" />
+        <script value="prisma:pull" />
       </scripts>
       <node-interpreter value="project" />
       <envs />
@@ -180,11 +185,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.inngest &gt; prisma:generate" />
+        <item itemvalue="npm.inngest &gt; prisma:pull" />
         <item itemvalue="npm.web &gt; open_api:generate" />
         <item itemvalue="npm.dev" />
         <item itemvalue="npm.build" />
-        <item itemvalue="npm.web &gt; build" />
-        <item itemvalue="npm.inngest &gt; build" />
       </list>
     </recent_temporary>
   </component>
@@ -267,46 +272,8 @@
       <workItem from="1769809608107" duration="54226000" />
       <workItem from="1771107369084" duration="5879000" />
       <workItem from="1771506192993" duration="32066000" />
-    </task>
-    <task id="LOCAL-00134" summary="add github action to push docker file of web">
-      <option name="closed" value="true" />
-      <created>1771512612148</created>
-      <option name="number" value="00134" />
-      <option name="presentableId" value="LOCAL-00134" />
-      <option name="project" value="LOCAL" />
-      <updated>1771512612148</updated>
-    </task>
-    <task id="LOCAL-00135" summary="add github action to push docker file of web">
-      <option name="closed" value="true" />
-      <created>1771512797397</created>
-      <option name="number" value="00135" />
-      <option name="presentableId" value="LOCAL-00135" />
-      <option name="project" value="LOCAL" />
-      <updated>1771512797397</updated>
-    </task>
-    <task id="LOCAL-00136" summary="add turbo repo">
-      <option name="closed" value="true" />
-      <created>1771513047440</created>
-      <option name="number" value="00136" />
-      <option name="presentableId" value="LOCAL-00136" />
-      <option name="project" value="LOCAL" />
-      <updated>1771513047440</updated>
-    </task>
-    <task id="LOCAL-00137" summary="add turbo repo">
-      <option name="closed" value="true" />
-      <created>1771513149785</created>
-      <option name="number" value="00137" />
-      <option name="presentableId" value="LOCAL-00137" />
-      <option name="project" value="LOCAL" />
-      <updated>1771513149785</updated>
-    </task>
-    <task id="LOCAL-00138" summary="add turbo repo">
-      <option name="closed" value="true" />
-      <created>1771513258791</created>
-      <option name="number" value="00138" />
-      <option name="presentableId" value="LOCAL-00138" />
-      <option name="project" value="LOCAL" />
-      <updated>1771513258791</updated>
+      <workItem from="1772100508614" duration="6000" />
+      <workItem from="1772278907775" duration="5702000" />
     </task>
     <task id="LOCAL-00139" summary="add turbo repo1">
       <option name="closed" value="true" />
@@ -660,7 +627,47 @@
       <option name="project" value="LOCAL" />
       <updated>1771847810452</updated>
     </task>
-    <option name="localTasksCounter" value="183" />
+    <task id="LOCAL-00183" summary="change colors">
+      <option name="closed" value="true" />
+      <created>1772056612667</created>
+      <option name="number" value="00183" />
+      <option name="presentableId" value="LOCAL-00183" />
+      <option name="project" value="LOCAL" />
+      <updated>1772056612667</updated>
+    </task>
+    <task id="LOCAL-00184" summary="change colors">
+      <option name="closed" value="true" />
+      <created>1772056787264</created>
+      <option name="number" value="00184" />
+      <option name="presentableId" value="LOCAL-00184" />
+      <option name="project" value="LOCAL" />
+      <updated>1772056787264</updated>
+    </task>
+    <task id="LOCAL-00185" summary="change colors">
+      <option name="closed" value="true" />
+      <created>1772098300847</created>
+      <option name="number" value="00185" />
+      <option name="presentableId" value="LOCAL-00185" />
+      <option name="project" value="LOCAL" />
+      <updated>1772098300847</updated>
+    </task>
+    <task id="LOCAL-00186" summary="change colors">
+      <option name="closed" value="true" />
+      <created>1772100398467</created>
+      <option name="number" value="00186" />
+      <option name="presentableId" value="LOCAL-00186" />
+      <option name="project" value="LOCAL" />
+      <updated>1772100398467</updated>
+    </task>
+    <task id="LOCAL-00187" summary="change colors">
+      <option name="closed" value="true" />
+      <created>1772100449798</created>
+      <option name="number" value="00187" />
+      <option name="presentableId" value="LOCAL-00187" />
+      <option name="project" value="LOCAL" />
+      <updated>1772100449798</updated>
+    </task>
+    <option name="localTasksCounter" value="188" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -681,7 +688,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add daily goals" />
     <MESSAGE value="add design review.md" />
     <MESSAGE value="add github action to push docker file of web" />
     <MESSAGE value="add turbo repo" />
@@ -706,7 +712,8 @@
     <MESSAGE value="add animated-container" />
     <MESSAGE value="add translate functionality" />
     <MESSAGE value="refactor + reduced complexity" />
-    <option name="LAST_COMMIT_MESSAGE" value="refactor + reduced complexity" />
+    <MESSAGE value="change colors" />
+    <option name="LAST_COMMIT_MESSAGE" value="change colors" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

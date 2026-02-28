@@ -530,6 +530,43 @@
 		"account": {
 			"title": "Account"
 		},
+		"bulkImport": {
+			"title": "Import Vocabulary",
+			"uploadTitle": "Upload Document",
+			"uploadDescription": "Upload a PDF, DOCX, TXT, or CSV file containing vocabulary",
+			"dragDrop": "Drag and drop or click to select",
+			"supportedFormats": "Supported formats: PDF, DOCX, TXT, CSV",
+			"processing": "Extracting translations...",
+			"reviewTitle": "Review Translations",
+			"reviewDescription": "Edit or remove translations before importing",
+			"noTranslations": "No translations found in document",
+			"importButton": "Import {count, plural, one {# translation} other {# translations}}",
+			"sourceLanguage": "Source Language",
+			"targetLanguage": "Target Language",
+			"collection": "Collection",
+			"collectionPlaceholder": "Select a collection (optional)",
+			"confidence": "Confidence",
+			"table": {
+				"sourceText": "Word",
+				"targetText": "Translation",
+				"confidence": "Confidence",
+				"actions": "Actions"
+			},
+			"toast": {
+				"extractError": {
+					"title": "Extraction failed",
+					"description": "Could not extract translations from the document. Please try again."
+				},
+				"importSuccess": {
+					"title": "Import successful",
+					"description": "{count, plural, one {# translation} other {# translations}} imported."
+				},
+				"importError": {
+					"title": "Import failed",
+					"description": "Could not import translations. Please try again."
+				}
+			}
+		},
 		"translations": {
 			"title": "Translations",
 			"empty": {

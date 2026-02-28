@@ -1,6 +1,6 @@
 "use client"
 
-import { Book, HomeIcon, Languages, ListIcon, User } from "lucide-react"
+import { Book, HomeIcon, Languages, ListIcon, Upload, User } from "lucide-react"
 import * as React from "react"
 
 import { SidebarCollections } from "@app/components/appSidebar/components/sidebarCollections/sidebarCollections"
@@ -33,6 +33,11 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 				icon: ListIcon,
 			},
 			{
+				title: t("pages.bulkImport.title"),
+				url: "/bulk-import",
+				icon: Upload,
+			},
+			{
 				title: t("pages.learning.title"),
 				url: "/learning",
 				icon: Book,
@@ -58,8 +63,6 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
 	)
 
 	// --- RENDER ---
-
-	console.log("")
 
 	return (
 		<Sidebar collapsible="icon" {...props}>

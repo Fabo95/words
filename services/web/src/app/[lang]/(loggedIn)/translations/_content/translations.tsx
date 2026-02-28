@@ -199,7 +199,9 @@ export const Translations = () => {
 								<Button
 									variant="outline"
 									size="sm"
-									disabled={(translationsData?.meta?.total_items ?? 0) <= (translationsData?.meta?.page ?? 1) * pageSize}
+									disabled={
+										(translationsData?.meta?.total_items ?? 0) <= (translationsData?.meta?.page ?? 1) * pageSize
+									}
 									onClick={makeOnPaginationChange("next")}
 								>
 									{t("pagination.next")}
