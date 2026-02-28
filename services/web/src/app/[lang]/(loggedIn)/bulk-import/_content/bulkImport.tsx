@@ -55,6 +55,17 @@ export const BulkImport = () => {
 
 	const handleFileUpload = useCallback(
 		async (file: File) => {
+			const MAX_FILE_SIZE = 1024 * 1024 // 1MB
+
+			if (file.size > MAX_FILE_SIZE) {
+				toast({
+					title: t("pages.bulkImport.toast.fileTooLarge.title"),
+					description: t("pages.bulkImport.toast.fileTooLarge.description"),
+					variant: "destructive",
+				})
+				return
+			}
+
 			setStep("processing")
 
 			try {
@@ -221,7 +232,7 @@ export const BulkImport = () => {
 							<input
 								id="file-input"
 								type="file"
-								accept=".pdf,.docx,.txt,.csv"
+								accept=".pdf,.docx,.txt,.csv,.jpg,.jpeg,.png,.webp,.gif"
 								onChange={handleFileInputChange}
 								className="hidden"
 							/>

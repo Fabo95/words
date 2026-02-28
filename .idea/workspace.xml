@@ -4,13 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="change colors">
+    <list default="true" id="3062ef47-36d1-4b7a-b3c2-29d18ffc995f" name="Changes" comment="add bulk import for translations">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/web/messages/de-DE.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/messages/de-DE.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/services/web/messages/en-GB.json" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/messages/en-GB.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/translations/_content/translations.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/translations/_content/translations.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/components/appSidebar/appSidebar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/components/appSidebar/appSidebar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/services/web/src/generated/openApiTypes.ts" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/generated/openApiTypes.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/bulk-import/_content/bulkImport.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/services/web/src/app/[lang]/(loggedIn)/bulk-import/_content/bulkImport.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -273,15 +271,7 @@
       <workItem from="1771107369084" duration="5879000" />
       <workItem from="1771506192993" duration="32066000" />
       <workItem from="1772100508614" duration="6000" />
-      <workItem from="1772278907775" duration="5702000" />
-    </task>
-    <task id="LOCAL-00139" summary="add turbo repo1">
-      <option name="closed" value="true" />
-      <created>1771513304426</created>
-      <option name="number" value="00139" />
-      <option name="presentableId" value="LOCAL-00139" />
-      <option name="project" value="LOCAL" />
-      <updated>1771513304426</updated>
+      <workItem from="1772278907775" duration="6787000" />
     </task>
     <task id="LOCAL-00140" summary="add turbo repo1">
       <option name="closed" value="true" />
@@ -667,7 +657,15 @@
       <option name="project" value="LOCAL" />
       <updated>1772100449798</updated>
     </task>
-    <option name="localTasksCounter" value="188" />
+    <task id="LOCAL-00188" summary="add bulk import for translations">
+      <option name="closed" value="true" />
+      <created>1772310633721</created>
+      <option name="number" value="00188" />
+      <option name="presentableId" value="LOCAL-00188" />
+      <option name="project" value="LOCAL" />
+      <updated>1772310633721</updated>
+    </task>
+    <option name="localTasksCounter" value="189" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -688,7 +686,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="add design review.md" />
     <MESSAGE value="add github action to push docker file of web" />
     <MESSAGE value="add turbo repo" />
     <MESSAGE value="add turbo repo1" />
@@ -713,7 +710,8 @@
     <MESSAGE value="add translate functionality" />
     <MESSAGE value="refactor + reduced complexity" />
     <MESSAGE value="change colors" />
-    <option name="LAST_COMMIT_MESSAGE" value="change colors" />
+    <MESSAGE value="add bulk import for translations" />
+    <option name="LAST_COMMIT_MESSAGE" value="add bulk import for translations" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

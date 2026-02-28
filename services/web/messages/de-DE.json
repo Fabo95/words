@@ -536,7 +536,7 @@
 			"uploadTitle": "Dokument hochladen",
 			"uploadDescription": "Lade eine PDF-, DOCX-, TXT- oder CSV-Datei mit Vokabeln hoch",
 			"dragDrop": "Ziehen und ablegen oder klicken zum Auswählen",
-			"supportedFormats": "Unterstützte Formate: PDF, DOCX, TXT, CSV",
+			"supportedFormats": "Unterstützt: PDF, DOCX, TXT, CSV oder Bilder (JPG, PNG)",
 			"processing": "Übersetzungen werden extrahiert...",
 			"reviewTitle": "Übersetzungen prüfen",
 			"reviewDescription": "Bearbeite oder entferne Übersetzungen vor dem Import",
@@ -565,6 +565,10 @@
 				"importError": {
 					"title": "Import fehlgeschlagen",
 					"description": "Übersetzungen konnten nicht importiert werden. Bitte versuche es erneut."
+				},
+				"fileTooLarge": {
+					"title": "Datei zu groß",
+					"description": "Maximale Dateigröße ist 1MB. Bitte lade eine kleinere Datei hoch."
 				}
 			}
 		},

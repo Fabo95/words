@@ -535,7 +535,7 @@
 			"uploadTitle": "Upload Document",
 			"uploadDescription": "Upload a PDF, DOCX, TXT, or CSV file containing vocabulary",
 			"dragDrop": "Drag and drop or click to select",
-			"supportedFormats": "Supported formats: PDF, DOCX, TXT, CSV",
+			"supportedFormats": "Supported: PDF, DOCX, TXT, CSV, or images (JPG, PNG)",
 			"processing": "Extracting translations...",
 			"reviewTitle": "Review Translations",
 			"reviewDescription": "Edit or remove translations before importing",
@@ -564,6 +564,10 @@
 				"importError": {
 					"title": "Import failed",
 					"description": "Could not import translations. Please try again."
+				},
+				"fileTooLarge": {
+					"title": "File too large",
+					"description": "Maximum file size is 1MB. Please upload a smaller file."
 				}
 			}
 		},
