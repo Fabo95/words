@@ -222,6 +222,7 @@ export const BulkImport = () => {
 									document.getElementById("file-input")?.click()
 								}
 							}}
+							// biome-ignore lint/a11y/useSemanticElements: <explanation>
 							role="button"
 							tabIndex={0}
 						>
