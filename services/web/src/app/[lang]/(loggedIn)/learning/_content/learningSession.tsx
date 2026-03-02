@@ -2,6 +2,7 @@
 
 import * as React from "react"
 import { useState, useCallback, useEffect, useRef } from "react"
+import { useHotkeys } from "@app/hooks/useHotkey"
 import { motion } from "motion/react"
 import { useTranslations } from "next-intl"
 import { Button } from "@app/components/ui/button"
@@ -98,36 +99,13 @@ export function LearningSession({
 		[submitReview, currentItem.id],
 	)
 
-	useEffect(() => {
-		const handleKeyDown = (e: KeyboardEvent) => {
-			if (isPending) return
-
-			if (!isFlipped && e.code === "Space") {
-				e.preventDefault()
-				handleFlip()
-				return
-			}
-
-			if (showButtons) {
-				if (e.code === "Digit1" || e.code === "Numpad1") {
-					e.preventDefault()
-					handleReview("again")
-				} else if (e.code === "Digit2" || e.code === "Numpad2") {
-					e.preventDefault()
-					handleReview("hard")
-				} else if (e.code === "Digit3" || e.code === "Numpad3") {
-					e.preventDefault()
-					handleReview("good")
-				} else if (e.code === "Digit4" || e.code === "Numpad4") {
-					e.preventDefault()
-					handleReview("easy")
-				}
-			}
-		}
-
-		window.addEventListener("keydown", handleKeyDown)
-		return () => window.removeEventListener("keydown", handleKeyDown)
-	}, [isFlipped, showButtons, isPending, handleFlip, handleReview])
+	useHotkeys([
+		{ key: "Space", handler: handleFlip, enabled: !isFlipped && !isPending },
+		{ key: "1", handler: () => handleReview("again"), enabled: showButtons && !isPending },
+		{ key: "2", handler: () => handleReview("hard"), enabled: showButtons && !isPending },
+		{ key: "3", handler: () => handleReview("good"), enabled: showButtons && !isPending },
+		{ key: "4", handler: () => handleReview("easy"), enabled: showButtons && !isPending },
+	])
 
 	return (
 		<div className="mx-auto w-full max-w-lg">
